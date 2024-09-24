@@ -9,9 +9,10 @@ public class MoveAlongPath : MonoBehaviour
     private int currentNode;
     public Transform NodeParent;
 
-    // Start is called before the first frame update
     void Start()
     {
+        //initialize path
+        NodeParent = GameObject.Find("Nodes").transform;
         currentNode = 0;
         nodePositions = new Vector3[NodeParent.childCount];
 
@@ -21,13 +22,13 @@ public class MoveAlongPath : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (currentNode > nodePositions.Length-1) return;
 
         if (transform.position == nodePositions[currentNode])
             currentNode++;
+        //move to next node
         transform.position = Vector3.MoveTowards(transform.position, nodePositions[currentNode], speed * Time.deltaTime);
     }
 }
