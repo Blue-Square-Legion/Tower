@@ -31,4 +31,15 @@ public class MoveAlongPath : MonoBehaviour
         //move to next node
         transform.position = Vector3.MoveTowards(transform.position, nodePositions[currentNode], speed * Time.deltaTime);
     }
+
+    public float DistanceUntilEnd()
+    {
+        float distance = 0;
+        for(int i = currentNode; i<nodePositions.Length-1; i++)
+        {
+            distance += Vector3.Distance(nodePositions[i], nodePositions[i+1]);
+        }
+        distance += Vector3.Distance(transform.position, nodePositions[currentNode]);
+        return distance;
+    }
 }
