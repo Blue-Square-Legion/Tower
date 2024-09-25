@@ -163,6 +163,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b78dd6d44b620d24899f6719dc53175d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 7453868417325542339, guid: fa1b577be0cf44e4da4e12758c27809c,
+    type: 3}
+  head: {fileID: 792149923263957305}
+  range: 4
+  fireRate: 2
+  projectileSpeed: 100
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!65 &6916033221165787475
 BoxCollider:
   m_ObjectHideFlags: 0
