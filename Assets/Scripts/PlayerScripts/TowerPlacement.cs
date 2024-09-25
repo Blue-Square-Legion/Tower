@@ -7,8 +7,10 @@ public class TowerPlacement : MonoBehaviour
     [SerializeField] private LayerMask placementColliderMask;
     private GameObject currentTowerBeingPlaced;
     private bool canPlace;
+    private PlayerHealth playerHealth;
     void Start()
     {
+        playerHealth = GetComponent<PlayerHealth>();
         canPlace = true;
     }
 
@@ -37,6 +39,8 @@ public class TowerPlacement : MonoBehaviour
 
                     if (!Physics.CheckBox(boxCenter, halfExtends, Quaternion.identity, placementCheckMask, QueryTriggerInteraction.Ignore))
                     {
+                        currentTowerBeingPlaced.GetComponent<TowerBehavior>().placed = true;
+                        playerHealth.RemoveMoney(currentTowerBeingPlaced.GetComponent<TowerBehavior>().GetCost());
                         towerCollider.isTrigger = false;
                         currentTowerBeingPlaced = null;
                     }
@@ -47,6 +51,8 @@ public class TowerPlacement : MonoBehaviour
 
     public void SetTowerToPlace(GameObject tower)
     {
+        if (playerHealth.GetMoney() < tower.GetComponent<TowerBehavior>().GetCost()) return;
+
         if (currentTowerBeingPlaced == null)
             currentTowerBeingPlaced = Instantiate(tower, Vector3.zero, Quaternion.identity);
     }

@@ -5,15 +5,18 @@ public class TowerBehavior : MonoBehaviour
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] GameObject head;
     [SerializeField] float range;
+    [SerializeField] int cost;
     [SerializeField] float fireRate;
     [SerializeField] float projectileSpeed;
     [SerializeField] LayerMask enemyLayer;
 
     private float fireTimer = Mathf.Infinity;
     private bool enemyInRange = false;
+    public bool placed = false;
 
     void Update()
     {
+        if (!placed) return;
         fireTimer += Time.deltaTime;
         Vector3 target = CheckForEnemies();
 
@@ -58,6 +61,11 @@ public class TowerBehavior : MonoBehaviour
             }
         }
         return lastEnemyPosition;
+    }
+
+    public int GetCost()
+    {
+        return cost;
     }
 
     private void OnDrawGizmos()
