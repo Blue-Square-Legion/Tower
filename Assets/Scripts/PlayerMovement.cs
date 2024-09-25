@@ -41,8 +41,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayerCamera()
     {
-        xRot -= playerMouseInput.y * sensitivity;
-        transform.Rotate(0f, playerMouseInput.x * sensitivity, 0f);
-        playerCamera.transform.localRotation = Quaternion.Euler(xRot, 0f, 0f);
+        if (Input.GetMouseButton(1))
+        {
+            xRot -= playerMouseInput.y * sensitivity;
+            transform.Rotate(0f, playerMouseInput.x * sensitivity, 0f);
+            playerCamera.transform.localRotation = Quaternion.Euler(xRot, 0f, 0f);
+        }
     }
 }
