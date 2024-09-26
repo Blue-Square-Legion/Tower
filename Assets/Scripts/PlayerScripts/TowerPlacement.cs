@@ -7,12 +7,14 @@ public class TowerPlacement : MonoBehaviour
     [SerializeField] private LayerMask placementColliderMask;
     private GameObject currentTowerBeingPlaced;
     private bool canPlace;
+    private Player player;
 
     GameManager gameManager;
     void Start()
     {
         gameManager = GameManager.Instance;
         canPlace = true;
+        player = GetComponent<Player>();
     }
 
     private void Update()
@@ -54,7 +56,7 @@ public class TowerPlacement : MonoBehaviour
                     {
                         //Places tower
                         gameManager.builtTowers.Add(currentTowerBeingPlaced.GetComponent<TowerBehavior>());
-
+                        player.RemoveMoney(currentTowerBeingPlaced.GetComponent<TowerBehavior>().cost);
                         towerCollider.isTrigger = false;
                         currentTowerBeingPlaced = null;
                     }
@@ -65,6 +67,9 @@ public class TowerPlacement : MonoBehaviour
 
     public void SetTowerToPlace(GameObject tower)
     {
+        //return if not enough money
+        if (player.GetMoney() < tower.GetComponent<TowerBehavior>().cost || player.GetMoney() == 0) return;
+
         if (currentTowerBeingPlaced == null)
             currentTowerBeingPlaced = Instantiate(tower, Vector3.zero, Quaternion.identity);
     }

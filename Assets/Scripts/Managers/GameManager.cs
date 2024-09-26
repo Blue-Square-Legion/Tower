@@ -36,7 +36,10 @@ public class GameManager : MonoBehaviour
     [NonSerialized] public Vector3[] nodePositions;
     [NonSerialized] public float[] nodeDistances;
 
+    [SerializeField] Player player;
+
     EnemySpawner enemySpawner;
+    private bool waveActive = false;
     void Start()
     {
         enemySpawner = EnemySpawner.Instance;
@@ -63,12 +66,28 @@ public class GameManager : MonoBehaviour
         }
 
         StartCoroutine(GameLoop());
-        InvokeRepeating("summonTest", 0f, 1f);
+        //InvokeRepeating("summonTest", 0f, 1f);
     }
 
-    public void summonTest()
+    //public void summonTest()
+    //{
+    //    EnqueueEnemy(1);
+    //}
+
+    public void EnqueueWave()
     {
-        EnqueueEnemy(1);
+        if (waveActive) return;
+        waveActive = true;
+        StartCoroutine(Wave());
+    }
+
+    IEnumerator Wave()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            EnqueueEnemy(1);
+            yield return new WaitForSeconds(1);
+        }
     }
 
     IEnumerator GameLoop()
@@ -119,6 +138,7 @@ public class GameManager : MonoBehaviour
                 {
                     //Enemy Reached the end of the map
                     EnqueEnemyToRemove(enemySpawner.spawnedEnemies[i]);
+                    player.DoDamage(enemySpawner.spawnedEnemies[i].damageToPlayer);
                 }
             }
 
@@ -171,7 +191,11 @@ public class GameManager : MonoBehaviour
                     currentDamageData.targettedEnemy.currentHealth -= currentDamageData.totalDamage / currentDamageData.resistance;
 
                     if (currentDamageData.targettedEnemy.currentHealth <= 0)
+                    {
+                        player.GiveMoney(currentDamageData.targettedEnemy.moneyToPlayer);
                         EnqueEnemyToRemove(currentDamageData.targettedEnemy);
+                    }
+                        
                 }
             }
 
@@ -185,6 +209,9 @@ public class GameManager : MonoBehaviour
                     enemySpawner.RemoveEnemy(enemyQueueToRemove.Dequeue());
                 }
             }
+
+            if (enemySpawner.spawnedEnemies.Count == 0)
+                waveActive = false;
 
             //Remove Towers
 
