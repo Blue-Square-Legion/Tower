@@ -33,6 +33,8 @@ public class EnemySpawner : MonoBehaviour
     //Creates Object Pooling
     public  Dictionary<int, Queue<Enemy>> enemyObjectPools;
 
+    public Dictionary<Transform, Enemy> enemyTransformDictionary;
+
     [SerializeField] Transform SpawnPoint;
 
     private bool waveActive = false;
@@ -46,6 +48,7 @@ public class EnemySpawner : MonoBehaviour
             gameManager = GameManager.Instance;
             enemyPrefab = new();
             enemyObjectPools = new();
+            enemyTransformDictionary = new();
             spawnedEnemies = new();
             spawnedEnemiesTransform = new();
 
@@ -97,6 +100,7 @@ public class EnemySpawner : MonoBehaviour
 
         if (!spawnedEnemies.Contains(spawnedEnemy)) spawnedEnemies.Add(spawnedEnemy);
         if (!spawnedEnemiesTransform.Contains(spawnedEnemy.transform)) spawnedEnemiesTransform.Add(spawnedEnemy.transform);
+        if (!enemyTransformDictionary.ContainsKey(spawnedEnemy.transform)) enemyTransformDictionary.Add(spawnedEnemy.transform, spawnedEnemy);
         spawnedEnemy.ID = enemyID;
         return spawnedEnemy;
     }
@@ -105,6 +109,8 @@ public class EnemySpawner : MonoBehaviour
     {
         enemyObjectPools[enemyToRemove.ID].Enqueue(enemyToRemove); //Makes enemy idle and inactive - extremely efficient
         enemyToRemove.gameObject.SetActive(false);
+
+        enemyTransformDictionary.Remove(enemyToRemove.transform);
         spawnedEnemiesTransform.Remove(enemyToRemove.transform);
         spawnedEnemies.Remove(enemyToRemove);
     }

@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     public Queue<EnemyDamageData> damageData;
+    private Queue<ApplyDamageOverTimeData> damageOverTimeQueue;
     public Queue<int> enemyQueueToSpawn;
     public Queue<Enemy> enemyQueueToRemove;
     public bool endLoop;
@@ -43,6 +44,7 @@ public class GameManager : MonoBehaviour
         enemyQueueToSpawn = new();
         enemyQueueToRemove = new();
         damageData = new();
+        damageOverTimeQueue = new();
         builtTowers = new List<TowerBehavior>();
         enemySpawner.Init();
 
@@ -134,6 +136,30 @@ public class GameManager : MonoBehaviour
 
 
             //Apply Effects
+            if (damageOverTimeQueue.Count > 0)
+            {
+                int dotSize = damageOverTimeQueue.Count;
+                for (int i = 0; i < dotSize; i++)
+                {
+                    ApplyDamageOverTimeData currentDamageData = damageOverTimeQueue.Dequeue();
+                    DamageOverTime dotDuplicate = currentDamageData.enemyToAffect.activeEffects.Find(x => x.effectName == currentDamageData.typeOfDamageToApply.effectName);
+                    if (dotDuplicate == null)
+                    {
+                        currentDamageData.enemyToAffect.activeEffects.Add(currentDamageData.typeOfDamageToApply);
+                    }
+                    else
+                    {
+                        dotDuplicate.length = currentDamageData.typeOfDamageToApply.length;
+                    }
+                }
+            }
+
+            //Tick Enemies
+            foreach(Enemy currentEnemy in enemySpawner.spawnedEnemies)
+            {
+                currentEnemy.Tick();
+            }
+
 
             //Damage Enemies
             if (damageData.Count > 0)
@@ -166,6 +192,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void EnqueueDamageOverTime(ApplyDamageOverTimeData dotData)
+    {
+        damageOverTimeQueue.Enqueue(dotData);
+    }
+
     public void EnqueueDamageData(EnemyDamageData damageData)
     {
         this.damageData.Enqueue(damageData);
@@ -183,6 +214,33 @@ public class GameManager : MonoBehaviour
     public void EnqueEnemyToRemove(Enemy enemyToRemove)
     {
         enemyQueueToRemove.Enqueue(enemyToRemove);
+    }
+
+    public class DamageOverTime
+    {
+        public DamageOverTime(string effectName, float damage, float length, float damageRate)
+        {
+            this.effectName = effectName;
+            this.damage = damage;
+            this.length = length;
+            this.damageRate = damageRate;
+        }
+        public string effectName;
+        public float damage;
+        public float length;
+        public float damageRate;
+        public float damageDelay;
+    }
+
+    public struct ApplyDamageOverTimeData
+    {
+        public ApplyDamageOverTimeData(DamageOverTime typeOfDamageToApply, Enemy enemyToAffect)
+        {
+            this.typeOfDamageToApply = typeOfDamageToApply;
+            this.enemyToAffect = enemyToAffect;
+        }
+        public DamageOverTime typeOfDamageToApply;
+        public Enemy enemyToAffect;
     }
 
     public struct EnemyDamageData

@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class Player : MonoBehaviour
 {
     [SerializeField] TMP_Text healthText;
     [SerializeField] TMP_Text moneyText;
