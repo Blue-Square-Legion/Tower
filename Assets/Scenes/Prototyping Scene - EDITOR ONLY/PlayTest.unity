@@ -478,7 +478,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 242024573}
-  - component: {fileID: 242024575}
   - component: {fileID: 242024574}
   - component: {fileID: 242024576}
   m_Layer: 0
@@ -524,18 +523,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &242024575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242024572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05ca09b1431f9234db4de193b9f9ba1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &242024576
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1145,6 +1132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endLoop: 1
   nodeParent: {fileID: 1063959828}
+  player: {fileID: 555665698}
 --- !u!1 &481224567
 GameObject:
   m_ObjectHideFlags: 0
@@ -2936,9 +2924,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1783287424}
-        m_TargetAssemblyTypeName: EnemySpawner, Assembly-CSharp
-        m_MethodName: SpawnWave
+      - m_Target: {fileID: 469754962}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: EnqueueWave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

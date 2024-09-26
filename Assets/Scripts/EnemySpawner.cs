@@ -37,8 +37,6 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] Transform SpawnPoint;
 
-    private bool waveActive = false;
-
     public  bool isInitialized = false;
     GameManager gameManager;
     public void Init()
