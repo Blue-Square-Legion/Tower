@@ -1,18 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] int maxHealth;
-    [SerializeField] int value;
-    [SerializeField] PlayerHealth player;
-    private int currentHealth;
-
-    void Start()
+    [SerializeField] private int maxHealth;
+    public float currentHealth;
+    public float speed;
+    public float damageResistance;
+    public int ID;
+    public int nodeIndex;
+    GameManager gameManager;
+    public void Init()
     {
-        player = GameObject.Find("Player").GetComponent<PlayerHealth>();
+        gameManager = GameManager.Instance;
         currentHealth = maxHealth;
+        transform.position = gameManager.nodePositions[0];
+        damageResistance = 1;
+        nodeIndex = 0;
     }
 
     public void TakeDamage(int damage)
@@ -20,7 +23,6 @@ public class Enemy : MonoBehaviour
         currentHealth -= damage;
         if (currentHealth < 0)
         {
-            player.GiveMoney(value);
             Destroy(gameObject);
         }
     }

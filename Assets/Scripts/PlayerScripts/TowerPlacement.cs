@@ -7,10 +7,11 @@ public class TowerPlacement : MonoBehaviour
     [SerializeField] private LayerMask placementColliderMask;
     private GameObject currentTowerBeingPlaced;
     private bool canPlace;
-    private PlayerHealth playerHealth;
+
+    GameManager gameManager;
     void Start()
     {
-        playerHealth = GetComponent<PlayerHealth>();
+        gameManager = GameManager.Instance;
         canPlace = true;
     }
 
@@ -27,8 +28,19 @@ public class TowerPlacement : MonoBehaviour
                 currentTowerBeingPlaced.transform.position = hitInfo.point;
             }
 
+            //Cancels placing tower
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                CancelPlacingTower();
+                return;
+            }
+
+            //Checks if the tower can be placed
+
+            //If left mouse button is down and mouse is pointing to a valid object
             if (Input.GetMouseButtonDown(0) && hitInfo.collider.gameObject != null)
             {
+                //If the surface is buildable
                 if (!hitInfo.collider.gameObject.CompareTag("NotBuildable"))
                 {
                     BoxCollider towerCollider = currentTowerBeingPlaced.gameObject.GetComponent<BoxCollider>();
@@ -37,10 +49,12 @@ public class TowerPlacement : MonoBehaviour
                     Vector3 boxCenter = currentTowerBeingPlaced.gameObject.transform.position + towerCollider.center;
                     Vector3 halfExtends = towerCollider.size / 2;
 
+                    //Checks if the tower is too close to a different tower or structure
                     if (!Physics.CheckBox(boxCenter, halfExtends, Quaternion.identity, placementCheckMask, QueryTriggerInteraction.Ignore))
                     {
-                        currentTowerBeingPlaced.GetComponent<TowerBehavior>().placed = true;
-                        playerHealth.RemoveMoney(currentTowerBeingPlaced.GetComponent<TowerBehavior>().GetCost());
+                        //Places tower
+                        gameManager.builtTowers.Add(currentTowerBeingPlaced.GetComponent<TowerBehavior>());
+
                         towerCollider.isTrigger = false;
                         currentTowerBeingPlaced = null;
                     }
@@ -51,10 +65,17 @@ public class TowerPlacement : MonoBehaviour
 
     public void SetTowerToPlace(GameObject tower)
     {
-        if (playerHealth.GetMoney() < tower.GetComponent<TowerBehavior>().GetCost()) return;
-
         if (currentTowerBeingPlaced == null)
             currentTowerBeingPlaced = Instantiate(tower, Vector3.zero, Quaternion.identity);
+    }
+
+    public void CancelPlacingTower()
+    {
+        if (currentTowerBeingPlaced != null)
+        {
+            Destroy(currentTowerBeingPlaced);
+            currentTowerBeingPlaced = null;
+        }
     }
 
     public void OnMouseEnterAnyButton()

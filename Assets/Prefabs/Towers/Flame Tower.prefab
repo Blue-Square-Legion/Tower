@@ -94,7 +94,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b3f8ed315d759ca468e765a0d5442187, type: 2}
+  - {fileID: 2100000, guid: 9e73fa67845a2b14ab16bd2b5378bf1b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -126,10 +126,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1666704632776011067}
   - component: {fileID: 4220347412920332488}
-  - component: {fileID: 6566252472422350250}
   - component: {fileID: 6916033221165787475}
   m_Layer: 3
-  m_Name: BasicTower
+  m_Name: Flame Tower
   m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,18 +171,6 @@ MonoBehaviour:
   damage: 1
   fireRate: 2
   range: 4
---- !u!114 &6566252472422350250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326528010829393448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 940ec9e5b5aa31d468f7086a2062004e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &6916033221165787475
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -266,7 +253,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b3f8ed315d759ca468e765a0d5442187, type: 2}
+  - {fileID: 2100000, guid: 9e73fa67845a2b14ab16bd2b5378bf1b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -382,7 +369,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b3f8ed315d759ca468e765a0d5442187, type: 2}
+  - {fileID: 2100000, guid: 9e73fa67845a2b14ab16bd2b5378bf1b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -465,7 +452,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b3f8ed315d759ca468e765a0d5442187, type: 2}
+  - {fileID: 2100000, guid: 9e73fa67845a2b14ab16bd2b5378bf1b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
