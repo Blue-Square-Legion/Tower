@@ -86,8 +86,6 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-            //Spawn Towers
-
             //Move Enemies
             NativeArray<Vector3> nodesToUse = new(nodePositions, Allocator.TempJob);
             NativeArray<float> enemySpeeds = new(enemySpawner.spawnedEnemies.Count, Allocator.TempJob);
