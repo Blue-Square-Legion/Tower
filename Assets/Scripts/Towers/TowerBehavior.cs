@@ -33,13 +33,14 @@ public class TowerBehavior : MonoBehaviour
     //Desyncs the towers from regular game loop to prevent errors
     public void Tick()
     {
-
         currentDamageMethodClass.damageTick(target);
 
         if (target != null)
         {
             towerPivot.transform.rotation = Quaternion.LookRotation(target.transform.position - transform.position);
         }
+
+
     }
 
     private void OnDrawGizmosSelected()
