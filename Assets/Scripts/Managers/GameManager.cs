@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     public Queue<EnemyDamageData> damageData;
-    private Queue<ApplyDamageOverTimeData> damageOverTimeQueue;
+    private Queue<ApplyEffectData> effectQueue;
     public Queue<int> enemyQueueToSpawn;
     public Queue<Enemy> enemyQueueToRemove;
     public bool endLoop;
@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
 
     EnemySpawner enemySpawner;
     private bool waveActive = false;
+    int currentWave;
     void Start()
     {
         enemySpawner = EnemySpawner.Instance;
@@ -47,7 +48,7 @@ public class GameManager : MonoBehaviour
         enemyQueueToSpawn = new();
         enemyQueueToRemove = new();
         damageData = new();
-        damageOverTimeQueue = new();
+        effectQueue = new();
         builtTowers = new List<TowerBehavior>();
         enemySpawner.Init();
 
@@ -65,6 +66,8 @@ public class GameManager : MonoBehaviour
             nodeDistances[i] = Vector3.Distance(nodePositions[i], nodePositions[i + 1]);
         }
 
+        currentWave = 0;
+
         StartCoroutine(GameLoop());
         //InvokeRepeating("summonTest", 0f, 1f);
     }
@@ -78,15 +81,108 @@ public class GameManager : MonoBehaviour
     {
         if (waveActive) return;
         waveActive = true;
-        StartCoroutine(Wave());
+        StartCoroutine(Wave(currentWave));
+        currentWave++;
     }
 
-    IEnumerator Wave()
+    IEnumerator Wave(int wave)
     {
-        for (int i = 0; i < 10; i++)
+        switch (wave)
         {
-            EnqueueEnemy(1);
-            yield return new WaitForSeconds(1);
+            case 0:
+                for (int i = 0; i < 5; i++)
+                {
+                    EnqueueEnemy(1);
+                    yield return new WaitForSeconds(1);
+                }
+                break;
+            case 1:
+                for (int i = 0; i < 9; i++)
+                {
+                    EnqueueEnemy(1);
+                    yield return new WaitForSeconds(1);
+                }
+                break;
+            case 2:
+                for (int i = 0; i < 5; i++)
+                {
+                    EnqueueEnemy(2);
+                    yield return new WaitForSeconds(0.5f);
+                }
+                break;
+            case 3:
+
+                for (int i = 0; i < 5; i++)
+                {
+                    EnqueueEnemy(1);
+                    yield return new WaitForSeconds(1);
+                    EnqueueEnemy(2);
+                    yield return new WaitForSeconds(1);
+                }
+                break;
+            case 4:
+                for (int i = 0; i < 6; i++)
+                {
+                    EnqueueEnemy(1);
+                    yield return new WaitForSeconds(1f);
+                    EnqueueEnemy(1);
+                    yield return new WaitForSeconds(1f);
+                    EnqueueEnemy(1);
+                    yield return new WaitForSeconds(1f);
+                    EnqueueEnemy(2);
+                    yield return new WaitForSeconds(0.5f);
+                    EnqueueEnemy(2);
+                    yield return new WaitForSeconds(.5f);
+                }
+                break;
+            case 5:
+                for (int i = 0; i < 10; i++)
+                {
+                    EnqueueEnemy(3);
+                    yield return new WaitForSeconds(1);
+                }
+                break;
+            case 6:
+                for (int i = 0; i < 6; i++)
+                {
+                    EnqueueEnemy(3);
+                    yield return new WaitForSeconds(1);
+                }
+                for (int i = 0; i < 50; i++)
+                {
+                    EnqueueEnemy(2);
+                    yield return new WaitForSeconds(.25f);
+                }
+                break;
+            case 7:
+                for (int i = 0; i < 10; i++)
+                {
+                    EnqueueEnemy(3);
+                    yield return new WaitForSeconds(1f);
+                    EnqueueEnemy(2);
+                    yield return new WaitForSeconds(0.25f);
+                    EnqueueEnemy(1);
+                    yield return new WaitForSeconds(0.5f);
+                    EnqueueEnemy(3);
+                    yield return new WaitForSeconds(0.1f);
+                }
+                break;
+            case 8:
+                for (int i = 0; i < 50; i++)
+                {
+                    EnqueueEnemy(2);
+                    yield return new WaitForSeconds(0.15f);
+                }
+                yield return new WaitForSeconds(1);
+                break;
+            case 9:
+                EnqueueEnemy(4);
+                yield return new WaitForSeconds(1);
+                break;
+            default:
+                currentWave = 0;
+                StartCoroutine(Wave(currentWave));
+                break;
         }
     }
 
@@ -154,20 +250,21 @@ public class GameManager : MonoBehaviour
 
 
             //Apply Effects
-            if (damageOverTimeQueue.Count > 0)
+            if (effectQueue.Count > 0)
             {
-                int dotSize = damageOverTimeQueue.Count;
-                for (int i = 0; i < dotSize; i++)
+                int effectSize = effectQueue.Count;
+                for (int i = 0; i < effectSize; i++)
                 {
-                    ApplyDamageOverTimeData currentDamageData = damageOverTimeQueue.Dequeue();
-                    DamageOverTime dotDuplicate = currentDamageData.enemyToAffect.activeEffects.Find(x => x.effectName == currentDamageData.typeOfDamageToApply.effectName);
-                    if (dotDuplicate == null)
+                    ApplyEffectData currentDamageData = effectQueue.Dequeue();
+
+                    Effect effectDuplicate = currentDamageData.enemyToAffect.activeEffects.Find(x => x.effectName == currentDamageData.effectToApply.effectName);
+                    if (effectDuplicate == null)
                     {
-                        currentDamageData.enemyToAffect.activeEffects.Add(currentDamageData.typeOfDamageToApply);
+                        currentDamageData.enemyToAffect.activeEffects.Add(currentDamageData.effectToApply);
                     }
                     else
                     {
-                        dotDuplicate.length = currentDamageData.typeOfDamageToApply.length;
+                        effectDuplicate.duration = currentDamageData.effectToApply.duration;
                     }
                 }
             }
@@ -217,9 +314,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void EnqueueDamageOverTime(ApplyDamageOverTimeData dotData)
+    public void EnqueueAffectToApply(ApplyEffectData effectData)
     {
-        damageOverTimeQueue.Enqueue(dotData);
+        effectQueue.Enqueue(effectData);
     }
 
     public void EnqueueDamageData(EnemyDamageData damageData)
@@ -241,30 +338,30 @@ public class GameManager : MonoBehaviour
         enemyQueueToRemove.Enqueue(enemyToRemove);
     }
 
-    public class DamageOverTime
+    public class Effect
     {
-        public DamageOverTime(string effectName, float damage, float length, float damageRate)
+        public Effect(string effectName, float damage, float duration, float damageRate)
         {
             this.effectName = effectName;
             this.damage = damage;
-            this.length = length;
+            this.duration = duration;
             this.damageRate = damageRate;
         }
         public string effectName;
         public float damage;
-        public float length;
+        public float duration;
         public float damageRate;
         public float damageDelay;
     }
 
-    public struct ApplyDamageOverTimeData
+    public struct ApplyEffectData
     {
-        public ApplyDamageOverTimeData(DamageOverTime typeOfDamageToApply, Enemy enemyToAffect)
+        public ApplyEffectData(Effect effectToApply, Enemy enemyToAffect)
         {
-            this.typeOfDamageToApply = typeOfDamageToApply;
+            this.effectToApply = effectToApply;
             this.enemyToAffect = enemyToAffect;
         }
-        public DamageOverTime typeOfDamageToApply;
+        public Effect effectToApply;
         public Enemy enemyToAffect;
     }
 

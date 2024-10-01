@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FireTriggerCollisionDetector : MonoBehaviour
@@ -18,9 +16,9 @@ public class FireTriggerCollisionDetector : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            GameManager.DamageOverTime onFire = new GameManager.DamageOverTime("Fire", parent.fireRate, parent.damage, 5f);
-            GameManager.ApplyDamageOverTimeData dotData = new GameManager.ApplyDamageOverTimeData(onFire, enemySpawner.enemyTransformDictionary[other.transform.parent]);
-            gameManager.EnqueueDamageOverTime(dotData);
+            GameManager.Effect onFire = new GameManager.Effect("Fire", parent.fireRate, parent.damage, 5f);
+            GameManager.ApplyEffectData effectData = new GameManager.ApplyEffectData(onFire, enemySpawner.enemyTransformDictionary[other.transform]);
+            gameManager.EnqueueAffectToApply(effectData);
         }
     }
 }

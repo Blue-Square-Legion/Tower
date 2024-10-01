@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7313604656067131729}
   - component: {fileID: -2798963494309680573}
   m_Layer: 6
-  m_Name: BasicEnemy
+  m_Name: Boss 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31e664d0f1b7e0441b4e765c21f2e33a, type: 2}
+  - {fileID: 2100000, guid: c81751fca0366e740a2f631e14a08a92, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -119,11 +119,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f116d4f62f2db374e8fa2359cce6ff0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 8
+  maxHealth: 100
   damageToPlayer: 1
   moneyToPlayer: 10
   currentHealth: 0
-  speed: 4
+  speed: 2
   damageResistance: 1
   ID: 0
   nodeIndex: 0

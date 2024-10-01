@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     public float damageResistance;
     public int ID;
     public int nodeIndex;
-    public List<GameManager.DamageOverTime> activeEffects;
+    public List<GameManager.Effect> activeEffects;
     GameManager gameManager;
     public void Init()
     {
@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
         int activeEffectsCount = activeEffects.Count;
         for (int i = 0; i < activeEffectsCount; i++)
         {
-            if (activeEffects[i].length > 0f)
+            if (activeEffects[i].duration > 0f)
             {
                 if (activeEffects[i].damageDelay > 0f)
                 {
@@ -50,9 +50,9 @@ public class Enemy : MonoBehaviour
                     gameManager.EnqueueDamageData(new GameManager.EnemyDamageData(this, activeEffects[i].damage, 1f));
                     activeEffects[i].damageDelay = 1f / activeEffects[i].damageRate;
                 }
-                activeEffects[i].length -= Time.deltaTime;
+                activeEffects[i].duration -= Time.deltaTime;
             }
         }
-        activeEffects.RemoveAll(x => x.length <= 0);
+        activeEffects.RemoveAll(x => x.duration <= 0);
     }
 }

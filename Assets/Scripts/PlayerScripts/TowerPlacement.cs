@@ -2,7 +2,24 @@ using UnityEngine;
 
 public class TowerPlacement : MonoBehaviour
 {
-    [SerializeField] private Camera cam;
+    #region Singleton
+
+    private static TowerPlacement instance;
+    public static TowerPlacement Instance
+    {
+        get
+        {
+            if (instance == null)
+                instance = FindObjectOfType(typeof(TowerPlacement)) as TowerPlacement;
+            return instance;
+        }
+        set { instance = value; }
+    }
+
+    #endregion
+
+
+    public Camera cam;
     [SerializeField] private LayerMask placementCheckMask;
     [SerializeField] private LayerMask placementColliderMask;
     private GameObject currentTowerBeingPlaced;
@@ -68,7 +85,7 @@ public class TowerPlacement : MonoBehaviour
     public void SetTowerToPlace(GameObject tower)
     {
         //return if not enough money
-        if (player.GetMoney() < tower.GetComponent<TowerBehavior>().cost || player.GetMoney() == 0) return;
+        if (player.GetMoney() < tower.GetComponent<TowerBehavior>().cost) return;
 
         if (currentTowerBeingPlaced == null)
             currentTowerBeingPlaced = Instantiate(tower, Vector3.zero, Quaternion.identity);

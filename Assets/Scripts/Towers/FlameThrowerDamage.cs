@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FlameThrowerDamage : MonoBehaviour, IDamageMethod
@@ -10,13 +8,11 @@ public class FlameThrowerDamage : MonoBehaviour, IDamageMethod
     GameManager gameManager;
     [NonSerialized] public float damage;
     [NonSerialized] public float fireRate;
-    private float delay;
     public void Init(float damage, float fireRate)
     {
         gameManager = GameManager.Instance;
         this.damage = damage;
         this.fireRate = fireRate;
-        delay = 1f / fireRate;
     }
 
     public void damageTick(Enemy target)
