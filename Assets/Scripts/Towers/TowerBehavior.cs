@@ -9,6 +9,7 @@ public class TowerBehavior : MonoBehaviour
     public float damage;
     public float fireRate;
     public float range;
+    public int cost;
 
     private float delay;
 
@@ -28,6 +29,7 @@ public class TowerBehavior : MonoBehaviour
         }
 
         delay = 1 / fireRate;
+        cost = 100;
     }
 
     //Desyncs the towers from regular game loop to prevent errors

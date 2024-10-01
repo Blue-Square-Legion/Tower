@@ -4,6 +4,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private int maxHealth;
+    public int damageToPlayer;
+    public int moneyToPlayer;
     public float currentHealth;
     public float speed;
     public float damageResistance;
@@ -19,6 +21,8 @@ public class Enemy : MonoBehaviour
         transform.position = gameManager.nodePositions[0];
         damageResistance = 1;
         nodeIndex = 0;
+        damageToPlayer = 1;
+        moneyToPlayer = 10;
     }
 
     public void TakeDamage(int damage)
