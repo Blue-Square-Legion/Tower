@@ -26,6 +26,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject titleScreen;
 
     [SerializeField] GameObject gameOverScreen;
+    [SerializeField] GameObject helpScreen;
 
     private void Start()
     {
@@ -33,6 +34,8 @@ public class UIManager : MonoBehaviour
             gameOverScreen.SetActive(false);
         if (creditsScreen != null)
             creditsScreen.SetActive(false);
+        if (helpScreen != null)
+            helpScreen.SetActive(false);
     }
 
     public void GameOver()
@@ -55,5 +58,23 @@ public class UIManager : MonoBehaviour
     {
         creditsScreen.SetActive(active);
         titleScreen.SetActive(!active);
+    }
+    public void OpenHelpScreen()
+    {
+        if (helpScreen.activeInHierarchy) return;
+        Time.timeScale = 0;
+        helpScreen.SetActive(true);
+    }
+
+    public void CloseHelpScreen()
+    {
+        Time.timeScale = 1;
+        helpScreen.SetActive(false);
+    }
+
+    public void ReturnToTitle()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
     }
 }
