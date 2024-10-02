@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Prototyping Scene - EDITOR ONLY/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/Scenes/Prototyping Scene - EDITOR ONLY/TitleScreen.unity
+    guid: e87ca2195549ed54fae0c0ceb780f33a
+  - enabled: 1
     path: Assets/Scenes/Prototyping Scene - EDITOR ONLY/PlayTest.unity
     guid: 116945eebdadabb498777b1a4967bddc
   m_configObjects: {}
