@@ -9,21 +9,23 @@ public class NavMeshMovement : MonoBehaviour
 {
     public Transform target;
     private NavMeshAgent agent;
-    private NavMeshPath path;
 
     void Start()
     {
+        target = GameObject.Find("EndPoint").transform;
         agent = GetComponent<NavMeshAgent>();
         agent.SetDestination(target.position);
-        path = agent.path;
     }
 
-    void Update()
+    public bool ReachedEnd()
     {
-        
-        //NavMeshPathStatus pathStatus = agent.pathStatus;
-        agent.CalculatePath(target.position, path);
-        
-        print(path.status);
+        if (agent != null && agent.remainingDistance <= 1)
+        {
+            return true;
+        }
+        //if (agent.remainingDistance <= 1)
+        //    return true;
+        else return false;
+
     }
 }

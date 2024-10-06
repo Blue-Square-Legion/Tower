@@ -69,13 +69,7 @@ public class GameManager : MonoBehaviour
         currentWave = 0;
 
         StartCoroutine(GameLoop());
-        //InvokeRepeating("summonTest", 0f, 1f);
     }
-
-    //public void summonTest()
-    //{
-    //    EnqueueEnemy(1);
-    //}
 
     public void EnqueueWave()
     {
@@ -202,33 +196,32 @@ public class GameManager : MonoBehaviour
             }
 
             //Move Enemies
-            NativeArray<Vector3> nodesToUse = new(nodePositions, Allocator.TempJob);
-            NativeArray<float> enemySpeeds = new(enemySpawner.spawnedEnemies.Count, Allocator.TempJob);
-            NativeArray<int> nodeIndicies = new(enemySpawner.spawnedEnemies.Count, Allocator.TempJob);
-            TransformAccessArray enemyAccess = new(enemySpawner.spawnedEnemiesTransform.ToArray(), 2);
+            //NativeArray<Vector3> nodesToUse = new(nodePositions, Allocator.TempJob);
+            //NativeArray<float> enemySpeeds = new(enemySpawner.spawnedEnemies.Count, Allocator.TempJob);
+            //NativeArray<int> nodeIndicies = new(enemySpawner.spawnedEnemies.Count, Allocator.TempJob);
+            //TransformAccessArray enemyAccess = new(enemySpawner.spawnedEnemiesTransform.ToArray(), 2);
+
+            //for (int i = 0; i < enemySpawner.spawnedEnemies.Count; i++)
+            //{
+            //    enemySpeeds[i] = enemySpawner.spawnedEnemies[i].speed;
+            //    nodeIndicies[i] = enemySpawner.spawnedEnemies[i].nodeIndex;
+            //}
+
+            //MoveEnemies moveEnemies = new MoveEnemies
+            //{
+            //    nodePositions = nodesToUse,
+            //    enemySpeed = enemySpeeds,
+            //    nodeIndex = nodeIndicies,
+            //    deltaTime = Time.deltaTime
+            //};
+
+            //JobHandle moveJobHandle =  moveEnemies.Schedule(enemyAccess);
+            //moveJobHandle.Complete();
 
             for (int i = 0; i < enemySpawner.spawnedEnemies.Count; i++)
             {
-                enemySpeeds[i] = enemySpawner.spawnedEnemies[i].speed;
-                nodeIndicies[i] = enemySpawner.spawnedEnemies[i].nodeIndex;
-            }
-
-            MoveEnemies moveEnemies = new MoveEnemies
-            {
-                nodePositions = nodesToUse,
-                enemySpeed = enemySpeeds,
-                nodeIndex = nodeIndicies,
-                deltaTime = Time.deltaTime
-            };
-
-            JobHandle moveJobHandle =  moveEnemies.Schedule(enemyAccess);
-            moveJobHandle.Complete();
-
-            for (int i = 0; i < enemySpawner.spawnedEnemies.Count; i++)
-            {
-                enemySpawner.spawnedEnemies[i].nodeIndex = nodeIndicies[i];
-
-                if (enemySpawner.spawnedEnemies[i].nodeIndex == nodePositions.Length)
+                //enemySpawner.spawnedEnemies[i].nodeIndex = nodeIndicies[i];
+                if (enemySpawner.spawnedEnemies[i].navMeshMovement.ReachedEnd())
                 {
                     //Enemy Reached the end of the map
                     EnqueEnemyToRemove(enemySpawner.spawnedEnemies[i]);
@@ -236,18 +229,17 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-            nodesToUse.Dispose();
-            enemySpeeds.Dispose();
-            nodeIndicies.Dispose();
-            enemyAccess.Dispose();
+            //nodesToUse.Dispose();
+            //enemySpeeds.Dispose();
+            //nodeIndicies.Dispose();
+            //enemyAccess.Dispose();
 
             //Tick Towers
-            foreach(TowerBehavior tower in builtTowers)
+            foreach (TowerBehavior tower in builtTowers)
             {
                 tower.target = TowerTargetting.GetTarget(tower, TowerTargetting.TargetType.First);
                 tower.Tick();
             }
-
 
             //Apply Effects
             if (effectQueue.Count > 0)

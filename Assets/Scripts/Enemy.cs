@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     public int nodeIndex;
     public List<GameManager.Effect> activeEffects;
     GameManager gameManager;
+    public NavMeshMovement navMeshMovement;
     public void Init()
     {
         gameManager = GameManager.Instance;
@@ -23,6 +24,7 @@ public class Enemy : MonoBehaviour
         nodeIndex = 0;
         damageToPlayer = 1;
         moneyToPlayer = 10;
+        navMeshMovement = GetComponent<NavMeshMovement>();
     }
 
     public void TakeDamage(int damage)
@@ -54,5 +56,10 @@ public class Enemy : MonoBehaviour
             }
         }
         activeEffects.RemoveAll(x => x.duration <= 0);
+    }
+
+    public void ReachedEnd()
+    {
+
     }
 }

@@ -77,18 +77,9 @@ public class TowerPlacement : MonoBehaviour
                     //Checks if the tower is too close to a different tower or structure
                     if (!Physics.CheckBox(boxCenter, halfExtends, Quaternion.identity, placementCheckMask, QueryTriggerInteraction.Ignore))
                     {
-                        ////Places tower
-                        //surface.BuildNavMesh();
-                        //gameManager.builtTowers.Add(currentTowerBeingPlaced.GetComponent<TowerBehavior>());
-                        //player.RemoveMoney(currentTowerBeingPlaced.GetComponent<TowerBehavior>().cost);
-                        //towerCollider.isTrigger = false;
-                        //currentTowerBeingPlaced = null;
-
                         NavMeshPath path = new NavMeshPath();
-                        
                         towerCollider.isTrigger = false;
                         dummySurface.BuildNavMesh();
-                        //surface.BuildNavMesh();
                         agent.CalculatePath(destination.position, path);
 
                         // Build if path wont be blocked
@@ -103,7 +94,6 @@ public class TowerPlacement : MonoBehaviour
                         {
                             towerCollider.isTrigger = true;
                             Destroy(currentTowerBeingPlaced);
-                            //surface.BuildNavMesh();
                             print("Placing the tower here will block all enemy paths");
                         }
                     }
