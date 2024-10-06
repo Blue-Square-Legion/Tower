@@ -1,4 +1,6 @@
+using Unity.AI.Navigation;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class TowerPlacement : MonoBehaviour
 {
@@ -20,6 +22,10 @@ public class TowerPlacement : MonoBehaviour
 
 
     public Camera cam;
+    public NavMeshSurface surface;
+    public NavMeshSurface dummySurface;
+    public NavMeshAgent agent;
+    public Transform destination;
     [SerializeField] private LayerMask placementCheckMask;
     [SerializeField] private LayerMask placementColliderMask;
     private GameObject currentTowerBeingPlaced;
@@ -71,11 +77,25 @@ public class TowerPlacement : MonoBehaviour
                     //Checks if the tower is too close to a different tower or structure
                     if (!Physics.CheckBox(boxCenter, halfExtends, Quaternion.identity, placementCheckMask, QueryTriggerInteraction.Ignore))
                     {
-                        //Places tower
-                        gameManager.builtTowers.Add(currentTowerBeingPlaced.GetComponent<TowerBehavior>());
-                        player.RemoveMoney(currentTowerBeingPlaced.GetComponent<TowerBehavior>().cost);
+                        NavMeshPath path = new NavMeshPath();
                         towerCollider.isTrigger = false;
-                        currentTowerBeingPlaced = null;
+                        dummySurface.BuildNavMesh();
+                        agent.CalculatePath(destination.position, path);
+
+                        // Build if path wont be blocked
+                        if (path.status == NavMeshPathStatus.PathComplete)
+                        {
+                            surface.BuildNavMesh();
+                            gameManager.builtTowers.Add(currentTowerBeingPlaced.GetComponent<TowerBehavior>());
+                            player.RemoveMoney(currentTowerBeingPlaced.GetComponent<TowerBehavior>().cost);
+                            towerCollider.isTrigger = false;
+                            currentTowerBeingPlaced = null;
+                        } else
+                        {
+                            towerCollider.isTrigger = true;
+                            Destroy(currentTowerBeingPlaced);
+                            print("Placing the tower here will block all enemy paths");
+                        }
                     }
                 }
             }
