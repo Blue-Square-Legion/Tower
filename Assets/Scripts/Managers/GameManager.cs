@@ -332,14 +332,14 @@ public class GameManager : MonoBehaviour
 
     public class Effect
     {
-        public Effect(string effectName, float damage, float duration, float damageRate)
+        public Effect(EffectNames effectName, float damage, float duration, float damageRate)
         {
             this.effectName = effectName;
             this.damage = damage;
             this.duration = duration;
             this.damageRate = damageRate;
         }
-        public string effectName;
+        public EffectNames effectName;
         public float damage;
         public float duration;
         public float damageRate;
@@ -395,5 +395,10 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public enum EffectNames
+    {
+        Fire
     }
 }

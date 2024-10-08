@@ -16,7 +16,7 @@ public class FireTriggerCollisionDetector : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            GameManager.Effect onFire = new GameManager.Effect("Fire", parent.fireRate, parent.damage, 5f);
+            GameManager.Effect onFire = new GameManager.Effect(GameManager.EffectNames.Fire, parent.fireRate, parent.damage, 5f);
             GameManager.ApplyEffectData effectData = new GameManager.ApplyEffectData(onFire, enemySpawner.enemyTransformDictionary[other.transform]);
             gameManager.EnqueueAffectToApply(effectData);
         }

@@ -176,7 +176,7 @@ MonoBehaviour:
   damage: 1
   fireRate: 0.25
   range: 2
-  cost: 1000
+  cost: 300
 --- !u!114 &8336197607123604105
 MonoBehaviour:
   m_ObjectHideFlags: 0
