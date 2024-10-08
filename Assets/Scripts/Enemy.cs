@@ -14,10 +14,13 @@ public class Enemy : MonoBehaviour
     public List<GameManager.Effect> activeEffects;
     GameManager gameManager;
     public NavMeshMovement navMeshMovement;
+
+    private float normalSpeed;
     public void Init()
     {
         gameManager = GameManager.Instance;
         currentHealth = maxHealth;
+        normalSpeed = speed;
         activeEffects = new();
         transform.position = gameManager.SpawnPoint.position;
         damageResistance = 1;
@@ -53,6 +56,14 @@ public class Enemy : MonoBehaviour
                     activeEffects[i].damageDelay = 1f / activeEffects[i].damageRate;
                 }
                 activeEffects[i].duration -= Time.deltaTime;
+            }
+            if (activeEffects[i].effectName == GameManager.EffectNames.Fire)
+            {
+                if (activeEffects[i].duration > 0)
+                    speed *= 0.8f;
+                else
+                    speed = normalSpeed;
+
             }
         }
         activeEffects.RemoveAll(x => x.duration <= 0);

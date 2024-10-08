@@ -50,9 +50,6 @@ public class TowerBehavior : MonoBehaviour
             towerPivot.transform.rotation = Quaternion.LookRotation(target.transform.position - transform.position);
         }
 
-        if (Input.GetMouseButtonDown(0))
-            isSelected = false;
-
         //Ray casts from screen to mouse
         Ray camRay = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitInfo;
@@ -61,7 +58,16 @@ public class TowerBehavior : MonoBehaviour
         {
             //If tower was clicked
             if (Input.GetMouseButtonDown(0))
-                isSelected = true;
+            {
+                if (Input.GetMouseButtonDown(0) && hitInfo.collider.gameObject == gameObject)
+                    isSelected = !isSelected;
+                else
+                    isSelected = false;
+            }
+        }
+        else if (Input.GetMouseButtonDown(0))
+        {
+            isSelected = false;
         }
             
         gameObject.transform.Find("Base").transform.Find("Range").gameObject.SetActive(isSelected);
