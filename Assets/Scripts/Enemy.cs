@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
         gameManager = GameManager.Instance;
         currentHealth = maxHealth;
         activeEffects = new();
-        transform.position = gameManager.nodePositions[0];
+        transform.position = gameManager.SpawnPoint.position;
         damageResistance = 1;
         nodeIndex = 0;
         damageToPlayer = 1;

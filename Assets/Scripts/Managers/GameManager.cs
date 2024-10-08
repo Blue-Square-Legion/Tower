@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
                 instance = FindObjectOfType(typeof(GameManager)) as GameManager;
             return instance;
         }
-        set 
+        set
         {
             instance = value;
         }
@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     [NonSerialized] public List<TowerBehavior> builtTowers;
     [NonSerialized] public Vector3[] nodePositions;
     [NonSerialized] public float[] nodeDistances;
+    [SerializeField] public Transform SpawnPoint;
 
     [SerializeField] Player player;
 
