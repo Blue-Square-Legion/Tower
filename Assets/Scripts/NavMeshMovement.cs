@@ -23,9 +23,11 @@ public class NavMeshMovement : MonoBehaviour
         {
             return true;
         }
-        //if (agent.remainingDistance <= 1)
-        //    return true;
         else return false;
+    }
 
+    public void SetSpeed(float speed)
+    {
+        agent.speed = speed;
     }
 }

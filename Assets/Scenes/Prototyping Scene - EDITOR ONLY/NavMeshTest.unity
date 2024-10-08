@@ -2930,7 +2930,7 @@ MonoBehaviour:
   healthText: {fileID: 1728860207}
   moneyText: {fileID: 2048882858}
   maxHealth: 20
-  startingMoney: 400
+  startingMoney: 1000
 --- !u!114 &555665699
 MonoBehaviour:
   m_ObjectHideFlags: 0
