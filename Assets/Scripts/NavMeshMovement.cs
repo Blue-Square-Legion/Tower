@@ -8,7 +8,7 @@ using System.IO;
 public class NavMeshMovement : MonoBehaviour
 {
     public Transform target;
-    private NavMeshAgent agent;
+    public NavMeshAgent agent;
 
     void Start()
     {

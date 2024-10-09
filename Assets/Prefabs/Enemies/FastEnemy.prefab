@@ -127,9 +127,9 @@ MonoBehaviour:
   currentHealth: 0
   speed: 12
   damageResistance: 1
-  ID: 0
+  ID: 2
   nodeIndex: 0
-  navMeshMovement: {fileID: 0}
+  navMeshMovement: {fileID: 7188474276556252650}
 --- !u!54 &-2798963494309680573
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -192,3 +192,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  agent: {fileID: 579329501338793575}

@@ -1488,7 +1488,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00018310547, y: 0}
+  m_AnchoredPosition: {x: -0.00024414062, y: 0}
   m_SizeDelta: {x: -0.0004, y: 0.00012207}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &198522256
@@ -2344,6 +2344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endLoop: 1
   nodeParent: {fileID: 1063959828}
+  SpawnPoint: {fileID: 925461563}
   player: {fileID: 555665698}
 --- !u!1 &484379759
 GameObject:
@@ -4001,7 +4002,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00018310547, y: 0}
+  m_AnchoredPosition: {x: -0.00024414062, y: 0}
   m_SizeDelta: {x: -0.0004, y: 0.00012207}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1101611911
@@ -5843,7 +5844,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: e2970d6add65df042abf79a21e9aaeba, type: 2}
   m_BuildHeightMesh: 0
@@ -5891,7 +5892,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: c4ed6a678ea955f40aecb0045071d784, type: 2}
   m_BuildHeightMesh: 0

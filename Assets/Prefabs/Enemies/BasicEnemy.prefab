@@ -124,12 +124,12 @@ MonoBehaviour:
   maxHealth: 8
   damageToPlayer: 1
   moneyToPlayer: 10
-  currentHealth: 0
+  currentHealth: 8
   speed: 4
   damageResistance: 1
-  ID: 0
+  ID: 1
   nodeIndex: 0
-  navMeshMovement: {fileID: 0}
+  navMeshMovement: {fileID: 8384379518723251504}
 --- !u!54 &-2798963494309680573
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  agent: {fileID: 5303548216850646879}
 --- !u!195 &5303548216850646879
 NavMeshAgent:
   m_ObjectHideFlags: 0
