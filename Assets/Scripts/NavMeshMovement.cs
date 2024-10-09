@@ -1,19 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Unity.AI;
 using UnityEngine.AI;
-using System.IO;
+using System;
 
 public class NavMeshMovement : MonoBehaviour
 {
-    public Transform target;
-    private NavMeshAgent agent;
+    [NonSerialized] public Transform target;
+    [SerializeField] private NavMeshAgent agent;
 
     void Start()
     {
         target = GameObject.Find("EndPoint").transform;
-        agent = GetComponent<NavMeshAgent>();
+        //agent = GetComponent<NavMeshAgent>();
         agent.SetDestination(target.position);
     }
 
@@ -28,6 +25,7 @@ public class NavMeshMovement : MonoBehaviour
 
     public void SetSpeed(float speed)
     {
+        print(agent);
         agent.speed = speed;
     }
 }
