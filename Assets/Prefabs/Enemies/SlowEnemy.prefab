@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 555382059606249497}
   - component: {fileID: 7313604656067131729}
   - component: {fileID: -2798963494309680573}
-  - component: {fileID: 3291778780193111327}
-  - component: {fileID: 208319029811234670}
+  - component: {fileID: 8384379518723251504}
+  - component: {fileID: 5303548216850646879}
   m_Layer: 6
   m_Name: SlowEnemy
   m_TagString: Enemy
@@ -121,11 +121,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f116d4f62f2db374e8fa2359cce6ff0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
+  maxHealth: 32
   damageToPlayer: 1
-  moneyToPlayer: 20
+  moneyToPlayer: 10
   currentHealth: 0
-  speed: 2
+  speed: 1
   damageResistance: 1
   ID: 0
   nodeIndex: 0
@@ -157,29 +157,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!195 &3291778780193111327
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7620145462352396565}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 1.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &208319029811234670
+--- !u!114 &8384379518723251504
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,4 +169,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27540ca45a1732c47afc8d4336c2c9af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  agent: {fileID: 5303548216850646879}
+--- !u!195 &5303548216850646879
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7620145462352396565}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

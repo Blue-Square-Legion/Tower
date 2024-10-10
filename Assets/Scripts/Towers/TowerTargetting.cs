@@ -44,12 +44,25 @@ public class TowerTargetting
             _nodePositions = nodePositions,
             _nodeDistances = nodeDistances,
             _enemyToIndex = enemyToIndex,
-            targetingType = (int) targetType,
+            targetingType = targetType,
             _towerPositon = currentTower.transform.position
         };
 
-        switch ((int) targetType)
+        switch (targetType)
         {
+            case TargetType.First:
+                enemySearchJob.compareValue = Mathf.NegativeInfinity;
+                break;
+            case TargetType.Last:
+                enemySearchJob.compareValue = Mathf.Infinity;
+                break;
+            case TargetType.Close:
+                enemySearchJob.compareValue = Mathf.Infinity;
+                break;
+            case TargetType.Furthest:
+                enemySearchJob.compareValue = Mathf.NegativeInfinity;
+                break;
+            /**
             case 0: //First
             case 2: //Close
                 enemySearchJob.compareValue = Mathf.Infinity;
@@ -61,6 +74,7 @@ public class TowerTargetting
             default:
                 Debug.Log("ERROR: FAILED TO RECOGNIZE TARGETTING TYPE");
                 break;
+            */
         }
 
         JobHandle dependency = new JobHandle();
@@ -106,22 +120,13 @@ public class TowerTargetting
         public Vector3 _towerPositon;
 
         public float compareValue;
-        public int targetingType;
+        public TargetType targetingType;
         public void Execute(int index)
         {
             float distance;
             switch (targetingType)
             {
-                case 0: //First
-                    distance = GetDistanceToEnd(_enemiesToCalculate[index]);
-                    if (distance < compareValue)
-                    {
-                        _enemyToIndex[0] = index;
-                        compareValue = distance;
-                    }
-
-                    break;
-                case 1: //Last
+                case TargetType.First:
                     distance = GetDistanceToEnd(_enemiesToCalculate[index]);
                     if (distance > compareValue)
                     {
@@ -129,7 +134,15 @@ public class TowerTargetting
                         compareValue = distance;
                     }
                     break;
-                case 2: //Close
+                case TargetType.Last:
+                    distance = GetDistanceToEnd(_enemiesToCalculate[index]);
+                    if (distance < compareValue)
+                    {
+                        _enemyToIndex[0] = index;
+                        compareValue = distance;
+                    }
+                    break;
+                case TargetType.Close:
                     distance = Vector3.Distance(_towerPositon, _enemiesToCalculate[index].enemyPosition);
                     if (distance < compareValue)
                     {
@@ -137,7 +150,7 @@ public class TowerTargetting
                         compareValue = distance;
                     }
                     break;
-                case 3: //Furthest
+                case TargetType.Furthest:
                     distance = Vector3.Distance(_towerPositon, _enemiesToCalculate[index].enemyPosition);
                     if (distance > compareValue)
                     {
