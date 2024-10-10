@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
         damageToPlayer = 1;
         moneyToPlayer = 10;
         navMeshMovement = GetComponent<NavMeshMovement>();
-        //navMeshMovement.SetSpeed(speed);
+        navMeshMovement.SetSpeed(speed);
     }
 
     public void TakeDamage(int damage)
