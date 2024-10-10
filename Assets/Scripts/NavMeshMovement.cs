@@ -10,14 +10,15 @@ public class NavMeshMovement : MonoBehaviour
     void Start()
     {
         target = GameObject.Find("EndPoint").transform;
-        //agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
         agent.SetDestination(target.position);
     }
 
     public bool ReachedEnd()
     {
-        if (agent != null && agent.remainingDistance <= 1)
+        if (agent.hasPath && agent.remainingDistance <= 1)
         {
+            print(agent.remainingDistance);
             return true;
         }
         else return false;
@@ -25,7 +26,14 @@ public class NavMeshMovement : MonoBehaviour
 
     public void SetSpeed(float speed)
     {
-        print(agent);
-        agent.speed = speed;
+        //print(agent);
+        if (agent != null)
+            agent.speed = speed;
+    }
+
+    public void ResetDestination()
+    {
+        if(target != null)
+            agent.SetDestination(target.position);
     }
 }
