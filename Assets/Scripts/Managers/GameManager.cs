@@ -5,6 +5,7 @@ using Unity.Collections;
 using Unity.Jobs;
 using UnityEngine;
 using UnityEngine.Jobs;
+using static UnityEngine.Splines.SplineInstantiate;
 
 public class GameManager : MonoBehaviour
 {
@@ -192,7 +193,8 @@ public class GameManager : MonoBehaviour
                 int queueSuze = enemyQueueToSpawn.Count;
                 for (int i = 0; i < queueSuze; i++)
                 {
-                    enemySpawner.spawnEnemy(enemyQueueToSpawn.Dequeue());
+                    Enemy enemy = enemySpawner.spawnEnemy(enemyQueueToSpawn.Dequeue());
+                    enemy.GetComponent<NavMeshMovement>().ResetDestination();
                 }
             }
 
