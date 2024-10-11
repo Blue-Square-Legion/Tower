@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private int maxHealth;
-    public int damageToPlayer;
+    public int maxHealth;
     public int moneyToPlayer;
     public float currentHealth;
     public float speed;
@@ -25,7 +24,6 @@ public class Enemy : MonoBehaviour
         transform.position = gameManager.SpawnPoint.position;
         damageResistance = 1;
         nodeIndex = 0;
-        damageToPlayer = 1;
         moneyToPlayer = 10;
         navMeshMovement = GetComponent<NavMeshMovement>();
         navMeshMovement.SetSpeed(speed);

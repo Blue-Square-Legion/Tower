@@ -79,7 +79,7 @@ public class EnemySpawner : MonoBehaviour
                 //Dequeue enemy and initialize it
                 spawnedEnemy = ReferencedQueue.Dequeue();
                 spawnedEnemy.Init();
-
+                spawnedEnemy.GetComponentInChildren<HealthBar>().UpdateHealth(spawnedEnemy.maxHealth);
                 spawnedEnemy.gameObject.SetActive(true);
             }
             else

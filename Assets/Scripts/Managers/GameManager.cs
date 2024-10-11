@@ -228,7 +228,7 @@ public class GameManager : MonoBehaviour
                 {
                     //Enemy Reached the end of the map
                     EnqueEnemyToRemove(enemySpawner.spawnedEnemies[i]);
-                    player.DoDamage(enemySpawner.spawnedEnemies[i].damageToPlayer);
+                    player.DoDamage((int) enemySpawner.spawnedEnemies[i].currentHealth);
                 }
             }
 
@@ -279,7 +279,7 @@ public class GameManager : MonoBehaviour
                 {
                     EnemyDamageData currentDamageData = damageData.Dequeue();
                     currentDamageData.targettedEnemy.currentHealth -= currentDamageData.totalDamage / currentDamageData.resistance;
-
+                    currentDamageData.targettedEnemy.GetComponentInChildren<HealthBar>().UpdateHealth((int) currentDamageData.targettedEnemy.currentHealth);
                     if (currentDamageData.targettedEnemy.currentHealth <= 0)
                     {
                         player.GiveMoney(currentDamageData.targettedEnemy.moneyToPlayer);
