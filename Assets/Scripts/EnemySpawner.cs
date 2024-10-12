@@ -35,7 +35,7 @@ public class EnemySpawner : MonoBehaviour
 
     public Dictionary<Transform, Enemy> enemyTransformDictionary;
 
-    [SerializeField] Transform SpawnPoint;
+    public Transform[] SpawnPoints;
 
     public  bool isInitialized = false;
     GameManager gameManager;
@@ -85,7 +85,7 @@ public class EnemySpawner : MonoBehaviour
             else
             {
                 //Instantiate new insatnce of enemy and initialize
-                GameObject newEnemy = Instantiate(enemyPrefab[enemyID], gameManager.nodePositions[0], Quaternion.identity);
+                GameObject newEnemy = Instantiate(enemyPrefab[enemyID], gameManager.SpawnPoint.position, Quaternion.identity);
                 spawnedEnemy = newEnemy.GetComponent<Enemy>();
                 spawnedEnemy.Init();
             }

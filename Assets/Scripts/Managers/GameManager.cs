@@ -37,12 +37,15 @@ public class GameManager : MonoBehaviour
     [NonSerialized] public Vector3[] nodePositions;
     [NonSerialized] public float[] nodeDistances;
     [SerializeField] public Transform SpawnPoint;
+    [SerializeField] public Transform NextSpawnPoint;
 
     [SerializeField] Player player;
 
     EnemySpawner enemySpawner;
     private bool waveActive = false;
     int currentWave;
+    int selectedSpawnpoint;
+    int nextSpawnpoint;
     void Start()
     {
         enemySpawner = EnemySpawner.Instance;
@@ -69,16 +72,32 @@ public class GameManager : MonoBehaviour
         }
 
         currentWave = 0;
-
+        selectedSpawnpoint = 0;
+        SpawnPoint = EnemySpawner.Instance.SpawnPoints[selectedSpawnpoint];
+        NextSpawnPoint = EnemySpawner.Instance.SpawnPoints[selectedSpawnpoint + 1];
+        NextSpawnPoint.GetChild(0).gameObject.SetActive(true);
         StartCoroutine(GameLoop());
     }
 
     public void EnqueueWave()
     {
+        int nextSpawnPoint = 0;
         if (waveActive) return;
         waveActive = true;
         StartCoroutine(Wave(currentWave));
         currentWave++;
+        SpawnPoint.GetChild(0).gameObject.SetActive(false);
+        selectedSpawnpoint++;
+        nextSpawnPoint++;
+        if (selectedSpawnpoint > EnemySpawner.Instance.SpawnPoints.Length-1)
+            selectedSpawnpoint = 0;
+        SpawnPoint = EnemySpawner.Instance.SpawnPoints[selectedSpawnpoint];
+
+        if (nextSpawnPoint > EnemySpawner.Instance.SpawnPoints.Length - 1)
+            nextSpawnPoint = 0;
+        NextSpawnPoint = EnemySpawner.Instance.SpawnPoints[nextSpawnPoint];
+
+        
     }
 
     IEnumerator Wave(int wave)
@@ -199,27 +218,6 @@ public class GameManager : MonoBehaviour
             }
 
             //Move Enemies
-            //NativeArray<Vector3> nodesToUse = new(nodePositions, Allocator.TempJob);
-            //NativeArray<float> enemySpeeds = new(enemySpawner.spawnedEnemies.Count, Allocator.TempJob);
-            //NativeArray<int> nodeIndicies = new(enemySpawner.spawnedEnemies.Count, Allocator.TempJob);
-            //TransformAccessArray enemyAccess = new(enemySpawner.spawnedEnemiesTransform.ToArray(), 2);
-
-            //for (int i = 0; i < enemySpawner.spawnedEnemies.Count; i++)
-            //{
-            //    enemySpeeds[i] = enemySpawner.spawnedEnemies[i].speed;
-            //    nodeIndicies[i] = enemySpawner.spawnedEnemies[i].nodeIndex;
-            //}
-
-            //MoveEnemies moveEnemies = new MoveEnemies
-            //{
-            //    nodePositions = nodesToUse,
-            //    enemySpeed = enemySpeeds,
-            //    nodeIndex = nodeIndicies,
-            //    deltaTime = Time.deltaTime
-            //};
-
-            //JobHandle moveJobHandle =  moveEnemies.Schedule(enemyAccess);
-            //moveJobHandle.Complete();
 
             for (int i = 0; i < enemySpawner.spawnedEnemies.Count; i++)
             {
@@ -301,7 +299,12 @@ public class GameManager : MonoBehaviour
             }
 
             if (enemySpawner.spawnedEnemies.Count == 0)
+            {
                 waveActive = false;
+                SpawnPoint.GetChild(0).gameObject.SetActive(false);
+                NextSpawnPoint.GetChild(0).gameObject.SetActive(true);
+            }
+                
 
             //Remove Towers
 
