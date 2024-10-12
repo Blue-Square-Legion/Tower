@@ -94,11 +94,16 @@ public class TowerPlacement : MonoBehaviour
                         {
                             towerCollider.isTrigger = true;
                             Destroy(currentTowerBeingPlaced);
-                            print("Placing the tower here will block all enemy paths");
+                            UIManager.Instance.SendPopUp("Placing the tower here will block all enemy paths");
                         }
                     }
                 }
-            }
+                else
+                {
+                    Destroy(currentTowerBeingPlaced);
+                    UIManager.Instance.SendPopUp("Tower cannot be placed here");
+                }
+            } 
         }
     }
 
@@ -128,5 +133,16 @@ public class TowerPlacement : MonoBehaviour
     public void OnMouseExitAnyButton()
     {
         canPlace = true;
+    }
+
+    public void SellTower(GameObject tower)
+    {
+        player.GiveMoney(tower.GetComponent<TowerBehavior>().cost/2);
+        gameManager.builtTowers.Remove(tower.GetComponent<TowerBehavior>());
+        Destroy(tower);
+        GameManager.Instance.SelectedTower = null;
+        dummySurface.BuildNavMesh();
+        surface.BuildNavMesh();
+        UIManager.Instance.ToggleSell(false);
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -27,6 +28,9 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] GameObject gameOverScreen;
     [SerializeField] GameObject helpScreen;
+    [SerializeField] GameObject sellButton;
+    [SerializeField] GameObject popUpScreen;
+    [SerializeField] TMP_Text popUpMessage;
 
     private void Start()
     {
@@ -36,6 +40,8 @@ public class UIManager : MonoBehaviour
             creditsScreen.SetActive(false);
         if (helpScreen != null)
             helpScreen.SetActive(false);
+        if (popUpScreen != null)
+            popUpScreen.SetActive(false);
     }
 
     public void GameOver()
@@ -77,5 +83,21 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
+    }
+
+    public void ToggleSell(bool tog)
+    {
+        sellButton.SetActive(tog);
+    }
+
+    public void SendPopUp(string text)
+    {
+        popUpMessage.SetText(text);
+        popUpScreen.SetActive(true);
+    }
+
+    public void ClosePopUp()
+    {
+        popUpScreen.SetActive(false);
     }
 }

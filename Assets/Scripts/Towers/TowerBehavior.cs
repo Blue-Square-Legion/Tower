@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TowerBehavior : MonoBehaviour
 {
@@ -16,7 +18,7 @@ public class TowerBehavior : MonoBehaviour
     private float delay;
     private TowerPlacement towerPlacement;
     Camera cam;
-    private bool isSelected;
+    public bool isSelected;
 
     private IDamageMethod currentDamageMethodClass;
 
@@ -49,6 +51,21 @@ public class TowerBehavior : MonoBehaviour
         {
             towerPivot.transform.rotation = Quaternion.LookRotation(target.transform.position - transform.position);
         }
+        // Create a pointer event for UI detection
+        PointerEventData pointerData = new PointerEventData(EventSystem.current)
+        {
+            position = Input.mousePosition
+        };
+
+        // List of raycast results for UI
+        var results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointerData, results);
+
+        // If any UI elements were hit, ignore the raycast for game objects
+        if (results.Count > 0)
+        {
+            return; // Exit if UI is clicked
+        }
 
         //Ray casts from screen to mouse
         Ray camRay = cam.ScreenPointToRay(Input.mousePosition);
@@ -59,14 +76,29 @@ public class TowerBehavior : MonoBehaviour
             //If tower was clicked
             if (Input.GetMouseButtonDown(0))
             {
+                
                 if (Input.GetMouseButtonDown(0) && hitInfo.collider.gameObject == gameObject)
+                {
                     isSelected = !isSelected;
+                    if (isSelected)
+                    {
+                        GameManager.Instance.SelectedTower = gameObject;
+                        UIManager.Instance.ToggleSell(true);
+                    }      
+                }  
                 else
+                {
+                    if (isSelected)
+                        UIManager.Instance.ToggleSell(false);
                     isSelected = false;
+                }
+                    
             }
         }
         else if (Input.GetMouseButtonDown(0))
         {
+            if (isSelected)
+                UIManager.Instance.ToggleSell(false);
             isSelected = false;
         }
             

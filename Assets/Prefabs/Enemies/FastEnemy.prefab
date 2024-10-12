@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 69957898424282094}
   - component: {fileID: 8697638067584571720}
   - component: {fileID: 7055392682956905757}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +284,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 0.003
-  m_BaseOffset: 0
+  m_Height: 0.004
+  m_BaseOffset: 0.002
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
