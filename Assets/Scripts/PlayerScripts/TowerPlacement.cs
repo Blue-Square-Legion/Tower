@@ -129,4 +129,15 @@ public class TowerPlacement : MonoBehaviour
     {
         canPlace = true;
     }
+
+    public void SellTower(GameObject tower)
+    {
+        player.GiveMoney(tower.GetComponent<TowerBehavior>().cost/2);
+        gameManager.builtTowers.Remove(tower.GetComponent<TowerBehavior>());
+        Destroy(tower);
+        GameManager.Instance.SelectedTower = null;
+        dummySurface.BuildNavMesh();
+        surface.BuildNavMesh();
+        UIManager.Instance.ToggleSell(false);
+    }
 }

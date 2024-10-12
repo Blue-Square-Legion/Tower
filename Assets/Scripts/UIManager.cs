@@ -27,6 +27,8 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] GameObject gameOverScreen;
     [SerializeField] GameObject helpScreen;
+    [SerializeField] GameObject sellButton;
+    [SerializeField] GameObject popUp;
 
     private void Start()
     {
@@ -77,5 +79,21 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
+    }
+
+    public void ToggleSell(bool tog)
+    {
+        sellButton.SetActive(tog);
+    }
+
+    public void SendPopUp(string text)
+    {
+        popUp.SetActive(true);
+        //popUp.GetComponent<>
+    }
+
+    public void ClosePopUp()
+    {
+        popUp.SetActive(false);
     }
 }
