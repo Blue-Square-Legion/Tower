@@ -94,11 +94,16 @@ public class TowerPlacement : MonoBehaviour
                         {
                             towerCollider.isTrigger = true;
                             Destroy(currentTowerBeingPlaced);
-                            print("Placing the tower here will block all enemy paths");
+                            UIManager.Instance.SendPopUp("Placing the tower here will block all enemy paths");
                         }
                     }
                 }
-            }
+                else
+                {
+                    Destroy(currentTowerBeingPlaced);
+                    UIManager.Instance.SendPopUp("Tower cannot be placed here");
+                }
+            } 
         }
     }
 
