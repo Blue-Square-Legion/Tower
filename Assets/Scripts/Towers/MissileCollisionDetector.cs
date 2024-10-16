@@ -6,7 +6,7 @@ public class MissileCollisionDetector : MonoBehaviour
     [SerializeField] private MissileDamage parentClass;
     [SerializeField] private ParticleSystem explosionSystem;
     [SerializeField] private ParticleSystem missileSystem;
-    [SerializeField] private float explosionRadius;
+    public float explosionRadius;
     private List<ParticleCollisionEvent> missileCollisions;
 
     GameManager gameManager;

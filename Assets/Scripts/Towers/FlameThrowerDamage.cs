@@ -15,6 +15,11 @@ public class FlameThrowerDamage : MonoBehaviour, IDamageMethod
         this.fireRate = fireRate;
     }
 
+    public void UpdateDamage(float damage)
+    {
+        this.damage = damage;
+    }
+
     public void damageTick(Enemy target)
     {
         fireTrigger.enabled = target != null;

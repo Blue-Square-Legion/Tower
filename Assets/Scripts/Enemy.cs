@@ -59,7 +59,7 @@ public class Enemy : MonoBehaviour
             if (activeEffects[i].effectName == GameManager.EffectNames.Fire)
             {
                 if (activeEffects[i].duration > 0)
-                    navMeshMovement.SetSpeed(speed * 0.5f);
+                    navMeshMovement.SetSpeed(speed * activeEffects[i].modifier);
                 else
                     navMeshMovement.SetSpeed(normalSpeed);
 

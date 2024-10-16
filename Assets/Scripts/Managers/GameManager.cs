@@ -339,18 +339,20 @@ public class GameManager : MonoBehaviour
 
     public class Effect
     {
-        public Effect(EffectNames effectName, float damage, float duration, float damageRate)
+        public Effect(EffectNames effectName, float damage, float duration, float damageRate, float modifier)
         {
             this.effectName = effectName;
             this.damage = damage;
             this.duration = duration;
             this.damageRate = damageRate;
+            this.modifier = modifier;
         }
         public EffectNames effectName;
         public float damage;
         public float duration;
         public float damageRate;
         public float damageDelay;
+        public float modifier;
     }
 
     public struct ApplyEffectData

@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MissileDamage : MonoBehaviour, IDamageMethod
@@ -21,6 +19,16 @@ public class MissileDamage : MonoBehaviour, IDamageMethod
         this.damage = damage;
         this.fireRate = fireRate;
         delay = 1f / fireRate;
+    }
+
+    public void UpdateDamage(float damage)
+    {
+        this.damage = damage;
+    }
+
+    public void UpdateFireRate(float fireRate)
+    {
+        this.fireRate = fireRate;
     }
 
     public void damageTick(Enemy target)
