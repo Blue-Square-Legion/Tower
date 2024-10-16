@@ -47,6 +47,7 @@ public class TowerPlacement : MonoBehaviour
             //Ray casts from screen to mouse
             Ray camRay = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
+            UIManager.Instance.ToggleDeselect(true);
             //Gets data from raycast
             if (Physics.Raycast(camRay, out hitInfo, 100f, placementColliderMask))
             {
@@ -56,6 +57,7 @@ public class TowerPlacement : MonoBehaviour
             //Cancels placing tower
             if (Input.GetKeyDown(KeyCode.Q))
             {
+                UIManager.Instance.ToggleDeselect(false);
                 CancelPlacingTower();
                 return;
             }
@@ -90,11 +92,13 @@ public class TowerPlacement : MonoBehaviour
                             player.RemoveMoney(currentTowerBeingPlaced.GetComponent<TowerBehavior>().cost);
                             towerCollider.isTrigger = false;
                             currentTowerBeingPlaced = null;
+                            UIManager.Instance.ToggleDeselect(false);
                         } else
                         {
                             towerCollider.isTrigger = true;
                             Destroy(currentTowerBeingPlaced);
                             UIManager.Instance.SendPopUp("Placing the tower here will block all enemy paths");
+                            UIManager.Instance.ToggleDeselect(false);
                         }
                     }
                 }

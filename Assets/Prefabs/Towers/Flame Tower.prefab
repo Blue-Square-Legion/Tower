@@ -173,10 +173,12 @@ MonoBehaviour:
   enemiesLayer:
     serializedVersion: 2
     m_Bits: 64
-  damage: 1
+  damage: 0.25
   fireRate: 0.25
   range: 2
   cost: 300
+  isSelected: 0
+  towerType: 1
 --- !u!114 &8336197607123604105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,6 +564,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 8336197607123604105}
+  duration: 5
+  speedModifier: 0.7
 --- !u!1 &6727451244723924498
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,7 +658,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3163988679749510072}
-  - component: {fileID: 5772603217543133203}
   m_Layer: 7
   m_Name: FireTriggerPivot
   m_TagString: Untagged
@@ -678,19 +681,6 @@ Transform:
   - {fileID: 7210178201848848589}
   m_Father: {fileID: 3952748472113168745}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5772603217543133203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8454344530105505432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7f21ca164c24c542b5a8630962e026f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 8336197607123604105}
 --- !u!1001 &4359967254825110601
 PrefabInstance:
   m_ObjectHideFlags: 0

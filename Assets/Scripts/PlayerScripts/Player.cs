@@ -3,6 +3,24 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    #region Singleton
+    private static Player instance;
+    public static Player Instance
+    {
+        get
+        {
+            if (instance == null)
+                instance = FindObjectOfType(typeof(Player)) as Player;
+            return instance;
+        }
+        set
+        {
+            instance = value;
+        }
+    }
+    #endregion
+
+
     [SerializeField] TMP_Text healthText;
     [SerializeField] TMP_Text moneyText;
     [SerializeField] int maxHealth;

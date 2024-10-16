@@ -19,6 +19,15 @@ public class StandardDamage : MonoBehaviour, IDamageMethod
         this.fireRate = fireRate;
         delay = 1f / fireRate;
     }
+    public void UpdateDamage(float damage)
+    {
+        this.damage = damage;
+    }
+
+    public void UpdateFireRate(float fireRate)
+    {
+        this.fireRate = fireRate;
+    }
 
     public void damageTick(Enemy target)
     {
