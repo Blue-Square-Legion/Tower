@@ -69,6 +69,6 @@ public class UpgradePanel : MonoBehaviour
 
     public void SellPressed()
     {
-
+        TowerPlacement.Instance.SellTower(target.gameObject);
     }
 }

@@ -416,10 +416,4 @@ public class GameManager : MonoBehaviour
     {
         Fire
     }
-
-    public void SellTower()
-    {
-        if (SelectedTower != null)
-            TowerPlacement.Instance.SellTower(SelectedTower);
-    }
 }
