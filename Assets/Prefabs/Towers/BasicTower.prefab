@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 3569067476125886872}
   - component: {fileID: 7725279160043233892}
   m_Layer: 3
-  m_Name: Basic
+  m_Name: BasicTower
   m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
