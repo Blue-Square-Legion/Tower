@@ -341,7 +341,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1605367636605968619}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -694,7 +694,7 @@ PrefabInstance:
     - target: {fileID: 1204896475304053468, guid: 15bb3b9f50cfa6149a4db97303abbb7d,
         type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6346178433994488895, guid: 15bb3b9f50cfa6149a4db97303abbb7d,
         type: 3}
