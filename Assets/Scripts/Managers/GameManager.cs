@@ -106,11 +106,17 @@ public class GameManager : MonoBehaviour
         switch (wave)
         {
             case 0:
-                for (int i = 0; i < 5; i++)
-                {
-                    EnqueueEnemy(1);
-                    yield return new WaitForSeconds(1);
-                }
+                EnqueueEnemy(1);
+                yield return new WaitForSeconds(1);
+                EnqueueEnemy(1);
+                yield return new WaitForSeconds(1);
+                EnqueueEnemy(1);
+                yield return new WaitForSeconds(1);
+                EnqueueEnemy(1);
+                yield return new WaitForSeconds(1);
+                EnqueueEnemy(1);
+                yield return new WaitForSeconds(1);
+
                 break;
             case 1:
                 for (int i = 0; i < 9; i++)

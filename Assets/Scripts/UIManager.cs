@@ -25,7 +25,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject titleScreen;
 
     [SerializeField] GameObject gameOverScreen;
-    [SerializeField] GameObject deselect;
+    //[SerializeField] GameObject deselect;
     [SerializeField] GameObject helpScreen;
     [SerializeField] GameObject sellButton;
     [SerializeField] GameObject popUpScreen;
@@ -41,8 +41,8 @@ public class UIManager : MonoBehaviour
             helpScreen.SetActive(false);
         if (popUpScreen != null)
             popUpScreen.SetActive(false);
-        if (deselect != null)
-            deselect.SetActive(false);
+       // if (deselect != null)
+       //     deselect.SetActive(false);
     }
 
     public void GameOver()
@@ -104,6 +104,6 @@ public class UIManager : MonoBehaviour
 
     public void ToggleDeselect(bool isActive)
     {
-        deselect.SetActive(isActive);
+        //deselect.SetActive(isActive);
     }
 }
