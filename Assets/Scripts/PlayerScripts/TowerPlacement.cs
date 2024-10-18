@@ -24,13 +24,14 @@ public class TowerPlacement : MonoBehaviour
     public Camera cam;
     public NavMeshSurface surface;
     public NavMeshSurface dummySurface;
-    public NavMeshAgent agent;
+    public NavMeshAgent[] agents;
     public Transform destination;
     [SerializeField] private LayerMask placementCheckMask;
     [SerializeField] private LayerMask placementColliderMask;
     private GameObject currentTowerBeingPlaced;
     private bool canPlace;
     private Player player;
+    private bool pathBlocked;
 
     GameManager gameManager;
     void Start()
@@ -80,13 +81,10 @@ public class TowerPlacement : MonoBehaviour
                     //Checks if the tower is too close to a different tower or structure
                     if (!Physics.CheckBox(boxCenter, halfExtends, Quaternion.identity, placementCheckMask, QueryTriggerInteraction.Ignore))
                     {
-                        NavMeshPath path = new NavMeshPath();
-                        towerCollider.isTrigger = false;
                         dummySurface.BuildNavMesh();
-                        agent.CalculatePath(destination.position, path);
-
+                        CheckPath();
                         // Build if path wont be blocked
-                        if (path.status == NavMeshPathStatus.PathComplete)
+                        if (!pathBlocked)
                         {
                             if (canPlace)
                             {
@@ -152,5 +150,22 @@ public class TowerPlacement : MonoBehaviour
         GameManager.Instance.SelectedTower = null;
         dummySurface.BuildNavMesh();
         surface.BuildNavMesh();
+    }
+
+    private void CheckPath()
+    {
+        NavMeshPath path = new NavMeshPath();
+        dummySurface.BuildNavMesh();
+        foreach (NavMeshAgent agent in agents)
+        {
+            agent.CalculatePath(destination.position, path);
+            if (path.status != NavMeshPathStatus.PathComplete)
+            {
+                pathBlocked = true;
+                return;
+            }
+                  
+        }
+        pathBlocked = false; ;
     }
 }
