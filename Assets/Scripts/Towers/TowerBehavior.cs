@@ -27,7 +27,7 @@ public class TowerBehavior : MonoBehaviour
     private int upgradeLevel;
     private UpgradePanel upgradePanel;
     private int upgradeCost;
-    private int sellCost;
+    [NonSerialized] public int sellCost;
     private string upgradeDescription;
 
     GameObject lastSelectedTower;
@@ -115,17 +115,14 @@ public class TowerBehavior : MonoBehaviour
                     {
                         lastSelectedTower = hitInfo.collider.gameObject;
                         GameManager.Instance.SelectedTower = gameObject;
-                        UIManager.Instance.ToggleSell(true);
                     }
                     else
                     {
                         upgradePanel.SetUpgradePanel(false);
-                        UIManager.Instance.ToggleSell(false);
                     }
                 }  
                 else
                 {
-                    UIManager.Instance.ToggleSell(false);
                     isSelected = false;
                 }
                     
@@ -133,10 +130,6 @@ public class TowerBehavior : MonoBehaviour
         }
         else if (Input.GetMouseButtonDown(0))
         {
-            if (isSelected)
-            {
-                UIManager.Instance.ToggleSell(false);
-            }
             isSelected = false;
             upgradePanel.SetUpgradePanel(false);
         }
@@ -173,7 +166,7 @@ public class TowerBehavior : MonoBehaviour
                         case 0:
                             //Do upgrade
                             range += 1f;
-                            rangeObject.localScale = new Vector3(rangeObject.localScale.x + 2f, rangeObject.localScale.y, rangeObject.localScale.z + 2f);
+                            rangeObject.localScale = new Vector3(rangeObject.localScale.x + 1.5f, rangeObject.localScale.y, rangeObject.localScale.z + 1.5f);
 
                             //Set up for next upgrade
                             sellCost += upgradeCost / 2;
@@ -201,8 +194,8 @@ public class TowerBehavior : MonoBehaviour
                             break;
                         case 3:
                             //Do upgrade
-                            range += 3f;
-                            rangeObject.localScale = new Vector3(rangeObject.localScale.x + 6f, rangeObject.localScale.y, rangeObject.localScale.z + 6f);
+                            range += 1.7f;
+                            rangeObject.localScale = new Vector3(rangeObject.localScale.x + 2f, rangeObject.localScale.y, rangeObject.localScale.z + 2f);
 
                             //Set up for next upgrade
                             sellCost += upgradeCost / 2;
@@ -244,8 +237,8 @@ public class TowerBehavior : MonoBehaviour
                             break;
                         case 2:
                             //Do upgrade
-                            range += 2f;
-                            rangeObject.localScale = new Vector3(rangeObject.localScale.x + 4f, rangeObject.localScale.y, rangeObject.localScale.z + 4f);
+                            range += .25f;
+                            rangeObject.localScale = new Vector3(rangeObject.localScale.x + .5f, rangeObject.localScale.y, rangeObject.localScale.z + .5f);
 
                             //Set up for next upgrade
                             sellCost += upgradeCost / 2;

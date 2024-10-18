@@ -42,8 +42,9 @@ public class TowerPlacement : MonoBehaviour
 
     private void Update()
     {
-        if (canPlace && currentTowerBeingPlaced != null)
+        if (currentTowerBeingPlaced != null)
         {
+            UIManager.Instance.ToggleDeselect(true);
             //Ray casts from screen to mouse
             Ray camRay = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
@@ -87,12 +88,15 @@ public class TowerPlacement : MonoBehaviour
                         // Build if path wont be blocked
                         if (path.status == NavMeshPathStatus.PathComplete)
                         {
-                            surface.BuildNavMesh();
-                            gameManager.builtTowers.Add(currentTowerBeingPlaced.GetComponent<TowerBehavior>());
-                            player.RemoveMoney(currentTowerBeingPlaced.GetComponent<TowerBehavior>().cost);
-                            towerCollider.isTrigger = false;
-                            currentTowerBeingPlaced = null;
-                            UIManager.Instance.ToggleDeselect(false);
+                            if (canPlace)
+                            {
+                                surface.BuildNavMesh();
+                                gameManager.builtTowers.Add(currentTowerBeingPlaced.GetComponent<TowerBehavior>());
+                                player.RemoveMoney(currentTowerBeingPlaced.GetComponent<TowerBehavior>().cost);
+                                towerCollider.isTrigger = false;
+                                currentTowerBeingPlaced = null;
+                                UIManager.Instance.ToggleDeselect(false);
+                            }
                         } else
                         {
                             towerCollider.isTrigger = true;
@@ -119,7 +123,7 @@ public class TowerPlacement : MonoBehaviour
         if (currentTowerBeingPlaced == null)
             currentTowerBeingPlaced = Instantiate(tower, Vector3.zero, Quaternion.identity);
     }
-
+    
     public void CancelPlacingTower()
     {
         if (currentTowerBeingPlaced != null)
@@ -141,12 +145,12 @@ public class TowerPlacement : MonoBehaviour
 
     public void SellTower(GameObject tower)
     {
-        player.GiveMoney(tower.GetComponent<TowerBehavior>().cost/2);
+        UpgradePanel.Instance.SetUpgradePanel(false);
+        player.GiveMoney(tower.GetComponent<TowerBehavior>().sellCost);
         gameManager.builtTowers.Remove(tower.GetComponent<TowerBehavior>());
         Destroy(tower);
         GameManager.Instance.SelectedTower = null;
         dummySurface.BuildNavMesh();
         surface.BuildNavMesh();
-        UIManager.Instance.ToggleSell(false);
     }
 }
