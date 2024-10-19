@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
             nodeDistances[i] = Vector3.Distance(nodePositions[i], nodePositions[i + 1]);
         }
 
-        currentWave = 0;
+        currentWave = 6;
         selectedSpawnpoint = 0;
         nextSpawnpoint = 1;
         SpawnPoint = EnemySpawner.Instance.SpawnPoints[selectedSpawnpoint];
@@ -229,7 +229,7 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < enemySpawner.spawnedEnemies.Count; i++)
             {
                 //enemySpawner.spawnedEnemies[i].nodeIndex = nodeIndicies[i];
-                if (enemySpawner.spawnedEnemies[i].navMeshMovement.ReachedEnd())
+                if (enemySpawner.spawnedEnemies[i].navMeshMovement.agent != null && enemySpawner.spawnedEnemies[i].navMeshMovement.ReachedEnd())
                 {
                     //Enemy Reached the end of the map
                     EnqueEnemyToRemove(enemySpawner.spawnedEnemies[i]);
