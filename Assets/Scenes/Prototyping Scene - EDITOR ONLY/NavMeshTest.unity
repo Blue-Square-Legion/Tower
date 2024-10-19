@@ -10265,7 +10265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthText: {fileID: 1728860207}
   moneyText: {fileID: 2048882858}
-  maxHealth: 1000
+  maxHealth: 100
   startingMoney: 1000
 --- !u!114 &555665699
 MonoBehaviour:

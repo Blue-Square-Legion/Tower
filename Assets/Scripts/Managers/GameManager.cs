@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
             nodeDistances[i] = Vector3.Distance(nodePositions[i], nodePositions[i + 1]);
         }
 
-        currentWave = 6;
+        currentWave = 0;
         selectedSpawnpoint = 0;
         nextSpawnpoint = 1;
         SpawnPoint = EnemySpawner.Instance.SpawnPoints[selectedSpawnpoint];
