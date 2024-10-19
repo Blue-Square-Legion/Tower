@@ -205,6 +205,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd37e54259a937e4f955adf00a346086,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -396,7 +401,7 @@ GameObject:
   - component: {fileID: 25601534}
   m_Layer: 0
   m_Name: Trees
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -486,6 +491,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar1 (45)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -717,6 +727,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock (05)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3fd12d819a2a35e44a77256b6005ca2f,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -845,6 +860,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -1369,6 +1389,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar3 (08)
       objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1618,6 +1643,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar2 (53)
       objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1716,6 +1746,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (46)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -1841,6 +1876,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (37)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1882,6 +1922,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (05)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -1984,6 +2029,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar2 (05)
       objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -2066,7 +2116,7 @@ GameObject:
   - component: {fileID: 147597570}
   m_Layer: 0
   m_Name: Portals
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2101,6 +2151,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -2191,6 +2246,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar2 (08)
       objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -2279,7 +2339,7 @@ GameObject:
   - component: {fileID: 160734836}
   m_Layer: 0
   m_Name: TreeGroup05
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2393,6 +2453,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2416,6 +2481,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -2659,6 +2729,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2682,6 +2757,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (44)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -2762,6 +2842,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (02)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -2910,6 +2995,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar1 (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3175,6 +3265,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar2 (05)
       objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -3273,6 +3368,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar3 (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -3361,6 +3461,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -3557,6 +3662,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -3819,6 +3929,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar1 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4162,6 +4277,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4191,6 +4311,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -4335,6 +4460,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3fd12d819a2a35e44a77256b6005ca2f,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4738,6 +4868,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4761,6 +4896,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -4921,6 +5061,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock (02)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3fd12d819a2a35e44a77256b6005ca2f,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4944,6 +5089,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -5168,6 +5318,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar3 (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -5256,6 +5411,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -5449,6 +5609,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar2 (08)
       objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -5605,6 +5770,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 82ceafe0b0dd40e40acecce88b39bd8a,
         type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 82ceafe0b0dd40e40acecce88b39bd8a,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -5629,6 +5799,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -5784,6 +5959,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (09)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd37e54259a937e4f955adf00a346086,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5807,6 +5987,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -5967,6 +6152,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd37e54259a937e4f955adf00a346086,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6065,6 +6255,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b222793e20e550e42a91c4510fbe650e,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b222793e20e550e42a91c4510fbe650e,
         type: 3}
@@ -6363,6 +6558,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6a43fa6b39b938c4a9b867ea76a3b252,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6624,6 +6824,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd37e54259a937e4f955adf00a346086,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6697,6 +6902,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar1 (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6896,6 +7106,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (40)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7038,6 +7253,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CastleBridge (02)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6f084c075257dcc4889d555163686fb2,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7217,6 +7437,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar3 (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -7306,6 +7531,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar3 (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -7394,6 +7624,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (42)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -7937,6 +8172,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar3 (04)
       objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -8096,6 +8336,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3fd12d819a2a35e44a77256b6005ca2f,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8170,6 +8415,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -8254,6 +8504,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -8343,6 +8598,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -8455,6 +8715,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -8616,6 +8881,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8714,6 +8984,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CastleMainTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 31b746d9b38f9ce43b5dbba51813d6d2,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 31b746d9b38f9ce43b5dbba51813d6d2,
         type: 3}
@@ -8951,6 +9226,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3fd9bd3cbb99dab4f8d168017974bb75,
         type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3fd9bd3cbb99dab4f8d168017974bb75,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -9164,6 +9444,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (06)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9187,6 +9472,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -9427,6 +9717,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (43)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9450,6 +9745,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -9524,6 +9824,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -9614,6 +9919,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar3 (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -9703,6 +10013,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar2 (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9776,6 +10091,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -9945,7 +10265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthText: {fileID: 1728860207}
   moneyText: {fileID: 2048882858}
-  maxHealth: 100
+  maxHealth: 1000
   startingMoney: 1000
 --- !u!114 &555665699
 MonoBehaviour:
@@ -9985,6 +10305,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -10069,6 +10394,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -10204,6 +10534,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10227,6 +10562,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (07)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -10311,6 +10651,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -10693,6 +11038,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar2 (36)
       objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -10861,6 +11211,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CastleTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3fd9bd3cbb99dab4f8d168017974bb75,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3fd9bd3cbb99dab4f8d168017974bb75,
         type: 3}
@@ -11082,6 +11437,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11105,6 +11465,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (02)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -11424,6 +11789,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar1 (47)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11817,6 +12187,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar2 (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11961,6 +12336,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (08)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd37e54259a937e4f955adf00a346086,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12040,6 +12420,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 3744594787095116691, guid: 2b7b91f85db3550478db9c203d7acfc4,
         type: 3}
       propertyPath: m_SelectedEditorRenderState
@@ -12072,6 +12457,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (41)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -12145,7 +12535,7 @@ GameObject:
   - component: {fileID: 646429909}
   m_Layer: 0
   m_Name: Rocks
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12193,6 +12583,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (07)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -12283,6 +12678,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar2 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -12366,6 +12766,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (05)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -12563,7 +12968,7 @@ GameObject:
   - component: {fileID: 674415644}
   m_Layer: 0
   m_Name: Floor (10)
-  m_TagString: Buildable
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -13034,6 +13439,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13128,6 +13538,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3fd12d819a2a35e44a77256b6005ca2f,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13151,6 +13566,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (04)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -13389,6 +13809,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (01)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd37e54259a937e4f955adf00a346086,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13412,6 +13837,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (03)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -13684,6 +14114,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar3 (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -13772,6 +14207,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -13932,6 +14372,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd37e54259a937e4f955adf00a346086,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14091,6 +14536,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -14357,6 +14807,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar2 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -14440,6 +14895,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (40)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -14587,6 +15047,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 31b746d9b38f9ce43b5dbba51813d6d2,
         type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 31b746d9b38f9ce43b5dbba51813d6d2,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -14682,6 +15147,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CastleBridge (01)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6f084c075257dcc4889d555163686fb2,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14756,6 +15226,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14779,6 +15254,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (51)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -15168,6 +15648,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar2 (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -15252,6 +15737,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar2 (47)
       objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -15335,6 +15825,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -15475,6 +15970,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15498,6 +15998,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -15583,6 +16088,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar2 (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -15666,6 +16176,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -15761,6 +16276,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -15859,6 +16379,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -16184,6 +16709,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (38)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16207,6 +16737,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -16296,6 +16831,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -16485,6 +17025,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (49)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -16750,6 +17295,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar2 (54)
       objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -16884,6 +17434,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (05)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16940,6 +17495,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (06)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -17095,6 +17655,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd37e54259a937e4f955adf00a346086,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17168,6 +17733,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar1 (08)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17359,6 +17929,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar3 (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -17498,6 +18073,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (39)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17592,6 +18172,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (05)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd37e54259a937e4f955adf00a346086,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17615,6 +18200,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (50)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -17948,6 +18538,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar2 (06)
       objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -18031,6 +18626,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (07)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -18142,6 +18742,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar2 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -18225,6 +18830,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (09)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -18360,6 +18970,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18434,6 +19049,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (42)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18496,6 +19116,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -18629,6 +19254,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar2 (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18757,6 +19387,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar3 (34)
       objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -18844,7 +19479,7 @@ GameObject:
   - component: {fileID: 1062102283}
   m_Layer: 0
   m_Name: Boulders
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19006,6 +19641,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar3 (09)
       objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -19145,6 +19785,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19168,6 +19813,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -19398,6 +20048,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (44)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19421,6 +20076,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (48)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -19576,6 +20236,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock (08)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3fd12d819a2a35e44a77256b6005ca2f,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19599,6 +20264,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (09)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -19828,6 +20498,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar2 (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -19961,6 +20636,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar1 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20119,6 +20799,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar2 (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20243,6 +20928,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20266,6 +20956,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (04)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -20409,6 +21104,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (09)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -20563,6 +21263,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Boulder (02)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd37e54259a937e4f955adf00a346086,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20776,6 +21481,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar1 (02)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 3744594787095116691, guid: 2b7b91f85db3550478db9c203d7acfc4,
         type: 3}
@@ -21043,7 +21753,7 @@ GameObject:
   - component: {fileID: 1185783223}
   m_Layer: 0
   m_Name: Castle
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21085,6 +21795,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -21157,6 +21872,54 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1188063134}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1191344095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1191344096}
+  - component: {fileID: 1191344097}
+  m_Layer: 0
+  m_Name: gate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1191344096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191344095}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.56, y: 0, z: 13.78}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1533979468}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1191344097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191344095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 1.2858131, y: 5, z: 4}
+  m_Center: {x: 1.8570935, y: 1, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &1199191359
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21225,6 +21988,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar1 (07)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 3744594787095116691, guid: 2b7b91f85db3550478db9c203d7acfc4,
         type: 3}
@@ -21373,6 +22141,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (08)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -21528,6 +22301,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (03)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd37e54259a937e4f955adf00a346086,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21601,6 +22379,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar1 (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21696,6 +22479,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (04)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd37e54259a937e4f955adf00a346086,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21769,6 +22557,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar1 (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21927,6 +22720,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21950,6 +22748,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -22081,6 +22884,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 3744594787095116691, guid: 2b7b91f85db3550478db9c203d7acfc4,
         type: 3}
       propertyPath: m_SelectedEditorRenderState
@@ -22175,6 +22983,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar1 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22541,6 +23354,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar2 (01)
       objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -22701,6 +23519,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (09)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22829,6 +23652,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -22996,6 +23824,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar1 (08)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23182,6 +24015,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 3744594787095116691, guid: 2b7b91f85db3550478db9c203d7acfc4,
         type: 3}
       propertyPath: m_SelectedEditorRenderState
@@ -23317,6 +24155,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar1 (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23497,6 +24340,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23519,7 +24367,7 @@ GameObject:
   - component: {fileID: 1329307012}
   m_Layer: 0
   m_Name: TreeGroup03
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23577,7 +24425,7 @@ GameObject:
   - component: {fileID: 1338286301}
   m_Layer: 0
   m_Name: TreeGroup04
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23642,6 +24490,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -24428,6 +25281,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (06)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd37e54259a937e4f955adf00a346086,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24451,6 +25309,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -24540,6 +25403,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (02)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -24816,6 +25684,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar3 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -24988,6 +25861,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25068,6 +25946,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (05)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 3744594787095116691, guid: 2b7b91f85db3550478db9c203d7acfc4,
         type: 3}
       propertyPath: m_SelectedEditorRenderState
@@ -25117,6 +26000,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (01)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -25216,6 +26104,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar3 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -25305,6 +26198,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar3 (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -25393,6 +26291,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (05)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -25666,6 +26569,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25689,6 +26597,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -25849,6 +26762,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock (03)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3fd12d819a2a35e44a77256b6005ca2f,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25942,6 +26860,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3fd12d819a2a35e44a77256b6005ca2f,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26092,6 +27015,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26186,6 +27114,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CastleBridge
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6f084c075257dcc4889d555163686fb2,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26259,6 +27192,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar1 (04)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 3744594787095116691, guid: 2b7b91f85db3550478db9c203d7acfc4,
         type: 3}
@@ -26469,6 +27407,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -26761,6 +27704,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar1 (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27146,6 +28094,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27283,6 +28236,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27356,6 +28314,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 994200127}
+  - {fileID: 1191344096}
+  - {fileID: 1850560567}
   - {fileID: 1491019417}
   - {fileID: 1651452158}
   - {fileID: 1047256122}
@@ -27406,6 +28366,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -27491,6 +28456,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar2 (45)
       objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27564,6 +28534,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -27698,6 +28673,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar1 (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27911,6 +28891,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd37e54259a937e4f955adf00a346086,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28009,6 +28994,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (01)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 3744594787095116691, guid: 2b7b91f85db3550478db9c203d7acfc4,
         type: 3}
       propertyPath: m_SelectedEditorRenderState
@@ -28053,6 +29043,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -28127,6 +29122,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -28267,6 +29267,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28371,6 +29376,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6a43fa6b39b938c4a9b867ea76a3b252,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28392,6 +29402,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -28536,6 +29551,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Boulder
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd37e54259a937e4f955adf00a346086,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cd37e54259a937e4f955adf00a346086,
         type: 3}
@@ -28727,6 +29747,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (03)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 3744594787095116691, guid: 2b7b91f85db3550478db9c203d7acfc4,
         type: 3}
       propertyPath: m_SelectedEditorRenderState
@@ -28771,6 +29796,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -28956,6 +29986,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (46)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28979,6 +30014,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (09)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -29152,6 +30192,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3fd12d819a2a35e44a77256b6005ca2f,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29245,6 +30290,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock (06)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3fd12d819a2a35e44a77256b6005ca2f,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29340,6 +30390,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock (01)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3fd12d819a2a35e44a77256b6005ca2f,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29369,6 +30424,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -29485,6 +30545,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (03)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -29695,6 +30760,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (07)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29718,6 +30788,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (03)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -29830,7 +30905,7 @@ GameObject:
   - component: {fileID: 1662599795}
   m_Layer: 0
   m_Name: TreeGroup01
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29952,6 +31027,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar1 (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30192,6 +31272,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (09)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -30214,7 +31299,7 @@ GameObject:
   - component: {fileID: 1685508458}
   m_Layer: 0
   m_Name: TreeGroup02
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30325,6 +31410,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar1 (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30544,6 +31634,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar2 (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -30678,6 +31773,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -30758,6 +31858,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 3744594787095116691, guid: 2b7b91f85db3550478db9c203d7acfc4,
         type: 3}
       propertyPath: m_SelectedEditorRenderState
@@ -30820,6 +31925,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -31044,6 +32154,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar2 (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -31198,6 +32313,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd37e54259a937e4f955adf00a346086,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31221,6 +32341,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -31381,6 +32506,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd37e54259a937e4f955adf00a346086,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31474,6 +32604,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock (09)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3fd12d819a2a35e44a77256b6005ca2f,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -31641,6 +32776,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (07)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd37e54259a937e4f955adf00a346086,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31796,6 +32936,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6a43fa6b39b938c4a9b867ea76a3b252,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31817,6 +32962,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -31957,6 +33107,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31980,6 +33135,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -32135,6 +33295,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3fd12d819a2a35e44a77256b6005ca2f,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -32241,6 +33406,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -32424,6 +33594,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 82ceafe0b0dd40e40acecce88b39bd8a,
         type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 82ceafe0b0dd40e40acecce88b39bd8a,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -32519,6 +33694,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock (04)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3fd12d819a2a35e44a77256b6005ca2f,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -32548,6 +33728,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -32658,6 +33843,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -32903,6 +34093,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (36)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -32926,6 +34121,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (52)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -33163,6 +34363,54 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1850560566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1850560567}
+  - component: {fileID: 1850560568}
+  m_Layer: 0
+  m_Name: gate (01)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1850560567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850560566}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.04, y: 0, z: 13.78}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1533979468}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1850560568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850560566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 1.393626, y: 5, z: 4}
+  m_Center: {x: 1.5679511, y: 1, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &1859408537
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33175,6 +34423,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -33371,6 +34624,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar3 (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -33510,6 +34768,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -33565,6 +34828,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (04)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -33760,6 +35028,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar3 (06)
       objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -33848,6 +35121,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -33943,6 +35221,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -34183,6 +35466,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (04)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -34206,6 +35494,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -34294,7 +35587,7 @@ GameObject:
   - component: {fileID: 1914615002}
   m_Layer: 0
   m_Name: Environment
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34402,6 +35695,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd37e54259a937e4f955adf00a346086,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -34425,6 +35723,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (06)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -34620,6 +35923,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar3 (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -34791,6 +36099,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (09)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -34813,7 +36126,7 @@ GameObject:
   - component: {fileID: 1935767183}
   m_Layer: 0
   m_Name: TreeGroup07
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35292,6 +36605,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar2 (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -35446,6 +36764,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock (07)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3fd12d819a2a35e44a77256b6005ca2f,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -35469,6 +36792,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -35564,6 +36892,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -35692,6 +37025,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -35827,6 +37165,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (08)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -35901,6 +37244,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -35923,7 +37271,7 @@ GameObject:
   - component: {fileID: 2008100846}
   m_Layer: 0
   m_Name: TreeGroup08
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36041,6 +37389,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3fd12d819a2a35e44a77256b6005ca2f,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36311,6 +37664,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (07)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -36810,6 +38168,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar3 (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -37151,6 +38514,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar3 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -37240,6 +38608,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar2 (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -37323,6 +38696,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar3 (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420477455114917733, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 7904103504897838559, guid: 18a4624bf1c9a1a4dbac1d10b904d825,
         type: 3}
@@ -37411,7 +38789,7 @@ GameObject:
   - component: {fileID: 2083118468}
   m_Layer: 0
   m_Name: TreeGroup06
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37521,6 +38899,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar1 (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 3744594787095116691, guid: 2b7b91f85db3550478db9c203d7acfc4,
         type: 3}
@@ -37740,6 +39123,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar1 (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -37763,6 +39151,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar2 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
@@ -37998,6 +39391,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeVar2 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 190207229988866958, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -38131,6 +39529,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar1 (06)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
