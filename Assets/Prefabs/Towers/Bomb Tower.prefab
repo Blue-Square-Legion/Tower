@@ -420,7 +420,7 @@ MonoBehaviour:
   enemiesLayer:
     serializedVersion: 2
     m_Bits: 64
-  damage: 2
+  damage: 1
   fireRate: 1
   range: 2.5
   cost: 400

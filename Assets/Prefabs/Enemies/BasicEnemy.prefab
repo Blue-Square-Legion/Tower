@@ -329,8 +329,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f116d4f62f2db374e8fa2359cce6ff0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  moneyToPlayer: 10
+  maxHealth: 14
+  moneyToPlayer: 20
   currentHealth: 0
   speed: 4
   damageResistance: 1
