@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 6670859728795451965}
   - component: {fileID: 125512884505964892}
   - component: {fileID: 7951329691352802789}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -595,6 +595,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Explosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 3124237719489630456, guid: 279d90c1aa2c5d0498c08656a0438a72,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7121169908466480329, guid: 279d90c1aa2c5d0498c08656a0438a72,
         type: 3}
