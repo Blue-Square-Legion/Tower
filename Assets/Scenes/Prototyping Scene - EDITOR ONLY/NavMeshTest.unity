@@ -229,6 +229,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447044242}
     m_Modifications:
+    - target: {fileID: 1406191981624244099, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749324273914544431, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325237453863002756, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5127956094663553126, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277274191395582254, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 5973861200763965369, guid: 47b9018431969004c893fde1443bbdf6,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -293,6 +318,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LowPolyRedMushroom (09)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461745933778818307, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6789380114278647848, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043482408882623492, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1468,6 +1508,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447044242}
     m_Modifications:
+    - target: {fileID: 169970906847865912, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 237509499941943809, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 753806731215240812, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 2490998666680610305, guid: 05ba1c2f339402640a5466cbdad18c18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1518,10 +1573,75 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2739060041879628160, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 3015756686801007803, guid: 05ba1c2f339402640a5466cbdad18c18,
         type: 3}
       propertyPath: m_Name
       value: LowPolyBlueMushroom (04)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015756686801007803, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3345115378028513574, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358641986966685466, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577234862092958203, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824964041464235643, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028704784018381288, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038077150789042035, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5482160351997744527, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011201615272495101, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142056006953572148, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418391588191060014, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495277651335216388, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3104,10 +3224,110 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1609235695}
     m_Modifications:
+    - target: {fileID: 1277714090995131711, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099312306251945725, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507085758961612839, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2739482879257646014, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772302438543851785, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3371160520165064339, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237338956567096433, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509025192184676190, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536405109469312050, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875126148736310873, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252190056907040217, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716926893891732233, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243170305998717481, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6426096825624309449, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247418622098288990, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828522941617694307, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846212561513559319, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 8108715659476461473, guid: 2908acf265afb6d4983894b030df6494,
         type: 3}
       propertyPath: m_Name
       value: LightPost
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108715659476461473, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8206484535921182888, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8899815959994102817, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 8920541532101917979, guid: 2908acf265afb6d4983894b030df6494,
         type: 3}
@@ -3372,10 +3592,110 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1609235695}
     m_Modifications:
+    - target: {fileID: 1277714090995131711, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099312306251945725, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507085758961612839, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2739482879257646014, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772302438543851785, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3371160520165064339, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237338956567096433, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509025192184676190, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536405109469312050, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875126148736310873, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252190056907040217, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716926893891732233, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243170305998717481, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6426096825624309449, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247418622098288990, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828522941617694307, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846212561513559319, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 8108715659476461473, guid: 2908acf265afb6d4983894b030df6494,
         type: 3}
       propertyPath: m_Name
       value: LightPost (02)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108715659476461473, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8206484535921182888, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8899815959994102817, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 8920541532101917979, guid: 2908acf265afb6d4983894b030df6494,
         type: 3}
@@ -3504,10 +3824,110 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1609235695}
     m_Modifications:
+    - target: {fileID: 1277714090995131711, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099312306251945725, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507085758961612839, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2739482879257646014, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772302438543851785, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3371160520165064339, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237338956567096433, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509025192184676190, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536405109469312050, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875126148736310873, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252190056907040217, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716926893891732233, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243170305998717481, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6426096825624309449, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247418622098288990, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828522941617694307, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846212561513559319, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 8108715659476461473, guid: 2908acf265afb6d4983894b030df6494,
         type: 3}
       propertyPath: m_Name
       value: LightPost (01)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108715659476461473, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8206484535921182888, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8899815959994102817, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 8920541532101917979, guid: 2908acf265afb6d4983894b030df6494,
         type: 3}
@@ -4625,10 +5045,110 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1609235695}
     m_Modifications:
+    - target: {fileID: 1277714090995131711, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099312306251945725, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507085758961612839, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2739482879257646014, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772302438543851785, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3371160520165064339, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237338956567096433, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509025192184676190, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536405109469312050, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875126148736310873, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252190056907040217, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716926893891732233, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243170305998717481, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6426096825624309449, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247418622098288990, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828522941617694307, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846212561513559319, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 8108715659476461473, guid: 2908acf265afb6d4983894b030df6494,
         type: 3}
       propertyPath: m_Name
       value: LightPost (04)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108715659476461473, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8206484535921182888, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8899815959994102817, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 8920541532101917979, guid: 2908acf265afb6d4983894b030df6494,
         type: 3}
@@ -4966,6 +5486,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447044242}
     m_Modifications:
+    - target: {fileID: 1406191981624244099, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749324273914544431, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325237453863002756, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5127956094663553126, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277274191395582254, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 5973861200763965369, guid: 47b9018431969004c893fde1443bbdf6,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -5030,6 +5575,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LowPolyRedMushroom (06)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461745933778818307, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6789380114278647848, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043482408882623492, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6642,6 +7202,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447044242}
     m_Modifications:
+    - target: {fileID: 1406191981624244099, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749324273914544431, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325237453863002756, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5127956094663553126, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277274191395582254, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 5973861200763965369, guid: 47b9018431969004c893fde1443bbdf6,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -6706,6 +7291,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LowPolyRedMushroom (08)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461745933778818307, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6789380114278647848, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043482408882623492, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8038,10 +8638,110 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1609235695}
     m_Modifications:
+    - target: {fileID: 1277714090995131711, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099312306251945725, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507085758961612839, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2739482879257646014, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772302438543851785, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3371160520165064339, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237338956567096433, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509025192184676190, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536405109469312050, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875126148736310873, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252190056907040217, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716926893891732233, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243170305998717481, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6426096825624309449, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247418622098288990, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828522941617694307, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846212561513559319, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 8108715659476461473, guid: 2908acf265afb6d4983894b030df6494,
         type: 3}
       propertyPath: m_Name
       value: LightPost (05)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108715659476461473, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8206484535921182888, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8899815959994102817, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 8920541532101917979, guid: 2908acf265afb6d4983894b030df6494,
         type: 3}
@@ -13412,6 +14112,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447044242}
     m_Modifications:
+    - target: {fileID: 1406191981624244099, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749324273914544431, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325237453863002756, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5127956094663553126, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277274191395582254, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 5973861200763965369, guid: 47b9018431969004c893fde1443bbdf6,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -13476,6 +14201,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LowPolyRedMushroom (01)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461745933778818307, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6789380114278647848, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043482408882623492, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15895,6 +16635,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447044242}
     m_Modifications:
+    - target: {fileID: 1406191981624244099, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749324273914544431, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325237453863002756, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5127956094663553126, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277274191395582254, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 5973861200763965369, guid: 47b9018431969004c893fde1443bbdf6,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -15959,6 +16724,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LowPolyRedMushroom (03)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461745933778818307, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6789380114278647848, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043482408882623492, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17386,6 +18166,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447044242}
     m_Modifications:
+    - target: {fileID: 169970906847865912, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 237509499941943809, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 753806731215240812, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 2490998666680610305, guid: 05ba1c2f339402640a5466cbdad18c18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17436,10 +18231,75 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2739060041879628160, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 3015756686801007803, guid: 05ba1c2f339402640a5466cbdad18c18,
         type: 3}
       propertyPath: m_Name
       value: LowPolyBlueMushroom (02)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015756686801007803, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3345115378028513574, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358641986966685466, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577234862092958203, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824964041464235643, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028704784018381288, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038077150789042035, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5482160351997744527, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011201615272495101, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142056006953572148, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418391588191060014, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495277651335216388, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18002,6 +18862,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447044242}
     m_Modifications:
+    - target: {fileID: 1406191981624244099, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749324273914544431, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325237453863002756, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5127956094663553126, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277274191395582254, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 5973861200763965369, guid: 47b9018431969004c893fde1443bbdf6,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -18066,6 +18951,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LowPolyRedMushroom (05)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461745933778818307, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6789380114278647848, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043482408882623492, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19986,10 +20886,110 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1609235695}
     m_Modifications:
+    - target: {fileID: 1277714090995131711, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099312306251945725, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507085758961612839, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2739482879257646014, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772302438543851785, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3371160520165064339, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237338956567096433, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509025192184676190, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536405109469312050, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875126148736310873, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252190056907040217, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716926893891732233, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243170305998717481, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6426096825624309449, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247418622098288990, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828522941617694307, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846212561513559319, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 8108715659476461473, guid: 2908acf265afb6d4983894b030df6494,
         type: 3}
       propertyPath: m_Name
       value: LightPost (03)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108715659476461473, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8206484535921182888, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8899815959994102817, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 8920541532101917979, guid: 2908acf265afb6d4983894b030df6494,
         type: 3}
@@ -22101,6 +23101,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447044242}
     m_Modifications:
+    - target: {fileID: 169970906847865912, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 237509499941943809, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 753806731215240812, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 2490998666680610305, guid: 05ba1c2f339402640a5466cbdad18c18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22151,10 +23166,75 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2739060041879628160, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 3015756686801007803, guid: 05ba1c2f339402640a5466cbdad18c18,
         type: 3}
       propertyPath: m_Name
       value: LowPolyBlueMushroom (08)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015756686801007803, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3345115378028513574, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358641986966685466, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577234862092958203, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824964041464235643, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028704784018381288, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038077150789042035, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5482160351997744527, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011201615272495101, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142056006953572148, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418391588191060014, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495277651335216388, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22290,10 +23370,110 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1609235695}
     m_Modifications:
+    - target: {fileID: 1277714090995131711, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099312306251945725, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507085758961612839, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2739482879257646014, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772302438543851785, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3371160520165064339, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237338956567096433, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509025192184676190, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536405109469312050, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875126148736310873, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252190056907040217, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716926893891732233, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243170305998717481, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6426096825624309449, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247418622098288990, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828522941617694307, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846212561513559319, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 8108715659476461473, guid: 2908acf265afb6d4983894b030df6494,
         type: 3}
       propertyPath: m_Name
       value: LightPost (06)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108715659476461473, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8206484535921182888, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8899815959994102817, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 8920541532101917979, guid: 2908acf265afb6d4983894b030df6494,
         type: 3}
@@ -22480,6 +23660,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447044242}
     m_Modifications:
+    - target: {fileID: 169970906847865912, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 237509499941943809, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 753806731215240812, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 2490998666680610305, guid: 05ba1c2f339402640a5466cbdad18c18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22530,10 +23725,75 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2739060041879628160, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 3015756686801007803, guid: 05ba1c2f339402640a5466cbdad18c18,
         type: 3}
       propertyPath: m_Name
       value: LowPolyBlueMushroom (05)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015756686801007803, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3345115378028513574, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358641986966685466, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577234862092958203, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824964041464235643, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028704784018381288, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038077150789042035, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5482160351997744527, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011201615272495101, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142056006953572148, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418391588191060014, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495277651335216388, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24450,6 +25710,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447044242}
     m_Modifications:
+    - target: {fileID: 1406191981624244099, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749324273914544431, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325237453863002756, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5127956094663553126, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277274191395582254, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 5973861200763965369, guid: 47b9018431969004c893fde1443bbdf6,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -24514,6 +25799,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LowPolyRedMushroom (04)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461745933778818307, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6789380114278647848, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043482408882623492, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24699,6 +25999,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447044242}
     m_Modifications:
+    - target: {fileID: 169970906847865912, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 237509499941943809, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 753806731215240812, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 2490998666680610305, guid: 05ba1c2f339402640a5466cbdad18c18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24749,10 +26064,75 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2739060041879628160, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 3015756686801007803, guid: 05ba1c2f339402640a5466cbdad18c18,
         type: 3}
       propertyPath: m_Name
       value: LowPolyBlueMushroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015756686801007803, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3345115378028513574, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358641986966685466, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577234862092958203, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824964041464235643, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028704784018381288, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038077150789042035, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5482160351997744527, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011201615272495101, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142056006953572148, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418391588191060014, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495277651335216388, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25630,6 +27010,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447044242}
     m_Modifications:
+    - target: {fileID: 1406191981624244099, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749324273914544431, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325237453863002756, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5127956094663553126, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277274191395582254, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 5973861200763965369, guid: 47b9018431969004c893fde1443bbdf6,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -25694,6 +27099,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LowPolyRedMushroom (07)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461745933778818307, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6789380114278647848, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043482408882623492, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26041,6 +27461,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447044242}
     m_Modifications:
+    - target: {fileID: 1406191981624244099, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749324273914544431, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325237453863002756, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5127956094663553126, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277274191395582254, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 5973861200763965369, guid: 47b9018431969004c893fde1443bbdf6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26095,6 +27540,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LowPolyRedMushroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461745933778818307, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6789380114278647848, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043482408882623492, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27980,6 +29440,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447044242}
     m_Modifications:
+    - target: {fileID: 169970906847865912, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 237509499941943809, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 753806731215240812, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 2490998666680610305, guid: 05ba1c2f339402640a5466cbdad18c18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28030,10 +29505,75 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2739060041879628160, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 3015756686801007803, guid: 05ba1c2f339402640a5466cbdad18c18,
         type: 3}
       propertyPath: m_Name
       value: LowPolyBlueMushroom (07)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015756686801007803, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3345115378028513574, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358641986966685466, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577234862092958203, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824964041464235643, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028704784018381288, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038077150789042035, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5482160351997744527, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011201615272495101, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142056006953572148, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418391588191060014, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495277651335216388, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28457,7 +29997,7 @@ GameObject:
   - component: {fileID: 1447044242}
   m_Layer: 0
   m_Name: Mushrooms
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31755,7 +33295,7 @@ GameObject:
   - component: {fileID: 1609235695}
   m_Layer: 0
   m_Name: LightPosts
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32644,6 +34184,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447044242}
     m_Modifications:
+    - target: {fileID: 169970906847865912, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 237509499941943809, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 753806731215240812, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 2490998666680610305, guid: 05ba1c2f339402640a5466cbdad18c18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32694,10 +34249,75 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2739060041879628160, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 3015756686801007803, guid: 05ba1c2f339402640a5466cbdad18c18,
         type: 3}
       propertyPath: m_Name
       value: LowPolyBlueMushroom (03)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015756686801007803, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3345115378028513574, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358641986966685466, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577234862092958203, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824964041464235643, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028704784018381288, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038077150789042035, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5482160351997744527, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011201615272495101, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142056006953572148, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418391588191060014, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495277651335216388, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32980,6 +34600,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447044242}
     m_Modifications:
+    - target: {fileID: 1406191981624244099, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749324273914544431, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325237453863002756, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5127956094663553126, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277274191395582254, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 5973861200763965369, guid: 47b9018431969004c893fde1443bbdf6,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -33044,6 +34689,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LowPolyRedMushroom (02)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461745933778818307, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6789380114278647848, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043482408882623492, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -34548,6 +36208,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447044242}
     m_Modifications:
+    - target: {fileID: 1406191981624244099, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749324273914544431, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325237453863002756, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5127956094663553126, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277274191395582254, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 5973861200763965369, guid: 47b9018431969004c893fde1443bbdf6,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -34612,6 +36297,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LowPolyRedMushroom (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461745933778818307, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6789380114278647848, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043482408882623492, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36690,6 +38390,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447044242}
     m_Modifications:
+    - target: {fileID: 169970906847865912, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 237509499941943809, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 753806731215240812, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 2490998666680610305, guid: 05ba1c2f339402640a5466cbdad18c18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36740,10 +38455,75 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2739060041879628160, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 3015756686801007803, guid: 05ba1c2f339402640a5466cbdad18c18,
         type: 3}
       propertyPath: m_Name
       value: LowPolyBlueMushroom (09)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015756686801007803, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3345115378028513574, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358641986966685466, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577234862092958203, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824964041464235643, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028704784018381288, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038077150789042035, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5482160351997744527, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011201615272495101, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142056006953572148, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418391588191060014, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495277651335216388, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36764,10 +38544,110 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1609235695}
     m_Modifications:
+    - target: {fileID: 1277714090995131711, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099312306251945725, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507085758961612839, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2739482879257646014, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772302438543851785, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3371160520165064339, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237338956567096433, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509025192184676190, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536405109469312050, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875126148736310873, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252190056907040217, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716926893891732233, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243170305998717481, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6426096825624309449, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247418622098288990, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828522941617694307, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846212561513559319, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 8108715659476461473, guid: 2908acf265afb6d4983894b030df6494,
         type: 3}
       propertyPath: m_Name
       value: LightPost (07)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108715659476461473, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8206484535921182888, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8899815959994102817, guid: 2908acf265afb6d4983894b030df6494,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 8920541532101917979, guid: 2908acf265afb6d4983894b030df6494,
         type: 3}
@@ -37734,6 +39614,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447044242}
     m_Modifications:
+    - target: {fileID: 169970906847865912, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 237509499941943809, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 753806731215240812, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 2490998666680610305, guid: 05ba1c2f339402640a5466cbdad18c18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37784,10 +39679,75 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2739060041879628160, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 3015756686801007803, guid: 05ba1c2f339402640a5466cbdad18c18,
         type: 3}
       propertyPath: m_Name
       value: LowPolyBlueMushroom (06)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015756686801007803, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3345115378028513574, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358641986966685466, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577234862092958203, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824964041464235643, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028704784018381288, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038077150789042035, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5482160351997744527, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011201615272495101, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142056006953572148, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418391588191060014, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495277651335216388, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -39323,6 +41283,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447044242}
     m_Modifications:
+    - target: {fileID: 1406191981624244099, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749324273914544431, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325237453863002756, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5127956094663553126, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277274191395582254, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 5973861200763965369, guid: 47b9018431969004c893fde1443bbdf6,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -39388,6 +41373,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: LowPolyRedMushroom (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 6461745933778818307, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6789380114278647848, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043482408882623492, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -39425,6 +41425,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447044242}
     m_Modifications:
+    - target: {fileID: 169970906847865912, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 237509499941943809, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 753806731215240812, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 2490998666680610305, guid: 05ba1c2f339402640a5466cbdad18c18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39475,10 +41490,75 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2739060041879628160, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 3015756686801007803, guid: 05ba1c2f339402640a5466cbdad18c18,
         type: 3}
       propertyPath: m_Name
       value: LowPolyBlueMushroom (01)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015756686801007803, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3345115378028513574, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358641986966685466, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577234862092958203, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824964041464235643, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028704784018381288, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038077150789042035, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5482160351997744527, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011201615272495101, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142056006953572148, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418391588191060014, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495277651335216388, guid: 05ba1c2f339402640a5466cbdad18c18,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -41304,6 +43384,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447044242}
     m_Modifications:
+    - target: {fileID: 1406191981624244099, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749324273914544431, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325237453863002756, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5127956094663553126, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277274191395582254, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     - target: {fileID: 5973861200763965369, guid: 47b9018431969004c893fde1443bbdf6,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -41368,6 +43473,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeVar1 (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461745933778818307, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6789380114278647848, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043482408882623492, guid: 47b9018431969004c893fde1443bbdf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
         type: 3}
