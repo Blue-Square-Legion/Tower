@@ -108,6 +108,7 @@ public class TowerPlacement : MonoBehaviour
                 {
                     Destroy(currentTowerBeingPlaced);
                     UIManager.Instance.SendPopUp("Tower cannot be placed here");
+                    UIManager.Instance.ToggleDeselect(false);
                 }
             } 
         }

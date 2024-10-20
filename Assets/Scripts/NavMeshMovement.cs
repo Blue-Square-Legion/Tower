@@ -5,7 +5,7 @@ using System;
 public class NavMeshMovement : MonoBehaviour
 {
     [NonSerialized] public Transform target;
-    [SerializeField] private NavMeshAgent agent;
+    [SerializeField] public NavMeshAgent agent;
 
     void Start()
     {

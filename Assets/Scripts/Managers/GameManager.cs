@@ -229,7 +229,7 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < enemySpawner.spawnedEnemies.Count; i++)
             {
                 //enemySpawner.spawnedEnemies[i].nodeIndex = nodeIndicies[i];
-                if (enemySpawner.spawnedEnemies[i].navMeshMovement.ReachedEnd())
+                if (enemySpawner.spawnedEnemies[i].navMeshMovement.agent != null && enemySpawner.spawnedEnemies[i].navMeshMovement.ReachedEnd())
                 {
                     //Enemy Reached the end of the map
                     EnqueEnemyToRemove(enemySpawner.spawnedEnemies[i]);
