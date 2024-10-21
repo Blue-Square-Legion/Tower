@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{C0854374-9D11-41F3-8F09-CDF0FC37C67A}" SchemaVersion="119">
+	<SoundcasterSessions>
+		<WorkUnit Name="Default Work Unit" ID="{C0854374-9D11-41F3-8F09-CDF0FC37C67A}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="ProjectTower" ID="{A9974134-9E73-4F43-9D1C-2D148B48F018}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_Crossbow_Rotate" ID="{48176E5A-F8BD-4FE2-B45F-4462D6448710}" WorkUnitID="{4349A412-53FE-4CCC-8CC4-6DBE035D99F1}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Flamethrower" ID="{50A6C3AA-6D7A-49A3-816D-E2469EC891B7}" WorkUnitID="{4349A412-53FE-4CCC-8CC4-6DBE035D99F1}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Robot_Footstep" ID="{5EDA8762-2DF8-4EB9-97FA-7F8B947979FF}" WorkUnitID="{4349A412-53FE-4CCC-8CC4-6DBE035D99F1}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Robot Shoot" ID="{AF341CBB-1610-4325-AC44-C0A5450745B0}" WorkUnitID="{98535DAE-9D4B-4C83-9F30-E54B21C4089B}"/>
+							<Position X="0" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Crossbow_Shoot" ID="{B51C027E-56EE-41F9-89F7-3A16E007A4DF}" WorkUnitID="{4349A412-53FE-4CCC-8CC4-6DBE035D99F1}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Tank_Engine" ID="{9BDEA9B0-5D94-4FA6-AC63-8B0BB89CAE27}" WorkUnitID="{4349A412-53FE-4CCC-8CC4-6DBE035D99F1}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Robot_Movement" ID="{98C23407-2FFF-45CF-B67F-7663768CFC43}" WorkUnitID="{4349A412-53FE-4CCC-8CC4-6DBE035D99F1}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Footstep Dirt" ID="{675944EB-0D09-4E97-86FF-138BE22E5076}" WorkUnitID="{98535DAE-9D4B-4C83-9F30-E54B21C4089B}"/>
+							<Position X="1" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Crossbow_Hit" ID="{DD3516E2-1766-49BA-AC52-525437CC4255}" WorkUnitID="{4349A412-53FE-4CCC-8CC4-6DBE035D99F1}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Tank_Missle" ID="{93258021-BDBD-4C0B-94E9-F79BA1DA85AA}" WorkUnitID="{4349A412-53FE-4CCC-8CC4-6DBE035D99F1}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Robot_Charge_Up" ID="{891F9135-A3CC-42F1-B4F0-796301013D5B}" WorkUnitID="{4349A412-53FE-4CCC-8CC4-6DBE035D99F1}"/>
+							<Position X="2" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Ambience" ID="{836C2F57-B840-4091-A76E-E129167A3C0A}" WorkUnitID="{98535DAE-9D4B-4C83-9F30-E54B21C4089B}"/>
+							<Position X="2" Y="3"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="Building" ID="{37DCBCA5-B7E8-48ED-8442-35F89457E254}"/>
+					</CurrentSwitchList>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundcasterSessions>
+</WwiseDocument>
