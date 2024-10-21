@@ -93,10 +93,6 @@ public class TowerBehavior : MonoBehaviour
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
                 towerPivot.transform.rotation = Quaternion.Euler(0, targetRotation.eulerAngles.y, 0);
             }
-
-            //Vector3 targetPos = target.transform.position;
-            //targetPos.y = transform.position.y;
-            //towerPivot.transform.rotation = Quaternion.LookRotation(target.transform.position - transform.position);
         }
         // Create a pointer event for UI detection
         PointerEventData pointerData = new PointerEventData(EventSystem.current)
