@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo>
+	<Project Name="Project Tower" GUID="{CF039964-EF73-4EB7-A6DA-3A7B9D21BBE5}" Generator="2023.1.7.8574"/>
+	<CacheRoot>../../../../../../WwiseProjects/Project Tower/.cache</CacheRoot>
+	<Platforms>
+		<Platform Name="Mac" GUID="{3667062B-1580-4EA9-A004-7A0660AA4EC2}" BasePlatform="Mac" BasePlatformGUID="{9C6217D5-DD11-4795-87C1-6CE02853C540}" Path="../../../../../../WwiseProjects/Project Tower/GeneratedSoundBanks/Mac"/>
+		<Platform Name="Web" GUID="{E06F58E8-2FD7-42D4-9579-F646935B3767}" BasePlatform="Web" BasePlatformGUID="{639AD233-23F2-4C0F-9127-79F44C15E1DA}" Path="../../../../../../WwiseProjects/Project Tower/GeneratedSoundBanks/Web"/>
+		<Platform Name="Windows" GUID="{6652A851-FCD2-4568-A5F8-81A1CC5E8841}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="../../../../../../WwiseProjects/Project Tower/GeneratedSoundBanks/Windows"/>
+	</Platforms>
+	<Languages>
+		<Language Name="English(US)" Id="684519430" GUID="{AF2CF3C0-7F70-4884-955B-AFA9491AF5DD}" Default="true" UseAsStandIn="true"/>
+	</Languages>
+	<FileHash>{3D72DF40-D68D-BA0E-21CE-8BAFC836C3EE}</FileHash>
+</ProjectInfo>

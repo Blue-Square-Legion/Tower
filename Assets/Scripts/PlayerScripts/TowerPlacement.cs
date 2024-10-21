@@ -94,6 +94,7 @@ public class TowerPlacement : MonoBehaviour
                                 towerCollider.isTrigger = false;
                                 currentTowerBeingPlaced = null;
                                 UIManager.Instance.ToggleDeselect(false);
+                                AkSoundEngine.PostEvent("Play_Building", gameObject);
                             }
                         } else
                         {
