@@ -53,7 +53,7 @@ public class TowerPlacement : MonoBehaviour
             //Gets data from raycast
             if (Physics.Raycast(camRay, out hitInfo, 100f, placementColliderMask))
             {
-                currentTowerBeingPlaced.transform.position = new Vector3(hitInfo.point.x, hitInfo.point.y + 0.15f, hitInfo.point.z);
+                currentTowerBeingPlaced.transform.position = new Vector3(hitInfo.point.x, 0.15f, hitInfo.point.z);
             }
 
             //Cancels placing tower
