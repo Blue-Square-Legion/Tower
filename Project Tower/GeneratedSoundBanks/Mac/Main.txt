@@ -1,0 +1,101 @@
+Event	ID	Name			Wwise Object Path	Notes
+	278617630	Play_Ambience			\Default Work Unit\Play_Ambience	
+	390938190	Play_Robot_Shoot			\Default Work Unit\Play_Robot_Shoot	
+	504791787	Stop_Portal_Loop			\Default Work Unit\Stop_Portal_Loop	
+	754980015	Play_Tank_Engine			\Default Work Unit\Play_Tank_Engine	
+	755352757	Play_Portal_Loop			\Default Work Unit\Play_Portal_Loop	
+	779807780	Play_Footstep_Dirt			\Default Work Unit\Play_Footstep_Dirt	
+	1354694797	Play_Portal_Entrance			\Default Work Unit\Play_Portal_Entrance	
+	1382972868	Play_Tank_Missle			\Default Work Unit\Play_Tank_Missle	
+	2591025488	Play_Crossbow_Hit			\Default Work Unit\Play_Crossbow_Hit	
+	2686382399	Play_Robot_Charge_Up			\Default Work Unit\Play_Robot_Charge_Up	
+	2694000894	Play_Crossbow_Shoot			\Default Work Unit\Play_Crossbow_Shoot	
+	2837384057	Stop_Music			\Default Work Unit\Stop_Music	
+	2844775840	Play_Flamethrower			\Default Work Unit\Play_Flamethrower	
+	2932040671	Play_Music			\Default Work Unit\Play_Music	
+	3149174998	Play_Building			\Default Work Unit\Play_Building	
+	3382913736	Play_Squid			\Default Work Unit\Play_Squid	
+	3993534839	Play_Robot_Footstep			\Default Work Unit\Play_Robot_Footstep	
+	4214031188	Play_Crossbow_Rotate			\Default Work Unit\Play_Crossbow_Rotate	
+	4257145618	Play_Robot_Movement			\Default Work Unit\Play_Robot_Movement	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	261089142	GameMode			\Default Work Unit\GameMode	
+
+Switch	ID	Name	Switch Group			Notes
+	2764240573	Combat	GameMode			
+	3339761385	Building	GameMode			
+
+Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
+	869066547	Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\Robot Movement\New Silence\Silence	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	29058322	Flamerthrower Start	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Flamethrower\Flamerthrower Start_65ED46EF.wem		\Actor-Mixer Hierarchy\Default Work Unit\Flamethrower\Flamerthrower Start		149826
+	55319854	Robot Footstep 6	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Robot Footstep\Robot Footstep 6_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Robot Footstep\Robot Footstep 6		45852
+	98784930	Robot Charge Up 2	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Robot Charge Up\Robot Charge Up 2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Robot Charge Up\Robot Charge Up 2		165090
+	114956612	Robot Footstep 1	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Robot Footstep\Robot Footstep 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Robot Footstep\Robot Footstep 1		50626
+	120193900	Tank Missle 2	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Tank Missle\Tank Missle 2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Tank Missle\Tank Missle 2		259328
+	124203370	Footstep Dirt 6	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Footstep Dirt\Footstep Dirt 6_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footstep Dirt\Footstep Dirt 6		30238
+	135213038	Building 2	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Building 2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Building\Building 2		533896
+	139333300	Project Tower-Chorus- PLUCK	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Buiilding Music\Project Tower-Chorus- PLUCK_56CEF360.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Building Music\Buiilding Music\Project Tower-Chorus- PLUCK		659423
+	146872183	Robot Shoot 1	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Robot Shoot 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Robot Shoot\Robot Shoot 1		138348
+	163869348	Project Tower- Chorus -FX	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Combat Music\Project Tower- Chorus -FX_56CEF360.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Combat Music\Combat Music-Chorus\Project Tower- Chorus -FX		584243
+	169209220	Footstep Dirt 2	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Footstep Dirt\Footstep Dirt 2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footstep Dirt\Footstep Dirt 2		62460
+	175096390	Flamethrower	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Flamethrower\Flamethrower_54D2B3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Flamethrower\Flamethrower		524540
+	175098220	Crossbow Rotate 2	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Crossbow Rotate\Crossbow Rotate 2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Crossbow Rotate\Crossbow Rotate 2		163148
+	180202566	Robot Footstep 2	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Robot Footstep\Robot Footstep 2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Robot Footstep\Robot Footstep 2		57210
+	236590895	Project Tower-Break- FX	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Combat Music\Project Tower-Break- FX_56CEF360.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Combat Music\Combat Music-Break\Project Tower-Break- FX		614806
+	241947048	Project Tower-Chorurs- BELL SYNTH	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Combat Music\Project Tower-Chorurs- BELL SYNTH_56CEF360.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Combat Music\Combat Music-Chorus\Project Tower-Chorurs- BELL SYNTH		574560
+	258881803	Footstep Dirt 3	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Footstep Dirt\Footstep Dirt 3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footstep Dirt\Footstep Dirt 3		30238
+	284010281	Crossbow Rotate 1	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Crossbow Rotate\Crossbow Rotate 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Crossbow Rotate\Crossbow Rotate 1		160244
+	291648961	Project Tower- Chorus -Reese	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Combat Music\Project Tower- Chorus -Reese_56CEF360.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Combat Music\Combat Music-Chorus\Project Tower- Chorus -Reese		574211
+	303428700	Robot Shoot 3	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Robot Shoot 3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Robot Shoot\Robot Shoot 3		144522
+	318381722	Robot Movement 1	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Robot Movement\Robot Movement 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Robot Movement\Robot Movement 1		108098
+	332371405	Project Tower-Chorus-KICK_SUB	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Combat Music\Project Tower-Chorus-KICK_SUB_56CEF360.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Combat Music\Combat Music-Chorus\Project Tower-Chorus-KICK_SUB		312426
+	339351980	Crossbow Shoot 3	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Crossbow Shoot\Crossbow Shoot 3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Crossbow Shoot\Crossbow Shoot 3		94248
+	345977530	Robot Charge Up 1	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Robot Charge Up\Robot Charge Up 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Robot Charge Up\Robot Charge Up 1		186606
+	387295832	Robot Movement 2	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Robot Movement\Robot Movement 2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Robot Movement\Robot Movement 2		72096
+	399448735	Robot Footstep 4	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Robot Footstep\Robot Footstep 4_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Robot Footstep\Robot Footstep 4		54980
+	399675446	Crossbow Hit 3	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Crossbow Hit\Crossbow Hit 3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Crossbow Hit\Crossbow Hit 3		29450
+	404627970	Crossbow Hit 1	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Crossbow Hit\Crossbow Hit 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Crossbow Hit\Crossbow Hit 1		34066
+	413290687	Project Tower-Intro-	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Combat Music\Project Tower-Intro-_56CEF360.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Combat Music\Combat Music-Intro\Project Tower-Intro-		361965
+	468457180	Footstep Dirt 4	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Footstep Dirt\Footstep Dirt 4_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footstep Dirt\Footstep Dirt 4		82552
+	470355483	Squid 2	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Squid 2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Squid\Squid 2		358896
+	471356072	Tank Missle 1	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Tank Missle\Tank Missle 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Tank Missle\Tank Missle 1		246828
+	488845164	Robot Footstep 3	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Robot Footstep\Robot Footstep 3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Robot Footstep\Robot Footstep 3		83506
+	497019908	Project Tower-Break- KICK_SUB	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Combat Music\Project Tower-Break- KICK_SUB_56CEF360.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Combat Music\Combat Music-Break\Project Tower-Break- KICK_SUB		468546
+	533177955	Crossbow Rotate 3	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Crossbow Rotate\Crossbow Rotate 3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Crossbow Rotate\Crossbow Rotate 3		154532
+	539752717	Project Tower-Break- reese	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Combat Music\Project Tower-Break- reese_56CEF360.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Combat Music\Combat Music-Break\Project Tower-Break- reese		650631
+	551826870	Portal Loop	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Portal Loop_E2D03D99.wem		\Actor-Mixer Hierarchy\Default Work Unit\Portal Loop		3112640
+	600039576	Project Tower- Chorus -Drums	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Combat Music\Project Tower- Chorus -Drums_56CEF360.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Combat Music\Combat Music-Chorus\Project Tower- Chorus -Drums		770294
+	619424064	Crossbow Shoot 2	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Crossbow Shoot\Crossbow Shoot 2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Crossbow Shoot\Crossbow Shoot 2		104042
+	624248765	Project Tower-Chorurs- MAIN BASS	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Combat Music\Project Tower-Chorurs- MAIN BASS_56CEF360.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Combat Music\Combat Music-Chorus\Project Tower-Chorurs- MAIN BASS		856677
+	647158556	Project Tower-Break- music	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Combat Music\Project Tower-Break- music_56CEF360.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Combat Music\Combat Music-Chorus\Project Tower-Break- music		570823
+	677275722	Tank Engine Stop	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Tank Engine\Tank Engine Stop_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Tank Engine\Tank Engine Stop		171980
+	705925219	Project Tower-Chorurs- PLUCKS	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Combat Music\Project Tower-Chorurs- PLUCKS_56CEF360.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Combat Music\Combat Music-Chorus\Project Tower-Chorurs- PLUCKS		618038
+	719596746	Footstep Dirt 5	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Footstep Dirt\Footstep Dirt 5_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footstep Dirt\Footstep Dirt 5		64140
+	731071860	Crossbow Hit 2	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Crossbow Hit\Crossbow Hit 2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Crossbow Hit\Crossbow Hit 2		38128
+	732549271	Robot Movement 5	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Robot Movement\Robot Movement 5_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Robot Movement\Robot Movement 5		112102
+	735690032	Project Tower-Chorurs- 808	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Combat Music\Project Tower-Chorurs- 808_56CEF360.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Combat Music\Combat Music-Chorus\Project Tower-Chorurs- 808		434531
+	747469256	Robot Footstep 5	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Robot Footstep\Robot Footstep 5_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Robot Footstep\Robot Footstep 5		37654
+	755762778	Robot Shoot 2	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Robot Shoot 2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Robot Shoot\Robot Shoot 2		140816
+	759541078	Ambience	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Ambience_1879EBB0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience		3282144
+	767745999	Tank Engine Loop	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Tank Engine\Tank Engine Loop_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Tank Engine\Tank Engine Loop		739690
+	775160318	Squid 1	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Squid 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Squid\Squid 1		321676
+	811099862	Portal Entrance 2	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Portal Entrance 2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Portal Entrance\Portal Entrance 2		408832
+	835356872	Crossbow Shoot 1	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Crossbow Shoot\Crossbow Shoot 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Crossbow Shoot\Crossbow Shoot 1		80648
+	848172015	Robot Charge Up 3	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Robot Charge Up\Robot Charge Up 3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Robot Charge Up\Robot Charge Up 3		173282
+	862478615	Building 3	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Building 3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Building\Building 3		669224
+	873156723	Robot Movement 4	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Robot Movement\Robot Movement 4_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Robot Movement\Robot Movement 4		89212
+	896700721	Project Tower-Break- drums	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Combat Music\Project Tower-Break- drums_56CEF360.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Combat Music\Combat Music-Break\Project Tower-Break- drums		590361
+	919744837	Robot Movement 3	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Robot Movement\Robot Movement 3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Robot Movement\Robot Movement 3		96096
+	941471765	Project Tower-Chorus- KICK&SUB	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Buiilding Music\Project Tower-Chorus- KICK&SUB_56CEF360.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Building Music\Buiilding Music\Project Tower-Chorus- KICK&SUB		270218
+	960431008	Tank Missle 3	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Tank Missle\Tank Missle 3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Tank Missle\Tank Missle 3		267612
+	961620256	Squid 3	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Squid 3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Squid\Squid 3		383776
+	965006881	Building 1	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Building 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Building\Building 1		372436
+	979825893	Project Tower-Chorus- VOX	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Buiilding Music\Project Tower-Chorus- VOX_56CEF360.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Building Music\Buiilding Music\Project Tower-Chorus- VOX		497911
+	1000496152	Portal Entrance 3	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Portal Entrance 3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Portal Entrance\Portal Entrance 3		355412
+	1030964319	Portal Entrance 1	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Portal Entrance 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Portal Entrance\Portal Entrance 1		389880
+	1032795171	Project Tower-Chorus- DRUMS	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Buiilding Music\Project Tower-Chorus- DRUMS_56CEF360.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Building Music\Buiilding Music\Project Tower-Chorus- DRUMS		569448
+	1039566971	Footstep Dirt 1	Y:\Documents\GitHub\Tower\Project Tower\.cache\Mac\SFX\Footstep Dirt\Footstep Dirt 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footstep Dirt\Footstep Dirt 1		78038
+

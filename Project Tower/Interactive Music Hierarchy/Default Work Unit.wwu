@@ -1,0 +1,1800 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{CC4E03BF-6696-4A66-9DE2-B1319DE26223}" SchemaVersion="119">
+	<InteractiveMusic>
+		<WorkUnit Name="Default Work Unit" ID="{CC4E03BF-6696-4A66-9DE2-B1319DE26223}" PersistMode="Standalone">
+			<ChildrenList>
+				<MusicPlaylistContainer Name="Transition" ID="{28EB3D7F-A8F4-40D2-ACF5-196C496E8C35}" ShortID="1070379462">
+					<PropertyList>
+						<Property Name="Tempo" Type="Real64" Value="89"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B776120B-6534-4093-B8C4-D1D9B8DC61BF}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+						</Reference>
+						<Reference Name="PlaylistRoot">
+							<Custom>
+								<MusicPlaylistItem Name="" ID="{A47A919E-07FA-45B3-90E6-0AFFE32F3D0F}" ShortID="284808215">
+									<PropertyList>
+										<Property Name="PlayMode" Type="int16" Value="1"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{A4DB3D86-60F4-4C49-83C2-4B4AF160C593}" ShortID="729375964">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Segment">
+													<ObjectRef Name="Combat Music-Trans" ID="{6220432C-EC6E-4743-A839-F2C098E14D30}" WorkUnitID="{CC4E03BF-6696-4A66-9DE2-B1319DE26223}"/>
+												</Reference>
+											</ReferenceList>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Custom>
+						</Reference>
+						<Reference Name="TransitionRoot">
+							<Custom>
+								<MusicTransition Name="Root" ID="{D23DDD2E-9D28-4C73-9089-6775D9DB7BB7}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{181B0D04-B344-489E-A48A-27D8C7AC145B}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</Custom>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="Combat Music-Trans" ID="{6220432C-EC6E-4743-A839-F2C098E14D30}" ShortID="796851092">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="12303.3707865169"/>
+								<Property Name="Tempo" Type="Real64" Value="89"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B776120B-6534-4093-B8C4-D1D9B8DC61BF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="Project Tower-Transition-" ID="{296A07D8-E73F-48B1-A839-E31CF702C024}" ShortID="457221864">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B776120B-6534-4093-B8C4-D1D9B8DC61BF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{8FF1C505-2C70-40A5-854B-32B4AFB8B5A6}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Project Tower-Transition-" ID="{B856FF80-7AD9-4CBD-9E53-7F3119904A4E}">
+											<Language>SFX</Language>
+											<AudioFile>Combat Music\Project Tower-Transition-.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="308143268"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{4DE505CF-4EA3-44A6-BB4F-DC71E42EDC9C}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="Project Tower-Transition-" ID="{58FFEE0B-CC40-44D1-95E3-EF2D7551266C}">
+																			<PropertyList>
+																				<Property Name="BeginTrimOffset" Type="Real64" Value="1.13686837721616E-13"/>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="10786.5168539326"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="78.0909605517763"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="Project Tower-Transition-" ID="{B856FF80-7AD9-4CBD-9E53-7F3119904A4E}"/>
+																			<PropertyCurveList>
+																				<PropertyCurve PropertyName="Highpass">
+																					<Curve Name="" ID="{D1CB35B4-F1A2-4EA1-8CAF-3A1543F990E1}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="1"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>0</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>10.78652</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																				<PropertyCurve PropertyName="Lowpass">
+																					<Curve Name="" ID="{FDEBA03E-9FC7-40A6-9E2D-00A9C4F6FEF1}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="1"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>0</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>10.78652</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																				<PropertyCurve PropertyName="Volume">
+																					<Curve Name="" ID="{51D9FAB9-5422-4E2D-8E3F-0E8C299DC3FE}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="3"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>0</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>10.78652</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																			</PropertyCurveList>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Cues">
+									<Reference>
+										<Local>
+											<MusicCue Name="Entry Cue" ID="{F77007FC-A1F2-4F7E-BA60-3281390DCFB9}"/>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{E360DFF7-1177-432E-A027-2916962F0EDD}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="10786.5168539326"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicSegment>
+					</ChildrenList>
+				</MusicPlaylistContainer>
+				<MusicSwitchContainer Name="Music" ID="{602D22E1-4B31-466E-9B42-763C9A1D6841}" ShortID="694980476">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-2</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<Custom>
+								<Conversion Name="Conversion Settings (Custom)" ID="{B6B51485-4314-47B0-810D-80A8E51ADC32}">
+									<PropertyList>
+										<Property Name="Channels" Type="int32">
+											<ValueList>
+												<Value Platform="Web">4</Value>
+												<Value Platform="Windows">4</Value>
+												<Value Platform="Mac">4</Value>
+											</ValueList>
+										</Property>
+										<Property Name="LRMix" Type="Real64">
+											<ValueList>
+												<Value Platform="Web">0</Value>
+												<Value Platform="Windows">0</Value>
+												<Value Platform="Mac">0</Value>
+											</ValueList>
+										</Property>
+										<Property Name="MaxSampleRate" Type="int32">
+											<ValueList>
+												<Value Platform="Web">0</Value>
+												<Value Platform="Windows">0</Value>
+												<Value Platform="Mac">0</Value>
+											</ValueList>
+										</Property>
+										<Property Name="MinSampleRate" Type="int32">
+											<ValueList>
+												<Value Platform="Web">0</Value>
+												<Value Platform="Windows">0</Value>
+												<Value Platform="Mac">0</Value>
+											</ValueList>
+										</Property>
+										<Property Name="SampleRate" Type="int32">
+											<ValueList>
+												<Value Platform="Web">0</Value>
+												<Value Platform="Windows">0</Value>
+												<Value Platform="Mac">0</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ConversionPluginInfoList>
+										<ConversionPluginInfo Platform="Web">
+											<ConversionPlugin Name="" ID="{BD5BC6CB-B1B3-4303-BE64-D4039EC89365}" PluginName="Vorbis" CompanyID="0" PluginID="4"/>
+										</ConversionPluginInfo>
+										<ConversionPluginInfo Platform="Windows">
+											<ConversionPlugin Name="" ID="{8C3C517E-A913-4D7E-8ADF-7EDB9989655A}" PluginName="Vorbis" CompanyID="0" PluginID="4"/>
+										</ConversionPluginInfo>
+										<ConversionPluginInfo Platform="Mac">
+											<ConversionPlugin Name="" ID="{E1DC2217-F85F-4EF1-A84C-2AB89989648B}" PluginName="Vorbis" CompanyID="0" PluginID="4"/>
+										</ConversionPluginInfo>
+									</ConversionPluginInfoList>
+								</Conversion>
+							</Custom>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+						</Reference>
+						<Reference Name="TransitionRoot">
+							<Custom>
+								<MusicTransition Name="Root" ID="{3285E977-E570-449E-AA29-C8DDAA153E3C}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{A9F02C62-3C4E-4B8C-990C-7493E787CDF5}">
+											<PropertyList>
+												<Property Name="ExitSourceAt" Type="int16" Value="2"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+										<MusicTransition Name="Transition" ID="{6067B875-8A9F-4358-8953-958AB3868AD5}">
+											<PropertyList>
+												<Property Name="DestinationContextType" Type="int16" Value="2"/>
+												<Property Name="EnableDestinationFadeIn" Type="bool" Value="True"/>
+												<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+												<Property Name="EnableTransitionFadeIn" Type="bool" Value="True"/>
+												<Property Name="EnableTransitionFadeOut" Type="bool" Value="True"/>
+												<Property Name="ExitSourceAt" Type="int16" Value="2"/>
+												<Property Name="SourceContextType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="DestinationContextObject">
+													<ObjectRef Name="Combat Music" ID="{70518B69-8EA2-42A6-B9D0-A892F9C3FE0F}" WorkUnitID="{CC4E03BF-6696-4A66-9DE2-B1319DE26223}"/>
+												</Reference>
+												<Reference Name="SourceContextObject">
+													<ObjectRef Name="Building Music" ID="{72BB28ED-0842-4A39-81E6-0974CA61606F}" WorkUnitID="{CC4E03BF-6696-4A66-9DE2-B1319DE26223}"/>
+												</Reference>
+											</ReferenceList>
+											<TransitionInfo>
+												<TransitionObjectRef Name="Combat Music-Trans" ID="{6220432C-EC6E-4743-A839-F2C098E14D30}" WorkUnitID="{CC4E03BF-6696-4A66-9DE2-B1319DE26223}"/>
+												<SourceFadeOut>
+													<MusicFade Name="Source Fade-out" ID="{10413CB9-597E-4C02-B9B0-D1A92C7E2A5C}">
+														<PropertyList>
+															<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+															<Property Name="FadeType" Type="int16" Value="1"/>
+														</PropertyList>
+													</MusicFade>
+												</SourceFadeOut>
+												<DestinationFadeIn>
+													<MusicFade Name="Destination Fade-in" ID="{CFCB8AFB-3004-4C32-8B8F-9C9A07B4E5F3}">
+														<PropertyList>
+															<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+														</PropertyList>
+													</MusicFade>
+												</DestinationFadeIn>
+												<TransitionFadeIn>
+													<MusicFade Name="Transition Fade-in" ID="{57BD28D2-904F-44BD-81B7-7F00A3E72F21}">
+														<PropertyList>
+															<Property Name="FadeOffset" Type="Real64" Value="-0.5"/>
+															<Property Name="FadeTime" Type="Real64" Value="0.2"/>
+														</PropertyList>
+													</MusicFade>
+												</TransitionFadeIn>
+												<TransitionFadeOut>
+													<MusicFade Name="Transition Fade-out" ID="{29B70EB3-E8C2-4985-8EE4-0ACC64B30C66}">
+														<PropertyList>
+															<Property Name="FadeTime" Type="Real64" Value="0.2"/>
+															<Property Name="FadeType" Type="int16" Value="1"/>
+														</PropertyList>
+													</MusicFade>
+												</TransitionFadeOut>
+											</TransitionInfo>
+										</MusicTransition>
+										<MusicTransition Name="Transition" ID="{70B02A71-5323-4E97-BB6D-DCB53FB754A0}">
+											<PropertyList>
+												<Property Name="DestinationContextType" Type="int16" Value="2"/>
+												<Property Name="EnableDestinationFadeIn" Type="bool" Value="True"/>
+												<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+												<Property Name="EnableTransitionFadeIn" Type="bool" Value="True"/>
+												<Property Name="EnableTransitionFadeOut" Type="bool" Value="True"/>
+												<Property Name="ExitSourceAt" Type="int16" Value="2"/>
+												<Property Name="SourceContextType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="DestinationContextObject">
+													<ObjectRef Name="Building Music" ID="{72BB28ED-0842-4A39-81E6-0974CA61606F}" WorkUnitID="{CC4E03BF-6696-4A66-9DE2-B1319DE26223}"/>
+												</Reference>
+												<Reference Name="SourceContextObject">
+													<ObjectRef Name="Combat Music" ID="{70518B69-8EA2-42A6-B9D0-A892F9C3FE0F}" WorkUnitID="{CC4E03BF-6696-4A66-9DE2-B1319DE26223}"/>
+												</Reference>
+											</ReferenceList>
+											<TransitionInfo>
+												<TransitionObjectRef Name="Combat Music-Trans" ID="{6220432C-EC6E-4743-A839-F2C098E14D30}" WorkUnitID="{CC4E03BF-6696-4A66-9DE2-B1319DE26223}"/>
+												<SourceFadeOut>
+													<MusicFade Name="Source Fade-out" ID="{D70D6812-9712-46B9-86DA-E8D6BC149514}">
+														<PropertyList>
+															<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+															<Property Name="FadeType" Type="int16" Value="1"/>
+														</PropertyList>
+													</MusicFade>
+												</SourceFadeOut>
+												<DestinationFadeIn>
+													<MusicFade Name="Destination Fade-in" ID="{167B55D2-FBFC-4E65-B662-89644FEA3250}">
+														<PropertyList>
+															<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+														</PropertyList>
+													</MusicFade>
+												</DestinationFadeIn>
+												<TransitionFadeIn>
+													<MusicFade Name="Transition Fade-in" ID="{31069AA8-E75E-48C9-9725-167263B37EFD}">
+														<PropertyList>
+															<Property Name="FadeOffset" Type="Real64" Value="-3"/>
+															<Property Name="FadeTime" Type="Real64" Value="0.3"/>
+														</PropertyList>
+													</MusicFade>
+												</TransitionFadeIn>
+												<TransitionFadeOut>
+													<MusicFade Name="Transition Fade-out" ID="{9838D9B3-FDAA-40AD-9FC3-A52819027AA8}">
+														<PropertyList>
+															<Property Name="FadeTime" Type="Real64" Value="0.3"/>
+															<Property Name="FadeType" Type="int16" Value="1"/>
+														</PropertyList>
+													</MusicFade>
+												</TransitionFadeOut>
+											</TransitionInfo>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</Custom>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicPlaylistContainer Name="Building Music" ID="{72BB28ED-0842-4A39-81E6-0974CA61606F}" ShortID="855961172">
+							<PropertyList>
+								<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
+								<Property Name="Tempo" Type="Real64" Value="102"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B776120B-6534-4093-B8C4-D1D9B8DC61BF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+								</Reference>
+								<Reference Name="PlaylistRoot">
+									<Custom>
+										<MusicPlaylistItem Name="" ID="{6233CE9E-5930-48C7-A850-9FFDD885AF2F}" ShortID="36092304">
+											<ChildrenList>
+												<MusicPlaylistItem Name="" ID="{B0C98EFB-4569-40AF-BD8E-C907CC6A18E3}" ShortID="307289107">
+													<PropertyList>
+														<Property Name="LoopCount" Type="int16" Value="0"/>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Segment">
+															<ObjectRef Name="Buiilding Music" ID="{9EC49F8A-8AC7-4B19-91B8-6FE824CC566D}" WorkUnitID="{CC4E03BF-6696-4A66-9DE2-B1319DE26223}"/>
+														</Reference>
+													</ReferenceList>
+												</MusicPlaylistItem>
+											</ChildrenList>
+										</MusicPlaylistItem>
+									</Custom>
+								</Reference>
+								<Reference Name="TransitionRoot">
+									<Custom>
+										<MusicTransition Name="Root" ID="{97ED348F-A03B-4430-9EC1-1A159AB3BBC6}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<ChildrenList>
+												<MusicTransition Name="Transition" ID="{9BC5661C-7409-4F25-8227-C034D8AB4C48}">
+													<TransitionInfo/>
+												</MusicTransition>
+											</ChildrenList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</Custom>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicSegment Name="Buiilding Music" ID="{9EC49F8A-8AC7-4B19-91B8-6FE824CC566D}" ShortID="738507056">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="37647.0625"/>
+										<Property Name="Tempo" Type="Real64" Value="102"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B776120B-6534-4093-B8C4-D1D9B8DC61BF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Project Tower-Chorus- DRUMS" ID="{96BB98AD-057C-4340-AFE7-3318576E9F8E}" ShortID="754799821">
+											<PropertyList>
+												<Property Name="MusicTrackType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{0E2DC297-1435-404E-8CF4-1C529AC5C379}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Project Tower-Chorus- DRUMS" ID="{EB2B80AB-0DB8-410E-B9D2-6931681918A3}">
+													<Language>SFX</Language>
+													<AudioFile>Buiilding Music\Project Tower-Chorus- DRUMS.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1032795171"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{590FF5A9-77F8-4D1C-80CD-8D2C94503462}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Project Tower-Chorus- DRUMS" ID="{171DBEF2-9402-48E5-B915-22703902285B}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="37647.0625"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Project Tower-Chorus- DRUMS" ID="{EB2B80AB-0DB8-410E-B9D2-6931681918A3}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{02124540-B773-4BDB-B8A5-815D644B4853}"/>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="Project Tower-Chorus- KICK&amp;SUB" ID="{8DB940F6-EA4E-449E-A0D1-46807F951D35}" ShortID="943645339">
+											<PropertyList>
+												<Property Name="MusicTrackType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{80300C43-6F8D-44F4-963E-D8F336F66C5A}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Project Tower-Chorus- KICK&amp;SUB" ID="{9AC8A362-7166-4A99-8040-F38259C49E47}">
+													<Language>SFX</Language>
+													<AudioFile>Buiilding Music\Project Tower-Chorus- KICK&amp;SUB.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="941471765"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{79C7D29E-9C3B-43D8-9D37-CE5F7D3209AD}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Project Tower-Chorus- KICK&amp;SUB" ID="{9E089E6C-2BC7-4BB7-9191-5EAEBCC72F06}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="37647.0625"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Project Tower-Chorus- KICK&amp;SUB" ID="{9AC8A362-7166-4A99-8040-F38259C49E47}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{78A49450-5149-4905-92CF-841BB48BBCB7}"/>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="Project Tower-Chorus- PLUCK" ID="{BD080EFC-E6C9-482A-86B1-757ABE269729}" ShortID="108556541">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{70216F2E-65A7-43D3-861D-CC596792A372}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Project Tower-Chorus- PLUCK" ID="{A632C31B-459E-4D52-B2C0-B4E0D8836A3D}">
+													<Language>SFX</Language>
+													<AudioFile>Buiilding Music\Project Tower-Chorus- PLUCK.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="139333300"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{5615FBDD-1189-4990-B017-074E1BE3BD23}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Project Tower-Chorus- PLUCK" ID="{82AC5C29-7C53-4E18-BC0D-42CBF46E8EFA}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="37647.0625"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Project Tower-Chorus- PLUCK" ID="{A632C31B-459E-4D52-B2C0-B4E0D8836A3D}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="Project Tower-Chorus- VOX" ID="{414C517C-733E-487D-8145-2BD91C613A9B}" ShortID="718263466">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{96B080A3-29AF-4014-840E-51F98D923AA3}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Project Tower-Chorus- VOX" ID="{1988E4CD-9715-477D-BA40-695C706F94BF}">
+													<Language>SFX</Language>
+													<AudioFile>Buiilding Music\Project Tower-Chorus- VOX.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="979825893"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{8C6DD31A-9B52-4D6D-978A-1F1F0904E580}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Project Tower-Chorus- VOX" ID="{722A4048-9C0E-45AD-AC16-D0DB23A36A68}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="37647.0625"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Project Tower-Chorus- VOX" ID="{1988E4CD-9715-477D-BA40-695C706F94BF}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{76E7E33B-F162-460C-A9BA-2E8B1796EB3E}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{1F49293E-6F39-424D-9571-8CE939F730B9}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="37647.0625"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+							</ChildrenList>
+						</MusicPlaylistContainer>
+						<MusicPlaylistContainer Name="Combat Music" ID="{70518B69-8EA2-42A6-B9D0-A892F9C3FE0F}" ShortID="458488770">
+							<PropertyList>
+								<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
+								<Property Name="Tempo" Type="Real64" Value="89"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B776120B-6534-4093-B8C4-D1D9B8DC61BF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+								</Reference>
+								<Reference Name="PlaylistRoot">
+									<Custom>
+										<MusicPlaylistItem Name="" ID="{6677F5B3-3B37-4E34-9A33-E198DB237D26}" ShortID="139698922">
+											<PropertyList>
+												<Property Name="LoopCount" Type="int16" Value="0"/>
+											</PropertyList>
+											<ChildrenList>
+												<MusicPlaylistItem Name="" ID="{58110BA2-F86C-4997-BFEA-0DEB2A33F57F}" ShortID="951685823">
+													<PropertyList>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Segment">
+															<ObjectRef Name="Combat Music-Intro" ID="{167B17ED-1B13-4D6C-9C60-5967861E18C1}" WorkUnitID="{CC4E03BF-6696-4A66-9DE2-B1319DE26223}"/>
+														</Reference>
+													</ReferenceList>
+												</MusicPlaylistItem>
+												<MusicPlaylistItem Name="" ID="{2990278D-2CD2-488D-8A95-B5D68DD0C0AA}" ShortID="965383405">
+													<PropertyList>
+														<Property Name="LoopCount" Type="int16" Value="2"/>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Segment">
+															<ObjectRef Name="Combat Music-Chorus" ID="{19CBE4CD-6ED5-42BD-A0D7-389DF95D5BE8}" WorkUnitID="{CC4E03BF-6696-4A66-9DE2-B1319DE26223}"/>
+														</Reference>
+													</ReferenceList>
+												</MusicPlaylistItem>
+												<MusicPlaylistItem Name="" ID="{2D967D54-BA2E-421E-9794-BCBEC9974C89}" ShortID="969901548">
+													<PropertyList>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Segment">
+															<ObjectRef Name="Combat Music-Break" ID="{976C8D4D-AC61-4EB2-9E82-237173B35FF8}" WorkUnitID="{CC4E03BF-6696-4A66-9DE2-B1319DE26223}"/>
+														</Reference>
+													</ReferenceList>
+												</MusicPlaylistItem>
+												<MusicPlaylistItem Name="" ID="{E72A3D7E-7EE9-49F6-8C09-75838AAA4B9A}" ShortID="963547620">
+													<PropertyList>
+														<Property Name="LoopCount" Type="int16" Value="2"/>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Segment">
+															<ObjectRef Name="Combat Music-Chorus" ID="{19CBE4CD-6ED5-42BD-A0D7-389DF95D5BE8}" WorkUnitID="{CC4E03BF-6696-4A66-9DE2-B1319DE26223}"/>
+														</Reference>
+													</ReferenceList>
+												</MusicPlaylistItem>
+											</ChildrenList>
+										</MusicPlaylistItem>
+									</Custom>
+								</Reference>
+								<Reference Name="TransitionRoot">
+									<Custom>
+										<MusicTransition Name="Root" ID="{A283A20E-A59E-4094-A375-EDB164B9DBC0}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<ChildrenList>
+												<MusicTransition Name="Transition" ID="{CC432BB2-7812-43F5-872A-7573E96D40A6}">
+													<TransitionInfo/>
+												</MusicTransition>
+											</ChildrenList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</Custom>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicSegment Name="Combat Music-Break" ID="{976C8D4D-AC61-4EB2-9E82-237173B35FF8}" ShortID="722759712">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="43657.8699340245"/>
+										<Property Name="Tempo" Type="Real64" Value="89"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B776120B-6534-4093-B8C4-D1D9B8DC61BF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Project Tower-Break- KICK_SUB" ID="{F5D87CF4-6580-4CEC-B876-56C3AE6DB2D2}" ShortID="990010234">
+											<PropertyList>
+												<Property Name="MusicTrackType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B776120B-6534-4093-B8C4-D1D9B8DC61BF}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{3C15CA65-03DC-4BCC-B27A-137029D203FD}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Project Tower-Break- KICK_SUB" ID="{C37A23C1-5040-4310-9ABA-97E48973700C}">
+													<Language>SFX</Language>
+													<AudioFile>Combat Music\Project Tower-Break- KICK_SUB.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="497019908"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{3978796D-2B67-40B6-A302-EEBFA988C86B}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Project Tower-Break- KICK_SUB" ID="{D39C52B2-76AE-434D-B28B-68D86205D17F}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="43146.0833333333"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Project Tower-Break- KICK_SUB" ID="{C37A23C1-5040-4310-9ABA-97E48973700C}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="Project Tower-Break- FX" ID="{1DE40B5B-9C77-49D0-ABD5-7EEDBF832DFD}" ShortID="745302121">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B776120B-6534-4093-B8C4-D1D9B8DC61BF}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{6D843D5F-2EDD-4A46-9D66-418D4DAE98F6}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Project Tower-Break- FX" ID="{CD834FC4-0991-41DA-8A70-26D21340D074}">
+													<Language>SFX</Language>
+													<AudioFile>Combat Music\Project Tower-Break- FX.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="236590895"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{6AC31A62-E78F-4948-9834-006A70669CAF}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Project Tower-Break- FX" ID="{E4F2A1C1-8504-49D5-A8B0-C8D7E9936D5B}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="43146.0833333333"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Project Tower-Break- FX" ID="{CD834FC4-0991-41DA-8A70-26D21340D074}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="Project Tower-Break- drums" ID="{46760E2B-6D26-40C1-903F-6DA1042DF9EF}" ShortID="792331081">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B776120B-6534-4093-B8C4-D1D9B8DC61BF}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{8A9A8220-1A5E-4DBF-919A-0B2F867F3428}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Project Tower-Break- drums" ID="{28512EC0-2BF6-4F97-970F-39EE3CBCDC20}">
+													<Language>SFX</Language>
+													<AudioFile>Combat Music\Project Tower-Break- drums.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="896700721"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{07687474-8280-4971-8CD2-0657CCF5076D}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Project Tower-Break- drums" ID="{452DB15B-184D-4A8E-9DBF-95312DA6BE97}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="43146.0833333333"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Project Tower-Break- drums" ID="{28512EC0-2BF6-4F97-970F-39EE3CBCDC20}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="Project Tower-Break- reese" ID="{5A4A43B6-F8D1-4022-A439-C8047BB2EF08}" ShortID="373842630">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B776120B-6534-4093-B8C4-D1D9B8DC61BF}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{E9765C1C-DA8D-4CF1-995D-2289F62EA3F9}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Project Tower-Break- reese" ID="{FADA18F1-0C14-46BA-8F7B-178CF0472ADA}">
+													<Language>SFX</Language>
+													<AudioFile>Combat Music\Project Tower-Break- reese.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="539752717"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{C5FAC3DA-EF29-45D3-BA3B-65A2B57F3004}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Project Tower-Break- reese" ID="{9C463EE3-F8B4-4A04-9A88-63E9BCE2E639}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="43146.0833333333"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Project Tower-Break- reese" ID="{FADA18F1-0C14-46BA-8F7B-178CF0472ADA}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="Project Tower-Break- music" ID="{CBC56F64-C91A-44D4-8571-F519A99D7878}" ShortID="128879935">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B776120B-6534-4093-B8C4-D1D9B8DC61BF}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{2A40864D-BFF0-4606-9774-9A6DC60B34E3}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Project Tower-Break- music" ID="{3DCFCFCF-B8FF-4B54-B46E-F25E1A223102}">
+													<Language>SFX</Language>
+													<AudioFile>Combat Music\Project Tower-Break- music.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="647158556"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{EDDCDC7E-39D6-4D3E-B767-DFD281BA0FF6}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Project Tower-Break- music" ID="{AE5F2ED9-2230-4946-8BE3-4C94513353AD}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="43146.0833333333"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Project Tower-Break- music" ID="{3DCFCFCF-B8FF-4B54-B46E-F25E1A223102}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{CEA8827B-FD15-42C3-841D-DEAD349FB810}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{AEFA8FD8-4A39-4A5D-8945-EFFDD2FCEAF5}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="43152.6861451461"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+								<MusicSegment Name="Combat Music-Chorus" ID="{19CBE4CD-6ED5-42BD-A0D7-389DF95D5BE8}" ShortID="615850174">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="43150.2329912937"/>
+										<Property Name="Tempo" Type="Real64" Value="89"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B776120B-6534-4093-B8C4-D1D9B8DC61BF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Project Tower- Chorus -Drums" ID="{CA59CF78-EE9D-4182-ACC4-E736D8E6BB6E}" ShortID="921754875">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{11C8368F-38BA-4B5F-B3C1-46B494754280}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Project Tower- Chorus -Drums" ID="{0DE4E220-9820-49F6-BB10-7833633900E3}">
+													<Language>SFX</Language>
+													<AudioFile>Combat Music\Project Tower- Chorus -Drums.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="600039576"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{D4A9D8D3-954D-4BF7-B091-91A17AF0F098}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Project Tower- Chorus -Drums" ID="{216BC649-9E23-440D-88F1-0A7AC5D24D48}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="43146.0833333333"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Project Tower- Chorus -Drums" ID="{0DE4E220-9820-49F6-BB10-7833633900E3}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="Project Tower- Chorus -FX" ID="{6CD50FD4-7BF5-4F87-925C-76FFDA5188CB}" ShortID="121077784">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{40576F1F-652C-43E2-9493-A08F09A8615A}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Project Tower- Chorus -FX" ID="{5DA5EEE7-7DEF-46DD-856F-E68B516868FE}">
+													<Language>SFX</Language>
+													<AudioFile>Combat Music\Project Tower- Chorus -FX.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="163869348"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{094922C3-300E-47B4-BFDC-15BC67CE8D06}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Project Tower- Chorus -FX" ID="{327A1B3F-B31E-4EDA-8AFD-83477AA06F1B}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="43146.0833333333"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Project Tower- Chorus -FX" ID="{5DA5EEE7-7DEF-46DD-856F-E68B516868FE}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="Project Tower- Chorus -Reese" ID="{0AA7D1BF-B34B-466A-8422-92C9D8BF529B}" ShortID="1034460192">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{06E96476-C10A-431E-AE95-B2CE78B3E0A4}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Project Tower- Chorus -Reese" ID="{6A1671D7-EBC4-479B-B481-098A5AF78380}">
+													<Language>SFX</Language>
+													<AudioFile>Combat Music\Project Tower- Chorus -Reese.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="291648961"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{982375EE-378C-4891-84B4-8DF65638D09A}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Project Tower- Chorus -Reese" ID="{47869436-F52E-4592-9F2E-44EB948A45B1}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="43146.0833333333"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Project Tower- Chorus -Reese" ID="{6A1671D7-EBC4-479B-B481-098A5AF78380}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="Project Tower-Chorurs- 808" ID="{9E0D1205-BBD8-4725-9B09-2C3DB0C3C5F1}" ShortID="697087795">
+											<PropertyList>
+												<Property Name="MusicTrackType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{EA812066-BFB9-4FF3-BE10-F4EDADFF05CC}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Project Tower-Chorurs- 808" ID="{13D85AFB-D655-436B-9F06-1C7C6753DC07}">
+													<Language>SFX</Language>
+													<AudioFile>Combat Music\Project Tower-Chorurs- 808.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="735690032"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{3327DDD9-A24D-4090-B26A-20989D10D7BB}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Project Tower-Chorurs- 808" ID="{E4925F23-3724-46D4-A795-5FF481223BC3}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="43146.0833333333"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Project Tower-Chorurs- 808" ID="{13D85AFB-D655-436B-9F06-1C7C6753DC07}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{1EA87845-95AE-4F1F-8612-74B9FCABE0B3}"/>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="Project Tower-Chorurs- BELL SYNTH" ID="{7E2E2D84-EDFF-4B39-82E2-CBBCD2A4A639}" ShortID="606899305">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{6E5D445A-333C-4C66-BE5F-51430C1A57C4}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Project Tower-Chorurs- BELL SYNTH" ID="{608060A9-569C-4661-9D2D-9FB1A5996038}">
+													<Language>SFX</Language>
+													<AudioFile>Combat Music\Project Tower-Chorurs- BELL SYNTH.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="241947048"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{DFC3F0D4-61A6-4298-B57E-FA87F6394BFA}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Project Tower-Chorurs- BELL SYNTH" ID="{38BAF6B4-7851-40B5-B70F-82F226B91938}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="43146.0833333333"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Project Tower-Chorurs- BELL SYNTH" ID="{608060A9-569C-4661-9D2D-9FB1A5996038}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="Project Tower-Chorurs- MAIN BASS" ID="{7ADBBC78-FA2A-4DB3-98FF-C79FE59BA211}" ShortID="826618661">
+											<PropertyList>
+												<Property Name="MusicTrackType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{16C64DBD-5A25-40AE-B909-E2A4704BD10A}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Project Tower-Chorurs- MAIN BASS" ID="{47F238CF-C289-4847-8123-4924EF17781D}">
+													<Language>SFX</Language>
+													<AudioFile>Combat Music\Project Tower-Chorurs- MAIN BASS.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="624248765"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{6E3AFF16-AB49-4C4E-9EAB-C37913BB3678}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Project Tower-Chorurs- MAIN BASS" ID="{C7715BC7-A32C-4551-A056-18B025A85871}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="43146.0833333333"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Project Tower-Chorurs- MAIN BASS" ID="{47F238CF-C289-4847-8123-4924EF17781D}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{81651954-DAB2-4B16-9C44-D7554D869E94}"/>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="Project Tower-Chorurs- PLUCKS" ID="{7CDDA678-32AF-424C-A4DD-B4FFD1878CB6}" ShortID="356112671">
+											<PropertyList>
+												<Property Name="MusicTrackType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{91BA2602-F3C3-4E07-B4E0-7C24FFA888FF}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Project Tower-Chorurs- PLUCKS" ID="{98446BB1-0E92-4314-8BB8-FBB3141E401B}">
+													<Language>SFX</Language>
+													<AudioFile>Combat Music\Project Tower-Chorurs- PLUCKS.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="705925219"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{10032AB7-1562-49C1-9F63-F5696268BD01}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Project Tower-Chorurs- PLUCKS" ID="{4366DD90-70DD-493C-93B8-6D5887E6A8FF}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="43146.0833333333"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Project Tower-Chorurs- PLUCKS" ID="{98446BB1-0E92-4314-8BB8-FBB3141E401B}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{460CB53A-C92B-4841-B2FB-F8C88110C90D}"/>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="Project Tower-Chorus-KICK_SUB" ID="{AC0ED2A1-7553-48F3-8245-511A7C9DE6B6}" ShortID="597139955">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{B5C7A7F3-1842-4E16-B466-A4945A22F9B0}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Project Tower-Chorus-KICK_SUB" ID="{E39703E2-635E-4B71-A60B-679334F1E5D4}">
+													<Language>SFX</Language>
+													<AudioFile>Combat Music\Project Tower-Chorus-KICK_SUB.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="332371405"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{92875061-A1E2-425E-B7EE-69908C839945}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Project Tower-Chorus-KICK_SUB" ID="{A13AF670-54BE-4C41-A435-2BD8AEB3BC62}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="43146.0833333333"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Project Tower-Chorus-KICK_SUB" ID="{E39703E2-635E-4B71-A60B-679334F1E5D4}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="Project Tower-Break- music" ID="{251FCFD5-5409-45B9-8044-2E143A7F953C}" ShortID="321990464">
+											<PropertyList>
+												<Property Name="MusicTrackType" Type="int16" Value="1"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-4</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B776120B-6534-4093-B8C4-D1D9B8DC61BF}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{D7A07770-0483-4B9F-A4F2-4DFEBD6494EC}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Project Tower-Break- music" ID="{7EEDE28B-E20A-49B2-8148-686CE81B2497}">
+													<Language>SFX</Language>
+													<AudioFile>Combat Music\Project Tower-Break- music.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="647158556"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{44BB71D4-6619-4C4E-B962-8A552B172F2D}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Project Tower-Break- music" ID="{722CB557-F9A6-4D3A-8592-846EAC6D919F}">
+																					<PropertyList>
+																						<Property Name="BeginTrimOffset" Type="Real64" Value="21568.8840499047"/>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="43146.0833333333"/>
+																						<Property Name="FadeInDuration" Type="Real64" Value="590.462893496699"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																						<Property Name="PlayAt" Type="Real64" Value="4.14965796043543"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Project Tower-Break- music" ID="{7EEDE28B-E20A-49B2-8148-686CE81B2497}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{661375B0-AC53-456F-A2C8-B10DFF684BAD}"/>
+														</Local>
+													</Reference>
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{6364BC0E-DE9A-4052-BEC7-790084560226}"/>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{DB2B2F54-5E06-4C8D-824A-7424CDB5E5C2}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{896FB12D-33EA-4E62-946C-295C2C95508A}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="43146.0833333333"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+								<MusicSegment Name="Combat Music-Intro" ID="{167B17ED-1B13-4D6C-9C60-5967861E18C1}" ShortID="674137828">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="22123.4684260132"/>
+										<Property Name="Tempo" Type="Real64" Value="89"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-3</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B776120B-6534-4093-B8C4-D1D9B8DC61BF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Project Tower-Intro-" ID="{7070208F-755B-4297-AEAF-7E86FDA6DB40}" ShortID="793335517">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B776120B-6534-4093-B8C4-D1D9B8DC61BF}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D0845D23-B3E0-4B6A-BDAA-7A8B5C09057F}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{A387D606-8504-41AE-9272-7A8A83120429}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Project Tower-Intro-" ID="{24BC1CE1-9A7C-47EE-BF2B-3ACDB89A832A}">
+													<Language>SFX</Language>
+													<AudioFile>Combat Music\Project Tower-Intro-.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="413290687"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{5A414F48-5DB0-4B8D-8C07-F6DCAFEEC5C3}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Project Tower-Intro-" ID="{C95A1087-D513-4671-B4AB-02AB870222AD}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="21573.0416666667"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Project Tower-Intro-" ID="{24BC1CE1-9A7C-47EE-BF2B-3ACDB89A832A}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{28F37535-DD3E-48C1-B222-DBB99736CD38}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{7D605839-FAD4-4C27-9291-C92BC307ADB7}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="21573.0337078652"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+							</ChildrenList>
+						</MusicPlaylistContainer>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Arguments">
+							<Reference>
+								<ObjectRef Name="GameMode" ID="{108388EE-6AB6-44DD-8031-959DEC169C55}" WorkUnitID="{E42560F3-F7F9-4687-BB36-3FF66BB6094D}"/>
+							</Reference>
+						</ObjectList>
+						<ObjectList Name="Entries">
+							<Reference>
+								<Local>
+									<MultiSwitchEntry Name="" ID="{31A144D5-A1EC-46B5-BDD8-4ABC8704BDBE}">
+										<ReferenceList>
+											<Reference Name="AudioNode">
+												<ObjectRef Name="Building Music" ID="{72BB28ED-0842-4A39-81E6-0974CA61606F}" WorkUnitID="{CC4E03BF-6696-4A66-9DE2-B1319DE26223}"/>
+											</Reference>
+										</ReferenceList>
+										<ObjectLists>
+											<ObjectList Name="EntryPath">
+												<Reference>
+													<ObjectRef Name="Building" ID="{37DCBCA5-B7E8-48ED-8442-35F89457E254}" WorkUnitID="{E42560F3-F7F9-4687-BB36-3FF66BB6094D}"/>
+												</Reference>
+											</ObjectList>
+										</ObjectLists>
+									</MultiSwitchEntry>
+								</Local>
+							</Reference>
+							<Reference>
+								<Local>
+									<MultiSwitchEntry Name="" ID="{C01BBFB9-032E-4150-B7A2-4E78A5110223}">
+										<ReferenceList>
+											<Reference Name="AudioNode">
+												<ObjectRef Name="Combat Music" ID="{70518B69-8EA2-42A6-B9D0-A892F9C3FE0F}" WorkUnitID="{CC4E03BF-6696-4A66-9DE2-B1319DE26223}"/>
+											</Reference>
+										</ReferenceList>
+										<ObjectLists>
+											<ObjectList Name="EntryPath">
+												<Reference>
+													<ObjectRef Name="Combat" ID="{587BA4A0-6B58-4A64-9105-CCCEFB5C0404}" WorkUnitID="{E42560F3-F7F9-4687-BB36-3FF66BB6094D}"/>
+												</Reference>
+											</ObjectList>
+										</ObjectLists>
+									</MultiSwitchEntry>
+								</Local>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
+				</MusicSwitchContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</InteractiveMusic>
+</WwiseDocument>

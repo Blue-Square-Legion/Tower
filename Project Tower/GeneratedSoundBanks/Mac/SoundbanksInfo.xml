@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="150">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Mac</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{DA934E90-559B-4A2D-31A4-D13DC5E5F080}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+			<SwitchGroups>
+				<SwitchGroup Id="261089142" Name="GameMode">
+					<Switches>
+						<Switch Id="2764240573" Name="Combat"/>
+						<Switch Id="3339761385" Name="Building"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
+		</SoundBank>
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{4B2847D1-FD3D-D0D0-1A1B-EE1B2D231C52}">
+			<ShortName>Main</ShortName>
+			<Path>Main.bnk</Path>
+			<Media>
+				<File Id="29058322" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Flamethrower\Flamerthrower Start.wav</ShortName>
+					<CachePath>SFX/Flamethrower/Flamerthrower Start_65ED46EF.wem</CachePath>
+				</File>
+				<File Id="55319854" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Robot Footstep\Robot Footstep 6.wav</ShortName>
+					<CachePath>SFX/Robot Footstep/Robot Footstep 6_818F3B66.wem</CachePath>
+				</File>
+				<File Id="98784930" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Robot Charge Up\Robot Charge Up 2.wav</ShortName>
+					<CachePath>SFX/Robot Charge Up/Robot Charge Up 2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="114956612" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Robot Footstep\Robot Footstep 1.wav</ShortName>
+					<CachePath>SFX/Robot Footstep/Robot Footstep 1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="120193900" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Tank Missle\Tank Missle 2.wav</ShortName>
+					<CachePath>SFX/Tank Missle/Tank Missle 2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="124203370" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Dirt\Footstep Dirt 6.wav</ShortName>
+					<CachePath>SFX/Footstep Dirt/Footstep Dirt 6_818F3B66.wem</CachePath>
+				</File>
+				<File Id="135213038" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Building 2.wav</ShortName>
+					<CachePath>SFX/Building 2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="139333300" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Buiilding Music\Project Tower-Chorus- PLUCK.wav</ShortName>
+					<CachePath>SFX/Buiilding Music/Project Tower-Chorus- PLUCK_56CEF360.wem</CachePath>
+				</File>
+				<File Id="146872183" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Robot Shoot 1.wav</ShortName>
+					<CachePath>SFX/Robot Shoot 1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="163869348" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Combat Music\Project Tower- Chorus -FX.wav</ShortName>
+					<CachePath>SFX/Combat Music/Project Tower- Chorus -FX_56CEF360.wem</CachePath>
+				</File>
+				<File Id="169209220" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Dirt\Footstep Dirt 2.wav</ShortName>
+					<CachePath>SFX/Footstep Dirt/Footstep Dirt 2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="175096390" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Flamethrower\Flamethrower.wav</ShortName>
+					<CachePath>SFX/Flamethrower/Flamethrower_54D2B3DD.wem</CachePath>
+				</File>
+				<File Id="175098220" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Crossbow Rotate\Crossbow Rotate 2.wav</ShortName>
+					<CachePath>SFX/Crossbow Rotate/Crossbow Rotate 2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="180202566" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Robot Footstep\Robot Footstep 2.wav</ShortName>
+					<CachePath>SFX/Robot Footstep/Robot Footstep 2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="236590895" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Combat Music\Project Tower-Break- FX.wav</ShortName>
+					<CachePath>SFX/Combat Music/Project Tower-Break- FX_56CEF360.wem</CachePath>
+				</File>
+				<File Id="241947048" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Combat Music\Project Tower-Chorurs- BELL SYNTH.wav</ShortName>
+					<CachePath>SFX/Combat Music/Project Tower-Chorurs- BELL SYNTH_56CEF360.wem</CachePath>
+				</File>
+				<File Id="258881803" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Dirt\Footstep Dirt 3.wav</ShortName>
+					<CachePath>SFX/Footstep Dirt/Footstep Dirt 3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="284010281" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Crossbow Rotate\Crossbow Rotate 1.wav</ShortName>
+					<CachePath>SFX/Crossbow Rotate/Crossbow Rotate 1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="291648961" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Combat Music\Project Tower- Chorus -Reese.wav</ShortName>
+					<CachePath>SFX/Combat Music/Project Tower- Chorus -Reese_56CEF360.wem</CachePath>
+				</File>
+				<File Id="303428700" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Robot Shoot 3.wav</ShortName>
+					<CachePath>SFX/Robot Shoot 3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="318381722" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Robot Movement\Robot Movement 1.wav</ShortName>
+					<CachePath>SFX/Robot Movement/Robot Movement 1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="332371405" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Combat Music\Project Tower-Chorus-KICK_SUB.wav</ShortName>
+					<CachePath>SFX/Combat Music/Project Tower-Chorus-KICK_SUB_56CEF360.wem</CachePath>
+				</File>
+				<File Id="339351980" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Crossbow Shoot\Crossbow Shoot 3.wav</ShortName>
+					<CachePath>SFX/Crossbow Shoot/Crossbow Shoot 3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="345977530" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Robot Charge Up\Robot Charge Up 1.wav</ShortName>
+					<CachePath>SFX/Robot Charge Up/Robot Charge Up 1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="387295832" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Robot Movement\Robot Movement 2.wav</ShortName>
+					<CachePath>SFX/Robot Movement/Robot Movement 2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="399448735" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Robot Footstep\Robot Footstep 4.wav</ShortName>
+					<CachePath>SFX/Robot Footstep/Robot Footstep 4_818F3B66.wem</CachePath>
+				</File>
+				<File Id="399675446" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Crossbow Hit\Crossbow Hit 3.wav</ShortName>
+					<CachePath>SFX/Crossbow Hit/Crossbow Hit 3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="404627970" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Crossbow Hit\Crossbow Hit 1.wav</ShortName>
+					<CachePath>SFX/Crossbow Hit/Crossbow Hit 1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="413290687" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Combat Music\Project Tower-Intro-.wav</ShortName>
+					<CachePath>SFX/Combat Music/Project Tower-Intro-_56CEF360.wem</CachePath>
+				</File>
+				<File Id="468457180" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Dirt\Footstep Dirt 4.wav</ShortName>
+					<CachePath>SFX/Footstep Dirt/Footstep Dirt 4_818F3B66.wem</CachePath>
+				</File>
+				<File Id="470355483" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Squid 2.wav</ShortName>
+					<CachePath>SFX/Squid 2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="471356072" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Tank Missle\Tank Missle 1.wav</ShortName>
+					<CachePath>SFX/Tank Missle/Tank Missle 1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="488845164" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Robot Footstep\Robot Footstep 3.wav</ShortName>
+					<CachePath>SFX/Robot Footstep/Robot Footstep 3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="497019908" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Combat Music\Project Tower-Break- KICK_SUB.wav</ShortName>
+					<CachePath>SFX/Combat Music/Project Tower-Break- KICK_SUB_56CEF360.wem</CachePath>
+				</File>
+				<File Id="533177955" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Crossbow Rotate\Crossbow Rotate 3.wav</ShortName>
+					<CachePath>SFX/Crossbow Rotate/Crossbow Rotate 3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="539752717" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Combat Music\Project Tower-Break- reese.wav</ShortName>
+					<CachePath>SFX/Combat Music/Project Tower-Break- reese_56CEF360.wem</CachePath>
+				</File>
+				<File Id="551826870" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Portal Loop.wav</ShortName>
+					<CachePath>SFX/Portal Loop_E2D03D99.wem</CachePath>
+				</File>
+				<File Id="600039576" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Combat Music\Project Tower- Chorus -Drums.wav</ShortName>
+					<CachePath>SFX/Combat Music/Project Tower- Chorus -Drums_56CEF360.wem</CachePath>
+				</File>
+				<File Id="619424064" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Crossbow Shoot\Crossbow Shoot 2.wav</ShortName>
+					<CachePath>SFX/Crossbow Shoot/Crossbow Shoot 2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="624248765" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Combat Music\Project Tower-Chorurs- MAIN BASS.wav</ShortName>
+					<CachePath>SFX/Combat Music/Project Tower-Chorurs- MAIN BASS_56CEF360.wem</CachePath>
+				</File>
+				<File Id="647158556" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Combat Music\Project Tower-Break- music.wav</ShortName>
+					<CachePath>SFX/Combat Music/Project Tower-Break- music_56CEF360.wem</CachePath>
+				</File>
+				<File Id="677275722" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Tank Engine\Tank Engine Stop.wav</ShortName>
+					<CachePath>SFX/Tank Engine/Tank Engine Stop_818F3B66.wem</CachePath>
+				</File>
+				<File Id="705925219" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Combat Music\Project Tower-Chorurs- PLUCKS.wav</ShortName>
+					<CachePath>SFX/Combat Music/Project Tower-Chorurs- PLUCKS_56CEF360.wem</CachePath>
+				</File>
+				<File Id="719596746" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Dirt\Footstep Dirt 5.wav</ShortName>
+					<CachePath>SFX/Footstep Dirt/Footstep Dirt 5_818F3B66.wem</CachePath>
+				</File>
+				<File Id="731071860" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Crossbow Hit\Crossbow Hit 2.wav</ShortName>
+					<CachePath>SFX/Crossbow Hit/Crossbow Hit 2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="732549271" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Robot Movement\Robot Movement 5.wav</ShortName>
+					<CachePath>SFX/Robot Movement/Robot Movement 5_818F3B66.wem</CachePath>
+				</File>
+				<File Id="735690032" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Combat Music\Project Tower-Chorurs- 808.wav</ShortName>
+					<CachePath>SFX/Combat Music/Project Tower-Chorurs- 808_56CEF360.wem</CachePath>
+				</File>
+				<File Id="747469256" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Robot Footstep\Robot Footstep 5.wav</ShortName>
+					<CachePath>SFX/Robot Footstep/Robot Footstep 5_818F3B66.wem</CachePath>
+				</File>
+				<File Id="755762778" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Robot Shoot 2.wav</ShortName>
+					<CachePath>SFX/Robot Shoot 2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="759541078" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ambience.wav</ShortName>
+					<CachePath>SFX/Ambience_1879EBB0.wem</CachePath>
+				</File>
+				<File Id="767745999" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Tank Engine\Tank Engine Loop.wav</ShortName>
+					<CachePath>SFX/Tank Engine/Tank Engine Loop_818F3B66.wem</CachePath>
+				</File>
+				<File Id="775160318" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Squid 1.wav</ShortName>
+					<CachePath>SFX/Squid 1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="811099862" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Portal Entrance 2.wav</ShortName>
+					<CachePath>SFX/Portal Entrance 2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="835356872" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Crossbow Shoot\Crossbow Shoot 1.wav</ShortName>
+					<CachePath>SFX/Crossbow Shoot/Crossbow Shoot 1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="848172015" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Robot Charge Up\Robot Charge Up 3.wav</ShortName>
+					<CachePath>SFX/Robot Charge Up/Robot Charge Up 3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="862478615" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Building 3.wav</ShortName>
+					<CachePath>SFX/Building 3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="873156723" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Robot Movement\Robot Movement 4.wav</ShortName>
+					<CachePath>SFX/Robot Movement/Robot Movement 4_818F3B66.wem</CachePath>
+				</File>
+				<File Id="896700721" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Combat Music\Project Tower-Break- drums.wav</ShortName>
+					<CachePath>SFX/Combat Music/Project Tower-Break- drums_56CEF360.wem</CachePath>
+				</File>
+				<File Id="919744837" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Robot Movement\Robot Movement 3.wav</ShortName>
+					<CachePath>SFX/Robot Movement/Robot Movement 3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="941471765" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Buiilding Music\Project Tower-Chorus- KICK&amp;SUB.wav</ShortName>
+					<CachePath>SFX/Buiilding Music/Project Tower-Chorus- KICK&amp;SUB_56CEF360.wem</CachePath>
+				</File>
+				<File Id="960431008" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Tank Missle\Tank Missle 3.wav</ShortName>
+					<CachePath>SFX/Tank Missle/Tank Missle 3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="961620256" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Squid 3.wav</ShortName>
+					<CachePath>SFX/Squid 3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="965006881" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Building 1.wav</ShortName>
+					<CachePath>SFX/Building 1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="979825893" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Buiilding Music\Project Tower-Chorus- VOX.wav</ShortName>
+					<CachePath>SFX/Buiilding Music/Project Tower-Chorus- VOX_56CEF360.wem</CachePath>
+				</File>
+				<File Id="1000496152" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Portal Entrance 3.wav</ShortName>
+					<CachePath>SFX/Portal Entrance 3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1030964319" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Portal Entrance 1.wav</ShortName>
+					<CachePath>SFX/Portal Entrance 1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1032795171" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Buiilding Music\Project Tower-Chorus- DRUMS.wav</ShortName>
+					<CachePath>SFX/Buiilding Music/Project Tower-Chorus- DRUMS_56CEF360.wem</CachePath>
+				</File>
+				<File Id="1039566971" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Dirt\Footstep Dirt 1.wav</ShortName>
+					<CachePath>SFX/Footstep Dirt/Footstep Dirt 1_818F3B66.wem</CachePath>
+				</File>
+			</Media>
+			<Plugins>
+				<Custom>
+					<Plugin Id="869066547" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
+				</Custom>
+			</Plugins>
+			<Events>
+				<Event Id="278617630" Name="Play_Ambience" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="759541078"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3149174998" Name="Play_Building" DurationType="OneShot" DurationMin="1.8304278" DurationMax="3.6922731">
+					<MediaRefs>
+						<MediaRef Id="135213038"/>
+						<MediaRef Id="862478615"/>
+						<MediaRef Id="965006881"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2591025488" Name="Play_Crossbow_Hit" DurationType="OneShot" DurationMin="0.28860924" DurationMax="0.41972396">
+					<MediaRefs>
+						<MediaRef Id="399675446"/>
+						<MediaRef Id="404627970"/>
+						<MediaRef Id="731071860"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4214031188" Name="Play_Crossbow_Rotate" DurationType="OneShot" DurationMin="1.5184184" DurationMax="1.799454">
+					<MediaRefs>
+						<MediaRef Id="175098220"/>
+						<MediaRef Id="284010281"/>
+						<MediaRef Id="533177955"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2694000894" Name="Play_Crossbow_Shoot" DurationType="OneShot" DurationMin="0.79198915" DurationMax="1.1471558">
+					<MediaRefs>
+						<MediaRef Id="339351980"/>
+						<MediaRef Id="619424064"/>
+						<MediaRef Id="835356872"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2844775840" Name="Play_Flamethrower" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="29058322"/>
+						<MediaRef Id="175096390"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="779807780" Name="Play_Footstep_Dirt" DurationType="OneShot" DurationMin="0.29635686" DurationMax="0.90999055">
+					<MediaRefs>
+						<MediaRef Id="124203370"/>
+						<MediaRef Id="169209220"/>
+						<MediaRef Id="258881803"/>
+						<MediaRef Id="468457180"/>
+						<MediaRef Id="719596746"/>
+						<MediaRef Id="1039566971"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2932040671" Name="Play_Music" DurationType="Infinite">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="261089142" Id="3339761385"/>
+							<MediaRefs>
+								<MediaRef Id="139333300"/>
+								<MediaRef Id="941471765"/>
+								<MediaRef Id="979825893"/>
+								<MediaRef Id="1032795171"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="261089142" Id="2764240573"/>
+							<MediaRefs>
+								<MediaRef Id="163869348"/>
+								<MediaRef Id="236590895"/>
+								<MediaRef Id="241947048"/>
+								<MediaRef Id="291648961"/>
+								<MediaRef Id="332371405"/>
+								<MediaRef Id="413290687"/>
+								<MediaRef Id="497019908"/>
+								<MediaRef Id="539752717"/>
+								<MediaRef Id="600039576"/>
+								<MediaRef Id="624248765"/>
+								<MediaRef Id="647158556"/>
+								<MediaRef Id="705925219"/>
+								<MediaRef Id="735690032"/>
+								<MediaRef Id="896700721"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="1354694797" Name="Play_Portal_Entrance" DurationType="OneShot" DurationMin="1.7467376" DurationMax="2.2554204">
+					<MediaRefs>
+						<MediaRef Id="811099862"/>
+						<MediaRef Id="1000496152"/>
+						<MediaRef Id="1030964319"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="755352757" Name="Play_Portal_Loop" MaxAttenuation="20" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="551826870"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2686382399" Name="Play_Robot_Charge_Up" DurationType="OneShot" DurationMin="1.6222249" DurationMax="2.0583382">
+					<MediaRefs>
+						<MediaRef Id="98784930"/>
+						<MediaRef Id="345977530"/>
+						<MediaRef Id="848172015"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3993534839" Name="Play_Robot_Footstep" MaxAttenuation="25" DurationType="OneShot" DurationMin="0.36927113" DurationMax="0.920519">
+					<MediaRefs>
+						<MediaRef Id="55319854"/>
+						<MediaRef Id="114956612"/>
+						<MediaRef Id="180202566"/>
+						<MediaRef Id="399448735"/>
+						<MediaRef Id="488845164"/>
+						<MediaRef Id="747469256"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4257145618" Name="Play_Robot_Movement" MaxAttenuation="25" DurationType="OneShot" DurationMin="0.70790565" DurationMax="1.2361066">
+					<MediaRefs>
+						<MediaRef Id="318381722"/>
+						<MediaRef Id="387295832"/>
+						<MediaRef Id="732549271"/>
+						<MediaRef Id="873156723"/>
+						<MediaRef Id="919744837"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="869066547"/>
+						</Custom>
+					</PluginRefs>
+				</Event>
+				<Event Id="390938190" Name="Play_Robot_Shoot" DurationType="OneShot" DurationMin="1.3592969" DurationMax="1.593896">
+					<MediaRefs>
+						<MediaRef Id="146872183"/>
+						<MediaRef Id="303428700"/>
+						<MediaRef Id="755762778"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3382913736" Name="Play_Squid" MaxAttenuation="25" DurationType="OneShot" DurationMin="1.5808911" DurationMax="2.1171606">
+					<MediaRefs>
+						<MediaRef Id="470355483"/>
+						<MediaRef Id="775160318"/>
+						<MediaRef Id="961620256"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="754980015" Name="Play_Tank_Engine" MaxAttenuation="25" DurationType="OneShot" DurationMin="1.6899675" DurationMax="8.162214">
+					<MediaRefs>
+						<MediaRef Id="677275722"/>
+						<MediaRef Id="767745999"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1382972868" Name="Play_Tank_Missle" DurationType="OneShot" DurationMin="2.425875" DurationMax="2.9523263">
+					<MediaRefs>
+						<MediaRef Id="120193900"/>
+						<MediaRef Id="471356072"/>
+						<MediaRef Id="960431008"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2837384057" Name="Stop_Music" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="261089142" Id="3339761385"/>
+							<MediaRefs>
+								<MediaRef Id="139333300"/>
+								<MediaRef Id="941471765"/>
+								<MediaRef Id="979825893"/>
+								<MediaRef Id="1032795171"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="261089142" Id="2764240573"/>
+							<MediaRefs>
+								<MediaRef Id="163869348"/>
+								<MediaRef Id="236590895"/>
+								<MediaRef Id="241947048"/>
+								<MediaRef Id="291648961"/>
+								<MediaRef Id="332371405"/>
+								<MediaRef Id="413290687"/>
+								<MediaRef Id="497019908"/>
+								<MediaRef Id="539752717"/>
+								<MediaRef Id="600039576"/>
+								<MediaRef Id="624248765"/>
+								<MediaRef Id="647158556"/>
+								<MediaRef Id="705925219"/>
+								<MediaRef Id="735690032"/>
+								<MediaRef Id="896700721"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="504791787" Name="Stop_Portal_Loop" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="551826870"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+			<SwitchGroups>
+				<SwitchGroup Id="261089142" Name="GameMode">
+					<Switches>
+						<Switch Id="2764240573" Name="Combat"/>
+						<Switch Id="3339761385" Name="Building"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{FE2853E9-8123-2DF9-E61A-42E209CB76E3}</FileHash>
+</SoundBanksInfo>

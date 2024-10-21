@@ -11,8 +11,8 @@
   <ShowMissingRigidBodyWarning>true</ShowMissingRigidBodyWarning>
   <ShowSpatialAudioWarningMsg>true</ShowSpatialAudioWarningMsg>
   <WwiseInstallationPathMac>/Applications/Wwise2023.1.7.8574/Wwise.app</WwiseInstallationPathMac>
-  <WwiseInstallationPathWindows />
-  <WwiseProjectPath>../../../WwiseProjects/Project Tower/Project Tower.wproj</WwiseProjectPath>
+  <WwiseInstallationPathWindows>C:\Users\ericw\OneDrive\Desktop\Tower\Tower\Project Tower</WwiseInstallationPathWindows>
+  <WwiseProjectPath>../Project Tower/Project Tower.wproj</WwiseProjectPath>
   <UseWaapi>true</UseWaapi>
   <WaapiPort>8080</WaapiPort>
   <WaapiIP>127.0.0.1</WaapiIP>
