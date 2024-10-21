@@ -231,7 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 8336197607123604105}
   duration: 5
-  speedModifier: 0.7
+  speedModifier: 0
 --- !u!1 &4306744838973356090
 GameObject:
   m_ObjectHideFlags: 0

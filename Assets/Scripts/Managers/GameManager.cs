@@ -198,8 +198,18 @@ public class GameManager : MonoBehaviour
                 yield return new WaitForSeconds(1);
                 break;
             case 9:
-                EnqueueEnemy(4);
-                yield return new WaitForSeconds(1);
+                for (int i = 0; i < 100; i++)
+                {
+                    EnqueueEnemy(3);
+                    yield return new WaitForSeconds(.5f);
+                }
+                for (int i = 0; i < 50; i++)
+                {
+                    EnqueueEnemy(2);
+                    EnqueueEnemy(1);
+                    yield return new WaitForSeconds(0.1f);
+                }
+
                 break;
             default:
                 currentWave = 0;

@@ -289,7 +289,7 @@ public class TowerBehavior : MonoBehaviour
                             transform.GetComponentInChildren<FireTriggerCollisionDetector>().duration += 3;
                             //Set up for next upgrade
                             sellCost += upgradeCost / 2;
-                            upgradeCost = 0;
+                            upgradeCost = 150;
                             upgradeDescription = "Stronger Propellent\nIncreased Range";
                             break;
                         case 1:
@@ -301,7 +301,7 @@ public class TowerBehavior : MonoBehaviour
                             rangeObject.localScale = new Vector3(rangeObject.localScale.x + 2f, rangeObject.localScale.y, rangeObject.localScale.z + 4f);
                             //Set up for next upgrade
                             sellCost += upgradeCost / 2;
-                            upgradeCost = 0;
+                            upgradeCost = 200;
                             upgradeDescription = "Better Fuel\nIncreased slow effect";
                             break;
                         case 2:
@@ -310,7 +310,7 @@ public class TowerBehavior : MonoBehaviour
 
                             //Set up for next upgrade
                             sellCost += upgradeCost / 2;
-                            upgradeCost = 0;
+                            upgradeCost = 250;
                             upgradeDescription = "Long Lasting Burns\nIncreased Duration";
                             break;
                         case 3:
@@ -319,7 +319,7 @@ public class TowerBehavior : MonoBehaviour
 
                             //Set up for next upgrade
                             sellCost += upgradeCost / 2;
-                            upgradeCost = 0;
+                            upgradeCost = 400;
                             upgradeDescription = "Even Stronger Fuel\nIncreased Slow Effect";
                             break;
                         case 4:

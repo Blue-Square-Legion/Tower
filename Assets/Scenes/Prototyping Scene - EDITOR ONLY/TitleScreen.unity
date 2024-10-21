@@ -739,7 +739,7 @@ MonoBehaviour:
     :  2D artist/Animations/Tilesets/Co-Lead\r\n@illzone.sound: Sound Designer (Wwise,
     Unreal)\r\n@Ryan Herwig   : Programmer (Unity)\r\n@Chiferito    :  Programmer
     \r\n@TanzaniteEric     : Game Designer (Unity)\r\n@\u13CAdahee   : 3D Artist\r\n@Oscar
-    Hernandez    : 3D artist\r\n@Triplejay   : 3D Artist"
+    Hernandez    : 3D artist\r\n@Triplejay   : 3D Artist\n@TanzaniteEric :Game Designer"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
