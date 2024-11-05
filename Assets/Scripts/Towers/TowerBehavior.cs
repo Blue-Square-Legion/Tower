@@ -70,6 +70,10 @@ public class TowerBehavior : MonoBehaviour
                 upgradeCost = 100;
                 upgradeDescription = "More Combustive Fuel\nIncreased Damage";
                 break;
+            case TowerType.Economy:
+                upgradeCost = 300;
+                upgradeDescription = "More Money\nGives a bit more money";
+                break;
         }
         sellCost = cost / 2;
     }
@@ -332,6 +336,46 @@ public class TowerBehavior : MonoBehaviour
                             break;
                     }
                     break;
+                case TowerType.Economy:
+                switch(upgradeLevel)
+                    {
+                        case 0:
+                            transform.GetComponent<EconomyBehavior>().bonus = 100;
+                            GameManager.Instance.farmBonus += 50;
+                            sellCost += upgradeCost / 2;
+                            upgradeCost = 500;
+                            upgradeDescription = "Upgrade 1\nIncreased Money";
+                            break;
+                        case 1:
+                            transform.GetComponent<EconomyBehavior>().bonus = 200;
+                            GameManager.Instance.farmBonus += 100;
+                            sellCost += upgradeCost / 2;
+                            upgradeCost = 750;
+                            upgradeDescription = "Upgrade 2\nEven more Money";
+                            break;
+                        case 2:
+                            transform.GetComponent<EconomyBehavior>().bonus = 400;
+                            GameManager.Instance.farmBonus += 300;
+                            sellCost += upgradeCost / 2;
+                            upgradeCost = 1000;
+                            upgradeDescription = "Upgrade 3\nExtra Money";
+                            break;
+                        case 3:
+                            transform.GetComponent<EconomyBehavior>().bonus = 500;
+                            GameManager.Instance.farmBonus += 100;
+                            sellCost += upgradeCost / 2;
+                            upgradeCost = 1750;
+                            upgradeDescription = "Upgrade 4\nGrants a large sum of money";
+                            break;
+                        case 4:
+                            transform.GetComponent<EconomyBehavior>().bonus = 750;
+                            GameManager.Instance.farmBonus += 250;
+                            sellCost += upgradeCost / 2;
+                            upgradeCost = 2000;
+                            upgradeDescription = "Upgrade 5\nFuture's Market";
+                            break;
+                    }
+                    break;
             }
             upgradeLevel++;
             UpdateUpgradePanel();
@@ -351,7 +395,7 @@ public class TowerBehavior : MonoBehaviour
     {
         Basic,
         Flame,
-        Bomb
-
+        Bomb,
+        Economy
     }
 }

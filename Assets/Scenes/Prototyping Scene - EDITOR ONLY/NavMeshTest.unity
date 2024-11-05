@@ -10667,6 +10667,7 @@ MonoBehaviour:
   NextSpawnPoint: {fileID: 0}
   player: {fileID: 555665698}
   SelectedTower: {fileID: 0}
+  farmBonus: 0
 --- !u!1 &481224567
 GameObject:
   m_ObjectHideFlags: 0
@@ -36814,7 +36815,7 @@ MonoBehaviour:
         m_MethodName: SetTowerToPlace
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1326528010829393448, guid: d5ca83c3837789845b123aa127d26302,
+          m_ObjectArgument: {fileID: 1913768310295499680, guid: a3199ce137d884d499d2fb1278efd581,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
@@ -41129,7 +41130,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Place Economy\n Tower $300"
+  m_text: "Place Economy\n Tower $150"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
