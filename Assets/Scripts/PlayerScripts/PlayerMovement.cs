@@ -4,8 +4,6 @@ public class PlayerMovement : MonoBehaviour
 {
     private Vector3 velocity;
     private Vector3 playerMovementInput;
-    private Vector2 playerMouseInput;
-    private float xRot;
 
     [SerializeField] private Transform playerCamera;
     [SerializeField] private CharacterController characterController;
@@ -14,38 +12,26 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        playerMovementInput = new Vector3(Input.GetAxisRaw("Horizontal"),0f, Input.GetAxisRaw("Vertical"));
-        playerMouseInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
-
+        playerMovementInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
         MovePlayer();
-        MovePlayerCamera();
     }
 
     private void MovePlayer()
     {
-        Vector3 MoveVector = transform.TransformDirection(playerMovementInput);
-
-        if (Input.GetKey(KeyCode.Space)) {
-            velocity.y = 1f;
-        }
-        else if (Input.GetKey(KeyCode.LeftShift))
+        if (playerMovementInput.magnitude > 0)
         {
-            velocity.y = -1f;
-        }
+            // Convert the player's movement to be relative to the camera's rotation
+            Vector3 forward = playerCamera.forward;
+            forward.y = 0f;
+            forward.Normalize();
 
-        characterController.Move(MoveVector * speed * Time.deltaTime);
-        characterController.Move(velocity * speed * Time.deltaTime);
+            Vector3 right = playerCamera.right;
+            right.y = 0f;
+            right.Normalize();
 
-        velocity.y = 0f;
-    }
+            Vector3 moveDirection = forward * playerMovementInput.z + right * playerMovementInput.x;
 
-    private void MovePlayerCamera()
-    {
-        if (Input.GetMouseButton(1))
-        {
-            xRot -= playerMouseInput.y * sensitivity;
-            transform.Rotate(0f, playerMouseInput.x * sensitivity, 0f);
-            playerCamera.transform.localRotation = Quaternion.Euler(xRot, 0f, 0f);
+            characterController.Move(moveDirection * speed * Time.deltaTime);
         }
     }
 }

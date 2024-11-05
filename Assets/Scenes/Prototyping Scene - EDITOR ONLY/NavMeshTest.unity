@@ -12916,6 +12916,7 @@ GameObject:
   - component: {fileID: 555665699}
   - component: {fileID: 555665701}
   - component: {fileID: 555665700}
+  - component: {fileID: 555665702}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -13073,6 +13074,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555665694}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &555665702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555665694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9165e7f8eebd8c041bcd9c22a1873c76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitDistance: 5
+  hitLayers:
+    serializedVersion: 2
+    m_Bits: 72
 --- !u!1001 &558263104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17757,6 +17774,7 @@ GameObject:
   - component: {fileID: 761875806}
   - component: {fileID: 761875810}
   - component: {fileID: 761875809}
+  - component: {fileID: 761875811}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -17772,7 +17790,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761875804}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -17910,6 +17928,24 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
+--- !u!114 &761875811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761875804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15319e7b9e34ab4429bf4625d7f29209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 555665697}
+  offset: {x: 1, y: 6, z: 10}
+  smoothSpeed: 0.125
+  rotationSpeed: 5
+  minXRotation: -20
+  maxXRotation: 60
 --- !u!1001 &765345673
 PrefabInstance:
   m_ObjectHideFlags: 0
