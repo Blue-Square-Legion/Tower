@@ -22,14 +22,17 @@ public class FlameThrowerDamage : MonoBehaviour, IDamageMethod
 
     public void damageTick(Enemy target)
     {
-        fireTrigger.enabled = target != null;
 
-        if(target)
-        {
-            if (!fireEffect.isPlaying) fireEffect.Play();
-            return;
-        }
+         fireTrigger.enabled = target != null;
 
-        fireEffect.Stop();
+         if(target)
+         {
+             if (!fireEffect.isPlaying) fireEffect.Play();
+             return;
+         }
+
+         fireEffect.Stop();
+        
+
     }
 }

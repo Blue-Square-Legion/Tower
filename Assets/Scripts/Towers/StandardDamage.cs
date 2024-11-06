@@ -44,4 +44,6 @@ public class StandardDamage : MonoBehaviour, IDamageMethod
             delay = 1 / fireRate;
         }
     }
+
+
 }

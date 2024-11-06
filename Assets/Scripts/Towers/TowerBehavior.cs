@@ -77,8 +77,9 @@ public class TowerBehavior : MonoBehaviour
     //Desyncs the towers from regular game loop to prevent errors
     public void Tick()
     {
-        currentDamageMethodClass.damageTick(target);
 
+        currentDamageMethodClass.damageTick(target); 
+        
         if (target != null)
         {
             // Calculate the direction to the target

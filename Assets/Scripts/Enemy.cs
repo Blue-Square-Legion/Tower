@@ -56,14 +56,14 @@ public class Enemy : MonoBehaviour
                 }
                 activeEffects[i].duration -= Time.deltaTime;
             }
-            if (activeEffects[i].effectName == GameManager.EffectNames.Fire)
+            /*if (activeEffects[i].effectName == GameManager.EffectNames.Fire)
             {
                 if (activeEffects[i].duration > 0)
                     navMeshMovement.SetSpeed(speed * activeEffects[i].modifier);
                 else
                     navMeshMovement.SetSpeed(normalSpeed);
 
-            }
+            }*/
         }
         activeEffects.RemoveAll(x => x.duration <= 0);
     }
