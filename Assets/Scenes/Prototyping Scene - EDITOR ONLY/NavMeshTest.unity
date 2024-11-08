@@ -12914,6 +12914,7 @@ GameObject:
   - component: {fileID: 555665695}
   - component: {fileID: 555665698}
   - component: {fileID: 555665699}
+  - component: {fileID: 555665700}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -13021,6 +13022,21 @@ MonoBehaviour:
   placementColliderMask:
     serializedVersion: 2
     m_Bits: 19
+--- !u!114 &555665700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555665694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfe43d1d08e4c9b489ff87fc9d608f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillPreviewPrefab: {fileID: 7674931407606155071, guid: 7bdfb65367c36374cbc31cd3d295ac45,
+    type: 3}
+  castRange: 100
 --- !u!1001 &558263104
 PrefabInstance:
   m_ObjectHideFlags: 0
