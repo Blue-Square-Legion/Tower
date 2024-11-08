@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
     public NavMeshMovement navMeshMovement;
     public bool isStunned;
     private float stunTimer;
+    public bool isConfused;
+    private float confusedTimer;
 
     private float normalSpeed;
     public void Init()
@@ -31,6 +33,8 @@ public class Enemy : MonoBehaviour
         navMeshMovement.SetSpeed(speed);
         isStunned = false;
         stunTimer = 2;
+        isConfused = false;
+        confusedTimer = 2;
     }
 
     public void TakeDamage(int damage)
@@ -72,6 +76,19 @@ public class Enemy : MonoBehaviour
             }
         }
         activeEffects.RemoveAll(x => x.duration <= 0);
+
+        if (isConfused)
+        {
+            navMeshMovement.FlipDirection(0);
+            confusedTimer -= Time.deltaTime;
+        }
+
+        if (confusedTimer < 0f)
+        {
+            confusedTimer = 2f;
+            navMeshMovement.FlipDirection(1);
+            isConfused = false;
+        }
 
         if (isStunned)
         {

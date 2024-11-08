@@ -6,7 +6,7 @@ public class RunePlacement : MonoBehaviour
     public GameObject skillPreviewPrefab;   // A prefab to represent the preview (e.g., a circle)
     public GameObject meteorPrefab;         // Meteor prefab to instantiate for meteor skill
     public GameObject lightningPrefab;      // Lightning prefab for lightning skill
-    public GameObject windCurrentPrefab;    // Wind current prefab for wind skill
+    public GameObject confusionPrefab;    // Wind current prefab for wind skill
     public float castRange = 10f;           // Range where the skill can be cast
     private GameObject currentPreview;     // Instance of the skill preview
     private bool isCasting = false;         // Is the player currently casting the skill
@@ -16,7 +16,7 @@ public class RunePlacement : MonoBehaviour
     {
         Meteor,
         Lightning,
-        WindCurrent
+        Confusion
     }
 
     void Update()
@@ -32,7 +32,7 @@ public class RunePlacement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.R) && !isCasting)
         {
-            SelectSkill(SkillType.WindCurrent);
+            SelectSkill(SkillType.Confusion);
         }
 
         if (isCasting)
@@ -94,8 +94,8 @@ public class RunePlacement : MonoBehaviour
                 case SkillType.Lightning:
                     CastLightning(castPosition);
                     break;
-                case SkillType.WindCurrent:
-                    CastWindCurrent(castPosition);
+                case SkillType.Confusion:
+                    CastConfusion(castPosition);
                     break;
             }
 
@@ -127,11 +127,14 @@ public class RunePlacement : MonoBehaviour
         lightningScript.targetPosition = castPosition; // Set the target position (on the ground)
     }
 
-    void CastWindCurrent(Vector3 position)
+    void CastConfusion(Vector3 castPosition)
     {
-        // Instantiate wind current prefab at the selected position
-        Instantiate(windCurrentPrefab, position, Quaternion.identity);
-        Debug.Log("Wind current created at " + position);
+        // Instantiate the meteor at the selected position
+        GameObject confusion = Instantiate(confusionPrefab, currentPreview.transform.position, Quaternion.identity);
+
+        // Get the Meteor script and set the target position for falling
+        Confusion confusionScript = confusion.GetComponent<Confusion>();
+        confusionScript.targetPosition = castPosition; // Set the target position (on the ground)
     }
 
     void SelectSkill(SkillType skillType)
