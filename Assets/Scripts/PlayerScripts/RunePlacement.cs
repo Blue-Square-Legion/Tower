@@ -26,7 +26,7 @@ public class RunePlacement : MonoBehaviour
         {
             SelectSkill(SkillType.Meteor);
         }
-        if (Input.GetKeyDown(KeyCode.W) && !isCasting)
+        if (Input.GetKeyDown(KeyCode.E) && !isCasting)
         {
             SelectSkill(SkillType.Lightning);
         }
@@ -98,19 +98,6 @@ public class RunePlacement : MonoBehaviour
                     CastWindCurrent(castPosition);
                     break;
             }
-        }
-    }
-
-    void CastMeteor(Vector3 castPosition)
-    {
-        if (currentPreview != null)
-        {
-            // Instantiate the meteor at the selected position
-            GameObject meteor = Instantiate(meteorPrefab, currentPreview.transform.position, Quaternion.identity);
-
-            // Get the Meteor script and set the target position for falling
-            Meteor meteorScript = meteor.GetComponent<Meteor>();
-            meteorScript.targetPosition = castPosition; // Set the target position (on the ground)
 
             // Destroy the preview after casting
             Destroy(currentPreview);
@@ -120,11 +107,24 @@ public class RunePlacement : MonoBehaviour
         }
     }
 
-    void CastLightning(Vector3 position)
+    void CastMeteor(Vector3 castPosition)
     {
-        // Instantiate lightning strike prefab at the selected position
-        Instantiate(lightningPrefab, position, Quaternion.identity);
-        Debug.Log("Lightning strike at " + position);
+        // Instantiate the meteor at the selected position
+        GameObject meteor = Instantiate(meteorPrefab, currentPreview.transform.position, Quaternion.identity);
+
+        // Get the Meteor script and set the target position for falling
+        Meteor meteorScript = meteor.GetComponent<Meteor>();
+        meteorScript.targetPosition = castPosition; // Set the target position (on the ground)
+    }
+
+    void CastLightning(Vector3 castPosition)
+    {
+        // Instantiate the meteor at the selected position
+        GameObject lightning = Instantiate(lightningPrefab, currentPreview.transform.position, Quaternion.identity);
+
+        // Get the Meteor script and set the target position for falling
+        Lightning lightningScript = lightning.GetComponent<Lightning>();
+        lightningScript.targetPosition = castPosition; // Set the target position (on the ground)
     }
 
     void CastWindCurrent(Vector3 position)

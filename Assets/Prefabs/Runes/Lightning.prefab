@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6325297206059727315
+--- !u!1 &2695104058712217552
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1671728101312382432}
-  - component: {fileID: 4588880995577739188}
-  - component: {fileID: 6273552422823625207}
-  - component: {fileID: 5944902279039212243}
-  - component: {fileID: 2731143317049225581}
-  m_Layer: 5
-  m_Name: Meteor
+  - component: {fileID: 2160980610775107960}
+  - component: {fileID: 1568316250986315245}
+  - component: {fileID: 6650636870785455623}
+  - component: {fileID: 6790006208266440980}
+  - component: {fileID: 7795641301412272857}
+  m_Layer: 0
+  m_Name: Lightning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1671728101312382432
+--- !u!4 &2160980610775107960
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6325297206059727315}
+  m_GameObject: {fileID: 2695104058712217552}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.85, y: 5.44, z: -10.95}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalPosition: {x: -7.0698133, y: 11.823929, z: -1.9824071}
+  m_LocalScale: {x: 0.5, y: 3, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4588880995577739188
+--- !u!33 &1568316250986315245
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6325297206059727315}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &6273552422823625207
+  m_GameObject: {fileID: 2695104058712217552}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &6650636870785455623
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6325297206059727315}
+  m_GameObject: {fileID: 2695104058712217552}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 40d19c3e2f723b04bae87dc2d9665783, type: 2}
+  - {fileID: 2100000, guid: d0f57e39935a77f40ae67225861d8443, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,13 +85,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &5944902279039212243
-SphereCollider:
+--- !u!65 &6790006208266440980
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6325297206059727315}
+  m_GameObject: {fileID: 2695104058712217552}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -104,22 +104,22 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2731143317049225581
+--- !u!114 &7795641301412272857
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6325297206059727315}
+  m_GameObject: {fileID: 2695104058712217552}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b001039f1cf869f4f9c52e310f3b0c87, type: 3}
+  m_Script: {fileID: 11500000, guid: b83e0302d7d7b2346a2acf619f5a70d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSpeed: 10
+  fallSpeed: 30
   impactRadius: 3
-  damage: 100
+  damage: 5
   fallHeight: 10
   targetPosition: {x: 0, y: 0, z: 0}

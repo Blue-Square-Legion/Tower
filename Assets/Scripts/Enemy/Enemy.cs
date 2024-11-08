@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     public List<GameManager.Effect> activeEffects;
     GameManager gameManager;
     public NavMeshMovement navMeshMovement;
+    public bool isStunned;
+    private float stunTimer;
 
     private float normalSpeed;
     public void Init()
@@ -27,15 +29,19 @@ public class Enemy : MonoBehaviour
         moneyToPlayer = 10;
         navMeshMovement = GetComponent<NavMeshMovement>();
         navMeshMovement.SetSpeed(speed);
+        isStunned = false;
+        stunTimer = 2;
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        if (currentHealth < 0)
+        gameObject.GetComponentInChildren<HealthBar>().UpdateHealth((int) currentHealth);
+        if (currentHealth <= 0)
         {
-            Destroy(gameObject);
-        }
+            GameManager.Instance.EnqueEnemyToRemove(this);
+            Player.Instance.GiveMoney(moneyToPlayer);
+        }  
     }
 
     public void Tick()
@@ -66,6 +72,21 @@ public class Enemy : MonoBehaviour
             }
         }
         activeEffects.RemoveAll(x => x.duration <= 0);
+
+        if (isStunned)
+        {
+            navMeshMovement.SetSpeed(0);
+            stunTimer -= Time.deltaTime;
+        }
+
+        if (stunTimer < 0f)
+        {
+            stunTimer = 2f;
+            isStunned = false;
+            navMeshMovement.SetSpeed(normalSpeed);
+        }
+
+
     }
 
     public void ReachedEnd()
