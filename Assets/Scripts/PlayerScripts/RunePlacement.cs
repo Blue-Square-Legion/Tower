@@ -1,40 +1,65 @@
-using UnityEditor.PackageManager;
+using TMPro;
 using UnityEngine;
 
 public class RunePlacement : MonoBehaviour
 {
-    public GameObject skillPreviewPrefab;  // A prefab to represent the preview (e.g., a circle)
-    public float castRange = 10f;          // Range where the skill can be cast
-    private GameObject currentPreview;    // Instance of the skill preview
-    private bool isCasting = false;        // Is the player currently casting the skill
+    public GameObject skillPreviewPrefab;   // A prefab to represent the preview (e.g., a circle)
+    public GameObject meteorPrefab;         // Meteor prefab to instantiate for meteor skill
+    public GameObject lightningPrefab;      // Lightning prefab for lightning skill
+    public GameObject windCurrentPrefab;    // Wind current prefab for wind skill
+    public float castRange = 10f;           // Range where the skill can be cast
+    private GameObject currentPreview;     // Instance of the skill preview
+    private bool isCasting = false;         // Is the player currently casting the skill
+    private SkillType selectedSkill = SkillType.Meteor;  // Default skill is Meteor
+
+    public enum SkillType
+    {
+        Meteor,
+        Lightning,
+        WindCurrent
+    }
 
     void Update()
     {
         // Handle input for starting skill casting
         if (Input.GetKeyDown(KeyCode.Q) && !isCasting)
         {
-            StartSkillCasting();
+            SelectSkill(SkillType.Meteor);
+        }
+        if (Input.GetKeyDown(KeyCode.W) && !isCasting)
+        {
+            SelectSkill(SkillType.Lightning);
+        }
+        if (Input.GetKeyDown(KeyCode.R) && !isCasting)
+        {
+            SelectSkill(SkillType.WindCurrent);
         }
 
-        // If we are casting, update the preview and listen for a click
         if (isCasting)
         {
             UpdateSkillPreview();
 
-            // Check for a click to cast the skill
-            if (Input.GetMouseButtonDown(0)) // Left mouse button
+            if (Input.GetMouseButtonDown(0))
             {
                 CastSkill();
+            }
+
+            // Cancel casting
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                isCasting = false;
+                if (currentPreview != null)
+                {
+                    Destroy(currentPreview);
+                }
             }
         }
     }
 
-    // Starts the casting process and shows the preview
     void StartSkillCasting()
     {
         isCasting = true;
 
-        // Instantiate the preview at the initial mouse position
         if (currentPreview != null)
         {
             Destroy(currentPreview);
@@ -44,26 +69,48 @@ public class RunePlacement : MonoBehaviour
         UpdateSkillPreview();
     }
 
-    // Updates the preview's position to match the mouse location in the world
     void UpdateSkillPreview()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        // Raycast to find where the mouse is pointing in the world
         if (Physics.Raycast(ray, out hit, castRange))
         {
             currentPreview.transform.position = new Vector3(hit.point.x, 0.1f, hit.point.z);
         }
     }
 
-    // Cast the skill at the preview location
     void CastSkill()
     {
         if (currentPreview != null)
         {
-            // Implement your skill casting logic here
-            // For example, spawn a projectile, apply effects, etc.
+            Vector3 castPosition = currentPreview.transform.position;
+
+            switch (selectedSkill)
+            {
+                case SkillType.Meteor:
+                    CastMeteor(castPosition);
+                    break;
+                case SkillType.Lightning:
+                    CastLightning(castPosition);
+                    break;
+                case SkillType.WindCurrent:
+                    CastWindCurrent(castPosition);
+                    break;
+            }
+        }
+    }
+
+    void CastMeteor(Vector3 castPosition)
+    {
+        if (currentPreview != null)
+        {
+            // Instantiate the meteor at the selected position
+            GameObject meteor = Instantiate(meteorPrefab, currentPreview.transform.position, Quaternion.identity);
+
+            // Get the Meteor script and set the target position for falling
+            Meteor meteorScript = meteor.GetComponent<Meteor>();
+            meteorScript.targetPosition = castPosition; // Set the target position (on the ground)
 
             // Destroy the preview after casting
             Destroy(currentPreview);
@@ -71,5 +118,26 @@ public class RunePlacement : MonoBehaviour
             // End the casting
             isCasting = false;
         }
+    }
+
+    void CastLightning(Vector3 position)
+    {
+        // Instantiate lightning strike prefab at the selected position
+        Instantiate(lightningPrefab, position, Quaternion.identity);
+        Debug.Log("Lightning strike at " + position);
+    }
+
+    void CastWindCurrent(Vector3 position)
+    {
+        // Instantiate wind current prefab at the selected position
+        Instantiate(windCurrentPrefab, position, Quaternion.identity);
+        Debug.Log("Wind current created at " + position);
+    }
+
+    void SelectSkill(SkillType skillType)
+    {
+        selectedSkill = skillType;
+        Debug.Log("Selected skill: " + selectedSkill);
+        StartSkillCasting();
     }
 }

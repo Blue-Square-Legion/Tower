@@ -13036,6 +13036,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPreviewPrefab: {fileID: 7674931407606155071, guid: 7bdfb65367c36374cbc31cd3d295ac45,
     type: 3}
+  meteorPrefab: {fileID: 6325297206059727315, guid: c2c8308e4c2a9a248a918ca53cb19d54,
+    type: 3}
+  lightningPrefab: {fileID: 6325297206059727315, guid: c2c8308e4c2a9a248a918ca53cb19d54,
+    type: 3}
+  windCurrentPrefab: {fileID: 6325297206059727315, guid: c2c8308e4c2a9a248a918ca53cb19d54,
+    type: 3}
   castRange: 100
 --- !u!1001 &558263104
 PrefabInstance:
