@@ -3,14 +3,27 @@ using UnityEngine;
 
 public class RunePlacement : MonoBehaviour
 {
-    public GameObject skillPreviewPrefab;   // A prefab to represent the preview (e.g., a circle)
-    public GameObject meteorPrefab;         // Meteor prefab to instantiate for meteor skill
-    public GameObject lightningPrefab;      // Lightning prefab for lightning skill
-    public GameObject confusionPrefab;    // Wind current prefab for wind skill
-    public float castRange = 10f;           // Range where the skill can be cast
-    private GameObject currentPreview;     // Instance of the skill preview
-    private bool isCasting = false;         // Is the player currently casting the skill
-    private SkillType selectedSkill = SkillType.Meteor;  // Default skill is Meteor
+    public GameObject skillPreviewPrefab;  
+    public GameObject meteorPrefab;
+    public GameObject lightningPrefab;
+    public GameObject confusionPrefab;
+    public float castRange = 10f; 
+    private GameObject currentPreview;
+    private bool isCasting = false;
+    private SkillType selectedSkill = SkillType.Meteor; 
+
+    private float meteorCooldown = 5f;
+    private float lightningCooldown = 7f;
+    private float confusionCooldown = 6f;
+
+    private float meteorCooldownTimer = 0f;
+    private float lightningCooldownTimer = 0f;
+    private float confusionCooldownTimer = 0f;
+
+    // UI Text to display the cooldown in seconds
+    public TextMeshProUGUI meteorCooldownText;
+    public TextMeshProUGUI lightningCooldownText;
+    public TextMeshProUGUI confusionCooldownText;
 
     public enum SkillType
     {
@@ -22,17 +35,46 @@ public class RunePlacement : MonoBehaviour
     void Update()
     {
         // Handle input for starting skill casting
-        if (Input.GetKeyDown(KeyCode.Q) && !isCasting)
+        if (Input.GetKeyDown(KeyCode.Q) && !isCasting && meteorCooldownTimer <= 0f)
         {
             SelectSkill(SkillType.Meteor);
         }
-        if (Input.GetKeyDown(KeyCode.E) && !isCasting)
+        if (Input.GetKeyDown(KeyCode.E) && !isCasting && lightningCooldownTimer <= 0f)
         {
             SelectSkill(SkillType.Lightning);
         }
-        if (Input.GetKeyDown(KeyCode.R) && !isCasting)
+        if (Input.GetKeyDown(KeyCode.R) && !isCasting && confusionCooldownTimer <= 0f)
         {
             SelectSkill(SkillType.Confusion);
+        }
+
+        // Handle skill cooldowns
+        if (meteorCooldownTimer > 0f)
+        {
+            meteorCooldownTimer -= Time.deltaTime;
+            UpdateCooldownText(meteorCooldownText, meteorCooldownTimer);
+        }
+        else
+        {
+            meteorCooldownText.text = "Meteor Ready";
+        }
+        if (lightningCooldownTimer > 0f)
+        {
+            lightningCooldownTimer -= Time.deltaTime;
+            UpdateCooldownText(lightningCooldownText, lightningCooldownTimer);
+        }
+        else
+        {
+            lightningCooldownText.text = "Lightning Ready";
+        }
+        if (confusionCooldownTimer > 0f)
+        {
+            confusionCooldownTimer -= Time.deltaTime;
+            UpdateCooldownText(confusionCooldownText, confusionCooldownTimer);
+        }
+        else
+        {
+            confusionCooldownText.text = "Confusion Ready";
         }
 
         if (isCasting)
@@ -52,6 +94,7 @@ public class RunePlacement : MonoBehaviour
                 {
                     Destroy(currentPreview);
                 }
+                UIManager.Instance.ToggleDeselect(false);
             }
         }
     }
@@ -90,57 +133,62 @@ public class RunePlacement : MonoBehaviour
             {
                 case SkillType.Meteor:
                     CastMeteor(castPosition);
+                    meteorCooldownTimer = meteorCooldown;
                     break;
                 case SkillType.Lightning:
                     CastLightning(castPosition);
+                    lightningCooldownTimer = lightningCooldown;
                     break;
                 case SkillType.Confusion:
                     CastConfusion(castPosition);
+                    confusionCooldownTimer = confusionCooldown;
                     break;
             }
 
             // Destroy the preview after casting
             Destroy(currentPreview);
 
-            // End the casting
             isCasting = false;
+
+            UIManager.Instance.ToggleDeselect(false);
         }
     }
 
     void CastMeteor(Vector3 castPosition)
     {
-        // Instantiate the meteor at the selected position
         GameObject meteor = Instantiate(meteorPrefab, currentPreview.transform.position, Quaternion.identity);
 
-        // Get the Meteor script and set the target position for falling
         Meteor meteorScript = meteor.GetComponent<Meteor>();
-        meteorScript.targetPosition = castPosition; // Set the target position (on the ground)
+        meteorScript.targetPosition = castPosition;
     }
 
     void CastLightning(Vector3 castPosition)
     {
-        // Instantiate the meteor at the selected position
         GameObject lightning = Instantiate(lightningPrefab, currentPreview.transform.position, Quaternion.identity);
 
-        // Get the Meteor script and set the target position for falling
         Lightning lightningScript = lightning.GetComponent<Lightning>();
-        lightningScript.targetPosition = castPosition; // Set the target position (on the ground)
+        lightningScript.targetPosition = castPosition;
     }
 
     void CastConfusion(Vector3 castPosition)
     {
-        // Instantiate the meteor at the selected position
         GameObject confusion = Instantiate(confusionPrefab, currentPreview.transform.position, Quaternion.identity);
 
-        // Get the Meteor script and set the target position for falling
         Confusion confusionScript = confusion.GetComponent<Confusion>();
-        confusionScript.targetPosition = castPosition; // Set the target position (on the ground)
+        confusionScript.targetPosition = castPosition;
     }
 
     void SelectSkill(SkillType skillType)
     {
+        UIManager.Instance.ToggleDeselect(true);
         selectedSkill = skillType;
         Debug.Log("Selected skill: " + selectedSkill);
         StartSkillCasting();
+    }
+
+    void UpdateCooldownText(TextMeshProUGUI cooldownText, float timer)
+    {
+        // Show the remaining cooldown time with two decimals
+        cooldownText.text = timer.ToString("F2") + "s"; 
     }
 }
