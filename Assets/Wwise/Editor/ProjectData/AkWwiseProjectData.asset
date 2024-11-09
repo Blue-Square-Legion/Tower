@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 7b7dc39d5e9b084099a57f86faa654b9
     GuidInternal: 
-    m_lastTime: -8584720620863608243
+    m_lastTime: -8584708289424856830
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 235d84d0e0b36a4bbdaa7a8b5c09057f
     GuidInternal: 
-    m_lastTime: -8584720620903910382
+    m_lastTime: -8584708289434931991
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 6dc2252d93bc1f459b0fe2d7e6195c85
     GuidInternal: 
-    m_lastTime: -8584720620863648401
+    m_lastTime: -8584708289424871851
     List:
     - name: Main
       guid: 2966ed81890da84096faf835adc24e8d
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 12a44943fe53cc4c8cc46dbe035d99f1
     GuidInternal: 
-    m_lastTime: -8584720620920970295
+    m_lastTime: -8584708289439698890
     List:
     - name: Play_Ambience
       guid: b498ab5d3dee2646b5fa39c329ca59ad
@@ -431,7 +431,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: f6b5863210ff3042b8e50f8f1daaef91
     GuidInternal: 
-    m_lastTime: -8584720620920822630
+    m_lastTime: -8584708289439688916
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
@@ -445,7 +445,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 17c923258ca984499c830536e78e3bda
     GuidInternal: 
-    m_lastTime: -8584720620863633345
+    m_lastTime: -8584708289424866817
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -459,7 +459,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: f36025e4f9f78746bb363ff66bb6094d
     GuidInternal: 
-    m_lastTime: -8584720620863618264
+    m_lastTime: -8584708289424866817
     List:
     - name: GameMode
       guid: ee888310b66add448031959dec169c55
@@ -523,7 +523,7 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 8958a25382ea7b4c8d0c8a8f2c57dd7e
     GuidInternal: 
-    m_lastTime: -8584720620863608243
+    m_lastTime: -8584708289424856830
     List: []
   ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 0500000006000000070000001a0000001b000000200000002100000022000000
