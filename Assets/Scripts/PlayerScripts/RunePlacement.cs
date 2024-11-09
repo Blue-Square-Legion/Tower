@@ -56,7 +56,7 @@ public class RunePlacement : MonoBehaviour
         }
         else
         {
-            meteorCooldownText.text = "Meteor Ready";
+            meteorCooldownText.text = "Ready";
         }
         if (lightningCooldownTimer > 0f)
         {
@@ -65,7 +65,7 @@ public class RunePlacement : MonoBehaviour
         }
         else
         {
-            lightningCooldownText.text = "Lightning Ready";
+            lightningCooldownText.text = "Ready";
         }
         if (confusionCooldownTimer > 0f)
         {
@@ -74,7 +74,7 @@ public class RunePlacement : MonoBehaviour
         }
         else
         {
-            confusionCooldownText.text = "Confusion Ready";
+            confusionCooldownText.text = "Ready";
         }
 
         if (isCasting)
