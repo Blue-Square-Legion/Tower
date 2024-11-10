@@ -74,6 +74,10 @@ public class TowerBehavior : MonoBehaviour
                 upgradeCost = 300;
                 upgradeDescription = "More Money\nGives a bit more money";
                 break;
+            case TowerType.Ice:
+                upgradeCost = 100;
+                upgradeDescription = "Increased detector\nIncreased Range";
+                break;
         }
         sellCost = cost / 2;
     }
@@ -153,7 +157,6 @@ public class TowerBehavior : MonoBehaviour
 
         if (lastSelectedTower != null)
         {
-            //print(lastSelectedTower.transform.Find("Base").transform.Find("Range").gameObject.activeSelf);
             upgradePanel.SetUpgradePanel(lastSelectedTower.transform.Find("Base").transform.Find("Range").gameObject.activeInHierarchy);
             UpdateUpgradePanel();
             lastSelectedTower = null;
@@ -365,14 +368,65 @@ public class TowerBehavior : MonoBehaviour
                             GameManager.Instance.farmBonus += 100;
                             sellCost += upgradeCost / 2;
                             upgradeCost = 1750;
-                            upgradeDescription = "Upgrade 4\nGrants a large sum of money";
+                            upgradeDescription = "Future's Market\nGrants a large sum of money";
                             break;
                         case 4:
                             transform.GetComponent<EconomyBehavior>().bonus = 750;
                             GameManager.Instance.farmBonus += 250;
                             sellCost += upgradeCost / 2;
-                            upgradeCost = 2000;
-                            upgradeDescription = "Upgrade 5\nFuture's Market";
+
+                            //No more upgrades
+                            sellCost += upgradeCost / 2;
+                            upgradeDescription = "Max Level";
+                            break;
+                    }
+                    break;
+                case TowerType.Ice:
+                    IceDamage tempIce = transform.gameObject.GetComponent<IceDamage>();
+                    switch(upgradeLevel)
+                    {
+                        case 0:
+                            //Do upgrade
+                            range += 1f;
+                            rangeObject.localScale = new Vector3(rangeObject.localScale.x + 2f, rangeObject.localScale.y, rangeObject.localScale.z + 2f);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost / 2;
+                            upgradeCost = 150;
+                            upgradeDescription = "Better Firing System\nIncreased Fire Rate";
+                            break;
+                        case 1:
+
+                            fireRate += 0.25f;
+                            transform.GetComponent<IceDamage>().UpdateFireRate(fireRate);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost / 2;
+                            upgradeCost = 350;
+                            upgradeDescription = "Colder Snow\nSlows Enemies More";
+                            break;
+                        case 2:
+                            tempIce.UpdateSnowSpeed(tempIce.GetSnowSpeed() - 0.1f);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost / 2;
+                            upgradeCost = 500;
+                            upgradeDescription = "Melt Resistant Snow\nIncreased Duration";
+                            break;
+                        case 3:
+                            tempIce.UpdateSnowDuration(tempIce.GetSnowDuration() + 0.5f);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost / 2;
+                            upgradeCost = 600;
+                            upgradeDescription = "Larger Snowballs\nIncreased Snow Area";
+                            break;
+                        case 4:
+                            tempIce.UpdateSnowSize(tempIce.GetSnowSize() + 1f);
+
+                            //No more upgrades
+                            sellCost += upgradeCost / 2;
+                            upgradeDescription = "Max Level";
                             break;
                     }
                     break;

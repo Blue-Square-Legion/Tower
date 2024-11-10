@@ -9,6 +9,7 @@ public class Snowball : MonoBehaviour
 
     private Vector3 startPostion;
     private Vector3 endPosition;
+    [NonSerialized] public float snowSize;
     [NonSerialized] public Enemy target;
     [NonSerialized] public IceDamage parent;
 
@@ -56,6 +57,7 @@ public class Snowball : MonoBehaviour
         Snow tempSnow = snow.GetComponent<Snow>();
         tempSnow.duration = parent.GetSnowDuration();
         tempSnow.slowModifier = parent.GetSnowSpeed();
+        tempSnow.transform.localScale = new Vector3(snowSize, tempSnow.transform.localScale.y, snowSize);
         tempSnow.Init();
         Destroy(gameObject);
     }

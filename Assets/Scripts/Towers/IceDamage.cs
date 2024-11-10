@@ -5,6 +5,7 @@ public class IceDamage : MonoBehaviour, IDamageMethod
     [SerializeField] private GameObject snowBall;
     [SerializeField] private float snowDuration;
     [SerializeField] private float snowSpeed;
+    [SerializeField] private float snowSize;
     GameManager gameManager;
     private float damage;
     private float fireRate;
@@ -38,6 +39,11 @@ public class IceDamage : MonoBehaviour, IDamageMethod
         snowSpeed = speed;
     }
 
+    public void UpdateSnowSize(float size)
+    {
+        snowSize = size;
+    }
+
     public float GetSnowDuration()
     {
         return snowDuration;
@@ -46,6 +52,11 @@ public class IceDamage : MonoBehaviour, IDamageMethod
     public float GetSnowSpeed()
     {
         return snowSpeed;
+    }
+
+    public float GetSnowSize()
+    {
+        return snowSize;
     }
     #endregion
 
@@ -63,6 +74,7 @@ public class IceDamage : MonoBehaviour, IDamageMethod
             Snowball snowballScript = snowBallObject.GetComponent<Snowball>();
             snowballScript.target = target;
             snowballScript.parent = this;
+            snowballScript.snowSize = snowSize;
             snowballScript.Init();
 
             delay = 1 / fireRate;
