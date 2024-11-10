@@ -97,25 +97,50 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7396654156298469847, guid: 0f401386dd92fb744b651bfb9cd0baac,
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0f401386dd92fb744b651bfb9cd0baac,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1184073716973940349}
+      addedObject: {fileID: 5854707875665418818}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0f401386dd92fb744b651bfb9cd0baac,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8749867725717399378}
   m_SourcePrefab: {fileID: 100100000, guid: 0f401386dd92fb744b651bfb9cd0baac, type: 3}
---- !u!1 &4789473159123776197 stripped
+--- !u!1 &2887080467818630723 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 7396654156298469847, guid: 0f401386dd92fb744b651bfb9cd0baac,
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0f401386dd92fb744b651bfb9cd0baac,
     type: 3}
   m_PrefabInstance: {fileID: 2653061851306357522}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1184073716973940349
+--- !u!65 &5854707875665418818
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2887080467818630723}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.04, y: 0.03, z: 0.04}
+  m_Center: {x: 0, y: 0.02, z: 0}
+--- !u!95 &8749867725717399378
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4789473159123776197}
+  m_GameObject: {fileID: 2887080467818630723}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 72611a3b58e74ec4da6c2e2ef271fd0f, type: 2}
