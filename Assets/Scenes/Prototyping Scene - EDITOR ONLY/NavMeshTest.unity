@@ -1255,7 +1255,7 @@ MonoBehaviour:
         m_MethodName: SetTowerToPlace
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 6103739793093240650, guid: 391981eb3d6aad64fbb680912216b58a,
+          m_ObjectArgument: {fileID: 2873057837195373460, guid: ad8fa8f65fdbaed41a5486605a09a674,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0

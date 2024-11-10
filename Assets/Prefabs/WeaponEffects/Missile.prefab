@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4236064142587593492}
   - component: {fileID: 4737002907422082392}
   - component: {fileID: 7887408086384289629}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Missile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4901,3 +4901,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031bfeddc4e799841afe2d53df974d20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentClass: {fileID: 0}
+  explosionSystem: {fileID: 0}
+  missileSystem: {fileID: 0}
+  explosionLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  explosionRadius: 0

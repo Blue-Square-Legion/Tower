@@ -21,8 +21,8 @@ public class MissileCollisionDetector : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
         missileSystem.GetCollisionEvents(other, missileCollisions);
-
         int collisionCount = missileCollisions.Count;
+
         for (int i = 0; i < collisionCount; i++)
         {
             explosionSystem.transform.position = missileCollisions[i].intersection;
