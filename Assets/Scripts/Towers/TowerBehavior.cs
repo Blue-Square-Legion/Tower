@@ -396,6 +396,7 @@ public class TowerBehavior : MonoBehaviour
         Basic,
         Flame,
         Bomb,
-        Economy
+        Economy,
+        Ice
     }
 }
