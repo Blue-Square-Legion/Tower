@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,9 +10,10 @@ public class FireTriggerCollisionDetector : MonoBehaviour
     private EnemySpawner enemySpawner;
     public float duration;
     public float speedModifier;
+    public float removalDelay = 1f;
 
     private List<Collider> enemiesInRange = new List<Collider> ();
-
+    
     private void Start()
     {
         gameManager = GameManager.Instance;
@@ -22,7 +24,6 @@ public class FireTriggerCollisionDetector : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log($"Enemy entered: {other.name}");
             enemiesInRange.Add(other);
         }
     }
@@ -31,17 +32,24 @@ public class FireTriggerCollisionDetector : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log($"Enemy exited: {other.name}");
-            enemiesInRange.Remove(other);
+            StartCoroutine(RemoveEnemyAfterDelay(other, removalDelay));
         }
     }
 
+    private IEnumerator RemoveEnemyAfterDelay(Collider enemy, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (enemiesInRange.Contains(enemy))
+        {
+            enemiesInRange.Remove(enemy);
+        }
+    }
 
     private void Update()
     {
         if (enemiesInRange.Count > 0)
         {
-            //Debug.Log($"Enemies in range: {enemiesInRange.Count}");
             applyEffects();
         }
     }
@@ -50,12 +58,11 @@ public class FireTriggerCollisionDetector : MonoBehaviour
     {
         foreach (var collider in enemiesInRange)
         {
-            if (collider != null && collider.gameObject.activeInHierarchy) 
+            if (collider != null && collider.gameObject.activeInHierarchy)
             {
                 GameManager.Effect onFire = new GameManager.Effect(GameManager.EffectNames.Fire, parent.fireRate, parent.damage, duration, speedModifier);
                 GameManager.ApplyEffectData effectData = new GameManager.ApplyEffectData(onFire, enemySpawner.enemyTransformDictionary[collider.transform]);
                 gameManager.EnqueueAffectToApply(effectData);
-                //Debug.Log($"Applying effect to: {collider.name}");
             }
         }
     }

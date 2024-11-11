@@ -74,7 +74,6 @@ public class TowerPlacement : MonoBehaviour
                 {
                     BoxCollider towerCollider = currentTowerBeingPlaced.gameObject.GetComponent<BoxCollider>();
                     towerCollider.isTrigger = true;
-                    towerCollider.providesContacts = true;
 
                     Vector3 boxCenter = currentTowerBeingPlaced.gameObject.transform.position + towerCollider.center;
                     Vector3 halfExtends = towerCollider.size / 2;
@@ -92,7 +91,7 @@ public class TowerPlacement : MonoBehaviour
                                 surface.BuildNavMesh();
                                 gameManager.builtTowers.Add(currentTowerBeingPlaced.GetComponent<TowerBehavior>());
                                 player.RemoveMoney(currentTowerBeingPlaced.GetComponent<TowerBehavior>().cost);
-                                towerCollider.isTrigger = true;
+                                towerCollider.isTrigger = false;
                                 towerCollider.providesContacts = true;
                                 currentTowerBeingPlaced = null;
                                 UIManager.Instance.ToggleDeselect(false);
