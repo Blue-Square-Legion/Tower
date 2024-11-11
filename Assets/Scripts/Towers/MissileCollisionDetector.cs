@@ -20,6 +20,7 @@ public class MissileCollisionDetector : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
+
         missileSystem.GetCollisionEvents(other, missileCollisions);
 
         int collisionCount = missileCollisions.Count;

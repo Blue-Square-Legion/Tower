@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FlameThrowerDamage : MonoBehaviour, IDamageMethod
 {
-    [SerializeField] private Collider fireTrigger;
+    [SerializeField] public Collider fireTrigger;
     [SerializeField] private ParticleSystem fireEffect;
     GameManager gameManager;
     [NonSerialized] public float damage;
