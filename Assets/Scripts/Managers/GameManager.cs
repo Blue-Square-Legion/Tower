@@ -43,15 +43,18 @@ public class GameManager : MonoBehaviour
 
     EnemySpawner enemySpawner;
     private bool waveActive = false;
+    private bool endOfWave;
     int currentWave;
     int selectedSpawnpoint;
     int nextSpawnpoint;
     public GameObject SelectedTower;
+    public int farmBonus;
 
     void Start()
     {
         enemySpawner = EnemySpawner.Instance;
         endLoop = false;
+        endOfWave = false;
         enemyQueueToSpawn = new();
         enemyQueueToRemove = new();
         damageData = new();
@@ -74,6 +77,7 @@ public class GameManager : MonoBehaviour
         }
 
         currentWave = 0;
+        farmBonus = 0;
         selectedSpawnpoint = 0;
         nextSpawnpoint = 1;
         SpawnPoint = EnemySpawner.Instance.SpawnPoints[selectedSpawnpoint];
@@ -99,6 +103,7 @@ public class GameManager : MonoBehaviour
         if (nextSpawnpoint > EnemySpawner.Instance.SpawnPoints.Length - 1)
             nextSpawnpoint = 0;
         NextSpawnPoint = EnemySpawner.Instance.SpawnPoints[nextSpawnpoint];
+        endOfWave = true;
     }
 
     IEnumerator Wave(int wave)
@@ -116,7 +121,6 @@ public class GameManager : MonoBehaviour
                 yield return new WaitForSeconds(1);
                 EnqueueEnemy(1);
                 yield return new WaitForSeconds(1);
-
                 break;
             case 1:
                 for (int i = 0; i < 9; i++)
@@ -195,7 +199,6 @@ public class GameManager : MonoBehaviour
                     EnqueueEnemy(2);
                     yield return new WaitForSeconds(0.15f);
                 }
-                yield return new WaitForSeconds(1);
                 break;
             case 9:
                 for (int i = 0; i < 100; i++)
@@ -209,13 +212,39 @@ public class GameManager : MonoBehaviour
                     EnqueueEnemy(1);
                     yield return new WaitForSeconds(0.1f);
                 }
-
                 break;
             default:
                 currentWave = 0;
                 StartCoroutine(Wave(currentWave));
                 break;
         }
+    }
+
+    private void WaveBonus(int wave)
+    {
+        int waveBonus = 0;
+        switch(wave)
+        {
+            case 0:
+            case 1:
+                waveBonus = 100;
+                break;
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                waveBonus = 150;
+                break;
+            case 6:
+            case 7:
+            case 8:
+                waveBonus = 200;
+                break;
+            case 9:
+                waveBonus = 250;
+                break;
+        }
+        player.GiveMoney(waveBonus + farmBonus);
     }
 
     IEnumerator GameLoop()
@@ -239,7 +268,8 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < enemySpawner.spawnedEnemies.Count; i++)
             {
                 //enemySpawner.spawnedEnemies[i].nodeIndex = nodeIndicies[i];
-                if (enemySpawner.spawnedEnemies[i].navMeshMovement.agent != null && enemySpawner.spawnedEnemies[i].navMeshMovement.ReachedEnd())
+                if (enemySpawner.spawnedEnemies[i].navMeshMovement.agent != null && enemySpawner.spawnedEnemies[i].navMeshMovement.ReachedEnd() 
+                    && !enemySpawner.spawnedEnemies[i].isConfused)
                 {
                     //Enemy Reached the end of the map
                     EnqueEnemyToRemove(enemySpawner.spawnedEnemies[i]);
@@ -315,11 +345,13 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-            if (enemySpawner.spawnedEnemies.Count == 0)
+            if (enemySpawner.spawnedEnemies.Count == 0 && endOfWave)
             {
                 waveActive = false;
                 SpawnPoint.GetChild(0).gameObject.SetActive(false);
                 NextSpawnPoint.GetChild(0).gameObject.SetActive(true);
+                WaveBonus(currentWave);
+                endOfWave = false;
             }
                 
 

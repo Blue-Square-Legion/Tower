@@ -227,6 +227,8 @@ MonoBehaviour:
   ID: 0
   nodeIndex: 0
   navMeshMovement: {fileID: 0}
+  isStunned: 0
+  isConfused: 0
 --- !u!54 &338499314067730808
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -381,10 +383,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1939815003935644196}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f0239b745977e49468920405edf2c4c9,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2465898547930070509}
   m_SourcePrefab: {fileID: 100100000, guid: f0239b745977e49468920405edf2c4c9, type: 3}
 --- !u!1 &8270600353863267801 stripped
 GameObject:
@@ -413,23 +411,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2465898547930070509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8270600353863267801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1490b6adc44f3404ebd452ceae988c93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Squid:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e9e01b6ad5c214c869ae4bd4a9301d04,
-      type: 2}
 --- !u!4 &8758590464364195683 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f0239b745977e49468920405edf2c4c9,

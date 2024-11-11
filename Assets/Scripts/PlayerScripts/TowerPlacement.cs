@@ -57,7 +57,7 @@ public class TowerPlacement : MonoBehaviour
             }
 
             //Cancels placing tower
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
                 UIManager.Instance.ToggleDeselect(false);
                 CancelPlacingTower();
@@ -96,7 +96,6 @@ public class TowerPlacement : MonoBehaviour
                                 towerCollider.providesContacts = true;
                                 currentTowerBeingPlaced = null;
                                 UIManager.Instance.ToggleDeselect(false);
-                                AkSoundEngine.PostEvent("Play_Building", gameObject);
                             }
                         } else
                         {

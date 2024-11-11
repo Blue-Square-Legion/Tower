@@ -4,18 +4,16 @@ using UnityEngine;
 public class MissileDamage : MonoBehaviour, IDamageMethod
 {
     public LayerMask enemiesLayer;
-    [SerializeField] private ParticleSystem missileSystem;
     [SerializeField] private Transform towerPivot;
 
     GameManager gameManager;
+    [SerializeField] private GameObject missile;
     [NonSerialized] public float damage;
     private float fireRate;
     private float delay;
-    private ParticleSystem.MainModule missileSystemMain;
     public void Init(float damage, float fireRate)
     {
         gameManager = GameManager.Instance;
-        missileSystemMain = missileSystem.main;
         this.damage = damage;
         this.fireRate = fireRate;
         delay = 1f / fireRate;
@@ -41,11 +39,10 @@ public class MissileDamage : MonoBehaviour, IDamageMethod
                 return;
             }
 
-            missileSystemMain.startRotationX = towerPivot.forward.x;
-            missileSystemMain.startRotationY = towerPivot.forward.y;
-            missileSystemMain.startRotationZ = towerPivot.forward.z;
+            GameObject tempMissile = Instantiate(missile);
+            tempMissile.transform.position = transform.position;
+            tempMissile.transform.rotation = transform.Find("Head").transform.rotation;
 
-            missileSystem.Play();
             delay = 1 / fireRate;
         }
     }

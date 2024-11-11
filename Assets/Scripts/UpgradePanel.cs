@@ -69,6 +69,8 @@ public class UpgradePanel : MonoBehaviour
 
     public void SellPressed()
     {
+        if (target.GetComponent<EconomyBehavior>() != null)
+            GameManager.Instance.farmBonus -= target.GetComponent<EconomyBehavior>().bonus;
         TowerPlacement.Instance.SellTower(target.gameObject);
     }
 }
