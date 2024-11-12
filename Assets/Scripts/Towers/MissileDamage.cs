@@ -1,8 +1,10 @@
 using System;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class MissileDamage : MonoBehaviour, IDamageMethod
 {
+    public Animator cannonAnimator;
     public LayerMask enemiesLayer;
     [SerializeField] private Transform towerPivot;
 
@@ -39,9 +41,11 @@ public class MissileDamage : MonoBehaviour, IDamageMethod
                 return;
             }
 
+            cannonAnimator.SetTrigger("CannonFire");
             GameObject tempMissile = Instantiate(missile);
             tempMissile.transform.position = transform.position + new Vector3(0, 0.5f, 0);
-            tempMissile.transform.rotation = transform.Find("Head").transform.rotation;
+            tempMissile.transform.rotation = towerPivot.transform.rotation;
+            tempMissile.transform.Rotate(0, 180, 0, Space.Self);
             tempMissile.GetComponent<Missile>().parent = gameObject;
             tempMissile.GetComponent<Missile>().Init();
             delay = 1 / fireRate;
