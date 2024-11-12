@@ -99,7 +99,7 @@ public class TowerBehavior : MonoBehaviour
             if (direction != Vector3.zero) // Ensure direction is not zero to avoid errors
             {
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
-                towerPivot.transform.rotation = Quaternion.Euler(0, targetRotation.eulerAngles.y, 0);
+                towerPivot.transform.rotation = Quaternion.Euler(0, targetRotation.eulerAngles.y + 180, 0);
             }
         }
         // Create a pointer event for UI detection
