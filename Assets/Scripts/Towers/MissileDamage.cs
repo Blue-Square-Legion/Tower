@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class MissileDamage : MonoBehaviour, IDamageMethod
 {
+    public Animator cannonAnimator;
     public LayerMask enemiesLayer;
     [SerializeField] private Transform towerPivot;
 
@@ -39,6 +40,7 @@ public class MissileDamage : MonoBehaviour, IDamageMethod
                 return;
             }
 
+            cannonAnimator.SetTrigger("CannonFire");
             GameObject tempMissile = Instantiate(missile);
             tempMissile.transform.position = transform.position;
             tempMissile.transform.rotation = transform.Find("Head").transform.rotation;

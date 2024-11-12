@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3896582054520806331}
   - component: {fileID: 8662880033718044409}
-  - component: {fileID: 1003600632028817782}
+  - component: {fileID: 5696270818703029386}
   m_Layer: 3
   m_Name: Cannon
   m_TagString: Untagged
@@ -89,7 +89,7 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0.009533029, z: -0.0028541395}
     m_Extent: {x: 0.017369108, y: 0.009533033, z: 0.020223249}
   m_DirtyAABB: 0
---- !u!95 &1003600632028817782
+--- !u!95 &5696270818703029386
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -99,7 +99,7 @@ Animator:
   m_GameObject: {fileID: 10063559185257884}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 72611a3b58e74ec4da6c2e2ef271fd0f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9a831efb094058a4db348da7984e6f64, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -154,6 +154,7 @@ GameObject:
   - component: {fileID: 3196757424151412947}
   - component: {fileID: 2543761900036560489}
   - component: {fileID: 3654981951108833090}
+  - component: {fileID: 8332652086936019957}
   m_Layer: 3
   m_Name: Cannon Tower
   m_TagString: NotBuildable
@@ -218,6 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9c75d2f622b5a4aa9b7818005eb097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cannonAnimator: {fileID: 8332652086936019957}
   enemiesLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -244,6 +246,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.3684757, y: 0.640963, z: 1.5145767}
   m_Center: {x: 0.00996089, y: 0.35928962, z: -0.048455387}
+--- !u!95 &8332652086936019957
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2873057837195373460}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9a831efb094058a4db348da7984e6f64, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3629308780256463795
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,7 +470,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5403487884767320013}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
   m_LocalPosition: {x: 0, y: 0.054, z: 0}
   m_LocalScale: {x: 30, y: 30, z: 30}
   m_ConstrainProportionsScale: 0
