@@ -246,7 +246,7 @@ public class TowerBehavior : MonoBehaviour
                             break;
                         case 1:
                             //Do upgrade
-                            transform.GetComponentInChildren<MissileCollisionDetector>().explosionRadius += 1;
+                            transform.GetComponentInChildren<Missile>().explosionRadius += 1;
 
                             //Set up for next upgrade
                             sellCost += upgradeCost / 2;
@@ -266,7 +266,7 @@ public class TowerBehavior : MonoBehaviour
                         case 3:
                             //Do upgrade
                             damage += 1f;
-                            transform.GetComponentInChildren<MissileCollisionDetector>().explosionRadius += 1;
+                            transform.GetComponentInChildren<Missile>().explosionRadius += 1;
                             transform.GetComponent<MissileDamage>().UpdateDamage(damage);
 
 

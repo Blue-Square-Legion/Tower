@@ -42,9 +42,10 @@ public class MissileDamage : MonoBehaviour, IDamageMethod
 
             cannonAnimator.SetTrigger("CannonFire");
             GameObject tempMissile = Instantiate(missile);
-            tempMissile.transform.position = transform.position;
+            tempMissile.transform.position = transform.position + new Vector3(0, 0.5f, 0);
             tempMissile.transform.rotation = transform.Find("Head").transform.rotation;
-
+            tempMissile.GetComponent<Missile>().parent = gameObject;
+            tempMissile.GetComponent<Missile>().Init();
             delay = 1 / fireRate;
         }
     }
