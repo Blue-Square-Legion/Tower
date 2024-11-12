@@ -1,16 +1,12 @@
 /*****************************************************************************
-    Brackeys Audio Manager
-    Tutorial video: https://youtu.be/6OT43pvUyfY
-
-    Author: Caden Sheahan
+    Author: Ryan Herwig
     Date: 9/7/24
-    Description: Creates an array of all sound effects defined by "Sound" script
-    and adds an audio source to each of them in the AudioManager game object.
+    Description: Makes easy access for creating sounds in Unity. Keeps them all in one area and easily modifiable.
     
-    Use this line to play any sound anywhere, if you have the name set in 
-    the inspector:
-    
-    FindObjectOfType<AudioManager>().Play("[INSERT_NAME_FROM_INSPECTOR]");
+    To Play Sound from any Script:
+    AudioManager.Instance.Play([SOUND_NAME]);
+
+    Note: [SOUND_NAME] is the name given to the Sound Object in the AudioManager inside the inspector
  *****************************************************************************/
 using System;
 using UnityEngine;
@@ -35,18 +31,19 @@ public class AudioManager : MonoBehaviour
         }
     }
     #endregion
+    [Tooltip("Can leave empty. If the sound clip does not have an Audio Mixer, it uses this one instead.")]
+    public AudioMixerGroup defaultMasterMixer;
 
-    public Sound[] Sounds; 
-    public AudioMixerGroup masterMixer;
-    public float musicVolume;
+    [Tooltip("The array of all the sounds in the game")]
+    public Sound[] Sounds;
     
     void Awake()
     {   
+        //Gets all the sounds inside the array and creates an AudioSource out of them
         foreach (Sound s in Sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
-            s.source.outputAudioMixerGroup = masterMixer;
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
@@ -54,13 +51,90 @@ public class AudioManager : MonoBehaviour
             s.source.spatialBlend = s.spacialBlend;
             s.source.minDistance = s.minDistance;
             s.source.maxDistance = s.maxDistance;
-            s.source.rolloffMode = AudioRolloffMode.Linear;
+            s.source.rolloffMode = s.audioRollOffMode;
+
+            s.source.outputAudioMixerGroup = s.audioMixer;
+            if (s.source.outputAudioMixerGroup == null)
+                s.source.outputAudioMixerGroup = defaultMasterMixer;
         }
     }
 
     #region Sound Controls
 
-    public AudioSource SoundSourceOnObject(string name, GameObject obj)
+    /// <summary>
+    /// Adds an Audio Listener with a sound file to a GameObject
+    /// </summary>
+    /// <param name="soundName"></param>
+    /// <param name="obj"></param>
+    public void AddAudioOnObject(string soundName, GameObject obj)
+    {
+        Sound s = Array.Find(Sounds, sound => sound.name == soundName);
+        if (s == null)
+        {
+            Debug.LogWarning(soundName + ": audio not found");
+            return;
+        }
+        if (obj == null)
+        {
+            Debug.LogWarning(obj + " not found");
+            return;
+        }
+
+        s.source = obj.AddComponent<AudioSource>();
+        s.source.clip = s.clip;
+        s.source.outputAudioMixerGroup = defaultMasterMixer;
+        s.source.volume = s.volume;
+        s.source.pitch = s.pitch;
+        s.source.loop = s.loop;
+        s.source.panStereo = s.panStereo;
+        s.source.spatialBlend = s.spacialBlend;
+        s.source.minDistance = s.minDistance;
+        s.source.maxDistance = s.maxDistance;
+        s.source.rolloffMode = AudioRolloffMode.Linear;
+    }
+
+    public void PlayAudioOnObject(string soundName, GameObject obj)
+    {
+        Sound s = Array.Find(Sounds, sound => sound.name == soundName);
+        if (s == null)
+        {
+            Debug.LogWarning(soundName + ": audio not found");
+            return;
+        }
+        if (obj == null)
+        {
+            Debug.LogWarning(obj + " not found");
+            return;
+        }
+
+        s.source = obj.GetComponent<AudioSource>();
+        if (!s.source.isPlaying)
+        {
+            s.source.Play();
+        }
+    }
+
+    public void StopAddedSound(string soundName, GameObject obj)
+    {
+        Sound s = Array.Find(Sounds, sound => sound.name == soundName);
+        if (s == null)
+        {
+            Debug.LogWarning(soundName + ": audio not found");
+            return;
+        }
+        if (obj == null)
+        {
+            Debug.LogWarning(obj + " not found");
+            return;
+        }
+        s.source = obj.GetComponent<AudioSource>();
+
+
+        s.source.Stop();
+
+    }
+
+    public AudioSource GetAudioOnObject(string name, GameObject obj)
     {
         Sound s = Array.Find(Sounds, sound => sound.name == name);
         if (s == null)
@@ -68,11 +142,18 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning(name + ": source not found");
             return null;
         }
+        if (obj == null)
+
+        {
+            Debug.LogWarning(obj + " not found");
+            return null;
+        }
+
         s.source = obj.GetComponent<AudioSource>();
         return s.source;
     }
 
-    public void RemoveSound(string name, GameObject obj)
+    public void RemoveAudioOnObject(string name, GameObject obj)
     {
         Sound s = Array.Find(Sounds, sound => sound.name == name);
         if (s == null)
@@ -80,6 +161,12 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning(name + ": source not found");
             return;
         }
+        if (obj == null)
+        {
+            Debug.LogWarning(obj + " not found");
+            return;
+        }
+
         s.source = obj.GetComponent<AudioSource>();
         Destroy(s.source);
         //print("Removed" + name + "sound from " + obj.name);
@@ -93,6 +180,9 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning(name + ": audio not found");
             return;
         }
+        print(s.name);
+        print(s.volume);
+        print(s.source);
         s.source.Play();
     }
 
@@ -104,9 +194,8 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning(name + ": audio not found");
             return;
         }
-        s.source.Play();
         s.source.volume = vol;
-        //print(s.name + " is playing at volume level " + s.source.volume);
+        s.source.Play();
     }
 
     public void UpdateVolume(string name, float vol)
@@ -118,61 +207,6 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.source.volume = vol;
-        //print(s.name + " is playing at volume level " + s.source.volume);
-    }
-
-    public void AddSound(string soundName, GameObject obj)
-    {
-        Sound s = Array.Find(Sounds, sound => sound.name == soundName);
-        if (s == null)
-        {
-            Debug.LogWarning(soundName + ": audio not found");
-            return;
-        }
-
-        s.source = obj.AddComponent<AudioSource>();
-        s.source.clip = s.clip;
-        s.source.outputAudioMixerGroup = masterMixer;
-        s.source.volume = s.volume;
-        s.source.pitch = s.pitch;
-        s.source.loop = s.loop;
-        s.source.panStereo = s.panStereo;
-        s.source.spatialBlend = s.spacialBlend;
-        s.source.minDistance = s.minDistance;
-        s.source.maxDistance = s.maxDistance;
-        s.source.rolloffMode = AudioRolloffMode.Linear;
-
-        //print("sound '" + soundName + "' added to " + obj.name);
-    }
-
-    public void PlayAddedSound(string soundName, GameObject obj)
-    {
-        Sound s = Array.Find(Sounds, sound => sound.name == soundName);
-        if (s == null || obj == null)
-        {
-            Debug.LogWarning(soundName + ": audio not found");
-            return;
-        }
-        s.source = obj.GetComponent<AudioSource>();
-        //if (!s.source.isPlaying)
-        //{
-            s.source.Play();
-        //}
-    }
-
-    public void StopAddedSound(string soundName, GameObject obj)
-    {
-        Sound s = Array.Find(Sounds, sound => sound.name == soundName);
-        if (s == null || obj == null)
-        {
-            Debug.LogWarning(soundName + ": audio not found");
-            return;
-        }
-        s.source = obj.GetComponent<AudioSource>();
-       
-        
-        s.source.Stop();
-        
     }
 
     public void Stop(string name)
@@ -209,7 +243,7 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    public float ClipLength(string name)
+    public float GetAudioLength(string name)
     {
         Sound s = Array.Find(Sounds, sound => sound.name == name);
         if (s == null)
@@ -217,7 +251,6 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning(name + ": audio not found");
             return 0;
         }
-        //print(s.source.clip.length);
         return s.source.clip.length;
     }
 
@@ -265,14 +298,7 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning(name + ": audio not found");
             return;
         }
-        s.source.volume = musicVolume;
+        s.source.volume = s.volume;
     }
-
-    #endregion
-
-    #region Song Functions
-
-
-
     #endregion
 }

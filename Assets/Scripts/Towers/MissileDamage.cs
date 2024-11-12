@@ -19,6 +19,7 @@ public class MissileDamage : MonoBehaviour, IDamageMethod
         this.damage = damage;
         this.fireRate = fireRate;
         delay = 1f / fireRate;
+        AudioManager.Instance.AddAudioOnObject("Crossbow Fire", gameObject);
     }
 
     public void UpdateDamage(float damage)
@@ -42,6 +43,7 @@ public class MissileDamage : MonoBehaviour, IDamageMethod
             }
 
             cannonAnimator.SetTrigger("CannonFire");
+            AudioManager.Instance.PlayAudioOnObject("Crossbow Fire", gameObject);
             GameObject tempMissile = Instantiate(missile);
             tempMissile.transform.position = transform.position + new Vector3(0, 0.5f, 0);
             tempMissile.transform.rotation = towerPivot.transform.rotation;
