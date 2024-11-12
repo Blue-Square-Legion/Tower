@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 10063559185257884}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 3196757424151412947}
   - component: {fileID: 2543761900036560489}
   - component: {fileID: 3654981951108833090}
-  - component: {fileID: 8332652086936019957}
+  - component: {fileID: 5612241862228270065}
   m_Layer: 3
   m_Name: Cannon Tower
   m_TagString: NotBuildable
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9c75d2f622b5a4aa9b7818005eb097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cannonAnimator: {fileID: 8332652086936019957}
+  cannonAnimator: {fileID: 5612241862228270065}
   enemiesLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -245,7 +245,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.3684757, y: 0.640963, z: 1.5145767}
   m_Center: {x: 0.00996089, y: 0.35928962, z: -0.048455387}
---- !u!95 &8332652086936019957
+--- !u!95 &5612241862228270065
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
