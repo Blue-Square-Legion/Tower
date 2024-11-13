@@ -100,7 +100,7 @@ public class TowerBehavior : MonoBehaviour
             if (direction != Vector3.zero) // Ensure direction is not zero to avoid errors
             {
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
-                towerPivot.transform.rotation = Quaternion.Euler(0, targetRotation.eulerAngles.y, 0);
+                towerPivot.transform.rotation = Quaternion.Euler(0, targetRotation.eulerAngles.y + 180, 0);
             }
         }
         // Create a pointer event for UI detection
@@ -247,7 +247,7 @@ public class TowerBehavior : MonoBehaviour
                             break;
                         case 1:
                             //Do upgrade
-                            transform.GetComponentInChildren<MissileCollisionDetector>().explosionRadius += 1;
+                            transform.GetComponentInChildren<Missile>().explosionRadius += 1;
 
                             //Set up for next upgrade
                             sellCost += upgradeCost / 2;
@@ -267,7 +267,7 @@ public class TowerBehavior : MonoBehaviour
                         case 3:
                             //Do upgrade
                             damage += 1f;
-                            transform.GetComponentInChildren<MissileCollisionDetector>().explosionRadius += 1;
+                            transform.GetComponentInChildren<Missile>().explosionRadius += 1;
                             transform.GetComponent<MissileDamage>().UpdateDamage(damage);
 
 
