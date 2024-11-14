@@ -54,7 +54,6 @@ public class Enemy : MonoBehaviour
         {
             if (activeEffects[i].duration > 0f)
             {
-                //print(activeEffects[i].duration);
                 if (activeEffects[i].damageDelay > 0f)
                 {
                     activeEffects[i].damageDelay -= Time.deltaTime;
