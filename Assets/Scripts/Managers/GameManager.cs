@@ -276,7 +276,7 @@ public class GameManager : MonoBehaviour
                     && !enemySpawner.spawnedEnemies[i].isConfused)
                 {
                     //Enemy Reached the end of the map
-                    EnqueEnemyToRemove(enemySpawner.spawnedEnemies[i]);
+                    EnqueueEnemyToRemove(enemySpawner.spawnedEnemies[i]);
                     player.DoDamage((int) enemySpawner.spawnedEnemies[i].currentHealth);
                 }
             }
@@ -329,7 +329,7 @@ public class GameManager : MonoBehaviour
                     if (targetedEnemy.currentHealth <= 0)
                     {
                         player.GiveMoney(targetedEnemy.moneyToPlayer);
-                        EnqueEnemyToRemove(currentDamageData.targetedEnemy);
+                        EnqueueEnemyToRemove(currentDamageData.targetedEnemy);
                     }
                         
                 }
@@ -427,22 +427,22 @@ public class GameManager : MonoBehaviour
         enemyQueueToSpawn.Enqueue(enemyID);
     }
 
-    public void EnqueEnemyToRemove(Enemy enemyToRemove)
+    public void EnqueueEnemyToRemove(Enemy enemyToRemove)
     {
         enemyQueueToRemove.Enqueue(enemyToRemove);
     }
 
-    public void EnqueTowerToRemove(TowerBehavior towerToRemove)
+    public void EnqueueTowerToRemove(TowerBehavior towerToRemove)
     {
         towerQueueToRemove.Enqueue(towerToRemove);
     }
 
-    public void EnqueBuffToApply(ApplyBuffData buffData)
+    public void EnqueueBuffToApply(ApplyBuffData buffData)
     {
         buffAddQueue.Enqueue(buffData);
     }
     
-    public void EnqueBuffToRemove(ApplyBuffData buffData)
+    public void EnqueueBuffToRemove(ApplyBuffData buffData)
     {
         buffRemoveQueue.Enqueue(buffData);
     }

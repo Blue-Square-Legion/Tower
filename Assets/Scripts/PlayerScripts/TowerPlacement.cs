@@ -151,7 +151,7 @@ public class TowerPlacement : MonoBehaviour
     {
         UpgradePanel.Instance.SetUpgradePanel(false);
         player.GiveMoney(tower.GetComponent<TowerBehavior>().sellCost);
-        gameManager.EnqueTowerToRemove(tower.GetComponent<TowerBehavior>());
+        gameManager.EnqueueTowerToRemove(tower.GetComponent<TowerBehavior>());
         GameManager.Instance.SelectedTower = null;
         dummySurface.BuildNavMesh();
         surface.BuildNavMesh();

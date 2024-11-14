@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
         gameObject.GetComponentInChildren<HealthBar>().UpdateHealth((int) currentHealth);
         if (currentHealth <= 0)
         {
-            GameManager.Instance.EnqueEnemyToRemove(this);
+            GameManager.Instance.EnqueueEnemyToRemove(this);
             Player.Instance.GiveMoney(moneyToPlayer);
         }  
     }

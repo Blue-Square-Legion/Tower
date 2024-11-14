@@ -40,19 +40,19 @@ public class SupportBehavior : MonoBehaviour, IDamageMethod
         {
             GameManager.Buff buff = new GameManager.Buff(GameManager.BuffNames.SupportBonusRange, attackRangeBuff, -123);
             GameManager.ApplyBuffData buffData = new GameManager.ApplyBuffData(buff, towersInRange[i]);
-            gameManager.EnqueBuffToApply(buffData);
+            gameManager.EnqueueBuffToApply(buffData);
 
             if (fireRateBuff != 0)
             {
                 buff = new GameManager.Buff(GameManager.BuffNames.SupportBonusAttackSpeed, fireRateBuff, -123);
                 buffData = new GameManager.ApplyBuffData(buff, towersInRange[i]);
-                gameManager.EnqueBuffToApply(buffData);
+                gameManager.EnqueueBuffToApply(buffData);
             }
             if (fireRateBuff != 0)
             {
                 buff = new GameManager.Buff(GameManager.BuffNames.SupportBonusDamage, fireRateBuff, -123);
                 buffData = new GameManager.ApplyBuffData(buff, towersInRange[i]);
-                gameManager.EnqueBuffToApply(buffData);
+                gameManager.EnqueueBuffToApply(buffData);
             }
         }
     }
@@ -65,19 +65,19 @@ public class SupportBehavior : MonoBehaviour, IDamageMethod
         {
             GameManager.Buff buff = new GameManager.Buff(GameManager.BuffNames.SupportBonusRange, attackRangeBuff, -123);
             GameManager.ApplyBuffData buffData = new GameManager.ApplyBuffData(buff, towersInRange[i]);
-            gameManager.EnqueBuffToRemove(buffData);
+            gameManager.EnqueueBuffToRemove(buffData);
 
             if (fireRateBuff != 0)
             {
                 buff = new GameManager.Buff(GameManager.BuffNames.SupportBonusAttackSpeed, fireRateBuff, -123);
                 buffData = new GameManager.ApplyBuffData(buff, towersInRange[i]);
-                gameManager.EnqueBuffToRemove(buffData);
+                gameManager.EnqueueBuffToRemove(buffData);
             }
             if (fireRateBuff != 0)
             {
                 buff = new GameManager.Buff(GameManager.BuffNames.SupportBonusDamage, fireRateBuff, -123);
                 buffData = new GameManager.ApplyBuffData(buff, towersInRange[i]);
-                gameManager.EnqueBuffToRemove(buffData);
+                gameManager.EnqueueBuffToRemove(buffData);
             }
         }
     }
