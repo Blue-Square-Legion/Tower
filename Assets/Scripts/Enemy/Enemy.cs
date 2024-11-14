@@ -54,25 +54,19 @@ public class Enemy : MonoBehaviour
         {
             if (activeEffects[i].duration > 0f)
             {
+                //print(activeEffects[i].duration);
                 if (activeEffects[i].damageDelay > 0f)
                 {
                     activeEffects[i].damageDelay -= Time.deltaTime;
                 }
                 else
                 {
+                    
                     gameManager.EnqueueDamageData(new GameManager.EnemyDamageData(this, activeEffects[i].damage, 1f));
                     activeEffects[i].damageDelay = 1f / activeEffects[i].damageRate;
                 }
                 activeEffects[i].duration -= Time.deltaTime;
             }
-            /*if (activeEffects[i].effectName == GameManager.EffectNames.Fire)
-            {
-                if (activeEffects[i].duration > 0)
-                    navMeshMovement.SetSpeed(currentSpeed * activeEffects[i].modifier);
-                else
-                    navMeshMovement.SetSpeed(speed);
-
-            }*/
         }
         activeEffects.RemoveAll(x => x.duration <= 0);
 
