@@ -293,7 +293,7 @@ public class TowerBehavior : MonoBehaviour
                         case 0:
                             //Do upgrade
                             damage += 0.25f;
-                            transform.GetComponent<FlameThrowerDamage>().UpdateDamage(damage);
+                            transform.GetComponent<FireDamage>().UpdateDamage(damage);
                             transform.GetComponentInChildren<FireTriggerCollisionDetector>().duration += 3;
                             //Set up for next upgrade
                             sellCost += upgradeCost / 2;
@@ -452,6 +452,7 @@ public class TowerBehavior : MonoBehaviour
         Flame,
         Bomb,
         Economy,
-        Ice
+        Ice,
+        Support
     }
 }

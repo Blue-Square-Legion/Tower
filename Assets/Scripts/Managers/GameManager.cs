@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     private Queue<ApplyEffectData> effectQueue;
     public Queue<int> enemyQueueToSpawn;
     public Queue<Enemy> enemyQueueToRemove;
+    public Queue<TowerBehavior> towerQueueToRemove;
     public bool endLoop;
     [SerializeField] private Transform nodeParent;
     [NonSerialized] public List<TowerBehavior> builtTowers;
@@ -57,6 +58,7 @@ public class GameManager : MonoBehaviour
         endOfWave = false;
         enemyQueueToSpawn = new();
         enemyQueueToRemove = new();
+        towerQueueToRemove = new();
         damageData = new();
         effectQueue = new();
         builtTowers = new List<TowerBehavior>();
@@ -263,7 +265,6 @@ public class GameManager : MonoBehaviour
             }
 
             //Move Enemies
-
             for (int i = 0; i < enemySpawner.spawnedEnemies.Count; i++)
             {
                 //enemySpawner.spawnedEnemies[i].nodeIndex = nodeIndicies[i];
@@ -275,11 +276,6 @@ public class GameManager : MonoBehaviour
                     player.DoDamage((int) enemySpawner.spawnedEnemies[i].currentHealth);
                 }
             }
-
-            //nodesToUse.Dispose();
-            //enemySpeeds.Dispose();
-            //nodeIndicies.Dispose();
-            //enemyAccess.Dispose();
 
             //Tick Towers
             foreach (TowerBehavior tower in builtTowers)
@@ -358,6 +354,16 @@ public class GameManager : MonoBehaviour
                 
 
             //Remove Towers
+            if (towerQueueToRemove.Count > 0)
+            {
+                int removeSize = towerQueueToRemove.Count;
+                GameObject tempTower = towerQueueToRemove.Peek().gameObject;
+                for (int i = 0; i < removeSize; i++)
+                {
+                    builtTowers.Remove(towerQueueToRemove.Dequeue());
+                }
+                Destroy(tempTower);
+            }
 
             yield return null;
         }
@@ -385,6 +391,11 @@ public class GameManager : MonoBehaviour
     public void EnqueEnemyToRemove(Enemy enemyToRemove)
     {
         enemyQueueToRemove.Enqueue(enemyToRemove);
+    }
+
+    public void EnqueTowerToRemove(TowerBehavior towerToRemove)
+    {
+        towerQueueToRemove.Enqueue(towerToRemove);
     }
 
     public class Effect
@@ -458,6 +469,7 @@ public class GameManager : MonoBehaviour
 
     public enum EffectNames
     {
-        Fire
+        Burn,
+        Slow
     }
 }
