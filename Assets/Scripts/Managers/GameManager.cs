@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
 
     public Queue<EnemyDamageData> damageData;
     private Queue<ApplyEffectData> effectQueue;
+    private Queue<ApplyBuffData> buffAddQueue;
+    private Queue<ApplyBuffData> buffRemoveQueue;
     public Queue<int> enemyQueueToSpawn;
     public Queue<Enemy> enemyQueueToRemove;
     public Queue<TowerBehavior> towerQueueToRemove;
@@ -61,6 +63,8 @@ public class GameManager : MonoBehaviour
         towerQueueToRemove = new();
         damageData = new();
         effectQueue = new();
+        buffAddQueue = new();
+        buffRemoveQueue = new();
         builtTowers = new List<TowerBehavior>();
         enemySpawner.Init();
 
@@ -310,7 +314,6 @@ public class GameManager : MonoBehaviour
                 currentEnemy.Tick();
             }
 
-
             //Damage Enemies
             if (damageData.Count > 0)
             {
@@ -332,7 +335,6 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-
             //Remove Enemies
             if (enemyQueueToRemove.Count > 0)
             {
@@ -351,7 +353,44 @@ public class GameManager : MonoBehaviour
                 WaveBonus(currentWave);
                 endOfWave = false;
             }
-                
+
+            //Apply Buffs
+            if (buffAddQueue.Count > 0)
+            {
+                int buffAddSize = buffAddQueue.Count;
+                for (int i = 0; i < buffAddSize; i++)
+                {
+                    ApplyBuffData currentBuffData = buffAddQueue.Dequeue();
+
+                    currentBuffData.towerToAffect.activeBuffs.Add(currentBuffData.buffToApply);
+                    currentBuffData.towerToAffect.ApplyBuffs();
+                }
+            }
+
+            //Removes Buffs
+            if (buffRemoveQueue.Count > 0)
+            {
+                int buffRemoveSize = buffRemoveQueue.Count;
+                for (int i = 0; i < buffRemoveSize; i++)
+                {
+                    ApplyBuffData currentBuffData = buffRemoveQueue.Dequeue();
+
+                    TowerBehavior towerToAffect = currentBuffData.towerToAffect;
+
+                    //Finds an identical buff and removes it
+                    for (int j = 0; j < towerToAffect.activeBuffs.Count; j++)
+                    {
+                        if (towerToAffect.activeBuffs[j].buffName == currentBuffData.buffToApply.buffName
+                            && towerToAffect.activeBuffs[j].modifier == currentBuffData.buffToApply.modifier
+                            && towerToAffect.activeBuffs[j].duration == currentBuffData.buffToApply.duration)
+                        {
+                            towerToAffect.activeBuffs.RemoveAt(j);
+                            currentBuffData.towerToAffect.ApplyBuffs();
+                            break;
+                        }
+                    }
+                }
+            }
 
             //Remove Towers
             if (towerQueueToRemove.Count > 0)
@@ -398,8 +437,24 @@ public class GameManager : MonoBehaviour
         towerQueueToRemove.Enqueue(towerToRemove);
     }
 
+    public void EnqueBuffToApply(ApplyBuffData buffData)
+    {
+        buffAddQueue.Enqueue(buffData);
+    }
+    
+    public void EnqueBuffToRemove(ApplyBuffData buffData)
+    {
+        buffRemoveQueue.Enqueue(buffData);
+    }
+
     public class Effect
     {
+        public EffectNames effectName;
+        public float damage;
+        public float duration;
+        public float damageRate;
+        public float damageDelay;
+        public float modifier;
         public Effect(EffectNames effectName, float damage, float duration, float damageRate, float modifier)
         {
             this.effectName = effectName;
@@ -408,37 +463,54 @@ public class GameManager : MonoBehaviour
             this.damageRate = damageRate;
             this.modifier = modifier;
         }
-        public EffectNames effectName;
-        public float damage;
-        public float duration;
-        public float damageRate;
-        public float damageDelay;
-        public float modifier;
     }
 
     public struct ApplyEffectData
     {
+        public Effect effectToApply;
+        public Enemy enemyToAffect;
         public ApplyEffectData(Effect effectToApply, Enemy enemyToAffect)
         {
             this.effectToApply = effectToApply;
             this.enemyToAffect = enemyToAffect;
         }
-        public Effect effectToApply;
-        public Enemy enemyToAffect;
+    }
+
+    public class Buff
+    {
+        public BuffNames buffName;
+        public float modifier;
+        public float duration; //NOTE: A duration of -123 will not disappear until removed manually
+        public Buff(BuffNames buffName, float modifier, float duration)
+        {
+            this.buffName = buffName;
+            this.modifier = modifier;
+            this.duration = duration;
+        }
+    }
+
+    public struct ApplyBuffData
+    {
+        public Buff buffToApply;
+        public TowerBehavior towerToAffect;
+        public ApplyBuffData(Buff buffToApply, TowerBehavior towerToAffect)
+        {
+            this.buffToApply = buffToApply;
+            this.towerToAffect = towerToAffect;
+        }
     }
 
     public struct EnemyDamageData
     {
+        public Enemy targetedEnemy;
+        public float totalDamage;
+        public float resistance;
         public EnemyDamageData(Enemy targettedEnemy,  float totalDamage, float resistance)
         {
             this.targetedEnemy = targettedEnemy;
             this.totalDamage = totalDamage;
             this.resistance = resistance;
         }
-
-        public Enemy targetedEnemy;
-        public float totalDamage;
-        public float resistance;
     }
 
     public struct MoveEnemies : IJobParallelForTransform
@@ -471,5 +543,12 @@ public class GameManager : MonoBehaviour
     {
         Burn,
         Slow
+    }
+
+    public enum BuffNames
+    {
+        SupportBonusRange,
+        SupportBonusDamage,
+        SupportBonusAttackSpeed
     }
 }

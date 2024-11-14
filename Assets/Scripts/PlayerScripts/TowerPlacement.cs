@@ -93,6 +93,10 @@ public class TowerPlacement : MonoBehaviour
                                 player.RemoveMoney(currentTowerBeingPlaced.GetComponent<TowerBehavior>().cost);
                                 towerCollider.isTrigger = false;
                                 towerCollider.providesContacts = true;
+
+                                if (currentTowerBeingPlaced.TryGetComponent<SupportBehavior>(out SupportBehavior supportBehavior))
+                                    supportBehavior.Built();
+
                                 currentTowerBeingPlaced = null;
                                 UIManager.Instance.ToggleDeselect(false);
                             }
