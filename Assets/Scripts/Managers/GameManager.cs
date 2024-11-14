@@ -112,14 +112,14 @@ public class GameManager : MonoBehaviour
         {
             case 0:
                 EnqueueEnemy(1);
-                yield return new WaitForSeconds(0.1f);
-                //EnqueueEnemy(1);
-                yield return new WaitForSeconds(0.1f);
-                //EnqueueEnemy(1);
-                yield return new WaitForSeconds(0.1f);
-                //EnqueueEnemy(1);
-                yield return new WaitForSeconds(3);
-                //EnqueueEnemy(1);
+                yield return new WaitForSeconds(1);
+                EnqueueEnemy(1);
+                yield return new WaitForSeconds(1);
+                EnqueueEnemy(1);
+                yield return new WaitForSeconds(1);
+                EnqueueEnemy(1);
+                yield return new WaitForSeconds(1);
+                EnqueueEnemy(1);
                 break;
             case 1:
                 for (int i = 0; i < 9; i++)
