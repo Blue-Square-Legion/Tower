@@ -178,6 +178,7 @@ Transform:
   - {fileID: 4788704938437534729}
   - {fileID: 8180568870776968904}
   - {fileID: 1000889473407522492}
+  - {fileID: 4405994549470788357}
   - {fileID: 2660220076014143444}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -224,6 +225,7 @@ MonoBehaviour:
     m_Bits: 64
   towerPivot: {fileID: 4788704938437534729}
   missile: {fileID: 8534437926868537391, guid: 2a3995fe499787941ac30144e4f653c2, type: 3}
+  explosionRadius: 2
 --- !u!65 &3654981951108833090
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -360,7 +362,7 @@ Transform:
   m_LocalScale: {x: 8, y: 0.0019999999, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1000889473407522492}
+  m_Father: {fileID: 3629427662347509965}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7573915382807596175
 MeshFilter:
@@ -442,7 +444,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7540255033051411156}
-  - {fileID: 4405994549470788357}
   m_Father: {fileID: 3629427662347509965}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5403487884767320013

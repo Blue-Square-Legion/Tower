@@ -92,6 +92,11 @@ public class TowerPlacement : MonoBehaviour
                                 gameManager.builtTowers.Add(currentTowerBeingPlaced.GetComponent<TowerBehavior>());
                                 player.RemoveMoney(currentTowerBeingPlaced.GetComponent<TowerBehavior>().cost);
                                 towerCollider.isTrigger = false;
+                                towerCollider.providesContacts = true;
+
+                                if (currentTowerBeingPlaced.TryGetComponent<SupportBehavior>(out SupportBehavior supportBehavior))
+                                    supportBehavior.Built();
+
                                 currentTowerBeingPlaced = null;
                                 UIManager.Instance.ToggleDeselect(false);
                             }
@@ -146,8 +151,7 @@ public class TowerPlacement : MonoBehaviour
     {
         UpgradePanel.Instance.SetUpgradePanel(false);
         player.GiveMoney(tower.GetComponent<TowerBehavior>().sellCost);
-        gameManager.builtTowers.Remove(tower.GetComponent<TowerBehavior>());
-        Destroy(tower);
+        gameManager.EnqueueTowerToRemove(tower.GetComponent<TowerBehavior>());
         GameManager.Instance.SelectedTower = null;
         dummySurface.BuildNavMesh();
         surface.BuildNavMesh();

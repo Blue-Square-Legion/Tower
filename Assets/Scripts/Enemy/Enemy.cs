@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
         gameObject.GetComponentInChildren<HealthBar>().UpdateHealth((int) currentHealth);
         if (currentHealth <= 0)
         {
-            GameManager.Instance.EnqueEnemyToRemove(this);
+            GameManager.Instance.EnqueueEnemyToRemove(this);
             Player.Instance.GiveMoney(moneyToPlayer);
         }  
     }
@@ -60,18 +60,11 @@ public class Enemy : MonoBehaviour
                 }
                 else
                 {
+                    
                     gameManager.EnqueueDamageData(new GameManager.EnemyDamageData(this, activeEffects[i].damage, 1f));
                     activeEffects[i].damageDelay = 1f / activeEffects[i].damageRate;
                 }
                 activeEffects[i].duration -= Time.deltaTime;
-            }
-            if (activeEffects[i].effectName == GameManager.EffectNames.Fire)
-            {
-                if (activeEffects[i].duration > 0)
-                    navMeshMovement.SetSpeed(currentSpeed * activeEffects[i].modifier);
-                else
-                    navMeshMovement.SetSpeed(speed);
-
             }
         }
         activeEffects.RemoveAll(x => x.duration <= 0);
