@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FlameThrowerDamage : MonoBehaviour, IDamageMethod
 {
-    [SerializeField] private Collider fireTrigger;
+    [SerializeField] public Collider fireTrigger;
     [SerializeField] private ParticleSystem fireEffect;
     GameManager gameManager;
     [NonSerialized] public float damage;
@@ -22,14 +22,17 @@ public class FlameThrowerDamage : MonoBehaviour, IDamageMethod
 
     public void damageTick(Enemy target)
     {
-        fireTrigger.enabled = target != null;
 
-        if(target)
-        {
-            if (!fireEffect.isPlaying) fireEffect.Play();
-            return;
-        }
+         fireTrigger.enabled = target != null;
 
-        fireEffect.Stop();
+         if(target)
+         {
+             if (!fireEffect.isPlaying) fireEffect.Play();
+             return;
+         }
+
+         fireEffect.Stop();
+        
+
     }
 }

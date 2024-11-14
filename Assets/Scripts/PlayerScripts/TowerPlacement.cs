@@ -92,6 +92,7 @@ public class TowerPlacement : MonoBehaviour
                                 gameManager.builtTowers.Add(currentTowerBeingPlaced.GetComponent<TowerBehavior>());
                                 player.RemoveMoney(currentTowerBeingPlaced.GetComponent<TowerBehavior>().cost);
                                 towerCollider.isTrigger = false;
+                                towerCollider.providesContacts = true;
                                 currentTowerBeingPlaced = null;
                                 UIManager.Instance.ToggleDeselect(false);
                             }

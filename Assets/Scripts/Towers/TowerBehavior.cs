@@ -85,8 +85,9 @@ public class TowerBehavior : MonoBehaviour
     //Desyncs the towers from regular game loop to prevent errors
     public void Tick()
     {
-        currentDamageMethodClass.damageTick(target);
 
+        currentDamageMethodClass.damageTick(target); 
+        
         if (target != null)
         {
             // Calculate the direction to the target
@@ -313,7 +314,7 @@ public class TowerBehavior : MonoBehaviour
                             break;
                         case 2:
                             //Do upgrade
-                            transform.GetComponentInChildren<FireTriggerCollisionDetector>().speedModifier -= 0.1f;
+                            //transform.GetComponentInChildren<FireTriggerCollisionDetector>().speedModifier -= 0.1f;
 
                             //Set up for next upgrade
                             sellCost += upgradeCost / 2;
@@ -331,7 +332,7 @@ public class TowerBehavior : MonoBehaviour
                             break;
                         case 4:
                             //Do Upgrade
-                            transform.GetComponentInChildren<FireTriggerCollisionDetector>().speedModifier -= 0.1f;
+                            //transform.GetComponentInChildren<FireTriggerCollisionDetector>().speedModifier -= 0.1f;
 
                             //No more upgrades
                             sellCost += upgradeCost / 2;

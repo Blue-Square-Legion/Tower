@@ -112,15 +112,14 @@ public class GameManager : MonoBehaviour
         {
             case 0:
                 EnqueueEnemy(1);
-                yield return new WaitForSeconds(1);
-                EnqueueEnemy(1);
-                yield return new WaitForSeconds(1);
-                EnqueueEnemy(1);
-                yield return new WaitForSeconds(1);
-                EnqueueEnemy(1);
-                yield return new WaitForSeconds(1);
-                EnqueueEnemy(1);
-                yield return new WaitForSeconds(1);
+                yield return new WaitForSeconds(0.1f);
+                //EnqueueEnemy(1);
+                yield return new WaitForSeconds(0.1f);
+                //EnqueueEnemy(1);
+                yield return new WaitForSeconds(0.1f);
+                //EnqueueEnemy(1);
+                yield return new WaitForSeconds(3);
+                //EnqueueEnemy(1);
                 break;
             case 1:
                 for (int i = 0; i < 9; i++)
@@ -323,12 +322,15 @@ public class GameManager : MonoBehaviour
                 for (int i = 0; i < damageSize; i++)
                 {
                     EnemyDamageData currentDamageData = damageData.Dequeue();
-                    currentDamageData.targettedEnemy.currentHealth -= currentDamageData.totalDamage / currentDamageData.resistance;
-                    currentDamageData.targettedEnemy.GetComponentInChildren<HealthBar>().UpdateHealth((int) currentDamageData.targettedEnemy.currentHealth);
-                    if (currentDamageData.targettedEnemy.currentHealth <= 0)
+                    Enemy targetedEnemy = currentDamageData.targetedEnemy;
+                    targetedEnemy.currentHealth = Mathf.Round((targetedEnemy.currentHealth - 
+                            (currentDamageData.totalDamage / currentDamageData.resistance)) * 100f) / 100f; //Removes floating point errors
+
+                    targetedEnemy.GetComponentInChildren<HealthBar>().UpdateHealth((int) targetedEnemy.currentHealth);
+                    if (targetedEnemy.currentHealth <= 0)
                     {
-                        player.GiveMoney(currentDamageData.targettedEnemy.moneyToPlayer);
-                        EnqueEnemyToRemove(currentDamageData.targettedEnemy);
+                        player.GiveMoney(targetedEnemy.moneyToPlayer);
+                        EnqueEnemyToRemove(currentDamageData.targetedEnemy);
                     }
                         
                 }
@@ -418,12 +420,12 @@ public class GameManager : MonoBehaviour
     {
         public EnemyDamageData(Enemy targettedEnemy,  float totalDamage, float resistance)
         {
-            this.targettedEnemy = targettedEnemy;
+            this.targetedEnemy = targettedEnemy;
             this.totalDamage = totalDamage;
             this.resistance = resistance;
         }
 
-        public Enemy targettedEnemy;
+        public Enemy targetedEnemy;
         public float totalDamage;
         public float resistance;
     }
