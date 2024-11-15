@@ -11,6 +11,7 @@ public class MissileDamage : MonoBehaviour, IDamageMethod
     GameManager gameManager;
     [SerializeField] private GameObject missile;
     [NonSerialized] public float damage;
+    public float explosionRadius;
     private float fireRate;
     private float delay;
     public void Init(float damage, float fireRate)
@@ -46,6 +47,7 @@ public class MissileDamage : MonoBehaviour, IDamageMethod
             tempMissile.transform.position = transform.position + new Vector3(0, 0.5f, 0);
             tempMissile.transform.rotation = towerPivot.transform.rotation;
             tempMissile.transform.Rotate(0, 180, 0, Space.Self);
+            tempMissile.GetComponent<Missile>().explosionRadius = explosionRadius;
             tempMissile.GetComponent<Missile>().parent = gameObject;
             tempMissile.GetComponent<Missile>().Init();
             delay = 1 / fireRate;
