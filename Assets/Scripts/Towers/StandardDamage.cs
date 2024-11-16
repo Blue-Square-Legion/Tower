@@ -18,6 +18,8 @@ public class StandardDamage : MonoBehaviour, IDamageMethod
         this.damage = damage;
         this.fireRate = fireRate;
         delay = 1f / fireRate;
+        AudioManager.Instance.Add("Crossbow Fire", gameObject);
+        AudioManager.Instance.Add("Crossbow Rotation", gameObject);
     }
     public void UpdateDamage(float damage)
     {
@@ -38,12 +40,11 @@ public class StandardDamage : MonoBehaviour, IDamageMethod
                 delay -= Time.deltaTime;
                 return;
             }
-
+            //AudioManager.Instance.PlayAudioOnObject("Crossbow Fire", gameObject);
+            AudioManager.Instance.Play("Flame Fire", gameObject);
             gameManager.EnqueueDamageData(new GameManager.EnemyDamageData(target, damage, target.damageResistance));
 
             delay = 1 / fireRate;
         }
     }
-
-
 }

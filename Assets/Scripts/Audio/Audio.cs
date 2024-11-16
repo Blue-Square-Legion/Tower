@@ -11,12 +11,12 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 [System.Serializable]
-public class Sound
+public class Audio
 {
     [HideInInspector] public AudioSource source;
 
     [Tooltip("The Audio File that will be played when called")]
-    public AudioClip clip;
+    public AudioClip audioFile;
 
     [Tooltip("The name of the Audio Clip.\nThis will be the name used when searching for Audio")]
     public string name;
@@ -25,7 +25,7 @@ public class Sound
     [Tooltip("Percentage oh how loud the volume should play.\nExample: 0.5 will play the AudioClip at half volume")]
     public float volume = 1;
 
-    [Range(0.01f, 3)]
+    [Range(0.1f, 3)]
     [Tooltip("Modifies the pitch to sound higher or lower.\nDefault Pitch Value: 1")]
     public float pitch = 1;
 
@@ -39,7 +39,7 @@ public class Sound
     [Range(0, 1)]
     [Tooltip("Sets how much the audio is affected by 3D spacial calculations (Example: Doppler Effect)." +
         "\nA value of 0 makes the sound completely 2D.\nA value of 1 makes the sound completely 3D")]
-    public float spacialBlend = 0;
+    public float spatialBlend = 0;
 
     [Tooltip("Determines how close the sound can feel.\nIf distance is less than the minimum distance, the sound will stop becoming louder as the listener gets closer to the source")]
     public int minDistance = 0;

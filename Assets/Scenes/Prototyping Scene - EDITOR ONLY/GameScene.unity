@@ -19241,7 +19241,7 @@ Transform:
   - {fileID: 484379761}
   - {fileID: 469754961}
   - {fileID: 233272666}
-  - {fileID: 1445461831}
+  - {fileID: 1894985357}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &818230076
@@ -33155,65 +33155,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1440798756}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1445461830
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1445461831}
-  - component: {fileID: 1445461832}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1445461831
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1445461830}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.46, y: -1.39, z: -10.82}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 813298007}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1445461832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1445461830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 834541705e966e140a25baef0a3f2495, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultMasterMixer: {fileID: 0}
-  Sounds:
-  - source: {fileID: 0}
-    clip: {fileID: 8300000, guid: 572c18b8d23399d45bb3ad10f6ffca11, type: 3}
-    name: Crossbow Fire
-    volume: 1
-    pitch: 1
-    loop: 0
-    panStereo: -0
-    spacialBlend: 0
-    minDistance: 0
-    maxDistance: 10
-    audioMixer: {fileID: 0}
-    audioRollOffMode: 1
-  musicVolume: 100
 --- !u!1 &1447044241
 GameObject:
   m_ObjectHideFlags: 0
@@ -43552,6 +43493,88 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1893184499}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1894985356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1894985357}
+  - component: {fileID: 1894985358}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1894985357
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894985356}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.6981745, y: -2.2150335, z: -11.565699}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 813298007}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1894985358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894985356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834541705e966e140a25baef0a3f2495, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultMasterMixer: {fileID: 0}
+  audioFiles:
+  - source: {fileID: 0}
+    audioFile: {fileID: 8300000, guid: 572c18b8d23399d45bb3ad10f6ffca11, type: 3}
+    name: Crossbow Fire
+    volume: 1
+    pitch: 1
+    loop: 0
+    panStereo: 0
+    spatialBlend: 0
+    minDistance: 0
+    maxDistance: 7
+    audioMixer: {fileID: 0}
+    audioRollOffMode: 1
+  - source: {fileID: 0}
+    audioFile: {fileID: 8300000, guid: f1d24abe793f68c41a13c125d388d35a, type: 3}
+    name: Crossbow Rotation
+    volume: 1
+    pitch: 1
+    loop: 0
+    panStereo: 0
+    spatialBlend: 0
+    minDistance: 0
+    maxDistance: 7
+    audioMixer: {fileID: 0}
+    audioRollOffMode: 1
+  - source: {fileID: 0}
+    audioFile: {fileID: 8300000, guid: ff0a474b69cf2aa4181e77b90f932447, type: 3}
+    name: Flame Fire
+    volume: 1
+    pitch: 1
+    loop: 0
+    panStereo: 0
+    spatialBlend: 0
+    minDistance: 0
+    maxDistance: 7
+    audioMixer: {fileID: 0}
+    audioRollOffMode: 1
 --- !u!1001 &1897928002
 PrefabInstance:
   m_ObjectHideFlags: 0
