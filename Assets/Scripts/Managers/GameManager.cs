@@ -97,6 +97,18 @@ public class GameManager : MonoBehaviour
     }
 
     //Add new waves here
+
+    /*
+     * template for new wave:
+       case *waveNumber*:
+                for (int i = 0; i < *numberOfEnemies*; i++)
+                {
+                    EnqueueEnemy(*enemyID*,*spawnID*);
+                    yield return new WaitForSeconds(*timeBetweenSpawn*f);
+                }
+                nextSpawnPoints = new int[] { *IDs of all spawnpoints used for next wave. Leave blank if is last wave* };
+                break;
+     */
     IEnumerator Wave(int wave)
     {
         switch (wave)
