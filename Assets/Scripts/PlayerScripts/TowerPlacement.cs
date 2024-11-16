@@ -125,7 +125,11 @@ public class TowerPlacement : MonoBehaviour
         if (player.GetMoney() < tower.GetComponent<TowerBehavior>().cost) return;
 
         if (currentTowerBeingPlaced == null)
+        {
             currentTowerBeingPlaced = Instantiate(tower, Vector3.zero, Quaternion.identity);
+            UIManager.Instance.ToggleRuneSelection(false);
+            UIManager.Instance.ToggleTowerSelection(false);
+        }     
     }
     
     public void CancelPlacingTower()
