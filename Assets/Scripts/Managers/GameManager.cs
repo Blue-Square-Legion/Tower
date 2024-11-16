@@ -143,7 +143,7 @@ public class GameManager : MonoBehaviour
                 {
                     EnqueueEnemy(1,0);
                     yield return new WaitForSeconds(1);
-                    EnqueueEnemy(2,0);
+                    EnqueueEnemy(4,0);
                     yield return new WaitForSeconds(1);
                 }
                 nextSpawnPoints = new int[] { 1 };
