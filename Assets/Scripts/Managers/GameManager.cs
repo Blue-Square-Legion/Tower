@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     private Queue<ApplyEffectData> effectQueue;
     private Queue<ApplyBuffData> buffAddQueue;
     private Queue<ApplyBuffData> buffRemoveQueue;
-    public Queue<int> enemyQueueToSpawn;
+    public Queue<Tuple<int, int>> enemyQueueToSpawn;    //Tuple<EnemyID, SpawnPointID>
     public Queue<Enemy> enemyQueueToRemove;
     public Queue<TowerBehavior> towerQueueToRemove;
     public bool endLoop;
@@ -39,8 +39,6 @@ public class GameManager : MonoBehaviour
     [NonSerialized] public List<TowerBehavior> builtTowers;
     [NonSerialized] public Vector3[] nodePositions;
     [NonSerialized] public float[] nodeDistances;
-    [SerializeField] public Transform SpawnPoint;
-    [SerializeField] public Transform NextSpawnPoint;
 
     [SerializeField] Player player;
 
@@ -48,8 +46,7 @@ public class GameManager : MonoBehaviour
     private bool waveActive = false;
     private bool endOfWave;
     int currentWave;
-    int selectedSpawnpoint;
-    int nextSpawnpoint;
+    int[] nextSpawnPoints;
     public GameObject SelectedTower;
     public int farmBonus;
 
@@ -67,6 +64,7 @@ public class GameManager : MonoBehaviour
         buffRemoveQueue = new();
         builtTowers = new List<TowerBehavior>();
         enemySpawner.Init();
+        nextSpawnPoints = new int[] {0};
 
         int numOfNodes = nodeParent.childCount;
         nodePositions = new Vector3[numOfNodes];
@@ -84,12 +82,9 @@ public class GameManager : MonoBehaviour
 
         currentWave = 0;
         farmBonus = 0;
-        selectedSpawnpoint = 0;
-        nextSpawnpoint = 1;
-        SpawnPoint = EnemySpawner.Instance.SpawnPoints[selectedSpawnpoint];
-        NextSpawnPoint = EnemySpawner.Instance.SpawnPoints[nextSpawnpoint];
-        NextSpawnPoint.GetChild(0).gameObject.SetActive(true);
         StartCoroutine(GameLoop());
+        EnemySpawner.Instance.DeactivateAllSpawnIndicators();
+        EnemySpawner.Instance.ActivateSpawnIndicators(nextSpawnPoints);
     }
 
     public void EnqueueWave()
@@ -98,125 +93,121 @@ public class GameManager : MonoBehaviour
         waveActive = true;
         StartCoroutine(Wave(currentWave));
         currentWave++;
-        SpawnPoint.GetChild(0).gameObject.SetActive(false);
-        NextSpawnPoint.GetChild(0).gameObject.SetActive(true);
-        selectedSpawnpoint++;
-        nextSpawnpoint++;
-        if (selectedSpawnpoint > EnemySpawner.Instance.SpawnPoints.Length-1)
-            selectedSpawnpoint = 0;
-        SpawnPoint = EnemySpawner.Instance.SpawnPoints[selectedSpawnpoint];
-
-        if (nextSpawnpoint > EnemySpawner.Instance.SpawnPoints.Length - 1)
-            nextSpawnpoint = 0;
-        NextSpawnPoint = EnemySpawner.Instance.SpawnPoints[nextSpawnpoint];
         endOfWave = true;
     }
 
+    //Add new waves here
     IEnumerator Wave(int wave)
     {
         switch (wave)
         {
             case 0:
-                EnqueueEnemy(1);
-                yield return new WaitForSeconds(1);
-                EnqueueEnemy(1);
-                yield return new WaitForSeconds(1);
-                EnqueueEnemy(1);
-                yield return new WaitForSeconds(1);
-                EnqueueEnemy(1);
-                yield return new WaitForSeconds(1);
-                EnqueueEnemy(1);
+                for (int i = 0; i < 5; i++)
+                {
+                    EnqueueEnemy(1,0);
+                    yield return new WaitForSeconds(1);
+                }
+                nextSpawnPoints = new int[] { 1 };
                 break;
             case 1:
                 for (int i = 0; i < 9; i++)
                 {
-                    EnqueueEnemy(1);
+                    EnqueueEnemy(1,1);
                     yield return new WaitForSeconds(1);
                 }
+                nextSpawnPoints = new int[] { 2 };
                 break;
             case 2:
                 for (int i = 0; i < 5; i++)
                 {
-                    EnqueueEnemy(2);
+                    EnqueueEnemy(2,2);
                     yield return new WaitForSeconds(0.5f);
                 }
+                nextSpawnPoints = new int[] { 0 };
                 break;
             case 3:
 
                 for (int i = 0; i < 5; i++)
                 {
-                    EnqueueEnemy(1);
+                    EnqueueEnemy(1,0);
                     yield return new WaitForSeconds(1);
-                    EnqueueEnemy(2);
+                    EnqueueEnemy(2,0);
                     yield return new WaitForSeconds(1);
                 }
+                nextSpawnPoints = new int[] { 1 };
                 break;
             case 4:
                 for (int i = 0; i < 6; i++)
                 {
-                    EnqueueEnemy(1);
+                    EnqueueEnemy(1,1);
                     yield return new WaitForSeconds(1f);
-                    EnqueueEnemy(1);
+                    EnqueueEnemy(1, 1);
                     yield return new WaitForSeconds(1f);
-                    EnqueueEnemy(1);
+                    EnqueueEnemy(1, 1);
                     yield return new WaitForSeconds(1f);
-                    EnqueueEnemy(2);
+                    EnqueueEnemy(2, 1);
                     yield return new WaitForSeconds(0.5f);
-                    EnqueueEnemy(2);
+                    EnqueueEnemy(2,1);
                     yield return new WaitForSeconds(.5f);
                 }
+                nextSpawnPoints = new int[] { 2 };
                 break;
             case 5:
                 for (int i = 0; i < 10; i++)
                 {
-                    EnqueueEnemy(3);
+                    EnqueueEnemy(3,2);
                     yield return new WaitForSeconds(1);
                 }
+                nextSpawnPoints = new int[] { 0 };
                 break;
             case 6:
                 for (int i = 0; i < 6; i++)
                 {
-                    EnqueueEnemy(3);
+                    EnqueueEnemy(3,0);
                     yield return new WaitForSeconds(1);
                 }
                 for (int i = 0; i < 50; i++)
                 {
-                    EnqueueEnemy(2);
+                    EnqueueEnemy(2,1);
                     yield return new WaitForSeconds(.25f);
                 }
+                nextSpawnPoints = new int[] { 1 };
                 break;
             case 7:
                 for (int i = 0; i < 10; i++)
                 {
-                    EnqueueEnemy(3);
+                    EnqueueEnemy(3,2);
                     yield return new WaitForSeconds(1f);
-                    EnqueueEnemy(2);
+                    EnqueueEnemy(2,2);
                     yield return new WaitForSeconds(0.25f);
-                    EnqueueEnemy(1);
+                    EnqueueEnemy(1,2);
                     yield return new WaitForSeconds(0.5f);
-                    EnqueueEnemy(3);
+                    EnqueueEnemy(3,2);
                     yield return new WaitForSeconds(0.1f);
                 }
+                nextSpawnPoints = new int[] { 2 };
                 break;
             case 8:
                 for (int i = 0; i < 50; i++)
                 {
-                    EnqueueEnemy(2);
+                    EnqueueEnemy(2,0);
                     yield return new WaitForSeconds(0.15f);
                 }
+                nextSpawnPoints = new int[] { 0 };
                 break;
             case 9:
                 for (int i = 0; i < 100; i++)
                 {
-                    EnqueueEnemy(3);
+                    EnqueueEnemy(3,1);
                     yield return new WaitForSeconds(.5f);
                 }
                 for (int i = 0; i < 50; i++)
                 {
-                    EnqueueEnemy(2);
-                    EnqueueEnemy(1);
+                    EnqueueEnemy(2,2);
+                    EnqueueEnemy(1,2);
                     yield return new WaitForSeconds(0.1f);
                 }
+                nextSpawnPoints = new int[] { 1 };
                 break;
             default:
                 currentWave = 0;
@@ -260,8 +251,8 @@ public class GameManager : MonoBehaviour
             //Spawn Enemies
             if (enemyQueueToSpawn.Count > 0)
             {
-                int queueSuze = enemyQueueToSpawn.Count;
-                for (int i = 0; i < queueSuze; i++)
+                int queueSize = enemyQueueToSpawn.Count;
+                for (int i = 0; i < queueSize; i++)
                 {
                     Enemy enemy = enemySpawner.spawnEnemy(enemyQueueToSpawn.Dequeue());
                     enemy.GetComponent<NavMeshMovement>().ResetDestination();
@@ -348,8 +339,10 @@ public class GameManager : MonoBehaviour
             if (enemySpawner.spawnedEnemies.Count == 0 && endOfWave)
             {
                 waveActive = false;
-                SpawnPoint.GetChild(0).gameObject.SetActive(false);
-                NextSpawnPoint.GetChild(0).gameObject.SetActive(true);
+                EnemySpawner.Instance.DeactivateAllSpawnIndicators();
+                EnemySpawner.Instance.ActivateSpawnIndicators(nextSpawnPoints);
+                print("Wave ended");
+                print(nextSpawnPoints[0]);
                 WaveBonus(currentWave);
                 endOfWave = false;
             }
@@ -422,9 +415,9 @@ public class GameManager : MonoBehaviour
     /// Enqueues enemies to spawn when the game allows it to
     /// </summary>
     /// <param name="enemyID"></param>
-    public void EnqueueEnemy(int enemyID)
+    public void EnqueueEnemy(int enemyID, int spawnPointNumber)
     {
-        enemyQueueToSpawn.Enqueue(enemyID);
+        enemyQueueToSpawn.Enqueue(new Tuple<int, int>(enemyID, spawnPointNumber));
     }
 
     public void EnqueueEnemyToRemove(Enemy enemyToRemove)
@@ -510,32 +503,6 @@ public class GameManager : MonoBehaviour
             this.targetedEnemy = targettedEnemy;
             this.totalDamage = totalDamage;
             this.resistance = resistance;
-        }
-    }
-
-    public struct MoveEnemies : IJobParallelForTransform
-    {
-        [NativeDisableParallelForRestriction]
-        public NativeArray<Vector3> nodePositions;
-        public NativeArray<float> enemySpeed;
-        public NativeArray<int> nodeIndex;
-
-
-        public float deltaTime;
-
-        public void Execute(int index, TransformAccess transform)
-        {
-            if (nodeIndex[index] < nodePositions.Length) //Failsafe
-            {
-                Vector3 positionToMoveTo = nodePositions[nodeIndex[index]];
-
-                transform.position = Vector3.MoveTowards(transform.position, positionToMoveTo, enemySpeed[index] * deltaTime);
-
-                if (transform.position == positionToMoveTo)
-                {
-                    nodeIndex[index]++;
-                }
-            }
         }
     }
 

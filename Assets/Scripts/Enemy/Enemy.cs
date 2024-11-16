@@ -24,7 +24,6 @@ public class Enemy : MonoBehaviour
         currentHealth = maxHealth;
         currentSpeed = speed;
         activeEffects = new();
-        transform.position = gameManager.SpawnPoint.position;
         damageResistance = 1;
         nodeIndex = 0;
         moneyToPlayer = 10;
