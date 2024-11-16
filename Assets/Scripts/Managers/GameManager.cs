@@ -29,15 +29,16 @@ public class GameManager : MonoBehaviour
 
     public Queue<EnemyDamageData> damageData;
     private Queue<ApplyEffectData> effectQueue;
-    public Queue<int> enemyQueueToSpawn;
+    private Queue<ApplyBuffData> buffAddQueue;
+    private Queue<ApplyBuffData> buffRemoveQueue;
+    public Queue<Tuple<int, int>> enemyQueueToSpawn;    //Tuple<EnemyID, SpawnPointID>
     public Queue<Enemy> enemyQueueToRemove;
+    public Queue<TowerBehavior> towerQueueToRemove;
     public bool endLoop;
     [SerializeField] private Transform nodeParent;
     [NonSerialized] public List<TowerBehavior> builtTowers;
     [NonSerialized] public Vector3[] nodePositions;
     [NonSerialized] public float[] nodeDistances;
-    [SerializeField] public Transform SpawnPoint;
-    [SerializeField] public Transform NextSpawnPoint;
 
     [SerializeField] Player player;
 
@@ -45,8 +46,7 @@ public class GameManager : MonoBehaviour
     private bool waveActive = false;
     private bool endOfWave;
     int currentWave;
-    int selectedSpawnpoint;
-    int nextSpawnpoint;
+    int[] nextSpawnPoints;
     public GameObject SelectedTower;
     public int farmBonus;
 
@@ -57,10 +57,14 @@ public class GameManager : MonoBehaviour
         endOfWave = false;
         enemyQueueToSpawn = new();
         enemyQueueToRemove = new();
+        towerQueueToRemove = new();
         damageData = new();
         effectQueue = new();
+        buffAddQueue = new();
+        buffRemoveQueue = new();
         builtTowers = new List<TowerBehavior>();
         enemySpawner.Init();
+        nextSpawnPoints = new int[] {0};
 
         int numOfNodes = nodeParent.childCount;
         nodePositions = new Vector3[numOfNodes];
@@ -78,12 +82,9 @@ public class GameManager : MonoBehaviour
 
         currentWave = 0;
         farmBonus = 0;
-        selectedSpawnpoint = 0;
-        nextSpawnpoint = 1;
-        SpawnPoint = EnemySpawner.Instance.SpawnPoints[selectedSpawnpoint];
-        NextSpawnPoint = EnemySpawner.Instance.SpawnPoints[nextSpawnpoint];
-        NextSpawnPoint.GetChild(0).gameObject.SetActive(true);
         StartCoroutine(GameLoop());
+        EnemySpawner.Instance.DeactivateAllSpawnIndicators();
+        EnemySpawner.Instance.ActivateSpawnIndicators(nextSpawnPoints);
     }
 
     public void EnqueueWave()
@@ -92,125 +93,133 @@ public class GameManager : MonoBehaviour
         waveActive = true;
         StartCoroutine(Wave(currentWave));
         currentWave++;
-        SpawnPoint.GetChild(0).gameObject.SetActive(false);
-        NextSpawnPoint.GetChild(0).gameObject.SetActive(true);
-        selectedSpawnpoint++;
-        nextSpawnpoint++;
-        if (selectedSpawnpoint > EnemySpawner.Instance.SpawnPoints.Length-1)
-            selectedSpawnpoint = 0;
-        SpawnPoint = EnemySpawner.Instance.SpawnPoints[selectedSpawnpoint];
-
-        if (nextSpawnpoint > EnemySpawner.Instance.SpawnPoints.Length - 1)
-            nextSpawnpoint = 0;
-        NextSpawnPoint = EnemySpawner.Instance.SpawnPoints[nextSpawnpoint];
         endOfWave = true;
     }
 
+    //Add new waves here
+
+    /*
+     * template for new wave:
+       case *waveNumber*:
+                for (int i = 0; i < *numberOfEnemies*; i++)
+                {
+                    EnqueueEnemy(*enemyID*,*spawnID*);
+                    yield return new WaitForSeconds(*timeBetweenSpawn*f);
+                }
+                nextSpawnPoints = new int[] { *IDs of all spawnpoints used for next wave. Leave blank if is last wave* };
+                break;
+     */
     IEnumerator Wave(int wave)
     {
         switch (wave)
         {
             case 0:
-                EnqueueEnemy(1);
-                yield return new WaitForSeconds(0.1f);
-                //EnqueueEnemy(1);
-                yield return new WaitForSeconds(0.1f);
-                //EnqueueEnemy(1);
-                yield return new WaitForSeconds(0.1f);
-                //EnqueueEnemy(1);
-                yield return new WaitForSeconds(3);
-                //EnqueueEnemy(1);
+                for (int i = 0; i < 5; i++)
+                {
+                    EnqueueEnemy(1,0);
+                    yield return new WaitForSeconds(1);
+                }
+                nextSpawnPoints = new int[] { 1 };
                 break;
             case 1:
                 for (int i = 0; i < 9; i++)
                 {
-                    EnqueueEnemy(1);
+                    EnqueueEnemy(1,1);
                     yield return new WaitForSeconds(1);
                 }
+                nextSpawnPoints = new int[] { 2 };
                 break;
             case 2:
                 for (int i = 0; i < 5; i++)
                 {
-                    EnqueueEnemy(2);
+                    EnqueueEnemy(2,2);
                     yield return new WaitForSeconds(0.5f);
                 }
+                nextSpawnPoints = new int[] { 0 };
                 break;
             case 3:
 
                 for (int i = 0; i < 5; i++)
                 {
-                    EnqueueEnemy(1);
+                    EnqueueEnemy(1,0);
                     yield return new WaitForSeconds(1);
-                    EnqueueEnemy(2);
+                    EnqueueEnemy(4,0);
                     yield return new WaitForSeconds(1);
                 }
+                nextSpawnPoints = new int[] { 1 };
                 break;
             case 4:
                 for (int i = 0; i < 6; i++)
                 {
-                    EnqueueEnemy(1);
+                    EnqueueEnemy(1,1);
                     yield return new WaitForSeconds(1f);
-                    EnqueueEnemy(1);
+                    EnqueueEnemy(1, 1);
                     yield return new WaitForSeconds(1f);
-                    EnqueueEnemy(1);
+                    EnqueueEnemy(1, 1);
                     yield return new WaitForSeconds(1f);
-                    EnqueueEnemy(2);
+                    EnqueueEnemy(2, 1);
                     yield return new WaitForSeconds(0.5f);
-                    EnqueueEnemy(2);
+                    EnqueueEnemy(2,1);
                     yield return new WaitForSeconds(.5f);
                 }
+                nextSpawnPoints = new int[] { 2 };
                 break;
             case 5:
                 for (int i = 0; i < 10; i++)
                 {
-                    EnqueueEnemy(3);
+                    EnqueueEnemy(3,2);
                     yield return new WaitForSeconds(1);
                 }
+                nextSpawnPoints = new int[] { 0 };
                 break;
             case 6:
                 for (int i = 0; i < 6; i++)
                 {
-                    EnqueueEnemy(3);
+                    EnqueueEnemy(3,0);
                     yield return new WaitForSeconds(1);
                 }
                 for (int i = 0; i < 50; i++)
                 {
-                    EnqueueEnemy(2);
+                    EnqueueEnemy(2,1);
                     yield return new WaitForSeconds(.25f);
                 }
+                nextSpawnPoints = new int[] { 1 };
                 break;
             case 7:
                 for (int i = 0; i < 10; i++)
                 {
-                    EnqueueEnemy(3);
+                    EnqueueEnemy(3,2);
                     yield return new WaitForSeconds(1f);
-                    EnqueueEnemy(2);
+                    EnqueueEnemy(2,2);
                     yield return new WaitForSeconds(0.25f);
-                    EnqueueEnemy(1);
+                    EnqueueEnemy(1,2);
                     yield return new WaitForSeconds(0.5f);
-                    EnqueueEnemy(3);
+                    EnqueueEnemy(3,2);
                     yield return new WaitForSeconds(0.1f);
                 }
+                nextSpawnPoints = new int[] { 2 };
                 break;
             case 8:
                 for (int i = 0; i < 50; i++)
                 {
-                    EnqueueEnemy(2);
+                    EnqueueEnemy(2,0);
                     yield return new WaitForSeconds(0.15f);
                 }
+                nextSpawnPoints = new int[] { 0 };
                 break;
             case 9:
                 for (int i = 0; i < 100; i++)
                 {
-                    EnqueueEnemy(3);
+                    EnqueueEnemy(3,1);
                     yield return new WaitForSeconds(.5f);
                 }
                 for (int i = 0; i < 50; i++)
                 {
-                    EnqueueEnemy(2);
-                    EnqueueEnemy(1);
+                    EnqueueEnemy(2,2);
+                    EnqueueEnemy(1,2);
                     yield return new WaitForSeconds(0.1f);
                 }
+                nextSpawnPoints = new int[] { 1 };
                 break;
             default:
                 currentWave = 0;
@@ -254,8 +263,8 @@ public class GameManager : MonoBehaviour
             //Spawn Enemies
             if (enemyQueueToSpawn.Count > 0)
             {
-                int queueSuze = enemyQueueToSpawn.Count;
-                for (int i = 0; i < queueSuze; i++)
+                int queueSize = enemyQueueToSpawn.Count;
+                for (int i = 0; i < queueSize; i++)
                 {
                     Enemy enemy = enemySpawner.spawnEnemy(enemyQueueToSpawn.Dequeue());
                     enemy.GetComponent<NavMeshMovement>().ResetDestination();
@@ -263,7 +272,6 @@ public class GameManager : MonoBehaviour
             }
 
             //Move Enemies
-
             for (int i = 0; i < enemySpawner.spawnedEnemies.Count; i++)
             {
                 //enemySpawner.spawnedEnemies[i].nodeIndex = nodeIndicies[i];
@@ -271,15 +279,10 @@ public class GameManager : MonoBehaviour
                     && !enemySpawner.spawnedEnemies[i].isConfused)
                 {
                     //Enemy Reached the end of the map
-                    EnqueEnemyToRemove(enemySpawner.spawnedEnemies[i]);
+                    EnqueueEnemyToRemove(enemySpawner.spawnedEnemies[i]);
                     player.DoDamage((int) enemySpawner.spawnedEnemies[i].currentHealth);
                 }
             }
-
-            //nodesToUse.Dispose();
-            //enemySpeeds.Dispose();
-            //nodeIndicies.Dispose();
-            //enemyAccess.Dispose();
 
             //Tick Towers
             foreach (TowerBehavior tower in builtTowers)
@@ -314,7 +317,6 @@ public class GameManager : MonoBehaviour
                 currentEnemy.Tick();
             }
 
-
             //Damage Enemies
             if (damageData.Count > 0)
             {
@@ -330,12 +332,11 @@ public class GameManager : MonoBehaviour
                     if (targetedEnemy.currentHealth <= 0)
                     {
                         player.GiveMoney(targetedEnemy.moneyToPlayer);
-                        EnqueEnemyToRemove(currentDamageData.targetedEnemy);
+                        EnqueueEnemyToRemove(currentDamageData.targetedEnemy);
                     }
                         
                 }
             }
-
 
             //Remove Enemies
             if (enemyQueueToRemove.Count > 0)
@@ -350,14 +351,63 @@ public class GameManager : MonoBehaviour
             if (enemySpawner.spawnedEnemies.Count == 0 && endOfWave)
             {
                 waveActive = false;
-                SpawnPoint.GetChild(0).gameObject.SetActive(false);
-                NextSpawnPoint.GetChild(0).gameObject.SetActive(true);
+                EnemySpawner.Instance.DeactivateAllSpawnIndicators();
+                EnemySpawner.Instance.ActivateSpawnIndicators(nextSpawnPoints);
+                print("Wave ended");
+                print(nextSpawnPoints[0]);
                 WaveBonus(currentWave);
                 endOfWave = false;
             }
-                
+
+            //Apply Buffs
+            if (buffAddQueue.Count > 0)
+            {
+                int buffAddSize = buffAddQueue.Count;
+                for (int i = 0; i < buffAddSize; i++)
+                {
+                    ApplyBuffData currentBuffData = buffAddQueue.Dequeue();
+
+                    currentBuffData.towerToAffect.activeBuffs.Add(currentBuffData.buffToApply);
+                    currentBuffData.towerToAffect.ApplyBuffs();
+                }
+            }
+
+            //Removes Buffs
+            if (buffRemoveQueue.Count > 0)
+            {
+                int buffRemoveSize = buffRemoveQueue.Count;
+                for (int i = 0; i < buffRemoveSize; i++)
+                {
+                    ApplyBuffData currentBuffData = buffRemoveQueue.Dequeue();
+
+                    TowerBehavior towerToAffect = currentBuffData.towerToAffect;
+
+                    //Finds an identical buff and removes it
+                    for (int j = 0; j < towerToAffect.activeBuffs.Count; j++)
+                    {
+                        if (towerToAffect.activeBuffs[j].buffName == currentBuffData.buffToApply.buffName
+                            && towerToAffect.activeBuffs[j].modifier == currentBuffData.buffToApply.modifier
+                            && towerToAffect.activeBuffs[j].duration == currentBuffData.buffToApply.duration)
+                        {
+                            towerToAffect.activeBuffs.RemoveAt(j);
+                            currentBuffData.towerToAffect.ApplyBuffs();
+                            break;
+                        }
+                    }
+                }
+            }
 
             //Remove Towers
+            if (towerQueueToRemove.Count > 0)
+            {
+                int removeSize = towerQueueToRemove.Count;
+                GameObject tempTower = towerQueueToRemove.Peek().gameObject;
+                for (int i = 0; i < removeSize; i++)
+                {
+                    builtTowers.Remove(towerQueueToRemove.Dequeue());
+                }
+                Destroy(tempTower);
+            }
 
             yield return null;
         }
@@ -377,18 +427,39 @@ public class GameManager : MonoBehaviour
     /// Enqueues enemies to spawn when the game allows it to
     /// </summary>
     /// <param name="enemyID"></param>
-    public void EnqueueEnemy(int enemyID)
+    public void EnqueueEnemy(int enemyID, int spawnPointNumber)
     {
-        enemyQueueToSpawn.Enqueue(enemyID);
+        enemyQueueToSpawn.Enqueue(new Tuple<int, int>(enemyID, spawnPointNumber));
     }
 
-    public void EnqueEnemyToRemove(Enemy enemyToRemove)
+    public void EnqueueEnemyToRemove(Enemy enemyToRemove)
     {
         enemyQueueToRemove.Enqueue(enemyToRemove);
     }
 
+    public void EnqueueTowerToRemove(TowerBehavior towerToRemove)
+    {
+        towerQueueToRemove.Enqueue(towerToRemove);
+    }
+
+    public void EnqueueBuffToApply(ApplyBuffData buffData)
+    {
+        buffAddQueue.Enqueue(buffData);
+    }
+    
+    public void EnqueueBuffToRemove(ApplyBuffData buffData)
+    {
+        buffRemoveQueue.Enqueue(buffData);
+    }
+
     public class Effect
     {
+        public EffectNames effectName;
+        public float damage;
+        public float duration;
+        public float damageRate;
+        public float damageDelay;
+        public float modifier;
         public Effect(EffectNames effectName, float damage, float duration, float damageRate, float modifier)
         {
             this.effectName = effectName;
@@ -397,67 +468,66 @@ public class GameManager : MonoBehaviour
             this.damageRate = damageRate;
             this.modifier = modifier;
         }
-        public EffectNames effectName;
-        public float damage;
-        public float duration;
-        public float damageRate;
-        public float damageDelay;
-        public float modifier;
     }
 
     public struct ApplyEffectData
     {
+        public Effect effectToApply;
+        public Enemy enemyToAffect;
         public ApplyEffectData(Effect effectToApply, Enemy enemyToAffect)
         {
             this.effectToApply = effectToApply;
             this.enemyToAffect = enemyToAffect;
         }
-        public Effect effectToApply;
-        public Enemy enemyToAffect;
+    }
+
+    public class Buff
+    {
+        public BuffNames buffName;
+        public float modifier;
+        public float duration; //NOTE: A duration of -123 will not disappear until removed manually
+        public Buff(BuffNames buffName, float modifier, float duration)
+        {
+            this.buffName = buffName;
+            this.modifier = modifier;
+            this.duration = duration;
+        }
+    }
+
+    public struct ApplyBuffData
+    {
+        public Buff buffToApply;
+        public TowerBehavior towerToAffect;
+        public ApplyBuffData(Buff buffToApply, TowerBehavior towerToAffect)
+        {
+            this.buffToApply = buffToApply;
+            this.towerToAffect = towerToAffect;
+        }
     }
 
     public struct EnemyDamageData
     {
+        public Enemy targetedEnemy;
+        public float totalDamage;
+        public float resistance;
         public EnemyDamageData(Enemy targettedEnemy,  float totalDamage, float resistance)
         {
             this.targetedEnemy = targettedEnemy;
             this.totalDamage = totalDamage;
             this.resistance = resistance;
         }
-
-        public Enemy targetedEnemy;
-        public float totalDamage;
-        public float resistance;
-    }
-
-    public struct MoveEnemies : IJobParallelForTransform
-    {
-        [NativeDisableParallelForRestriction]
-        public NativeArray<Vector3> nodePositions;
-        public NativeArray<float> enemySpeed;
-        public NativeArray<int> nodeIndex;
-
-
-        public float deltaTime;
-
-        public void Execute(int index, TransformAccess transform)
-        {
-            if (nodeIndex[index] < nodePositions.Length) //Failsafe
-            {
-                Vector3 positionToMoveTo = nodePositions[nodeIndex[index]];
-
-                transform.position = Vector3.MoveTowards(transform.position, positionToMoveTo, enemySpeed[index] * deltaTime);
-
-                if (transform.position == positionToMoveTo)
-                {
-                    nodeIndex[index]++;
-                }
-            }
-        }
     }
 
     public enum EffectNames
     {
-        Fire
+        Burn,
+        Slow
+    }
+
+    public enum BuffNames
+    {
+        SupportBonusRange,
+        SupportBonusDamage,
+        SupportBonusAttackSpeed
     }
 }

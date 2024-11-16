@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class FlameThrowerDamage : MonoBehaviour, IDamageMethod
+public class FireDamage : MonoBehaviour, IDamageMethod
 {
     [SerializeField] public Collider fireTrigger;
     [SerializeField] private ParticleSystem fireEffect;

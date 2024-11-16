@@ -90,6 +90,8 @@ public class UpgradePanel : MonoBehaviour
     {
         if (target.GetComponent<EconomyBehavior>() != null)
             GameManager.Instance.farmBonus -= target.GetComponent<EconomyBehavior>().bonus;
+        if (target.TryGetComponent(out SupportBehavior support))
+            support.RemoveBuffs();
         TowerPlacement.Instance.SellTower(target.gameObject);
     }
 

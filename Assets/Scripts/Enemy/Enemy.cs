@@ -24,7 +24,6 @@ public class Enemy : MonoBehaviour
         currentHealth = maxHealth;
         currentSpeed = speed;
         activeEffects = new();
-        transform.position = gameManager.SpawnPoint.position;
         damageResistance = 1;
         nodeIndex = 0;
         moneyToPlayer = 10;
@@ -42,7 +41,7 @@ public class Enemy : MonoBehaviour
         gameObject.GetComponentInChildren<HealthBar>().UpdateHealth((int) currentHealth);
         if (currentHealth <= 0)
         {
-            GameManager.Instance.EnqueEnemyToRemove(this);
+            GameManager.Instance.EnqueueEnemyToRemove(this);
             Player.Instance.GiveMoney(moneyToPlayer);
         }  
     }
@@ -54,7 +53,6 @@ public class Enemy : MonoBehaviour
         {
             if (activeEffects[i].duration > 0f)
             {
-                //print(activeEffects[i].duration);
                 if (activeEffects[i].damageDelay > 0f)
                 {
                     activeEffects[i].damageDelay -= Time.deltaTime;

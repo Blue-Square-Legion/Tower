@@ -35,17 +35,20 @@ public class RunePlacement : MonoBehaviour
     void Update()
     {
         // Handle input for starting skill casting
-        if (Input.GetKeyDown(KeyCode.Q) && !isCasting && meteorCooldownTimer <= 0f)
+        if (UIManager.Instance.runeSelection.activeInHierarchy)
         {
-            SelectSkill(SkillType.Meteor);
-        }
-        if (Input.GetKeyDown(KeyCode.E) && !isCasting && lightningCooldownTimer <= 0f)
-        {
-            SelectSkill(SkillType.Lightning);
-        }
-        if (Input.GetKeyDown(KeyCode.R) && !isCasting && confusionCooldownTimer <= 0f)
-        {
-            SelectSkill(SkillType.Confusion);
+            if (Input.GetKeyDown(KeyCode.Q) && !isCasting && meteorCooldownTimer <= 0f)
+            {
+                SelectSkill(SkillType.Meteor);
+            }
+            if (Input.GetKeyDown(KeyCode.E) && !isCasting && lightningCooldownTimer <= 0f)
+            {
+                SelectSkill(SkillType.Lightning);
+            }
+            if (Input.GetKeyDown(KeyCode.R) && !isCasting && confusionCooldownTimer <= 0f)
+            {
+                SelectSkill(SkillType.Confusion);
+            }
         }
 
         // Handle skill cooldowns
@@ -181,6 +184,7 @@ public class RunePlacement : MonoBehaviour
     void SelectSkill(SkillType skillType)
     {
         UIManager.Instance.ToggleDeselect(true);
+        UIManager.Instance.ToggleTowerSelection(false);
         selectedSkill = skillType;
         Debug.Log("Selected skill: " + selectedSkill);
         StartSkillCasting();

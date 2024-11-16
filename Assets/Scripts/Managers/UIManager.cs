@@ -30,6 +30,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject popUpScreen;
     [SerializeField] TMP_Text popUpMessage;
 
+    [SerializeField] public GameObject runeSelection;
+    [SerializeField] GameObject towerSelection;
+
     private void Start()
     {
         if (gameOverScreen != null)
@@ -99,5 +102,19 @@ public class UIManager : MonoBehaviour
     public void ToggleDeselect(bool isActive)
     {
         deselect.SetActive(isActive);
+        if (!isActive)
+        {
+            ToggleRuneSelection(true);
+            ToggleTowerSelection(true);
+        }
+    }
+    public void ToggleRuneSelection(bool isActive)
+    {
+        runeSelection.SetActive(isActive);
+    }
+
+    public void ToggleTowerSelection(bool isActive)
+    {
+        towerSelection.SetActive(isActive);
     }
 }

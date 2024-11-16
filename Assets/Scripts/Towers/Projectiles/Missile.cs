@@ -5,7 +5,7 @@ using UnityEngine;
 public class Missile : MonoBehaviour
 {   
     private ParticleSystem explosionSystem;
-    public float explosionRadius;
+    [NonSerialized] public float explosionRadius;
 
     GameManager gameManager;
     EnemySpawner enemySpawner;

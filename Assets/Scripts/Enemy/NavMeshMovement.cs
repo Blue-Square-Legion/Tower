@@ -28,7 +28,6 @@ public class NavMeshMovement : MonoBehaviour
 
     public void SetSpeed(float speed)
     {
-        //print(agent);
         if (agent != null)
             agent.speed = speed;
     }
