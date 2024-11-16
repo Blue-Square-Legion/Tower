@@ -1,17 +1,18 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UpgradePanel : MonoBehaviour
 {
-    #region
+    #region Singleton
     private static UpgradePanel instance;
     public static UpgradePanel Instance
     {
         get
         {
             if (instance == null)
-                instance = FindObjectOfType(typeof(UpgradePanel)) as UpgradePanel;
+                instance = FindObjectOfType<UpgradePanel>();
             return instance;
         }
         set
@@ -25,22 +26,30 @@ public class UpgradePanel : MonoBehaviour
     [SerializeField] GameObject upgradeButton;
     [SerializeField] GameObject sellButton;
     [SerializeField] TextMeshProUGUI upgradeDescriptionText;
+    [SerializeField] GameObject leftArrowButton;
+    [SerializeField] GameObject rightArrowButton;
 
     [NonSerialized] public TowerBehavior target;
+    private int currentUpgradeIndex = 0;
+    private int maxUpgradeLevel = 4;
+
     void Start()
     {
-        upgradePanel.gameObject.SetActive(false);
+        upgradePanel.SetActive(false);
         target = null;
     }
 
     public void SetUpgradePanel(bool isActive)
     {
-        upgradePanel.gameObject.SetActive(isActive);
+        upgradePanel.SetActive(isActive);
     }
 
     public void SetTarget(TowerBehavior target)
     {
         this.target = target;
+        currentUpgradeIndex = target.upgradeLevel;
+        maxUpgradeLevel = target.GetMaxUpgradeLevel();
+        UpdateUpgradeInfo();
     }
 
     public void SetUpgradeButton(int price)
@@ -53,10 +62,16 @@ public class UpgradePanel : MonoBehaviour
         upgradeButton.SetActive(isActive);
     }
 
+    public void ToggleSellButton(bool isActive)
+    {
+        sellButton.SetActive(isActive);
+    }
+
     public void SetSellButton(int price)
     {
         sellButton.GetComponentInChildren<TextMeshProUGUI>().text = "Sell\n$" + price;
     }
+
     public void SetText(string upgradeText)
     {
         upgradeDescriptionText.text = upgradeText;
@@ -64,7 +79,11 @@ public class UpgradePanel : MonoBehaviour
 
     public void UpgradePressed()
     {
-        target.Upgrade();
+        if (currentUpgradeIndex == target.upgradeLevel)
+        {
+            target.Upgrade();
+            SetTarget(target);
+        }
     }
 
     public void SellPressed()
@@ -72,5 +91,40 @@ public class UpgradePanel : MonoBehaviour
         if (target.GetComponent<EconomyBehavior>() != null)
             GameManager.Instance.farmBonus -= target.GetComponent<EconomyBehavior>().bonus;
         TowerPlacement.Instance.SellTower(target.gameObject);
+    }
+
+    public void OnLeftArrowClicked()
+    {
+        if (currentUpgradeIndex > 0)
+        {
+            currentUpgradeIndex--;
+            UpdateUpgradeInfo();
+        }
+    }
+
+    public void OnRightArrowClicked()
+    {
+        if (currentUpgradeIndex < maxUpgradeLevel)
+        {
+            currentUpgradeIndex++;
+            UpdateUpgradeInfo();
+        }
+    }
+
+    private void UpdateUpgradeInfo()
+    {
+        if (target == null) return;
+
+        string upgradeDescription = target.GetUpgradeDescription(currentUpgradeIndex);
+        SetText(upgradeDescription);
+
+        int upgradeCost = target.GetUpgradeCost(currentUpgradeIndex);
+        SetUpgradeButton(upgradeCost);
+
+
+        ToggleUpgradeButton(currentUpgradeIndex != maxUpgradeLevel);
+
+        ToggleSellButton(currentUpgradeIndex == target.upgradeLevel);
+
     }
 }
