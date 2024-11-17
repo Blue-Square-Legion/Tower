@@ -27,10 +27,9 @@ public class TowerLevelDisplay : MonoBehaviour
         if (canvas == null)
         {
             Debug.LogError("Canvas is not assigned to the FloatingTextOverlay component");
-        }*/
-    }
-
-   /* void Update()
+        }
+    
+    void Update()
     {
         if (target != null && cam != null)
         {
