@@ -100,8 +100,9 @@ public class TowerBehavior : MonoBehaviour
         }
         sellCost = cost / 2;
     }
-    /*
-    private void InstantiateTowerLevelText()
+
+    /* 
+     private void InstantiateTowerLevelText()
     {
         Debug.Log("InstantiateTowerLevelText method called");
 
@@ -134,8 +135,8 @@ public class TowerBehavior : MonoBehaviour
         {
             Debug.Log("Text component assigned: " + towerLevelText.text);
         }
-    }*/
-
+    }
+    */
 
 //Desyncs the towers from regular game loop to prevent errors
 public void Tick()

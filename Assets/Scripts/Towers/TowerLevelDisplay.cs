@@ -4,9 +4,10 @@ using UnityEngine.UI;
 
 public class TowerLevelDisplay : MonoBehaviour
 {
+    /*
     public Transform target; 
     public Canvas canvas; 
-    public Vector3 offset = new Vector3(0, 2, 0); 
+    public Vector3 offset = new Vector3(0, 2, 0);
     private Text textComponent;
     private Camera cam;
 
@@ -26,10 +27,9 @@ public class TowerLevelDisplay : MonoBehaviour
         if (canvas == null)
         {
             Debug.LogError("Canvas is not assigned to the FloatingTextOverlay component");
-        }*/
-    }
-
-   /* void Update()
+        }
+    
+    void Update()
     {
         if (target != null && cam != null)
         {
@@ -44,6 +44,5 @@ public class TowerLevelDisplay : MonoBehaviour
                 textComponent.text = "Level: " + towerBehavior.upgradeLevel;
             }
         }
-   
     }*/
 }
