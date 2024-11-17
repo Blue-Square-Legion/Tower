@@ -85,7 +85,5 @@ namespace AudioSystem
             "\nLinear - Use this mode when you want to lower sound based on distance from the source" +
             "\nCustom - Use this when you want to have Custom rolloff")]
         public AudioRolloffMode audioRollOffMode = AudioRolloffMode.Linear;
-
-
     }
 }

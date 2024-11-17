@@ -3,7 +3,7 @@
         <ui:VisualElement name="ShownVariables" style="flex-grow: 1;">
             <uie:PropertyField name="AudioFile" binding-path="audioFile" label="Audio File" tooltip="The Audio File that will be played when called" />
             <ui:Slider label="Volume" high-value="1" name="Volume" binding-path="volume" show-input-field="true" tooltip="Percentage oh how loud the volume should play.  Example: 0.5 will play the AudioClip at half volume" />
-            <ui:Slider label="Pitch" high-value="1" name="Pitch" binding-path="pitch" low-value="0.1" show-input-field="true" tooltip="Modifies the pitch to sound higher or lower.Default Pitch Value: 1" />
+            <ui:Slider label="Pitch" high-value="3" name="Pitch" binding-path="pitch" low-value="0.1" show-input-field="true" tooltip="Modifies the pitch to sound higher or lower.Default Pitch Value: 1" />
             <ui:Toggle label="Loop" name="Loop" binding-path="loop" tooltip="If the clip should play again immediately after the audio clip is finished" />
             <ui:Slider label="Pan Stereo" high-value="1" low-value="-1" binding-path="panStereo" view-data-key="PanStereo" show-input-field="true" name="PanStereo" />
             <ui:Slider label="Spatial Blend" high-value="1" name="SpatialBlend" binding-path="spatialBlend" show-input-field="true" tooltip="Sets how much the audio is affected by 3D spacial calculations (Example: Doppler Effect).\nA value of 0 makes the sound completely 2D.\nA value of 1 makes the sound completely 3D" />

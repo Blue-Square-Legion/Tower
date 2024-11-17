@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UIElements;
+using AudioSystem;
 
 public class MissileDamage : MonoBehaviour, IDamageMethod
 {
@@ -9,6 +10,7 @@ public class MissileDamage : MonoBehaviour, IDamageMethod
     [SerializeField] private Transform towerPivot;
 
     GameManager gameManager;
+    [SerializeField] AudioData audioData;
     [SerializeField] private GameObject missile;
     [NonSerialized] public float damage;
     public float explosionRadius;
@@ -42,6 +44,10 @@ public class MissileDamage : MonoBehaviour, IDamageMethod
                 delay -= Time.deltaTime;
                 return;
             }
+            AudioManager.Instance.CreateAudio()
+                .WithAudioData(audioData)
+                .WithPosition(gameObject.transform.position)
+                .Play();
 
             cannonAnimator.SetTrigger("CannonFire");
             GameObject tempMissile = Instantiate(missile);

@@ -21,6 +21,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] AudioData audioMovement;
     [SerializeField] AudioData audioDead;
     private float confusedTimer;
+
+    private AudioEmitter audioEmitterMove;
     public void Init()
     {
         gameManager = GameManager.Instance;
@@ -101,12 +103,12 @@ public class Enemy : MonoBehaviour
             isStunned = false;
             navMeshMovement.SetSpeed(speed);
         }
-        /**
-        AudioManager.Instance.CreateAudio()
-            .WithAudioData(audioMovement)
-            .WithPosition(gameObject.transform.position)
-            .Play();
-        */
+
+        //Plays audio clip again once the clip ends
+        if (audioEmitterMove == null || !audioEmitterMove.IsPlaying())
+        {
+            audioEmitterMove = AudioManager.Instance.CreateAudio().WithAudioData(audioMovement).WithPosition(gameObject.transform.position).Play();
+        }
     }
 
     public void SetSpeed(float speed)

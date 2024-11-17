@@ -100,6 +100,7 @@ namespace AudioSystem
             //If it is a frequent sound, and the maximum amount of audioInstances have been reached, try to remove the oldest audio emitter
             if (frequentAudioEmitters.Count >= maxAudioInstances && frequentAudioEmitters.TryDequeue(out AudioEmitter audioEmitter))
             {
+                frequentAudioEmitters.Dequeue();
                 try
                 {
                     //If audio emitter can be removed

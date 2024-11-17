@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace AudioSystem
 {
@@ -78,6 +80,7 @@ namespace AudioSystem
         IEnumerator WaitForAudioToEnd()
         {
             yield return new WaitWhile(() => audioSource.isPlaying); //Yields infinitely until the audio source stops playing
+            playingCoroutine = null;
             AudioManager.Instance.ReturnToPool(this);
         }
     }

@@ -10,7 +10,9 @@ public class FireDamage : MonoBehaviour, IDamageMethod
     GameManager gameManager;
     [NonSerialized] public float damage;
     [NonSerialized] public float fireRate;
+    
 
+    AudioBuilder audioBuilder;
     AudioEmitter audioEmitter;
     public void Init(float damage, float fireRate)
     {
@@ -18,9 +20,10 @@ public class FireDamage : MonoBehaviour, IDamageMethod
         this.damage = damage;
         this.fireRate = fireRate;
 
-        AudioManager.Instance.CreateAudio().WithAudioData(audioData).WithPosition(transform.position);
-        audioEmitter = AudioManager.Instance.Get();
-        audioEmitter.Init(audioData);
+        audioBuilder = AudioManager.Instance.CreateAudio().WithAudioData(audioData).WithPosition(transform.position);
+        audioEmitter = audioBuilder.Play();
+        audioEmitter.Stop();
+        
     }
 
     public void UpdateDamage(float damage)
@@ -38,13 +41,11 @@ public class FireDamage : MonoBehaviour, IDamageMethod
             if (!fireEffect.isPlaying)
             {
                 fireEffect.Play();
-                if (audioData.frequentSound)
-                    AudioManager.Instance.frequentAudioEmitters.Enqueue(audioEmitter);
-                audioEmitter.Play();
+                audioEmitter = audioBuilder.Play();
             }
              return;
          }
-         if (audioEmitter.IsPlaying())
+         if (audioEmitter != null && audioEmitter.IsPlaying())
             audioEmitter.Stop();
         fireEffect.Stop();
         

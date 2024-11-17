@@ -7,6 +7,7 @@ namespace AudioSystem
         AudioData audioData;
         Vector3 position = Vector3.zero;
         bool randomPitch;
+        AudioEmitter audioEmitter;
 
         public AudioBuilder(AudioManager audioManager)
         {
@@ -31,11 +32,11 @@ namespace AudioSystem
             return this;
         }
 
-        public void Play()
+        public AudioEmitter Play()
         {
-            if (!audioManager.CanPlayAudio(audioData)) return;
+            if (!audioManager.CanPlayAudio(audioData)) return null;
 
-            AudioEmitter audioEmitter = audioManager.Get();
+            audioEmitter = audioManager.Get();
             audioEmitter.Init(audioData);
             audioEmitter.transform.position = position;
             audioEmitter.transform.parent = AudioManager.Instance.transform;
@@ -48,6 +49,8 @@ namespace AudioSystem
             if (audioData.frequentSound)
                 audioManager.frequentAudioEmitters.Enqueue(audioEmitter);
             audioEmitter.Play();
+
+            return audioEmitter;
         }
     }
 }
