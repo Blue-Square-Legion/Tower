@@ -33987,7 +33987,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 233272667}
         m_TargetAssemblyTypeName: UpgradePanel, Assembly-CSharp
-        m_MethodName: UpgradePressed
+        m_MethodName: OnRightArrowClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -41202,7 +41202,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 233272667}
         m_TargetAssemblyTypeName: UpgradePanel, Assembly-CSharp
-        m_MethodName: SellPressed
+        m_MethodName: OnLeftArrowClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
