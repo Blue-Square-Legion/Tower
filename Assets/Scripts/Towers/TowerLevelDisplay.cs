@@ -13,7 +13,7 @@ public class TowerLevelDisplay : MonoBehaviour
 
     void Start()
     {
-        textComponent = GetComponent<Text>();
+       /* textComponent = GetComponent<Text>();
         cam = Camera.main;
 
         if (textComponent == null)
@@ -27,10 +27,10 @@ public class TowerLevelDisplay : MonoBehaviour
         if (canvas == null)
         {
             Debug.LogError("Canvas is not assigned to the FloatingTextOverlay component");
-        }
+        }*/
     }
 
-    void Update()
+   /* void Update()
     {
         if (target != null && cam != null)
         {
