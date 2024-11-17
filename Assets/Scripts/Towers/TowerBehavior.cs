@@ -26,7 +26,6 @@ public class TowerBehavior : MonoBehaviour
     [SerializeField] TowerType towerType;
 
     private IDamageMethod currentDamageMethodClass;
-    public GameObject towerLevelTextPrefab;
     public Canvas canvas;
     private Text towerLevelText;
     private Player player;
@@ -43,7 +42,7 @@ public class TowerBehavior : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("start");
+
         towerPlacement = TowerPlacement.Instance;
         upgradePanel = UpgradePanel.Instance;
         player = Player.Instance;
@@ -56,7 +55,7 @@ public class TowerBehavior : MonoBehaviour
         buffNames = Enum.GetNames(typeof(GameManager.BuffNames));
         buffNamesCount = Enum.GetNames(typeof(GameManager.BuffNames)).Length;
 
-        InstantiateTowerLevelText();
+        //InstantiateTowerLevelText();
         currentDamageMethodClass = GetComponent<IDamageMethod>();
 
         if (currentDamageMethodClass == null )
@@ -101,7 +100,7 @@ public class TowerBehavior : MonoBehaviour
         }
         sellCost = cost / 2;
     }
-
+    /*
     private void InstantiateTowerLevelText()
     {
         Debug.Log("InstantiateTowerLevelText method called");
@@ -135,7 +134,7 @@ public class TowerBehavior : MonoBehaviour
         {
             Debug.Log("Text component assigned: " + towerLevelText.text);
         }
-    }
+    }*/
 
 
 //Desyncs the towers from regular game loop to prevent errors
@@ -583,8 +582,8 @@ public void Tick()
                             support.UpdateTowersInRange();
                             //Set up for next upgrade
                             sellCost += upgradeCost / 2;
-                            upgradeCost = 0;
-                            upgradeDescription = "Proximity Sensor (Not Implemented Yet)\nAll Towers in range can see Invisible Enemies";
+                            upgradeCost = GetUpgradeCost(upgradeLevel);
+                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
                             break;
                         case 1:
                             //Hidden
@@ -593,8 +592,8 @@ public void Tick()
 
                             //Set up for next upgrade
                             sellCost += upgradeCost / 2;
-                            upgradeCost = 300;
-                            upgradeDescription = "Inspiration\nAll Towers in range gain a attack speed buff";
+                            upgradeCost = GetUpgradeCost(upgradeLevel);
+                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
                             break;
                         case 2:
                             //Do upgrade
@@ -603,8 +602,8 @@ public void Tick()
 
                             //Set up for next upgrade
                             sellCost += upgradeCost / 2;
-                            upgradeCost = 500;
-                            upgradeDescription = "Command Center\nAll Towers in range do increased damage. Slightly Increased Range.";
+                            upgradeCost = GetUpgradeCost(upgradeLevel);
+                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
                             break;
                         case 3:
                             //Do upgrade
@@ -615,8 +614,8 @@ public void Tick()
 
                             //Set up for next upgrade
                             sellCost += upgradeCost / 2;
-                            upgradeCost = 1000;
-                            upgradeDescription = "Motivation\nIncreases the effectiveness of this tower's buffs";
+                            upgradeCost = GetUpgradeCost(upgradeLevel);
+                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
                             break;
                         case 4:
                             //Do Upgrade
@@ -627,7 +626,7 @@ public void Tick()
 
                             //No more upgrades
                             sellCost += upgradeCost / 2;
-                            upgradeDescription = "Max Level";
+                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
                             break;
                     }
                     break;
@@ -709,6 +708,16 @@ public void Tick()
                 new UpgradeData("Colder Snow\nSlows Enemies More", 350),
                 new UpgradeData("Melt Resistant Snow\nIncreased Duration", 500),
                 new UpgradeData("Larger Snowballs\nIncreased Snow Area", 600),
+                new UpgradeData("Max Level", 0)
+            }
+        },
+        {
+            TowerType.Support, new List<UpgradeData>
+            {
+                new UpgradeData("Proximity Sensor (Not Implemented Yet)\nAll Towers in range can see Invisible Enemies", 0),
+                new UpgradeData("Inspiration\nAll Towers in range gain a attack speed buff", 300),
+                new UpgradeData("Command Center\nAll Towers in range do increased damage. Slightly Increased Range", 500),
+                new UpgradeData("Motivation\nIncreases the effectiveness of this tower's buffs", 1000),
                 new UpgradeData("Max Level", 0)
             }
         }
