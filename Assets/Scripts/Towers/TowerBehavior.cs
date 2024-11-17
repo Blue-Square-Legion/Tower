@@ -56,7 +56,7 @@ public class TowerBehavior : MonoBehaviour
         buffNames = Enum.GetNames(typeof(GameManager.BuffNames));
         buffNamesCount = Enum.GetNames(typeof(GameManager.BuffNames)).Length;
 
-        InstantiateTowerLevelText();
+        //InstantiateTowerLevelText();
         currentDamageMethodClass = GetComponent<IDamageMethod>();
 
         if (currentDamageMethodClass == null )
@@ -101,7 +101,7 @@ public class TowerBehavior : MonoBehaviour
         }
         sellCost = cost / 2;
     }
-
+    /*
     private void InstantiateTowerLevelText()
     {
         Debug.Log("InstantiateTowerLevelText method called");
@@ -135,7 +135,7 @@ public class TowerBehavior : MonoBehaviour
         {
             Debug.Log("Text component assigned: " + towerLevelText.text);
         }
-    }
+    }*/
 
 
 //Desyncs the towers from regular game loop to prevent errors
