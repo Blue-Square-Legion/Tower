@@ -39,6 +39,7 @@ public class EnemySpawner : MonoBehaviour
     public Transform[] SpawnPoints;
 
     public  bool isInitialized = false;
+    [SerializeField] private Transform enemiesFolder;
     GameManager gameManager;
     public void Init()
     {
@@ -91,6 +92,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 //Instantiate new insatnce of enemy and initialize
                 GameObject newEnemy = Instantiate(enemyPrefab[enemyID], SpawnPoints[spawnPointID].position, Quaternion.identity);
+                newEnemy.transform.parent = enemiesFolder;
                 spawnedEnemy = newEnemy.GetComponent<Enemy>();
                 spawnedEnemy.Init();
             }
