@@ -128,7 +128,7 @@ public class TowerPlacement : MonoBehaviour
         {
             currentTowerBeingPlaced = Instantiate(tower, Vector3.zero, Quaternion.identity);
             UIManager.Instance.ToggleRuneSelection(false);
-            UIManager.Instance.ToggleTowerSelection(false);
+            //UIManager.Instance.ToggleTowerSelection(false);
         }     
     }
     

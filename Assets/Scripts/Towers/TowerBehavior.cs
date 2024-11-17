@@ -26,7 +26,6 @@ public class TowerBehavior : MonoBehaviour
     [SerializeField] TowerType towerType;
 
     private IDamageMethod currentDamageMethodClass;
-    public GameObject towerLevelTextPrefab;
     public Canvas canvas;
     private Text towerLevelText;
     private Player player;
@@ -100,6 +99,7 @@ public class TowerBehavior : MonoBehaviour
                 break;
         }
         sellCost = cost / 2;
+        Debug.Log("end");
     }
     /*
     private void InstantiateTowerLevelText()
