@@ -1,0 +1,30 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:Foldout text="Audio Data" view-data-key="isOpen">
+        <ui:VisualElement name="ShownVariables" style="flex-grow: 1;">
+            <uie:PropertyField name="AudioFile" binding-path="audioFile" label="Audio File" tooltip="The Audio File that will be played when called" />
+            <ui:Slider label="Volume" high-value="1" name="Volume" binding-path="volume" show-input-field="true" tooltip="Percentage oh how loud the volume should play.  Example: 0.5 will play the AudioClip at half volume" />
+            <ui:Slider label="Pitch" high-value="1" name="Pitch" binding-path="pitch" low-value="0.1" show-input-field="true" tooltip="Modifies the pitch to sound higher or lower.Default Pitch Value: 1" />
+            <ui:Toggle label="Loop" name="Loop" binding-path="loop" tooltip="If the clip should play again immediately after the audio clip is finished" />
+            <ui:Slider label="Pan Stereo" high-value="1" low-value="-1" binding-path="panStereo" view-data-key="PanStereo" show-input-field="true" name="PanStereo" />
+            <ui:Slider label="Spatial Blend" high-value="1" name="SpatialBlend" binding-path="spatialBlend" show-input-field="true" tooltip="Sets how much the audio is affected by 3D spacial calculations (Example: Doppler Effect).\nA value of 0 makes the sound completely 2D.\nA value of 1 makes the sound completely 3D" />
+            <ui:FloatField label="Min Distance" value="0" name="MinDistance" binding-path="minDistance" tooltip="Determines how close the sound can feel.\nIf distance is less than the minimum distance, the sound will stop becoming louder as the listener gets closer to the source" />
+            <ui:FloatField label="Max Distance" value="0" name="MaxDistance" binding-path="maxDistance" tooltip="Determines how far the sound can feel.\nIf distance is more than the maximym distance, the sound will stop becoming quieter as the listener gets further from the source" />
+            <ui:Toggle label="Play On Awake" name="PlayOnAwake" binding-path="playOnAwake" tooltip="If the audio clip should play immediately" />
+            <ui:Toggle label="Mute" name="Mute" binding-path="mute" />
+            <uie:PropertyField name="AudioMixerGroup" binding-path="audioMixerGroup" label="Audio Mixer Group" />
+            <ui:Toggle label="Frequent Sound" name="FrequentSound" binding-path="frequentSound" value="false" tooltip="If the sound will be frequently played, used for optimization purposes (will not break game if set incorrectly. It may use more resources though)" />
+        </ui:VisualElement>
+        <ui:Foldout text="Advanced Options" name="AdvancedOptions" view-data-key="advancedOptionsOpen">
+            <ui:Toggle label="Bypass Effects" name="BypassEffects" binding-path="bypassEffects" />
+            <ui:Toggle label="Bypass Listener Effects" name="BypassListenerEffects" binding-path="bypassListenerEffects" />
+            <ui:Toggle label="Bypass Reverb Zones" name="BypassReverbZones" binding-path="bypassReverbZones" />
+            <ui:Toggle label="Ignore Listener Volume" name="IgnoreListenerVolume" binding-path="ignoreListenerVolume" />
+            <ui:Toggle label="Ignore Listener Pause" name="IgnoreListenerPause" binding-path="ignoreListenerPause" value="false" />
+            <ui:SliderInt label="Priority" high-value="256" name="Priority" binding-path="priority" show-input-field="true" />
+            <ui:Slider label="Reverb Zone Mix" high-value="1.1" name="ReverbZoneMix" binding-path="reverbZoneMix" show-input-field="true" />
+            <ui:Slider label="Doppler Level" high-value="5" name="DopplerLevel" binding-path="dopplerLevel" show-input-field="true" />
+            <ui:SliderInt label="Spread" high-value="360" name="Spread" binding-path="spread" show-input-field="true" />
+            <ui:EnumField label="Volume Rolloff" type="UnityEngine.TextAlignment, UnityEngine.TextRenderingModule" value="Center" binding-path="audioRollOffMode" name="AudioRollOffMode" />
+        </ui:Foldout>
+    </ui:Foldout>
+</ui:UXML>

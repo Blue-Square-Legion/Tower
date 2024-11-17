@@ -1,330 +1,120 @@
-/*****************************************************************************
-    Author: Ryan Herwig
-    Date: 9/7/24
-    Description: Makes easy access for creating sounds in Unity. Keeps them all in one area and easily modifiable.
-    
-    To Play Sound from any Script:
-    AudioManager.Instance.Play([SOUND_NAME], ~OPTIONAL~ [GAME_OBJECT]).
-    If Game Object is given, it will play the sound that is on the game object.
-    If it is not given, it will play the sound that is attached to the AudioManager itself (Spatial Blend 2D (Set it to 0) is heavily recommended)
-
-    Note: [SOUND_NAME] is the name given to the Sound Object in the AudioManager inside the inspector
- *****************************************************************************/
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
+using UnityUtils;
+using UnityEngine.Pool;
 
-public class AudioManager : MonoBehaviour
+namespace AudioSystem
 {
-    #region Singleton
-    private static AudioManager instance;
-
-    public static AudioManager Instance
+    public class AudioManager : PersistentSingleton<AudioManager>
     {
-        get
-        {
-            if (instance == null)
-                instance = FindObjectOfType(typeof(AudioManager)) as AudioManager;
-            return instance;
-        }
-        set
-        {
-            instance = value;
-        }
-    }
-    #endregion
-    [Tooltip("Can leave empty. If the sound clip does not have an Audio Mixer, it uses this one instead.")]
-    public AudioMixerGroup defaultMasterMixer;
+        IObjectPool<AudioEmitter> audioEmiterPool;
+        readonly List<AudioEmitter> activeAudioEmitters = new();
+        public readonly Queue<AudioEmitter> frequentAudioEmitters = new();
 
-    [Tooltip("The array of all the sounds in the game")]
-    public Audio[] audioFiles;
+        [Tooltip("Prefab of the Sound Emitter")]
+        [SerializeField] AudioEmitter audioEmitterPrefab;
 
-    private List<(GameObject, Audio)> inGameAudio;
-    
-    void Awake()
-    {   
-        //Gets all the sounds inside the array and creates an AudioSource out of them
-        foreach (Audio s in audioFiles)
-        {
-            s.source = gameObject.AddComponent<AudioSource>();
-            s.source.clip = s.audioFile;
-            s.source.volume = s.volume;
-            s.source.pitch = s.pitch;
-            s.source.loop = s.loop;
-            s.source.panStereo = s.panStereo;
-            s.source.spatialBlend = s.spatialBlend;
-            s.source.minDistance = s.minDistance;
-            s.source.maxDistance = s.maxDistance;
-            s.source.rolloffMode = s.audioRollOffMode;
+        [Tooltip("")]
+        [SerializeField] bool collectionCheck = true;
 
-            s.source.outputAudioMixerGroup = s.audioMixer;
-            if (s.source.outputAudioMixerGroup == null)
-                s.source.outputAudioMixerGroup = defaultMasterMixer;
-        }
-        inGameAudio = new();
-    }
+        [Tooltip("")]
+        [SerializeField] int defaultCapacity = 10;
+        [SerializeField] int maxPoolSize = 100;
 
-    #region Sound Controls
-    #region Audio on GameObjects
-    /// <summary>
-    /// Adds an Audio Listener with a sound file to a GameObject
-    /// </summary>
-    /// <param name="soundName"></param>
-    /// <param name="obj"></param>
-    public void Add(string soundName, GameObject obj)
-    {
-        Audio tempAudio = Array.Find(audioFiles, sound => sound.name == soundName);
-        if (tempAudio == null)
+        [Tooltip("Most of any particular sound that can be played at once")]
+        [SerializeField] int maxAudioInstances = 30;
+        
+        void Start()
         {
-            Debug.LogWarning(soundName + ": audio not found");
-            return;
-        }
-        if (obj == null)
-        {
-            Debug.LogWarning(obj + " not found");
-            return;
+            InitializePool();
         }
 
-        tempAudio.source = obj.AddComponent<AudioSource>();
-        tempAudio.source.clip = tempAudio.audioFile;
-        tempAudio.source.outputAudioMixerGroup = defaultMasterMixer;
-        tempAudio.source.volume = tempAudio.volume;
-        tempAudio.source.pitch = tempAudio.pitch;
-        tempAudio.source.loop = tempAudio.loop;
-        tempAudio.source.panStereo = tempAudio.panStereo;
-        tempAudio.source.spatialBlend = tempAudio.spatialBlend;
-        tempAudio.source.minDistance = tempAudio.minDistance;
-        tempAudio.source.maxDistance = tempAudio.maxDistance;
-        tempAudio.source.rolloffMode = tempAudio.audioRollOffMode;
-
-        inGameAudio.Add((obj, tempAudio));
-    }
-
-    public void Play(string soundName, GameObject obj)
-    {
-        Audio tempAudio = Array.Find(audioFiles, sound => sound.name == soundName);
-
-        //Error Check - If audio file was created with this script
-        if (tempAudio == null)
+        void InitializePool()
         {
-            Debug.LogWarning(soundName + ": audio not found");
-            return;
+            audioEmiterPool = new ObjectPool<AudioEmitter>(CreateAudioEmitter, OnTakeFromPool, OnReturnedToPool, OnDestroyPoolObject, collectionCheck, defaultCapacity, maxPoolSize);
         }
 
-        //Error Check - if GameObject exists
-        if (obj == null)
+        #region Constructor Methods
+        AudioEmitter CreateAudioEmitter()
         {
-            Debug.LogWarning(obj + " not found");
-            return;
+            AudioEmitter audioEmitter = Instantiate(audioEmitterPrefab);
+            audioEmitter.gameObject.SetActive(false);
+            return audioEmitter;
         }
-        /**
-        //Searches List for the Audio inside the GameObject
-        int audioCount = inGameAudio.Count;
-        for (int i = 0; i < audioCount; i++)
+
+        /// <summary>
+        /// Removes an audio emitter from the pool and adds it to the game
+        /// </summary>
+        void OnTakeFromPool(AudioEmitter audioEmitter)
         {
-            if (obj == inGameAudio[i].Item1 && soundName.Equals(inGameAudio[i].Item2.name))
+            audioEmitter.gameObject.SetActive(true);
+            activeAudioEmitters.Add(audioEmitter);
+        }
+
+        /// <summary>
+        /// Removes an audio emitter from the game and returns it back to the pool
+        /// </summary>
+        void OnReturnedToPool(AudioEmitter audioEmmiter)
+        {
+            audioEmmiter.gameObject.SetActive(false);
+            activeAudioEmitters.Remove(audioEmmiter);
+        }
+
+        /// <summary>
+        /// Destroys an audio emitter. Does not get returned to the pool
+        /// </summary>
+        void OnDestroyPoolObject(AudioEmitter audioEmitter)
+        {
+            Destroy(audioEmitter.gameObject);
+        }
+        #endregion
+
+        #region Helper Methods
+
+        /// <summary>
+        /// Gets an audio emitter from the pool. If none are available, attempts to create one instead
+        /// </summary>
+        public AudioBuilder CreateAudio() => new AudioBuilder(this);
+
+        /// <summary>
+        /// Returns an audio emitter
+        /// </summary>
+        public AudioEmitter Get()
+        {
+            return audioEmiterPool.Get();
+        }
+
+        /// <summary>
+        /// Returns the audio emitter back to the pool
+        /// </summary>
+        public void ReturnToPool(AudioEmitter audioEmitter)
+        {
+            audioEmiterPool.Release(audioEmitter);
+        }
+
+        public bool CanPlayAudio(AudioData data)
+        {
+            //If it is not a frequent sound, allow it to run regardless
+            if (!data.frequentSound) return true;
+
+            //If it is a frequent sound, and the maximum amount of audioInstances have been reached, try to remove the oldest audio emitter
+            if (frequentAudioEmitters.Count >= maxAudioInstances && frequentAudioEmitters.TryDequeue(out AudioEmitter audioEmitter))
             {
-                //Found source
+                try
+                {
+                    //If audio emitter can be removed
+                    audioEmitter.Stop();
+                    return true;
+                }
+                catch
+                {
+                    //If audio emitter cannot be removed, it most likely has already been released
+                    Debug.Log("AudioEmitter is already released!");
+                }
+                return false;
             }
+            return true;
         }
-        */
-
-        //Failed to find source
-        Component[] audioSourceComponents = obj.GetComponents(typeof(AudioSource));
-        List<AudioSource> test = new();
-        for (int i = 0; i < audioSourceComponents.Length; i++)
-        {
-            test.Add((AudioSource)audioSourceComponents[i]);
-        }
-        for (int i = 0; i < test.Count; i++)
-        {
-            print(test[i].clip);
-        }
-
-        tempAudio.source = obj.GetComponent<AudioSource>();
-        tempAudio.source.Play();
+        #endregion
     }
-
-    public void PlayAtVolume(string name, float vol)
-    {
-        Audio s = Array.Find(audioFiles, sound => sound.name == name);
-        if (s == null)
-        {
-            Debug.LogWarning(name + ": audio not found");
-            return;
-        }
-        s.source.volume = vol;
-        s.source.Play();
-    }
-
-    public void Pause(string name, GameObject obj) //TODO
-    {
-        Audio s = Array.Find(audioFiles, sound => sound.name == name);
-        if (s == null)
-        {
-            Debug.LogWarning(name + ": audio not found");
-            return;
-        }
-        s.source.Pause();
-    }
-
-    public void UnPause(string name, GameObject obj) //TODO
-    {
-        Audio s = Array.Find(audioFiles, sound => sound.name == name);
-        if (s == null)
-        {
-            Debug.LogWarning(name + ": audio not found");
-            return;
-        }
-        s.source.UnPause();
-    }
-
-    public void Stop(string soundName, GameObject obj)
-    {
-        Audio s = Array.Find(audioFiles, sound => sound.name == soundName);
-        if (s == null)
-        {
-            Debug.LogWarning(soundName + ": audio not found");
-            return;
-        }
-        if (obj == null)
-        {
-            Debug.LogWarning(obj + " not found");
-            return;
-        }
-        s.source = obj.GetComponent<AudioSource>();
-
-        s.source.Stop();
-    }
-
-    public void Remove(string name, GameObject obj)
-    {
-        Audio s = Array.Find(audioFiles, sound => sound.name == name);
-        if (s == null)
-        {
-            Debug.LogWarning(name + ": source not found");
-            return;
-        }
-        if (obj == null)
-        {
-            Debug.LogWarning(obj + " not found");
-            return;
-        }
-
-        s.source = obj.GetComponent<AudioSource>();
-        Destroy(s.source);
-    }
-
-    public AudioSource Get(string name, GameObject obj)
-    {
-        Audio s = Array.Find(audioFiles, sound => sound.name == name);
-        if (s == null)
-        {
-            Debug.LogWarning(name + ": source not found");
-            return null;
-        }
-        if (obj == null)
-
-        {
-            Debug.LogWarning(obj + " not found");
-            return null;
-        }
-
-        s.source = obj.GetComponent<AudioSource>();
-        return s.source;
-    }
-
-    public void UpdateVolume(string name, float vol, GameObject gameObject) //TODO
-    {
-        Audio s = Array.Find(audioFiles, sound => sound.name == name);
-        if (s == null)
-        {
-            Debug.LogWarning(name + ": audio not found");
-            return;
-        }
-        s.source.volume = vol;
-    }
-
-    public float GetLength(string name)
-    {
-        Audio s = Array.Find(audioFiles, sound => sound.name == name);
-        if (s == null)
-        {
-            Debug.LogWarning(name + ": audio not found");
-            return 0;
-        }
-        return s.source.clip.length;
-    }
-    #endregion
-
-    #region AudioManager Sounds
-    /// <summary>
-    /// Mutes the audio on the AudioManager
-    /// Recommended for the Spatial Blend to be at 0 (2D)
-    /// </summary>
-    /// <param name="name"></param>
-    public void Mute(string name)
-    {
-        Audio s = Array.Find(audioFiles, sound => sound.name == name);
-        if (s == null)
-        {
-            Debug.LogWarning(name + ": audio not found");
-            return;
-        }
-        s.source.volume = 0.0f;
-    }
-
-    /// <summary>
-    /// Unmutes the audio on the AudioManager
-    /// Recommended for the Spatial Blend to be at 0 (2D)
-    /// </summary>
-    /// <param name="name"></param>
-    public void Unmute(string name)
-    {
-        Audio s = Array.Find(audioFiles, sound => sound.name == name);
-        if (s == null)
-        {
-            Debug.LogWarning(name + ": audio not found");
-            return;
-        }
-        s.source.volume = s.volume;
-    }
-
-    /// <summary>
-    /// Starts playing the Audio that is on the AudioManager
-    /// Recommended for the Spatial Blend to be at 0 (2D)
-    /// </summary>
-    /// <param name="soundName"></param>
-    public void Play(string soundName)
-    {
-        Audio tempAudio = Array.Find(audioFiles, sound => sound.name == soundName);
-        if (tempAudio == null)
-        {
-            Debug.LogWarning(soundName + ": audio not found");
-            return;
-        }
-
-        tempAudio.source.Play();
-    }
-
-    /// <summary>
-    /// Stops playing the Audio that is not on the AudioManager
-    /// Recommended for the Spatial Blend to be at 0 (2D)
-    /// </summary>
-    /// <param name="soundName"></param>
-    public void Stop(string soundName)
-    {
-        Audio s = Array.Find(audioFiles, sound => sound.name == soundName);
-        if (s == null)
-        {
-            Debug.LogWarning(soundName + ": audio not found");
-            return;
-        }
-
-        s.source.Stop();
-    }
-
-    #endregion
-    #endregion
 }

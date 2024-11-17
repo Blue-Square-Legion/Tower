@@ -28,6 +28,7 @@ public class TowerPlacement : MonoBehaviour
     public Transform destination;
     [SerializeField] private LayerMask placementCheckMask;
     [SerializeField] private LayerMask placementColliderMask;
+    [SerializeField] private Transform towersFolder;
     private GameObject currentTowerBeingPlaced;
     private bool canPlace;
     private Player player;
@@ -125,7 +126,10 @@ public class TowerPlacement : MonoBehaviour
         if (player.GetMoney() < tower.GetComponent<TowerBehavior>().cost) return;
 
         if (currentTowerBeingPlaced == null)
+        {
             currentTowerBeingPlaced = Instantiate(tower, Vector3.zero, Quaternion.identity);
+            currentTowerBeingPlaced.transform.parent = towersFolder;
+        }
     }
     
     public void CancelPlacingTower()
