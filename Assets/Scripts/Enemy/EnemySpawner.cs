@@ -91,8 +91,8 @@ public class EnemySpawner : MonoBehaviour
             else
             {
                 //Instantiate new insatnce of enemy and initialize
-                newEnemy.transform.parent = enemiesFolder;
                 GameObject newEnemy = Instantiate(enemyPrefab[enemyID], SpawnPoints[spawnPointID].position, Quaternion.identity);
+                newEnemy.transform.parent = enemiesFolder;
                 spawnedEnemy = newEnemy.GetComponent<Enemy>();
                 spawnedEnemy.Init();
             }
