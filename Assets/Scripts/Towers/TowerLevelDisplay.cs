@@ -4,15 +4,15 @@ using UnityEngine.UI;
 
 public class TowerLevelDisplay : MonoBehaviour
 {
-    public Transform target; // The tower this text should follow
-    public Canvas canvas; // Reference to the canvas
-    public Vector3 offset = new Vector3(0, 2, 0); // Adjust the offset as needed
+    public Transform target; 
+    public Canvas canvas; 
+    public Vector3 offset = new Vector3(0, 2, 0); 
     private Text textComponent;
     private Camera cam;
 
     void Start()
     {
-        textComponent = GetComponent<Text>();
+       /* textComponent = GetComponent<Text>();
         cam = Camera.main;
 
         if (textComponent == null)
@@ -26,10 +26,10 @@ public class TowerLevelDisplay : MonoBehaviour
         if (canvas == null)
         {
             Debug.LogError("Canvas is not assigned to the FloatingTextOverlay component");
-        }
+        }*/
     }
 
-    void Update()
+   /* void Update()
     {
         if (target != null && cam != null)
         {
@@ -44,5 +44,6 @@ public class TowerLevelDisplay : MonoBehaviour
                 textComponent.text = "Level: " + towerBehavior.upgradeLevel;
             }
         }
-    }
+   
+    }*/
 }
