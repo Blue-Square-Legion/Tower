@@ -129,6 +129,7 @@ public class TowerPlacement : MonoBehaviour
         {
             currentTowerBeingPlaced = Instantiate(tower, Vector3.zero, Quaternion.identity);
             currentTowerBeingPlaced.transform.parent = towersFolder;
+            UIManager.Instance.ToggleRuneSelection(false);
         }
     }
     

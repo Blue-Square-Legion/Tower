@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -67,9 +68,12 @@ public class EnemySpawner : MonoBehaviour
             print("FAILSAFE ACTIVATED. FAILED TO INITIALZE \"ENEMY SPAWNER\" DUE TO IT ALREADY BEING INITIALZED!");
     }
 
-    public Enemy spawnEnemy(int enemyID)
+    public Enemy spawnEnemy(Tuple<int,int> tuple)
     {
         Enemy spawnedEnemy = null;
+
+        int enemyID = tuple.Item1;
+        int spawnPointID = tuple.Item2;
 
         if (enemyPrefab.ContainsKey(enemyID))
         {
@@ -80,14 +84,15 @@ public class EnemySpawner : MonoBehaviour
                 //Dequeue enemy and initialize it
                 spawnedEnemy = ReferencedQueue.Dequeue();
                 spawnedEnemy.Init();
+                spawnedEnemy.transform.position = SpawnPoints[spawnPointID].position;
                 spawnedEnemy.GetComponentInChildren<HealthBar>().UpdateHealth(spawnedEnemy.maxHealth);
                 spawnedEnemy.gameObject.SetActive(true);
             }
             else
             {
                 //Instantiate new insatnce of enemy and initialize
-                GameObject newEnemy = Instantiate(enemyPrefab[enemyID], gameManager.SpawnPoint.position, Quaternion.identity);
                 newEnemy.transform.parent = enemiesFolder;
+                GameObject newEnemy = Instantiate(enemyPrefab[enemyID], SpawnPoints[spawnPointID].position, Quaternion.identity);
                 spawnedEnemy = newEnemy.GetComponent<Enemy>();
                 spawnedEnemy.Init();
             }
@@ -113,5 +118,25 @@ public class EnemySpawner : MonoBehaviour
         enemyTransformDictionary.Remove(enemyToRemove.transform);
         spawnedEnemiesTransform.Remove(enemyToRemove.transform);
         spawnedEnemies.Remove(enemyToRemove);
+    }
+
+    //deactivates all arrows above the spawning portals
+    public void DeactivateAllSpawnIndicators()
+    {
+        for (int i = 0; i < SpawnPoints.Length; i++)
+        {
+            SpawnPoints[i].GetChild(0).gameObject.SetActive(false);
+        }
+        print("deactivated spawn indicators");
+    }
+
+    //toggle indicator above specific spawning portal
+    public void ActivateSpawnIndicators(int[] spawnPoints)
+    {
+        foreach (int id in spawnPoints)
+        {
+            SpawnPoints[id].GetChild(0).gameObject.SetActive(true);
+            print("activated spawn indicator: " + id);
+        }
     }
 }
