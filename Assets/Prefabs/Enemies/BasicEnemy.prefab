@@ -115,7 +115,7 @@ MonoBehaviour:
     minDistance: 0
     maxDistance: 8
     playOnAwake: 0
-    frequentSound: 1
+    frequentSound: 0
     mute: 0
     showHiddenValues: 0
     audioMixer: {fileID: 0}
