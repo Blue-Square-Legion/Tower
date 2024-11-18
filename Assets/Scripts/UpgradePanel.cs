@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static TowerTargetting;
 
 public class UpgradePanel : MonoBehaviour
 {
@@ -26,11 +27,13 @@ public class UpgradePanel : MonoBehaviour
     [SerializeField] GameObject upgradeButton;
     [SerializeField] GameObject sellButton;
     [SerializeField] TextMeshProUGUI upgradeDescriptionText;
+    [SerializeField] TextMeshProUGUI upgradeTargetText;
     [SerializeField] GameObject leftArrowButton;
     [SerializeField] GameObject rightArrowButton;
 
     [NonSerialized] public TowerBehavior target;
-    private int currentUpgradeIndex = 0;
+    private int currentTargetIndex = 0;
+    private int targetNum = Enum.GetValues(typeof(TargetType)).Length - 1;
     private int maxUpgradeLevel = 4;
 
     void Start()
@@ -44,12 +47,12 @@ public class UpgradePanel : MonoBehaviour
         upgradePanel.SetActive(isActive);
     }
 
-    public void SetTarget(TowerBehavior target)
+    public void SetTarget(TowerBehavior target, int type)
     {
         this.target = target;
-        currentUpgradeIndex = target.upgradeLevel;
+        currentTargetIndex = type;
         maxUpgradeLevel = target.GetMaxUpgradeLevel();
-        UpdateUpgradeInfo();
+        UpdateTargetInfo();
     }
 
     public void SetUpgradeButton(int price)
@@ -77,13 +80,43 @@ public class UpgradePanel : MonoBehaviour
         upgradeDescriptionText.text = upgradeText;
     }
 
+    public void SetTargetIndex(int t)
+    {
+        currentTargetIndex = t;
+        SetTargetText();
+    }
+
+
+    public void SetTargetText()
+    {
+
+        switch (currentTargetIndex)
+        {
+            case 0:
+                upgradeTargetText.GetComponentInChildren<TextMeshProUGUI>().text = "First";
+                break;
+            case 1:
+                upgradeTargetText.GetComponentInChildren<TextMeshProUGUI>().text = "Last";
+                break;
+            case 2:
+                upgradeTargetText.GetComponentInChildren<TextMeshProUGUI>().text = "Close";
+                break;
+            case 3:
+                upgradeTargetText.GetComponentInChildren<TextMeshProUGUI>().text = "Furthest";
+                break;
+            default:
+                Debug.Log("Error No Target Type");
+                break;
+
+        }
+
+    }
+
     public void UpgradePressed()
     {
-        if (currentUpgradeIndex == target.upgradeLevel)
-        {
-            target.Upgrade();
-            SetTarget(target);
-        }
+
+           target.Upgrade();
+        
     }
 
     public void SellPressed()
@@ -97,36 +130,41 @@ public class UpgradePanel : MonoBehaviour
 
     public void OnLeftArrowClicked()
     {
-        if (currentUpgradeIndex > 0)
+        
+       if (currentTargetIndex > 0)
         {
-            currentUpgradeIndex--;
-            UpdateUpgradeInfo();
+            currentTargetIndex--;
+            UpdateTargetInfo();
+        } 
+        else
+        {
+            currentTargetIndex = targetNum;
+            UpdateTargetInfo();
         }
+
     }
 
     public void OnRightArrowClicked()
     {
-        if (currentUpgradeIndex < maxUpgradeLevel)
+        
+        if (currentTargetIndex < targetNum)
         {
-            currentUpgradeIndex++;
-            UpdateUpgradeInfo();
+            currentTargetIndex++;
+            UpdateTargetInfo();
+        } else
+        {
+            currentTargetIndex = 0;
+            UpdateTargetInfo();
         }
     }
 
-    private void UpdateUpgradeInfo()
+    private void UpdateTargetInfo()
     {
         if (target == null) return;
 
-        string upgradeDescription = target.GetUpgradeDescription(currentUpgradeIndex);
-        SetText(upgradeDescription);
-
-        int upgradeCost = target.GetUpgradeCost(currentUpgradeIndex);
-        SetUpgradeButton(upgradeCost);
-
-
-        ToggleUpgradeButton(currentUpgradeIndex != maxUpgradeLevel);
-
-        ToggleSellButton(currentUpgradeIndex == target.upgradeLevel);
+        SetTargetText();
+        target.SetTargetType(currentTargetIndex);
+        ToggleUpgradeButton(target.upgradeLevel != maxUpgradeLevel);
 
     }
 }
