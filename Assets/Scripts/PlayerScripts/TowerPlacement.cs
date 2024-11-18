@@ -25,6 +25,7 @@ public class TowerPlacement : MonoBehaviour
     public NavMeshSurface surface;
     public NavMeshSurface dummySurface;
     public NavMeshAgent[] agents;
+    [SerializeField] private Transform towersFolder;
     public Transform destination;
     [SerializeField] private LayerMask placementCheckMask;
     [SerializeField] private LayerMask placementColliderMask;
@@ -125,7 +126,11 @@ public class TowerPlacement : MonoBehaviour
         if (player.GetMoney() < tower.GetComponent<TowerBehavior>().cost) return;
 
         if (currentTowerBeingPlaced == null)
+        {
             currentTowerBeingPlaced = Instantiate(tower, Vector3.zero, Quaternion.identity);
+            currentTowerBeingPlaced.transform.parent = towersFolder;
+            UIManager.Instance.ToggleRuneSelection(false);
+        }
     }
     
     public void CancelPlacingTower()

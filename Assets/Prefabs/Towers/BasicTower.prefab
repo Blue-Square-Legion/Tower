@@ -107,6 +107,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 940ec9e5b5aa31d468f7086a2062004e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioData:
+    audioFile: {fileID: 8300000, guid: 572c18b8d23399d45bb3ad10f6ffca11, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    panStereo: 0
+    spatialBlend: 1
+    minDistance: 0
+    maxDistance: 8
+    playOnAwake: 0
+    frequentSound: 0
+    mute: 0
+    showHiddenValues: 0
+    audioMixer: {fileID: 0}
+    bypassEffects: 0
+    bypassListenerEffects: 0
+    bypassReverbZones: 0
+    priority: 128
+    reverbZoneMix: 1
+    dopplerLevel: 1
+    spread: 0
+    ignoeListenerVolume: 0
+    ignoreListenerPause: 0
+    audioRollOffMode: 1
 --- !u!65 &7725279160043233892
 BoxCollider:
   m_ObjectHideFlags: 0
