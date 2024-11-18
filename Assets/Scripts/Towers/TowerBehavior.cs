@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -24,7 +25,7 @@ public class TowerBehavior : MonoBehaviour
     public bool isSelected;
 
     [SerializeField] TowerType towerType;
-
+    [SerializeField] public TowerTargetting.TargetType targetType;
     private IDamageMethod currentDamageMethodClass;
     public Canvas canvas;
     private Text towerLevelText;
@@ -42,7 +43,7 @@ public class TowerBehavior : MonoBehaviour
 
     private void Start()
     {
-
+        targetType = TowerTargetting.TargetType.First;
         towerPlacement = TowerPlacement.Instance;
         upgradePanel = UpgradePanel.Instance;
         player = Player.Instance;
@@ -54,7 +55,7 @@ public class TowerBehavior : MonoBehaviour
 
         buffNames = Enum.GetNames(typeof(GameManager.BuffNames));
         buffNamesCount = Enum.GetNames(typeof(GameManager.BuffNames)).Length;
-
+        
         //InstantiateTowerLevelText();
         currentDamageMethodClass = GetComponent<IDamageMethod>();
 
@@ -637,9 +638,10 @@ public void Tick()
         }
     }
 
+
     public void UpdateUpgradePanel()
     {
-        upgradePanel.SetTarget(this);
+        upgradePanel.SetTarget(this, (int)targetType);
         upgradePanel.SetUpgradeButton(upgradeCost);
         upgradePanel.SetSellButton(sellCost);
         upgradePanel.SetText(upgradeDescription);
@@ -723,6 +725,22 @@ public void Tick()
             }
         }
     };
+
+
+    public void SetTargetType(int typeIndex)
+    {
+        Debug.Log("typeIndex" + typeIndex);
+        if (Enum.IsDefined(typeof(TowerTargetting.TargetType), typeIndex))
+        {
+            targetType = (TowerTargetting.TargetType)typeIndex;
+        }
+        else
+        {
+            Debug.LogError("Invalid target type index: " + typeIndex);
+        }
+    }
+
+
 
     public UpgradeData GetUpgradeData(int level) {
         if (level < 0 || level >= upgradeDataMap[towerType].Count)

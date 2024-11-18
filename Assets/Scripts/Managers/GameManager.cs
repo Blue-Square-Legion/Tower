@@ -287,7 +287,7 @@ public class GameManager : MonoBehaviour
             //Tick Towers
             foreach (TowerBehavior tower in builtTowers)
             {
-                tower.target = TowerTargetting.GetTarget(tower, TowerTargetting.TargetType.First);
+                tower.target = TowerTargetting.GetTarget(tower, tower.targetType);
                 tower.Tick();
             }
 
