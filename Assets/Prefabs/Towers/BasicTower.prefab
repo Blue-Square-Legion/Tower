@@ -95,6 +95,8 @@ MonoBehaviour:
   cost: 100
   isSelected: 0
   towerType: 0
+  canvas: {fileID: 0}
+  upgradeLevel: 0
 --- !u!114 &3569067476125886872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioData:
-    audioFile: {fileID: 8300000, guid: 572c18b8d23399d45bb3ad10f6ffca11, type: 3}
+    audioFile: {fileID: 8300000, guid: 8b44fc27f7ff8d74489c9b497ad11344, type: 3}
     volume: 1
     pitch: 1
     loop: 0
