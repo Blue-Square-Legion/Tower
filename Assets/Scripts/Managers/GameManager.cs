@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Collections;
 using Unity.Jobs;
 using UnityEngine;
@@ -39,7 +40,7 @@ public class GameManager : MonoBehaviour
     [NonSerialized] public List<TowerBehavior> builtTowers;
     [NonSerialized] public Vector3[] nodePositions;
     [NonSerialized] public float[] nodeDistances;
-
+    [SerializeField] TextMeshProUGUI waveText;
     [SerializeField] Player player;
 
     EnemySpawner enemySpawner;
@@ -93,8 +94,10 @@ public class GameManager : MonoBehaviour
         waveActive = true;
         StartCoroutine(Wave(currentWave));
         currentWave++;
+        UpdateWaveText();
         endOfWave = true;
     }
+
 
     //Add new waves here
 
@@ -225,6 +228,14 @@ public class GameManager : MonoBehaviour
                 currentWave = 0;
                 StartCoroutine(Wave(currentWave));
                 break;
+        }
+    }
+
+    private void UpdateWaveText()
+    {
+        if (waveText != null)
+        {
+            waveText.text = "Wave " + currentWave;
         }
     }
 
