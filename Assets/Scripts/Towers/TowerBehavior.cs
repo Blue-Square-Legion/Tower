@@ -4,7 +4,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using static Cinemachine.DocumentationSortingAttribute;
 
 public class TowerBehavior : MonoBehaviour
 {
