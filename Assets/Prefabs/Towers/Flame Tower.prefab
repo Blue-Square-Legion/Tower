@@ -96,6 +96,9 @@ MonoBehaviour:
   cost: 300
   isSelected: 0
   towerType: 1
+  targetType: 0
+  canvas: {fileID: 0}
+  upgradeLevel: 0
 --- !u!114 &8336197607123604105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,7 +114,7 @@ MonoBehaviour:
   fireTrigger: {fileID: 2540949700943196168}
   fireEffect: {fileID: 1233820531322975745}
   audioData:
-    audioFile: {fileID: 8300000, guid: ff0a474b69cf2aa4181e77b90f932447, type: 3}
+    audioFile: {fileID: 8300000, guid: 3cbec9f7d9f6a2748b543cc7fe0c5f70, type: 3}
     volume: 1
     pitch: 1
     loop: 1
