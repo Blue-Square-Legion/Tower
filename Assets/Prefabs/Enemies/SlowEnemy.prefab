@@ -6982,9 +6982,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 32
-  moneyToPlayer: 20
+  moneyToPlayer: 12
   currentHealth: 0
-  speed: 0.5
+  speed: 3
   damageResistance: 2
   ID: 0
   nodeIndex: 0
