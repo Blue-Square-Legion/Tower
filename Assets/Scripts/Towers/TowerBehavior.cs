@@ -22,8 +22,9 @@ public class TowerBehavior : MonoBehaviour
     private TowerPlacement towerPlacement;
     Camera cam;
     public bool isSelected;
+    private bool isStunned;
 
-    [SerializeField] TowerType towerType;
+    [SerializeField] public TowerType towerType;
     [SerializeField] public TowerTargetting.TargetType targetType;
     private IDamageMethod currentDamageMethodClass;
     public Canvas canvas;
@@ -48,6 +49,7 @@ public class TowerBehavior : MonoBehaviour
         player = Player.Instance;
         cam = towerPlacement.cam;
         isSelected = true;
+        isStunned = false;
         lastSelectedTower = null;
         activeBuffs = new();
         appliedBuffs = new();
@@ -141,9 +143,10 @@ public class TowerBehavior : MonoBehaviour
 //Desyncs the towers from regular game loop to prevent errors
 public void Tick()
     {
-        currentDamageMethodClass.damageTick(target); 
+        if (!isStunned)
+            currentDamageMethodClass.damageTick(target);
         
-        if (target != null)
+        if (target && !isStunned)
         {
             // Calculate the direction to the target
             Vector3 direction = target.transform.position - transform.position;
@@ -215,7 +218,33 @@ public void Tick()
         {
             upgradePanel.SetUpgradePanel(lastSelectedTower.transform.Find("Range").gameObject.activeInHierarchy);
             UpdateUpgradePanel();
+            UIManager.Instance.UpdateUpgradeScreen(this);
             lastSelectedTower = null;
+        }
+    }
+
+    public void TickBuffs()
+    {
+        int activeBuffsCount = activeBuffs.Count;
+        for (int i = 0; i < activeBuffsCount; i++)
+        {
+            if (activeBuffs[i] != null && activeBuffs[i].duration != -123) //Iterates through all buffs that do not have a duration of -123
+            {
+                if (activeBuffs[i].duration > 0f)
+                {
+                    if (activeBuffs[i].buffName == GameManager.BuffNames.Stun) //If stun "buff" duration is greater than 0, keep the tower stunned
+                    {
+                        isStunned = true;
+                        activeBuffs[i].duration -= Time.deltaTime;
+                    }
+                }
+                else
+                {
+                    if (activeBuffs[i].buffName == GameManager.BuffNames.Stun) //Unstun tower when stun buff is over
+                        isStunned = false;
+                }
+                activeBuffs.RemoveAll(x => x.duration <= 0 && x.duration != -123); //Removes all active buffs that do not have a duration of -123 and a duration lower than 0
+            }
         }
     }
 
@@ -647,6 +676,11 @@ public void Tick()
         upgradePanel.ToggleUpgradeButton(upgradeLevel != 5);
     }
 
+    public void UpdateAllUpgradesScreen()
+    {
+
+    }
+
     public struct UpgradeData
     {
         public string description;
@@ -752,12 +786,10 @@ public void Tick()
     public int GetMaxUpgradeLevel() { 
 
         return upgradeDataMap[towerType].Count - 1;
-
     }
     public string GetUpgradeDescription(int level) { 
 
         return GetUpgradeData(level).description; 
-
     }
     public int GetUpgradeCost(int level) { 
 
