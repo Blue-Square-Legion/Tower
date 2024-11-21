@@ -540,9 +540,12 @@ MonoBehaviour:
   damage: 0
   fireRate: 0.5
   range: 6
-  cost: 250
+  cost: 170
   isSelected: 0
   towerType: 4
+  targetType: 0
+  canvas: {fileID: 0}
+  upgradeLevel: 0
 --- !u!114 &7798354543586379515
 MonoBehaviour:
   m_ObjectHideFlags: 0

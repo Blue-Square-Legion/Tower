@@ -91,10 +91,11 @@ MonoBehaviour:
     m_Bits: 64
   damage: 1
   fireRate: 2
-  range: 4
+  range: 2
   cost: 100
   isSelected: 0
   towerType: 0
+  targetType: 0
   canvas: {fileID: 0}
   upgradeLevel: 0
 --- !u!114 &3569067476125886872
