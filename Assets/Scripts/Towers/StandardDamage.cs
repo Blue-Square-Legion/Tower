@@ -1,3 +1,4 @@
+using AudioSystem;
 using UnityEngine;
 
 public interface IDamageMethod
@@ -9,6 +10,7 @@ public interface IDamageMethod
 public class StandardDamage : MonoBehaviour, IDamageMethod
 {
     GameManager gameManager;
+    [SerializeField] AudioData audioData;
     private float damage;
     private float fireRate;
     private float delay;
@@ -38,6 +40,11 @@ public class StandardDamage : MonoBehaviour, IDamageMethod
                 delay -= Time.deltaTime;
                 return;
             }
+            
+            AudioManager.Instance.CreateAudio()
+                .WithAudioData(audioData)
+                .WithPosition(gameObject.transform.position)
+                .Play();
 
             gameManager.EnqueueDamageData(new GameManager.EnemyDamageData(target, damage, target.damageResistance));
 

@@ -62,19 +62,6 @@ public class TowerTargetting
             case TargetType.Furthest:
                 enemySearchJob.compareValue = Mathf.NegativeInfinity;
                 break;
-            /**
-            case 0: //First
-            case 2: //Close
-                enemySearchJob.compareValue = Mathf.Infinity;
-                break;
-            case 1: //Last
-            case 3: //Furthest
-                enemySearchJob.compareValue = Mathf.NegativeInfinity;
-                break;
-            default:
-                Debug.Log("ERROR: FAILED TO RECOGNIZE TARGETTING TYPE");
-                break;
-            */
         }
 
         JobHandle dependency = new JobHandle();

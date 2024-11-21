@@ -25,6 +25,7 @@ public class TowerPlacement : MonoBehaviour
     public NavMeshSurface surface;
     public NavMeshSurface dummySurface;
     public NavMeshAgent[] agents;
+    [SerializeField] private Transform towersFolder;
     public Transform destination;
     [SerializeField] private LayerMask placementCheckMask;
     [SerializeField] private LayerMask placementColliderMask;
@@ -32,7 +33,8 @@ public class TowerPlacement : MonoBehaviour
     private bool canPlace;
     private Player player;
     private bool pathBlocked;
-
+    Color redColor = Color.red;
+    Color blueColor = Color.blue;
     GameManager gameManager;
     void Start()
     {
@@ -63,15 +65,13 @@ public class TowerPlacement : MonoBehaviour
                 CancelPlacingTower();
                 return;
             }
-
-            //Checks if the tower can be placed
-
-            //If left mouse button is down and mouse is pointing to a valid object
-            if (Input.GetMouseButtonDown(0) && hitInfo.collider.gameObject != null)
+            Transform rangeObject = currentTowerBeingPlaced.transform.Find("Range");
+            Renderer renderer = rangeObject.GetComponent<Renderer>();
+            if (hitInfo.collider.gameObject != null)
             {
-                //If the surface is buildable
                 if (!hitInfo.collider.gameObject.CompareTag("NotBuildable"))
                 {
+
                     BoxCollider towerCollider = currentTowerBeingPlaced.gameObject.GetComponent<BoxCollider>();
                     towerCollider.isTrigger = true;
 
@@ -81,36 +81,55 @@ public class TowerPlacement : MonoBehaviour
                     //Checks if the tower is too close to a different tower or structure
                     if (!Physics.CheckBox(boxCenter, halfExtends, Quaternion.identity, placementCheckMask, QueryTriggerInteraction.Ignore))
                     {
-                        dummySurface.BuildNavMesh();
-                        CheckPath();
-                        // Build if path wont be blocked
-                        if (!pathBlocked)
+                        renderer.material.SetColor("_BaseColor", blueColor);
+                        if (Input.GetMouseButtonDown(0) && hitInfo.collider.gameObject != null)
                         {
-                            if (canPlace)
+                            dummySurface.BuildNavMesh();
+                            CheckPath();
+                            // Build if path wont be blocked
+                            if (!pathBlocked)
                             {
-                                surface.BuildNavMesh();
-                                gameManager.builtTowers.Add(currentTowerBeingPlaced.GetComponent<TowerBehavior>());
-                                player.RemoveMoney(currentTowerBeingPlaced.GetComponent<TowerBehavior>().cost);
-                                towerCollider.isTrigger = false;
-                                currentTowerBeingPlaced = null;
+                                if (canPlace)
+                                {
+                                    surface.BuildNavMesh();
+                                    gameManager.builtTowers.Add(currentTowerBeingPlaced.GetComponent<TowerBehavior>());
+                                    player.RemoveMoney(currentTowerBeingPlaced.GetComponent<TowerBehavior>().cost);
+                                    towerCollider.isTrigger = false;
+                                    towerCollider.providesContacts = true;
+
+                                    if (currentTowerBeingPlaced.TryGetComponent<SupportBehavior>(out SupportBehavior supportBehavior))
+                                        supportBehavior.Built();
+
+                                    currentTowerBeingPlaced = null;
+                                    UIManager.Instance.ToggleDeselect(false);
+                                }
+                                else
+                                {
+                                    Destroy(currentTowerBeingPlaced);
+                                    UIManager.Instance.SendPopUp("Tower cannot be placed here");
+                                    UIManager.Instance.ToggleDeselect(false);
+                                }
+                            }
+                            else
+                            {
+                                towerCollider.isTrigger = true;
+                                Destroy(currentTowerBeingPlaced);
+                                UIManager.Instance.SendPopUp("Placing the tower here will block all enemy paths");
                                 UIManager.Instance.ToggleDeselect(false);
                             }
-                        } else
-                        {
-                            towerCollider.isTrigger = true;
-                            Destroy(currentTowerBeingPlaced);
-                            UIManager.Instance.SendPopUp("Placing the tower here will block all enemy paths");
-                            UIManager.Instance.ToggleDeselect(false);
+
                         }
+                    }
+                    else
+                    {
+                        renderer.material.SetColor("_BaseColor", redColor);
                     }
                 }
                 else
                 {
-                    Destroy(currentTowerBeingPlaced);
-                    UIManager.Instance.SendPopUp("Tower cannot be placed here");
-                    UIManager.Instance.ToggleDeselect(false);
+                    renderer.material.SetColor("_BaseColor", redColor);
                 }
-            } 
+            }
         }
     }
 
@@ -120,9 +139,13 @@ public class TowerPlacement : MonoBehaviour
         if (player.GetMoney() < tower.GetComponent<TowerBehavior>().cost) return;
 
         if (currentTowerBeingPlaced == null)
+        {
             currentTowerBeingPlaced = Instantiate(tower, Vector3.zero, Quaternion.identity);
+            currentTowerBeingPlaced.transform.parent = towersFolder;
+            UIManager.Instance.ToggleRuneSelection(false);
+        }
     }
-    
+
     public void CancelPlacingTower()
     {
         if (currentTowerBeingPlaced != null)
@@ -146,8 +169,7 @@ public class TowerPlacement : MonoBehaviour
     {
         UpgradePanel.Instance.SetUpgradePanel(false);
         player.GiveMoney(tower.GetComponent<TowerBehavior>().sellCost);
-        gameManager.builtTowers.Remove(tower.GetComponent<TowerBehavior>());
-        Destroy(tower);
+        gameManager.EnqueueTowerToRemove(tower.GetComponent<TowerBehavior>());
         GameManager.Instance.SelectedTower = null;
         dummySurface.BuildNavMesh();
         surface.BuildNavMesh();
@@ -165,7 +187,7 @@ public class TowerPlacement : MonoBehaviour
                 pathBlocked = true;
                 return;
             }
-                  
+
         }
         pathBlocked = false; ;
     }

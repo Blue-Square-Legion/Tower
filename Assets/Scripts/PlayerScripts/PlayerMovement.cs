@@ -6,11 +6,14 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 playerMovementInput;
     private Vector2 playerMouseInput;
     private float xRot;
+    private float yRot;
 
     [SerializeField] private Transform playerCamera;
     [SerializeField] private CharacterController characterController;
     [SerializeField] private float speed;
     [SerializeField] private float sensitivity;
+    [SerializeField] private float maxVerticalRange;
+    private float verticalRotation;
 
     private void Update()
     {
@@ -43,9 +46,21 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetMouseButton(1))
         {
-            xRot -= playerMouseInput.y * sensitivity;
-            transform.Rotate(0f, playerMouseInput.x * sensitivity, 0f);
-            playerCamera.transform.localRotation = Quaternion.Euler(xRot, 0f, 0f);
+            Cursor.lockState = CursorLockMode.Locked;
+            //Rotates the camera left and right
+            float xRotation = playerMouseInput.x * sensitivity * Time.deltaTime * 60;
+            transform.Rotate(0, xRotation, 0);
+
+            //Rotates the camera Up and Down
+            verticalRotation -= playerMouseInput.y * sensitivity * Time.deltaTime * 60;
+
+            //Clamps the rotation within the range
+            verticalRotation = Mathf.Clamp(verticalRotation, -maxVerticalRange, maxVerticalRange);
+
+            //Applies the vertical rotation
+            playerCamera.transform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
         }
+        else
+            Cursor.lockState = CursorLockMode.None;
     }
 }
