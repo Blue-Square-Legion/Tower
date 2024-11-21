@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
@@ -32,6 +33,9 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] public GameObject runeSelection;
     [SerializeField] GameObject towerSelection;
+
+    [SerializeField] private GameObject upgradeScreen;
+    [SerializeField] private TextMeshProUGUI upgrade1, upgrade2, upgrade3, upgrade4;
 
     private void Start()
     {
@@ -116,5 +120,23 @@ public class UIManager : MonoBehaviour
     public void ToggleTowerSelection(bool isActive)
     {
         towerSelection.SetActive(isActive);
+    }
+
+    public void UpdateUpgradeScreen(TowerBehavior towerType)
+    {
+        upgrade1.text = "Level 2\n" + towerType.GetUpgradeDescription(0);
+        upgrade2.text = "Level 3\n" + towerType.GetUpgradeDescription(1);
+        upgrade3.text = "Level 4\n" + towerType.GetUpgradeDescription(2);
+        upgrade4.text = "Level 5\n" + towerType.GetUpgradeDescription(3);
+    }
+
+    public void ShowAllUpgrades()
+    {
+        upgradeScreen.SetActive(true);
+    }
+
+    public void HideAllUpgrades()
+    {
+        upgradeScreen.SetActive(false);
     }
 }
