@@ -302,6 +302,13 @@ public class GameManager : MonoBehaviour
                 tower.Tick();
             }
 
+            //Tick Tower Buffs
+            foreach (TowerBehavior tower in builtTowers)
+            {
+                tower.target = TowerTargetting.GetTarget(tower, tower.targetType);
+                tower.TickBuffs();
+            }
+
             //Apply Effects
             if (effectQueue.Count > 0)
             {
@@ -539,6 +546,7 @@ public class GameManager : MonoBehaviour
     {
         SupportBonusRange,
         SupportBonusDamage,
-        SupportBonusAttackSpeed
+        SupportBonusAttackSpeed,
+        Stun
     }
 }
