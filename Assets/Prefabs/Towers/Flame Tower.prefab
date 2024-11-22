@@ -90,10 +90,10 @@ MonoBehaviour:
   enemiesLayer:
     serializedVersion: 2
     m_Bits: 64
-  damage: 0.1
+  damage: 2
   fireRate: 5
   range: 2
-  cost: 300
+  cost: 110
   isSelected: 0
   towerType: 1
   targetType: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
     bypassListenerEffects: 0
     bypassReverbZones: 0
     priority: 128
-    reverbZoneMix: 1
+    reverbZoneMix: 0.76
     dopplerLevel: 1
     spread: 0
     ignoeListenerVolume: 0

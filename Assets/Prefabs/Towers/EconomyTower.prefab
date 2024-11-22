@@ -92,9 +92,12 @@ MonoBehaviour:
   damage: 0
   fireRate: 0
   range: 0
-  cost: 150
+  cost: 130
   isSelected: 0
   towerType: 3
+  targetType: 0
+  canvas: {fileID: 0}
+  upgradeLevel: 0
 --- !u!65 &2257491692670457906
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -128,6 +131,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 940ec9e5b5aa31d468f7086a2062004e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioData:
+    audioFile: {fileID: 0}
+    volume: 1
+    pitch: 1
+    loop: 0
+    panStereo: 0
+    spatialBlend: 0
+    minDistance: 0
+    maxDistance: 0
+    playOnAwake: 0
+    frequentSound: 0
+    mute: 0
+    showHiddenValues: 0
+    audioMixer: {fileID: 0}
+    bypassEffects: 0
+    bypassListenerEffects: 0
+    bypassReverbZones: 0
+    priority: 128
+    reverbZoneMix: 1
+    dopplerLevel: 1
+    spread: 0
+    ignoeListenerVolume: 0
+    ignoreListenerPause: 0
+    audioRollOffMode: 1
 --- !u!114 &-4824812572669455108
 MonoBehaviour:
   m_ObjectHideFlags: 0
