@@ -37,6 +37,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject upgradeScreen;
     [SerializeField] private TextMeshProUGUI upgrade1, upgrade2, upgrade3, upgrade4;
 
+    [SerializeField] TMP_Text autoStartText;
+
     private void Start()
     {
         if (gameOverScreen != null)
@@ -138,5 +140,10 @@ public class UIManager : MonoBehaviour
     public void HideAllUpgrades()
     {
         upgradeScreen.SetActive(false);
+    }
+
+    public void updateAutoStartText(string text)
+    {
+        autoStartText.text = text;
     }
 }

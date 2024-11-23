@@ -43,8 +43,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI waveText;
     [SerializeField] Player player;
 
+    public bool autoStart;
+
     EnemySpawner enemySpawner;
-    private bool waveActive = false;
+    private bool waveActive;
     private bool endOfWave;
     int currentWave;
     int[] nextSpawnPoints;
@@ -55,7 +57,7 @@ public class GameManager : MonoBehaviour
     {
         enemySpawner = EnemySpawner.Instance;
         endLoop = false;
-        endOfWave = false;
+        endOfWave = true;
         enemyQueueToSpawn = new();
         enemyQueueToRemove = new();
         towerQueueToRemove = new();
@@ -66,6 +68,10 @@ public class GameManager : MonoBehaviour
         builtTowers = new List<TowerBehavior>();
         enemySpawner.Init();
         nextSpawnPoints = new int[] {0};
+        autoStart = false;
+        waveActive = false;
+
+        UIManager.Instance.updateAutoStartText("Auto-start:\n" + autoStart);
 
         int numOfNodes = nodeParent.childCount;
         nodePositions = new Vector3[numOfNodes];
@@ -90,7 +96,11 @@ public class GameManager : MonoBehaviour
 
     public void EnqueueWave()
     {
-        if (waveActive) return;
+        if (waveActive)
+        {
+            print("there is already an active wave");
+            return;
+        }
         waveActive = true;
         StartCoroutine(Wave(currentWave));
         currentWave++;
@@ -366,6 +376,7 @@ public class GameManager : MonoBehaviour
                 }
             }
 
+            //all enemies defeated
             if (enemySpawner.spawnedEnemies.Count == 0 && endOfWave)
             {
                 waveActive = false;
@@ -375,6 +386,17 @@ public class GameManager : MonoBehaviour
                 print(nextSpawnPoints[0]);
                 WaveBonus(currentWave);
                 endOfWave = false;
+
+                //auto start next wave if enabled
+                if (autoStart)
+                {
+                    waveActive = true;
+                    StartCoroutine(Wave(currentWave));
+                    currentWave++;
+                    UpdateWaveText();
+                    endOfWave = true;
+                }
+
             }
 
             //Apply Buffs
@@ -548,5 +570,21 @@ public class GameManager : MonoBehaviour
         SupportBonusDamage,
         SupportBonusAttackSpeed,
         Stun
+    }
+
+    public void ToggleAutoStart()
+    {
+        autoStart = !autoStart;
+        UIManager.Instance.updateAutoStartText("Auto-start:\n"+ autoStart);
+        if (!autoStart) return;
+        if (enemySpawner.spawnedEnemies.Count == 0 && !waveActive)
+        {
+            waveActive = true;
+            StartCoroutine(Wave(currentWave));
+            currentWave++;
+            UpdateWaveText();
+            endOfWave = true;
+        }
+
     }
 }
