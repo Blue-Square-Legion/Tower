@@ -42,11 +42,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthText.SetText("Health: " + currentHealth.ToString());
-        moneyText.SetText("Money: " + money.ToString());
+        healthText.SetText(currentHealth.ToString());
+        moneyText.SetText(money.ToString());
         if (GameManager.Instance.waveActive && currentMana < maxMana)
             currentMana += 4 * Time.deltaTime;
-        manaText.text = "Mana: " + currentMana.ToString("0");
+        manaText.text = currentMana.ToString("0");
     }
 
     public void DoDamage(int damage)
