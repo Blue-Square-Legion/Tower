@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
     public bool autoStart;
 
     EnemySpawner enemySpawner;
-    private bool waveActive;
+    public bool waveActive;
     private bool endOfWave;
     int currentWave;
     int[] nextSpawnPoints;
