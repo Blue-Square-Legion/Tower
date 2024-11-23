@@ -99,6 +99,10 @@ public class TowerBehavior : MonoBehaviour
                 upgradeCost = 100;
                 upgradeDescription = "Command\nFurther Boosts Attack Range of nearby towers";
                 break;
+            case TowerType.Spikes:
+                upgradeCost = 100;
+                upgradeDescription = "Command\nSpikes deals damage";
+                break;
         }
         sellCost = cost / 2;
     }
@@ -804,6 +808,7 @@ public void Tick()
         Bomb,
         Economy,
         Ice,
-        Support
+        Support,
+        Spikes
     }
 }
