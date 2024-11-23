@@ -38,6 +38,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI upgrade1, upgrade2, upgrade3, upgrade4;
 
     [SerializeField] TMP_Text autoStartText;
+    [SerializeField] TMP_Text showPathsText;
 
     private void Start()
     {
@@ -142,8 +143,13 @@ public class UIManager : MonoBehaviour
         upgradeScreen.SetActive(false);
     }
 
-    public void updateAutoStartText(string text)
+    public void UpdateAutoStartText(string text)
     {
         autoStartText.text = text;
+    }
+
+    public void UpdateShowPathsText(string text)
+    {
+        showPathsText.text = text;
     }
 }

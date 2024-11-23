@@ -16,13 +16,21 @@ public class DrawPath : MonoBehaviour
         line.startWidth = 0.15f;
         line.endWidth = 0.15f;
         line.positionCount = 0;
-        DrawAgentPath();
     }
 
     private void Update()
     {
+        if (!GameManager.Instance.showPaths)
+        {
+            line.enabled = false;
+            return;
+        }
+        
         if (agent.path.status == NavMeshPathStatus.PathComplete)
+        {
+            line.enabled = true;
             DrawAgentPath();
+        }   
     }
 
     public void DrawAgentPath()

@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
     int[] nextSpawnPoints;
     public GameObject SelectedTower;
     public int farmBonus;
+    public bool showPaths;
 
     void Start()
     {
@@ -70,8 +71,9 @@ public class GameManager : MonoBehaviour
         nextSpawnPoints = new int[] {0};
         autoStart = false;
         waveActive = false;
+        showPaths = false;
 
-        UIManager.Instance.updateAutoStartText("Auto-start:\n" + autoStart);
+        UIManager.Instance.UpdateAutoStartText("Auto-start:\n" + autoStart);
 
         int numOfNodes = nodeParent.childCount;
         nodePositions = new Vector3[numOfNodes];
@@ -575,7 +577,7 @@ public class GameManager : MonoBehaviour
     public void ToggleAutoStart()
     {
         autoStart = !autoStart;
-        UIManager.Instance.updateAutoStartText("Auto-start:\n"+ autoStart);
+        UIManager.Instance.UpdateAutoStartText("Auto-start:\n"+ autoStart);
         if (!autoStart) return;
         if (enemySpawner.spawnedEnemies.Count == 0 && !waveActive)
         {
@@ -586,5 +588,11 @@ public class GameManager : MonoBehaviour
             endOfWave = true;
         }
 
+    }
+
+    public void ToggleShowPaths()
+    {
+        showPaths = !showPaths;
+        UIManager.Instance.UpdateShowPathsText("Show paths:\n" + showPaths);
     }
 }
