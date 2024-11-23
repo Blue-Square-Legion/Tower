@@ -10,7 +10,11 @@ public class RunePlacement : MonoBehaviour
     public float castRange = 10f; 
     private GameObject currentPreview;
     private bool isCasting = false;
-    private SkillType selectedSkill = SkillType.Meteor; 
+    private SkillType selectedSkill = SkillType.Meteor;
+
+    public float meteorCost = 100;
+    public float lightningCost = 50;
+    public float confusionCost = 50;
 
     private float meteorCooldown = 5f;
     private float lightningCooldown = 7f;
@@ -34,6 +38,20 @@ public class RunePlacement : MonoBehaviour
 
     void Update()
     {
+
+        //disable casting and cooldown regen if no wave is active
+        if (!GameManager.Instance.waveActive)
+        {
+            isCasting = false;
+            if (currentPreview != null)
+            {
+                Destroy(currentPreview);
+            }
+            UIManager.Instance.ToggleDeselect(false);
+
+            return;
+        }
+
         // Handle input for starting skill casting
         if (UIManager.Instance.runeSelection.activeInHierarchy)
         {
@@ -50,6 +68,7 @@ public class RunePlacement : MonoBehaviour
                 SelectSkill(SkillType.Confusion);
             }
         }
+
 
         // Handle skill cooldowns
         if (meteorCooldownTimer > 0f)
@@ -135,16 +154,16 @@ public class RunePlacement : MonoBehaviour
             switch (selectedSkill)
             {
                 case SkillType.Meteor:
-                    CastMeteor(castPosition);
-                    meteorCooldownTimer = meteorCooldown;
+                    if (CastMeteor(castPosition)) 
+                        meteorCooldownTimer = meteorCooldown;
                     break;
                 case SkillType.Lightning:
-                    CastLightning(castPosition);
-                    lightningCooldownTimer = lightningCooldown;
+                    if (CastLightning(castPosition))
+                        lightningCooldownTimer = lightningCooldown;
                     break;
                 case SkillType.Confusion:
-                    CastConfusion(castPosition);
-                    confusionCooldownTimer = confusionCooldown;
+                    if (CastConfusion(castPosition))
+                        confusionCooldownTimer = confusionCooldown;
                     break;
             }
 
@@ -157,28 +176,35 @@ public class RunePlacement : MonoBehaviour
         }
     }
 
-    void CastMeteor(Vector3 castPosition)
+    bool CastMeteor(Vector3 castPosition)
     {
+        if (!Player.Instance.CheckAndUseMana(meteorCost)) return false;
         GameObject meteor = Instantiate(meteorPrefab, currentPreview.transform.position, Quaternion.identity);
 
         Meteor meteorScript = meteor.GetComponent<Meteor>();
         meteorScript.targetPosition = castPosition;
+        return true;
     }
 
-    void CastLightning(Vector3 castPosition)
+    bool CastLightning(Vector3 castPosition)
     {
+        if (!Player.Instance.CheckAndUseMana(lightningCost)) return false;
         GameObject lightning = Instantiate(lightningPrefab, currentPreview.transform.position, Quaternion.identity);
 
         Lightning lightningScript = lightning.GetComponent<Lightning>();
         lightningScript.targetPosition = castPosition;
+        return true;
     }
 
-    void CastConfusion(Vector3 castPosition)
+    bool CastConfusion(Vector3 castPosition)
     {
+        if (!Player.Instance.CheckAndUseMana(confusionCost)) return false;
+
         GameObject confusion = Instantiate(confusionPrefab, currentPreview.transform.position, Quaternion.identity);
 
         Confusion confusionScript = confusion.GetComponent<Confusion>();
         confusionScript.targetPosition = castPosition;
+        return true;
     }
 
     void SelectSkill(SkillType skillType)

@@ -23,8 +23,11 @@ public class Player : MonoBehaviour
 
     [SerializeField] TMP_Text healthText;
     [SerializeField] TMP_Text moneyText;
+    [SerializeField] TMP_Text manaText;
     [SerializeField] int maxHealth;
+    [SerializeField] float maxMana;
     [SerializeField] int startingMoney;
+    private float currentMana;
     private int currentHealth;
     private int money;
 
@@ -32,6 +35,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        currentMana = maxMana;
         money = startingMoney;
     }
 
@@ -40,6 +44,9 @@ public class Player : MonoBehaviour
     {
         healthText.SetText("Health: " + currentHealth.ToString());
         moneyText.SetText("Money: " + money.ToString());
+        if (GameManager.Instance.waveActive && currentMana < maxMana)
+            currentMana += 4 * Time.deltaTime;
+        manaText.text = "Mana: " + currentMana.ToString("0");
     }
 
     public void DoDamage(int damage)
@@ -65,5 +72,20 @@ public class Player : MonoBehaviour
     public void RemoveMoney(int amount)
     {
         money -= amount;
+    }
+
+    //deduct mana if enough, else return false
+    public bool CheckAndUseMana(float cost)
+    {
+        if (cost > currentMana)
+        {
+            print("not enough mana");
+            return false;
+        }
+        else
+        {
+            currentMana -= cost;
+            return true;
+        }
     }
 }
