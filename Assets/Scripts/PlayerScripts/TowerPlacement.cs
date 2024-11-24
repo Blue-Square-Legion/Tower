@@ -181,7 +181,7 @@ public class TowerPlacement : MonoBehaviour
     private void CheckPath()
     {
         NavMeshPath path = new NavMeshPath();
-        dummySurface.BuildNavMesh();
+        //dummySurface.BuildNavMesh();
         foreach (NavMeshAgent agent in agents)
         {
             agent.CalculatePath(destination.position, path);
