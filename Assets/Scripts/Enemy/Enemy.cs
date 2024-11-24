@@ -42,7 +42,6 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        Debug.Log(damage);
         currentHealth -= damage;
         gameObject.GetComponentInChildren<HealthBar>().UpdateHealth((int) currentHealth);
         if (currentHealth <= 0)

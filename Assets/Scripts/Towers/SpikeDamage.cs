@@ -13,7 +13,6 @@ public class SpikeDamage : MonoBehaviour, IDamageMethod
 
     public void Init(float damage, float fireRate)
     {
-        Debug.Log("init");
         gameManager = GameManager.Instance;
         this.damage = damage;
         this.fireRate = fireRate;
@@ -21,13 +20,11 @@ public class SpikeDamage : MonoBehaviour, IDamageMethod
     }
     public void UpdateDamage(float damage)
     {
-        Debug.Log("update");
         this.damage = damage;
     }
 
     public void UpdateFireRate(float fireRate)
     {
-        Debug.Log("updatefr");
         this.fireRate = fireRate;
     }
 
@@ -36,18 +33,28 @@ public class SpikeDamage : MonoBehaviour, IDamageMethod
         
         if (target)
         {
-
             if (delay > 0)
             {
-                delay -= Time.deltaTim se;
+                delay -= Time.deltaTime;
                 return;
             }
 
-            target.TakeDamage(damage);
-
-            gameManager.EnqueueDamageData(new GameManager.EnemyDamageData(target, damage, target.damageResistance));
+            DealDamage();
 
             delay = 1 / fireRate;
+        }
+
+        void DealDamage()
+        {
+            Collider[] enemies = Physics.OverlapSphere(transform.position, 2f);
+
+            foreach (Collider enemy in enemies)
+            {
+                if (enemy.CompareTag("Enemy"))
+                {
+                    enemy.GetComponent<Enemy>().TakeDamage(damage);
+                }
+            }
         }
     }
 }

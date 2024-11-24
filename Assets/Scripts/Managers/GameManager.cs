@@ -120,7 +120,7 @@ public class GameManager : MonoBehaviour
                 for (int i = 0; i < 5; i++)
                 {
                     EnqueueEnemy(1,0);
-                    yield return new WaitForSeconds(1);
+                    yield return new WaitForSeconds(0.1f);
                 }
                 nextSpawnPoints = new int[] { 1 };
                 break;

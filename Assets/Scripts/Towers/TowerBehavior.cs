@@ -56,11 +56,11 @@ public class TowerBehavior : MonoBehaviour
 
         buffNames = Enum.GetNames(typeof(GameManager.BuffNames));
         buffNamesCount = Enum.GetNames(typeof(GameManager.BuffNames)).Length;
-        
+
         //InstantiateTowerLevelText();
         currentDamageMethodClass = GetComponent<IDamageMethod>();
 
-        if (currentDamageMethodClass == null )
+        if (currentDamageMethodClass == null)
         {
             Debug.LogError("ERROR: FAILED TO FIND A DAMAGE CLASS ON CURRENT TOWER!");
         }
@@ -73,7 +73,7 @@ public class TowerBehavior : MonoBehaviour
 
         upgradeLevel = 0;
 
-        switch(towerType)
+        switch (towerType)
         {
             case TowerType.Basic:
                 upgradeCost = 50;
@@ -107,49 +107,12 @@ public class TowerBehavior : MonoBehaviour
         sellCost = cost / 2;
     }
 
-    /* 
-     private void InstantiateTowerLevelText()
-    {
-        Debug.Log("InstantiateTowerLevelText method called");
-
-        if (towerLevelTextPrefab == null || canvas == null)
-        {
-            Debug.LogError("towerLevelTextPrefab or canvas is not assigned in the Inspector");
-            return;
-        }
-
-        GameObject towerLevelTextInstance = Instantiate(towerLevelTextPrefab, canvas.transform);
-        Debug.Log("towerLevelTextPrefab instantiated");
-
-        TowerLevelDisplay floatingTextOverlay = towerLevelTextInstance.GetComponent<TowerLevelDisplay>();
-        if (floatingTextOverlay == null)
-        {
-            Debug.LogError("FloatingTextOverlay component not found on the instantiated prefab");
-            return;
-        }
-
-        floatingTextOverlay.target = transform; // Correct field assignment
-        floatingTextOverlay.canvas = canvas; // Ensure the canvas is assigned
-        Debug.Log("floatingTextOverlay.target assigned to " + transform.name);
-
-        towerLevelText = towerLevelTextInstance.GetComponent<Text>();
-        if (towerLevelText == null)
-        {
-            Debug.LogError("Text component not found on the instantiated prefab");
-        }
-        else
-        {
-            Debug.Log("Text component assigned: " + towerLevelText.text);
-        }
-    }
-    */
-
-//Desyncs the towers from regular game loop to prevent errors
-public void Tick()
+    //Desyncs the towers from regular game loop to prevent errors
+    public void Tick()
     {
         if (!isStunned)
             currentDamageMethodClass.damageTick(target);
-        
+
         if (target && !isStunned)
         {
             // Calculate the direction to the target
@@ -202,12 +165,12 @@ public void Tick()
                     {
                         upgradePanel.SetUpgradePanel(false);
                     }
-                }  
+                }
                 else
                 {
                     isSelected = false;
                 }
-                    
+
             }
         }
         else if (Input.GetMouseButtonDown(0))
@@ -215,7 +178,7 @@ public void Tick()
             isSelected = false;
             upgradePanel.SetUpgradePanel(false);
         }
-            
+
         gameObject.transform.Find("Range").gameObject.SetActive(isSelected);
 
         if (lastSelectedTower != null)
@@ -664,7 +627,63 @@ public void Tick()
                             break;
                     }
                     break;
+                case TowerType.Spikes:
+                    switch (upgradeLevel)
+                    {
+                        case 0:
+                            //Do upgrade
+                            damage += 0.1f;
+                            transform.GetComponent<SpikeDamage>().UpdateDamage(damage);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost / 2;
+                            upgradeCost = GetUpgradeCost(upgradeLevel);
+                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
+                            break;
+                        case 1:
+                            //Do upgrade
+                            fireRate += 0.3f;
+                            transform.GetComponent<SpikeDamage>().UpdateFireRate(fireRate);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost / 2;
+                            upgradeCost = GetUpgradeCost(upgradeLevel);
+                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
+                            break;
+                        case 2:
+                            damage += 0.1f;
+                            transform.GetComponent<SpikeDamage>().UpdateDamage(damage);
+                            fireRate += 0.25f;
+                            transform.GetComponent<SpikeDamage>().UpdateFireRate(fireRate);
+                            //Set up for next upgrade
+                            sellCost += upgradeCost / 2;
+                            upgradeCost = 500;
+                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
+                            break;
+                        case 3:
+
+                            //Do upgrade
+                            damage += 0.1f;
+                            transform.GetComponent<SpikeDamage>().UpdateDamage(damage);
+
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost / 2;
+                            upgradeCost = GetUpgradeCost(upgradeLevel);
+                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
+                            break;
+                        case 4:
+                            fireRate += 0.2f;
+                            transform.GetComponent<SpikeDamage>().UpdateFireRate(fireRate);
+
+                            //No more upgrades
+                            sellCost += upgradeCost / 2;
+                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
+                            break;
+                    }
+                    break;
             }
+
             upgradeLevel++;
             UpdateUpgradePanel();
         }
@@ -760,13 +779,22 @@ public void Tick()
                 new UpgradeData("Motivation\nIncreases the effectiveness of this tower's buffs", 1000),
                 new UpgradeData("Max Level", 0)
             }
+        },
+        {
+            TowerType.Spikes, new List<UpgradeData>
+            {
+                new UpgradeData("Bigger Spikes\nIncrease Damage", 100),
+                new UpgradeData("More Spikes\nIncrease damage rate", 150),
+                new UpgradeData("Stronger spikes\nIncrease damage and damages rate", 400),
+                new UpgradeData("More spikes \nIncrease damage rate", 500),
+                new UpgradeData("Max Level", 0)
+            }
         }
     };
 
 
     public void SetTargetType(int typeIndex)
     {
-        Debug.Log("typeIndex" + typeIndex);
         if (Enum.IsDefined(typeof(TowerTargetting.TargetType), typeIndex))
         {
             targetType = (TowerTargetting.TargetType)typeIndex;
@@ -779,25 +807,29 @@ public void Tick()
 
 
 
-    public UpgradeData GetUpgradeData(int level) {
+    public UpgradeData GetUpgradeData(int level)
+    {
         if (level < 0 || level >= upgradeDataMap[towerType].Count)
         {
             return new UpgradeData("Invalid Level", 0);
         }
-        return upgradeDataMap[towerType][level]; 
+        return upgradeDataMap[towerType][level];
     }
 
-    public int GetMaxUpgradeLevel() { 
+    public int GetMaxUpgradeLevel()
+    {
 
         return upgradeDataMap[towerType].Count - 1;
     }
-    public string GetUpgradeDescription(int level) { 
+    public string GetUpgradeDescription(int level)
+    {
 
-        return GetUpgradeData(level).description; 
+        return GetUpgradeData(level).description;
     }
-    public int GetUpgradeCost(int level) { 
+    public int GetUpgradeCost(int level)
+    {
 
-        return GetUpgradeData(level).cost; 
+        return GetUpgradeData(level).cost;
 
     }
 
