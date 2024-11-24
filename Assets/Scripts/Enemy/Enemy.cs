@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
         confusedTimer = 2;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currentHealth -= damage;
         gameObject.GetComponentInChildren<HealthBar>().UpdateHealth((int) currentHealth);

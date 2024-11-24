@@ -77,11 +77,13 @@ public class TowerPlacement : MonoBehaviour
 
                     Vector3 boxCenter = currentTowerBeingPlaced.gameObject.transform.position + towerCollider.center;
                     Vector3 halfExtends = towerCollider.size / 2;
+                    
 
                     //Checks if the tower is too close to a different tower or structure
                     if (!Physics.CheckBox(boxCenter, halfExtends, Quaternion.identity, placementCheckMask, QueryTriggerInteraction.Ignore))
                     {
                         renderer.material.SetColor("_BaseColor", blueColor);
+
                         if (Input.GetMouseButtonDown(0) && hitInfo.collider.gameObject != null)
                         {
                             dummySurface.BuildNavMesh();
@@ -89,6 +91,7 @@ public class TowerPlacement : MonoBehaviour
                             // Build if path wont be blocked
                             if (!pathBlocked)
                             {
+
                                 if (canPlace)
                                 {
                                     surface.BuildNavMesh();
