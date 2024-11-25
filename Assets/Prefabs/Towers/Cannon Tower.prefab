@@ -228,7 +228,7 @@ MonoBehaviour:
     m_Bits: 64
   towerPivot: {fileID: 4788704938437534729}
   audioData:
-    audioFile: {fileID: 8300000, guid: 931a2922b8d544f4791d649de08c4be2, type: 3}
+    audioFile: {fileID: 8300000, guid: 70a4f4ca5533a8648bfb3a1bbfc92ff7, type: 3}
     volume: 1
     pitch: 1
     loop: 0
@@ -385,7 +385,7 @@ Transform:
   m_GameObject: {fileID: 4334387651855956679}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.1, z: 0}
   m_LocalScale: {x: 8, y: 0.0019999999, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -466,7 +466,7 @@ Transform:
   m_GameObject: {fileID: 5138791434313180757}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -498,7 +498,7 @@ Transform:
   m_GameObject: {fileID: 5403487884767320013}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.054, z: 0}
+  m_LocalPosition: {x: 0, y: 0.03, z: 0}
   m_LocalScale: {x: 30, y: 30, z: 30}
   m_ConstrainProportionsScale: 0
   m_Children:

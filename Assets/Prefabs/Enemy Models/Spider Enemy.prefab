@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2199517033008583609}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Back_Right_Toe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 622180727935921096}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Back_Left_Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6514149614012703914}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4990413850045544794}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Front_Left_Pivot_Joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6479169641040012336}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Front_Left_Elbow_Joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,9 +167,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2027317297729986127}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spider Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -200,7 +200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2559425304721123726}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Back_Left_Knee_Joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8477054493158056604}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Back_Right_Elbow_Joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3138370774574960556}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Front_Right_Toe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6403072052200548913}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Back_Right_Toe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +326,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8814187277006504842}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Back_Right_Pivot_Joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8770502701158928277}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,7 +394,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3069076566897543862}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Back_Left_Pivot_Joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 156577775931124665}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Front_Right_Elbow_Joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,7 +459,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4110130716308560611}
   - component: {fileID: 3611590844599989533}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spider_Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -567,7 +567,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2657465875796455581}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -599,7 +599,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 515729685606347174}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Front_Left_Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -631,7 +631,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7829656593941989767}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Front_Right_Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -663,7 +663,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3783549091332096329}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Front_Right_Pivot_Joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -695,7 +695,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4249371960574386875}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -727,7 +727,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7175583666457866774}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Front_Right_Knee_Joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -759,7 +759,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3476607559036372072}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Back_Left_Elbow_Joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -791,7 +791,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8591247584784522820}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Back_Right_Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -823,7 +823,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 981586388689582735}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Front_Left_Toe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -854,7 +854,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8650035769149635569}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Front_Left_Knee_Joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -886,7 +886,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4089753932340127578}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Back_Right_Knee_Joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

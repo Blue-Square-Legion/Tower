@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 5075088542339012966}
   - component: {fileID: 5150238758796390967}
   m_Layer: 6
-  m_Name: FastEnemy
+  m_Name: Fast 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -219,8 +219,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f116d4f62f2db374e8fa2359cce6ff0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
   maxHealth: 5
-  moneyToPlayer: 5
+  moneyToPlayer: 2
   currentHealth: 0
   speed: 6
   damageResistance: 1

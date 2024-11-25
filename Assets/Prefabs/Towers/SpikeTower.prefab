@@ -55,10 +55,10 @@ MonoBehaviour:
   enemiesLayer:
     serializedVersion: 2
     m_Bits: 64
-  damage: 0.08
+  damage: 0.1
   fireRate: 4
   range: 2
-  cost: 100
+  cost: 200
   isSelected: 0
   towerType: 6
   targetType: 0
@@ -83,8 +83,8 @@ BoxCollider:
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.157366, y: 1.3573447, z: 2.1625137}
-  m_Center: {x: -0.016074538, y: 0.5728119, z: 0.008677006}
+  m_Size: {x: 2.157366, y: 0.32121578, z: 2.1625137}
+  m_Center: {x: -0.016074538, y: 0.16729529, z: 0.008677006}
 --- !u!114 &-1046017692364499954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,7 +114,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7717081254210459803
 Transform:
   m_ObjectHideFlags: 0
@@ -145,7 +145,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1999114782776754668}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -205,7 +205,7 @@ Transform:
   m_GameObject: {fileID: 2715116463227038403}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
