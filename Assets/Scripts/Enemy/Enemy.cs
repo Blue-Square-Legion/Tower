@@ -4,6 +4,7 @@ using AudioSystem;
 
 public class Enemy : MonoBehaviour
 {
+    public EnemyType type;
     public int maxHealth;
     public int moneyToPlayer;
     public float currentHealth;
@@ -119,5 +120,15 @@ public class Enemy : MonoBehaviour
     public void ReachedEnd()
     {
 
+    }
+
+    public enum EnemyType
+    {
+        Basic,
+        Fast,
+        Slow,
+        Ghost,
+        Boss1,
+        Boss2
     }
 }

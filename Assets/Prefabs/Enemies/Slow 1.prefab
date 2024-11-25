@@ -6921,7 +6921,7 @@ GameObject:
   - component: {fileID: 904453548703968665}
   - component: {fileID: 2737854433725824155}
   m_Layer: 6
-  m_Name: SlowEnemy
+  m_Name: Slow 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

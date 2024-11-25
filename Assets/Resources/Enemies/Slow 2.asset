@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 596c7a100f5aae243a49c4a046992b4c, type: 3}
-  m_Name: FastEnemy
+  m_Name: Slow 2
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 4342093911517233588, guid: 79a1019ecf302654faf8e649f2a20683,
+  enemyPrefab: {fileID: 8479773001667301615, guid: aaf8e3c607517be44b8788f5143aa545,
     type: 3}
-  enemyID: 2
+  enemyID: 32

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 596c7a100f5aae243a49c4a046992b4c, type: 3}
-  m_Name: Boss 1
+  m_Name: Fast 1
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 998512333413120234, guid: cfc1fce83b002ec4883747477130a55a,
+  enemyPrefab: {fileID: 4342093911517233588, guid: 79a1019ecf302654faf8e649f2a20683,
     type: 3}
-  enemyID: 51
+  enemyID: 21
