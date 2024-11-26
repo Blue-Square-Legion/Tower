@@ -66,9 +66,9 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void StartGame()
+    public void StartGame(int level)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        SceneManager.LoadScene(level);
     }
 
     public void CreditsScreenActive(bool active)
