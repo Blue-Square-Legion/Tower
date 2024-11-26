@@ -67,8 +67,6 @@ public class TowerPlacement : MonoBehaviour
             }
             Transform rangeObject = currentTowerBeingPlaced.transform.Find("Range");
             Renderer renderer = rangeObject.GetComponent<Renderer>();
-            if (hitInfo.collider == null) print("null collider");
-            //if (hitInfo.collider.gameObject == null) print("null go");
 
             if (hitInfo.collider != null &&
                 hitInfo.collider.gameObject != null)
