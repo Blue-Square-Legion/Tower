@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class TowerBehavior : MonoBehaviour
 {
@@ -28,13 +26,12 @@ public class TowerBehavior : MonoBehaviour
     [SerializeField] public TowerTargetting.TargetType targetType;
     private IDamageMethod currentDamageMethodClass;
     public Canvas canvas;
-    private Text towerLevelText;
     private Player player;
-    public int upgradeLevel;
+    public int upgradeLevel1, upgradeLevel2, upgradeLevel3;
     private UpgradePanel upgradePanel;
-    private int upgradeCost;
+    private int upgradeCost1, upgradeCost2, upgradeCost3;
     [NonSerialized] public int sellCost;
-    private string upgradeDescription;
+    private string upgradeDescription1, upgradeDescription2, upgradeDescription3;
 
     string[] buffNames;
     private int buffNamesCount;
@@ -71,37 +68,67 @@ public class TowerBehavior : MonoBehaviour
 
         delay = 1 / fireRate;
 
-        upgradeLevel = 0;
+        upgradeLevel1 = 0;
+        upgradeLevel2 = 0;
+        upgradeLevel3 = 0;
 
         switch (towerType)
         {
             case TowerType.Basic:
-                upgradeCost = 50;
-                upgradeDescription = "Better Scopes\nIncreased Range";
+                upgradeCost1 = 50;
+                upgradeDescription1 = "Better Scopes\n" + "Cost: " + 50;
+                upgradeCost2 = 50;
+                upgradeDescription2 = "Increased Damage\n" + "Cost: " + 50;
+                upgradeCost2 = 50;
+                upgradeDescription3 = "Increased Attack Speed\n" + "Cost: " + 50;
                 break;
             case TowerType.Bomb:
-                upgradeCost = 100;
-                upgradeDescription = "More Powerful Bombs\nIncreased Damage";
+                upgradeCost1 = 100;
+                upgradeDescription1 = "More Powerful Bombs\n" + "Cost: " + 100;
+                upgradeCost2 = 100;
+                upgradeDescription2 = "Faster Attack Speed\n" + "Cost: " + 100;
+                upgradeCost3 = 100;
+                upgradeDescription3 = "Bigger explosion radius\n" + "Cost: " + 100;
                 break;
             case TowerType.Flame:
-                upgradeCost = 100;
-                upgradeDescription = "More Combustive Fuel\nIncreased Damage";
+                upgradeCost1 = 100;
+                upgradeDescription1 = "More Combustive Fuel - attack speed\n" + "Cost: " + 100;
+                upgradeCost1 = 100;
+                upgradeDescription1 = "More damage\n" + "Cost: " + 100;
+                upgradeCost1 = 100;
+                upgradeDescription1 = "Longer lasting burns\n" + "Cost: " + 100;
                 break;
             case TowerType.Economy:
-                upgradeCost = 300;
-                upgradeDescription = "More Money\nGives a bit more money";
+                upgradeCost1 = 300;
+                upgradeDescription1 = "More Money\n" + "Cost: " + 300;
+                upgradeCost2 = 100;
+                upgradeDescription2 = "Test 1\n" + "Cost: " + 100;
+                upgradeCost3 = 100;
+                upgradeDescription3 = "Test 2\n" + "Cost: " + 100;
                 break;
             case TowerType.Ice:
-                upgradeCost = 100;
-                upgradeDescription = "Increased detector\nIncreased Range";
+                upgradeCost1 = 100;
+                upgradeDescription1 = "Increased detector\n" + "Cost: " + 100;
+                upgradeCost2 = 100;
+                upgradeDescription2 = "Increased Attack Speed\n" + "Cost: " + 100;
+                upgradeCost3 = 100;
+                upgradeDescription3 = "Bigger snow area\n" + "Cost: " + 100;
                 break;
             case TowerType.Support:
-                upgradeCost = 100;
-                upgradeDescription = "Command\nFurther Boosts Attack Range of nearby towers";
+                upgradeCost1 = 100;
+                upgradeDescription1 = "Command\n" + "Cost: " + 100;
+                upgradeCost2 = 100;
+                upgradeDescription2 = "Increase Damage buff\n" + "Cost: " + 100;
+                upgradeCost3 = 100;
+                upgradeDescription3 = "Increase attack speed buff\n" + "Cost: " + 100;
                 break;
             case TowerType.Spikes:
-                upgradeCost = 100;
-                upgradeDescription = "Command\nSpikes deals damage";
+                upgradeCost1 = 100;
+                upgradeDescription1 = "Spikier Spikes\n" + "Cost: " + 100;
+                upgradeCost2 = 100;
+                upgradeDescription2 = "More Spikes\n" + "Cost: " + 100;
+                upgradeCost3 = 100;
+                upgradeDescription3 = "Damage Spikes\n" + "Cost: " + 100;
                 break;
         }
         sellCost = cost / 2;
@@ -302,16 +329,18 @@ public class TowerBehavior : MonoBehaviour
             Gizmos.DrawWireCube(target.transform.position, new Vector3(.5f, .5f, .5f));
     }
 
-    public void Upgrade()
+    #region Upgrades
+    #region Path 1
+    public void Upgrade1()
     {
-        if (player.GetMoney() >= upgradeCost)
+        if (player.GetMoney() >= upgradeCost1)
         {
             Transform rangeObject = transform.Find("Range");
-            player.RemoveMoney(upgradeCost);
+            player.RemoveMoney(upgradeCost1);
             switch (towerType)
             {
                 case TowerType.Basic:
-                    switch (upgradeLevel)
+                    switch (upgradeLevel1)
                     {
                         case 0:
                             //Do upgrade
@@ -319,18 +348,19 @@ public class TowerBehavior : MonoBehaviour
                             rangeObject.localScale = new Vector3(rangeObject.localScale.x + 2f, rangeObject.localScale.y, rangeObject.localScale.z + 2f);
 
                             //Set up for next upgrade
-                            sellCost += upgradeCost / 2;
-                            upgradeCost = GetUpgradeCost(upgradeLevel);
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
+                            sellCost += upgradeCost1 / 2;
+                            upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
                             break;
                         case 1:
                             //Do upgrade
                             damage += 1;
                             transform.GetComponent<StandardDamage>().UpdateDamage(damage);
+
                             //Set up for next upgrade
-                            sellCost += upgradeCost / 2;
-                            upgradeCost = GetUpgradeCost(upgradeLevel);
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
+                            sellCost += upgradeCost1 / 2;
+                            upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
                             break;
                         case 2:
                             //Do upgrade
@@ -338,33 +368,13 @@ public class TowerBehavior : MonoBehaviour
                             transform.GetComponent<StandardDamage>().UpdateFireRate(fireRate);
 
                             //Set up for next upgrade
-                            sellCost += upgradeCost / 2;
-                            upgradeCost = GetUpgradeCost(upgradeLevel);
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
-                            break;
-                        case 3:
-                            //Do upgrade
-                            range += 1.7f;
-                            rangeObject.localScale = new Vector3(rangeObject.localScale.x + 3.4f, rangeObject.localScale.y, rangeObject.localScale.z + 3.4f);
-
-                            //Set up for next upgrade
-                            sellCost += upgradeCost / 2;
-                            upgradeCost = GetUpgradeCost(upgradeLevel);
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
-                            break;
-                        case 4:
-                            //Do Upgrade
-                            fireRate *= 2;
-                            transform.GetComponent<StandardDamage>().UpdateFireRate(fireRate);
-
-                            //No more upgrades
-                            sellCost += upgradeCost / 2;
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
+                            sellCost += upgradeCost1 / 2;
+                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
                             break;
                     }
                     break;
                 case TowerType.Bomb:
-                    switch (upgradeLevel)
+                    switch (upgradeLevel1)
                     {
                         case 0:
                             //Do upgrade
@@ -372,18 +382,18 @@ public class TowerBehavior : MonoBehaviour
                             transform.GetComponent<MissileDamage>().UpdateDamage(damage);
 
                             //Set up for next upgrade
-                            sellCost += upgradeCost / 2;
-                            upgradeCost = GetUpgradeCost(upgradeLevel);
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
+                            sellCost += upgradeCost1 / 2;
+                            upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
                             break;
                         case 1:
                             //Do upgrade
                             transform.GetComponent<MissileDamage>().explosionRadius += 1;
 
                             //Set up for next upgrade
-                            sellCost += upgradeCost / 2;
-                            upgradeCost = GetUpgradeCost(upgradeLevel);
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
+                            sellCost += upgradeCost1 / 2;
+                            upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
                             break;
                         case 2:
                             //Do upgrade
@@ -391,45 +401,24 @@ public class TowerBehavior : MonoBehaviour
                             rangeObject.localScale = new Vector3(rangeObject.localScale.x + .5f, rangeObject.localScale.y, rangeObject.localScale.z + .5f);
 
                             //Set up for next upgrade
-                            sellCost += upgradeCost / 2;
-                            upgradeCost = 500;
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
-                            break;
-                        case 3:
-                            //Do upgrade
-                            damage += 1f;
-                            transform.GetComponent<MissileDamage>().explosionRadius += 1;
-                            transform.GetComponent<MissileDamage>().UpdateDamage(damage);
-
-
-                            //Set up for next upgrade
-                            sellCost += upgradeCost / 2;
-                            upgradeCost = GetUpgradeCost(upgradeLevel);
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
-                            break;
-                        case 4:
-                            //Do Upgrade
-                            fireRate *= 2;
-                            transform.GetComponent<MissileDamage>().UpdateFireRate(fireRate);
-
-                            //No more upgrades
-                            sellCost += upgradeCost / 2;
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
+                            sellCost += upgradeCost1 / 2;
+                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
                             break;
                     }
                     break;
                 case TowerType.Flame:
-                    switch (upgradeLevel)
+                    switch (upgradeLevel1)
                     {
                         case 0:
                             //Do upgrade
                             damage += 0.05f;
                             transform.GetComponent<FireDamage>().UpdateDamage(damage);
                             transform.GetComponentInChildren<FireTriggerCollisionDetector>().duration += 1;
+
                             //Set up for next upgrade
-                            sellCost += upgradeCost / 2;
-                            upgradeCost = GetUpgradeCost(upgradeLevel);
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
+                            sellCost += upgradeCost1 / 2;
+                            upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
                             break;
                         case 1:
                             //Do upgrade
@@ -438,11 +427,12 @@ public class TowerBehavior : MonoBehaviour
                             fireTrigger.localScale = new Vector3(fireTrigger.localScale.x + 1f, fireTrigger.localScale.y, fireTrigger.localScale.z - 0.5f);
                             fireTrigger.position = new Vector3(fireTrigger.position.x, fireTrigger.position.y, fireTrigger.position.z + 0.5f);
                             rangeObject.localScale = new Vector3(rangeObject.localScale.x + 2f, rangeObject.localScale.y, rangeObject.localScale.z + 2f);
-                            //Set up for next upgrade
-                            sellCost += upgradeCost / 2;
 
-                            upgradeCost = GetUpgradeCost(upgradeLevel);
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
+                            //Set up for next upgrade
+                            sellCost += upgradeCost1 / 2;
+
+                            upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
 
                             break;
                         case 2:
@@ -450,76 +440,41 @@ public class TowerBehavior : MonoBehaviour
                             damage += 0.1f;
 
                             //Set up for next upgrade
-                            sellCost += upgradeCost / 2;
-                            upgradeCost = GetUpgradeCost(upgradeLevel);
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
-                            break;
-                        case 3:
-                            //Do upgrade
-                            transform.GetComponentInChildren<FireTriggerCollisionDetector>().duration += 2;
-
-                            //Set up for next upgrade
-                            sellCost += upgradeCost / 2;
-
-                            upgradeCost = GetUpgradeCost(upgradeLevel);
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
-
-                            break;
-                        case 4:
-                            //Do Upgrade
-                            fireRate += 1;
-
-                            //No more upgrades
-                            sellCost += upgradeCost / 2;
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
+                            sellCost += upgradeCost1 / 2;
+                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
                             break;
                     }
                     break;
                 case TowerType.Economy:
-                    switch (upgradeLevel)
+                    switch (upgradeLevel1)
                     {
                         case 0:
                             transform.GetComponent<EconomyBehavior>().bonus = 100;
                             GameManager.Instance.farmBonus += 50;
-                            sellCost += upgradeCost / 2;
-                            upgradeCost = GetUpgradeCost(upgradeLevel);
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
+                            sellCost += upgradeCost1 / 2;
+                            upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
                             break;
                         case 1:
                             transform.GetComponent<EconomyBehavior>().bonus = 200;
                             GameManager.Instance.farmBonus += 100;
-                            sellCost += upgradeCost / 2;
-                            upgradeCost = GetUpgradeCost(upgradeLevel);
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
+                            sellCost += upgradeCost1 / 2;
+                            upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
                             break;
                         case 2:
                             transform.GetComponent<EconomyBehavior>().bonus = 400;
                             GameManager.Instance.farmBonus += 300;
-                            sellCost += upgradeCost / 2;
-                            upgradeCost = GetUpgradeCost(upgradeLevel);
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
-                            break;
-                        case 3:
-                            transform.GetComponent<EconomyBehavior>().bonus = 500;
-                            GameManager.Instance.farmBonus += 100;
-                            sellCost += upgradeCost / 2;
-                            upgradeCost = GetUpgradeCost(upgradeLevel);
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
-                            break;
-                        case 4:
-                            transform.GetComponent<EconomyBehavior>().bonus = 750;
-                            GameManager.Instance.farmBonus += 250;
-                            sellCost += upgradeCost / 2;
 
-                            //No more upgrades
-                            sellCost += upgradeCost / 2;
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
+                            //Set up for next upgrade
+                            sellCost += upgradeCost1 / 2;
+                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
                             break;
                     }
                     break;
                 case TowerType.Ice:
                     IceDamage tempIce = transform.gameObject.GetComponent<IceDamage>();
-                    switch (upgradeLevel)
+                    switch (upgradeLevel1)
                     {
                         case 0:
                             //Do upgrade
@@ -527,9 +482,9 @@ public class TowerBehavior : MonoBehaviour
                             rangeObject.localScale = new Vector3(rangeObject.localScale.x + 2f, rangeObject.localScale.y, rangeObject.localScale.z + 2f);
 
                             //Set up for next upgrade
-                            sellCost += upgradeCost / 2;
-                            upgradeCost = GetUpgradeCost(upgradeLevel);
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
+                            sellCost += upgradeCost1 / 2;
+                            upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
                             break;
                         case 1:
 
@@ -537,38 +492,22 @@ public class TowerBehavior : MonoBehaviour
                             transform.GetComponent<IceDamage>().UpdateFireRate(fireRate);
 
                             //Set up for next upgrade
-                            sellCost += upgradeCost / 2;
-                            upgradeCost = GetUpgradeCost(upgradeLevel);
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
+                            sellCost += upgradeCost1 / 2;
+                            upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
                             break;
                         case 2:
                             tempIce.UpdateSnowSpeed(tempIce.GetSnowSpeed() - 0.1f);
 
                             //Set up for next upgrade
-                            sellCost += upgradeCost / 2;
-                            upgradeCost = GetUpgradeCost(upgradeLevel);
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
-                            break;
-                        case 3:
-                            tempIce.UpdateSnowDuration(tempIce.GetSnowDuration() + 0.5f);
-
-                            //Set up for next upgrade
-                            sellCost += upgradeCost / 2;
-                            upgradeCost = GetUpgradeCost(upgradeLevel);
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
-                            break;
-                        case 4:
-                            tempIce.UpdateSnowSize(tempIce.GetSnowSize() + 1f);
-
-                            //No more upgrades
-                            sellCost += upgradeCost / 2;
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
+                            sellCost += upgradeCost1 / 2;
+                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
                             break;
                     }
                     break;
                 case TowerType.Support:
                     SupportBehavior support = transform.gameObject.GetComponent<SupportBehavior>();
-                    switch (upgradeLevel)
+                    switch (upgradeLevel1)
                     {
                         case 0:
                             //Do upgrade
@@ -577,10 +516,11 @@ public class TowerBehavior : MonoBehaviour
                             range += 0.5f;
                             rangeObject.localScale = new Vector3(rangeObject.localScale.x + 1f, rangeObject.localScale.y, rangeObject.localScale.z + 1f);
                             support.UpdateTowersInRange();
+
                             //Set up for next upgrade
-                            sellCost += upgradeCost / 2;
-                            upgradeCost = GetUpgradeCost(upgradeLevel);
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
+                            sellCost += upgradeCost1 / 2;
+                            upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
                             break;
                         case 1:
                             //Hidden
@@ -588,9 +528,9 @@ public class TowerBehavior : MonoBehaviour
                             support.UpdateTowersInRange();
 
                             //Set up for next upgrade
-                            sellCost += upgradeCost / 2;
-                            upgradeCost = GetUpgradeCost(upgradeLevel);
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
+                            sellCost += upgradeCost1 / 2;
+                            upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
                             break;
                         case 2:
                             //Do upgrade
@@ -598,37 +538,13 @@ public class TowerBehavior : MonoBehaviour
                             support.UpdateTowersInRange();
 
                             //Set up for next upgrade
-                            sellCost += upgradeCost / 2;
-                            upgradeCost = GetUpgradeCost(upgradeLevel);
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
-                            break;
-                        case 3:
-                            //Do upgrade
-                            support.damageBuff += 1.25f;
-                            range += 0.5f;
-                            rangeObject.localScale = new Vector3(rangeObject.localScale.x + 1f, rangeObject.localScale.y, rangeObject.localScale.z + 1f);
-                            support.UpdateTowersInRange();
-
-                            //Set up for next upgrade
-                            sellCost += upgradeCost / 2;
-                            upgradeCost = GetUpgradeCost(upgradeLevel);
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
-                            break;
-                        case 4:
-                            //Do Upgrade
-                            support.attackRangeBuff += 0.25f;
-                            support.fireRateBuff += 0.1f;
-                            support.damageBuff += .15f;
-                            support.UpdateTowersInRange();
-
-                            //No more upgrades
-                            sellCost += upgradeCost / 2;
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
+                            sellCost += upgradeCost1 / 2;
+                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
                             break;
                     }
                     break;
                 case TowerType.Spikes:
-                    switch (upgradeLevel)
+                    switch (upgradeLevel1)
                     {
                         case 0:
                             //Do upgrade
@@ -636,9 +552,9 @@ public class TowerBehavior : MonoBehaviour
                             transform.GetComponent<SpikeDamage>().UpdateDamage(damage);
 
                             //Set up for next upgrade
-                            sellCost += upgradeCost / 2;
-                            upgradeCost = GetUpgradeCost(upgradeLevel);
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
+                            sellCost += upgradeCost1 / 2;
+                            upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
                             break;
                         case 1:
                             //Do upgrade
@@ -646,57 +562,549 @@ public class TowerBehavior : MonoBehaviour
                             transform.GetComponent<SpikeDamage>().UpdateFireRate(fireRate);
 
                             //Set up for next upgrade
-                            sellCost += upgradeCost / 2;
-                            upgradeCost = GetUpgradeCost(upgradeLevel);
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
+                            sellCost += upgradeCost1 / 2;
+                            upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
                             break;
                         case 2:
                             damage += 0.1f;
                             transform.GetComponent<SpikeDamage>().UpdateDamage(damage);
                             fireRate += 0.25f;
                             transform.GetComponent<SpikeDamage>().UpdateFireRate(fireRate);
-                            //Set up for next upgrade
-                            sellCost += upgradeCost / 2;
-                            upgradeCost = 500;
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
-                            break;
-                        case 3:
-
-                            //Do upgrade
-                            damage += 0.1f;
-                            transform.GetComponent<SpikeDamage>().UpdateDamage(damage);
-
 
                             //Set up for next upgrade
-                            sellCost += upgradeCost / 2;
-                            upgradeCost = GetUpgradeCost(upgradeLevel);
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
-                            break;
-                        case 4:
-                            fireRate += 0.2f;
-                            transform.GetComponent<SpikeDamage>().UpdateFireRate(fireRate);
-
-                            //No more upgrades
-                            sellCost += upgradeCost / 2;
-                            upgradeDescription = GetUpgradeDescription(upgradeLevel);
+                            sellCost += upgradeCost1 / 2;
+                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
                             break;
                     }
                     break;
             }
-
-            upgradeLevel++;
+            upgradeLevel1++;
             UpdateUpgradePanel();
         }
     }
+    #endregion
+    #region Path 2
+    public void Upgrade2()
+    {
 
+        if (player.GetMoney() >= upgradeCost2)
+        {
+            Transform rangeObject = transform.Find("Range");
+            player.RemoveMoney(upgradeCost2);
+            switch (towerType)
+            {
+                case TowerType.Basic:
+                    switch (upgradeLevel2)
+                    {
+                        case 0:
+                            //Do upgrade
+                            range += 1f;
+                            rangeObject.localScale = new Vector3(rangeObject.localScale.x + 2f, rangeObject.localScale.y, rangeObject.localScale.z + 2f);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost2 / 2;
+                            upgradeCost2 = GetUpgradeCost(upgradeLevel2, 1);
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
+                            break;
+                        case 1:
+                            //Do upgrade
+                            damage += 1;
+                            transform.GetComponent<StandardDamage>().UpdateDamage(damage);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost2 / 2;
+                            upgradeCost2 = GetUpgradeCost(upgradeLevel2, 1);
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
+                            break;
+                        case 2:
+                            //Do upgrade
+                            fireRate += 1;
+                            transform.GetComponent<StandardDamage>().UpdateFireRate(fireRate);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost2 / 2;
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
+                            break;
+                    }
+                    break;
+                case TowerType.Bomb:
+                    switch (upgradeLevel2)
+                    {
+                        case 0:
+                            //Do upgrade
+                            damage += 1f;
+                            transform.GetComponent<MissileDamage>().UpdateDamage(damage);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost2 / 2;
+                            upgradeCost2 = GetUpgradeCost(upgradeLevel2, 1);
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
+                            break;
+                        case 1:
+                            //Do upgrade
+                            transform.GetComponent<MissileDamage>().explosionRadius += 1;
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost2 / 2;
+                            upgradeCost2 = GetUpgradeCost(upgradeLevel2, 1);
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
+                            break;
+                        case 2:
+                            //Do upgrade
+                            range += .25f;
+                            rangeObject.localScale = new Vector3(rangeObject.localScale.x + .5f, rangeObject.localScale.y, rangeObject.localScale.z + .5f);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost2 / 2;
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
+                            break;
+                    }
+                    break;
+                case TowerType.Flame:
+                    switch (upgradeLevel2)
+                    {
+                        case 0:
+                            //Do upgrade
+                            damage += 0.05f;
+                            transform.GetComponent<FireDamage>().UpdateDamage(damage);
+                            transform.GetComponentInChildren<FireTriggerCollisionDetector>().duration += 1;
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost2 / 2;
+                            upgradeCost2 = GetUpgradeCost(upgradeLevel2, 1);
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
+                            break;
+                        case 1:
+                            //Do upgrade
+                            range += 1f;
+                            Transform fireTrigger = transform.Find("Head").transform.Find("FireTriggerPivot").transform.Find("FireTrigger").transform;
+                            fireTrigger.localScale = new Vector3(fireTrigger.localScale.x + 1f, fireTrigger.localScale.y, fireTrigger.localScale.z - 0.5f);
+                            fireTrigger.position = new Vector3(fireTrigger.position.x, fireTrigger.position.y, fireTrigger.position.z + 0.5f);
+                            rangeObject.localScale = new Vector3(rangeObject.localScale.x + 2f, rangeObject.localScale.y, rangeObject.localScale.z + 2f);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost2 / 2;
+
+                            upgradeCost2 = GetUpgradeCost(upgradeLevel2, 1);
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
+
+                            break;
+                        case 2:
+                            //Do upgrade
+                            damage += 0.1f;
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost2 / 2;
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
+                            break;
+                    }
+                    break;
+                case TowerType.Economy:
+                    switch (upgradeLevel2)
+                    {
+                        case 0:
+                            transform.GetComponent<EconomyBehavior>().bonus = 100;
+                            GameManager.Instance.farmBonus += 50;
+                            sellCost += upgradeCost2 / 2;
+                            upgradeCost2 = GetUpgradeCost(upgradeLevel2, 1);
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
+                            break;
+                        case 1:
+                            transform.GetComponent<EconomyBehavior>().bonus = 200;
+                            GameManager.Instance.farmBonus += 100;
+                            sellCost += upgradeCost2 / 2;
+                            upgradeCost2 = GetUpgradeCost(upgradeLevel2, 1);
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
+                            break;
+                        case 2:
+                            transform.GetComponent<EconomyBehavior>().bonus = 400;
+                            GameManager.Instance.farmBonus += 300;
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost2 / 2;
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
+                            break;
+                    }
+                    break;
+                case TowerType.Ice:
+                    IceDamage tempIce = transform.gameObject.GetComponent<IceDamage>();
+                    switch (upgradeLevel2)
+                    {
+                        case 0:
+                            //Do upgrade
+                            range += 1f;
+                            rangeObject.localScale = new Vector3(rangeObject.localScale.x + 2f, rangeObject.localScale.y, rangeObject.localScale.z + 2f);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost2 / 2;
+                            upgradeCost2 = GetUpgradeCost(upgradeLevel2, 1);
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
+                            break;
+                        case 1:
+
+                            fireRate += 0.25f;
+                            transform.GetComponent<IceDamage>().UpdateFireRate(fireRate);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost2 / 2;
+                            upgradeCost2 = GetUpgradeCost(upgradeLevel2, 1);
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
+                            break;
+                        case 2:
+                            tempIce.UpdateSnowSpeed(tempIce.GetSnowSpeed() - 0.1f);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost2 / 2;
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
+                            break;
+                    }
+                    break;
+                case TowerType.Support:
+                    SupportBehavior support = transform.gameObject.GetComponent<SupportBehavior>();
+                    switch (upgradeLevel2)
+                    {
+                        case 0:
+                            //Do upgrade
+                            support.RemoveBuffs();
+                            support.attackRangeBuff += 0.15f;
+                            range += 0.5f;
+                            rangeObject.localScale = new Vector3(rangeObject.localScale.x + 1f, rangeObject.localScale.y, rangeObject.localScale.z + 1f);
+                            support.UpdateTowersInRange();
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost2 / 2;
+                            upgradeCost2 = GetUpgradeCost(upgradeLevel2, 1);
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
+                            break;
+                        case 1:
+                            //Hidden
+                            //TODO
+                            support.UpdateTowersInRange();
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost2 / 2;
+                            upgradeCost2 = GetUpgradeCost(upgradeLevel2, 1);
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
+                            break;
+                        case 2:
+                            //Do upgrade
+                            support.fireRateBuff += 1.2f;
+                            support.UpdateTowersInRange();
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost2 / 2;
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
+                            break;
+                    }
+                    break;
+                case TowerType.Spikes:
+                    switch (upgradeLevel2)
+                    {
+                        case 0:
+                            //Do upgrade
+                            damage += 0.1f;
+                            transform.GetComponent<SpikeDamage>().UpdateDamage(damage);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost2 / 2;
+                            upgradeCost1 = GetUpgradeCost(upgradeLevel2, 1);
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
+                            break;
+                        case 1:
+                            //Do upgrade
+                            fireRate += 0.3f;
+                            transform.GetComponent<SpikeDamage>().UpdateFireRate(fireRate);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost2 / 2;
+                            upgradeCost2 = GetUpgradeCost(upgradeLevel2, 1);
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
+                            break;
+                        case 2:
+                            damage += 0.1f;
+                            transform.GetComponent<SpikeDamage>().UpdateDamage(damage);
+                            fireRate += 0.25f;
+                            transform.GetComponent<SpikeDamage>().UpdateFireRate(fireRate);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost2 / 2;
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
+                            break;
+                    }
+                    break;
+            }
+            upgradeLevel2++;
+            UpdateUpgradePanel();
+        }
+    }
+    #endregion
+    #region Path 3
+    public void Upgrade3()
+    {
+        if (player.GetMoney() >= upgradeCost3)
+        {
+            Transform rangeObject = transform.Find("Range");
+            player.RemoveMoney(upgradeCost3);
+            switch (towerType)
+            {
+                case TowerType.Basic:
+                    switch (upgradeLevel3)
+                    {
+                        case 0:
+                            //Do upgrade
+                            range += 1f;
+                            rangeObject.localScale = new Vector3(rangeObject.localScale.x + 2f, rangeObject.localScale.y, rangeObject.localScale.z + 2f);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost3 / 2;
+                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 1);
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
+                            break;
+                        case 1:
+                            //Do upgrade
+                            damage += 1;
+                            transform.GetComponent<StandardDamage>().UpdateDamage(damage);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost3 / 2;
+                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 1);
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
+                            break;
+                        case 2:
+                            //Do upgrade
+                            fireRate += 1;
+                            transform.GetComponent<StandardDamage>().UpdateFireRate(fireRate);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost3 / 2;
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
+                            break;
+                    }
+                    break;
+                case TowerType.Bomb:
+                    switch (upgradeLevel3)
+                    {
+                        case 0:
+                            //Do upgrade
+                            damage += 1f;
+                            transform.GetComponent<MissileDamage>().UpdateDamage(damage);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost3 / 2;
+                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 1);
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
+                            break;
+                        case 1:
+                            //Do upgrade
+                            transform.GetComponent<MissileDamage>().explosionRadius += 1;
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost3 / 2;
+                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 1);
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
+                            break;
+                        case 2:
+                            //Do upgrade
+                            range += .25f;
+                            rangeObject.localScale = new Vector3(rangeObject.localScale.x + .5f, rangeObject.localScale.y, rangeObject.localScale.z + .5f);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost3 / 2;
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
+                            break;
+                    }
+                    break;
+                case TowerType.Flame:
+                    switch (upgradeLevel3)
+                    {
+                        case 0:
+                            //Do upgrade
+                            damage += 0.05f;
+                            transform.GetComponent<FireDamage>().UpdateDamage(damage);
+                            transform.GetComponentInChildren<FireTriggerCollisionDetector>().duration += 1;
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost3 / 2;
+                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 1);
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
+                            break;
+                        case 1:
+                            //Do upgrade
+                            range += 1f;
+                            Transform fireTrigger = transform.Find("Head").transform.Find("FireTriggerPivot").transform.Find("FireTrigger").transform;
+                            fireTrigger.localScale = new Vector3(fireTrigger.localScale.x + 1f, fireTrigger.localScale.y, fireTrigger.localScale.z - 0.5f);
+                            fireTrigger.position = new Vector3(fireTrigger.position.x, fireTrigger.position.y, fireTrigger.position.z + 0.5f);
+                            rangeObject.localScale = new Vector3(rangeObject.localScale.x + 2f, rangeObject.localScale.y, rangeObject.localScale.z + 2f);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost3 / 2;
+
+                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 1);
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
+
+                            break;
+                        case 2:
+                            //Do upgrade
+                            damage += 0.1f;
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost3 / 2;
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
+                            break;
+                    }
+                    break;
+                case TowerType.Economy:
+                    switch (upgradeLevel3)
+                    {
+                        case 0:
+                            transform.GetComponent<EconomyBehavior>().bonus = 100;
+                            GameManager.Instance.farmBonus += 50;
+                            sellCost += upgradeCost3 / 2;
+                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 1);
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
+                            break;
+                        case 1:
+                            transform.GetComponent<EconomyBehavior>().bonus = 200;
+                            GameManager.Instance.farmBonus += 100;
+                            sellCost += upgradeCost3 / 2;
+                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 1);
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
+                            break;
+                        case 2:
+                            transform.GetComponent<EconomyBehavior>().bonus = 400;
+                            GameManager.Instance.farmBonus += 300;
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost3 / 2;
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
+                            break;
+                    }
+                    break;
+                case TowerType.Ice:
+                    IceDamage tempIce = transform.gameObject.GetComponent<IceDamage>();
+                    switch (upgradeLevel3)
+                    {
+                        case 0:
+                            //Do upgrade
+                            range += 1f;
+                            rangeObject.localScale = new Vector3(rangeObject.localScale.x + 2f, rangeObject.localScale.y, rangeObject.localScale.z + 2f);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost3 / 2;
+                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 1);
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
+                            break;
+                        case 1:
+
+                            fireRate += 0.25f;
+                            transform.GetComponent<IceDamage>().UpdateFireRate(fireRate);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost3 / 2;
+                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 1);
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
+                            break;
+                        case 2:
+                            tempIce.UpdateSnowSpeed(tempIce.GetSnowSpeed() - 0.1f);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost3 / 2;
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
+                            break;
+                    }
+                    break;
+                case TowerType.Support:
+                    SupportBehavior support = transform.gameObject.GetComponent<SupportBehavior>();
+                    switch (upgradeLevel3)
+                    {
+                        case 0:
+                            //Do upgrade
+                            support.RemoveBuffs();
+                            support.attackRangeBuff += 0.15f;
+                            range += 0.5f;
+                            rangeObject.localScale = new Vector3(rangeObject.localScale.x + 1f, rangeObject.localScale.y, rangeObject.localScale.z + 1f);
+                            support.UpdateTowersInRange();
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost3 / 2;
+                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 1);
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
+                            break;
+                        case 1:
+                            //Hidden
+                            //TODO
+                            support.UpdateTowersInRange();
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost3 / 2;
+                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 1);
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
+                            break;
+                        case 2:
+                            //Do upgrade
+                            support.fireRateBuff += 1.2f;
+                            support.UpdateTowersInRange();
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost3 / 2;
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
+                            break;
+                    }
+                    break;
+                case TowerType.Spikes:
+                    switch (upgradeLevel3)
+                    {
+                        case 0:
+                            //Do upgrade
+                            damage += 0.1f;
+                            transform.GetComponent<SpikeDamage>().UpdateDamage(damage);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost3 / 2;
+                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 1);
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
+                            break;
+                        case 1:
+                            //Do upgrade
+                            fireRate += 0.3f;
+                            transform.GetComponent<SpikeDamage>().UpdateFireRate(fireRate);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost3 / 2;
+                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 1);
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
+                            break;
+                        case 2:
+                            damage += 0.1f;
+                            transform.GetComponent<SpikeDamage>().UpdateDamage(damage);
+                            fireRate += 0.25f;
+                            transform.GetComponent<SpikeDamage>().UpdateFireRate(fireRate);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost3 / 2;
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
+                            break;
+                    }
+                    break;
+            }
+            upgradeLevel3++;
+            UpdateUpgradePanel();
+        }
+    }
+    #endregion
+    #endregion
 
     public void UpdateUpgradePanel()
     {
         upgradePanel.SetTarget(this, (int)targetType);
-        upgradePanel.SetUpgradeButton(upgradeCost);
         upgradePanel.SetSellButton(sellCost);
-        upgradePanel.SetText(upgradeDescription);
-        upgradePanel.ToggleUpgradeButton(upgradeLevel != 5);
+        upgradePanel.SetText(upgradeDescription1, 1);
+        upgradePanel.SetText(upgradeDescription1, 2);
+        upgradePanel.SetText(upgradeDescription1, 3);
+        upgradePanel.ToggleUpgradeButton(upgradeLevel1 != 3, 1);
+        upgradePanel.ToggleUpgradeButton(upgradeLevel2 != 3, 2);
+        upgradePanel.ToggleUpgradeButton(upgradeLevel3 != 3, 3);
     }
 
     public void UpdateAllUpgradesScreen()
@@ -716,81 +1124,194 @@ public class TowerBehavior : MonoBehaviour
         }
     }
 
-
-    private static readonly Dictionary<TowerType, List<UpgradeData>> upgradeDataMap = new Dictionary<TowerType, List<UpgradeData>>()
+    #region Upgrade Initialization
+    #region Upgrade 1
+    private static readonly Dictionary<TowerType, List<UpgradeData>> upgradeDataMap1 = new()
     {
         //Description and Cost
         {
             TowerType.Basic, new List<UpgradeData>
             {
-                new UpgradeData("Better Arrows\nIncreased Damage", 150),
-                new UpgradeData("Faster mechanism\nIncreased fire rate", 300),
-                new UpgradeData("Scopier Scopes\nIncreased Range", 300),
-                new UpgradeData("Best Efficiency\nIncreased fire rate", 500),
+                new UpgradeData("Better Arrows\n" + "Cost: " + 150, 150),
+                new UpgradeData("Faster mechanism\n" + "Cost: " + 300, 300),
                 new UpgradeData("Max Level", 0)
             }
         },
         {
             TowerType.Bomb, new List<UpgradeData>
             {
-                new UpgradeData("Bigger Bombs\nIncreased Explosion Radius", 200),
-                new UpgradeData("Binoculars\nIncreased range", 300),
-                new UpgradeData("Bigger Bombs\nIncreased Damage\nIncreased Explosion Radius", 500),
-                new UpgradeData("Second Bomb Dropper\nIncreased fire rate", 500),
+                new UpgradeData("Bigger Bombs\n" + "Cost: " + 200, 200),
+                new UpgradeData("Binoculars\n" + "Cost: " + 200, 300),
                 new UpgradeData("Max Level", 0)
             }
         },
         {
             TowerType.Flame, new List<UpgradeData>
             {
-                new UpgradeData("Stronger Propellent\nIncreased Range", 150),
-                new UpgradeData("Better Fuel\nIncreased slow effect", 200),
-                new UpgradeData("Long Lasting Burns\nIncreased Duration", 250),
-                new UpgradeData("Even Stronger Fuel\nIncreased Slow Effect", 400),
+                new UpgradeData("Stronger Propellent\n" + "Cost: " + 150, 150),
+                new UpgradeData("Better Fuel\n" + "Cost: " + 200, 200),
                 new UpgradeData("Max Level", 0)
             }
         },
         {
             TowerType.Economy, new List<UpgradeData>
             {
-                new UpgradeData("Upgrade 1\nIncreased Money", 500),
-                new UpgradeData("Upgrade 2\nEven more Money", 750),
-                new UpgradeData("Upgrade 3\nExtra Money", 1000),
-                new UpgradeData("Future's Market\nGrants a large sum of money", 1750),
+                new UpgradeData("Bigger Mine\n" + "Cost: " + 500, 500),
+                new UpgradeData("International Marketing\n" + "Cost: " + 750, 750),
                 new UpgradeData("Max Level", 0)
             }
         },
         {
             TowerType.Ice, new List<UpgradeData>
             {
-                new UpgradeData("Better Firing System\nIncreased Fire Rate", 150),
-                new UpgradeData("Colder Snow\nSlows Enemies More", 350),
-                new UpgradeData("Melt Resistant Snow\nIncreased Duration", 500),
-                new UpgradeData("Larger Snowballs\nIncreased Snow Area", 600),
+                new UpgradeData("Better Firing System\n" + "Cost: " + 150, 150),
+                new UpgradeData("Colder Snow\n" + "Cost: " + 350, 350),
                 new UpgradeData("Max Level", 0)
             }
         },
         {
             TowerType.Support, new List<UpgradeData>
             {
-                new UpgradeData("Proximity Sensor (Not Implemented Yet)\nAll Towers in range can see Invisible Enemies", 0),
-                new UpgradeData("Inspiration\nAll Towers in range gain a attack speed buff", 300),
-                new UpgradeData("Command Center\nAll Towers in range do increased damage. Slightly Increased Range", 500),
-                new UpgradeData("Motivation\nIncreases the effectiveness of this tower's buffs", 1000),
+                new UpgradeData("Proximity Sensor (Not Implemented Yet)\n" + "Cost: " + 0, 0),
+                new UpgradeData("Inspiration\n" + "Cost: " + 300, 300),
                 new UpgradeData("Max Level", 0)
             }
         },
         {
             TowerType.Spikes, new List<UpgradeData>
             {
-                new UpgradeData("Bigger Spikes\nIncrease Damage", 100),
-                new UpgradeData("More Spikes\nIncrease damage rate", 150),
-                new UpgradeData("Stronger spikes\nIncrease damage and damages rate", 400),
-                new UpgradeData("More spikes \nIncrease damage rate", 500),
+                new UpgradeData("Bigger Spikes\n" + "Cost: " + 100, 100),
+                new UpgradeData("More Spikes\n" + "Cost: " + 150, 150),
                 new UpgradeData("Max Level", 0)
             }
         }
     };
+    #endregion
+    #region Upgrade 2
+    private static readonly Dictionary<TowerType, List<UpgradeData>> upgradeDataMap2 = new()
+    {
+        //Description and Cost
+        {
+            TowerType.Basic, new List<UpgradeData>
+            {
+                new UpgradeData("Better Arrows\n" + "Cost: " + 150, 150),
+                new UpgradeData("Faster mechanism\n" + "Cost: " + 300, 300),
+                new UpgradeData("Max Level", 0)
+            }
+        },
+        {
+            TowerType.Bomb, new List<UpgradeData>
+            {
+                new UpgradeData("Bigger Bombs\n" + "Cost: " + 200, 200),
+                new UpgradeData("Binoculars\n" + "Cost: " + 300, 300),
+                new UpgradeData("Max Level", 0)
+            }
+        },
+        {
+            TowerType.Flame, new List<UpgradeData>
+            {
+                new UpgradeData("Stronger Propellent\n" + "Cost: " + 150, 150),
+                new UpgradeData("Better Fuel\n" + "Cost: " + 200, 200),
+                new UpgradeData("Max Level", 0)
+            }
+        },
+        {
+            TowerType.Economy, new List<UpgradeData>
+            {
+                new UpgradeData("Bigger Mine\n" + "Cost: " + 500, 500),
+                new UpgradeData("International Marketing\n" + "Cost: " + 750, 750),
+                new UpgradeData("Max Level", 0)
+            }
+        },
+        {
+            TowerType.Ice, new List<UpgradeData>
+            {
+                new UpgradeData("Better Firing System\n" + "Cost: " + 150, 150),
+                new UpgradeData("Colder Snow\n" + "Cost: " + 350, 350),
+                new UpgradeData("Max Level", 0)
+            }
+        },
+        {
+            TowerType.Support, new List<UpgradeData>
+            {
+                new UpgradeData("Proximity Sensor (Not Implemented Yet)\n" + "Cost: " + 0, 0),
+                new UpgradeData("Inspiration\n" + "Cost: " + 300, 300),
+                new UpgradeData("Max Level", 0)
+            }
+        },
+        {
+            TowerType.Spikes, new List<UpgradeData>
+            {
+                new UpgradeData("Bigger Spikes\n" + "Cost: " + 100, 100),
+                new UpgradeData("More Spikes\n" + "Cost: " + 150, 150),
+                new UpgradeData("Max Level", 0)
+            }
+        }
+    };
+    #endregion
+    #region Upgrade 3
+    private static readonly Dictionary<TowerType, List<UpgradeData>> upgradeDataMap3 = new()
+    {
+        //Description and Cost
+        {
+            TowerType.Basic, new List<UpgradeData>
+            {
+                new UpgradeData("Better Arrows\n" + "Cost: " + 150, 150),
+                new UpgradeData("Faster mechanism\n" + "Cost: " + 300, 300),
+                new UpgradeData("Max Level", 0)
+            }
+        },
+        {
+            TowerType.Bomb, new List<UpgradeData>
+            {
+                new UpgradeData("Bigger Bombs\n" + "Cost: " + 200, 200),
+                new UpgradeData("Binoculars\n" + "Cost: " + 300, 300),
+                new UpgradeData("Max Level", 0)
+            }
+        },
+        {
+            TowerType.Flame, new List<UpgradeData>
+            {
+                new UpgradeData("Stronger Propellent\n" + "Cost: " + 150, 150),
+                new UpgradeData("Better Fuel\n" + "Cost: " + 200, 200),
+                new UpgradeData("Max Level", 0)
+            }
+        },
+        {
+            TowerType.Economy, new List<UpgradeData>
+            {
+                new UpgradeData("Bigger Mine\n" + "Cost: " + 500, 500),
+                new UpgradeData("International Marketing\n" + "Cost: " + 750, 750),
+                new UpgradeData("Max Level", 0)
+            }
+        },
+        {
+            TowerType.Ice, new List<UpgradeData>
+            {
+                new UpgradeData("Better Firing System\n" + "Cost: " + 150, 150),
+                new UpgradeData("Colder Snow\n" + "Cost: " + 350, 350),
+                new UpgradeData("Max Level", 0)
+            }
+        },
+        {
+            TowerType.Support, new List<UpgradeData>
+            {
+                new UpgradeData("Proximity Sensor (Not Implemented Yet)\n" + "Cost: " + 0, 0),
+                new UpgradeData("Inspiration\n" + "Cost: " + 300, 300),
+                new UpgradeData("Max Level", 0)
+            }
+        },
+        {
+            TowerType.Spikes, new List<UpgradeData>
+            {
+                new UpgradeData("Bigger Spikes\n" + "Cost: " + 100, 100),
+                new UpgradeData("More Spikes\n" + "Cost: " + 150, 150),
+                new UpgradeData("Max Level", 0)
+            }
+        }
+    };
+    #endregion
+    #endregion
 
 
     public void SetTargetType(int typeIndex)
@@ -805,32 +1326,54 @@ public class TowerBehavior : MonoBehaviour
         }
     }
 
-
-
-    public UpgradeData GetUpgradeData(int level)
+    public UpgradeData GetUpgradeData(int level, int path)
     {
-        if (level < 0 || level >= upgradeDataMap[towerType].Count)
+        switch(path)
         {
-            return new UpgradeData("Invalid Level", 0);
+            case 1:
+                if (level < 0 || level >= upgradeDataMap1[towerType].Count)
+                {
+                    return new UpgradeData("Invalid Level", 0);
+                }
+                return upgradeDataMap1[towerType][level];
+                case 2:
+                if (level < 0 || level >= upgradeDataMap2[towerType].Count)
+                {
+                    return new UpgradeData("Invalid Level", 0);
+                }
+                return upgradeDataMap2[towerType][level];
+            case 3:
+                if (level < 0 || level >= upgradeDataMap3[towerType].Count)
+                {
+                    return new UpgradeData("Invalid Level", 0);
+                }
+                return upgradeDataMap3[towerType][level];
         }
-        return upgradeDataMap[towerType][level];
+        return new UpgradeData("Invalid Path", 0);
     }
 
-    public int GetMaxUpgradeLevel()
+    public int GetMaxUpgradeLevel(int path)
     {
-
-        return upgradeDataMap[towerType].Count - 1;
+        switch(path)
+        {
+            case 1:
+                return upgradeDataMap1[towerType].Count - 1;
+            case 2:
+                return upgradeDataMap2[towerType].Count - 1;
+            case 3:
+                return upgradeDataMap3[towerType].Count - 1;
+        }
+        Debug.LogWarning("Invalid Path");
+        return -1;
+        
     }
-    public string GetUpgradeDescription(int level)
+    public string GetUpgradeDescription(int level, int path)
     {
-
-        return GetUpgradeData(level).description;
+        return GetUpgradeData(level, path).description;
     }
-    public int GetUpgradeCost(int level)
+    public int GetUpgradeCost(int level, int path)
     {
-
-        return GetUpgradeData(level).cost;
-
+        return GetUpgradeData(level, path).cost;
     }
 
     public enum TowerType

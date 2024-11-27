@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
@@ -127,10 +126,10 @@ public class UIManager : MonoBehaviour
 
     public void UpdateUpgradeScreen(TowerBehavior towerType)
     {
-        upgrade1.text = "Level 2\n" + towerType.GetUpgradeDescription(0);
-        upgrade2.text = "Level 3\n" + towerType.GetUpgradeDescription(1);
-        upgrade3.text = "Level 4\n" + towerType.GetUpgradeDescription(2);
-        upgrade4.text = "Level 5\n" + towerType.GetUpgradeDescription(3);
+        upgrade1.text = "Level 2\n" + towerType.GetUpgradeDescription(0, 1);
+        upgrade2.text = "Level 3\n" + towerType.GetUpgradeDescription(0, 1);
+        upgrade3.text = "Level 4\n" + towerType.GetUpgradeDescription(0, 1);
+        upgrade4.text = "Level 5\n" + towerType.GetUpgradeDescription(0, 1);
     }
 
     public void ShowAllUpgrades()

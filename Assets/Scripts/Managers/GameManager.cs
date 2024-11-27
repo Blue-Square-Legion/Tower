@@ -28,14 +28,14 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    public Queue<EnemyDamageData> damageData;
+    [NonSerialized] public Queue<EnemyDamageData> damageData;
     private Queue<ApplyEffectData> effectQueue;
     private Queue<ApplyBuffData> buffAddQueue;
     private Queue<ApplyBuffData> buffRemoveQueue;
-    public Queue<Tuple<int, int>> enemyQueueToSpawn;    //Tuple<EnemyID, SpawnPointID>
-    public Queue<Enemy> enemyQueueToRemove;
-    public Queue<TowerBehavior> towerQueueToRemove;
-    public bool endLoop;
+    [NonSerialized] public Queue<Tuple<int, int>> enemyQueueToSpawn;    //Tuple<EnemyID, SpawnPointID>
+    [NonSerialized] public Queue<Enemy> enemyQueueToRemove;
+    [NonSerialized] public Queue<TowerBehavior> towerQueueToRemove;
+    [NonSerialized] public bool endLoop;
     [SerializeField] private Transform nodeParent;
     [NonSerialized] public List<TowerBehavior> builtTowers;
     [NonSerialized] public Vector3[] nodePositions;
@@ -43,16 +43,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI waveText;
     [SerializeField] Player player;
 
-    public bool autoStart;
+    [NonSerialized] public bool autoStart;
 
     EnemySpawner enemySpawner;
-    public bool waveActive;
+    [NonSerialized] public bool waveActive;
     private bool endOfWave;
     int currentWave;
     int[] nextSpawnPoints;
-    public GameObject SelectedTower;
-    public int farmBonus;
-    public bool showPaths;
+    [NonSerialized] public GameObject SelectedTower;
+    [NonSerialized] public int farmBonus;
+    [NonSerialized] public bool showPaths;
+
+    private bool beginWave;
 
     void Start()
     {
@@ -72,6 +74,7 @@ public class GameManager : MonoBehaviour
         autoStart = false;
         waveActive = false;
         showPaths = false;
+        beginWave = false;
 
         UIManager.Instance.UpdateAutoStartText("Auto-start:\n" + autoStart);
 
@@ -392,13 +395,13 @@ public class GameManager : MonoBehaviour
                 //auto start next wave if enabled
                 if (autoStart)
                 {
+                    if (beginWave)
+                        StartCoroutine(Wave(currentWave));
                     waveActive = true;
-                    StartCoroutine(Wave(currentWave));
                     currentWave++;
                     UpdateWaveText();
                     endOfWave = true;
                 }
-
             }
 
             //Apply Buffs
@@ -599,17 +602,8 @@ public class GameManager : MonoBehaviour
     public void ToggleAutoStart()
     {
         autoStart = !autoStart;
+        beginWave = autoStart;
         UIManager.Instance.UpdateAutoStartText("Auto-start:\n"+ autoStart);
-        if (!autoStart) return;
-        if (enemySpawner.spawnedEnemies.Count == 0 && !waveActive)
-        {
-            waveActive = true;
-            StartCoroutine(Wave(currentWave));
-            currentWave++;
-            UpdateWaveText();
-            endOfWave = true;
-        }
-
     }
 
     public void ToggleShowPaths()
