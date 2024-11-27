@@ -67,7 +67,9 @@ public class TowerPlacement : MonoBehaviour
             }
             Transform rangeObject = currentTowerBeingPlaced.transform.Find("Range");
             Renderer renderer = rangeObject.GetComponent<Renderer>();
-            if (hitInfo.collider.gameObject != null)
+
+            if (hitInfo.collider != null &&
+                hitInfo.collider.gameObject != null)
             {
                 if (!hitInfo.collider.gameObject.CompareTag("NotBuildable"))
                 {

@@ -137,7 +137,7 @@ public class GameManager : MonoBehaviour
                     EnqueueEnemy(Enemy.EnemyType.Basic, 1,0);
                     yield return new WaitForSeconds(1);
                 }
-                nextSpawnPoints = new int[] { 1 };
+                nextSpawnPoints = new int[] { 0 };
                 break;
             case 1:
                 for (int i = 0; i < 9; i++)
@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour
                     EnqueueEnemy(Enemy.EnemyType.Basic, 1, 0);
                     yield return new WaitForSeconds(1);
                 }
-                nextSpawnPoints = new int[] { 2 };
+                nextSpawnPoints = new int[] { 0 };
                 break;
             case 2:
                 for (int i = 0; i < 5; i++)
@@ -164,7 +164,7 @@ public class GameManager : MonoBehaviour
                     EnqueueEnemy(Enemy.EnemyType.Ghost, 1, 0);
                     yield return new WaitForSeconds(1);
                 }
-                nextSpawnPoints = new int[] { 1 };
+                nextSpawnPoints = new int[] { 0 };
                 break;
             case 4:
                 for (int i = 0; i < 6; i++)
@@ -188,7 +188,7 @@ public class GameManager : MonoBehaviour
                     EnqueueEnemy(Enemy.EnemyType.Slow, 1,2);
                     yield return new WaitForSeconds(1);
                 }
-                nextSpawnPoints = new int[] { 0 };
+                nextSpawnPoints = new int[] { 0,1 };
                 break;
             case 6:
                 for (int i = 0; i < 6; i++)
@@ -201,7 +201,7 @@ public class GameManager : MonoBehaviour
                     EnqueueEnemy(Enemy.EnemyType.Fast, 1 ,1);
                     yield return new WaitForSeconds(.25f);
                 }
-                nextSpawnPoints = new int[] { 1 };
+                nextSpawnPoints = new int[] { 2 };
                 break;
             case 7:
                 for (int i = 0; i < 10; i++)
@@ -215,7 +215,7 @@ public class GameManager : MonoBehaviour
                     EnqueueEnemy(Enemy.EnemyType.Slow,1, 2);
                     yield return new WaitForSeconds(0.1f);
                 }
-                nextSpawnPoints = new int[] { 2 };
+                nextSpawnPoints = new int[] { 0 };
                 break;
             case 8:
                 for (int i = 0; i < 50; i++)
@@ -223,7 +223,7 @@ public class GameManager : MonoBehaviour
                     EnqueueEnemy(Enemy.EnemyType.Fast, 1,0);
                     yield return new WaitForSeconds(0.15f);
                 }
-                nextSpawnPoints = new int[] { 0 };
+                nextSpawnPoints = new int[] { 1,2 };
                 break;
             case 9:
                 for (int i = 0; i < 100; i++)
@@ -237,7 +237,7 @@ public class GameManager : MonoBehaviour
                     EnqueueEnemy(Enemy.EnemyType.Basic, 1,2);
                     yield return new WaitForSeconds(0.1f);
                 }
-                nextSpawnPoints = new int[] { 1 };
+                nextSpawnPoints = new int[] { };
                 break;
             default:
                 currentWave = 0;
