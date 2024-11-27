@@ -24,6 +24,7 @@ public class Missile : MonoBehaviour
             speed = 0.5f;
             time = 0;
             explosionSystem = parent.GetComponentInChildren<ParticleSystem>();
+            explosionSystem.startSize = explosionRadius;
             parentClass = parent.GetComponent<MissileDamage>();
 
             StartCoroutine(Fire());

@@ -14517,7 +14517,7 @@ MonoBehaviour:
   manaText: {fileID: 2025556700}
   maxHealth: 100
   maxMana: 100
-  startingMoney: 1000
+  startingMoney: 100000
 --- !u!114 &555665699
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -78,17 +78,17 @@ public class TowerBehavior : MonoBehaviour
                 upgradeCost1 = 50;
                 upgradeDescription1 = "Better Scopes\n" + "Cost: " + 50;
                 upgradeCost2 = 50;
-                upgradeDescription2 = "Increased Damage\n" + "Cost: " + 50;
+                upgradeDescription2 = "Sharper Arrows\n" + "Cost: " + 100;
                 upgradeCost2 = 50;
-                upgradeDescription3 = "Increased Attack Speed\n" + "Cost: " + 50;
+                upgradeDescription3 = "Faster Firing\n" + "Cost: " + 150;
                 break;
             case TowerType.Bomb:
                 upgradeCost1 = 100;
-                upgradeDescription1 = "More Powerful Bombs\n" + "Cost: " + 100;
+                upgradeDescription1 = "Heavier Bombs\n" + "Cost: " + 200;
                 upgradeCost2 = 100;
-                upgradeDescription2 = "Faster Attack Speed\n" + "Cost: " + 100;
+                upgradeDescription2 = "Faster Reload\n" + "Cost: " + 200;
                 upgradeCost3 = 100;
-                upgradeDescription3 = "Bigger explosion radius\n" + "Cost: " + 100;
+                upgradeDescription3 = "Bombier Bomb\n" + "Cost: " + 250;
                 break;
             case TowerType.Flame:
                 upgradeCost1 = 100;
@@ -354,8 +354,8 @@ public class TowerBehavior : MonoBehaviour
                             break;
                         case 1:
                             //Do upgrade
-                            damage += 1;
-                            transform.GetComponent<StandardDamage>().UpdateDamage(damage);
+                            range += 2f;
+                            rangeObject.localScale = new Vector3(rangeObject.localScale.x + 4f, rangeObject.localScale.y, rangeObject.localScale.z + 4f);
 
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
@@ -364,8 +364,8 @@ public class TowerBehavior : MonoBehaviour
                             break;
                         case 2:
                             //Do upgrade
-                            fireRate += 1;
-                            transform.GetComponent<StandardDamage>().UpdateFireRate(fireRate);
+                            range += 3f;
+                            rangeObject.localScale = new Vector3(rangeObject.localScale.x + 6f, rangeObject.localScale.y, rangeObject.localScale.z + 6f);
 
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
@@ -388,7 +388,8 @@ public class TowerBehavior : MonoBehaviour
                             break;
                         case 1:
                             //Do upgrade
-                            transform.GetComponent<MissileDamage>().explosionRadius += 1;
+                            damage += 3f;
+                            transform.GetComponent<MissileDamage>().UpdateDamage(damage);
 
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
@@ -397,8 +398,8 @@ public class TowerBehavior : MonoBehaviour
                             break;
                         case 2:
                             //Do upgrade
-                            range += .25f;
-                            rangeObject.localScale = new Vector3(rangeObject.localScale.x + .5f, rangeObject.localScale.y, rangeObject.localScale.z + .5f);
+                            damage += 4f;
+                            transform.GetComponent<MissileDamage>().UpdateDamage(damage);
 
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
@@ -599,32 +600,32 @@ public class TowerBehavior : MonoBehaviour
                     {
                         case 0:
                             //Do upgrade
-                            range += 1f;
-                            rangeObject.localScale = new Vector3(rangeObject.localScale.x + 2f, rangeObject.localScale.y, rangeObject.localScale.z + 2f);
-
-                            //Set up for next upgrade
-                            sellCost += upgradeCost2 / 2;
-                            upgradeCost2 = GetUpgradeCost(upgradeLevel2, 1);
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
-                            break;
-                        case 1:
-                            //Do upgrade
-                            damage += 1;
+                            damage += 1f;
                             transform.GetComponent<StandardDamage>().UpdateDamage(damage);
 
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
-                            upgradeCost2 = GetUpgradeCost(upgradeLevel2, 1);
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
+                            upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
                             break;
-                        case 2:
+                        case 1:
                             //Do upgrade
-                            fireRate += 1;
-                            transform.GetComponent<StandardDamage>().UpdateFireRate(fireRate);
+                            damage += 2f;
+                            transform.GetComponent<StandardDamage>().UpdateDamage(damage);
 
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
+                            upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
+                            break;
+                        case 2:
+                            //Do upgrade
+                            damage += 7;
+                            transform.GetComponent<StandardDamage>().UpdateDamage(damage);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost2 / 2;
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
                             break;
                     }
                     break;
@@ -633,31 +634,32 @@ public class TowerBehavior : MonoBehaviour
                     {
                         case 0:
                             //Do upgrade
-                            damage += 1f;
-                            transform.GetComponent<MissileDamage>().UpdateDamage(damage);
+                            fireRate += 0.07f;
+                            transform.GetComponent<MissileDamage>().UpdateFireRate(fireRate);
 
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
-                            upgradeCost2 = GetUpgradeCost(upgradeLevel2, 1);
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
+                            upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
                             break;
                         case 1:
                             //Do upgrade
-                            transform.GetComponent<MissileDamage>().explosionRadius += 1;
+                            fireRate += 0.1f;
+                            transform.GetComponent<MissileDamage>().UpdateFireRate(fireRate);
 
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
-                            upgradeCost2 = GetUpgradeCost(upgradeLevel2, 1);
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
+                            upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
                             break;
                         case 2:
                             //Do upgrade
-                            range += .25f;
-                            rangeObject.localScale = new Vector3(rangeObject.localScale.x + .5f, rangeObject.localScale.y, rangeObject.localScale.z + .5f);
+                            fireRate += 0.2f;
+                            transform.GetComponent<MissileDamage>().UpdateFireRate(fireRate);
 
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 1);
+                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
                             break;
                     }
                     break;
@@ -853,32 +855,32 @@ public class TowerBehavior : MonoBehaviour
                     {
                         case 0:
                             //Do upgrade
-                            range += 1f;
-                            rangeObject.localScale = new Vector3(rangeObject.localScale.x + 2f, rangeObject.localScale.y, rangeObject.localScale.z + 2f);
-
-                            //Set up for next upgrade
-                            sellCost += upgradeCost3 / 2;
-                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 1);
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
-                            break;
-                        case 1:
-                            //Do upgrade
-                            damage += 1;
-                            transform.GetComponent<StandardDamage>().UpdateDamage(damage);
-
-                            //Set up for next upgrade
-                            sellCost += upgradeCost3 / 2;
-                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 1);
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
-                            break;
-                        case 2:
-                            //Do upgrade
                             fireRate += 1;
                             transform.GetComponent<StandardDamage>().UpdateFireRate(fireRate);
 
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
+                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
+                            break;
+                        case 1:
+                            //Do upgrade
+                            fireRate += 2;
+                            transform.GetComponent<StandardDamage>().UpdateFireRate(fireRate);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost3 / 2;
+                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
+                            break;
+                        case 2:
+                            //Do upgrade
+                            fireRate += 2;
+                            transform.GetComponent<StandardDamage>().UpdateFireRate(fireRate);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost3 / 2;
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
                             break;
                     }
                     break;
@@ -887,31 +889,29 @@ public class TowerBehavior : MonoBehaviour
                     {
                         case 0:
                             //Do upgrade
-                            damage += 1f;
-                            transform.GetComponent<MissileDamage>().UpdateDamage(damage);
-
-                            //Set up for next upgrade
-                            sellCost += upgradeCost3 / 2;
-                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 1);
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
-                            break;
-                        case 1:
-                            //Do upgrade
                             transform.GetComponent<MissileDamage>().explosionRadius += 1;
 
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
-                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 1);
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
+                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
                             break;
-                        case 2:
+                        case 1:
                             //Do upgrade
-                            range += .25f;
-                            rangeObject.localScale = new Vector3(rangeObject.localScale.x + .5f, rangeObject.localScale.y, rangeObject.localScale.z + .5f);
+                            transform.GetComponent<MissileDamage>().explosionRadius += 3;
 
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 1);
+                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
+                            break;
+                        case 2:
+                            //Do upgrade
+                            transform.GetComponent<MissileDamage>().explosionRadius += 5;
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost3 / 2;
+                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
                             break;
                     }
                     break;
@@ -1100,8 +1100,8 @@ public class TowerBehavior : MonoBehaviour
         upgradePanel.SetTarget(this, (int)targetType);
         upgradePanel.SetSellButton(sellCost);
         upgradePanel.SetText(upgradeDescription1, 1);
-        upgradePanel.SetText(upgradeDescription1, 2);
-        upgradePanel.SetText(upgradeDescription1, 3);
+        upgradePanel.SetText(upgradeDescription2, 2);
+        upgradePanel.SetText(upgradeDescription3, 3);
         upgradePanel.ToggleUpgradeButton(upgradeLevel1 != 3, 1);
         upgradePanel.ToggleUpgradeButton(upgradeLevel2 != 3, 2);
         upgradePanel.ToggleUpgradeButton(upgradeLevel3 != 3, 3);
@@ -1132,16 +1132,16 @@ public class TowerBehavior : MonoBehaviour
         {
             TowerType.Basic, new List<UpgradeData>
             {
-                new UpgradeData("Better Arrows\n" + "Cost: " + 150, 150),
-                new UpgradeData("Faster mechanism\n" + "Cost: " + 300, 300),
+                new UpgradeData("Scopier Scopes\n" + "Cost: " + 150, 150),
+                new UpgradeData("Scopiest Scopes\n" + "Cost: " + 400, 400),
                 new UpgradeData("Max Level", 0)
             }
         },
         {
             TowerType.Bomb, new List<UpgradeData>
             {
-                new UpgradeData("Bigger Bombs\n" + "Cost: " + 200, 200),
-                new UpgradeData("Binoculars\n" + "Cost: " + 200, 300),
+                new UpgradeData("More Powder\n" + "Cost: " + 350, 250),
+                new UpgradeData("BOOM.\n" + "Cost: " + 800, 800),
                 new UpgradeData("Max Level", 0)
             }
         },
@@ -1194,16 +1194,16 @@ public class TowerBehavior : MonoBehaviour
         {
             TowerType.Basic, new List<UpgradeData>
             {
-                new UpgradeData("Better Arrows\n" + "Cost: " + 150, 150),
-                new UpgradeData("Faster mechanism\n" + "Cost: " + 300, 300),
+                new UpgradeData("Stronger Arrows\n" + "Cost: " + 450, 450),
+                new UpgradeData("Barbed Scopes\n" + "Cost: " + 1000, 1000),
                 new UpgradeData("Max Level", 0)
             }
         },
         {
             TowerType.Bomb, new List<UpgradeData>
             {
-                new UpgradeData("Bigger Bombs\n" + "Cost: " + 200, 200),
-                new UpgradeData("Binoculars\n" + "Cost: " + 300, 300),
+                new UpgradeData("Fastest Reload\n" + "Cost: " + 400, 400),
+                new UpgradeData("Automated Reload\n" + "Cost: " + 500, 500),
                 new UpgradeData("Max Level", 0)
             }
         },
@@ -1256,16 +1256,16 @@ public class TowerBehavior : MonoBehaviour
         {
             TowerType.Basic, new List<UpgradeData>
             {
-                new UpgradeData("Better Arrows\n" + "Cost: " + 150, 150),
-                new UpgradeData("Faster mechanism\n" + "Cost: " + 300, 300),
+                new UpgradeData("Faster Mechanism\n" + "Cost: " + 300, 300),
+                new UpgradeData("Semi-Automatic Firing\n" + "Cost: " + 850, 850),
                 new UpgradeData("Max Level", 0)
             }
         },
         {
             TowerType.Bomb, new List<UpgradeData>
             {
-                new UpgradeData("Bigger Bombs\n" + "Cost: " + 200, 200),
-                new UpgradeData("Binoculars\n" + "Cost: " + 300, 300),
+                new UpgradeData("Compressed Charge\n" + "Cost: " + 600, 600),
+                new UpgradeData("Atomic Explosion\n" + "Cost: " + 1300, 1300),
                 new UpgradeData("Max Level", 0)
             }
         },
