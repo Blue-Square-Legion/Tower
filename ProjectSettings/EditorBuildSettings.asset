@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Prototyping Scene - EDITOR ONLY/GameScene.unity
     guid: 5d9c2907bad81bc4ea378df57ef9e918
+  - enabled: 1
+    path: Assets/Scenes/Prototyping Scene - EDITOR ONLY/Level2.unity
+    guid: 8ebf3897521dc9f46b0423ced07f4121
   m_configObjects: {}
