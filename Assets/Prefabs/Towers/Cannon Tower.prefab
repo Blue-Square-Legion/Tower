@@ -202,8 +202,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   damage: 2
-  fireRate: 1
-  range: 4
+  fireRate: 1.5
+  range: 3
   cost: 150
   isSelected: 0
   towerType: 2
