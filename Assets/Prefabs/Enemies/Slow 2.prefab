@@ -6983,7 +6983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   maxHealth: 50
-  moneyToPlayer: 30
+  moneyToPlayer: 25
   currentHealth: 0
   speed: 2
   damageResistance: 2

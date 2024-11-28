@@ -223,7 +223,7 @@ MonoBehaviour:
   maxHealth: 15
   moneyToPlayer: 4
   currentHealth: 0
-  speed: 6
+  speed: 5
   damageResistance: 1
   ID: 0
   nodeIndex: 0
