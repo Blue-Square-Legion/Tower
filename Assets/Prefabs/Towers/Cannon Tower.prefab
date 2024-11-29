@@ -202,16 +202,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   damage: 2
-  fireRate: 0.33
-  range: 4
+  fireRate: 1.5
+  range: 3
   cost: 150
   isSelected: 0
   towerType: 2
   targetType: 0
   canvas: {fileID: 0}
-  upgradeLevel1: 0
-  upgradeLevel2: 0
-  upgradeLevel3: 0
+  upgradeLevel: 0
 --- !u!114 &2543761900036560489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -598,26 +596,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3629427662347509965}
     m_Modifications:
-    - target: {fileID: 2608180788022481126, guid: 279d90c1aa2c5d0498c08656a0438a72,
-        type: 3}
-      propertyPath: InitialModule.size3D
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2608180788022481126, guid: 279d90c1aa2c5d0498c08656a0438a72,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2608180788022481126, guid: 279d90c1aa2c5d0498c08656a0438a72,
-        type: 3}
-      propertyPath: InitialModule.startSizeY.scalar
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2608180788022481126, guid: 279d90c1aa2c5d0498c08656a0438a72,
-        type: 3}
-      propertyPath: InitialModule.startSizeZ.scalar
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 3124237719489630456, guid: 279d90c1aa2c5d0498c08656a0438a72,
         type: 3}
       propertyPath: m_Name

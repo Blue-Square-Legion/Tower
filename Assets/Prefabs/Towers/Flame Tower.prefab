@@ -90,8 +90,8 @@ MonoBehaviour:
   enemiesLayer:
     serializedVersion: 2
     m_Bits: 64
-  damage: 2
-  fireRate: 5
+  damage: 1
+  fireRate: 1.5
   range: 2
   cost: 110
   isSelected: 0
