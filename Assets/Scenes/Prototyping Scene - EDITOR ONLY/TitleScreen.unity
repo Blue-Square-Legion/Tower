@@ -161,10 +161,15 @@ MonoBehaviour:
   runeSelection: {fileID: 0}
   towerSelection: {fileID: 0}
   upgradeScreen: {fileID: 0}
-  upgrade1: {fileID: 0}
-  upgrade2: {fileID: 0}
-  upgrade3: {fileID: 0}
-  upgrade4: {fileID: 0}
+  path1Upgrade1: {fileID: 0}
+  path1Upgrade2: {fileID: 0}
+  path1Upgrade3: {fileID: 0}
+  path2Upgrade1: {fileID: 0}
+  path2Upgrade2: {fileID: 0}
+  path2Upgrade3: {fileID: 0}
+  path3Upgrade1: {fileID: 0}
+  path3Upgrade2: {fileID: 0}
+  path3Upgrade3: {fileID: 0}
   autoStartText: {fileID: 0}
   showPathsText: {fileID: 0}
 --- !u!4 &148718683
@@ -877,11 +882,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "@CommonCurtisy13    : Producer\r\n@EshGetty     Producer/Team-Lead\r\n@mangs   
-    :  2D artist/Animations/Tilesets/Co-Lead\r\n@illzone.sound: Sound Designer (Wwise,
-    Unreal)\r\n@Ryan Herwig   : Programmer (Unity)\r\n@Chiferito    :  Programmer
-    \r\n@TanzaniteEric     : Game Designer (Unity)\r\n@\u13CAdahee   : 3D Artist\r\n@Oscar
-    Hernandez    : 3D artist\r\n@Triplejay   : 3D Artist\n@TanzaniteEric :Game Designer"
+  m_text: "@kaptainKirby   : Producer / Team Lead / Programmer\n@Chiferito    : 
+    Lead Programmer \r\n@Aceofspade - Programmer\n@Oscar Hernandez    : Co-Lead /
+    Lead 3D artist\r\n@Erica   :  Lead 2D Artist\r\n@Triplejay   : 3D Artist\n@\u13CAdahee  
+    : 3D Artist\r\n@heiki - 3D Artist\n@MUGWANEZA MANZI Audace    : Lead Game Designer\n@ilan:
+    Lead Sound Designer\r\n@EshGetty     Producer/Team-Lead\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -944,7 +949,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -154.95091, y: 0, z: -49.190796, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
