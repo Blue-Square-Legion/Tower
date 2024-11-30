@@ -41386,6 +41386,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 233272667}
+    - target: {fileID: 1138427854678525773, guid: 3a063d3fb71077448925320fd736b796,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 233272667}
+    - target: {fileID: 1138427854678525773, guid: 3a063d3fb71077448925320fd736b796,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradePressed
+      objectReference: {fileID: 0}
     - target: {fileID: 1329700718006573154, guid: 3a063d3fb71077448925320fd736b796,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -41849,7 +41859,7 @@ PrefabInstance:
     - target: {fileID: 6580106572452751830, guid: 3a063d3fb71077448925320fd736b796,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -849.18506
+      value: -430.81516
       objectReference: {fileID: 0}
     - target: {fileID: 6580106572452751830, guid: 3a063d3fb71077448925320fd736b796,
         type: 3}
@@ -42036,6 +42046,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 484379760}
+    - target: {fileID: 8876978716293927969, guid: 3a063d3fb71077448925320fd736b796,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 233272667}
+    - target: {fileID: 8876978716293927969, guid: 3a063d3fb71077448925320fd736b796,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradePressed
+      objectReference: {fileID: 0}
     - target: {fileID: 8881698293867346468, guid: 3a063d3fb71077448925320fd736b796,
         type: 3}
       propertyPath: m_Name
@@ -42149,6 +42169,11 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 1728860207}
+    - target: {fileID: 3088496653915348084, guid: 22d70330496e4474db168f477a4993e2,
+        type: 3}
+      propertyPath: startingMoney
+      value: 100000
+      objectReference: {fileID: 0}
     - target: {fileID: 4222203108005065239, guid: 22d70330496e4474db168f477a4993e2,
         type: 3}
       propertyPath: m_Name

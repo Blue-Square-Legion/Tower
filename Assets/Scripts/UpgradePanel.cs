@@ -44,7 +44,7 @@ public class UpgradePanel : MonoBehaviour
     [NonSerialized] public TowerBehavior target;
     private int currentTargetIndex = 0;
     private int targetNum = Enum.GetValues(typeof(TargetType)).Length - 1;
-    private int maxUpgradeLevel = 3;
+    private int maxUpgradeLevel;
 
     void Start()
     {
