@@ -1,11 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Collections;
+using TMPro;
 using Unity.Jobs;
 using UnityEngine;
-using UnityEngine.Jobs;
-using static UnityEngine.Splines.SplineInstantiate;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,34 +25,41 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    public Queue<EnemyDamageData> damageData;
+    [NonSerialized] public Queue<EnemyDamageData> damageData;
     private Queue<ApplyEffectData> effectQueue;
     private Queue<ApplyBuffData> buffAddQueue;
     private Queue<ApplyBuffData> buffRemoveQueue;
-    public Queue<Tuple<int, int>> enemyQueueToSpawn;    //Tuple<EnemyID, SpawnPointID>
-    public Queue<Enemy> enemyQueueToRemove;
-    public Queue<TowerBehavior> towerQueueToRemove;
-    public bool endLoop;
+    [NonSerialized] public Queue<Tuple<int, int>> enemyQueueToSpawn;    //Tuple<EnemyID, SpawnPointID>
+    [NonSerialized] public Queue<Enemy> enemyQueueToRemove;
+    [NonSerialized] public Queue<TowerBehavior> towerQueueToRemove;
+    [NonSerialized] public bool endLoop;
     [SerializeField] private Transform nodeParent;
     [NonSerialized] public List<TowerBehavior> builtTowers;
     [NonSerialized] public Vector3[] nodePositions;
     [NonSerialized] public float[] nodeDistances;
-
+    [SerializeField] TextMeshProUGUI waveText;
     [SerializeField] Player player;
 
+    [NonSerialized] public bool autoStart;
+
     EnemySpawner enemySpawner;
-    private bool waveActive = false;
+    [NonSerialized] public bool waveActive;
     private bool endOfWave;
     int currentWave;
     int[] nextSpawnPoints;
-    public GameObject SelectedTower;
-    public int farmBonus;
+    [NonSerialized] public GameObject SelectedTower;
+    [NonSerialized] public float farmBonus;
+    [NonSerialized] public bool showPaths;
+
+    private bool beginWave;
+
+    [NonSerialized] public float interestPercent;
 
     void Start()
     {
         enemySpawner = EnemySpawner.Instance;
         endLoop = false;
-        endOfWave = false;
+        endOfWave = true;
         enemyQueueToSpawn = new();
         enemyQueueToRemove = new();
         towerQueueToRemove = new();
@@ -65,6 +70,13 @@ public class GameManager : MonoBehaviour
         builtTowers = new List<TowerBehavior>();
         enemySpawner.Init();
         nextSpawnPoints = new int[] {0};
+        autoStart = false;
+        waveActive = false;
+        showPaths = false;
+        beginWave = false;
+        interestPercent = 1;
+
+        UIManager.Instance.UpdateAutoStartText("Auto-start:\n" + autoStart);
 
         int numOfNodes = nodeParent.childCount;
         nodePositions = new Vector3[numOfNodes];
@@ -89,12 +101,18 @@ public class GameManager : MonoBehaviour
 
     public void EnqueueWave()
     {
-        if (waveActive) return;
+        if (waveActive)
+        {
+            print("there is already an active wave");
+            return;
+        }
         waveActive = true;
         StartCoroutine(Wave(currentWave));
         currentWave++;
+        UpdateWaveText();
         endOfWave = true;
     }
+
 
     //Add new waves here
 
@@ -116,23 +134,23 @@ public class GameManager : MonoBehaviour
             case 0:
                 for (int i = 0; i < 5; i++)
                 {
-                    EnqueueEnemy(1,0);
+                    EnqueueEnemy(Enemy.EnemyType.Basic, 1,0);
                     yield return new WaitForSeconds(1);
                 }
-                nextSpawnPoints = new int[] { 1 };
+                nextSpawnPoints = new int[] { 0 };
                 break;
             case 1:
                 for (int i = 0; i < 9; i++)
                 {
-                    EnqueueEnemy(1,1);
+                    EnqueueEnemy(Enemy.EnemyType.Basic, 1, 0);
                     yield return new WaitForSeconds(1);
                 }
-                nextSpawnPoints = new int[] { 2 };
+                nextSpawnPoints = new int[] { 0 };
                 break;
             case 2:
                 for (int i = 0; i < 5; i++)
                 {
-                    EnqueueEnemy(2,2);
+                    EnqueueEnemy(Enemy.EnemyType.Fast, 1, 0);
                     yield return new WaitForSeconds(0.5f);
                 }
                 nextSpawnPoints = new int[] { 0 };
@@ -141,25 +159,25 @@ public class GameManager : MonoBehaviour
 
                 for (int i = 0; i < 5; i++)
                 {
-                    EnqueueEnemy(1,0);
+                    EnqueueEnemy(Enemy.EnemyType.Basic,1, 0);
                     yield return new WaitForSeconds(1);
-                    EnqueueEnemy(4,0);
+                    EnqueueEnemy(Enemy.EnemyType.Ghost, 1, 0);
                     yield return new WaitForSeconds(1);
                 }
-                nextSpawnPoints = new int[] { 1 };
+                nextSpawnPoints = new int[] { 0 };
                 break;
             case 4:
                 for (int i = 0; i < 6; i++)
                 {
-                    EnqueueEnemy(1,1);
+                    EnqueueEnemy(Enemy.EnemyType.Basic, 1, 0);
                     yield return new WaitForSeconds(1f);
-                    EnqueueEnemy(1, 1);
+                    EnqueueEnemy(Enemy.EnemyType.Basic, 1, 0);
                     yield return new WaitForSeconds(1f);
-                    EnqueueEnemy(1, 1);
+                    EnqueueEnemy(Enemy.EnemyType.Basic, 1, 0);
                     yield return new WaitForSeconds(1f);
-                    EnqueueEnemy(2, 1);
+                    EnqueueEnemy(Enemy.EnemyType.Fast, 1, 0);
                     yield return new WaitForSeconds(0.5f);
-                    EnqueueEnemy(2,1);
+                    EnqueueEnemy(Enemy.EnemyType.Fast, 1, 0);
                     yield return new WaitForSeconds(.5f);
                 }
                 nextSpawnPoints = new int[] { 2 };
@@ -167,64 +185,72 @@ public class GameManager : MonoBehaviour
             case 5:
                 for (int i = 0; i < 10; i++)
                 {
-                    EnqueueEnemy(3,2);
+                    EnqueueEnemy(Enemy.EnemyType.Slow, 1,2);
                     yield return new WaitForSeconds(1);
                 }
-                nextSpawnPoints = new int[] { 0 };
+                nextSpawnPoints = new int[] { 0,1 };
                 break;
             case 6:
                 for (int i = 0; i < 6; i++)
                 {
-                    EnqueueEnemy(3,0);
+                    EnqueueEnemy(Enemy.EnemyType.Slow, 1, 0);
                     yield return new WaitForSeconds(1);
                 }
                 for (int i = 0; i < 50; i++)
                 {
-                    EnqueueEnemy(2,1);
+                    EnqueueEnemy(Enemy.EnemyType.Fast, 1 ,1);
                     yield return new WaitForSeconds(.25f);
                 }
-                nextSpawnPoints = new int[] { 1 };
+                nextSpawnPoints = new int[] { 2 };
                 break;
             case 7:
                 for (int i = 0; i < 10; i++)
                 {
-                    EnqueueEnemy(3,2);
+                    EnqueueEnemy(Enemy.EnemyType.Slow, 1,2);
                     yield return new WaitForSeconds(1f);
-                    EnqueueEnemy(2,2);
+                    EnqueueEnemy(Enemy.EnemyType.Slow, 1,2);
                     yield return new WaitForSeconds(0.25f);
-                    EnqueueEnemy(1,2);
+                    EnqueueEnemy(Enemy.EnemyType.Slow, 1,2);
                     yield return new WaitForSeconds(0.5f);
-                    EnqueueEnemy(3,2);
+                    EnqueueEnemy(Enemy.EnemyType.Slow,1, 2);
                     yield return new WaitForSeconds(0.1f);
                 }
-                nextSpawnPoints = new int[] { 2 };
+                nextSpawnPoints = new int[] { 0 };
                 break;
             case 8:
                 for (int i = 0; i < 50; i++)
                 {
-                    EnqueueEnemy(2,0);
+                    EnqueueEnemy(Enemy.EnemyType.Fast, 1,0);
                     yield return new WaitForSeconds(0.15f);
                 }
-                nextSpawnPoints = new int[] { 0 };
+                nextSpawnPoints = new int[] { 1,2 };
                 break;
             case 9:
                 for (int i = 0; i < 100; i++)
                 {
-                    EnqueueEnemy(3,1);
+                    EnqueueEnemy(Enemy.EnemyType.Slow, 1,1);
                     yield return new WaitForSeconds(.5f);
                 }
                 for (int i = 0; i < 50; i++)
                 {
-                    EnqueueEnemy(2,2);
-                    EnqueueEnemy(1,2);
+                    EnqueueEnemy(Enemy.EnemyType.Fast, 1,2);
+                    EnqueueEnemy(Enemy.EnemyType.Basic, 1,2);
                     yield return new WaitForSeconds(0.1f);
                 }
-                nextSpawnPoints = new int[] { 1 };
+                nextSpawnPoints = new int[] { };
                 break;
             default:
                 currentWave = 0;
                 StartCoroutine(Wave(currentWave));
                 break;
+        }
+    }
+
+    private void UpdateWaveText()
+    {
+        if (waveText != null)
+        {
+            waveText.text = "Wave " + currentWave;
         }
     }
 
@@ -291,6 +317,13 @@ public class GameManager : MonoBehaviour
                 tower.Tick();
             }
 
+            //Tick Tower Buffs
+            foreach (TowerBehavior tower in builtTowers)
+            {
+                tower.target = TowerTargetting.GetTarget(tower, tower.targetType);
+                tower.TickBuffs();
+            }
+
             //Apply Effects
             if (effectQueue.Count > 0)
             {
@@ -331,7 +364,10 @@ public class GameManager : MonoBehaviour
                     targetedEnemy.GetComponentInChildren<HealthBar>().UpdateHealth((int) targetedEnemy.currentHealth);
                     if (targetedEnemy.currentHealth <= 0)
                     {
-                        player.GiveMoney(targetedEnemy.moneyToPlayer);
+                        if (targetedEnemy.lastDamagingTower != null)
+                            player.GiveMoney(targetedEnemy.moneyToPlayer * targetedEnemy.lastDamagingTower.moneyMultiplier); // Gives money to player
+                        else
+                            player.GiveMoney(targetedEnemy.moneyToPlayer); // If enemy was defeated by a non-tower, gives normal amount of money
                         EnqueueEnemyToRemove(currentDamageData.targetedEnemy);
                     }
                         
@@ -348,6 +384,7 @@ public class GameManager : MonoBehaviour
                 }
             }
 
+            //all enemies defeated
             if (enemySpawner.spawnedEnemies.Count == 0 && endOfWave)
             {
                 waveActive = false;
@@ -357,6 +394,17 @@ public class GameManager : MonoBehaviour
                 print(nextSpawnPoints[0]);
                 WaveBonus(currentWave);
                 endOfWave = false;
+
+                //auto start next wave if enabled
+                if (autoStart)
+                {
+                    if (beginWave)
+                        StartCoroutine(Wave(currentWave));
+                    waveActive = true;
+                    currentWave++;
+                    UpdateWaveText();
+                    endOfWave = true;
+                }
             }
 
             //Apply Buffs
@@ -427,8 +475,30 @@ public class GameManager : MonoBehaviour
     /// Enqueues enemies to spawn when the game allows it to
     /// </summary>
     /// <param name="enemyID"></param>
-    public void EnqueueEnemy(int enemyID, int spawnPointNumber)
+    public void EnqueueEnemy(Enemy.EnemyType type, int level, int spawnPointNumber)
     {
+        int enemyID = level;
+
+        //Converts type to level - this system is under the assumption that 10 or more variants of this type do not exist.
+        switch(type)
+        {
+            case Enemy.EnemyType.Basic:
+                enemyID += 10;
+                break;
+            case Enemy.EnemyType.Fast:
+                enemyID += 20;
+                break;
+            case Enemy.EnemyType.Slow:
+                enemyID += 30;
+                break;
+            case Enemy.EnemyType.Ghost:
+                enemyID += 40;
+                break;
+            case Enemy.EnemyType.Boss1:
+                enemyID += 50;
+                break;
+        }
+
         enemyQueueToSpawn.Enqueue(new Tuple<int, int>(enemyID, spawnPointNumber));
     }
 
@@ -460,13 +530,15 @@ public class GameManager : MonoBehaviour
         public float damageRate;
         public float damageDelay;
         public float modifier;
-        public Effect(EffectNames effectName, float damage, float duration, float damageRate, float modifier)
+        public TowerBehavior source;
+        public Effect(EffectNames effectName, float damage, float duration, float damageRate, float modifier, TowerBehavior source)
         {
             this.effectName = effectName;
             this.damage = damage;
             this.duration = duration;
             this.damageRate = damageRate;
             this.modifier = modifier;
+            this.source = source;
         }
     }
 
@@ -510,11 +582,13 @@ public class GameManager : MonoBehaviour
         public Enemy targetedEnemy;
         public float totalDamage;
         public float resistance;
-        public EnemyDamageData(Enemy targettedEnemy,  float totalDamage, float resistance)
+        public TowerBehavior damageOrigin;
+        public EnemyDamageData(Enemy targettedEnemy,  float totalDamage, float resistance, TowerBehavior damageOrigin)
         {
             this.targetedEnemy = targettedEnemy;
             this.totalDamage = totalDamage;
             this.resistance = resistance;
+            this.damageOrigin = damageOrigin;
         }
     }
 
@@ -528,6 +602,21 @@ public class GameManager : MonoBehaviour
     {
         SupportBonusRange,
         SupportBonusDamage,
-        SupportBonusAttackSpeed
+        SupportBonusAttackSpeed,
+        Stun,
+        Investments
+    }
+
+    public void ToggleAutoStart()
+    {
+        autoStart = !autoStart;
+        beginWave = autoStart;
+        UIManager.Instance.UpdateAutoStartText("Auto-start:\n"+ autoStart);
+    }
+
+    public void ToggleShowPaths()
+    {
+        showPaths = !showPaths;
+        UIManager.Instance.UpdateShowPathsText("Show paths:\n" + showPaths);
     }
 }

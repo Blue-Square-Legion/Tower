@@ -51,6 +51,7 @@ public class Meteor : MonoBehaviour
         {
             if (enemy.CompareTag("Enemy"))
             {
+                enemy.GetComponent<Enemy>().lastDamagingTower = null;
                 enemy.GetComponent<Enemy>().TakeDamage(damage);
             }
         }

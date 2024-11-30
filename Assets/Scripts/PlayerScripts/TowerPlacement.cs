@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
@@ -33,7 +34,8 @@ public class TowerPlacement : MonoBehaviour
     private bool canPlace;
     private Player player;
     private bool pathBlocked;
-
+    Color redColor = Color.red;
+    Color blueColor = Color.blue;
     GameManager gameManager;
     void Start()
     {
@@ -64,59 +66,102 @@ public class TowerPlacement : MonoBehaviour
                 CancelPlacingTower();
                 return;
             }
+            Transform rangeObject = currentTowerBeingPlaced.transform.Find("Range");
+            Renderer renderer = rangeObject.GetComponent<Renderer>();
 
-            //Checks if the tower can be placed
-
-            //If left mouse button is down and mouse is pointing to a valid object
-            if (Input.GetMouseButtonDown(0) && hitInfo.collider.gameObject != null)
+            if (hitInfo.collider != null &&
+                hitInfo.collider.gameObject != null)
             {
-                //If the surface is buildable
                 if (!hitInfo.collider.gameObject.CompareTag("NotBuildable"))
                 {
+
                     BoxCollider towerCollider = currentTowerBeingPlaced.gameObject.GetComponent<BoxCollider>();
                     towerCollider.isTrigger = true;
 
                     Vector3 boxCenter = currentTowerBeingPlaced.gameObject.transform.position + towerCollider.center;
                     Vector3 halfExtends = towerCollider.size / 2;
+                    
 
                     //Checks if the tower is too close to a different tower or structure
                     if (!Physics.CheckBox(boxCenter, halfExtends, Quaternion.identity, placementCheckMask, QueryTriggerInteraction.Ignore))
                     {
-                        dummySurface.BuildNavMesh();
-                        CheckPath();
-                        // Build if path wont be blocked
-                        if (!pathBlocked)
+                        renderer.material.SetColor("_BaseColor", blueColor);
+
+                        if (Input.GetMouseButtonDown(0) && hitInfo.collider.gameObject != null)
                         {
-                            if (canPlace)
+                            dummySurface.BuildNavMesh();
+                            CheckPath();
+                            // Build if path wont be blocked
+                            if (!pathBlocked)
                             {
-                                surface.BuildNavMesh();
-                                gameManager.builtTowers.Add(currentTowerBeingPlaced.GetComponent<TowerBehavior>());
-                                player.RemoveMoney(currentTowerBeingPlaced.GetComponent<TowerBehavior>().cost);
-                                towerCollider.isTrigger = false;
-                                towerCollider.providesContacts = true;
 
-                                if (currentTowerBeingPlaced.TryGetComponent<SupportBehavior>(out SupportBehavior supportBehavior))
-                                    supportBehavior.Built();
+                                if (canPlace)
+                                {
+                                    surface.BuildNavMesh();
+                                    gameManager.builtTowers.Add(currentTowerBeingPlaced.GetComponent<TowerBehavior>());
+                                    player.RemoveMoney(currentTowerBeingPlaced.GetComponent<TowerBehavior>().cost);
+                                    towerCollider.isTrigger = false;
+                                    towerCollider.providesContacts = true;
 
-                                currentTowerBeingPlaced = null;
+                                    if (currentTowerBeingPlaced.TryGetComponent(out SupportBehavior supportBehavior)) //When placement is locked in, do method
+                                        supportBehavior.Built();
+                                    UpdateBuffTowers();
+
+                                    currentTowerBeingPlaced = null;
+                                    UIManager.Instance.ToggleDeselect(false);
+                                }
+                                else
+                                {
+                                    Destroy(currentTowerBeingPlaced);
+                                    UIManager.Instance.SendPopUp("Tower cannot be placed here");
+                                    UIManager.Instance.ToggleDeselect(false);
+                                }
+                            }
+                            else
+                            {
+                                towerCollider.isTrigger = true;
+                                Destroy(currentTowerBeingPlaced);
+                                UIManager.Instance.SendPopUp("Placing the tower here will block all enemy paths");
                                 UIManager.Instance.ToggleDeselect(false);
                             }
-                        } else
-                        {
-                            towerCollider.isTrigger = true;
-                            Destroy(currentTowerBeingPlaced);
-                            UIManager.Instance.SendPopUp("Placing the tower here will block all enemy paths");
-                            UIManager.Instance.ToggleDeselect(false);
+
                         }
+                    }
+                    else
+                    {
+                        renderer.material.SetColor("_BaseColor", redColor);
                     }
                 }
                 else
                 {
-                    Destroy(currentTowerBeingPlaced);
-                    UIManager.Instance.SendPopUp("Tower cannot be placed here");
-                    UIManager.Instance.ToggleDeselect(false);
+                    renderer.material.SetColor("_BaseColor", redColor);
                 }
-            } 
+            }
+        }
+    }
+    
+    /// <summary>
+    /// When a tower is placed, update all buffing towers to check if the placed tower was placed in range of a tower giving a buff
+    /// If it was, it gives that tower the buff
+    /// </summary>
+    private void UpdateBuffTowers()
+    {
+        SupportBehavior[] supportTowers = FindObjectsOfType<SupportBehavior>(); //Finds all Support towers
+        EconomyBehavior[] economyTowers = FindObjectsOfType<EconomyBehavior>(); //Finds all Economy Towers
+
+        int supportTowerCount = supportTowers.Length;
+        int economyTowerCount = economyTowers.Length;
+
+        //Updates all towers within a support tower's range
+        for (int i = 0; i < supportTowerCount; i++)
+        {
+            supportTowers[i].UpdateTowersInRange();
+        }
+
+        //Updates all towers within a economy tower's range
+        for (int i = 0; i < economyTowerCount; i++)
+        {
+            economyTowers[i].UpdateTowersInRange();
         }
     }
 
@@ -132,7 +177,7 @@ public class TowerPlacement : MonoBehaviour
             UIManager.Instance.ToggleRuneSelection(false);
         }
     }
-    
+
     public void CancelPlacingTower()
     {
         if (currentTowerBeingPlaced != null)
@@ -165,7 +210,7 @@ public class TowerPlacement : MonoBehaviour
     private void CheckPath()
     {
         NavMeshPath path = new NavMeshPath();
-        dummySurface.BuildNavMesh();
+        //dummySurface.BuildNavMesh();
         foreach (NavMeshAgent agent in agents)
         {
             agent.CalculatePath(destination.position, path);
@@ -174,7 +219,7 @@ public class TowerPlacement : MonoBehaviour
                 pathBlocked = true;
                 return;
             }
-                  
+
         }
         pathBlocked = false; ;
     }

@@ -90,13 +90,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   damage: 1
-  fireRate: 2
-  range: 4
+  fireRate: 1
+  range: 2
   cost: 100
-  isSelected: 0
   towerType: 0
-  canvas: {fileID: 0}
-  upgradeLevel: 0
+  targetType: 0
+  moneyMultiplier: 1
 --- !u!114 &3569067476125886872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,7 +202,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.15, z: 0}
-  m_LocalScale: {x: 8, y: 0.0009999999, z: 8}
+  m_LocalScale: {x: 4, y: 0.0009999999, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1666704632776011067}

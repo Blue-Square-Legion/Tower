@@ -423,9 +423,10 @@ MonoBehaviour:
   damage: 0
   fireRate: 0
   range: 3
-  cost: 200
-  isSelected: 0
+  cost: 150
   towerType: 5
+  targetType: 0
+  moneyMultiplier: 1
 --- !u!114 &7706323465444112875
 MonoBehaviour:
   m_ObjectHideFlags: 0
