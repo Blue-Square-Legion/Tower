@@ -51,10 +51,12 @@ public class GameManager : MonoBehaviour
     int currentWave;
     int[] nextSpawnPoints;
     [NonSerialized] public GameObject SelectedTower;
-    [NonSerialized] public int farmBonus;
+    [NonSerialized] public float farmBonus;
     [NonSerialized] public bool showPaths;
 
     private bool beginWave;
+
+    [NonSerialized] public float interestPercent;
 
     void Start()
     {
@@ -75,6 +77,7 @@ public class GameManager : MonoBehaviour
         waveActive = false;
         showPaths = false;
         beginWave = false;
+        interestPercent = 1;
 
         UIManager.Instance.UpdateAutoStartText("Auto-start:\n" + autoStart);
 
@@ -364,7 +367,10 @@ public class GameManager : MonoBehaviour
                     targetedEnemy.GetComponentInChildren<HealthBar>().UpdateHealth((int) targetedEnemy.currentHealth);
                     if (targetedEnemy.currentHealth <= 0)
                     {
-                        player.GiveMoney(targetedEnemy.moneyToPlayer);
+                        if (targetedEnemy.lastDamagingTower != null)
+                            player.GiveMoney(targetedEnemy.moneyToPlayer * targetedEnemy.lastDamagingTower.moneyMultiplier); // Gives money to player
+                        else
+                            player.GiveMoney(targetedEnemy.moneyToPlayer); // If enemy was defeated by a non-tower, gives normal amount of money
                         EnqueueEnemyToRemove(currentDamageData.targetedEnemy);
                     }
                         
@@ -527,13 +533,15 @@ public class GameManager : MonoBehaviour
         public float damageRate;
         public float damageDelay;
         public float modifier;
-        public Effect(EffectNames effectName, float damage, float duration, float damageRate, float modifier)
+        public TowerBehavior source;
+        public Effect(EffectNames effectName, float damage, float duration, float damageRate, float modifier, TowerBehavior source)
         {
             this.effectName = effectName;
             this.damage = damage;
             this.duration = duration;
             this.damageRate = damageRate;
             this.modifier = modifier;
+            this.source = source;
         }
     }
 
@@ -577,11 +585,13 @@ public class GameManager : MonoBehaviour
         public Enemy targetedEnemy;
         public float totalDamage;
         public float resistance;
-        public EnemyDamageData(Enemy targettedEnemy,  float totalDamage, float resistance)
+        public TowerBehavior damageOrigin;
+        public EnemyDamageData(Enemy targettedEnemy,  float totalDamage, float resistance, TowerBehavior damageOrigin)
         {
             this.targetedEnemy = targettedEnemy;
             this.totalDamage = totalDamage;
             this.resistance = resistance;
+            this.damageOrigin = damageOrigin;
         }
     }
 
@@ -596,7 +606,8 @@ public class GameManager : MonoBehaviour
         SupportBonusRange,
         SupportBonusDamage,
         SupportBonusAttackSpeed,
-        Stun
+        Stun,
+        Investments
     }
 
     public void ToggleAutoStart()

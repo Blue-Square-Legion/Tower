@@ -94,11 +94,9 @@ MonoBehaviour:
   fireRate: 1.5
   range: 2
   cost: 110
-  isSelected: 0
   towerType: 1
   targetType: 0
-  canvas: {fileID: 0}
-  upgradeLevel: 0
+  moneyMultiplier: 1
 --- !u!114 &8336197607123604105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,7 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 8336197607123604105}
-  duration: 5
+  duration: 3
 --- !u!1 &4306744838973356090
 GameObject:
   m_ObjectHideFlags: 0

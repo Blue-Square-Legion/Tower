@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class IceDamage : MonoBehaviour, IDamageMethod
@@ -5,6 +6,7 @@ public class IceDamage : MonoBehaviour, IDamageMethod
     [SerializeField] private GameObject snowBall;
     [SerializeField] private float snowDuration;
     [SerializeField] private float snowSpeed;
+    [SerializeField] private float snowSpeedReduction;
     [SerializeField] private float snowSize;
     GameManager gameManager;
     private float damage;
@@ -54,6 +56,16 @@ public class IceDamage : MonoBehaviour, IDamageMethod
         return snowSpeed;
     }
 
+    public float GetSnowSpeedReduction()
+    {
+        return snowSpeedReduction;
+    }
+
+    public void UpdateSnowSpeedReduction(float snowSpeedReduction)
+    {
+        this.snowSpeedReduction = snowSpeedReduction;
+    }
+
     public float GetSnowSize()
     {
         return snowSize;
@@ -75,6 +87,7 @@ public class IceDamage : MonoBehaviour, IDamageMethod
             snowballScript.target = target;
             snowballScript.parent = this;
             snowballScript.snowSize = snowSize;
+            snowballScript.duration = snowSpeed;
             snowballScript.Init();
 
             delay = 1 / fireRate;

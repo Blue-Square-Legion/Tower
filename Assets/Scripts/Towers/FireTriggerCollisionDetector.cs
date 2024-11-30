@@ -18,7 +18,7 @@ public class FireTriggerCollisionDetector : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            GameManager.Effect onFire = new GameManager.Effect(GameManager.EffectNames.Burn, parent.damage, duration, parent.fireRate, 1);
+            GameManager.Effect onFire = new GameManager.Effect(GameManager.EffectNames.Burn, parent.damage, duration, parent.fireRate, 1, parent.GetComponent<TowerBehavior>());
             GameManager.ApplyEffectData effectData = new GameManager.ApplyEffectData(onFire, enemySpawner.enemyTransformDictionary[other.transform]);
             gameManager.EnqueueAffectToApply(effectData);
         }
@@ -28,7 +28,7 @@ public class FireTriggerCollisionDetector : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            GameManager.Effect onFire = new GameManager.Effect(GameManager.EffectNames.Burn, parent.damage, duration, parent.fireRate, 1);
+            GameManager.Effect onFire = new GameManager.Effect(GameManager.EffectNames.Burn, parent.damage, duration, parent.fireRate, 1, parent.GetComponent<TowerBehavior>());
             GameManager.ApplyEffectData effectData = new GameManager.ApplyEffectData(onFire, enemySpawner.enemyTransformDictionary[other.transform]);
             gameManager.EnqueueAffectToApply(effectData);
         }

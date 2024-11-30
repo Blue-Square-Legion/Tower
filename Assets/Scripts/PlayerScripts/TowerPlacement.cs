@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
@@ -102,8 +103,9 @@ public class TowerPlacement : MonoBehaviour
                                     towerCollider.isTrigger = false;
                                     towerCollider.providesContacts = true;
 
-                                    if (currentTowerBeingPlaced.TryGetComponent<SupportBehavior>(out SupportBehavior supportBehavior))
+                                    if (currentTowerBeingPlaced.TryGetComponent(out SupportBehavior supportBehavior)) //When placement is locked in, do method
                                         supportBehavior.Built();
+                                    UpdateBuffTowers();
 
                                     currentTowerBeingPlaced = null;
                                     UIManager.Instance.ToggleDeselect(false);
@@ -135,6 +137,31 @@ public class TowerPlacement : MonoBehaviour
                     renderer.material.SetColor("_BaseColor", redColor);
                 }
             }
+        }
+    }
+    
+    /// <summary>
+    /// When a tower is placed, update all buffing towers to check if the placed tower was placed in range of a tower giving a buff
+    /// If it was, it gives that tower the buff
+    /// </summary>
+    private void UpdateBuffTowers()
+    {
+        SupportBehavior[] supportTowers = FindObjectsOfType<SupportBehavior>(); //Finds all Support towers
+        EconomyBehavior[] economyTowers = FindObjectsOfType<EconomyBehavior>(); //Finds all Economy Towers
+
+        int supportTowerCount = supportTowers.Length;
+        int economyTowerCount = economyTowers.Length;
+
+        //Updates all towers within a support tower's range
+        for (int i = 0; i < supportTowerCount; i++)
+        {
+            supportTowers[i].UpdateTowersInRange();
+        }
+
+        //Updates all towers within a economy tower's range
+        for (int i = 0; i < economyTowerCount; i++)
+        {
+            economyTowers[i].UpdateTowersInRange();
         }
     }
 

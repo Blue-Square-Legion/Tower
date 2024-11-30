@@ -44,7 +44,7 @@ public class UpgradePanel : MonoBehaviour
     [NonSerialized] public TowerBehavior target;
     private int currentTargetIndex = 0;
     private int targetNum = Enum.GetValues(typeof(TargetType)).Length - 1;
-    private int maxUpgradeLevel = 4;
+    private int maxUpgradeLevel = 3;
 
     void Start()
     {
@@ -61,7 +61,7 @@ public class UpgradePanel : MonoBehaviour
     {
         this.target = target;
         currentTargetIndex = type;
-        maxUpgradeLevel = target.GetMaxUpgradeLevel(1);
+        maxUpgradeLevel = target.GetMaxUpgradeLevel(1) + 1;
         UpdateTargetInfo();
     }
 
@@ -113,10 +113,8 @@ public class UpgradePanel : MonoBehaviour
         SetTargetText();
     }
 
-
     public void SetTargetText()
     {
-
         switch (currentTargetIndex)
         {
             case 0:
@@ -134,9 +132,7 @@ public class UpgradePanel : MonoBehaviour
             default:
                 Debug.Log("Error No Target Type");
                 break;
-
         }
-
     }
 
     public void UpgradePressed(int path)
@@ -157,8 +153,12 @@ public class UpgradePanel : MonoBehaviour
 
     public void SellPressed()
     {
-        if (target.GetComponent<EconomyBehavior>() != null)
+        if (target.TryGetComponent(out EconomyBehavior economy))
+        {
             GameManager.Instance.farmBonus -= target.GetComponent<EconomyBehavior>().bonus;
+            economy.RemoveBuffs();
+
+        }
         if (target.TryGetComponent(out SupportBehavior support))
             support.RemoveBuffs();
         TowerPlacement.Instance.SellTower(target.gameObject);
@@ -200,7 +200,8 @@ public class UpgradePanel : MonoBehaviour
 
         SetTargetText();
         target.SetTargetType(currentTargetIndex);
-        ToggleUpgradeButton(target.upgradeLevel1 != maxUpgradeLevel, 1);
-
+        ToggleUpgradeButton(target.upgradeLevel1 < maxUpgradeLevel, 1);
+        ToggleUpgradeButton(target.upgradeLevel2 < maxUpgradeLevel, 2);
+        ToggleUpgradeButton(target.upgradeLevel3 < maxUpgradeLevel, 3);
     }
 }

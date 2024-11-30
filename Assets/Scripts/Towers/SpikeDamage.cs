@@ -52,6 +52,7 @@ public class SpikeDamage : MonoBehaviour, IDamageMethod
             {
                 if (enemy.CompareTag("Enemy"))
                 {
+                    enemy.GetComponent<Enemy>().lastDamagingTower = transform.GetComponent<TowerBehavior>();
                     enemy.GetComponent<Enemy>().TakeDamage(damage);
                 }
             }
