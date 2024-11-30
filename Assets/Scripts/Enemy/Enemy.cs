@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using AudioSystem;
+using System;
 
 public class Enemy : MonoBehaviour
 {
@@ -11,17 +12,18 @@ public class Enemy : MonoBehaviour
     public float speed;
     public float currentSpeed {  get; private set; }
     public float damageResistance;
-    public int ID;
-    public int nodeIndex;
-    public List<GameManager.Effect> activeEffects;
+    [NonSerialized] public int ID;
+    [NonSerialized] public int nodeIndex;
+    [NonSerialized] public List<GameManager.Effect> activeEffects;
     GameManager gameManager;
     public NavMeshMovement navMeshMovement;
-    public bool isStunned;
+    [NonSerialized] public bool isStunned;
     private float stunTimer;
-    public bool isConfused;
+    [NonSerialized] public bool isConfused;
     [SerializeField] AudioData audioMovement;
     [SerializeField] AudioData audioDead;
     private float confusedTimer;
+    [NonSerialized] public TowerBehavior lastDamagingTower;
 
     private AudioEmitter audioEmitterMove;
     public void Init()
@@ -69,8 +71,8 @@ public class Enemy : MonoBehaviour
                 }
                 else
                 {
-                    
-                    gameManager.EnqueueDamageData(new GameManager.EnemyDamageData(this, activeEffects[i].damage, 1f));
+                    lastDamagingTower = activeEffects[i].source;
+                    gameManager.EnqueueDamageData(new GameManager.EnemyDamageData(this, activeEffects[i].damage, 1f, activeEffects[i].source));
                     activeEffects[i].damageDelay = 1f / activeEffects[i].damageRate;
                 }
                 activeEffects[i].duration -= Time.deltaTime;

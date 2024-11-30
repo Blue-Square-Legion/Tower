@@ -46,7 +46,8 @@ public class StandardDamage : MonoBehaviour, IDamageMethod
                 .WithPosition(gameObject.transform.position)
                 .Play();
 
-            gameManager.EnqueueDamageData(new GameManager.EnemyDamageData(target, damage, target.damageResistance));
+            target.lastDamagingTower = transform.GetComponent<TowerBehavior>();
+            gameManager.EnqueueDamageData(new GameManager.EnemyDamageData(target, damage, target.damageResistance, transform.GetComponent<TowerBehavior>()));
 
             delay = 1 / fireRate;
         }

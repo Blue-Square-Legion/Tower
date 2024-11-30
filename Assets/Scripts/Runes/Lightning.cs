@@ -51,6 +51,7 @@ public class Lightning : MonoBehaviour
         {
             if (enemy.CompareTag("Enemy"))
             {
+                enemy.GetComponent<Enemy>().lastDamagingTower = null;
                 enemy.GetComponent<Enemy>().TakeDamage(damage);
                 enemy.GetComponent<Enemy>().isStunned = true;
             }

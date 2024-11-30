@@ -7,7 +7,6 @@ public class FireDamage : MonoBehaviour, IDamageMethod
     [SerializeField] public Collider fireTrigger;
     [SerializeField] private ParticleSystem fireEffect;
     [SerializeField] AudioData audioData;
-    GameManager gameManager;
     [NonSerialized] public float damage;
     [NonSerialized] public float fireRate;
     
@@ -16,7 +15,6 @@ public class FireDamage : MonoBehaviour, IDamageMethod
     AudioEmitter audioEmitter;
     public void Init(float damage, float fireRate)
     {
-        gameManager = GameManager.Instance;
         this.damage = damage;
         this.fireRate = fireRate;
 
@@ -29,6 +27,11 @@ public class FireDamage : MonoBehaviour, IDamageMethod
     public void UpdateDamage(float damage)
     {
         this.damage = damage;
+    }
+
+    public void UpdateFireRate(float fireRate)
+    {
+        this.fireRate = fireRate;
     }
 
     public void damageTick(Enemy target)

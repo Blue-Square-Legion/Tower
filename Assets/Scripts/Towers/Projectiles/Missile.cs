@@ -24,6 +24,7 @@ public class Missile : MonoBehaviour
             speed = 0.5f;
             time = 0;
             explosionSystem = parent.GetComponentInChildren<ParticleSystem>();
+            explosionSystem.startSize = explosionRadius;
             parentClass = parent.GetComponent<MissileDamage>();
 
             StartCoroutine(Fire());
@@ -52,7 +53,9 @@ public class Missile : MonoBehaviour
             for (int j = 0; j < enemiesInRadiusCount; j++)
             {
                 Enemy enemyToDamage = enemySpawner.enemyTransformDictionary[enemiesInRadius[j].transform];
-                GameManager.EnemyDamageData damageToApply = new GameManager.EnemyDamageData(enemyToDamage, parentClass.damage, enemyToDamage.damageResistance);
+                GameManager.EnemyDamageData damageToApply = new GameManager.EnemyDamageData(enemyToDamage, parentClass.damage, 
+                    enemyToDamage.damageResistance, parent.GetComponent<TowerBehavior>());
+                enemyToDamage.lastDamagingTower = parent.GetComponent<TowerBehavior>();
                 gameManager.EnqueueDamageData(damageToApply);
             }
 

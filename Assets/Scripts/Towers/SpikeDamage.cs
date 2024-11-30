@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpikeDamage : MonoBehaviour, IDamageMethod
@@ -52,10 +49,10 @@ public class SpikeDamage : MonoBehaviour, IDamageMethod
             {
                 if (enemy.CompareTag("Enemy"))
                 {
+                    enemy.GetComponent<Enemy>().lastDamagingTower = transform.GetComponent<TowerBehavior>();
                     enemy.GetComponent<Enemy>().TakeDamage(damage);
                 }
             }
         }
     }
 }
-

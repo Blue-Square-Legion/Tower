@@ -50,6 +50,7 @@ public class Confusion : MonoBehaviour
         {
             if (enemy.CompareTag("Enemy"))
             {
+                enemy.GetComponent<Enemy>().lastDamagingTower = null;
                 enemy.GetComponent<Enemy>().isConfused = true;
             }
         }

@@ -2,11 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.Collections;
 using Unity.Jobs;
 using UnityEngine;
-using UnityEngine.Jobs;
-using static UnityEngine.Splines.SplineInstantiate;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,14 +25,14 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    public Queue<EnemyDamageData> damageData;
+    [NonSerialized] public Queue<EnemyDamageData> damageData;
     private Queue<ApplyEffectData> effectQueue;
     private Queue<ApplyBuffData> buffAddQueue;
     private Queue<ApplyBuffData> buffRemoveQueue;
-    public Queue<Tuple<int, int>> enemyQueueToSpawn;    //Tuple<EnemyID, SpawnPointID>
-    public Queue<Enemy> enemyQueueToRemove;
-    public Queue<TowerBehavior> towerQueueToRemove;
-    public bool endLoop;
+    [NonSerialized] public Queue<Tuple<int, int>> enemyQueueToSpawn;    //Tuple<EnemyID, SpawnPointID>
+    [NonSerialized] public Queue<Enemy> enemyQueueToRemove;
+    [NonSerialized] public Queue<TowerBehavior> towerQueueToRemove;
+    [NonSerialized] public bool endLoop;
     [SerializeField] private Transform nodeParent;
     [NonSerialized] public List<TowerBehavior> builtTowers;
     [NonSerialized] public Vector3[] nodePositions;
@@ -43,16 +40,20 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI waveText;
     [SerializeField] Player player;
 
-    public bool autoStart;
+    [NonSerialized] public bool autoStart;
 
     EnemySpawner enemySpawner;
-    public bool waveActive;
+    [NonSerialized] public bool waveActive;
     private bool endOfWave;
     int currentWave;
     int[] nextSpawnPoints;
-    public GameObject SelectedTower;
-    public int farmBonus;
-    public bool showPaths;
+    [NonSerialized] public GameObject SelectedTower;
+    [NonSerialized] public float farmBonus;
+    [NonSerialized] public bool showPaths;
+
+    private bool beginWave;
+
+    [NonSerialized] public float interestPercent;
 
     void Start()
     {
@@ -72,6 +73,8 @@ public class GameManager : MonoBehaviour
         autoStart = false;
         waveActive = false;
         showPaths = false;
+        beginWave = false;
+        interestPercent = 1;
 
         UIManager.Instance.UpdateAutoStartText("Auto-start:\n" + autoStart);
 
@@ -361,7 +364,10 @@ public class GameManager : MonoBehaviour
                     targetedEnemy.GetComponentInChildren<HealthBar>().UpdateHealth((int) targetedEnemy.currentHealth);
                     if (targetedEnemy.currentHealth <= 0)
                     {
-                        player.GiveMoney(targetedEnemy.moneyToPlayer);
+                        if (targetedEnemy.lastDamagingTower != null)
+                            player.GiveMoney(targetedEnemy.moneyToPlayer * targetedEnemy.lastDamagingTower.moneyMultiplier); // Gives money to player
+                        else
+                            player.GiveMoney(targetedEnemy.moneyToPlayer); // If enemy was defeated by a non-tower, gives normal amount of money
                         EnqueueEnemyToRemove(currentDamageData.targetedEnemy);
                     }
                         
@@ -392,13 +398,13 @@ public class GameManager : MonoBehaviour
                 //auto start next wave if enabled
                 if (autoStart)
                 {
+                    if (beginWave)
+                        StartCoroutine(Wave(currentWave));
                     waveActive = true;
-                    StartCoroutine(Wave(currentWave));
                     currentWave++;
                     UpdateWaveText();
                     endOfWave = true;
                 }
-
             }
 
             //Apply Buffs
@@ -524,13 +530,15 @@ public class GameManager : MonoBehaviour
         public float damageRate;
         public float damageDelay;
         public float modifier;
-        public Effect(EffectNames effectName, float damage, float duration, float damageRate, float modifier)
+        public TowerBehavior source;
+        public Effect(EffectNames effectName, float damage, float duration, float damageRate, float modifier, TowerBehavior source)
         {
             this.effectName = effectName;
             this.damage = damage;
             this.duration = duration;
             this.damageRate = damageRate;
             this.modifier = modifier;
+            this.source = source;
         }
     }
 
@@ -574,11 +582,13 @@ public class GameManager : MonoBehaviour
         public Enemy targetedEnemy;
         public float totalDamage;
         public float resistance;
-        public EnemyDamageData(Enemy targettedEnemy,  float totalDamage, float resistance)
+        public TowerBehavior damageOrigin;
+        public EnemyDamageData(Enemy targettedEnemy,  float totalDamage, float resistance, TowerBehavior damageOrigin)
         {
             this.targetedEnemy = targettedEnemy;
             this.totalDamage = totalDamage;
             this.resistance = resistance;
+            this.damageOrigin = damageOrigin;
         }
     }
 
@@ -593,23 +603,15 @@ public class GameManager : MonoBehaviour
         SupportBonusRange,
         SupportBonusDamage,
         SupportBonusAttackSpeed,
-        Stun
+        Stun,
+        Investments
     }
 
     public void ToggleAutoStart()
     {
         autoStart = !autoStart;
+        beginWave = autoStart;
         UIManager.Instance.UpdateAutoStartText("Auto-start:\n"+ autoStart);
-        if (!autoStart) return;
-        if (enemySpawner.spawnedEnemies.Count == 0 && !waveActive)
-        {
-            waveActive = true;
-            StartCoroutine(Wave(currentWave));
-            currentWave++;
-            UpdateWaveText();
-            endOfWave = true;
-        }
-
     }
 
     public void ToggleShowPaths()
