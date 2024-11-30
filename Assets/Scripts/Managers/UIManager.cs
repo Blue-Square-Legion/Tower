@@ -34,7 +34,18 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject towerSelection;
 
     [SerializeField] private GameObject upgradeScreen;
-    [SerializeField] private TextMeshProUGUI upgrade1, upgrade2, upgrade3, upgrade4;
+
+    [Tooltip("Path 1")]
+    [SerializeField] private TextMeshProUGUI path1Upgrade1;
+    [SerializeField] private TextMeshProUGUI path1Upgrade2, path1Upgrade3;
+
+    [Tooltip("Path 2")]
+    [SerializeField] private TextMeshProUGUI path2Upgrade1;
+    [SerializeField] private TextMeshProUGUI path2Upgrade2, path2Upgrade3;
+
+    [Tooltip("Path 3")]
+    [SerializeField] private TextMeshProUGUI path3Upgrade1;
+    [SerializeField] private TextMeshProUGUI path3Upgrade2, path3Upgrade3;
 
     [SerializeField] TMP_Text autoStartText;
     [SerializeField] TMP_Text showPathsText;
@@ -126,10 +137,12 @@ public class UIManager : MonoBehaviour
 
     public void UpdateUpgradeScreen(TowerBehavior towerType)
     {
-        upgrade1.text = "Level 2\n" + towerType.GetUpgradeDescription(0, 1);
-        upgrade2.text = "Level 3\n" + towerType.GetUpgradeDescription(0, 1);
-        upgrade3.text = "Level 4\n" + towerType.GetUpgradeDescription(0, 1);
-        upgrade4.text = "Level 5\n" + towerType.GetUpgradeDescription(0, 1);
+        //Path 1
+        path1Upgrade1.text = "Level 1\nBetter Scopes\n" + towerType.GetUpgradeDescription(0, 1);
+        path1Upgrade2.text = "Level 2\n" + towerType.GetUpgradeName(0, 1).Substring(0, 
+            towerType.GetUpgradeName(0, 1).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(1, 1);
+        path1Upgrade3.text = "Level 2\n" + towerType.GetUpgradeName(1, 1).Substring(0,
+            towerType.GetUpgradeName(1, 1).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(2, 1);
     }
 
     public void ShowAllUpgrades()

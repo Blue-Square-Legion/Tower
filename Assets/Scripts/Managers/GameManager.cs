@@ -2,11 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.Collections;
 using Unity.Jobs;
 using UnityEngine;
-using UnityEngine.Jobs;
-using static UnityEngine.Splines.SplineInstantiate;
 
 public class GameManager : MonoBehaviour
 {

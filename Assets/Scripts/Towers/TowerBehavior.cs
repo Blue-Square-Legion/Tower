@@ -76,7 +76,7 @@ public class TowerBehavior : MonoBehaviour
         {
             case TowerType.Basic:
                 upgradeCost1 = 50;
-                upgradeDescription1 = "Better Scopes\n" + "Cost: " + 50;
+                upgradeDescription1 = GetUpgradeData(0, 1).name;
                 upgradeCost2 = 100;
                 upgradeDescription2 = "Sharper Arrows\n" + "Cost: " + 100;
                 upgradeCost2 = 150;
@@ -357,7 +357,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
-                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
                         case 1:
                             //Do upgrade
@@ -367,7 +367,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
-                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
                         case 2:
                             //Do upgrade
@@ -376,7 +376,7 @@ public class TowerBehavior : MonoBehaviour
 
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
-                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
                     }
                     break;
@@ -391,7 +391,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
-                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
                         case 1:
                             //Do upgrade
@@ -401,7 +401,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
-                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
                         case 2:
                             //Do upgrade
@@ -410,7 +410,7 @@ public class TowerBehavior : MonoBehaviour
 
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
-                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
                     }
                     break;
@@ -425,7 +425,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
-                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
                         case 1:
                             //Do upgrade
@@ -436,7 +436,7 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost1 / 2;
 
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
-                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
 
                             break;
                         case 2:
@@ -446,7 +446,7 @@ public class TowerBehavior : MonoBehaviour
 
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
-                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
                     }
                     break;
@@ -458,14 +458,14 @@ public class TowerBehavior : MonoBehaviour
                             GameManager.Instance.farmBonus += 50;
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
-                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
                         case 1:
                             transform.GetComponent<EconomyBehavior>().bonus = 200;
                             GameManager.Instance.farmBonus += 100;
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
-                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
                         case 2:
                             transform.GetComponent<EconomyBehavior>().bonus = 400;
@@ -473,7 +473,7 @@ public class TowerBehavior : MonoBehaviour
 
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
-                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
                     }
                     break;
@@ -489,7 +489,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
-                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
                         case 1:
                             //Do upgrade
@@ -499,7 +499,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
-                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
                         case 2:
                             //Do upgrade
@@ -507,7 +507,7 @@ public class TowerBehavior : MonoBehaviour
 
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
-                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
                     }
                     break;
@@ -526,7 +526,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
-                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
                         case 1:
                             //Hidden
@@ -536,7 +536,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
-                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
                         case 2:
                             //Do upgrade
@@ -545,7 +545,7 @@ public class TowerBehavior : MonoBehaviour
 
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
-                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
                     }
                     break;
@@ -560,7 +560,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
-                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
                         case 1:
                             //Do upgrade
@@ -571,7 +571,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
-                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
                         case 2:
                             //Do upgrade
@@ -580,7 +580,7 @@ public class TowerBehavior : MonoBehaviour
 
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
-                            upgradeDescription1 = GetUpgradeDescription(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
                     }
                     break;
@@ -611,7 +611,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
                         case 1:
                             //Do upgrade
@@ -621,7 +621,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
                         case 2:
                             //Do upgrade
@@ -630,7 +630,7 @@ public class TowerBehavior : MonoBehaviour
 
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
                     }
                     break;
@@ -645,7 +645,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
                         case 1:
                             //Do upgrade
@@ -655,7 +655,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
                         case 2:
                             //Do upgrade
@@ -664,7 +664,7 @@ public class TowerBehavior : MonoBehaviour
 
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
                     }
                     break;
@@ -682,7 +682,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
                         case 1:
                             //Do upgrade
@@ -693,7 +693,7 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost2 / 2;
 
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
                         case 2:
                             //Do upgrade
@@ -701,7 +701,7 @@ public class TowerBehavior : MonoBehaviour
 
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
                     }
                     break;
@@ -715,7 +715,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
                         case 1:
                             //Do upgrade
@@ -724,7 +724,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
                         case 2:
                             //Do upgrade
@@ -732,7 +732,7 @@ public class TowerBehavior : MonoBehaviour
 
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
                     }
                     break;
@@ -747,7 +747,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
                         case 1:
                             //Do upgrade
@@ -756,7 +756,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
                         case 2:
                             //Do upgrade
@@ -764,7 +764,7 @@ public class TowerBehavior : MonoBehaviour
 
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
                     }
                     break;
@@ -783,7 +783,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
                         case 1:
                             //Hidden
@@ -793,7 +793,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
                         case 2:
                             //Do upgrade
@@ -802,7 +802,7 @@ public class TowerBehavior : MonoBehaviour
 
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
                     }
                     break;
@@ -816,7 +816,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel2, 2);
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
                         case 1:
                             //Do upgrade
@@ -825,7 +825,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
                         case 2:
                             //Do upgrade
@@ -833,7 +833,7 @@ public class TowerBehavior : MonoBehaviour
 
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
-                            upgradeDescription2 = GetUpgradeDescription(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
                     }
                     break;
@@ -863,7 +863,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
                         case 1:
                             //Do upgrade
@@ -873,7 +873,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
                         case 2:
                             //Do upgrade
@@ -882,7 +882,7 @@ public class TowerBehavior : MonoBehaviour
 
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
                     }
                     break;
@@ -896,7 +896,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
                         case 1:
                             //Do upgrade
@@ -905,7 +905,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
                         case 2:
                             //Do upgrade
@@ -913,7 +913,7 @@ public class TowerBehavior : MonoBehaviour
 
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
                     }
                     break;
@@ -927,7 +927,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
                         case 1:
                             //Do upgrade
@@ -937,7 +937,7 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost3 / 2;
 
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
 
                             break;
                         case 2:
@@ -946,7 +946,7 @@ public class TowerBehavior : MonoBehaviour
 
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
                     }
                     break;
@@ -961,7 +961,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
                         case 1:
                             //Do upgrade
@@ -971,7 +971,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
                         case 2:
                             //Do upgrade
@@ -980,7 +980,7 @@ public class TowerBehavior : MonoBehaviour
 
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
                     }
                     break;
@@ -995,7 +995,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
                         case 1:
                             //Do upgrade
@@ -1004,7 +1004,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
                         case 2:
                             //Do upgrade
@@ -1012,7 +1012,7 @@ public class TowerBehavior : MonoBehaviour
 
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
                     }
                     break;
@@ -1031,7 +1031,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
                         case 1:
                             //Hidden
@@ -1041,7 +1041,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
                         case 2:
                             //Do upgrade
@@ -1050,7 +1050,7 @@ public class TowerBehavior : MonoBehaviour
 
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
                     }
                     break;
@@ -1065,7 +1065,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
                         case 1:
                             //Do upgrade
@@ -1075,7 +1075,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
                         case 2:
                             //Do upgrade
@@ -1084,7 +1084,7 @@ public class TowerBehavior : MonoBehaviour
 
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
-                            upgradeDescription3 = GetUpgradeDescription(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
                     }
                     break;
@@ -1115,11 +1115,13 @@ public class TowerBehavior : MonoBehaviour
 
     public struct UpgradeData
     {
+        public string name;
         public string description;
         public int cost;
 
-        public UpgradeData(string description, int cost)
+        public UpgradeData(string name, int cost, string description)
         {
+            this.name = name;
             this.description = description;
             this.cost = cost;
         }
@@ -1133,57 +1135,57 @@ public class TowerBehavior : MonoBehaviour
         {
             TowerType.Basic, new List<UpgradeData>
             {
-                new UpgradeData("Scopier Scopes\n" + "Cost: " + 150, 150),
-                new UpgradeData("Scopiest Scopes\n" + "Cost: " + 400, 400),
-                new UpgradeData("Max Level", 0)
+                new UpgradeData("Scopier Scopes\n" + "Cost: " + 150, 150, "Increases Range"),
+                new UpgradeData("Scopiest Scopes\n" + "Cost: " + 400, 400, "Increases Range"),
+                new UpgradeData("Max Level", 0, "Increases Range")
             }
         },
         {
             TowerType.Bomb, new List<UpgradeData>
             {
-                new UpgradeData("More Powder\n" + "Cost: " + 350, 250),
-                new UpgradeData("BOOM.\n" + "Cost: " + 800, 800),
-                new UpgradeData("Max Level", 0)
+                new UpgradeData("More Powder\n" + "Cost: " + 350, 250, "Increases Damage"),
+                new UpgradeData("BOOM.\n" + "Cost: " + 800, 800, "Increases Damage"),
+                new UpgradeData("Max Level", 0, "Increases Damage")
             }
         },
         {
             TowerType.Flame, new List<UpgradeData>
             {
-                new UpgradeData("Quicker Burns\n" + "Cost: " + 900, 900),
-                new UpgradeData("Nonstop Burns\n" + "Cost: " + 2000, 2000),
-                new UpgradeData("Max Level", 0)
+                new UpgradeData("Quicker Burns\n" + "Cost: " + 900, 900, "Increases Burn Rate"),
+                new UpgradeData("Nonstop Burns\n" + "Cost: " + 2000, 2000, "Increases Burn Rate"),
+                new UpgradeData("Max Level", 0, "Increases Burn Rate")
             }
         },
         {
             TowerType.Economy, new List<UpgradeData>
             {
-                new UpgradeData("Bigger Mine\n" + "Cost: " + 500, 500),
-                new UpgradeData("Chain Company\n" + "Cost: " + 750, 750),
-                new UpgradeData("Max Level", 0)
+                new UpgradeData("Bigger Mine\n" + "Cost: " + 500, 500, "Increases End of Wave Bonus"),
+                new UpgradeData("Chain Company\n" + "Cost: " + 750, 750, "Increases End of Wave Bonus"),
+                new UpgradeData("Max Level", 0, "Increases End of Wave Bonus")
             }
         },
         {
             TowerType.Ice, new List<UpgradeData>
             {
-                new UpgradeData("Faster firing\n" + "Cost: " + 200, 200),
-                new UpgradeData("Aerodynamic\n" + "Cost: " + 250, 250),
-                new UpgradeData("Max Level", 0)
+                new UpgradeData("Faster firing\n" + "Cost: " + 200, 200, "Increases Range"),
+                new UpgradeData("Aerodynamic\n" + "Cost: " + 250, 250, "Increases Attack Speed"),
+                new UpgradeData("Max Level", 0, "Decreases Snowball travel time")
             }
         },
         {
             TowerType.Support, new List<UpgradeData>
             {
-                new UpgradeData("Proximity Sensor (Not Implemented Yet)\n" + "Cost: " + 0, 0),
-                new UpgradeData("Inspiration\n" + "Cost: " + 300, 300),
-                new UpgradeData("Max Level", 0)
+                new UpgradeData("Proximity Sensor (Not Implemented Yet)\n" + "Cost: " + 0, 0, "Increases Range and Range Buff"),
+                new UpgradeData("Inspiration\n" + "Cost: " + 300, 300, "Increases Range Buff"),
+                new UpgradeData("Max Level", 0, "")
             }
         },
         {
             TowerType.Spikes, new List<UpgradeData>
             {
-                new UpgradeData("Faster Spikes\n" + "Cost: " + 300, 300),
-                new UpgradeData("Deadly Spikes\n" + "Cost: " + 450, 450),
-                new UpgradeData("Max Level", 0)
+                new UpgradeData("Faster Spikes\n" + "Cost: " + 300, 300, "Increases Rate of Damage"),
+                new UpgradeData("Deadly Spikes\n" + "Cost: " + 450, 450, "Increases Rate of Damage"),
+                new UpgradeData("Max Level", 0, "Increases Rate of Damage")
             }
         }
     };
@@ -1195,57 +1197,57 @@ public class TowerBehavior : MonoBehaviour
         {
             TowerType.Basic, new List<UpgradeData>
             {
-                new UpgradeData("Stronger Arrows\n" + "Cost: " + 450, 450),
-                new UpgradeData("Barbed Scopes\n" + "Cost: " + 1000, 1000),
-                new UpgradeData("Max Level", 0)
+                new UpgradeData("Stronger Arrows\n" + "Cost: " + 450, 450, "Increases Damage"),
+                new UpgradeData("Barbed Arrows\n" + "Cost: " + 1000, 1000, "Increases Damage"),
+                new UpgradeData("Max Level", 0, "Increases Damage")
             }
         },
         {
             TowerType.Bomb, new List<UpgradeData>
             {
-                new UpgradeData("Fastest Reload\n" + "Cost: " + 400, 400),
-                new UpgradeData("Automated Reload\n" + "Cost: " + 500, 500),
-                new UpgradeData("Max Level", 0)
+                new UpgradeData("Fastest Reload\n" + "Cost: " + 400, 400, "Increases Attack Speed"),
+                new UpgradeData("Automated Reload\n" + "Cost: " + 500, 500, "Increases Attack Speed"),
+                new UpgradeData("Max Level", 0, "Increases Attack Speed")
             }
         },
         {
             TowerType.Flame, new List<UpgradeData>
             {
-                new UpgradeData("Burny Burns\n" + "Cost: " + 500, 500),
-                new UpgradeData("Hellfire\n" + "Cost: " + 1200, 1200),
-                new UpgradeData("Max Level", 0)
+                new UpgradeData("Burny Burns\n" + "Cost: " + 500, 500, "Increases Range"),
+                new UpgradeData("Hellfire\n" + "Cost: " + 1200, 1200, "Increases Damage"),
+                new UpgradeData("Max Level", 0, "Increases Damage")
             }
         },
         {
             TowerType.Economy, new List<UpgradeData>
             {
-                new UpgradeData("Better Deals (Not Implemented)\n" + "Cost: " + 0, 0),
-                new UpgradeData("Compound Interest (Not Implemented)\n" + "Cost: " + 0, 0),
-                new UpgradeData("Max Level", 0)
+                new UpgradeData("Better Deals (Not Implemented)\n" + "Cost: " + 0, 0, "Gives additional End of Wave Bonus based off current money (Only highest Value Applied)"),
+                new UpgradeData("Compound Interest (Not Implemented)\n" + "Cost: " + 0, 0, "Increases Interest Effect"),
+                new UpgradeData("Max Level", 0, "Increases Interest Effect")
             }
         },
         {
             TowerType.Ice, new List<UpgradeData>
             {
-                new UpgradeData("Freezing Snow\n" + "Cost: " + 400, 400),
-                new UpgradeData("Frostbite\n" + "Cost: " + 650, 650),
-                new UpgradeData("Max Level", 0)
+                new UpgradeData("Freezing Snow\n" + "Cost: " + 400, 400, "Increases Slow Effect"),
+                new UpgradeData("Frostbite\n" + "Cost: " + 650, 650, "Increases Slow Effect"),
+                new UpgradeData("Max Level", 0, "Increases Slow Effect")
             }
         },
         {
             TowerType.Support, new List<UpgradeData>
             {
-                new UpgradeData("Proximity Sensor (Not Implemented Yet)\n" + "Cost: " + 0, 0),
-                new UpgradeData("Inspiration\n" + "Cost: " + 300, 300),
-                new UpgradeData("Max Level", 0)
+                new UpgradeData("Proximity Sensor (Not Implemented Yet)\n" + "Cost: " + 0, 0, "Grants Damage Buff to nearby towers"),
+                new UpgradeData("Inspiration\n" + "Cost: " + 300, 300, "Increases Damage Buff"),
+                new UpgradeData("Max Level", 0, "Increases Damage Buff")
             }
         },
         {
             TowerType.Spikes, new List<UpgradeData>
             {
-                new UpgradeData("Even More Spikes\n" + "Cost: " + 400, 400),
-                new UpgradeData("Carpet of Spikes\n" + "Cost: " + 650, 650),
-                new UpgradeData("Max Level", 0)
+                new UpgradeData("Even More Spikes\n" + "Cost: " + 400, 400, "Increases size"),
+                new UpgradeData("Carpet of Spikes\n" + "Cost: " + 650, 650, "Increases size"),
+                new UpgradeData("Max Level", 0, "Increases size")
             }
         }
     };
@@ -1257,57 +1259,57 @@ public class TowerBehavior : MonoBehaviour
         {
             TowerType.Basic, new List<UpgradeData>
             {
-                new UpgradeData("Faster Mechanism\n" + "Cost: " + 300, 300),
-                new UpgradeData("Automatic Firing\n" + "Cost: " + 850, 850),
-                new UpgradeData("Max Level", 0)
+                new UpgradeData("Faster Mechanism\n" + "Cost: " + 300, 300, "Increases Attack Speed"),
+                new UpgradeData("Automatic Firing\n" + "Cost: " + 850, 850, "Increases Attack Speed"),
+                new UpgradeData("Max Level", 0, "Increases Attack Speed")
             }
         },
         {
             TowerType.Bomb, new List<UpgradeData>
             {
-                new UpgradeData("Compressed Charge\n" + "Cost: " + 600, 600),
-                new UpgradeData("Atomic Explosion\n" + "Cost: " + 1300, 1300),
-                new UpgradeData("Max Level", 0)
+                new UpgradeData("Compressed Charge\n" + "Cost: " + 600, 600, "Increases Explosion Radius"),
+                new UpgradeData("Atomic Explosion\n" + "Cost: " + 1300, 1300, "Increases Explosion Radius"),
+                new UpgradeData("Max Level", 0, "Increases Explosion Radius")
             }
         },
         {
             TowerType.Flame, new List<UpgradeData>
             {
-                new UpgradeData("Hell's Itch\n" + "Cost: " + 600, 600),
-                new UpgradeData("Third Degree Burns\n" + "Cost: " + 1200, 1200),
-                new UpgradeData("Max Level", 0)
+                new UpgradeData("Hell's Itch\n" + "Cost: " + 600, 600, "Increases Burn Duration"),
+                new UpgradeData("Third Degree Burns\n" + "Cost: " + 1200, 1200, "Increases Burn Duration"),
+                new UpgradeData("Max Level", 0, "Increases Burn Duration")
             }
         },
         {
             TowerType.Economy, new List<UpgradeData>
             {
-                new UpgradeData("Stocks\n" + "Cost: " + 750, 750),
-                new UpgradeData("Majority Owner\n" + "Cost: " + 1000, 1000),
-                new UpgradeData("Max Level", 0)
+                new UpgradeData("Stocks\n" + "Cost: " + 750, 750, "Grants Money Earned Buff to nearby towers"),
+                new UpgradeData("Majority Owner\n" + "Cost: " + 1000, 1000, "Increases Money Earned Buff"),
+                new UpgradeData("Max Level", 0, "Increases Money Earned Buff")
             }
         },
         {
             TowerType.Ice, new List<UpgradeData>
             {
-                new UpgradeData("Biggest Snowball\n" + "Cost: " + 250, 250),
-                new UpgradeData("Carpet Bomb\n" + "Cost: " + 500, 500),
-                new UpgradeData("Max Level", 0)
+                new UpgradeData("Biggest Snowball\n" + "Cost: " + 250, 250, "Increases snow area"),
+                new UpgradeData("Carpet Bomb\n" + "Cost: " + 500, 500, "Increases snow area"),
+                new UpgradeData("Max Level", 0, "Increases snow area")
             }
         },
         {
             TowerType.Support, new List<UpgradeData>
             {
-                new UpgradeData("Proximity Sensor (Not Implemented Yet)\n" + "Cost: " + 0, 0),
-                new UpgradeData("Inspiration\n" + "Cost: " + 300, 300),
-                new UpgradeData("Max Level", 0)
+                new UpgradeData("Proximity Sensor (Not Implemented Yet)\n" + "Cost: " + 0, 0, "Grants Attack Speed Buff to nearby towers"),
+                new UpgradeData("Inspiration\n" + "Cost: " + 300, 300, "Grants Detect Invisible to nearby towers"),
+                new UpgradeData("Max Level", 0, "Increases Attack Speed Buff to nearby Towers")
             }
         },
         {
             TowerType.Spikes, new List<UpgradeData>
             {
-                new UpgradeData("Sharper Spikes\n" + "Cost: " + 300, 300),
-                new UpgradeData("LEGOS\n" + "Cost: " + 400, 400),
-                new UpgradeData("Max Level", 0)
+                new UpgradeData("Sharper Spikes\n" + "Cost: " + 300, 300, "Increases Damage"),
+                new UpgradeData("LEGOS\n" + "Cost: " + 400, 400, "Increases Damage"),
+                new UpgradeData("Max Level", 0, "Increases Damage")
             }
         }
     };
@@ -1334,23 +1336,23 @@ public class TowerBehavior : MonoBehaviour
             case 1:
                 if (level < 0 || level >= upgradeDataMap1[towerType].Count)
                 {
-                    return new UpgradeData("Invalid Level", 0);
+                    return new UpgradeData("Invalid Level", 0, "");
                 }
                 return upgradeDataMap1[towerType][level];
                 case 2:
                 if (level < 0 || level >= upgradeDataMap2[towerType].Count)
                 {
-                    return new UpgradeData("Invalid Level", 0);
+                    return new UpgradeData("Invalid Level", 0, "");
                 }
                 return upgradeDataMap2[towerType][level];
             case 3:
                 if (level < 0 || level >= upgradeDataMap3[towerType].Count)
                 {
-                    return new UpgradeData("Invalid Level", 0);
+                    return new UpgradeData("Invalid Level", 0, "");
                 }
                 return upgradeDataMap3[towerType][level];
         }
-        return new UpgradeData("Invalid Path", 0);
+        return new UpgradeData("Invalid Path", 0, "");
     }
 
     public int GetMaxUpgradeLevel(int path)
@@ -1368,13 +1370,18 @@ public class TowerBehavior : MonoBehaviour
         return -1;
         
     }
-    public string GetUpgradeDescription(int level, int path)
+    public string GetUpgradeName(int level, int path)
     {
-        return GetUpgradeData(level, path).description;
+        return GetUpgradeData(level, path).name;
     }
     public int GetUpgradeCost(int level, int path)
     {
         return GetUpgradeData(level, path).cost;
+    }
+
+    public string GetUpgradeDescription(int level, int path)
+    {
+        return GetUpgradeData(level, path).description;
     }
 
     public enum TowerType
