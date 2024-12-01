@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -27,6 +28,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject gameOverScreen;
     [SerializeField] GameObject deselect;
     [SerializeField] GameObject helpScreen;
+    [SerializeField] GameObject upgradePanel;
+    [SerializeField] GameObject upgradeCircle;
+    [SerializeField] GameObject upgradeArrow;
     [SerializeField] GameObject popUpScreen;
     [SerializeField] TMP_Text popUpMessage;
 
@@ -50,6 +54,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] TMP_Text autoStartText;
     [SerializeField] TMP_Text showPathsText;
 
+    private float popUpDuration;
+
     private void Start()
     {
         if (gameOverScreen != null)
@@ -62,6 +68,7 @@ public class UIManager : MonoBehaviour
             popUpScreen.SetActive(false);
         if (deselect != null)
             deselect.SetActive(false);
+        popUpDuration = 0;
     }
 
     public void GameOver()
@@ -91,6 +98,9 @@ public class UIManager : MonoBehaviour
         if (helpScreen.activeInHierarchy) return;
         Time.timeScale = 0;
         helpScreen.SetActive(true);
+
+        upgradeCircle.SetActive(upgradePanel.activeInHierarchy);
+        upgradeArrow.SetActive(upgradePanel.activeInHierarchy);
     }
 
     public void CloseHelpScreen()
@@ -109,11 +119,16 @@ public class UIManager : MonoBehaviour
     {
         popUpMessage.SetText(text);
         popUpScreen.SetActive(true);
+
+        popUpDuration += 3;
+        StartCoroutine(PopUpDisappear());
     }
 
-    public void ClosePopUp()
+    IEnumerator PopUpDisappear()
     {
+        yield return new WaitForSeconds(popUpDuration);
         popUpScreen.SetActive(false);
+        yield return null;
     }
 
     public void ToggleDeselect(bool isActive)

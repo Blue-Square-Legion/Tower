@@ -297,7 +297,7 @@ public class TowerBehavior : MonoBehaviour
                 case TowerType.Basic:
                     switch (upgradeLevel1)
                     {
-                        case 0:
+                        case 1:
                             //Do upgrade
                             range += 1f;
                             rangeObject.localScale = new Vector3(rangeObject.localScale.x + 2f, rangeObject.localScale.y, rangeObject.localScale.z + 2f);
@@ -307,7 +307,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
-                        case 1:
+                        case 2:
                             //Do upgrade
                             range += 2f;
                             rangeObject.localScale = new Vector3(rangeObject.localScale.x + 4f, rangeObject.localScale.y, rangeObject.localScale.z + 4f);
@@ -317,7 +317,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
-                        case 2:
+                        case 3:
                             //Do upgrade
                             range += 3f;
                             rangeObject.localScale = new Vector3(rangeObject.localScale.x + 6f, rangeObject.localScale.y, rangeObject.localScale.z + 6f);
@@ -331,7 +331,7 @@ public class TowerBehavior : MonoBehaviour
                 case TowerType.Bomb:
                     switch (upgradeLevel1)
                     {
-                        case 0:
+                        case 1:
                             //Do upgrade
                             damage += 1f;
                             transform.GetComponent<MissileDamage>().UpdateDamage(damage);
@@ -341,7 +341,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
-                        case 1:
+                        case 2:
                             //Do upgrade
                             damage += 3f;
                             transform.GetComponent<MissileDamage>().UpdateDamage(damage);
@@ -351,7 +351,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
-                        case 2:
+                        case 3:
                             //Do upgrade
                             damage += 4f;
                             transform.GetComponent<MissileDamage>().UpdateDamage(damage);
@@ -365,7 +365,7 @@ public class TowerBehavior : MonoBehaviour
                 case TowerType.Flame:
                     switch (upgradeLevel1)
                     {
-                        case 0:
+                        case 1:
                             //Do upgrade
                             fireRate += 0.2f;
                             transform.GetComponent<FireDamage>().UpdateFireRate(fireRate);
@@ -375,7 +375,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
-                        case 1:
+                        case 2:
                             //Do upgrade
                             fireRate += 0.3f;
                             transform.GetComponent<FireDamage>().UpdateFireRate(fireRate);
@@ -387,7 +387,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
 
                             break;
-                        case 2:
+                        case 3:
                             //Do upgrade
                             fireRate += 1f;
                             transform.GetComponent<FireDamage>().UpdateFireRate(fireRate);
@@ -401,21 +401,21 @@ public class TowerBehavior : MonoBehaviour
                 case TowerType.Economy:
                     switch (upgradeLevel1)
                     {
-                        case 0:
+                        case 1:
                             transform.GetComponent<EconomyBehavior>().bonus = 100;
                             GameManager.Instance.farmBonus += 50;
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
-                        case 1:
+                        case 2:
                             transform.GetComponent<EconomyBehavior>().bonus = 200;
                             GameManager.Instance.farmBonus += 100;
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
-                        case 2:
+                        case 3:
                             transform.GetComponent<EconomyBehavior>().bonus = 400;
                             GameManager.Instance.farmBonus += 300;
 
@@ -429,7 +429,7 @@ public class TowerBehavior : MonoBehaviour
                     IceDamage tempIce = transform.gameObject.GetComponent<IceDamage>();
                     switch (upgradeLevel1)
                     {
-                        case 0:
+                        case 1:
                             //Do upgrade
                             range += 1.5f;
                             rangeObject.localScale = new Vector3(rangeObject.localScale.x + 3f, rangeObject.localScale.y, rangeObject.localScale.z + 3f);
@@ -439,7 +439,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
-                        case 1:
+                        case 2:
                             //Do upgrade
                             fireRate += 0.25f;
                             transform.GetComponent<IceDamage>().UpdateFireRate(fireRate);
@@ -449,7 +449,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
-                        case 2:
+                        case 3:
                             //Do upgrade
                             tempIce.UpdateSnowSpeed(tempIce.GetSnowSpeed() - 0.1f);
 
@@ -463,7 +463,7 @@ public class TowerBehavior : MonoBehaviour
                     SupportBehavior support = transform.gameObject.GetComponent<SupportBehavior>();
                     switch (upgradeLevel1)
                     {
-                        case 0:
+                        case 1:
                             //Do upgrade
                             support.RemoveBuffs();
                             support.attackRangeBuff += 0.15f;
@@ -476,7 +476,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
-                        case 1:
+                        case 2:
                             //Hidden
                             //TODO
                             support.UpdateTowersInRange();
@@ -486,7 +486,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
-                        case 2:
+                        case 3:
                             //Do upgrade
                             support.fireRateBuff += 1.2f;
                             support.UpdateTowersInRange();
@@ -500,18 +500,7 @@ public class TowerBehavior : MonoBehaviour
                 case TowerType.Spikes:
                     switch (upgradeLevel1)
                     {
-                        case 0:
-                            //Do upgrade
-                            fireRate += 0.5f;
-                            transform.GetComponent<SpikeDamage>().UpdateFireRate(damage);
-
-                            //Set up for next upgrade
-                            sellCost += upgradeCost1 / 2;
-                            upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
-                            upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
-                            break;
                         case 1:
-                            //Do upgrade
                             //Do upgrade
                             fireRate += 0.5f;
                             transform.GetComponent<SpikeDamage>().UpdateFireRate(damage);
@@ -522,6 +511,17 @@ public class TowerBehavior : MonoBehaviour
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
                             break;
                         case 2:
+                            //Do upgrade
+                            //Do upgrade
+                            fireRate += 0.5f;
+                            transform.GetComponent<SpikeDamage>().UpdateFireRate(damage);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost1 / 2;
+                            upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
+                            upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
+                            break;
+                        case 3:
                             //Do upgrade
                             fireRate += 1f;
                             transform.GetComponent<SpikeDamage>().UpdateFireRate(damage);
@@ -551,7 +551,7 @@ public class TowerBehavior : MonoBehaviour
                 case TowerType.Basic:
                     switch (upgradeLevel2)
                     {
-                        case 0:
+                        case 1:
                             //Do upgrade
                             damage += 1f;
                             transform.GetComponent<StandardDamage>().UpdateDamage(damage);
@@ -561,7 +561,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
-                        case 1:
+                        case 2:
                             //Do upgrade
                             damage += 2f;
                             transform.GetComponent<StandardDamage>().UpdateDamage(damage);
@@ -571,7 +571,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
-                        case 2:
+                        case 3:
                             //Do upgrade
                             damage += 7;
                             transform.GetComponent<StandardDamage>().UpdateDamage(damage);
@@ -585,7 +585,7 @@ public class TowerBehavior : MonoBehaviour
                 case TowerType.Bomb:
                     switch (upgradeLevel2)
                     {
-                        case 0:
+                        case 1:
                             //Do upgrade
                             fireRate += 0.07f;
                             transform.GetComponent<MissileDamage>().UpdateFireRate(fireRate);
@@ -595,7 +595,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
-                        case 1:
+                        case 2:
                             //Do upgrade
                             fireRate += 0.1f;
                             transform.GetComponent<MissileDamage>().UpdateFireRate(fireRate);
@@ -605,7 +605,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
-                        case 2:
+                        case 3:
                             //Do upgrade
                             fireRate += 0.2f;
                             transform.GetComponent<MissileDamage>().UpdateFireRate(fireRate);
@@ -619,7 +619,7 @@ public class TowerBehavior : MonoBehaviour
                 case TowerType.Flame:
                     switch (upgradeLevel2)
                     {
-                        case 0:
+                        case 1:
                             //Do upgrade
                             range += 1f;
                             Transform fireTrigger = transform.Find("Head").transform.Find("FireTriggerPivot").transform.Find("FireTrigger").transform;
@@ -632,7 +632,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
-                        case 1:
+                        case 2:
                             //Do upgrade
                             damage += 0.05f;
                             transform.GetComponent<FireDamage>().UpdateDamage(damage);
@@ -643,7 +643,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
-                        case 2:
+                        case 3:
                             //Do upgrade
                             damage += 0.1f;
 
@@ -656,15 +656,6 @@ public class TowerBehavior : MonoBehaviour
                 case TowerType.Economy:
                     switch (upgradeLevel2)
                     {
-                        case 0:
-                            //Do upgrade
-                            //TODO
-
-                            //Set up for next upgrade
-                            sellCost += upgradeCost2 / 2;
-                            upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
-                            upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
-                            break;
                         case 1:
                             //Do upgrade
                             //TODO
@@ -675,6 +666,15 @@ public class TowerBehavior : MonoBehaviour
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
                         case 2:
+                            //Do upgrade
+                            //TODO
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost2 / 2;
+                            upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
+                            break;
+                        case 3:
                             //Do upgrade
                             //TODO
 
@@ -688,15 +688,6 @@ public class TowerBehavior : MonoBehaviour
                     IceDamage tempIce = transform.gameObject.GetComponent<IceDamage>();
                     switch (upgradeLevel2)
                     {
-                        case 0:
-                            //Do upgrade
-                            tempIce.UpdateSnowSpeedReduction(tempIce.GetSnowSpeedReduction() - 0.05f);
-
-                            //Set up for next upgrade
-                            sellCost += upgradeCost2 / 2;
-                            upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
-                            upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
-                            break;
                         case 1:
                             //Do upgrade
                             tempIce.UpdateSnowSpeedReduction(tempIce.GetSnowSpeedReduction() - 0.05f);
@@ -707,6 +698,15 @@ public class TowerBehavior : MonoBehaviour
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
                         case 2:
+                            //Do upgrade
+                            tempIce.UpdateSnowSpeedReduction(tempIce.GetSnowSpeedReduction() - 0.05f);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost2 / 2;
+                            upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
+                            upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
+                            break;
+                        case 3:
                             //Do upgrade
                             tempIce.UpdateSnowSpeedReduction(tempIce.GetSnowSpeedReduction() - 0.1f);
 
@@ -720,7 +720,7 @@ public class TowerBehavior : MonoBehaviour
                     SupportBehavior support = transform.gameObject.GetComponent<SupportBehavior>();
                     switch (upgradeLevel2)
                     {
-                        case 0:
+                        case 1:
                             //Do upgrade
                             support.RemoveBuffs();
                             support.attackRangeBuff += 0.15f;
@@ -733,7 +733,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
-                        case 1:
+                        case 2:
                             //Hidden
                             //TODO
                             support.UpdateTowersInRange();
@@ -743,7 +743,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
-                        case 2:
+                        case 3:
                             //Do upgrade
                             support.fireRateBuff += 1.2f;
                             support.UpdateTowersInRange();
@@ -757,7 +757,7 @@ public class TowerBehavior : MonoBehaviour
                 case TowerType.Spikes:
                     switch (upgradeLevel2)
                     {
-                        case 0:
+                        case 1:
                             //Do upgrade
                             transform.localScale += new Vector3(0.25f, 0, 0.25f);
 
@@ -766,7 +766,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost1 = GetUpgradeCost(upgradeLevel2, 2);
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
-                        case 1:
+                        case 2:
                             //Do upgrade
                             transform.localScale += new Vector3(0.25f, 0, 0.25f);
 
@@ -775,7 +775,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
                             break;
-                        case 2:
+                        case 3:
                             //Do upgrade
                             transform.localScale += new Vector3(0.5f, 0, 0.5f);
 
@@ -803,7 +803,7 @@ public class TowerBehavior : MonoBehaviour
                 case TowerType.Basic:
                     switch (upgradeLevel3)
                     {
-                        case 0:
+                        case 1:
                             //Do upgrade
                             fireRate += 1;
                             transform.GetComponent<StandardDamage>().UpdateFireRate(fireRate);
@@ -813,7 +813,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
-                        case 1:
+                        case 2:
                             //Do upgrade
                             fireRate += 2;
                             transform.GetComponent<StandardDamage>().UpdateFireRate(fireRate);
@@ -823,7 +823,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
-                        case 2:
+                        case 3:
                             //Do upgrade
                             fireRate += 2;
                             transform.GetComponent<StandardDamage>().UpdateFireRate(fireRate);
@@ -837,7 +837,7 @@ public class TowerBehavior : MonoBehaviour
                 case TowerType.Bomb:
                     switch (upgradeLevel3)
                     {
-                        case 0:
+                        case 1:
                             //Do upgrade
                             transform.GetComponent<MissileDamage>().explosionRadius += 1;
 
@@ -846,7 +846,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
-                        case 1:
+                        case 2:
                             //Do upgrade
                             transform.GetComponent<MissileDamage>().explosionRadius += 3;
 
@@ -855,7 +855,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
-                        case 2:
+                        case 3:
                             //Do upgrade
                             transform.GetComponent<MissileDamage>().explosionRadius += 5;
 
@@ -868,7 +868,7 @@ public class TowerBehavior : MonoBehaviour
                 case TowerType.Flame:
                     switch (upgradeLevel3)
                     {
-                        case 0:
+                        case 1:
                             //Do upgrade
                             transform.GetComponentInChildren<FireTriggerCollisionDetector>().duration += 1;
 
@@ -877,7 +877,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
-                        case 1:
+                        case 2:
                             //Do upgrade
                             transform.GetComponentInChildren<FireTriggerCollisionDetector>().duration += 2;
 
@@ -888,7 +888,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
 
                             break;
-                        case 2:
+                        case 3:
                             //Do upgrade
                             transform.GetComponentInChildren<FireTriggerCollisionDetector>().duration += 4;
 
@@ -901,16 +901,6 @@ public class TowerBehavior : MonoBehaviour
                 case TowerType.Economy:
                     switch (upgradeLevel3)
                     {
-                        case 0:
-                            //Do upgrade
-                            transform.GetComponent<EconomyBehavior>().investmentsPercent += 0.05f;
-                            transform.GetComponent<EconomyBehavior>().UpdateTowersInRange();
-
-                            //Set up for next upgrade
-                            sellCost += upgradeCost3 / 2;
-                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
-                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
-                            break;
                         case 1:
                             //Do upgrade
                             transform.GetComponent<EconomyBehavior>().investmentsPercent += 0.05f;
@@ -922,6 +912,16 @@ public class TowerBehavior : MonoBehaviour
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
                         case 2:
+                            //Do upgrade
+                            transform.GetComponent<EconomyBehavior>().investmentsPercent += 0.05f;
+                            transform.GetComponent<EconomyBehavior>().UpdateTowersInRange();
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost3 / 2;
+                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
+                            break;
+                        case 3:
                             //Do upgrade
                             transform.GetComponent<EconomyBehavior>().investmentsPercent += 0.1f;
                             transform.GetComponent<EconomyBehavior>().UpdateTowersInRange();
@@ -936,15 +936,6 @@ public class TowerBehavior : MonoBehaviour
                     IceDamage tempIce = transform.gameObject.GetComponent<IceDamage>();
                     switch (upgradeLevel3)
                     {
-                        case 0:
-                            //Do upgrade
-                            tempIce.UpdateSnowSize(tempIce.GetSnowSize() + 0.5f);
-
-                            //Set up for next upgrade
-                            sellCost += upgradeCost3 / 2;
-                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
-                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
-                            break;
                         case 1:
                             //Do upgrade
                             tempIce.UpdateSnowSize(tempIce.GetSnowSize() + 0.5f);
@@ -955,6 +946,15 @@ public class TowerBehavior : MonoBehaviour
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
                         case 2:
+                            //Do upgrade
+                            tempIce.UpdateSnowSize(tempIce.GetSnowSize() + 0.5f);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost3 / 2;
+                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
+                            break;
+                        case 3:
                             //Do upgrade
                             tempIce.UpdateSnowSize(tempIce.GetSnowSize() + 1f);
 
@@ -968,7 +968,7 @@ public class TowerBehavior : MonoBehaviour
                     SupportBehavior support = transform.gameObject.GetComponent<SupportBehavior>();
                     switch (upgradeLevel3)
                     {
-                        case 0:
+                        case 1:
                             //Do upgrade
                             support.RemoveBuffs();
                             support.attackRangeBuff += 0.15f;
@@ -981,7 +981,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
-                        case 1:
+                        case 2:
                             //Hidden
                             //TODO
                             support.UpdateTowersInRange();
@@ -991,7 +991,7 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
-                        case 2:
+                        case 3:
                             //Do upgrade
                             support.fireRateBuff += 1.2f;
                             support.UpdateTowersInRange();
@@ -1005,16 +1005,6 @@ public class TowerBehavior : MonoBehaviour
                 case TowerType.Spikes:
                     switch (upgradeLevel3)
                     {
-                        case 0:
-                            //Do upgrade
-                            damage += 0.05f;
-                            transform.GetComponent<SpikeDamage>().UpdateDamage(damage);
-
-                            //Set up for next upgrade
-                            sellCost += upgradeCost3 / 2;
-                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
-                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
-                            break;
                         case 1:
                             //Do upgrade
                             damage += 0.05f;
@@ -1026,6 +1016,16 @@ public class TowerBehavior : MonoBehaviour
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
                             break;
                         case 2:
+                            //Do upgrade
+                            damage += 0.05f;
+                            transform.GetComponent<SpikeDamage>().UpdateDamage(damage);
+
+                            //Set up for next upgrade
+                            sellCost += upgradeCost3 / 2;
+                            upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
+                            upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
+                            break;
+                        case 3:
                             //Do upgrade
                             damage += 0.1f;
                             transform.GetComponent<SpikeDamage>().UpdateDamage(damage);
@@ -1178,9 +1178,9 @@ public class TowerBehavior : MonoBehaviour
         {
             TowerType.Economy, new List<UpgradeData>
             {
-                new UpgradeData("Interest (Not Implemented)\nCost: " + 0, 0, "Extra money based on current money at end of wave (Only highest Value Applied)"),
-                new UpgradeData("Better Deals (Not Implemented)\nCost: " + 0, 0, "Increases Interest Effect"),
-                new UpgradeData("Compound Interest (Not Implemented)\nCost: " + 0, 0, "Increases Interest Effect"),
+                new UpgradeData("Interest\nCost: " + 0, 0, "Extra money based on current money at end of wave (Only highest Value Applied)"),
+                new UpgradeData("Better Deals\nCost: " + 0, 0, "Increases Interest Effect"),
+                new UpgradeData("Compound Interest\nCost: " + 0, 0, "Increases Interest Effect"),
                 new UpgradeData("Max Level", 0, "")
             }
         },

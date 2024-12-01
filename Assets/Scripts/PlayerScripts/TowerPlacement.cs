@@ -113,7 +113,7 @@ public class TowerPlacement : MonoBehaviour
                                 else
                                 {
                                     Destroy(currentTowerBeingPlaced);
-                                    UIManager.Instance.SendPopUp("Tower cannot be placed here");
+                                    UIManager.Instance.SendPopUp("Cannot Place Here!");
                                     UIManager.Instance.ToggleDeselect(false);
                                 }
                             }
@@ -121,7 +121,7 @@ public class TowerPlacement : MonoBehaviour
                             {
                                 towerCollider.isTrigger = true;
                                 Destroy(currentTowerBeingPlaced);
-                                UIManager.Instance.SendPopUp("Placing the tower here will block all enemy paths");
+                                UIManager.Instance.SendPopUp("Cannot Place Here!");
                                 UIManager.Instance.ToggleDeselect(false);
                             }
 

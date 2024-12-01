@@ -77,29 +77,29 @@ public class RunePlacement : MonoBehaviour
         if (meteorCooldownTimer > 0f)
         {
             meteorCooldownTimer -= Time.deltaTime;
-            UpdateCooldownText(meteorCooldownText, meteorCooldownTimer);
+            //UpdateCooldownText(meteorCooldownText, meteorCooldownTimer);
         }
         else
         {
-            meteorCooldownText.text = "Ready";
+            //meteorCooldownText.text = "Ready";
         }
         if (lightningCooldownTimer > 0f)
         {
             lightningCooldownTimer -= Time.deltaTime;
-            UpdateCooldownText(lightningCooldownText, lightningCooldownTimer);
+            //UpdateCooldownText(lightningCooldownText, lightningCooldownTimer);
         }
         else
         {
-            lightningCooldownText.text = "Ready";
+            //lightningCooldownText.text = "Ready";
         }
         if (confusionCooldownTimer > 0f)
         {
             confusionCooldownTimer -= Time.deltaTime;
-            UpdateCooldownText(confusionCooldownText, confusionCooldownTimer);
+            //UpdateCooldownText(confusionCooldownText, confusionCooldownTimer);
         }
         else
         {
-            confusionCooldownText.text = "Ready";
+            //confusionCooldownText.text = "Ready";
         }
 
         if (isCasting)
