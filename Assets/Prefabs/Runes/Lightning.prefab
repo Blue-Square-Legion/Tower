@@ -123,3 +123,5 @@ MonoBehaviour:
   damage: 0
   fallHeight: 10
   targetPosition: {x: 0, y: 0, z: 0}
+  impactEffectPrefab: {fileID: 2735133073373490740, guid: 10927e4de24483842aad17cf16089c33,
+    type: 3}

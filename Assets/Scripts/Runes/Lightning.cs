@@ -10,6 +10,7 @@ public class Lightning : MonoBehaviour
     public Vector3 targetPosition;
     private bool hasLanded = false;
     private Vector3 fallStartPosition;
+    public GameObject impactEffectPrefab;
 
     void Start()
     {
@@ -60,6 +61,6 @@ public class Lightning : MonoBehaviour
 
     void ImpactEffect()
     {
-        // Implement a particle effect
+        Instantiate(impactEffectPrefab, transform.position, Quaternion.identity);
     }
 }

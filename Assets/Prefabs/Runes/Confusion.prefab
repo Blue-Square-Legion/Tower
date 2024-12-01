@@ -120,3 +120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fea087632f360b44a200d06300ff4c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fallSpeed: 30
+  impactRadius: 3
+  fallHeight: 10
+  targetPosition: {x: 0, y: 0, z: 0}
+  impactEffectPrefab: {fileID: 8548722763753034989, guid: eea6228916a2c0042af1c675016985c5,
+    type: 3}
