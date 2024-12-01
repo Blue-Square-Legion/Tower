@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -50,6 +51,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] TMP_Text autoStartText;
     [SerializeField] TMP_Text showPathsText;
 
+    private float popUpDuration;
+
     private void Start()
     {
         if (gameOverScreen != null)
@@ -62,6 +65,7 @@ public class UIManager : MonoBehaviour
             popUpScreen.SetActive(false);
         if (deselect != null)
             deselect.SetActive(false);
+        popUpDuration = 0;
     }
 
     public void GameOver()
@@ -109,11 +113,16 @@ public class UIManager : MonoBehaviour
     {
         popUpMessage.SetText(text);
         popUpScreen.SetActive(true);
+
+        popUpDuration += 3;
+        StartCoroutine(PopUpDisappear());
     }
 
-    public void ClosePopUp()
+    IEnumerator PopUpDisappear()
     {
+        yield return new WaitForSeconds(popUpDuration);
         popUpScreen.SetActive(false);
+        yield return null;
     }
 
     public void ToggleDeselect(bool isActive)

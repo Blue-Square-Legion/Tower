@@ -325,6 +325,7 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
+                            print(upgradeDescription1);
                             break;
                     }
                     break;
