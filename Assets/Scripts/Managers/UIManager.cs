@@ -53,6 +53,8 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] TMP_Text autoStartText;
     [SerializeField] TMP_Text showPathsText;
+    [SerializeField] GameObject autoStartButton;
+    [SerializeField] GameObject showPathsButton;
 
     private float popUpDuration;
 
@@ -98,15 +100,19 @@ public class UIManager : MonoBehaviour
         if (helpScreen.activeInHierarchy) return;
         Time.timeScale = 0;
         helpScreen.SetActive(true);
-
+        autoStartButton.SetActive(false);
+        showPathsButton.SetActive(false);
         upgradeCircle.SetActive(upgradePanel.activeInHierarchy);
         upgradeArrow.SetActive(upgradePanel.activeInHierarchy);
+        
     }
 
     public void CloseHelpScreen()
     {
         Time.timeScale = 1;
         helpScreen.SetActive(false);
+        autoStartButton.SetActive(true);
+        showPathsButton.SetActive(true);
     }
 
     public void ReturnToTitle()
