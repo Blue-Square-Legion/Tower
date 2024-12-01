@@ -27,13 +27,12 @@ Transform:
   m_GameObject: {fileID: 830794206325096820}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7015339, y: -0.0135546485, z: 0.013348134, w: -0.71238214}
-  m_LocalPosition: {x: 0.34, y: 9.06, z: 0.14}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7814461243417085363}
   - {fileID: 4497237299517651140}
-  - {fileID: 6883199541286671929}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 272.351, y: 68.047, z: -68.031}
 --- !u!198 &4685150833302169833
@@ -9748,77 +9747,3 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!1001 &6344640583889023442
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 761907439147883279}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 1ddabb0c2182e4c4fb673a9138a4bf70, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.4960681
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1ddabb0c2182e4c4fb673a9138a4bf70, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.4960681
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1ddabb0c2182e4c4fb673a9138a4bf70, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.4960681
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1ddabb0c2182e4c4fb673a9138a4bf70, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1ddabb0c2182e4c4fb673a9138a4bf70, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.74
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1ddabb0c2182e4c4fb673a9138a4bf70, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -9.16
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1ddabb0c2182e4c4fb673a9138a4bf70, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7223338
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1ddabb0c2182e4c4fb673a9138a4bf70, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.000000059604645
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1ddabb0c2182e4c4fb673a9138a4bf70, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.69154465
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1ddabb0c2182e4c4fb673a9138a4bf70, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1ddabb0c2182e4c4fb673a9138a4bf70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1ddabb0c2182e4c4fb673a9138a4bf70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 87.505
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1ddabb0c2182e4c4fb673a9138a4bf70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 1ddabb0c2182e4c4fb673a9138a4bf70, type: 3}
-      propertyPath: m_Name
-      value: Meteor Rune Animated
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1ddabb0c2182e4c4fb673a9138a4bf70, type: 3}
---- !u!4 &6883199541286671929 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1ddabb0c2182e4c4fb673a9138a4bf70, type: 3}
-  m_PrefabInstance: {fileID: 6344640583889023442}
-  m_PrefabAsset: {fileID: 0}

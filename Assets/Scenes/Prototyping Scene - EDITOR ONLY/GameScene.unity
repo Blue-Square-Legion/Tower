@@ -41898,7 +41898,7 @@ PrefabInstance:
     - target: {fileID: 6580106572452751830, guid: 3a063d3fb71077448925320fd736b796,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -430.81476
+      value: -430.8151
       objectReference: {fileID: 0}
     - target: {fileID: 6761451751993520856, guid: 3a063d3fb71077448925320fd736b796,
         type: 3}
@@ -42224,14 +42224,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 199740593767521235, guid: 22d70330496e4474db168f477a4993e2,
         type: 3}
+      propertyPath: meteorPreviewPrefab
+      value: 
+      objectReference: {fileID: 919132149155446097, guid: a45ac1c92164c3344832bc2e71c3dd2a,
+        type: 3}
+    - target: {fileID: 199740593767521235, guid: 22d70330496e4474db168f477a4993e2,
+        type: 3}
       propertyPath: confusionCooldownText
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 199740593767521235, guid: 22d70330496e4474db168f477a4993e2,
         type: 3}
+      propertyPath: lightingPreviewPrefab
+      value: 
+      objectReference: {fileID: 919132149155446097, guid: 36621ccdd5aea8a488efb9c4d321f826,
+        type: 3}
+    - target: {fileID: 199740593767521235, guid: 22d70330496e4474db168f477a4993e2,
+        type: 3}
       propertyPath: lightningCooldownText
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 199740593767521235, guid: 22d70330496e4474db168f477a4993e2,
+        type: 3}
+      propertyPath: confusionPreviewPrefab
+      value: 
+      objectReference: {fileID: 919132149155446097, guid: 8eb2969f86aa81440afd0dec2866bf3a,
+        type: 3}
     - target: {fileID: 857896611727877094, guid: 22d70330496e4474db168f477a4993e2,
         type: 3}
       propertyPath: surface
