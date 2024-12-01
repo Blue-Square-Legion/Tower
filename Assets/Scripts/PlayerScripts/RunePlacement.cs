@@ -3,7 +3,10 @@ using UnityEngine;
 
 public class RunePlacement : MonoBehaviour
 {
-    public GameObject skillPreviewPrefab;  
+    public GameObject meteorPreviewPrefab;
+    public GameObject lightingPreviewPrefab;
+    public GameObject confusionPreviewPrefab;
+
     public GameObject meteorPrefab;
     public GameObject lightningPrefab;
     public GameObject confusionPrefab;
@@ -121,7 +124,7 @@ public class RunePlacement : MonoBehaviour
         }
     }
 
-    void StartSkillCasting()
+    void StartSkillCasting(SkillType skill)
     {
         isCasting = true;
 
@@ -130,7 +133,20 @@ public class RunePlacement : MonoBehaviour
             Destroy(currentPreview);
         }
 
-        currentPreview = Instantiate(skillPreviewPrefab);
+        switch (skill) {
+            case SkillType.Meteor:
+                currentPreview = Instantiate(meteorPreviewPrefab);
+                break;
+            case SkillType.Lightning:
+                currentPreview = Instantiate(lightingPreviewPrefab);
+                break;
+            case SkillType.Confusion:
+                currentPreview = Instantiate(confusionPreviewPrefab);
+                break;
+        }
+
+
+        
         UpdateSkillPreview();
     }
 
@@ -213,7 +229,7 @@ public class RunePlacement : MonoBehaviour
         UIManager.Instance.ToggleTowerSelection(false);
         selectedSkill = skillType;
         Debug.Log("Selected skill: " + selectedSkill);
-        StartSkillCasting();
+        StartSkillCasting(skillType);
     }
 
     void UpdateCooldownText(TextMeshProUGUI cooldownText, float timer)

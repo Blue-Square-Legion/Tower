@@ -38626,6 +38626,74 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1993040397}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2007550160
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3475644129958932104, guid: 2cfb4039fc3ef29469b39f9609805f1d,
+        type: 3}
+      propertyPath: m_Name
+      value: Confusion Rune Animated
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282966433562883122, guid: 2cfb4039fc3ef29469b39f9609805f1d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282966433562883122, guid: 2cfb4039fc3ef29469b39f9609805f1d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282966433562883122, guid: 2cfb4039fc3ef29469b39f9609805f1d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282966433562883122, guid: 2cfb4039fc3ef29469b39f9609805f1d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282966433562883122, guid: 2cfb4039fc3ef29469b39f9609805f1d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282966433562883122, guid: 2cfb4039fc3ef29469b39f9609805f1d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282966433562883122, guid: 2cfb4039fc3ef29469b39f9609805f1d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282966433562883122, guid: 2cfb4039fc3ef29469b39f9609805f1d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282966433562883122, guid: 2cfb4039fc3ef29469b39f9609805f1d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282966433562883122, guid: 2cfb4039fc3ef29469b39f9609805f1d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cfb4039fc3ef29469b39f9609805f1d, type: 3}
 --- !u!1 &2008100845
 GameObject:
   m_ObjectHideFlags: 0
@@ -42403,9 +42471,21 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 199740593767521235, guid: 22d70330496e4474db168f477a4993e2,
         type: 3}
+      propertyPath: confusionPrefab
+      value: 
+      objectReference: {fileID: 929076316120214534, guid: bb0a5f095b66e01488da5fe5e59042b5,
+        type: 3}
+    - target: {fileID: 199740593767521235, guid: 22d70330496e4474db168f477a4993e2,
+        type: 3}
       propertyPath: meteorCooldownText
       value: 
       objectReference: {fileID: 1180712477}
+    - target: {fileID: 199740593767521235, guid: 22d70330496e4474db168f477a4993e2,
+        type: 3}
+      propertyPath: meteorPreviewPrefab
+      value: 
+      objectReference: {fileID: 1182342093619834584, guid: 4d83b26b389f10d459bf987c4835b20f,
+        type: 3}
     - target: {fileID: 199740593767521235, guid: 22d70330496e4474db168f477a4993e2,
         type: 3}
       propertyPath: confusionCooldownText
@@ -42413,9 +42493,21 @@ PrefabInstance:
       objectReference: {fileID: 1231106303}
     - target: {fileID: 199740593767521235, guid: 22d70330496e4474db168f477a4993e2,
         type: 3}
+      propertyPath: lightingPreviewPrefab
+      value: 
+      objectReference: {fileID: 6549240581634222270, guid: a77b239e72c84704d872845879541086,
+        type: 3}
+    - target: {fileID: 199740593767521235, guid: 22d70330496e4474db168f477a4993e2,
+        type: 3}
       propertyPath: lightningCooldownText
       value: 
       objectReference: {fileID: 1974947771}
+    - target: {fileID: 199740593767521235, guid: 22d70330496e4474db168f477a4993e2,
+        type: 3}
+      propertyPath: confusionPreviewPrefab
+      value: 
+      objectReference: {fileID: 3475644129958932104, guid: 2cfb4039fc3ef29469b39f9609805f1d,
+        type: 3}
     - target: {fileID: 857896611727877094, guid: 22d70330496e4474db168f477a4993e2,
         type: 3}
       propertyPath: surface
@@ -42614,3 +42706,4 @@ SceneRoots:
   - {fileID: 751219287}
   - {fileID: 1880505337732848751}
   - {fileID: 2444326507163130215}
+  - {fileID: 2007550160}
