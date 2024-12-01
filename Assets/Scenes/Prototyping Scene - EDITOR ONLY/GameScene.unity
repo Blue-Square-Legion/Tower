@@ -40919,7 +40919,7 @@ PrefabInstance:
         type: 3}
       propertyPath: runeSelection
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6276057131004143167}
     - target: {fileID: 6818719110386909350, guid: 90319159318b32846a7006408bcbd4c6,
         type: 3}
       propertyPath: showPathsText
@@ -41856,7 +41856,7 @@ PrefabInstance:
     - target: {fileID: 6580106572452751830, guid: 3a063d3fb71077448925320fd736b796,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -849.1854
+      value: -430.81494
       objectReference: {fileID: 0}
     - target: {fileID: 6761451751993520856, guid: 3a063d3fb71077448925320fd736b796,
         type: 3}
@@ -42140,6 +42140,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a063d3fb71077448925320fd736b796, type: 3}
+--- !u!1 &6276057131004143167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7101295785299842419, guid: 3a063d3fb71077448925320fd736b796,
+    type: 3}
+  m_PrefabInstance: {fileID: 6276057131004143166}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6321285439559530928
 PrefabInstance:
   m_ObjectHideFlags: 0
