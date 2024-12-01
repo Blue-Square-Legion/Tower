@@ -77,29 +77,32 @@ public class RunePlacement : MonoBehaviour
         if (meteorCooldownTimer > 0f)
         {
             meteorCooldownTimer -= Time.deltaTime;
-            //UpdateCooldownText(meteorCooldownText, meteorCooldownTimer);
+            UpdateCooldownText(meteorCooldownText, meteorCooldownTimer);
         }
         else
         {
-            //meteorCooldownText.text = "Ready";
+            meteorCooldownText.color = Color.white;
+            meteorCooldownText.text = "Meteor-100 Mana";
         }
         if (lightningCooldownTimer > 0f)
         {
             lightningCooldownTimer -= Time.deltaTime;
-            //UpdateCooldownText(lightningCooldownText, lightningCooldownTimer);
+            UpdateCooldownText(lightningCooldownText, lightningCooldownTimer);
         }
         else
         {
-            //lightningCooldownText.text = "Ready";
+            lightningCooldownText.color = Color.white;
+            lightningCooldownText.text = "Lightning-50 Mana";
         }
         if (confusionCooldownTimer > 0f)
         {
             confusionCooldownTimer -= Time.deltaTime;
-            //UpdateCooldownText(confusionCooldownText, confusionCooldownTimer);
+            UpdateCooldownText(confusionCooldownText, confusionCooldownTimer);
         }
         else
         {
-            //confusionCooldownText.text = "Ready";
+            confusionCooldownText.color = Color.white;
+            confusionCooldownText.text = "Confuse-50 Mana";
         }
 
         if (isCasting)
@@ -194,32 +197,48 @@ public class RunePlacement : MonoBehaviour
 
     bool CastMeteor(Vector3 castPosition)
     {
-        if (!Player.Instance.CheckAndUseMana(meteorCost)) return false;
+        if (!Player.Instance.CheckAndUseMana(meteorCost))
+        {
+            UIManager.Instance.SendPopUp("Not enough mana");
+            return false;
+        }
+        
         GameObject meteor = Instantiate(meteorPrefab, currentPreview.transform.position, Quaternion.identity);
 
         Meteor meteorScript = meteor.GetComponent<Meteor>();
         meteorScript.targetPosition = castPosition;
+        meteorCooldownText.color = Color.red;
         return true;
     }
 
     bool CastLightning(Vector3 castPosition)
     {
-        if (!Player.Instance.CheckAndUseMana(lightningCost)) return false;
+        if (!Player.Instance.CheckAndUseMana(lightningCost))
+        {
+            UIManager.Instance.SendPopUp("Not enough mana");
+            return false;
+        }
         GameObject lightning = Instantiate(lightningPrefab, currentPreview.transform.position, Quaternion.identity);
 
         Lightning lightningScript = lightning.GetComponent<Lightning>();
         lightningScript.targetPosition = castPosition;
+        lightningCooldownText.color = Color.red;
         return true;
     }
 
     bool CastConfusion(Vector3 castPosition)
     {
-        if (!Player.Instance.CheckAndUseMana(confusionCost)) return false;
+        if (!Player.Instance.CheckAndUseMana(confusionCost))
+        {
+            UIManager.Instance.SendPopUp("Not enough mana");
+            return false;
+        }
 
         GameObject confusion = Instantiate(confusionPrefab, currentPreview.transform.position, Quaternion.identity);
 
         Confusion confusionScript = confusion.GetComponent<Confusion>();
         confusionScript.targetPosition = castPosition;
+        confusionCooldownText.color = Color.red;
         return true;
     }
 

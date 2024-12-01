@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 761907439147883279}
   - component: {fileID: 4685150833302169833}
   - component: {fileID: 4512930649177631035}
+  - component: {fileID: 1989551224487281180}
   m_Layer: 0
   m_Name: Comet
   m_TagString: Untagged
@@ -4833,6 +4834,23 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &1989551224487281180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830794206325096820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b001039f1cf869f4f9c52e310f3b0c87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallSpeed: 10
+  impactRadius: 5
+  damage: 100
+  fallHeight: 10
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &3741816004792722495
 GameObject:
   m_ObjectHideFlags: 0
@@ -4860,7 +4878,7 @@ Transform:
   m_GameObject: {fileID: 3741816004792722495}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -4894,7 +4912,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fb078c146d4e09a4492d209fae02a6a6, type: 2}
+  - {fileID: 2100000, guid: 40d19c3e2f723b04bae87dc2d9665783, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
