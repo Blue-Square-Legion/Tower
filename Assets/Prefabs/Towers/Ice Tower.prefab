@@ -221,6 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fe207b0d77689c4984ab920c1c4c87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  snowballAnimator: {fileID: 6804217937553504681}
   snowBall: {fileID: 3693834299706103251, guid: 10b54ed9233ee1149860a357f8cfb88a,
     type: 3}
   snowDuration: 1
@@ -319,6 +320,12 @@ PrefabInstance:
 --- !u!4 &2204056911078873653 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7050146311832678086, guid: fd441669e7f95b44fbb8b3da668eccea,
+    type: 3}
+  m_PrefabInstance: {fileID: 9169685782683251955}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6804217937553504681 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2390343274184265050, guid: fd441669e7f95b44fbb8b3da668eccea,
     type: 3}
   m_PrefabInstance: {fileID: 9169685782683251955}
   m_PrefabAsset: {fileID: 0}
