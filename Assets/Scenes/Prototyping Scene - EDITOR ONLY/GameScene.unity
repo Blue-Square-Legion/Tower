@@ -4157,6 +4157,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 250321767}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &253675329 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4939945450441146865, guid: 3a063d3fb71077448925320fd736b796,
+    type: 3}
+  m_PrefabInstance: {fileID: 6276057131004143166}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &263150834 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 974205963204009810, guid: eb40d536e21e80a42b5b6fd205bf253a,
@@ -7627,6 +7633,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 414041837}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &414799791 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3323495916578613703, guid: 3a063d3fb71077448925320fd736b796,
+    type: 3}
+  m_PrefabInstance: {fileID: 6276057131004143166}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &422357239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40867,6 +40879,16 @@ PrefabInstance:
       objectReference: {fileID: 119835813}
     - target: {fileID: 6818719110386909350, guid: 90319159318b32846a7006408bcbd4c6,
         type: 3}
+      propertyPath: upgradeArrow
+      value: 
+      objectReference: {fileID: 414799791}
+    - target: {fileID: 6818719110386909350, guid: 90319159318b32846a7006408bcbd4c6,
+        type: 3}
+      propertyPath: upgradePanel
+      value: 
+      objectReference: {fileID: 1503187701}
+    - target: {fileID: 6818719110386909350, guid: 90319159318b32846a7006408bcbd4c6,
+        type: 3}
       propertyPath: autoStartText
       value: 
       objectReference: {fileID: 68864581}
@@ -40925,6 +40947,11 @@ PrefabInstance:
       propertyPath: showPathsText
       value: 
       objectReference: {fileID: 1918649685}
+    - target: {fileID: 6818719110386909350, guid: 90319159318b32846a7006408bcbd4c6,
+        type: 3}
+      propertyPath: upgradeCircle
+      value: 
+      objectReference: {fileID: 253675329}
     - target: {fileID: 6818719110386909350, guid: 90319159318b32846a7006408bcbd4c6,
         type: 3}
       propertyPath: upgradeScreen
@@ -41599,7 +41626,7 @@ PrefabInstance:
     - target: {fileID: 3354014987871903432, guid: 3a063d3fb71077448925320fd736b796,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.00046539307
+      value: -0.00047302246
       objectReference: {fileID: 0}
     - target: {fileID: 3354014987871903432, guid: 3a063d3fb71077448925320fd736b796,
         type: 3}

@@ -28,6 +28,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject gameOverScreen;
     [SerializeField] GameObject deselect;
     [SerializeField] GameObject helpScreen;
+    [SerializeField] GameObject upgradePanel;
+    [SerializeField] GameObject upgradeCircle;
+    [SerializeField] GameObject upgradeArrow;
     [SerializeField] GameObject popUpScreen;
     [SerializeField] TMP_Text popUpMessage;
 
@@ -95,6 +98,9 @@ public class UIManager : MonoBehaviour
         if (helpScreen.activeInHierarchy) return;
         Time.timeScale = 0;
         helpScreen.SetActive(true);
+
+        upgradeCircle.SetActive(upgradePanel.activeInHierarchy);
+        upgradeArrow.SetActive(upgradePanel.activeInHierarchy);
     }
 
     public void CloseHelpScreen()
