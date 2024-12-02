@@ -22,7 +22,8 @@ public class UIManager : MonoBehaviour
     }
     #endregion
     //title screens
-    [SerializeField] GameObject creditsScreen;
+    [SerializeField] GameObject creditsScreen1;
+    [SerializeField] GameObject creditsScreen2;
     [SerializeField] GameObject titleScreen;
 
     [SerializeField] GameObject gameOverScreen;
@@ -62,8 +63,10 @@ public class UIManager : MonoBehaviour
     {
         if (gameOverScreen != null)
             gameOverScreen.SetActive(false);
-        if (creditsScreen != null)
-            creditsScreen.SetActive(false);
+        if (creditsScreen1 != null)
+            creditsScreen1.SetActive(false);
+        if (creditsScreen2 != null)
+            creditsScreen2.SetActive(false);
         if (helpScreen != null)
             helpScreen.SetActive(false);
         if (popUpScreen != null)
@@ -90,11 +93,27 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(level);
     }
 
-    public void CreditsScreenActive(bool active)
+    public void CreditsScreen1Active(bool active)
     {
-        creditsScreen.SetActive(active);
+        creditsScreen1.SetActive(active);
+        creditsScreen2.SetActive(!active);
         titleScreen.SetActive(!active);
     }
+
+    public void CreditsScreen2Active(bool active)
+    {
+        creditsScreen1.SetActive(!active);
+        creditsScreen2.SetActive(active);
+        titleScreen.SetActive(!active);
+    }
+
+    public void CloseCreditScreen()
+    {
+        creditsScreen2.SetActive(false);
+        creditsScreen1.SetActive(false);
+        titleScreen.SetActive(true);
+    }
+
     public void OpenHelpScreen()
     {
         if (helpScreen.activeInHierarchy) return;
