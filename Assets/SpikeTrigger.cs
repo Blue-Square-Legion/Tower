@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,39 +7,46 @@ public class SpikeTrigger : MonoBehaviour
 
     GameManager gameManager;
     private float damage;
-    private float fireRate;
-    private float delay;
+    List<Enemy> enemiesInside;
 
     private void Start()
     {
         gameManager = GameManager.Instance;
         damage = parent.damage;
-        fireRate = parent.fireRate;
-        delay = 1f / fireRate;
+        enemiesInside = new();
     }
 
-    public void UpdateStats()
+    public void UpdateDamage()
     {
         damage = parent.damage;
-        fireRate = parent.fireRate;
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
+
         if (other.transform.CompareTag("Enemy"))
         {
-            if (delay > 0)
-            {
-                delay -= Time.deltaTime;
-                return;
-            }
+            enemiesInside.Add(other.gameObject.GetComponent<Enemy>());
+        }
+    }
 
-            Enemy target = other.gameObject.GetComponent<Enemy>();
+    private void OnTriggerExit(Collider other)
+    {
 
-            target.lastDamagingTower = transform.GetComponent<TowerBehavior>();
-            gameManager.EnqueueDamageData(new GameManager.EnemyDamageData(target, damage, target.damageResistance, transform.GetComponent<TowerBehavior>()));
+        if (other.transform.CompareTag("Enemy"))
+        {
+            enemiesInside.Remove(other.gameObject.GetComponent<Enemy>());
+        }
+    }
 
-            delay = 1 / fireRate;
+    public void damageTick()
+    {
+        int enemyCount = enemiesInside.Count;
+        for (int i = 0; i < enemyCount; i++)
+        {
+            enemiesInside[i].lastDamagingTower = transform.GetComponent<TowerBehavior>();
+            gameManager.EnqueueDamageData(new GameManager.EnemyDamageData(enemiesInside[i], damage, 
+                enemiesInside[i].damageResistance, transform.GetComponent<TowerBehavior>()));
         }
     }
 }

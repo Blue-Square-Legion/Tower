@@ -57,11 +57,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   damage: 0.2
-  fireRate: 5
+  fireRate: 10
   range: 2
   cost: 200
   towerType: 6
   targetType: 0
+  leveltext: {fileID: 0}
   moneyMultiplier: 1
 --- !u!65 &2257491692670457906
 BoxCollider:
