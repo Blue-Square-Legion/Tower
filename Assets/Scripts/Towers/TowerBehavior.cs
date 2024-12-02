@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using TMPro;
 
 public class TowerBehavior : MonoBehaviour
 {
@@ -31,7 +33,7 @@ public class TowerBehavior : MonoBehaviour
     private int upgradeCost1, upgradeCost2, upgradeCost3;
     [NonSerialized] public int sellCost;
     private string upgradeDescription1, upgradeDescription2, upgradeDescription3;
-
+    [SerializeField] TextMeshProUGUI leveltext;
     string[] buffNames;
     private int buffNamesCount;
     public float moneyMultiplier;
@@ -80,6 +82,14 @@ public class TowerBehavior : MonoBehaviour
         upgradeCost3 = GetUpgradeData(0, 3).cost;
 
         sellCost = cost / 2;
+
+        leveltext = gameObject.GetComponentInChildren<TextMeshProUGUI>();
+
+        if (leveltext != null) {
+            leveltext.text = $"{upgradeLevel1}-{upgradeLevel2}-{upgradeLevel3}"; 
+            Debug.Log("Text updated successfully!"); 
+
+        }
     }
 
     //Desyncs the towers from regular game loop to prevent errors
@@ -1046,6 +1056,12 @@ public class TowerBehavior : MonoBehaviour
 
     public void UpdateUpgradePanel()
     {
+        //update text
+        leveltext = gameObject.GetComponentInChildren<TextMeshProUGUI>();
+        if (leveltext)
+        {
+            leveltext.text = $"{upgradeLevel1}-{upgradeLevel2}-{upgradeLevel3}";
+        }
         upgradePanel.SetTarget(this, (int)targetType);
         upgradePanel.SetSellButton(sellCost);
         upgradePanel.SetText(upgradeDescription1, 1);

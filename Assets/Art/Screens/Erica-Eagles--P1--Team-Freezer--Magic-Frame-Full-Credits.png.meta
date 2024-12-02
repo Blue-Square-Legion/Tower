@@ -37,6 +37,7 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
+
     wrapU: 1
     wrapV: 1
     wrapW: 0
@@ -93,6 +94,7 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+
   - serializedVersion: 3
     buildTarget: iPhone
     maxTextureSize: 2048
