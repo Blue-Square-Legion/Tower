@@ -4,7 +4,8 @@ using UnityEngine;
 public class IceDamage : MonoBehaviour, IDamageMethod
 {
     public Animator snowballAnimator;
-    [SerializeField] private GameObject snowBall;
+    [SerializeField] private GameObject snowball;
+    [SerializeField] private Transform snowballSpawn;
     [SerializeField] private float snowDuration;
     [SerializeField] private float snowSpeed;
     [SerializeField] private float snowSpeedReduction;
@@ -82,8 +83,8 @@ public class IceDamage : MonoBehaviour, IDamageMethod
                 delay -= Time.deltaTime;
                 return;
             }
-
-            GameObject snowBallObject = Instantiate(snowBall, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            snowballAnimator.SetTrigger("CatapultFire");
+            GameObject snowBallObject = Instantiate(snowball, new Vector3(snowballSpawn.position.x, snowballSpawn.position.y, snowballSpawn.position.z), Quaternion.identity);
             Snowball snowballScript = snowBallObject.GetComponent<Snowball>();
             snowballScript.target = target;
             snowballScript.parent = this;
