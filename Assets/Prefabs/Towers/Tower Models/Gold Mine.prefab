@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2218045932566023648}
   - component: {fileID: 4488892256186811156}
   - component: {fileID: 1421465775635850765}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,6 +178,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6634434007383570871, guid: ae98b7e39883e344da7b227fd9e38f8b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -3174819915349386717, guid: ae98b7e39883e344da7b227fd9e38f8b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -201,7 +206,27 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ae98b7e39883e344da7b227fd9e38f8b,
         type: 3}
       propertyPath: m_Name
-      value: GoldMine
+      value: Gold Mine
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ae98b7e39883e344da7b227fd9e38f8b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ae98b7e39883e344da7b227fd9e38f8b,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130315268405972617, guid: ae98b7e39883e344da7b227fd9e38f8b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061003941969000179, guid: ae98b7e39883e344da7b227fd9e38f8b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
