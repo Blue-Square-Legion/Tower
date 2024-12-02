@@ -4848,7 +4848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallSpeed: 10
   impactRadius: 5
-  damage: 100
+  damage: 5
   fallHeight: 10
   targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &3741816004792722495
