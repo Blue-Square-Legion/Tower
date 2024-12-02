@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class IceDamage : MonoBehaviour, IDamageMethod
 {
+    public Animator snowballAnimator;
     [SerializeField] private GameObject snowBall;
     [SerializeField] private float snowDuration;
     [SerializeField] private float snowSpeed;

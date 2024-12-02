@@ -3,7 +3,10 @@ using UnityEngine;
 
 public class RunePlacement : MonoBehaviour
 {
-    public GameObject skillPreviewPrefab;  
+    public GameObject meteorPreviewPrefab;
+    public GameObject lightingPreviewPrefab;
+    public GameObject confusionPreviewPrefab;
+
     public GameObject meteorPrefab;
     public GameObject lightningPrefab;
     public GameObject confusionPrefab;
@@ -78,7 +81,8 @@ public class RunePlacement : MonoBehaviour
         }
         else
         {
-            meteorCooldownText.text = "Ready";
+            meteorCooldownText.color = Color.white;
+            meteorCooldownText.text = "Meteor-100 Mana";
         }
         if (lightningCooldownTimer > 0f)
         {
@@ -87,7 +91,8 @@ public class RunePlacement : MonoBehaviour
         }
         else
         {
-            lightningCooldownText.text = "Ready";
+            lightningCooldownText.color = Color.white;
+            lightningCooldownText.text = "Lightning-50 Mana";
         }
         if (confusionCooldownTimer > 0f)
         {
@@ -96,7 +101,8 @@ public class RunePlacement : MonoBehaviour
         }
         else
         {
-            confusionCooldownText.text = "Ready";
+            confusionCooldownText.color = Color.white;
+            confusionCooldownText.text = "Confuse-50 Mana";
         }
 
         if (isCasting)
@@ -121,7 +127,7 @@ public class RunePlacement : MonoBehaviour
         }
     }
 
-    void StartSkillCasting()
+    void StartSkillCasting(SkillType skill)
     {
         isCasting = true;
 
@@ -130,7 +136,20 @@ public class RunePlacement : MonoBehaviour
             Destroy(currentPreview);
         }
 
-        currentPreview = Instantiate(skillPreviewPrefab);
+        switch (skill) {
+            case SkillType.Meteor:
+                currentPreview = Instantiate(meteorPreviewPrefab);
+                break;
+            case SkillType.Lightning:
+                currentPreview = Instantiate(lightingPreviewPrefab);
+                break;
+            case SkillType.Confusion:
+                currentPreview = Instantiate(confusionPreviewPrefab);
+                break;
+        }
+
+
+        
         UpdateSkillPreview();
     }
 
@@ -178,32 +197,48 @@ public class RunePlacement : MonoBehaviour
 
     bool CastMeteor(Vector3 castPosition)
     {
-        if (!Player.Instance.CheckAndUseMana(meteorCost)) return false;
+        if (!Player.Instance.CheckAndUseMana(meteorCost))
+        {
+            UIManager.Instance.SendPopUp("Not enough mana");
+            return false;
+        }
+        
         GameObject meteor = Instantiate(meteorPrefab, currentPreview.transform.position, Quaternion.identity);
 
         Meteor meteorScript = meteor.GetComponent<Meteor>();
         meteorScript.targetPosition = castPosition;
+        meteorCooldownText.color = Color.red;
         return true;
     }
 
     bool CastLightning(Vector3 castPosition)
     {
-        if (!Player.Instance.CheckAndUseMana(lightningCost)) return false;
+        if (!Player.Instance.CheckAndUseMana(lightningCost))
+        {
+            UIManager.Instance.SendPopUp("Not enough mana");
+            return false;
+        }
         GameObject lightning = Instantiate(lightningPrefab, currentPreview.transform.position, Quaternion.identity);
 
         Lightning lightningScript = lightning.GetComponent<Lightning>();
         lightningScript.targetPosition = castPosition;
+        lightningCooldownText.color = Color.red;
         return true;
     }
 
     bool CastConfusion(Vector3 castPosition)
     {
-        if (!Player.Instance.CheckAndUseMana(confusionCost)) return false;
+        if (!Player.Instance.CheckAndUseMana(confusionCost))
+        {
+            UIManager.Instance.SendPopUp("Not enough mana");
+            return false;
+        }
 
         GameObject confusion = Instantiate(confusionPrefab, currentPreview.transform.position, Quaternion.identity);
 
         Confusion confusionScript = confusion.GetComponent<Confusion>();
         confusionScript.targetPosition = castPosition;
+        confusionCooldownText.color = Color.red;
         return true;
     }
 
@@ -213,7 +248,7 @@ public class RunePlacement : MonoBehaviour
         UIManager.Instance.ToggleTowerSelection(false);
         selectedSkill = skillType;
         Debug.Log("Selected skill: " + selectedSkill);
-        StartSkillCasting();
+        StartSkillCasting(skillType);
     }
 
     void UpdateCooldownText(TextMeshProUGUI cooldownText, float timer)
