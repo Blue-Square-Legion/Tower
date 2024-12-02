@@ -73,16 +73,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6937064940831138932, guid: b2a5bd9d28bd6ab49af3b6667a46b5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b2a5bd9d28bd6ab49af3b6667a46b5fe,
         type: 3}
       propertyPath: m_Name
-      value: SnowCatapult
+      value: Snow Catapult
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b2a5bd9d28bd6ab49af3b6667a46b5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b2a5bd9d28bd6ab49af3b6667a46b5fe,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2098773134095539951, guid: b2a5bd9d28bd6ab49af3b6667a46b5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3640855454911716076, guid: b2a5bd9d28bd6ab49af3b6667a46b5fe,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b1b45d2c0b4e9f24b9bf6ec2b01171ca, type: 2}
+    - target: {fileID: 5346020243836328041, guid: b2a5bd9d28bd6ab49af3b6667a46b5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975909019476457428, guid: b2a5bd9d28bd6ab49af3b6667a46b5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
