@@ -132,7 +132,7 @@ public class GameManager : MonoBehaviour
         switch (wave)
         {
             case 0:
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 1; i++)
                 {
                     EnqueueEnemy(Enemy.EnemyType.Basic, 1,0);
                     yield return new WaitForSeconds(1);

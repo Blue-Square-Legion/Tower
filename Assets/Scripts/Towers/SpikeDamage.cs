@@ -1,11 +1,12 @@
+using System;
 using UnityEngine;
 
 public class SpikeDamage : MonoBehaviour, IDamageMethod
 {
     GameManager gameManager;
-    private float damage;
-    private float fireRate;
-    private float delay;
+    [SerializeField] private SpikeTrigger child;
+    [NonSerialized] public float damage;
+    [NonSerialized] public float fireRate;
 
 
     public void Init(float damage, float fireRate)
@@ -13,46 +14,21 @@ public class SpikeDamage : MonoBehaviour, IDamageMethod
         gameManager = GameManager.Instance;
         this.damage = damage;
         this.fireRate = fireRate;
-        delay = 1f / fireRate;
     }
     public void UpdateDamage(float damage)
     {
         this.damage = damage;
+        child.UpdateStats();
     }
 
     public void UpdateFireRate(float fireRate)
     {
         this.fireRate = fireRate;
+        child.UpdateStats();
     }
 
     public void damageTick(Enemy target)
     {
-        
-        if (target)
-        {
-            if (delay > 0)
-            {
-                delay -= Time.deltaTime;
-                return;
-            }
 
-            DealDamage();
-
-            delay = 1 / fireRate;
-        }
-
-        void DealDamage()
-        {
-            Collider[] enemies = Physics.OverlapSphere(transform.position, 2f);
-
-            foreach (Collider enemy in enemies)
-            {
-                if (enemy.CompareTag("Enemy"))
-                {
-                    enemy.GetComponent<Enemy>().lastDamagingTower = transform.GetComponent<TowerBehavior>();
-                    enemy.GetComponent<Enemy>().TakeDamage(damage);
-                }
-            }
-        }
     }
 }

@@ -503,7 +503,7 @@ public class TowerBehavior : MonoBehaviour
                         case 1:
                             //Do upgrade
                             fireRate += 0.5f;
-                            transform.GetComponent<SpikeDamage>().UpdateFireRate(damage);
+                            transform.GetComponent<SpikeDamage>().UpdateFireRate(fireRate);
 
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
@@ -512,9 +512,8 @@ public class TowerBehavior : MonoBehaviour
                             break;
                         case 2:
                             //Do upgrade
-                            //Do upgrade
                             fireRate += 0.5f;
-                            transform.GetComponent<SpikeDamage>().UpdateFireRate(damage);
+                            transform.GetComponent<SpikeDamage>().UpdateFireRate(fireRate);
 
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
@@ -524,7 +523,7 @@ public class TowerBehavior : MonoBehaviour
                         case 3:
                             //Do upgrade
                             fireRate += 1f;
-                            transform.GetComponent<SpikeDamage>().UpdateFireRate(damage);
+                            transform.GetComponent<SpikeDamage>().UpdateFireRate(fireRate);
 
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;

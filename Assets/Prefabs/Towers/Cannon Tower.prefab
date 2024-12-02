@@ -148,10 +148,10 @@ MonoBehaviour:
   enemiesLayer:
     serializedVersion: 2
     m_Bits: 64
-  damage: 2
+  damage: 3
   fireRate: 0.5
   range: 3
-  cost: 150
+  cost: 200
   towerType: 2
   targetType: 0
   moneyMultiplier: 1

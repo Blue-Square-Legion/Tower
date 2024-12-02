@@ -21,7 +21,6 @@ public class MissileDamage : MonoBehaviour, IDamageMethod
         this.damage = damage;
         this.fireRate = fireRate;
         delay = 1f / fireRate;
-        //AudioManager.Instance.Add("Crossbow Fire", gameObject);
     }
 
     public void UpdateDamage(float damage)
