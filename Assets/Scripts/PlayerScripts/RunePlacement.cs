@@ -77,32 +77,26 @@ public class RunePlacement : MonoBehaviour
         if (meteorCooldownTimer > 0f)
         {
             meteorCooldownTimer -= Time.deltaTime;
-            UpdateCooldownText(meteorCooldownText, meteorCooldownTimer);
         }
         else
         {
             meteorCooldownText.color = Color.white;
-            meteorCooldownText.text = "Meteor-100 Mana";
         }
         if (lightningCooldownTimer > 0f)
         {
             lightningCooldownTimer -= Time.deltaTime;
-            UpdateCooldownText(lightningCooldownText, lightningCooldownTimer);
         }
         else
         {
             lightningCooldownText.color = Color.white;
-            lightningCooldownText.text = "Lightning-50 Mana";
         }
         if (confusionCooldownTimer > 0f)
         {
             confusionCooldownTimer -= Time.deltaTime;
-            UpdateCooldownText(confusionCooldownText, confusionCooldownTimer);
         }
         else
         {
             confusionCooldownText.color = Color.white;
-            confusionCooldownText.text = "Confuse-50 Mana";
         }
 
         if (isCasting)
