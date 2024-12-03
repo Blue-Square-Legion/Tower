@@ -221,4 +221,9 @@ public class UIManager : MonoBehaviour
     {
         showPathsText.text = text;
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
