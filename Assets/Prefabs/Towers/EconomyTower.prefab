@@ -96,7 +96,7 @@ MonoBehaviour:
   towerType: 3
   targetType: 0
   leveltext: {fileID: 0}
-  moneyMultiplier: 1
+  moneyMultiplier: 0
 --- !u!114 &-4824812572669455108
 MonoBehaviour:
   m_ObjectHideFlags: 0

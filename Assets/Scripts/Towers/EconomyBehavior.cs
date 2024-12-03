@@ -32,7 +32,7 @@ public class EconomyBehavior : MonoBehaviour, IDamageMethod
             if (hits[i].collider.gameObject.TryGetComponent(out TowerBehavior towerBehavior) && hits[i].collider != gameObject.GetComponent<Collider>())
                 towersInRange.Add(towerBehavior); //Adds object to list
         }
-
+        print(investmentsPercent);
         if (investmentsPercent > 1) //Checks if investment percent was set correctly (so you don't lose money) and that it is higher than its base value
         {
             int towersInRangeCount = towersInRange.Count;

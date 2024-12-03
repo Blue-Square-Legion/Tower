@@ -353,7 +353,7 @@ public class TowerBehavior : MonoBehaviour
                             break;
                         case 2:
                             //Do upgrade
-                            damage += 3f;
+                            damage += 2f;
                             transform.GetComponent<MissileDamage>().UpdateDamage(damage);
 
                             //Set up for next upgrade
@@ -363,7 +363,7 @@ public class TowerBehavior : MonoBehaviour
                             break;
                         case 3:
                             //Do upgrade
-                            damage += 4f;
+                            damage += 3f;
                             transform.GetComponent<MissileDamage>().UpdateDamage(damage);
 
                             //Set up for next upgrade
@@ -1176,8 +1176,8 @@ public class TowerBehavior : MonoBehaviour
             TowerType.Bomb, new List<UpgradeData>
             {
                 new UpgradeData("Faster Reload\nCost: " + 100, 100, "Increases Attack Speed"),
-                new UpgradeData("Fastest Reload\n" + "Cost: " + 250, 250, "Increases Attack Speed"),
-                new UpgradeData("Automated Reload\n" + "Cost: " + 500, 500, "Increases Attack Speed"),
+                new UpgradeData("Fastest Reload\n" + "Cost: " + 220, 220, "Increases Attack Speed"),
+                new UpgradeData("Automated Reload\n" + "Cost: " + 400, 400, "Increases Attack Speed"),
                 new UpgradeData("Max Level", 0, "")
             }
         },
@@ -1243,9 +1243,9 @@ public class TowerBehavior : MonoBehaviour
         {
             TowerType.Bomb, new List<UpgradeData>
             {
-                new UpgradeData("Bombier Bomb\nCost: " + 175, 175, "Increases Explosion Radius"),
-                new UpgradeData("Compressed Charge\n" + "Cost: " + 300, 300, "Increases Explosion Radius"),
-                new UpgradeData("Atomic Explosion\n" + "Cost: " + 500, 500, "Increases Explosion Radius"),
+                new UpgradeData("Bombier Bomb\nCost: " + 170, 170, "Increases Explosion Radius"),
+                new UpgradeData("Compressed Charge\n" + "Cost: " + 280, 280, "Increases Explosion Radius"),
+                new UpgradeData("Atomic Explosion\n" + "Cost: " + 490, 490, "Increases Explosion Radius"),
                 new UpgradeData("Max Level", 0, "")
             }
         },
