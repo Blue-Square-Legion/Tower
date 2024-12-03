@@ -11598,6 +11598,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 607774844}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &610431567 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2411100664920477380, guid: 03d516b99d08f404889216785393e3b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 6276057131004143166}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &611353156 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8920541532101917979, guid: 2908acf265afb6d4983894b030df6494,
@@ -15162,6 +15168,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 794592717}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &795530251 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1532637561623328022, guid: 03d516b99d08f404889216785393e3b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 6276057131004143166}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &809370387
 Mesh:
   m_ObjectHideFlags: 0
@@ -15896,6 +15908,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 713839075123188020, guid: 1dc956f5b0f3e9c4bab7fb7d74a53223,
     type: 3}
   m_PrefabInstance: {fileID: 838932773}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &839122429 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7807621020981817177, guid: 03d516b99d08f404889216785393e3b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 6276057131004143166}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &844168897
 PrefabInstance:
@@ -41052,17 +41070,17 @@ PrefabInstance:
         type: 3}
       propertyPath: upgradeButton1
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 610431567}
     - target: {fileID: 7471314518547073131, guid: 90319159318b32846a7006408bcbd4c6,
         type: 3}
       propertyPath: upgradeButton2
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 795530251}
     - target: {fileID: 7471314518547073131, guid: 90319159318b32846a7006408bcbd4c6,
         type: 3}
       propertyPath: upgradeButton3
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 839122429}
     - target: {fileID: 7471314518547073131, guid: 90319159318b32846a7006408bcbd4c6,
         type: 3}
       propertyPath: leftArrowButton
