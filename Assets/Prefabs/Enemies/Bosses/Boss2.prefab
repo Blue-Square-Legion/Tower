@@ -77,17 +77,13 @@ MonoBehaviour:
   currentHealth: 0
   speed: 6
   damageResistance: 0.5
-  ID: 0
-  nodeIndex: 0
   navMeshMovement: {fileID: 5595083250467197109}
-  isStunned: 0
-  isConfused: 0
   audioMovement:
     audioFile: {fileID: 8300000, guid: 55472ab1e104ffd44a5a8428b56780ec, type: 3}
     volume: 1
     pitch: 1
     loop: 0
-    panStereo: 0
+    panStereo: 1
     spatialBlend: 1
     minDistance: 0
     maxDistance: 8
@@ -107,11 +103,11 @@ MonoBehaviour:
     ignoreListenerPause: 0
     audioRollOffMode: 1
   audioDead:
-    audioFile: {fileID: 8300000, guid: b313146df29cf954093ba6388982e484, type: 3}
+    audioFile: {fileID: 8300000, guid: 4700cdcdda450eb49bcd22a7908aaf0a, type: 3}
     volume: 1
     pitch: 1
     loop: 0
-    panStereo: 0
+    panStereo: 1
     spatialBlend: 1
     minDistance: 0
     maxDistance: 8

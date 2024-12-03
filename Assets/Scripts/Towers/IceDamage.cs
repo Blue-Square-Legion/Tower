@@ -1,11 +1,12 @@
-using System;
 using UnityEngine;
+using AudioSystem;
 
 public class IceDamage : MonoBehaviour, IDamageMethod
 {
     public Animator snowballAnimator;
     [SerializeField] private GameObject snowball;
     [SerializeField] private Transform snowballSpawn;
+    [SerializeField] AudioData audioData;
     [SerializeField] private float snowDuration;
     [SerializeField] private float snowSpeed;
     [SerializeField] private float snowSpeedReduction;
@@ -83,7 +84,14 @@ public class IceDamage : MonoBehaviour, IDamageMethod
                 delay -= Time.deltaTime;
                 return;
             }
+            
             snowballAnimator.SetTrigger("CatapultFire");
+            
+            AudioManager.Instance.CreateAudio()
+                .WithAudioData(audioData)
+                .WithPosition(gameObject.transform.position)
+                .Play();
+
             GameObject snowBallObject = Instantiate(snowball, new Vector3(snowballSpawn.position.x, snowballSpawn.position.y, snowballSpawn.position.z), Quaternion.identity);
             Snowball snowballScript = snowBallObject.GetComponent<Snowball>();
             snowballScript.target = target;

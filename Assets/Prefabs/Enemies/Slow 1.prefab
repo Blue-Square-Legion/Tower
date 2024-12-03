@@ -6981,18 +6981,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f116d4f62f2db374e8fa2359cce6ff0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
   maxHealth: 32
   moneyToPlayer: 20
   currentHealth: 0
   speed: 1
   damageResistance: 2
-  ID: 0
-  nodeIndex: 0
   navMeshMovement: {fileID: 0}
-  isStunned: 0
-  isConfused: 0
   audioMovement:
-    audioFile: {fileID: 8300000, guid: 55472ab1e104ffd44a5a8428b56780ec, type: 3}
+    audioFile: {fileID: 8300000, guid: 6923ce5531bb53d449b49423892b290f, type: 3}
     volume: 1
     pitch: 1
     loop: 0
@@ -7016,7 +7013,7 @@ MonoBehaviour:
     ignoreListenerPause: 0
     audioRollOffMode: 1
   audioDead:
-    audioFile: {fileID: 8300000, guid: b313146df29cf954093ba6388982e484, type: 3}
+    audioFile: {fileID: 8300000, guid: 8fa72ff11bfac1d458989e54d98106c5, type: 3}
     volume: 1
     pitch: 1
     loop: 0

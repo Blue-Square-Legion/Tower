@@ -747,6 +747,30 @@ MonoBehaviour:
   snowball: {fileID: 3693834299706103251, guid: 10b54ed9233ee1149860a357f8cfb88a,
     type: 3}
   snowballSpawn: {fileID: 9203324116481808494}
+  audioData:
+    audioFile: {fileID: 8300000, guid: 931d3879565f402439d6fa7f17a98f13, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    panStereo: 0
+    spatialBlend: 1
+    minDistance: 0
+    maxDistance: 8
+    playOnAwake: 0
+    frequentSound: 0
+    mute: 0
+    showHiddenValues: 0
+    audioMixer: {fileID: 0}
+    bypassEffects: 0
+    bypassListenerEffects: 0
+    bypassReverbZones: 0
+    priority: 128
+    reverbZoneMix: 1
+    dopplerLevel: 1
+    spread: 0
+    ignoeListenerVolume: 0
+    ignoreListenerPause: 0
+    audioRollOffMode: 1
   snowDuration: 1
   snowSpeed: 0.4
   snowSpeedReduction: 0.7

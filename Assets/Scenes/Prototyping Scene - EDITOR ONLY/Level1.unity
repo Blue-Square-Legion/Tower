@@ -39697,6 +39697,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447044242}
     m_Modifications:
+    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3744594787095116691, guid: 2b7b91f85db3550478db9c203d7acfc4,
+        type: 3}
+      propertyPath: m_SelectedEditorRenderState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1406191981624244099, guid: 47b9018431969004c893fde1443bbdf6,
         type: 3}
       propertyPath: m_Layer
@@ -39841,16 +39851,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: NotBuildable
-      objectReference: {fileID: 0}
-    - target: {fileID: 2951974791314856518, guid: 2b7b91f85db3550478db9c203d7acfc4,
-        type: 3}
-      propertyPath: m_TagString
-      value: NotBuildable
-      objectReference: {fileID: 0}
-    - target: {fileID: 3744594787095116691, guid: 2b7b91f85db3550478db9c203d7acfc4,
-        type: 3}
-      propertyPath: m_SelectedEditorRenderState
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -41490,7 +41490,7 @@ PrefabInstance:
     - target: {fileID: 258094442363363315, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -430.8149
+      value: -430.81482
       objectReference: {fileID: 0}
     - target: {fileID: 258094442363363315, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}

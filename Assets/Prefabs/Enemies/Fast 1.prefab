@@ -225,17 +225,13 @@ MonoBehaviour:
   currentHealth: 0
   speed: 4
   damageResistance: 1
-  ID: 0
-  nodeIndex: 0
   navMeshMovement: {fileID: 0}
-  isStunned: 0
-  isConfused: 0
   audioMovement:
     audioFile: {fileID: 8300000, guid: ff5761a7f164b87488a4e0234f2a11fc, type: 3}
     volume: 1
     pitch: 1
     loop: 0
-    panStereo: 0
+    panStereo: 1
     spatialBlend: 1
     minDistance: 0
     maxDistance: 8
@@ -259,7 +255,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
-    panStereo: 0
+    panStereo: 1
     spatialBlend: 1
     minDistance: 0
     maxDistance: 8
