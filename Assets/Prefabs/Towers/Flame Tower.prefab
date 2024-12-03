@@ -196,7 +196,7 @@ MonoBehaviour:
   damage: 0.4
   fireRate: 1.5
   range: 2
-  cost: 300
+  cost: 250
   towerType: 1
   targetType: 0
   leveltext: {fileID: 0}
