@@ -37,15 +37,22 @@ public class TowerPlacement : MonoBehaviour
     Color redColor = Color.red;
     Color blueColor = Color.blue;
     GameManager gameManager;
+    private bool resetPath;
     void Start()
     {
         gameManager = GameManager.Instance;
         canPlace = true;
         player = GetComponent<Player>();
+        resetPath = false;
     }
 
     private void Update()
     {
+        if (resetPath)
+        {
+            ResetPath();
+        }
+
         if (currentTowerBeingPlaced != null)
         {
             UIManager.Instance.ToggleDeselect(true);
@@ -115,14 +122,16 @@ public class TowerPlacement : MonoBehaviour
                                     Destroy(currentTowerBeingPlaced);
                                     UIManager.Instance.SendPopUp("Cannot Place Here!");
                                     UIManager.Instance.ToggleDeselect(false);
+                                    resetPath = true;
                                 }
                             }
                             else
                             {
                                 towerCollider.isTrigger = true;
                                 Destroy(currentTowerBeingPlaced);
-                                UIManager.Instance.SendPopUp("Cannot Place Here!");
+                                UIManager.Instance.SendPopUp("Cannot Place Here! All paths blocked");
                                 UIManager.Instance.ToggleDeselect(false);
+                                resetPath = true;
                             }
 
                         }
@@ -222,5 +231,16 @@ public class TowerPlacement : MonoBehaviour
 
         }
         pathBlocked = false; ;
+    }
+
+    private void ResetPath()
+    {
+        NavMeshPath path = new NavMeshPath();
+        dummySurface.BuildNavMesh();
+        foreach (NavMeshAgent agent in agents)
+        {
+            agent.GetComponent<NavMeshMovement>().ResetDestination();
+        }
+        resetPath = false;
     }
 }

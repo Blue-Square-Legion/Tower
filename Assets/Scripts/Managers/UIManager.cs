@@ -82,8 +82,15 @@ public class UIManager : MonoBehaviour
         popUpDuration = 0;
         showTowers = true;
         toggleTowersClickable = true;
-        towerPanelCollapsedPosition = collapsePositionTowerPanelRectTransform.anchoredPosition;
-        towerPanelExpandedPosition = towersPanel.anchoredPosition;
+        if (collapsePositionTowerPanelRectTransform != null)
+        {
+            towerPanelCollapsedPosition = collapsePositionTowerPanelRectTransform.anchoredPosition;
+        }
+        if (towersPanel != null)
+        {
+            towerPanelExpandedPosition = towersPanel.anchoredPosition;
+        }
+            
     }
 
     public void GameOver()
