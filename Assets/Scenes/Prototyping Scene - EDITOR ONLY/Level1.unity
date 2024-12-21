@@ -20959,12 +20959,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1109568917}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1112038054 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5152633597433253196, guid: 03d516b99d08f404889216785393e3b4,
-    type: 3}
-  m_PrefabInstance: {fileID: 6276057131004143166}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1113608427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41055,7 +41049,7 @@ PrefabInstance:
         type: 3}
       propertyPath: towerSelection
       value: 
-      objectReference: {fileID: 1112038054}
+      objectReference: {fileID: 6276057131004143167}
     - target: {fileID: 6818719110386909350, guid: 90319159318b32846a7006408bcbd4c6,
         type: 3}
       propertyPath: autoStartButton
@@ -41548,7 +41542,7 @@ PrefabInstance:
     - target: {fileID: 258094442363363315, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -849.1852
+      value: -430.81497
       objectReference: {fileID: 0}
     - target: {fileID: 420269677130710042, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
@@ -41905,6 +41899,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03d516b99d08f404889216785393e3b4, type: 3}
+--- !u!1 &6276057131004143167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2365980870169665526, guid: 03d516b99d08f404889216785393e3b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 6276057131004143166}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6321285439559530928
 PrefabInstance:
   m_ObjectHideFlags: 0
