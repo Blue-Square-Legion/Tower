@@ -150,16 +150,5 @@ public class TowerTargetting
                     break;
             }
         }
-
-        //private float GetDistanceToEnd(EnemyDataValues enemyToEvaluate)
-        //{
-        //    float finalDistance = Vector3.Distance(enemyToEvaluate.enemyPosition, _nodePositions[enemyToEvaluate.nodeIndex]);
-
-        //    for (int i = enemyToEvaluate.nodeIndex; i < _nodeDistances.Length; i++)
-        //    {
-        //        finalDistance += _nodeDistances[i];
-        //    }
-        //    return finalDistance;
-        //}
     }
 }
