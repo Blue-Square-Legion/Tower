@@ -7,6 +7,7 @@ public class NavMeshMovement : MonoBehaviour
     [NonSerialized] public Transform target;
     [SerializeField] public NavMeshAgent agent;
     private Vector3 originalPositon;
+    public float remainingDist;
 
     void Start()
     {
@@ -14,6 +15,11 @@ public class NavMeshMovement : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.SetDestination(target.position);
         originalPositon = gameObject.transform.position;
+    }
+
+    private void Update()
+    {
+        remainingDist = agent.remainingDistance;
     }
 
     public bool ReachedEnd()

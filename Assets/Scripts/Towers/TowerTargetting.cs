@@ -35,7 +35,8 @@ public class TowerTargetting
             Enemy currentEnemy = enemiesInRange[i].GetComponent<Enemy>();
             int enemyIndexInList = enemySpawner.spawnedEnemies.FindIndex(x => x == currentEnemy);
 
-            enemiesToCalculate[i] = new EnemyDataValues(currentEnemy.transform.position, currentEnemy.nodeIndex, currentEnemy.currentHealth, enemyIndexInList);
+            enemiesToCalculate[i] = new EnemyDataValues(currentEnemy.transform.position, currentEnemy.nodeIndex, currentEnemy.currentHealth, enemyIndexInList,
+                currentEnemy.GetComponent<NavMeshMovement>().remainingDist);
         }
 
         SearchForEnemy enemySearchJob = new SearchForEnemy
@@ -51,10 +52,10 @@ public class TowerTargetting
         switch (targetType)
         {
             case TargetType.First:
-                enemySearchJob.compareValue = Mathf.NegativeInfinity;
+                enemySearchJob.compareValue = Mathf.Infinity;
                 break;
             case TargetType.Last:
-                enemySearchJob.compareValue = Mathf.Infinity;
+                enemySearchJob.compareValue = Mathf.NegativeInfinity;
                 break;
             case TargetType.Close:
                 enemySearchJob.compareValue = Mathf.Infinity;
@@ -84,18 +85,20 @@ public class TowerTargetting
 
     struct EnemyDataValues
     {
-        public EnemyDataValues(Vector3 enemyPosition, int nodeIndex, float health, int enemyIndex)
+        public EnemyDataValues(Vector3 enemyPosition, int nodeIndex, float health, int enemyIndex, float remainingDist)
         {
             this.enemyPosition = enemyPosition;
             this.nodeIndex = nodeIndex;
             this.health = health;
             this.enemyIndex = enemyIndex;
+            this.remainingDist = remainingDist;
         }
 
         public Vector3 enemyPosition;
         public int nodeIndex;
         public float health;
         public int enemyIndex;
+        public float remainingDist;
     }
 
     struct SearchForEnemy : IJobFor
@@ -114,16 +117,16 @@ public class TowerTargetting
             switch (targetingType)
             {
                 case TargetType.First:
-                    distance = GetDistanceToEnd(_enemiesToCalculate[index]);
-                    if (distance > compareValue)
+                    distance = _enemiesToCalculate[index].remainingDist;
+                    if (distance < compareValue)
                     {
                         _enemyToIndex[0] = index;
                         compareValue = distance;
                     }
                     break;
                 case TargetType.Last:
-                    distance = GetDistanceToEnd(_enemiesToCalculate[index]);
-                    if (distance < compareValue)
+                    distance = _enemiesToCalculate[index].remainingDist;
+                    if (distance > compareValue)
                     {
                         _enemyToIndex[0] = index;
                         compareValue = distance;
@@ -146,17 +149,6 @@ public class TowerTargetting
                     }
                     break;
             }
-        }
-
-        private float GetDistanceToEnd(EnemyDataValues enemyToEvaluate)
-        {
-            float finalDistance = Vector3.Distance(enemyToEvaluate.enemyPosition, _nodePositions[enemyToEvaluate.nodeIndex]);
-
-            for (int i = enemyToEvaluate.nodeIndex; i < _nodeDistances.Length; i++)
-            {
-                finalDistance += _nodeDistances[i];
-            }
-            return finalDistance;
         }
     }
 }
