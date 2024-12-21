@@ -3,6 +3,24 @@ using UnityEngine;
 
 public class RunePlacement : MonoBehaviour
 {
+    #region Singleton
+    private static RunePlacement instance;
+
+    public static RunePlacement Instance
+    {
+        get
+        {
+            if (instance == null)
+                instance = FindObjectOfType(typeof(RunePlacement)) as RunePlacement;
+            return instance;
+        }
+        set
+        {
+            instance = value;
+        }
+    }
+    #endregion
+
     public GameObject meteorPreviewPrefab;
     public GameObject lightingPreviewPrefab;
     public GameObject confusionPreviewPrefab;
@@ -19,9 +37,9 @@ public class RunePlacement : MonoBehaviour
     public float lightningCost = 50;
     public float confusionCost = 50;
 
-    private float meteorCooldown = 5f;
-    private float lightningCooldown = 7f;
-    private float confusionCooldown = 6f;
+    public float meteorCooldown = 5f;
+    public float lightningCooldown = 7f;
+    public float confusionCooldown = 6f;
 
     private float meteorCooldownTimer = 0f;
     private float lightningCooldownTimer = 0f;
@@ -31,6 +49,10 @@ public class RunePlacement : MonoBehaviour
     public TextMeshProUGUI meteorCooldownText;
     public TextMeshProUGUI lightningCooldownText;
     public TextMeshProUGUI confusionCooldownText;
+
+    public GameObject meteorKeyMask;
+    public GameObject lightningKeyMask;
+    public GameObject confusionKeyMask;
 
     public enum SkillType
     {
@@ -167,16 +189,25 @@ public class RunePlacement : MonoBehaviour
             switch (selectedSkill)
             {
                 case SkillType.Meteor:
-                    if (CastMeteor(castPosition)) 
+                    if (CastMeteor(castPosition))
+                    {
                         meteorCooldownTimer = meteorCooldown;
+                        meteorKeyMask.GetComponent<CDRadialWipe>().StartWipe();
+                    }
                     break;
                 case SkillType.Lightning:
                     if (CastLightning(castPosition))
+                    {
                         lightningCooldownTimer = lightningCooldown;
+                        lightningKeyMask.GetComponent<CDRadialWipe>().StartWipe();
+                    }
                     break;
                 case SkillType.Confusion:
                     if (CastConfusion(castPosition))
+                    {
                         confusionCooldownTimer = confusionCooldown;
+                        confusionKeyMask.GetComponent<CDRadialWipe>().StartWipe();
+                    }
                     break;
             }
 
