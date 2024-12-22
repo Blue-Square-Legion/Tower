@@ -280,7 +280,7 @@ MonoBehaviour:
     type: 3}
   confusionPreviewPrefab: {fileID: 919132149155446097, guid: 8eb2969f86aa81440afd0dec2866bf3a,
     type: 3}
-  meteorPrefab: {fileID: 6325297206059727315, guid: c2c8308e4c2a9a248a918ca53cb19d54,
+  meteorPrefab: {fileID: 830794206325096820, guid: 226f321f7102b9c41b5a43acaf784d7d,
     type: 3}
   lightningPrefab: {fileID: 2695104058712217552, guid: 338619145f25b3343a885ba90e294f0f,
     type: 3}
@@ -290,6 +290,12 @@ MonoBehaviour:
   meteorCost: 100
   lightningCost: 50
   confusionCost: 50
+  meteorCooldown: 5
+  lightningCooldown: 7
+  confusionCooldown: 6
   meteorCooldownText: {fileID: 0}
   lightningCooldownText: {fileID: 0}
   confusionCooldownText: {fileID: 0}
+  meteorKeyMask: {fileID: 0}
+  lightningKeyMask: {fileID: 0}
+  confusionKeyMask: {fileID: 0}

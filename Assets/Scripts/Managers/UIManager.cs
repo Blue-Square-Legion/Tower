@@ -34,6 +34,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject upgradeArrow;
     [SerializeField] GameObject popUpScreen;
     [SerializeField] TMP_Text popUpMessage;
+    [Header("Tower Panel")]
+    [SerializeField] RectTransform towersPanel;
+    [SerializeField] RectTransform collapsePositionTowerPanelRectTransform;
+    private Vector3 towerPanelExpandedPosition, towerPanelCollapsedPosition;
 
     [SerializeField] public GameObject runeSelection;
     [SerializeField] GameObject towerSelection;
@@ -58,6 +62,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject showPathsButton;
 
     private float popUpDuration;
+    private bool showTowers;
+    private bool toggleTowersClickable;
 
     private void Start()
     {
@@ -74,6 +80,17 @@ public class UIManager : MonoBehaviour
         if (deselect != null)
             deselect.SetActive(false);
         popUpDuration = 0;
+        showTowers = true;
+        toggleTowersClickable = true;
+        if (collapsePositionTowerPanelRectTransform != null)
+        {
+            towerPanelCollapsedPosition = collapsePositionTowerPanelRectTransform.anchoredPosition;
+        }
+        if (towersPanel != null)
+        {
+            towerPanelExpandedPosition = towersPanel.anchoredPosition;
+        }
+            
     }
 
     public void GameOver()
@@ -220,6 +237,42 @@ public class UIManager : MonoBehaviour
     public void UpdateShowPathsText(string text)
     {
         showPathsText.text = text;
+    }
+
+    public void ToggleTowersPressed()
+    {
+        if (toggleTowersClickable)
+        {
+            toggleTowersClickable = false;
+            showTowers = !showTowers;
+
+            if (showTowers)
+                StartCoroutine(ExpandTowers());
+            else
+                StartCoroutine(CollapseTowers());
+        }
+    }
+
+    IEnumerator ExpandTowers()
+    {
+        while (Mathf.Abs(towersPanel.anchoredPosition.x - towerPanelExpandedPosition.x) >= 0.1)
+        {
+            towersPanel.anchoredPosition = new Vector2(Vector2.MoveTowards(towersPanel.anchoredPosition, towerPanelExpandedPosition, 20 * Time.deltaTime * 60).x, towersPanel.anchoredPosition.y);
+            yield return new WaitForEndOfFrame();
+        }
+        toggleTowersClickable = true;
+        yield return null;
+    }
+
+    IEnumerator CollapseTowers()
+    {
+        while (Mathf.Abs(towersPanel.anchoredPosition.x - towerPanelCollapsedPosition.x) >= 0.1)
+        {
+            towersPanel.anchoredPosition = new Vector2(Vector2.MoveTowards(towersPanel.anchoredPosition, towerPanelCollapsedPosition, 20 * Time.deltaTime * 60).x, towersPanel.anchoredPosition.y);
+            yield return new WaitForEndOfFrame();
+        }
+        toggleTowersClickable = true;
+        yield return null;
     }
 
     public void Quit()
