@@ -26,7 +26,6 @@ public class SpikeTrigger : MonoBehaviour
 
         if (other.transform.CompareTag("Enemy"))
         {
-            Debug.Log("enter");
             enemiesInside.Add(other.gameObject.GetComponent<Enemy>());
         }
     }
@@ -36,7 +35,6 @@ public class SpikeTrigger : MonoBehaviour
 
         if (other.transform.CompareTag("Enemy"))
         {
-            Debug.Log("exit");
             enemiesInside.Remove(other.gameObject.GetComponent<Enemy>());
         }
     }
