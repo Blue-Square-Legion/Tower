@@ -41,9 +41,11 @@ public class SpikeTrigger : MonoBehaviour
 
     public void damageTick()
     {
+        enemiesInside.RemoveAll(enemy => enemy == null || !enemy.gameObject.activeInHierarchy);
         int enemyCount = enemiesInside.Count;
         for (int i = 0; i < enemyCount; i++)
         {
+            Debug.Log(enemiesInside[i]);
             enemiesInside[i].lastDamagingTower = transform.GetComponent<TowerBehavior>();
             gameManager.EnqueueDamageData(new GameManager.EnemyDamageData(enemiesInside[i], damage, 
                 enemiesInside[i].damageResistance, transform.GetComponent<TowerBehavior>()));
