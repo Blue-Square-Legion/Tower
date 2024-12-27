@@ -136,6 +136,20 @@
             },
             "m_InputSlot": {
                 "m_Node": {
+                    "m_Id": "3e917464030d4aa2b9d6c354d949f6ec"
+                },
+                "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "36cb39cfbe4a41df94d8304c49ae85f2"
+                },
+                "m_SlotId": 3
+            },
+            "m_InputSlot": {
+                "m_Node": {
                     "m_Id": "e32c0ee195d54516adc4352ce4eaa56c"
                 },
                 "m_SlotId": 0
@@ -873,7 +887,7 @@
     "m_ShaderOutputName": "Emission",
     "m_StageCapability": 2,
     "m_Value": {
-        "x": 0.0,
+        "x": 0.0625,
         "y": 0.0,
         "z": 0.0
     },
@@ -1076,7 +1090,7 @@
     },
     "m_Color": {
         "color": {
-            "r": 1.0,
+            "r": 0.7803921699523926,
             "g": 0.0,
             "b": 0.0,
             "a": 0.0
