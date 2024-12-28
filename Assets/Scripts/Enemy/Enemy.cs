@@ -14,16 +14,22 @@ public class Enemy : MonoBehaviour
     public float damageResistance;
     [NonSerialized] public int ID;
     [NonSerialized] public int nodeIndex;
-    [NonSerialized] public List<GameManager.Effect> activeEffects;
+    [NonSerialized] public List<GameManager.EnemyBuff> activeBuffs;
+    [NonSerialized] public List<GameManager.EnemyBuff> appliedBuffs;
     GameManager gameManager;
     public NavMeshMovement navMeshMovement;
-    [NonSerialized] public bool isStunned;
-    private float stunTimer;
     [NonSerialized] public bool isConfused;
     [SerializeField] AudioData audioMovement;
     [SerializeField] AudioData audioDead;
-    private float confusedTimer;
     [NonSerialized] public TowerBehavior lastDamagingTower;
+    string[] buffNames;
+    private int buffNamesCount;
+
+    bool isBurning;
+    float burnDamage;
+    float burnDelay;
+    float currentBurnDelay;
+    TowerBehavior burnSource;
 
     private AudioEmitter audioEmitterMove;
     public void Init()
@@ -31,16 +37,18 @@ public class Enemy : MonoBehaviour
         gameManager = GameManager.Instance;
         currentHealth = maxHealth;
         currentSpeed = speed;
-        activeEffects = new();
+        activeBuffs = new();
+        appliedBuffs = new();
+        buffNames = Enum.GetNames(typeof(GameManager.EnemyBuffNames));
+        buffNamesCount = Enum.GetNames(typeof(GameManager.EnemyBuffNames)).Length;
         damageResistance = 1;
         nodeIndex = 0;
         moneyToPlayer = 10;
         navMeshMovement = GetComponent<NavMeshMovement>();
         navMeshMovement.SetSpeed(currentSpeed);
-        isStunned = false;
-        stunTimer = 2;
         isConfused = false;
         confusedTimer = 2;
+        currentBurnDelay = 0;
     }
 
     public void TakeDamage(float damage)
@@ -60,56 +68,143 @@ public class Enemy : MonoBehaviour
 
     public void Tick()
     {
-        int activeEffectsCount = activeEffects.Count;
-        for (int i = 0; i < activeEffectsCount; i++)
+        int activeBuffsCount = activeBuffs.Count;
+
+        if (isBurning)
         {
-            if (activeEffects[i].duration > 0f)
+            if (currentBurnDelay > 0)
             {
-                if (activeEffects[i].damageDelay > 0f)
-                {
-                    activeEffects[i].damageDelay -= Time.deltaTime;
-                }
-                else
-                {
-                    lastDamagingTower = activeEffects[i].source;
-                    gameManager.EnqueueDamageData(new GameManager.EnemyDamageData(this, activeEffects[i].damage, 1f, activeEffects[i].source));
-                    activeEffects[i].damageDelay = 1f / activeEffects[i].damageRate;
-                }
-                activeEffects[i].duration -= Time.deltaTime;
+                currentBurnDelay -= Time.deltaTime;
+            }
+            else
+            {
+                lastDamagingTower = burnSource;
+                gameManager.EnqueueDamageData(new GameManager.EnemyDamageData(this, burnDamage, 1f, burnSource));
+                currentBurnDelay = burnDelay;
             }
         }
-        activeEffects.RemoveAll(x => x.duration <= 0);
 
-        if (isConfused)
+        for (int i = 0; i < activeBuffs.Count; i++)
         {
-            navMeshMovement.FlipDirection(0);
-            confusedTimer -= Time.deltaTime;
-        }
+            if (activeBuffs[i] != null && activeBuffs[i].duration != -123) //Iterates through all buffs that do not have a duration of -123
+            {
+                activeBuffs[i].duration -= Time.deltaTime;
 
-        if (confusedTimer < 0f)
-        {
-            confusedTimer = 2f;
-            navMeshMovement.FlipDirection(1);
-            isConfused = false;
-        }
-
-        if (isStunned)
-        {
-            navMeshMovement.SetSpeed(0);
-            stunTimer -= Time.deltaTime;
-        }
-
-        if (stunTimer < 0f)
-        {
-            stunTimer = 2f;
-            isStunned = false;
-            navMeshMovement.SetSpeed(speed);
+                //Removes all active buffs that do not have a duration of -123 and a duration lower than 0
+                if (activeBuffs.RemoveAll(x => x.duration <= 0 && x.duration != -123) > 0)
+                {
+                    ApplyBuffs();
+                }   
+            }
         }
 
         //Plays audio clip again once the clip ends
         if (audioEmitterMove == null || !audioEmitterMove.IsPlaying())
         {
             audioEmitterMove = AudioManager.Instance.CreateAudio().WithAudioData(audioMovement).WithPosition(gameObject.transform.position).Play();
+        }
+    }
+
+    public void ApplyBuffs()
+    {
+        //Removes Applied Buffs
+        for (int i = 0; i < buffNamesCount; i++)
+        {
+            //Removes previous buffs (if any)
+            int appliedBuffsCount = appliedBuffs.Count;
+            for (int j = 0; j < appliedBuffs.Count; j++)
+            {
+                if (appliedBuffs[j].buffName.ToString().Equals(buffNames[i]))
+                {
+                    if (appliedBuffs[j].modifier != 0) //Prevents divide by 0 error
+                    {
+                        switch (appliedBuffs[j].buffName)
+                        {
+                            case GameManager.EnemyBuffNames.ResistanceEnemyBuffer:
+                                
+                                break;
+                            case GameManager.EnemyBuffNames.SpeedEnemyBuffer:
+                                
+                                break;
+                            case GameManager.EnemyBuffNames.Burn:
+
+                                break;
+                            case GameManager.EnemyBuffNames.Slow:
+                                SetSpeed(currentSpeed / appliedBuffs[j].modifier);
+                                break;
+                            case GameManager.EnemyBuffNames.Confuse:
+                                navMeshMovement.FlipDirection(1);
+                                break;
+                        }
+                    }
+                }
+            }
+        }
+        //Clears Applied Buffs
+        appliedBuffs.Clear();
+
+        //Gets the amount of buffs on the tower
+        int activeBuffsCount = activeBuffs.Count;
+
+        for (int i = 0; i < buffNamesCount; i++) //Iterates through every buff in the game
+        {
+            //(float, float, float, float) strongestBuff = (0, 0, Mathf.NegativeInfinity, 0); // (Damage, Modifier, duration, damage rate)
+            GameManager.EnemyBuff strongestBuff = new GameManager.EnemyBuff(GameManager.EnemyBuffNames.ResistanceEnemyBuffer, 
+                0, 0, 0, Mathf.NegativeInfinity, false, null);
+            GameManager.EnemyBuff buff = null; //Stores the strongest buff
+            for (int j = 0; j < activeBuffsCount; j++) //Iterates through every buff on the tower
+            {
+                if (activeBuffs[j].buffName.ToString().Equals(buffNames[i])) //If the buff names match
+                {
+                    //TODO
+                    if (activeBuffs[j].modifier > strongestBuff.modifier
+                        || activeBuffs[j].damage > strongestBuff.damage) //Compares the modifier of the buff. Strongest modifier is the strongest buff
+                    {
+                        strongestBuff.damage = activeBuffs[j].damage;
+                        strongestBuff.modifier = activeBuffs[j].modifier;
+                        strongestBuff.duration = activeBuffs[j].duration;
+                        strongestBuff.damageRate = activeBuffs[j].damageRate;
+                        buff = activeBuffs[j];
+                    }
+                    //If the modifies are equal, compares the duration. Longest duration is the stronger buff
+                    else if (activeBuffs[j].modifier == strongestBuff.modifier && activeBuffs[j].duration > strongestBuff.duration)
+                    {
+                        strongestBuff.damage = activeBuffs[j].damage;
+                        strongestBuff.modifier = activeBuffs[j].modifier;
+                        strongestBuff.duration = activeBuffs[j].duration;
+                        strongestBuff.damageRate = activeBuffs[j].damageRate;
+                        buff = activeBuffs[j];
+                    }
+                }
+            }
+
+            if (buff != null)
+            {
+                //Applies Buffs
+                switch (buffNames[i])
+                {
+                    case "ResistanceEnemyBuffer":
+                        appliedBuffs.Add(buff);
+                        break;
+                    case "SpeedEnemyBuffer":
+                        appliedBuffs.Add(buff);
+                        break;
+                    case "Burn":
+                        appliedBuffs.Add(buff);
+                        isBurning = true;
+                        burnDamage = strongestBuff.damage;
+                        burnDelay = 1f / strongestBuff.damageRate;
+                        break;
+                    case "Slow":
+                        appliedBuffs.Add(buff);
+                        SetSpeed(currentSpeed * strongestBuff.modifier);
+                        break;
+                    case "Confuse":
+                        appliedBuffs.Add(buff);
+                        navMeshMovement.FlipDirection(0);
+                        break;
+                }
+            }
         }
     }
 
