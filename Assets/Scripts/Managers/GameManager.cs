@@ -133,14 +133,15 @@ public class GameManager : MonoBehaviour
         switch (wave)
         {
             case 0:
-                EnqueueEnemy(Enemy.EnemyType.Buffer, 1, 0);
-                yield return new WaitForSeconds(1);
-                for (int i = 0; i < 5; i++)
-                {
-                    EnqueueEnemy(Enemy.EnemyType.Basic, 1,0);
-                    yield return new WaitForSeconds(1);
-                }
-                nextSpawnPoints = new int[] { 0 };
+                EnqueueEnemy(Enemy.EnemyType.Boss1, 1, 0);
+                //EnqueueEnemy(Enemy.EnemyType.Buffer, 1, 0);
+                //yield return new WaitForSeconds(1);
+                //for (int i = 0; i < 5; i++)
+                //{
+                //    EnqueueEnemy(Enemy.EnemyType.Basic, 1,0);
+                //    yield return new WaitForSeconds(1);
+                //}
+                //nextSpawnPoints = new int[] { 0 };
                 break;
             case 1:
                 for (int i = 0; i < 9; i++)
@@ -316,24 +317,14 @@ public class GameManager : MonoBehaviour
             //Tick Towers
             foreach (TowerBehavior tower in builtTowers)
             {
-                if (tower.isTaunted && tower.tauntTarget.isActiveAndEnabled)
-                    tower.target = tower.tauntTarget;
-                else
-                {
-                    tower.target = TowerTargetting.GetTarget(tower, tower.targetType);
-                }
+                tower.target = TowerTargetting.GetTarget(tower, tower.targetType);
                 tower.Tick();
             }
 
             //Tick Tower Buffs
             foreach (TowerBehavior tower in builtTowers)
             {
-                if (tower.isTaunted && tower.tauntTarget.isActiveAndEnabled)
-                    tower.target = tower.tauntTarget;
-                else
-                {
-                    tower.target = TowerTargetting.GetTarget(tower, tower.targetType);
-                }
+                tower.target = TowerTargetting.GetTarget(tower, tower.targetType);
                 tower.TickBuffs();
             }
 
@@ -577,6 +568,9 @@ public class GameManager : MonoBehaviour
                 break;
             case Enemy.EnemyType.Buffer:
                 enemyID += 60;
+                break;
+            case Enemy.EnemyType.Boss2:
+                enemyID += 70;
                 break;
         }
 

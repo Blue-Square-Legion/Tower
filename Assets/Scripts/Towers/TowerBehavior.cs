@@ -21,7 +21,7 @@ public class TowerBehavior : MonoBehaviour
     private TowerPlacement towerPlacement;
     Camera cam;
     [NonSerialized] public bool isSelected;
-    private bool isStunned;
+    public bool isStunned;
     public bool isTaunted;
     public Enemy tauntTarget;
 

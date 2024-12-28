@@ -50,8 +50,9 @@ public class Cleanse : MonoBehaviour
 
         foreach (Collider tower in towers)
         {
-            if (tower.gameObject.layer == LayerMask.NameToLayer("Tower"))
+            if (tower.gameObject.layer == LayerMask.NameToLayer("Towers"))
             {
+                print("cleansed");
                 tower.GetComponent<TowerBehavior>().CleanseDebuffs();
             }
         }
