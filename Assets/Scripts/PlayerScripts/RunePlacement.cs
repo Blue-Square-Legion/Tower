@@ -24,10 +24,13 @@ public class RunePlacement : MonoBehaviour
     public GameObject meteorPreviewPrefab;
     public GameObject lightingPreviewPrefab;
     public GameObject confusionPreviewPrefab;
+    public GameObject cleansePreviewPrefab;
 
     public GameObject meteorPrefab;
     public GameObject lightningPrefab;
     public GameObject confusionPrefab;
+    public GameObject cleansePrefab;
+
     public float castRange = 10f; 
     private GameObject currentPreview;
     private bool isCasting = false;
@@ -36,29 +39,35 @@ public class RunePlacement : MonoBehaviour
     public float meteorCost = 100;
     public float lightningCost = 50;
     public float confusionCost = 50;
+    public float cleanseCost = 50;
 
     public float meteorCooldown = 5f;
     public float lightningCooldown = 7f;
     public float confusionCooldown = 6f;
+    public float cleanseCooldown = 6f;
 
     private float meteorCooldownTimer = 0f;
     private float lightningCooldownTimer = 0f;
     private float confusionCooldownTimer = 0f;
+    private float cleanseCooldownTimer = 0f;
 
     // UI Text to display the cooldown in seconds
     public TextMeshProUGUI meteorCooldownText;
     public TextMeshProUGUI lightningCooldownText;
     public TextMeshProUGUI confusionCooldownText;
+    public TextMeshProUGUI cleanseCooldownText;
 
     public GameObject meteorKeyMask;
     public GameObject lightningKeyMask;
     public GameObject confusionKeyMask;
+    public GameObject cleanseKeyMask;
 
     public enum SkillType
     {
         Meteor,
         Lightning,
-        Confusion
+        Confusion,
+        Cleanse
     }
 
     void Update()
@@ -92,6 +101,10 @@ public class RunePlacement : MonoBehaviour
             {
                 SelectSkill(SkillType.Confusion);
             }
+            if (Input.GetKeyDown(KeyCode.C) && !isCasting && cleanseCooldownTimer <= 0f)
+            {
+                SelectSkill(SkillType.Cleanse);
+            }
         }
 
 
@@ -119,6 +132,14 @@ public class RunePlacement : MonoBehaviour
         else
         {
             confusionCooldownText.color = Color.white;
+        }
+        if (cleanseCooldownTimer > 0f)
+        {
+            cleanseCooldownTimer -= Time.deltaTime;
+        }
+        else
+        {
+            cleanseCooldownText.color = Color.white;
         }
 
         if (isCasting)
@@ -161,6 +182,9 @@ public class RunePlacement : MonoBehaviour
                 break;
             case SkillType.Confusion:
                 currentPreview = Instantiate(confusionPreviewPrefab);
+                break;
+            case SkillType.Cleanse:
+                currentPreview = Instantiate(cleansePreviewPrefab);
                 break;
         }
 
@@ -207,6 +231,13 @@ public class RunePlacement : MonoBehaviour
                     {
                         confusionCooldownTimer = confusionCooldown;
                         confusionKeyMask.GetComponent<CDRadialWipe>().StartWipe();
+                    }
+                    break;
+                case SkillType.Cleanse:
+                    if (CastCleanse(castPosition))
+                    {
+                        cleanseCooldownTimer = cleanseCooldown;
+                        cleanseKeyMask.GetComponent<CDRadialWipe>().StartWipe();
                     }
                     break;
             }
@@ -264,6 +295,22 @@ public class RunePlacement : MonoBehaviour
         Confusion confusionScript = confusion.GetComponent<Confusion>();
         confusionScript.targetPosition = castPosition;
         confusionCooldownText.color = Color.red;
+        return true;
+    }
+
+    bool CastCleanse(Vector3 castPosition)
+    {
+        if (!Player.Instance.CheckAndUseMana(cleanseCost))
+        {
+            UIManager.Instance.SendPopUp("Not enough mana");
+            return false;
+        }
+
+        GameObject cleanse = Instantiate(cleansePrefab, currentPreview.transform.position, Quaternion.identity);
+
+        Cleanse cleanseScript = cleanse.GetComponent<Cleanse>();
+        cleanseScript.targetPosition = castPosition;
+        cleanseCooldownText.color = Color.red;
         return true;
     }
 

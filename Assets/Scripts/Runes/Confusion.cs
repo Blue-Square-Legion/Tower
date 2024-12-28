@@ -52,7 +52,12 @@ public class Confusion : MonoBehaviour
             if (enemy.CompareTag("Enemy"))
             {
                 enemy.GetComponent<Enemy>().lastDamagingTower = null;
-                enemy.GetComponent<Enemy>().isConfused = true;
+                //enemy.GetComponent<Enemy>().isConfused = true;
+
+                //Confusion debuff
+                GameManager.EnemyBuff buff = new GameManager.EnemyBuff(GameManager.EnemyBuffNames.Confuse, 0, 0, 1, 2, true, null);
+                GameManager.ApplyEnemyBuffData buffData = new GameManager.ApplyEnemyBuffData(buff, enemy.GetComponent<Enemy>());
+                GameManager.Instance.EnqueueEnemyBuffToApply(buffData);
             }
         }
     }

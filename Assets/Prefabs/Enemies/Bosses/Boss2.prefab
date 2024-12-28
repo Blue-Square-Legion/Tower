@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -4089298965737742869}
   - component: {fileID: 5595083250467197109}
   - component: {fileID: 3659788582470978283}
+  - component: {fileID: -375379332025999983}
   m_Layer: 6
   m_Name: Boss2
   m_TagString: Enemy
@@ -75,7 +76,7 @@ MonoBehaviour:
   maxHealth: 200
   moneyToPlayer: 20
   currentHealth: 0
-  speed: 6
+  speed: 3
   damageResistance: 0.5
   navMeshMovement: {fileID: 5595083250467197109}
   audioMovement:
@@ -177,7 +178,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.7
-  m_Speed: 6
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -189,6 +190,24 @@ NavMeshAgent:
   m_BaseOffset: 0.8
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 0
+--- !u!114 &-375379332025999983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998512333413120234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8880a691d3108394e9e4dea14b75e9e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 8
+  towerLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  countDown: 10
+  duration: 5
 --- !u!1 &4220430559010367232
 GameObject:
   m_ObjectHideFlags: 0

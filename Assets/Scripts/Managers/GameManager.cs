@@ -134,9 +134,10 @@ public class GameManager : MonoBehaviour
         {
             case 0:
                 EnqueueEnemy(Enemy.EnemyType.Buffer, 1, 0);
+                yield return new WaitForSeconds(1);
                 for (int i = 0; i < 5; i++)
                 {
-                    EnqueueEnemy(Enemy.EnemyType.Basic, 1,0);
+                    EnqueueEnemy(Enemy.EnemyType.Basic, 1, 0);
                     yield return new WaitForSeconds(1);
                 }
                 nextSpawnPoints = new int[] { 0 };
@@ -567,6 +568,9 @@ public class GameManager : MonoBehaviour
             case Enemy.EnemyType.Buffer:
                 enemyID += 60;
                 break;
+            case Enemy.EnemyType.Boss2:
+                enemyID += 70;
+                break;
         }
 
         enemyQueueToSpawn.Enqueue(new Tuple<int, int>(enemyID, spawnPointNumber));
@@ -683,7 +687,8 @@ public class GameManager : MonoBehaviour
         SupportBonusDamage,
         SupportBonusAttackSpeed,
         Stun,
-        Investments
+        Investments,
+        Taunt
     }
 
     public enum EnemyBuffNames
