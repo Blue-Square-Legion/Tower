@@ -315,14 +315,24 @@ public class GameManager : MonoBehaviour
             //Tick Towers
             foreach (TowerBehavior tower in builtTowers)
             {
-                tower.target = TowerTargetting.GetTarget(tower, tower.targetType);
+                if (tower.isTaunted && tower.tauntTarget.isActiveAndEnabled)
+                    tower.target = tower.tauntTarget;
+                else
+                {
+                    tower.target = TowerTargetting.GetTarget(tower, tower.targetType);
+                }
                 tower.Tick();
             }
 
             //Tick Tower Buffs
             foreach (TowerBehavior tower in builtTowers)
             {
-                tower.target = TowerTargetting.GetTarget(tower, tower.targetType);
+                if (tower.isTaunted && tower.tauntTarget.isActiveAndEnabled)
+                    tower.target = tower.tauntTarget;
+                else
+                {
+                    tower.target = TowerTargetting.GetTarget(tower, tower.targetType);
+                }
                 tower.TickBuffs();
             }
 
@@ -683,7 +693,8 @@ public class GameManager : MonoBehaviour
         SupportBonusDamage,
         SupportBonusAttackSpeed,
         Stun,
-        Investments
+        Investments,
+        Taunt
     }
 
     public enum EnemyBuffNames

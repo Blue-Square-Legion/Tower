@@ -22,6 +22,8 @@ public class TowerBehavior : MonoBehaviour
     Camera cam;
     [NonSerialized] public bool isSelected;
     private bool isStunned;
+    public bool isTaunted;
+    public Enemy tauntTarget;
 
     [SerializeField] public TowerType towerType;
     [SerializeField] public TowerTargetting.TargetType targetType;
@@ -48,6 +50,7 @@ public class TowerBehavior : MonoBehaviour
         cam = towerPlacement.cam;
         isSelected = true;
         isStunned = false;
+        isTaunted = false;
         lastSelectedTower = null;
         activeBuffs = new();
         appliedBuffs = new();
@@ -188,11 +191,18 @@ public class TowerBehavior : MonoBehaviour
                         isStunned = true;
                         activeBuffs[i].duration -= Time.deltaTime;
                     }
+                    if (activeBuffs[i].buffName == GameManager.BuffNames.Taunt) //If taunt "buff" duration is greater than 0, keep the tower taunted
+                    {
+                        isTaunted = true;
+                        activeBuffs[i].duration -= Time.deltaTime;
+                    }
                 }
                 else
                 {
                     if (activeBuffs[i].buffName == GameManager.BuffNames.Stun) //Unstun tower when stun buff is over
                         isStunned = false;
+                    if (activeBuffs[i].buffName == GameManager.BuffNames.Taunt) //Untaunt tower when taunt buff is over
+                        isTaunted = false;
                 }
                 activeBuffs.RemoveAll(x => x.duration <= 0 && x.duration != -123); //Removes all active buffs that do not have a duration of -123 and a duration lower than 0
             }
@@ -1373,5 +1383,10 @@ public class TowerBehavior : MonoBehaviour
         Ice,
         Support,
         Spikes
+    }
+
+    public void SetTauntTarget(Enemy enemy)
+    {
+        tauntTarget = enemy;
     }
 }
