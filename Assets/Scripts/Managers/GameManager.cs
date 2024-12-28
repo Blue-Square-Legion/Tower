@@ -133,6 +133,7 @@ public class GameManager : MonoBehaviour
         switch (wave)
         {
             case 0:
+                EnqueueEnemy(Enemy.EnemyType.Buffer, 1, 0);
                 for (int i = 0; i < 5; i++)
                 {
                     EnqueueEnemy(Enemy.EnemyType.Basic, 1,0);
@@ -563,6 +564,9 @@ public class GameManager : MonoBehaviour
             case Enemy.EnemyType.Boss1:
                 enemyID += 50;
                 break;
+            case Enemy.EnemyType.Buffer:
+                enemyID += 60;
+                break;
         }
 
         enemyQueueToSpawn.Enqueue(new Tuple<int, int>(enemyID, spawnPointNumber));
@@ -597,7 +601,7 @@ public class GameManager : MonoBehaviour
     {
         enemyBuffRemoveQueue.Enqueue(buffData);
     }
-
+    
     public class Buff
     {
         public BuffNames buffName;

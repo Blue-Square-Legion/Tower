@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
     string[] buffNames;
     private int buffNamesCount;
 
+    [NonSerialized] public bool isSlowed, isStunned;
     bool isBurning;
     float burnDamage;
     float burnDelay;
@@ -47,7 +48,9 @@ public class Enemy : MonoBehaviour
         navMeshMovement = GetComponent<NavMeshMovement>();
         navMeshMovement.SetSpeed(currentSpeed);
         isConfused = false;
-        confusedTimer = 2;
+        isSlowed = false;
+        isStunned = false;
+        isBurning = false;
         currentBurnDelay = 0;
     }
 
@@ -121,16 +124,15 @@ public class Enemy : MonoBehaviour
                         switch (appliedBuffs[j].buffName)
                         {
                             case GameManager.EnemyBuffNames.ResistanceEnemyBuffer:
-                                
+                                damageResistance -= appliedBuffs[j].modifier;
                                 break;
                             case GameManager.EnemyBuffNames.SpeedEnemyBuffer:
-                                
-                                break;
-                            case GameManager.EnemyBuffNames.Burn:
-
+                                SetSpeed(currentSpeed / appliedBuffs[j].modifier);
                                 break;
                             case GameManager.EnemyBuffNames.Slow:
                                 SetSpeed(currentSpeed / appliedBuffs[j].modifier);
+                                isSlowed = false;
+                                isStunned = false;
                                 break;
                             case GameManager.EnemyBuffNames.Confuse:
                                 navMeshMovement.FlipDirection(1);
@@ -185,9 +187,11 @@ public class Enemy : MonoBehaviour
                 {
                     case "ResistanceEnemyBuffer":
                         appliedBuffs.Add(buff);
+                        damageResistance += strongestBuff.modifier;
                         break;
                     case "SpeedEnemyBuffer":
                         appliedBuffs.Add(buff);
+                        SetSpeed(currentSpeed * strongestBuff.modifier);
                         break;
                     case "Burn":
                         appliedBuffs.Add(buff);
@@ -198,6 +202,11 @@ public class Enemy : MonoBehaviour
                     case "Slow":
                         appliedBuffs.Add(buff);
                         SetSpeed(currentSpeed * strongestBuff.modifier);
+
+                        if (strongestBuff.modifier == 0.0001f)
+                            isStunned = true;
+                        else
+                            isSlowed = true;
                         break;
                     case "Confuse":
                         appliedBuffs.Add(buff);
@@ -226,6 +235,7 @@ public class Enemy : MonoBehaviour
         Slow,
         Ghost,
         Boss1,
-        Boss2
+        Boss2,
+        Buffer
     }
 }

@@ -83,7 +83,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
-    panStereo: 1
+    panStereo: 0
     spatialBlend: 1
     minDistance: 0
     maxDistance: 8
@@ -107,7 +107,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
-    panStereo: 1
+    panStereo: 0
     spatialBlend: 1
     minDistance: 0
     maxDistance: 8
@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 3659788582470978283}
+  remainingDist: 0
 --- !u!195 &3659788582470978283
 NavMeshAgent:
   m_ObjectHideFlags: 0
