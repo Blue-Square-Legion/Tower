@@ -48,17 +48,11 @@ public class Cleanse : MonoBehaviour
     {
         Collider[] towers = Physics.OverlapSphere(transform.position, impactRadius);
 
-        foreach (Collider enemy in towers)
+        foreach (Collider tower in towers)
         {
-            if (enemy.CompareTag("Enemy"))
+            if (tower.gameObject.layer == LayerMask.NameToLayer("Tower"))
             {
-                enemy.GetComponent<Enemy>().lastDamagingTower = null;
-                enemy.GetComponent<Enemy>().TakeDamage(damage);
-
-                //Stun debuff
-                GameManager.EnemyBuff buff = new GameManager.EnemyBuff(GameManager.EnemyBuffNames.Slow, 0, 0, 0.0001f, 2, true, null);
-                GameManager.ApplyEnemyBuffData buffData = new GameManager.ApplyEnemyBuffData(buff, enemy.GetComponent<Enemy>());
-                GameManager.Instance.EnqueueEnemyBuffToApply(buffData);
+                tower.GetComponent<TowerBehavior>().CleanseDebuffs();
             }
         }
     }

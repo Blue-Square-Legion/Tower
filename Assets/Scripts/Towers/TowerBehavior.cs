@@ -1389,4 +1389,12 @@ public class TowerBehavior : MonoBehaviour
     {
         tauntTarget = enemy;
     }
+
+    public void CleanseDebuffs()
+    {
+        activeBuffs.RemoveAll(x => x.isDebuff); //Removes all debuffs
+        isStunned = false;
+        isTaunted = false;
+        tauntTarget = null;
+    }
 }
