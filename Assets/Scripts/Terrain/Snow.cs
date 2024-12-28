@@ -8,7 +8,6 @@ public class Snow : MonoBehaviour
     [NonSerialized] public float slowModifier;
     public float duration = 10;
     private List<Enemy> enemyList = new List<Enemy>();
-    private float speedChange;
 
     /// <summary>
     /// Set duration then call Init() to start countdown
@@ -18,15 +17,17 @@ public class Snow : MonoBehaviour
         StartCoroutine(Duration());
     }
 
-    public void OnTriggerStay(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
         {
             Enemy enemy = other.GetComponent<Enemy>();
             if (!enemyList.Contains(enemy))
             {
-                speedChange = enemy.currentSpeed - (enemy.currentSpeed * slowModifier);
-                enemy.SetSpeed(enemy.currentSpeed * slowModifier);
+                GameManager.EnemyBuff buff = new GameManager.EnemyBuff(GameManager.EnemyBuffNames.Slow, 0, 0, slowModifier, -123, true, null);
+                GameManager.ApplyEnemyBuffData buffData = new GameManager.ApplyEnemyBuffData(buff, enemy);
+                GameManager.Instance.EnqueueEnemyBuffToApply(buffData);
+
                 enemyList.Add(enemy);
             }
         }
@@ -37,7 +38,10 @@ public class Snow : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             Enemy enemy = other.GetComponent<Enemy>();
-            enemy.SetSpeed(enemy.currentSpeed / slowModifier);
+
+            GameManager.EnemyBuff buff = new GameManager.EnemyBuff(GameManager.EnemyBuffNames.Slow, 0, 0, slowModifier, -123, true, null);
+            GameManager.ApplyEnemyBuffData buffData = new GameManager.ApplyEnemyBuffData(buff, enemy);
+            GameManager.Instance.EnqueueEnemyBuffToRemove(buffData);
 
             enemyList.Remove(other.GetComponent<Enemy>());
         }
@@ -49,7 +53,9 @@ public class Snow : MonoBehaviour
 
         foreach (Enemy enemy in enemyList)
         {
-            enemy.SetSpeed(enemy.currentSpeed / slowModifier);
+            GameManager.EnemyBuff buff = new GameManager.EnemyBuff(GameManager.EnemyBuffNames.Slow, 0, 0, slowModifier, -123, true, null);
+            GameManager.ApplyEnemyBuffData buffData = new GameManager.ApplyEnemyBuffData(buff, enemy);
+            GameManager.Instance.EnqueueEnemyBuffToRemove(buffData);
         }
 
         Destroy(gameObject);
