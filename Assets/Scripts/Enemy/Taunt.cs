@@ -17,7 +17,7 @@ public class Taunt : MonoBehaviour
     {
         gameManager = GameManager.Instance;
         enemy = GetComponent<Enemy>();
-        countDown = 8f;
+        countDown = 1f;
         towersInRange = new();
     }
 
