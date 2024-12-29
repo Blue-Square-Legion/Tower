@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class Confusion : MonoBehaviour
+public class Cleanse : MonoBehaviour
 {
-    public float fallSpeed = 30f;
+    public float fallSpeed = 30f;  
     public float impactRadius = 3f;
+    public int damage = 5; 
     public float fallHeight = 10f;
 
     public Vector3 targetPosition;
@@ -38,26 +39,21 @@ public class Confusion : MonoBehaviour
 
         ImpactEffect();
 
-        DoEffect();
+        DoCleanse();
 
         Destroy(gameObject);
     }
 
-    void DoEffect()
+    void DoCleanse()
     {
-        Collider[] enemies = Physics.OverlapSphere(transform.position, impactRadius);
+        Collider[] towers = Physics.OverlapSphere(transform.position, impactRadius);
 
-        foreach (Collider enemy in enemies)
+        foreach (Collider tower in towers)
         {
-            if (enemy.CompareTag("Enemy"))
+            if (tower.gameObject.layer == LayerMask.NameToLayer("Towers"))
             {
-                enemy.GetComponent<Enemy>().lastDamagingTower = null;
-                //enemy.GetComponent<Enemy>().isConfused = true;
-
-                //Confusion debuff
-                GameManager.EnemyBuff buff = new GameManager.EnemyBuff(GameManager.EnemyBuffNames.Confuse, 0, 0, 1, 2, true, null);
-                GameManager.ApplyEnemyBuffData buffData = new GameManager.ApplyEnemyBuffData(buff, enemy.GetComponent<Enemy>());
-                GameManager.Instance.EnqueueEnemyBuffToApply(buffData);
+                print("cleansed");
+                tower.GetComponent<TowerBehavior>().CleanseDebuffs();
             }
         }
     }

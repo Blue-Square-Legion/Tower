@@ -54,7 +54,11 @@ public class Lightning : MonoBehaviour
             {
                 enemy.GetComponent<Enemy>().lastDamagingTower = null;
                 enemy.GetComponent<Enemy>().TakeDamage(damage);
-                enemy.GetComponent<Enemy>().isStunned = true;
+
+                //Stun debuff
+                GameManager.EnemyBuff buff = new GameManager.EnemyBuff(GameManager.EnemyBuffNames.Slow, 0, 0, 0.0001f, 2, true, null);
+                GameManager.ApplyEnemyBuffData buffData = new GameManager.ApplyEnemyBuffData(buff, enemy.GetComponent<Enemy>());
+                GameManager.Instance.EnqueueEnemyBuffToApply(buffData);
             }
         }
     }

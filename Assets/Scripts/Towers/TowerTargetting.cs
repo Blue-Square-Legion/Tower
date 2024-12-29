@@ -1,3 +1,4 @@
+using System.Linq;
 using Unity.Collections;
 using Unity.Jobs;
 using UnityEngine;
@@ -33,6 +34,10 @@ public class TowerTargetting
         for (int i = 0; i < enemiesInRange.Length; i++)
         {
             Enemy currentEnemy = enemiesInRange[i].GetComponent<Enemy>();
+            //if taunted and target in range, hit taunt target
+            if (currentTower.isTaunted && currentEnemy == currentTower.tauntTarget)
+                return currentTower.tauntTarget;
+
             int enemyIndexInList = enemySpawner.spawnedEnemies.FindIndex(x => x == currentEnemy);
 
             enemiesToCalculate[i] = new EnemyDataValues(currentEnemy.transform.position, currentEnemy.nodeIndex, currentEnemy.currentHealth, enemyIndexInList,

@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.Jobs;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -26,9 +25,10 @@ public class GameManager : MonoBehaviour
     #endregion
 
     [NonSerialized] public Queue<EnemyDamageData> damageData;
-    private Queue<ApplyEffectData> effectQueue;
     private Queue<ApplyBuffData> buffAddQueue;
     private Queue<ApplyBuffData> buffRemoveQueue;
+    private Queue<ApplyEnemyBuffData> enemyBuffAddQueue;
+    private Queue<ApplyEnemyBuffData> enemyBuffRemoveQueue;
     [NonSerialized] public Queue<Tuple<int, int>> enemyQueueToSpawn;    //Tuple<EnemyID, SpawnPointID>
     [NonSerialized] public Queue<Enemy> enemyQueueToRemove;
     [NonSerialized] public Queue<TowerBehavior> towerQueueToRemove;
@@ -64,9 +64,10 @@ public class GameManager : MonoBehaviour
         enemyQueueToRemove = new();
         towerQueueToRemove = new();
         damageData = new();
-        effectQueue = new();
         buffAddQueue = new();
         buffRemoveQueue = new();
+        enemyBuffAddQueue = new();
+        enemyBuffRemoveQueue = new();
         builtTowers = new List<TowerBehavior>();
         enemySpawner.Init();
         nextSpawnPoints = new int[] {0};
@@ -132,9 +133,11 @@ public class GameManager : MonoBehaviour
         switch (wave)
         {
             case 0:
+                EnqueueEnemy(Enemy.EnemyType.Buffer, 1, 0);
+                yield return new WaitForSeconds(1);
                 for (int i = 0; i < 5; i++)
                 {
-                    EnqueueEnemy(Enemy.EnemyType.Basic, 1,0);
+                    EnqueueEnemy(Enemy.EnemyType.Basic, 1, 0);
                     yield return new WaitForSeconds(1);
                 }
                 nextSpawnPoints = new int[] { 0 };
@@ -324,6 +327,8 @@ public class GameManager : MonoBehaviour
                 tower.TickBuffs();
             }
 
+            /**
+             
             //Apply Effects
             if (effectQueue.Count > 0)
             {
@@ -343,9 +348,64 @@ public class GameManager : MonoBehaviour
                     }
                 }
             }
+             */
+
+            //Apply Enemy Buffs
+            if (enemyBuffAddQueue.Count > 0)
+            {
+                int enemyBuffAddSize = enemyBuffAddQueue.Count;
+                for (int i = 0; i < enemyBuffAddSize; i++)
+                {
+                    ApplyEnemyBuffData currentEnemyBuffData = enemyBuffAddQueue.Dequeue();
+
+                    //Attempts to finds an identical buff. If found, do not add it to the list of buffs. Instead, increase its duration
+                    EnemyBuff enemyBuffDuplicate = currentEnemyBuffData.enemyToAffect.activeBuffs.Find(
+                        x => x.buffName == currentEnemyBuffData.buffToApply.buffName
+                        && x.modifier == currentEnemyBuffData.buffToApply.modifier
+                        && x.damage == currentEnemyBuffData.buffToApply.damage
+                        && x.damageRate == currentEnemyBuffData.buffToApply.damageRate);
+                    if (enemyBuffDuplicate == null)
+                    {
+                        currentEnemyBuffData.enemyToAffect.activeBuffs.Add(currentEnemyBuffData.buffToApply);
+                    }
+                    else
+                    {
+                        //If the duplicate buff has a longer duration, change the buff's duration into the new buff
+                        if (enemyBuffDuplicate.duration < currentEnemyBuffData.buffToApply.duration)
+                            enemyBuffDuplicate.duration = currentEnemyBuffData.buffToApply.duration;
+                    }
+
+                    currentEnemyBuffData.enemyToAffect.ApplyBuffs();
+                }
+            }
+
+            //Removes Enemy Buffs
+            if (enemyBuffRemoveQueue.Count > 0)
+            {
+                int enemyBuffRemoveSize = enemyBuffRemoveQueue.Count;
+                for (int i = 0; i < enemyBuffRemoveSize; i++)
+                {
+                    ApplyEnemyBuffData currentBuffData = enemyBuffRemoveQueue.Dequeue();
+
+                    Enemy enemyToAffect = currentBuffData.enemyToAffect;
+
+                    //Finds an identical buff and removes it
+                    for (int j = 0; j < enemyToAffect.activeBuffs.Count; j++)
+                    {
+                        if (enemyToAffect.activeBuffs[j].buffName == currentBuffData.buffToApply.buffName
+                            && enemyToAffect.activeBuffs[j].modifier == currentBuffData.buffToApply.modifier
+                            && enemyToAffect.activeBuffs[j].duration == currentBuffData.buffToApply.duration)
+                        {
+                            enemyToAffect.activeBuffs.RemoveAt(j);
+                            currentBuffData.enemyToAffect.ApplyBuffs();
+                            break;
+                        }
+                    }
+                }
+            }
 
             //Tick Enemies
-            foreach(Enemy currentEnemy in enemySpawner.spawnedEnemies)
+            foreach (Enemy currentEnemy in enemySpawner.spawnedEnemies)
             {
                 currentEnemy.Tick();
             }
@@ -415,7 +475,20 @@ public class GameManager : MonoBehaviour
                 {
                     ApplyBuffData currentBuffData = buffAddQueue.Dequeue();
 
-                    currentBuffData.towerToAffect.activeBuffs.Add(currentBuffData.buffToApply);
+                    //Attempts to finds an identical buff. If found, do not add it to the list of buffs. Instead, increase its duration
+                    Buff buffDuplicate = currentBuffData.towerToAffect.activeBuffs.Find(
+                        x => x.buffName == currentBuffData.buffToApply.buffName
+                        && x.modifier == currentBuffData.buffToApply.modifier);
+                    if (buffDuplicate == null)
+                    {
+                        currentBuffData.towerToAffect.activeBuffs.Add(currentBuffData.buffToApply);
+                    }
+                    else
+                    {
+                        //If the duplicate buff has a longer duration, change the buff's duration into the new buff
+                        if (buffDuplicate.duration < currentBuffData.buffToApply.duration)
+                            buffDuplicate.duration = currentBuffData.buffToApply.duration;
+                    }
                     currentBuffData.towerToAffect.ApplyBuffs();
                 }
             }
@@ -461,11 +534,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void EnqueueAffectToApply(ApplyEffectData effectData)
-    {
-        effectQueue.Enqueue(effectData);
-    }
-
     public void EnqueueDamageData(EnemyDamageData damageData)
     {
         this.damageData.Enqueue(damageData);
@@ -497,6 +565,12 @@ public class GameManager : MonoBehaviour
             case Enemy.EnemyType.Boss1:
                 enemyID += 50;
                 break;
+            case Enemy.EnemyType.Buffer:
+                enemyID += 60;
+                break;
+            case Enemy.EnemyType.Boss2:
+                enemyID += 70;
+                break;
         }
 
         enemyQueueToSpawn.Enqueue(new Tuple<int, int>(enemyID, spawnPointNumber));
@@ -522,47 +596,28 @@ public class GameManager : MonoBehaviour
         buffRemoveQueue.Enqueue(buffData);
     }
 
-    public class Effect
+    public void EnqueueEnemyBuffToApply(ApplyEnemyBuffData buffData)
     {
-        public EffectNames effectName;
-        public float damage;
-        public float duration;
-        public float damageRate;
-        public float damageDelay;
-        public float modifier;
-        public TowerBehavior source;
-        public Effect(EffectNames effectName, float damage, float duration, float damageRate, float modifier, TowerBehavior source)
-        {
-            this.effectName = effectName;
-            this.damage = damage;
-            this.duration = duration;
-            this.damageRate = damageRate;
-            this.modifier = modifier;
-            this.source = source;
-        }
+        enemyBuffAddQueue.Enqueue(buffData);
     }
 
-    public struct ApplyEffectData
+    public void EnqueueEnemyBuffToRemove(ApplyEnemyBuffData buffData)
     {
-        public Effect effectToApply;
-        public Enemy enemyToAffect;
-        public ApplyEffectData(Effect effectToApply, Enemy enemyToAffect)
-        {
-            this.effectToApply = effectToApply;
-            this.enemyToAffect = enemyToAffect;
-        }
+        enemyBuffRemoveQueue.Enqueue(buffData);
     }
-
+    
     public class Buff
     {
         public BuffNames buffName;
         public float modifier;
         public float duration; //NOTE: A duration of -123 will not disappear until removed manually
-        public Buff(BuffNames buffName, float modifier, float duration)
+        public bool isDebuff;
+        public Buff(BuffNames buffName, float modifier, float duration, bool isDebuff)
         {
             this.buffName = buffName;
             this.modifier = modifier;
             this.duration = duration;
+            this.isDebuff = isDebuff;
         }
     }
 
@@ -574,6 +629,40 @@ public class GameManager : MonoBehaviour
         {
             this.buffToApply = buffToApply;
             this.towerToAffect = towerToAffect;
+        }
+    }
+
+    public class EnemyBuff
+    {
+        public EnemyBuffNames buffName;
+        public float damage;
+        public float damageRate;
+        public float modifier;
+        public float duration; //NOTE: A duration of -123 will not disappear until removed manually
+        public bool isDebuff;
+        public TowerBehavior source;
+
+        public EnemyBuff(EnemyBuffNames buffName, float damage, float damageRate, float modifier, float duration, bool isDebuff, TowerBehavior source)
+        {
+            this.damage = damage;
+            this.damageRate = damageRate;
+            this.buffName = buffName;
+            this.modifier = modifier;
+            this.duration = duration;
+            this.isDebuff = isDebuff;
+            this.source = source;
+        }
+    }
+
+    public struct ApplyEnemyBuffData
+    {
+        public EnemyBuff buffToApply;
+        public Enemy enemyToAffect;
+
+        public ApplyEnemyBuffData(EnemyBuff buffToApply, Enemy enemyToAffect)
+        {
+            this.buffToApply = buffToApply;
+            this.enemyToAffect = enemyToAffect;
         }
     }
 
@@ -592,19 +681,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public enum EffectNames
-    {
-        Burn,
-        Slow
-    }
-
     public enum BuffNames
     {
         SupportBonusRange,
         SupportBonusDamage,
         SupportBonusAttackSpeed,
         Stun,
-        Investments
+        Investments,
+        Taunt
+    }
+
+    public enum EnemyBuffNames
+    {
+        ResistanceEnemyBuffer,
+        SpeedEnemyBuffer,
+        Burn,
+        Slow,
+        Confuse
     }
 
     public void ToggleAutoStart()

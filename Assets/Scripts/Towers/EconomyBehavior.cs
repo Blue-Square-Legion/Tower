@@ -38,7 +38,7 @@ public class EconomyBehavior : MonoBehaviour, IDamageMethod
             int towersInRangeCount = towersInRange.Count;
             for (int i = 0; i < towersInRangeCount; i++)
             {
-                GameManager.Buff buff = new GameManager.Buff(GameManager.BuffNames.Investments, investmentsPercent, -123);
+                GameManager.Buff buff = new GameManager.Buff(GameManager.BuffNames.Investments, investmentsPercent, -123, false);
                 GameManager.ApplyBuffData buffData = new GameManager.ApplyBuffData(buff, towersInRange[i]);
                 gameManager.EnqueueBuffToApply(buffData);
             }
@@ -53,7 +53,7 @@ public class EconomyBehavior : MonoBehaviour, IDamageMethod
             int towersInRangeCount = towersInRange.Count;
             for (int i = 0; i < towersInRangeCount; i++)
             {
-                GameManager.Buff buff = new GameManager.Buff(GameManager.BuffNames.Investments, investmentsPercent, -123);
+                GameManager.Buff buff = new GameManager.Buff(GameManager.BuffNames.Investments, investmentsPercent, -123, false);
                 GameManager.ApplyBuffData buffData = new GameManager.ApplyBuffData(buff, towersInRange[i]);
                 gameManager.EnqueueBuffToRemove(buffData);
             }
