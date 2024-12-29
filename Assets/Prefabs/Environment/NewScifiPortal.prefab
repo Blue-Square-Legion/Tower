@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5773915998279372533
 Transform:
@@ -196,10 +196,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: PortalFrame
       objectReference: {fileID: 0}
+    - target: {fileID: -5568371526223589888, guid: 7bd04fb6ba2f3884fa9c577ebd72ce29,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7bd04fb6ba2f3884fa9c577ebd72ce29,
         type: 3}
       propertyPath: m_Name
       value: NewScifiPortal
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7bd04fb6ba2f3884fa9c577ebd72ce29,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7071182760956848314, guid: 7bd04fb6ba2f3884fa9c577ebd72ce29,
         type: 3}
@@ -215,6 +225,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Portal
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513859187771203891, guid: 7bd04fb6ba2f3884fa9c577ebd72ce29,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
