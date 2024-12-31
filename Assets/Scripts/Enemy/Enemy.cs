@@ -236,6 +236,7 @@ public class Enemy : MonoBehaviour
         Ghost,
         Boss1,
         Boss2,
+        Invisible,
         Buffer
     }
 }

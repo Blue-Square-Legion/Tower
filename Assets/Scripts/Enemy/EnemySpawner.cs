@@ -74,6 +74,10 @@ public class EnemySpawner : MonoBehaviour
 
         int enemyID = tuple.Item1;
         int spawnPointID = tuple.Item2;
+        foreach (var entry in enemyPrefab)
+        {
+            Debug.Log("Enemy ID: " + entry.Key + ", Prefab: " + entry.Value.name);
+        }
 
         if (enemyPrefab.ContainsKey(enemyID))
         {
