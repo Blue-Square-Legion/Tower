@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     private Queue<ApplyBuffData> buffRemoveQueue;
     private Queue<ApplyEnemyBuffData> enemyBuffAddQueue;
     private Queue<ApplyEnemyBuffData> enemyBuffRemoveQueue;
-    [NonSerialized] public Queue<Tuple<int, int>> enemyQueueToSpawn;    //Tuple<EnemyID, SpawnPointID>
+    [NonSerialized] public Queue<Tuple<int, int, bool>> enemyQueueToSpawn;    //Tuple<EnemyID, SpawnPointID, isinvisible>
     [NonSerialized] public Queue<Enemy> enemyQueueToRemove;
     [NonSerialized] public Queue<TowerBehavior> towerQueueToRemove;
     [NonSerialized] public bool endLoop;
@@ -133,11 +133,11 @@ public class GameManager : MonoBehaviour
         switch (wave)
         {
             case 0:
-                EnqueueEnemy(Enemy.EnemyType.Buffer, 1, 0);
+                EnqueueEnemy(Enemy.EnemyType.Buffer, 1, 0, false);
                 yield return new WaitForSeconds(1);
                 for (int i = 0; i < 5; i++)
                 {
-                    EnqueueEnemy(Enemy.EnemyType.Basic, 1, 0);
+                    EnqueueEnemy(Enemy.EnemyType.Basic, 1, 0, true);
                     yield return new WaitForSeconds(1);
                 }
                 nextSpawnPoints = new int[] { 0 };
@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour
             case 1:
                 for (int i = 0; i < 9; i++)
                 {
-                    EnqueueEnemy(Enemy.EnemyType.Basic, 1, 0);
+                    EnqueueEnemy(Enemy.EnemyType.Basic, 1, 0, false);
                     yield return new WaitForSeconds(1);
                 }
                 nextSpawnPoints = new int[] { 0 };
@@ -153,7 +153,7 @@ public class GameManager : MonoBehaviour
             case 2:
                 for (int i = 0; i < 5; i++)
                 {
-                    EnqueueEnemy(Enemy.EnemyType.Fast, 1, 0);
+                    EnqueueEnemy(Enemy.EnemyType.Fast, 1, 0, false);
                     yield return new WaitForSeconds(0.5f);
                 }
                 nextSpawnPoints = new int[] { 0 };
@@ -162,9 +162,9 @@ public class GameManager : MonoBehaviour
 
                 for (int i = 0; i < 5; i++)
                 {
-                    EnqueueEnemy(Enemy.EnemyType.Basic,1, 0);
+                    EnqueueEnemy(Enemy.EnemyType.Basic,1, 0, false);
                     yield return new WaitForSeconds(1);
-                    EnqueueEnemy(Enemy.EnemyType.Ghost, 1, 0);
+                    EnqueueEnemy(Enemy.EnemyType.Ghost, 1, 0, false);
                     yield return new WaitForSeconds(1);
                 }
                 nextSpawnPoints = new int[] { 0 };
@@ -172,15 +172,15 @@ public class GameManager : MonoBehaviour
             case 4:
                 for (int i = 0; i < 6; i++)
                 {
-                    EnqueueEnemy(Enemy.EnemyType.Basic, 1, 0);
+                    EnqueueEnemy(Enemy.EnemyType.Basic, 1, 0, false);
                     yield return new WaitForSeconds(1f);
-                    EnqueueEnemy(Enemy.EnemyType.Basic, 1, 0);
+                    EnqueueEnemy(Enemy.EnemyType.Basic, 1, 0, false);
                     yield return new WaitForSeconds(1f);
-                    EnqueueEnemy(Enemy.EnemyType.Basic, 1, 0);
+                    EnqueueEnemy(Enemy.EnemyType.Basic, 1, 0, false);
                     yield return new WaitForSeconds(1f);
-                    EnqueueEnemy(Enemy.EnemyType.Fast, 1, 0);
+                    EnqueueEnemy(Enemy.EnemyType.Fast, 1, 0, false);
                     yield return new WaitForSeconds(0.5f);
-                    EnqueueEnemy(Enemy.EnemyType.Fast, 1, 0);
+                    EnqueueEnemy(Enemy.EnemyType.Fast, 1, 0, false);
                     yield return new WaitForSeconds(.5f);
                 }
                 nextSpawnPoints = new int[] { 2 };
@@ -188,7 +188,7 @@ public class GameManager : MonoBehaviour
             case 5:
                 for (int i = 0; i < 10; i++)
                 {
-                    EnqueueEnemy(Enemy.EnemyType.Slow, 1,2);
+                    EnqueueEnemy(Enemy.EnemyType.Slow, 1,2, false);
                     yield return new WaitForSeconds(1);
                 }
                 nextSpawnPoints = new int[] { 0,1 };
@@ -196,12 +196,12 @@ public class GameManager : MonoBehaviour
             case 6:
                 for (int i = 0; i < 6; i++)
                 {
-                    EnqueueEnemy(Enemy.EnemyType.Slow, 1, 0);
+                    EnqueueEnemy(Enemy.EnemyType.Slow, 1, 0, false);
                     yield return new WaitForSeconds(1);
                 }
                 for (int i = 0; i < 50; i++)
                 {
-                    EnqueueEnemy(Enemy.EnemyType.Fast, 1 ,1);
+                    EnqueueEnemy(Enemy.EnemyType.Fast, 1 ,1, false);
                     yield return new WaitForSeconds(.25f);
                 }
                 nextSpawnPoints = new int[] { 2 };
@@ -209,13 +209,13 @@ public class GameManager : MonoBehaviour
             case 7:
                 for (int i = 0; i < 10; i++)
                 {
-                    EnqueueEnemy(Enemy.EnemyType.Slow, 1,2);
+                    EnqueueEnemy(Enemy.EnemyType.Slow, 1,2, false);
                     yield return new WaitForSeconds(1f);
-                    EnqueueEnemy(Enemy.EnemyType.Slow, 1,2);
+                    EnqueueEnemy(Enemy.EnemyType.Slow, 1,2, false);
                     yield return new WaitForSeconds(0.25f);
-                    EnqueueEnemy(Enemy.EnemyType.Slow, 1,2);
+                    EnqueueEnemy(Enemy.EnemyType.Slow, 1,2, false);
                     yield return new WaitForSeconds(0.5f);
-                    EnqueueEnemy(Enemy.EnemyType.Slow,1, 2);
+                    EnqueueEnemy(Enemy.EnemyType.Slow,1, 2, false);
                     yield return new WaitForSeconds(0.1f);
                 }
                 nextSpawnPoints = new int[] { 0 };
@@ -223,7 +223,7 @@ public class GameManager : MonoBehaviour
             case 8:
                 for (int i = 0; i < 50; i++)
                 {
-                    EnqueueEnemy(Enemy.EnemyType.Fast, 1,0);
+                    EnqueueEnemy(Enemy.EnemyType.Fast, 1,0, false);
                     yield return new WaitForSeconds(0.15f);
                 }
                 nextSpawnPoints = new int[] { 1,2 };
@@ -231,13 +231,13 @@ public class GameManager : MonoBehaviour
             case 9:
                 for (int i = 0; i < 100; i++)
                 {
-                    EnqueueEnemy(Enemy.EnemyType.Slow, 1,1);
+                    EnqueueEnemy(Enemy.EnemyType.Slow, 1,1, false);
                     yield return new WaitForSeconds(.5f);
                 }
                 for (int i = 0; i < 50; i++)
                 {
-                    EnqueueEnemy(Enemy.EnemyType.Fast, 1,2);
-                    EnqueueEnemy(Enemy.EnemyType.Basic, 1,2);
+                    EnqueueEnemy(Enemy.EnemyType.Fast, 1,2, false);
+                    EnqueueEnemy(Enemy.EnemyType.Basic, 1,2, false);
                     yield return new WaitForSeconds(0.1f);
                 }
                 nextSpawnPoints = new int[] { };
@@ -543,12 +543,12 @@ public class GameManager : MonoBehaviour
     /// Enqueues enemies to spawn when the game allows it to
     /// </summary>
     /// <param name="enemyID"></param>
-    public void EnqueueEnemy(Enemy.EnemyType type, int level, int spawnPointNumber)
+    public void EnqueueEnemy(Enemy.EnemyType type, int level, int spawnPointNumber, bool isInvisible)
     {
         int enemyID = level;
 
         //Converts type to level - this system is under the assumption that 10 or more variants of this type do not exist.
-        switch(type)
+        switch (type)
         {
             case Enemy.EnemyType.Basic:
                 enemyID += 10;
@@ -573,7 +573,8 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
-        enemyQueueToSpawn.Enqueue(new Tuple<int, int>(enemyID, spawnPointNumber));
+        enemyQueueToSpawn.Enqueue(new Tuple<int, int, bool>(enemyID, spawnPointNumber, isInvisible));
+
     }
 
     public void EnqueueEnemyToRemove(Enemy enemyToRemove)

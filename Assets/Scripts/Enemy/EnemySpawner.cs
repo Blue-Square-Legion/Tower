@@ -68,13 +68,13 @@ public class EnemySpawner : MonoBehaviour
             print("FAILSAFE ACTIVATED. FAILED TO INITIALZE \"ENEMY SPAWNER\" DUE TO IT ALREADY BEING INITIALZED!");
     }
 
-    public Enemy spawnEnemy(Tuple<int,int> tuple)
+    public Enemy spawnEnemy(Tuple<int,int, bool> tuple)
     {
         Enemy spawnedEnemy = null;
 
         int enemyID = tuple.Item1;
         int spawnPointID = tuple.Item2;
-
+        bool isInvisible = tuple.Item3;
         if (enemyPrefab.ContainsKey(enemyID))
         {
             Queue<Enemy> ReferencedQueue = enemyObjectPools[enemyID];
@@ -95,6 +95,7 @@ public class EnemySpawner : MonoBehaviour
                 newEnemy.transform.parent = enemiesFolder;
                 spawnedEnemy = newEnemy.GetComponent<Enemy>();
                 spawnedEnemy.Init();
+                spawnedEnemy.SetInvisibility(isInvisible);
             }
         }
         else

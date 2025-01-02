@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     public float speed;
     public float currentSpeed {  get; private set; }
     public float damageResistance;
+    public bool isInvisible;
     [NonSerialized] public int ID;
     [NonSerialized] public int nodeIndex;
     [NonSerialized] public List<GameManager.EnemyBuff> activeBuffs;
@@ -51,6 +52,7 @@ public class Enemy : MonoBehaviour
         isSlowed = false;
         isStunned = false;
         isBurning = false;
+        isInvisible = false;
         currentBurnDelay = 0;
     }
 
@@ -221,6 +223,16 @@ public class Enemy : MonoBehaviour
     {
         currentSpeed = speed;
         navMeshMovement.SetSpeed(currentSpeed);
+    }
+
+    public void SetInvisibility(bool invisible)
+    {
+        
+        isInvisible = invisible;
+        if (isInvisible) {
+            Debug.Log("Spawn invisible enemy:" + invisible);
+        }
+        
     }
 
     public void ReachedEnd()
