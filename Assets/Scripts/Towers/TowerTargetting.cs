@@ -31,6 +31,7 @@ public class TowerTargetting
         NativeArray<int> enemyToIndex = new(1, Allocator.TempJob);
         int enemyIndexToReturn = -1;
 
+        int validEnemyCount = 0;  // Add this line to track valid enemies
         for (int i = 0; i < enemiesInRange.Length; i++)
         {
             Enemy currentEnemy = enemiesInRange[i].GetComponent<Enemy>();
@@ -38,10 +39,30 @@ public class TowerTargetting
             if (currentTower.isTaunted && currentEnemy == currentTower.tauntTarget)
                 return currentTower.tauntTarget;
 
+            // Check if the enemy is invisible
+            if (currentEnemy.isInvisible)
+                continue;
+
             int enemyIndexInList = enemySpawner.spawnedEnemies.FindIndex(x => x == currentEnemy);
 
-            enemiesToCalculate[i] = new EnemyDataValues(currentEnemy.transform.position, currentEnemy.nodeIndex, currentEnemy.currentHealth, enemyIndexInList,
-                currentEnemy.GetComponent<NavMeshMovement>().remainingDist);
+            enemiesToCalculate[validEnemyCount] = new EnemyDataValues(
+                currentEnemy.transform.position,
+                currentEnemy.nodeIndex,
+                currentEnemy.currentHealth,
+                enemyIndexInList,
+                currentEnemy.GetComponent<NavMeshMovement>().remainingDist,
+                currentEnemy.isInvisible 
+            );
+            validEnemyCount++;  
+        }
+
+        if (validEnemyCount == 0)
+        {
+            enemiesToCalculate.Dispose();
+            nodePositions.Dispose();
+            nodeDistances.Dispose();
+            enemyToIndex.Dispose();
+            return null;
         }
 
         SearchForEnemy enemySearchJob = new SearchForEnemy
@@ -71,7 +92,7 @@ public class TowerTargetting
         }
 
         JobHandle dependency = new JobHandle();
-        JobHandle searchJobHandle = enemySearchJob.Schedule(enemiesToCalculate.Length, dependency);
+        JobHandle searchJobHandle = enemySearchJob.Schedule(validEnemyCount, dependency);  
         searchJobHandle.Complete();
 
         enemyIndexToReturn = enemiesToCalculate[enemyToIndex[0]].enemyIndex;
@@ -90,13 +111,14 @@ public class TowerTargetting
 
     struct EnemyDataValues
     {
-        public EnemyDataValues(Vector3 enemyPosition, int nodeIndex, float health, int enemyIndex, float remainingDist)
+        public EnemyDataValues(Vector3 enemyPosition, int nodeIndex, float health, int enemyIndex, float remainingDist, bool isInvisible)
         {
             this.enemyPosition = enemyPosition;
             this.nodeIndex = nodeIndex;
             this.health = health;
             this.enemyIndex = enemyIndex;
             this.remainingDist = remainingDist;
+            this.isInvisible = isInvisible;
         }
 
         public Vector3 enemyPosition;
@@ -104,6 +126,7 @@ public class TowerTargetting
         public float health;
         public int enemyIndex;
         public float remainingDist;
+        public bool isInvisible; 
     }
 
     struct SearchForEnemy : IJobFor
@@ -118,7 +141,10 @@ public class TowerTargetting
         public TargetType targetingType;
         public void Execute(int index)
         {
+            if (_enemiesToCalculate[index].isInvisible) { return; } 
+
             float distance;
+
             switch (targetingType)
             {
                 case TargetType.First:
