@@ -39,7 +39,7 @@ public class EnemyBuffer : MonoBehaviour
             for (int i = 0; i < count; i++)
             {
                 //Filters out everything that is not an Enemy and filters out itself
-                print(hits[i].collider.gameObject.name);
+               // print(hits[i].collider.gameObject.name);
                 if (hits[i].collider.gameObject.TryGetComponent(out Enemy enemy) && hits[i].collider != gameObject.GetComponent<Collider>())
                     enemiesInRange.Add(enemy); //Adds object to list
             }
