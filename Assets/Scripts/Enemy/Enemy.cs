@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public EnemyType type;
     public int maxHealth;
     public int moneyToPlayer;
+    public int manaToPlayer;
     public float currentHealth;
     public float speed;
     public float currentSpeed {  get; private set; }
@@ -46,6 +47,7 @@ public class Enemy : MonoBehaviour
         damageResistance = 1;
         nodeIndex = 0;
         moneyToPlayer = 10;
+        manaToPlayer = 10;
         navMeshMovement = GetComponent<NavMeshMovement>();
         navMeshMovement.SetSpeed(currentSpeed);
         isConfused = false;
@@ -68,6 +70,7 @@ public class Enemy : MonoBehaviour
                 .Play();
             GameManager.Instance.EnqueueEnemyToRemove(this);
             Player.Instance.GiveMoney(moneyToPlayer);
+            Player.Instance.RegenMana(manaToPlayer);
         }  
     }
 

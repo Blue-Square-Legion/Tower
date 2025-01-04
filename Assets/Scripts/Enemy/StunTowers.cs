@@ -8,10 +8,14 @@ public class StunTowers : MonoBehaviour
     [SerializeField] LayerMask towerLayer;
     [SerializeField] private float countDown;
     [SerializeField] float duration;
+    public GameObject attackEffectPrefab;
 
     private List<TowerBehavior> towersInRange;
     GameManager gameManager;
     Enemy enemy;
+    private Animator animator;
+    bool attacking;
+    NavMeshMovement navmesh;
 
     void Start()
     {
@@ -19,18 +23,25 @@ public class StunTowers : MonoBehaviour
         enemy = GetComponent<Enemy>();
         countDown = 5f;
         towersInRange = new();
+        animator = GetComponentInChildren<Animator>();
+        navmesh = GetComponent<NavMeshMovement>();
     }
 
     private void Update()
     {
         countDown -= Time.deltaTime;
 
-        if (countDown < 0)
+        if (countDown < 0 && !attacking)
         {
-            StunTowersInRange();
-
-            countDown = 20f;
+            PlayStunAttackAnimation();
         }
+    }
+
+    public void PlayStunAttackAnimation()
+    {
+        attacking = true;
+        navmesh.SetSpeed(0);
+        animator.SetTrigger("StunAttack");
     }
 
     public void StunTowersInRange()
@@ -55,6 +66,18 @@ public class StunTowers : MonoBehaviour
             GameManager.ApplyBuffData buffData = new GameManager.ApplyBuffData(buff, towersInRange[i]);
             gameManager.EnqueueBuffToApply(buffData);
         }
+
+        //particle effects
+        Instantiate(attackEffectPrefab, transform.position, Quaternion.identity);
+
+    }
+
+    public void ExitAnimation()
+    {
+        navmesh.SetSpeed(enemy.speed);
+        //reset cooldown
+        countDown = 20f;
+        attacking = false;
     }
 
     private void OnDrawGizmosSelected()
