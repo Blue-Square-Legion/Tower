@@ -25,6 +25,8 @@ public class TowerBehavior : MonoBehaviour
     public bool isTaunted;
     public Enemy tauntTarget;
 
+    public GameObject StunPFX;
+
     [SerializeField] public TowerType towerType;
     [SerializeField] public TowerTargetting.TargetType targetType;
     private IDamageMethod currentDamageMethodClass;
@@ -97,8 +99,15 @@ public class TowerBehavior : MonoBehaviour
     //Desyncs the towers from regular game loop to prevent errors
     public void Tick()
     {
-        if (!isStunned)
+        if (isStunned)
+        {
+            StunPFX.SetActive(true);
+        } else
+        {
+            StunPFX.SetActive(false);
             currentDamageMethodClass.damageTick(target);
+        }
+            
 
         if (target && !isStunned)
         {
