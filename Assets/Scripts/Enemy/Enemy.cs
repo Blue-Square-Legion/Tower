@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using AudioSystem;
 using System;
+using TMPro;
 
 public class Enemy : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class Enemy : MonoBehaviour
     [NonSerialized] public bool isConfused;
     [SerializeField] AudioData audioMovement;
     [SerializeField] AudioData audioDead;
+    [SerializeField] TextMeshProUGUI enemyText;
     [NonSerialized] public TowerBehavior lastDamagingTower;
     string[] buffNames;
     private int buffNamesCount;
@@ -232,10 +234,43 @@ public class Enemy : MonoBehaviour
     {
         
         isInvisible = invisible;
+        enemyText = gameObject.GetComponentInChildren<TextMeshProUGUI>();
         if (isInvisible) {
             Debug.Log("Spawn invisible enemy:" + invisible);
-        }
+            if (enemyText)
+            {
+                enemyText.text = $"Invisible";
+            }
+        }else{
+            
+            switch (type)
+            {
+                case Enemy.EnemyType.Basic:
+                    enemyText.text = $"Basic";
+                    break;
+                case Enemy.EnemyType.Fast:
+                    enemyText.text = $"Fast";
+                    break;
+                case Enemy.EnemyType.Slow:
+                    enemyText.text = $"Slow";
+                    break;
+                case Enemy.EnemyType.Ghost:
+                    enemyText.text = $"Ghost";
+                    break;
+                case Enemy.EnemyType.Boss1:
+                    enemyText.text = $"Boss 1";
+                    break;
+                case Enemy.EnemyType.Buffer:
+                    enemyText.text = $"Buffer";
+                    break;
+                case Enemy.EnemyType.Boss2:
+                    enemyText.text = $"Boss 2";
+                    break;
+            }
+
+        }       
         
+
     }
 
     public void ReachedEnd()
