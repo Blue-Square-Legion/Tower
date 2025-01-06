@@ -428,6 +428,7 @@ public class GameManager : MonoBehaviour
                             player.GiveMoney(targetedEnemy.moneyToPlayer * targetedEnemy.lastDamagingTower.moneyMultiplier); // Gives money to player
                         else
                             player.GiveMoney(targetedEnemy.moneyToPlayer); // If enemy was defeated by a non-tower, gives normal amount of money
+                        player.RegenMana(targetedEnemy.manaToPlayer);
                         EnqueueEnemyToRemove(currentDamageData.targetedEnemy);
                     }
                         

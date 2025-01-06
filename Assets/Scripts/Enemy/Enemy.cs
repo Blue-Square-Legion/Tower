@@ -2,15 +2,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using AudioSystem;
 using System;
+using TMPro;
 
 public class Enemy : MonoBehaviour
 {
     public EnemyType type;
     public int maxHealth;
     public int moneyToPlayer;
+    public int manaToPlayer;
     public float currentHealth;
     public float speed;
-    public float currentSpeed {  get; private set; }
+    public float currentSpeed { get; private set; }
     public float damageResistance;
     public bool isInvisible;
     [NonSerialized] public int ID;
@@ -18,10 +20,10 @@ public class Enemy : MonoBehaviour
     [NonSerialized] public List<GameManager.EnemyBuff> activeBuffs;
     [NonSerialized] public List<GameManager.EnemyBuff> appliedBuffs;
     GameManager gameManager;
-    public NavMeshMovement navMeshMovement;
     [NonSerialized] public bool isConfused;
     [SerializeField] AudioData audioMovement;
     [SerializeField] AudioData audioDead;
+    [SerializeField] TextMeshProUGUI enemyText;
     [NonSerialized] public TowerBehavior lastDamagingTower;
     string[] buffNames;
     private int buffNamesCount;
@@ -34,10 +36,13 @@ public class Enemy : MonoBehaviour
     TowerBehavior burnSource;
 
     private AudioEmitter audioEmitterMove;
+    [NonSerialized] public NavMeshMovement navMeshMovement;
     public void Init()
     {
         gameManager = GameManager.Instance;
         currentHealth = maxHealth;
+        navMeshMovement = GetComponent<NavMeshMovement>();
+        navMeshMovement.SetSpeed(speed);
         currentSpeed = speed;
         activeBuffs = new();
         appliedBuffs = new();
@@ -46,8 +51,7 @@ public class Enemy : MonoBehaviour
         damageResistance = 1;
         nodeIndex = 0;
         moneyToPlayer = 10;
-        navMeshMovement = GetComponent<NavMeshMovement>();
-        navMeshMovement.SetSpeed(currentSpeed);
+        manaToPlayer = 10;
         isConfused = false;
         isSlowed = false;
         isStunned = false;
@@ -59,7 +63,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
-        gameObject.GetComponentInChildren<HealthBar>().UpdateHealth((int) currentHealth);
+        gameObject.GetComponentInChildren<HealthBar>().UpdateHealth((int)currentHealth);
         if (currentHealth <= 0)
         {
             AudioManager.Instance.CreateAudio()
@@ -68,7 +72,8 @@ public class Enemy : MonoBehaviour
                 .Play();
             GameManager.Instance.EnqueueEnemyToRemove(this);
             Player.Instance.GiveMoney(moneyToPlayer);
-        }  
+            Player.Instance.RegenMana(manaToPlayer);
+        }
     }
 
     public void Tick()
@@ -99,7 +104,7 @@ public class Enemy : MonoBehaviour
                 if (activeBuffs.RemoveAll(x => x.duration <= 0 && x.duration != -123) > 0)
                 {
                     ApplyBuffs();
-                }   
+                }
             }
         }
 
@@ -153,7 +158,7 @@ public class Enemy : MonoBehaviour
         for (int i = 0; i < buffNamesCount; i++) //Iterates through every buff in the game
         {
             //(float, float, float, float) strongestBuff = (0, 0, Mathf.NegativeInfinity, 0); // (Damage, Modifier, duration, damage rate)
-            GameManager.EnemyBuff strongestBuff = new GameManager.EnemyBuff(GameManager.EnemyBuffNames.ResistanceEnemyBuffer, 
+            GameManager.EnemyBuff strongestBuff = new GameManager.EnemyBuff(GameManager.EnemyBuffNames.ResistanceEnemyBuffer,
                 0, 0, 0, Mathf.NegativeInfinity, false, null);
             GameManager.EnemyBuff buff = null; //Stores the strongest buff
             for (int j = 0; j < activeBuffsCount; j++) //Iterates through every buff on the tower
@@ -227,12 +232,51 @@ public class Enemy : MonoBehaviour
 
     public void SetInvisibility(bool invisible)
     {
-        
+
         isInvisible = invisible;
-        if (isInvisible) {
-            Debug.Log("Spawn invisible enemy:" + invisible);
+        enemyText = gameObject.GetComponentInChildren<TextMeshProUGUI>();
+        if (isInvisible)
+        {
+            
+            if (enemyText)
+            {
+                enemyText.text = $"Invisible";
+            }
+
         }
-        
+        else
+        {
+            if (enemyText)
+            {
+                switch (type)
+                {
+                    case Enemy.EnemyType.Basic:
+                        enemyText.text = $"Basic";
+                        break;
+                    case Enemy.EnemyType.Fast:
+                        enemyText.text = $"Fast";
+                        break;
+                    case Enemy.EnemyType.Slow:
+                        enemyText.text = $"Slow";
+                        break;
+                    case Enemy.EnemyType.Ghost:
+                        enemyText.text = $"Ghost";
+                        break;
+                    case Enemy.EnemyType.Boss1:
+                        enemyText.text = $"Boss 1";
+                        break;
+                    case Enemy.EnemyType.Buffer:
+                        enemyText.text = $"Buffer";
+                        break;
+                    case Enemy.EnemyType.Boss2:
+                        enemyText.text = $"Boss 2";
+                        break;
+                }
+            }
+
+        }
+
+
     }
 
     public void ReachedEnd()

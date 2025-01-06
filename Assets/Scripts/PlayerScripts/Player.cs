@@ -44,9 +44,19 @@ public class Player : MonoBehaviour
     {
         healthText.SetText(currentHealth.ToString());
         moneyText.SetText(money.ToString());
-        if (GameManager.Instance.waveActive && currentMana < maxMana)
-            currentMana += 4 * Time.deltaTime;
+
+        // regen mana over time
+        //if (GameManager.Instance.waveActive && currentMana < maxMana)
+        //    currentMana += 4 * Time.deltaTime;
+
         manaText.text = currentMana.ToString("0");
+    }
+
+    public void RegenMana(float mana)
+    {
+        currentMana += mana;
+        if (currentMana > maxMana)
+            currentMana = maxMana;
     }
 
     public void DoDamage(int damage)
