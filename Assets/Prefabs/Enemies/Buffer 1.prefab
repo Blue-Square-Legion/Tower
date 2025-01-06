@@ -75,9 +75,11 @@ MonoBehaviour:
   type: 0
   maxHealth: 10
   moneyToPlayer: 10
+  manaToPlayer: 0
   currentHealth: 0
   speed: 2.5
   damageResistance: 1
+  isInvisible: 0
   navMeshMovement: {fileID: 0}
   audioMovement:
     audioFile: {fileID: 8300000, guid: 55472ab1e104ffd44a5a8428b56780ec, type: 3}
@@ -127,6 +129,7 @@ MonoBehaviour:
     ignoeListenerVolume: 0
     ignoreListenerPause: 0
     audioRollOffMode: 1
+  enemyText: {fileID: 0}
 --- !u!114 &1366626184207830484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,7 +321,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
