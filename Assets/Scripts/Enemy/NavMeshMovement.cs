@@ -38,6 +38,11 @@ public class NavMeshMovement : MonoBehaviour
             agent.speed = speed;
     }
 
+    public float GetSpeed()
+    {
+        return agent.speed;
+    }
+
     public void ResetDestination()
     {
         if(target != null)
