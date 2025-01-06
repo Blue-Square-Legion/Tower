@@ -490,10 +490,9 @@ MonoBehaviour:
   moneyToPlayer: 2
   manaToPlayer: 0
   currentHealth: 0
-  speed: 4
+  speed: 5
   damageResistance: 1
   isInvisible: 0
-  navMeshMovement: {fileID: 0}
   audioMovement:
     audioFile: {fileID: 8300000, guid: ff5761a7f164b87488a4e0234f2a11fc, type: 3}
     volume: 1
@@ -594,7 +593,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.01
-  m_Speed: 3
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 20

@@ -76,10 +76,9 @@ MonoBehaviour:
   moneyToPlayer: 10
   manaToPlayer: 0
   currentHealth: 0
-  speed: 2.5
+  speed: 3
   damageResistance: 1
   isInvisible: 0
-  navMeshMovement: {fileID: 0}
   audioMovement:
     audioFile: {fileID: 8300000, guid: 55472ab1e104ffd44a5a8428b56780ec, type: 3}
     volume: 1
