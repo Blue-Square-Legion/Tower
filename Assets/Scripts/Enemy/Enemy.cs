@@ -19,7 +19,6 @@ public class Enemy : MonoBehaviour
     [NonSerialized] public List<GameManager.EnemyBuff> activeBuffs;
     [NonSerialized] public List<GameManager.EnemyBuff> appliedBuffs;
     GameManager gameManager;
-    public NavMeshMovement navMeshMovement;
     [NonSerialized] public bool isConfused;
     [SerializeField] AudioData audioMovement;
     [SerializeField] AudioData audioDead;
@@ -35,10 +34,13 @@ public class Enemy : MonoBehaviour
     TowerBehavior burnSource;
 
     private AudioEmitter audioEmitterMove;
+    [NonSerialized] public NavMeshMovement navMeshMovement;
     public void Init()
     {
         gameManager = GameManager.Instance;
         currentHealth = maxHealth;
+        navMeshMovement = GetComponent<NavMeshMovement>();
+        navMeshMovement.SetSpeed(speed);
         currentSpeed = speed;
         activeBuffs = new();
         appliedBuffs = new();
@@ -48,8 +50,6 @@ public class Enemy : MonoBehaviour
         nodeIndex = 0;
         moneyToPlayer = 10;
         manaToPlayer = 10;
-        navMeshMovement = GetComponent<NavMeshMovement>();
-        navMeshMovement.SetSpeed(currentSpeed);
         isConfused = false;
         isSlowed = false;
         isStunned = false;
