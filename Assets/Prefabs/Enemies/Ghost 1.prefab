@@ -468,7 +468,6 @@ MonoBehaviour:
   speed: 3.5
   damageResistance: 2
   isInvisible: 0
-  navMeshMovement: {fileID: 0}
   audioMovement:
     audioFile: {fileID: 8300000, guid: 8d64594e78000094f960dfdd92e05074, type: 3}
     volume: 1
@@ -542,7 +541,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -334000983
   m_Radius: 0.5
-  m_Speed: 3
+  m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
