@@ -2093,7 +2093,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -7236,10 +7236,11 @@ MonoBehaviour:
   type: 0
   maxHealth: 32
   moneyToPlayer: 20
+  manaToPlayer: 0
   currentHealth: 0
   speed: 1
   damageResistance: 2
-  navMeshMovement: {fileID: 0}
+  isInvisible: 0
   audioMovement:
     audioFile: {fileID: 8300000, guid: 6923ce5531bb53d449b49423892b290f, type: 3}
     volume: 1
@@ -7288,6 +7289,7 @@ MonoBehaviour:
     ignoeListenerVolume: 0
     ignoreListenerPause: 0
     audioRollOffMode: 1
+  enemyText: {fileID: 0}
 --- !u!54 &5850838931852548065
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7327,7 +7329,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27540ca45a1732c47afc8d4336c2c9af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
+  agent: {fileID: 2737854433725824155}
+  remainingDist: 0
 --- !u!195 &2737854433725824155
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -7338,7 +7341,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1
-  m_Speed: 3
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

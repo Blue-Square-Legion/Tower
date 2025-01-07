@@ -137,7 +137,7 @@ public class GameManager : MonoBehaviour
                 yield return new WaitForSeconds(1);
                 for (int i = 0; i < 5; i++)
                 {
-                    EnqueueEnemy(Enemy.EnemyType.Basic, 1, 0, false);
+                    EnqueueEnemy(Enemy.EnemyType.Basic, 1, 0, true);
                     yield return new WaitForSeconds(1);
                 }
                 nextSpawnPoints = new int[] { 0 };
