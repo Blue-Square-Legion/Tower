@@ -24323,6 +24323,32 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5513514875868103988, guid: 03d516b99d08f404889216785393e3b4,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 44ad80f719e2a6048a2b3805c5431a4b,
+        type: 3}
+    - target: {fileID: 5513514875868103988, guid: 03d516b99d08f404889216785393e3b4,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5513514875868103988, guid: 03d516b99d08f404889216785393e3b4,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.7686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 5513514875868103988, guid: 03d516b99d08f404889216785393e3b4,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.7686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 5513514875868103988, guid: 03d516b99d08f404889216785393e3b4,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.7686275
+      objectReference: {fileID: 0}
     - target: {fileID: 5546844138256117776, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
