@@ -2157,7 +2157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 337494102}
   - component: {fileID: 337494103}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: NavMeshObstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3159,7 +3159,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6f084c075257dcc4889d555163686fb2,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6f084c075257dcc4889d555163686fb2,
         type: 3}
@@ -6297,7 +6297,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6f084c075257dcc4889d555163686fb2,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6f084c075257dcc4889d555163686fb2,
         type: 3}
@@ -7838,9 +7838,9 @@ GameObject:
   - component: {fileID: 1017785826}
   - component: {fileID: 1017785825}
   - component: {fileID: 1017785824}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PolyShape (01)
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8903,9 +8903,9 @@ GameObject:
   - component: {fileID: 1123537039}
   - component: {fileID: 1123537038}
   - component: {fileID: 1123537037}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Buildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -9918,9 +9918,9 @@ GameObject:
   - component: {fileID: 1227969183}
   - component: {fileID: 1227969182}
   - component: {fileID: 1227969181}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PolyShape
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11844,7 +11844,7 @@ GameObject:
   - component: {fileID: 1400617403}
   - component: {fileID: 1400617402}
   - component: {fileID: 1400617401}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main
   m_TagString: NotBuildable
   m_Icon: {fileID: 0}
@@ -13274,7 +13274,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6f084c075257dcc4889d555163686fb2,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6f084c075257dcc4889d555163686fb2,
         type: 3}
@@ -17172,9 +17172,9 @@ GameObject:
   - component: {fileID: 1827418521}
   - component: {fileID: 1827418520}
   - component: {fileID: 1827418519}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PolyShape (02)
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17425,9 +17425,9 @@ GameObject:
   - component: {fileID: 1835157767}
   - component: {fileID: 1835157766}
   - component: {fileID: 1835157765}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PolyShape
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21035,6 +21035,11 @@ PrefabInstance:
       propertyPath: m_UseGeometry
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 522174834470754533, guid: 3097d7856a193a74badbdd70d564ce4a,
+        type: 3}
+      propertyPath: m_LayerMask.m_Bits
+      value: 264
+      objectReference: {fileID: 0}
     - target: {fileID: 3800303233597345700, guid: 3097d7856a193a74badbdd70d564ce4a,
         type: 3}
       propertyPath: m_NavMeshData
@@ -21045,6 +21050,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_UseGeometry
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800303233597345700, guid: 3097d7856a193a74badbdd70d564ce4a,
+        type: 3}
+      propertyPath: m_LayerMask.m_Bits
+      value: 264
       objectReference: {fileID: 0}
     - target: {fileID: 5068741622115315282, guid: 3097d7856a193a74badbdd70d564ce4a,
         type: 3}
@@ -22671,6 +22681,16 @@ PrefabInstance:
       propertyPath: agents.Array.data[2]
       value: 
       objectReference: {fileID: 1050824616}
+    - target: {fileID: 857896611727877094, guid: 22d70330496e4474db168f477a4993e2,
+        type: 3}
+      propertyPath: placementCheckMask.m_Bits
+      value: 383
+      objectReference: {fileID: 0}
+    - target: {fileID: 857896611727877094, guid: 22d70330496e4474db168f477a4993e2,
+        type: 3}
+      propertyPath: placementColliderMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 3088496653915348084, guid: 22d70330496e4474db168f477a4993e2,
         type: 3}
       propertyPath: manaText
