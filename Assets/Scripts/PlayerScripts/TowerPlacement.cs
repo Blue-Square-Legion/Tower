@@ -96,7 +96,11 @@ public class TowerPlacement : MonoBehaviour
 
                         if (Input.GetMouseButtonDown(0) && hitInfo.collider.gameObject != null)
                         {
+                            towerCollider.isTrigger = false;
+                            towerCollider.providesContacts = true;
                             dummySurface.BuildNavMesh();
+                            towerCollider.isTrigger = true;
+                            towerCollider.providesContacts = false;
                             CheckPath();
                             // Build if path wont be blocked
                             if (!pathBlocked)
@@ -104,11 +108,12 @@ public class TowerPlacement : MonoBehaviour
 
                                 if (canPlace)
                                 {
+                                    towerCollider.isTrigger = false;
+                                    towerCollider.providesContacts = true;
                                     surface.BuildNavMesh();
                                     gameManager.builtTowers.Add(currentTowerBeingPlaced.GetComponent<TowerBehavior>());
                                     player.RemoveMoney(currentTowerBeingPlaced.GetComponent<TowerBehavior>().cost);
-                                    towerCollider.isTrigger = false;
-                                    towerCollider.providesContacts = true;
+                                    
 
                                     if (currentTowerBeingPlaced.TryGetComponent(out SupportBehavior supportBehavior)) //When placement is locked in, do method
                                         supportBehavior.Built();
