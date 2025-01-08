@@ -80,7 +80,6 @@ MonoBehaviour:
   speed: 2.5
   damageResistance: 1
   isInvisible: 0
-  navMeshMovement: {fileID: 0}
   audioMovement:
     audioFile: {fileID: 8300000, guid: 55472ab1e104ffd44a5a8428b56780ec, type: 3}
     volume: 1
@@ -372,7 +371,7 @@ GameObject:
   - component: {fileID: 3053470233531336118}
   - component: {fileID: 5479999663447080727}
   - component: {fileID: 8617833233970342426}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
