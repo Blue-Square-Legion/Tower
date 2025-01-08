@@ -7840,7 +7840,7 @@ GameObject:
   - component: {fileID: 1017785824}
   m_Layer: 8
   m_Name: PolyShape (01)
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8905,7 +8905,7 @@ GameObject:
   - component: {fileID: 1123537037}
   m_Layer: 8
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Buildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -9920,7 +9920,7 @@ GameObject:
   - component: {fileID: 1227969181}
   m_Layer: 8
   m_Name: PolyShape
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17174,7 +17174,7 @@ GameObject:
   - component: {fileID: 1827418519}
   m_Layer: 8
   m_Name: PolyShape (02)
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17427,7 +17427,7 @@ GameObject:
   - component: {fileID: 1835157765}
   m_Layer: 8
   m_Name: PolyShape
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
