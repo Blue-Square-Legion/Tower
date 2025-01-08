@@ -217,7 +217,6 @@ public class TowerPlacement : MonoBehaviour
     private void CheckPath(BoxCollider collider)
     {
         collider.isTrigger = false;
-        collider.providesContacts = true;
         dummySurface.BuildNavMesh();
 
         NavMeshPath path = new NavMeshPath();
