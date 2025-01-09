@@ -219,12 +219,12 @@ public class UIManager : MonoBehaviour
             towerType.GetUpgradeName(2, 3).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(2, 3);
     }
 
-    public void ShowAllUpgrades()
+    public void ShowCompendium()
     {
         upgradeScreen.SetActive(true);
     }
 
-    public void HideAllUpgrades()
+    public void HideCompendium()
     {
         upgradeScreen.SetActive(false);
     }
