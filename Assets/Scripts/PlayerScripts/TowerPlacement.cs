@@ -96,8 +96,7 @@ public class TowerPlacement : MonoBehaviour
 
                         if (Input.GetMouseButtonDown(0) && hitInfo.collider.gameObject != null)
                         {
-                            dummySurface.BuildNavMesh();
-                            CheckPath();
+                            CheckPath(towerCollider);
                             // Build if path wont be blocked
                             if (!pathBlocked)
                             {
@@ -107,8 +106,7 @@ public class TowerPlacement : MonoBehaviour
                                     surface.BuildNavMesh();
                                     gameManager.builtTowers.Add(currentTowerBeingPlaced.GetComponent<TowerBehavior>());
                                     player.RemoveMoney(currentTowerBeingPlaced.GetComponent<TowerBehavior>().cost);
-                                    towerCollider.isTrigger = false;
-                                    towerCollider.providesContacts = true;
+                                    
 
                                     if (currentTowerBeingPlaced.TryGetComponent(out SupportBehavior supportBehavior)) //When placement is locked in, do method
                                         supportBehavior.Built();
@@ -216,20 +214,25 @@ public class TowerPlacement : MonoBehaviour
         surface.BuildNavMesh();
     }
 
-    private void CheckPath()
+    private void CheckPath(BoxCollider collider)
     {
+        collider.isTrigger = false;
+        dummySurface.BuildNavMesh();
+
         NavMeshPath path = new NavMeshPath();
-        //dummySurface.BuildNavMesh();
         foreach (NavMeshAgent agent in agents)
         {
             agent.CalculatePath(destination.position, path);
             if (path.status != NavMeshPathStatus.PathComplete)
             {
                 pathBlocked = true;
+                collider.isTrigger = true;
+                collider.providesContacts = false;
                 return;
             }
 
         }
+        
         pathBlocked = false; ;
     }
 
