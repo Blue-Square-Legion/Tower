@@ -115,6 +115,7 @@ public class EnemySpawner : MonoBehaviour
     {
         enemyObjectPools[enemyToRemove.ID].Enqueue(enemyToRemove); //Makes enemy idle and inactive - extremely efficient
         enemyToRemove.gameObject.SetActive(false);
+        enemyToRemove.isAlive = false;
 
         enemyTransformDictionary.Remove(enemyToRemove.transform);
         spawnedEnemiesTransform.Remove(enemyToRemove.transform);
@@ -126,7 +127,7 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < SpawnPoints.Length; i++)
         {
-            SpawnPoints[i].GetChild(0).gameObject.SetActive(false);
+            SpawnPoints[i].GetChild(1).gameObject.SetActive(false);
         }
         print("deactivated spawn indicators");
     }
@@ -136,7 +137,7 @@ public class EnemySpawner : MonoBehaviour
     {
         foreach (int id in spawnPoints)
         {
-            SpawnPoints[id].GetChild(0).gameObject.SetActive(true);
+            SpawnPoints[id].GetChild(1).gameObject.SetActive(true);
             print("activated spawn indicator: " + id);
         }
     }

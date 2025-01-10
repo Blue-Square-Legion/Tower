@@ -11,13 +11,15 @@ public class Missile : MonoBehaviour
     EnemySpawner enemySpawner;
 
     [NonSerialized] public GameObject parent;
+    [NonSerialized] public Enemy target;
     private MissileDamage parentClass;
     private float speed;
-    float time;
-
+    private float time;
+    private Vector3 direction;
+    private Transform targetTransform;
     public void Init()
     {
-        if (parent != null)
+        if (parent != null && target != null)
         {
             gameManager = GameManager.Instance;
             enemySpawner = EnemySpawner.Instance;
@@ -26,6 +28,7 @@ public class Missile : MonoBehaviour
             explosionSystem = parent.GetComponentInChildren<ParticleSystem>();
             explosionSystem.startSize = explosionRadius;
             parentClass = parent.GetComponent<MissileDamage>();
+            targetTransform = target.gameObject.transform;
 
             StartCoroutine(Fire());
         }
@@ -33,11 +36,20 @@ public class Missile : MonoBehaviour
 
     IEnumerator Fire()
     {
-        while (time < 5)
+        while (time < 2)
         {
+            if (target.isAlive)
+            {
+                direction = targetTransform.position - transform.position;
+                direction.Normalize();
+                transform.rotation = Quaternion.LookRotation(direction);
+            }
+            
             transform.position += transform.forward * speed;
+            time += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
+        Destroy(gameObject);
     }
 
     public void OnTriggerEnter(Collider other)

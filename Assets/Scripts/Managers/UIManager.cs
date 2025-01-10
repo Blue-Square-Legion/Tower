@@ -219,12 +219,12 @@ public class UIManager : MonoBehaviour
             towerType.GetUpgradeName(2, 3).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(2, 3);
     }
 
-    public void ShowAllUpgrades()
+    public void ShowCompendium()
     {
         upgradeScreen.SetActive(true);
     }
 
-    public void HideAllUpgrades()
+    public void HideCompendium()
     {
         upgradeScreen.SetActive(false);
     }
@@ -268,7 +268,7 @@ public class UIManager : MonoBehaviour
     {
         while (Mathf.Abs(towersPanel.anchoredPosition.x - towerPanelCollapsedPosition.x) >= 0.1)
         {
-            towersPanel.anchoredPosition = new Vector2(Vector2.MoveTowards(towersPanel.anchoredPosition, towerPanelCollapsedPosition, 20 * Time.deltaTime * 60).x, towersPanel.anchoredPosition.y);
+            towersPanel.anchoredPosition = Vector2.MoveTowards(towersPanel.anchoredPosition, towerPanelCollapsedPosition, 20 * Time.deltaTime * 60);
             yield return new WaitForEndOfFrame();
         }
         toggleTowersClickable = true;

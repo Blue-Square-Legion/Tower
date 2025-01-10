@@ -317,7 +317,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Runes vs Robots V1.0 By Team Freezer
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cd3bdc69e1c7f3743be46492e1277b1e, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -381,7 +381,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &39030368
@@ -432,6 +432,8 @@ MonoBehaviour:
   upgradeArrow: {fileID: 0}
   popUpScreen: {fileID: 0}
   popUpMessage: {fileID: 0}
+  towersPanel: {fileID: 0}
+  collapsePositionTowerPanelRectTransform: {fileID: 0}
   runeSelection: {fileID: 0}
   towerSelection: {fileID: 0}
   upgradeScreen: {fileID: 0}
@@ -646,7 +648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1234,13 +1236,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "@kaptainKirby - Team Lead / Producer / Programmer\r\n@Oscar Hernandez
-    - Co Lead / Lead Artist\r\n@Chiferito - Lead Programmer \r\n@MUGWANEZA MANZI
-    Audace - Lead Game Designer\r\n@ilan - Lead Sound Designer \r\n@Triplejay - 3D
-    Artist\r\n@heiki 3D Artist\r\n@peri.pekoe - 2D Artist\r\n@Aceofspade - Programmer"
+  m_text: "kaptainKirby - Team Lead / Producer / Programmer\r\nOscar Hernandez -
+    Co Lead / Lead Artist\r\nChiferito - Lead Programmer \r\nMUGWANEZA MANZI Audace
+    - Lead Game Designer\r\nilan - Lead Sound Designer \r\nTriplejay - 3D Artist\r\nheiki
+    3D Artist\r\nperi.pekoe - 2D Artist\r\nAceofspade - Programmer"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cd3bdc69e1c7f3743be46492e1277b1e, type: 2}
+  m_sharedMaterial: {fileID: 4067470592076721162, guid: cd3bdc69e1c7f3743be46492e1277b1e,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2094,7 +2097,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &982687771
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2176,14 +2179,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "@CommonCurtisy13      : Producer\r\n@EshGetty       Producer/Team-Lead\r\n@mangs     
-    :  2D artist/Animations/Tilesets/Co-Lead\r\n@illzone.sound: Sound Designer (Wwise,
-    Unreal)\r\n@kaptainKirby  : Programmer (Unity)\r\n@Chiferito      :  Programmer
-    \r\n@TanzaniteEric   : Game Designer (Unity)\r\n@\u13CA\u1D52\uA20A\u02C2\u0324\u13CA\xB7\u02DA\u207A\u02C8\u22C6\u2729
-    dahee    : 3D Artist\r\n@Oscar Hernandez  : 3D artist\r\n@Triplejay     : 3D
-    Artist"
+  m_text: "CommonCurtisy13 - Producer\r\nEshGetty - Producer/Team-Lead\r\nmangs -
+    2D artist/Animations/Tilesets/Co-Lead\r\nillzone.sound: Sound Designer (Wwise,
+    Unreal)\r\nkaptainKirby - Programmer (Unity)\r\nChiferito - Programmer \r\nTanzaniteEric
+    - Game Designer (Unity)\r\ndahee - 3D Artist\r\nOscar Hernandez - 3D artist\r\nTriplejay
+    - 3D Artist"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cd3bdc69e1c7f3743be46492e1277b1e, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2247,7 +2249,7 @@ MonoBehaviour:
   m_margin: {x: -154.95091, y: 0, z: -49.190796, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1018719566
@@ -2308,7 +2310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3091,8 +3093,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Runes vs Robots V2.0 By Team Freezer
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cd3bdc69e1c7f3743be46492e1277b1e, type: 2}
+  m_sharedMaterial: {fileID: 4067470592076721162, guid: cd3bdc69e1c7f3743be46492e1277b1e,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3223,7 +3226,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Play Level2
+  m_text: Play Level 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
