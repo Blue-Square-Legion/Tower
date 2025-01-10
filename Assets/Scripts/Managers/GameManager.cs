@@ -133,11 +133,9 @@ public class GameManager : MonoBehaviour
         switch (wave)
         {
             case 0:
-                EnqueueEnemy(Enemy.EnemyType.Buffer, 1, 0, false);
-                yield return new WaitForSeconds(1);
                 for (int i = 0; i < 5; i++)
                 {
-                    EnqueueEnemy(Enemy.EnemyType.Basic, 1, 0, true);
+                    EnqueueEnemy(Enemy.EnemyType.Basic, 1, 0, false);
                     yield return new WaitForSeconds(1);
                 }
                 nextSpawnPoints = new int[] { 0 };
@@ -164,7 +162,7 @@ public class GameManager : MonoBehaviour
                 {
                     EnqueueEnemy(Enemy.EnemyType.Basic,1, 0, false);
                     yield return new WaitForSeconds(1);
-                    EnqueueEnemy(Enemy.EnemyType.Ghost, 1, 0, false);
+                    EnqueueEnemy(Enemy.EnemyType.Spider, 1, 0, false);
                     yield return new WaitForSeconds(1);
                 }
                 nextSpawnPoints = new int[] { 0 };
@@ -560,7 +558,7 @@ public class GameManager : MonoBehaviour
             case Enemy.EnemyType.Slow:
                 enemyID += 30;
                 break;
-            case Enemy.EnemyType.Ghost:
+            case Enemy.EnemyType.Spider:
                 enemyID += 40;
                 break;
             case Enemy.EnemyType.Boss1:
@@ -571,6 +569,12 @@ public class GameManager : MonoBehaviour
                 break;
             case Enemy.EnemyType.Boss2:
                 enemyID += 70;
+                break;
+            case Enemy.EnemyType.Stealth:
+                enemyID += 80;
+                break;
+            default:
+                print("ERROR: FAILED TO GRAB ENEMY DATA");
                 break;
         }
 

@@ -43,6 +43,9 @@ public class TowerBehavior : MonoBehaviour
 
     GameObject lastSelectedTower;
 
+    [NonSerialized] public bool isPath1Restricted;
+    [NonSerialized] public bool isPath2Restricted;
+    [NonSerialized] public bool isPath3Restricted;
     private void Start()
     {
         targetType = TowerTargetting.TargetType.First;
@@ -77,6 +80,10 @@ public class TowerBehavior : MonoBehaviour
         upgradeLevel1 = 1;
         upgradeLevel2 = 1;
         upgradeLevel3 = 1;
+
+        isPath1Restricted = false;
+        isPath2Restricted = false;
+        isPath3Restricted = false;
 
         upgradeDescription1 = GetUpgradeData(0, 1).name;
         upgradeCost1 = GetUpgradeData(0, 1).cost;
