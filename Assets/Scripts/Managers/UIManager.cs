@@ -268,7 +268,7 @@ public class UIManager : MonoBehaviour
     {
         while (Mathf.Abs(towersPanel.anchoredPosition.x - towerPanelCollapsedPosition.x) >= 0.1)
         {
-            towersPanel.anchoredPosition = new Vector2(Vector2.MoveTowards(towersPanel.anchoredPosition, towerPanelCollapsedPosition, 20 * Time.deltaTime * 60).x, towersPanel.anchoredPosition.y);
+            towersPanel.anchoredPosition = Vector2.MoveTowards(towersPanel.anchoredPosition, towerPanelCollapsedPosition, 20 * Time.deltaTime * 60);
             yield return new WaitForEndOfFrame();
         }
         toggleTowersClickable = true;
