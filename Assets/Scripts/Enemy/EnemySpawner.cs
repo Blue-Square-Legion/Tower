@@ -115,6 +115,7 @@ public class EnemySpawner : MonoBehaviour
     {
         enemyObjectPools[enemyToRemove.ID].Enqueue(enemyToRemove); //Makes enemy idle and inactive - extremely efficient
         enemyToRemove.gameObject.SetActive(false);
+        enemyToRemove.isAlive = false;
 
         enemyTransformDictionary.Remove(enemyToRemove.transform);
         spawnedEnemiesTransform.Remove(enemyToRemove.transform);

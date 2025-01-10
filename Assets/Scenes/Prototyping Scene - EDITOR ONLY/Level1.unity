@@ -8,9 +8,8 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 5d9c2907bad81bc4ea378df57ef9e918
-  m_OcclusionCullingData: {fileID: 36300000, guid: 9e2904c1fcc4b0548bdc2f8a583f7bd6,
-    type: 2}
+  m_SceneGUID: 00000000000000000000000000000000
+  m_OcclusionCullingData: {fileID: 0}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -649,6 +648,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CastleWall (09)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1358808ef7154e42a458f9db88721ba,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1059,7 +1063,7 @@ GameObject:
   - component: {fileID: 67660049}
   m_Layer: 0
   m_Name: Lightposts
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2643,7 +2647,7 @@ GameObject:
   - component: {fileID: 388411133}
   m_Layer: 0
   m_Name: NewPortals
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2677,7 +2681,7 @@ GameObject:
   - component: {fileID: 409435602}
   m_Layer: 0
   m_Name: TreeStumps
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2892,6 +2896,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Banner (02)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 109fcaa6304aa6143b2a1333b733c8f0,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3012,7 +3021,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6f084c075257dcc4889d555163686fb2,
         type: 3}
       propertyPath: m_TagString
-      value: NotBuildable
+      value: Buildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3138,6 +3147,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CastleTower (09)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 559980a44c123434f86803b5f45da823,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 559980a44c123434f86803b5f45da823,
         type: 3}
@@ -3473,6 +3487,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 559980a44c123434f86803b5f45da823,
         type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 559980a44c123434f86803b5f45da823,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -3643,6 +3662,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CastleMainTower (01)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de32b2a080d2ba74391ac89f0a6bd449,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3916,6 +3940,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CastleWall
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1358808ef7154e42a458f9db88721ba,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4009,6 +4038,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CastleTower (08)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 559980a44c123434f86803b5f45da823,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 559980a44c123434f86803b5f45da823,
         type: 3}
@@ -4528,6 +4562,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 559980a44c123434f86803b5f45da823,
         type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 559980a44c123434f86803b5f45da823,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -4838,6 +4877,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 559980a44c123434f86803b5f45da823,
         type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 559980a44c123434f86803b5f45da823,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -5076,6 +5120,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Banner
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 109fcaa6304aa6143b2a1333b733c8f0,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5379,6 +5428,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CastleWall (08)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1358808ef7154e42a458f9db88721ba,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5472,6 +5526,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CastleWall (01)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1358808ef7154e42a458f9db88721ba,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5707,6 +5766,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CastleTower (03)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 559980a44c123434f86803b5f45da823,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 559980a44c123434f86803b5f45da823,
         type: 3}
@@ -6126,7 +6190,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6f084c075257dcc4889d555163686fb2,
         type: 3}
       propertyPath: m_TagString
-      value: NotBuildable
+      value: Buildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6332,6 +6396,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Banner (03)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 109fcaa6304aa6143b2a1333b733c8f0,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7343,6 +7412,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Banner (01)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 109fcaa6304aa6143b2a1333b733c8f0,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8174,7 +8248,7 @@ GameObject:
   - component: {fileID: 1078218114}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9159,7 +9233,7 @@ GameObject:
   - component: {fileID: 1160972197}
   m_Layer: 0
   m_Name: Fences
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9267,6 +9341,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CastleWall (05)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1358808ef7154e42a458f9db88721ba,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9436,6 +9515,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CastleGate (01)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f11c74788dd91304a8672ab9427ade83,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f11c74788dd91304a8672ab9427ade83,
         type: 3}
@@ -10226,6 +10310,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 559980a44c123434f86803b5f45da823,
         type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 559980a44c123434f86803b5f45da823,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -10322,6 +10411,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CastleMainTower (03)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de32b2a080d2ba74391ac89f0a6bd449,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11220,6 +11314,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 559980a44c123434f86803b5f45da823,
         type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 559980a44c123434f86803b5f45da823,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -11369,6 +11468,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CastleTower (01)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 559980a44c123434f86803b5f45da823,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 559980a44c123434f86803b5f45da823,
         type: 3}
@@ -12398,6 +12502,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CastleWall (06)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1358808ef7154e42a458f9db88721ba,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12725,6 +12834,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CastleWall (03)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1358808ef7154e42a458f9db88721ba,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13143,7 +13257,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6f084c075257dcc4889d555163686fb2,
         type: 3}
       propertyPath: m_TagString
-      value: NotBuildable
+      value: Buildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15412,6 +15526,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CastleWall (02)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1358808ef7154e42a458f9db88721ba,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15670,6 +15789,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CastleTower (05)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 559980a44c123434f86803b5f45da823,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 559980a44c123434f86803b5f45da823,
         type: 3}
@@ -16433,7 +16557,7 @@ GameObject:
   - component: {fileID: 1767898927}
   m_Layer: 0
   m_Name: DownedTree
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16791,6 +16915,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CastleGate
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f11c74788dd91304a8672ab9427ade83,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f11c74788dd91304a8672ab9427ade83,
         type: 3}
@@ -17729,6 +17858,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CastleWall (07)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1358808ef7154e42a458f9db88721ba,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17822,6 +17956,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CastleTower (04)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 559980a44c123434f86803b5f45da823,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 559980a44c123434f86803b5f45da823,
         type: 3}
@@ -19335,6 +19474,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CastleWall (04)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1358808ef7154e42a458f9db88721ba,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19428,6 +19572,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CastleTower (07)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 559980a44c123434f86803b5f45da823,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 559980a44c123434f86803b5f45da823,
         type: 3}
@@ -19527,6 +19676,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CastleMain
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0d00619fd3d1a404f8f183e970453a4c,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19738,6 +19892,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CastleMainTower (02)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de32b2a080d2ba74391ac89f0a6bd449,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19849,6 +20008,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CastleMainTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de32b2a080d2ba74391ac89f0a6bd449,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20999,22 +21163,22 @@ PrefabInstance:
     - target: {fileID: 46169212859836447, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 46169212859836447, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 46169212859836447, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 650
       objectReference: {fileID: 0}
     - target: {fileID: 46169212859836447, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -226.56601
       objectReference: {fileID: 0}
     - target: {fileID: 112606669652895270, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
@@ -21144,7 +21308,7 @@ PrefabInstance:
     - target: {fileID: 258094442363363315, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 1280
       objectReference: {fileID: 0}
     - target: {fileID: 258094442363363315, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
@@ -21159,22 +21323,22 @@ PrefabInstance:
     - target: {fileID: 420269677130710042, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 420269677130710042, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 420269677130710042, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 1070
       objectReference: {fileID: 0}
     - target: {fileID: 420269677130710042, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -226.56601
       objectReference: {fileID: 0}
     - target: {fileID: 605651907069984265, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
@@ -21446,22 +21610,22 @@ PrefabInstance:
     - target: {fileID: 2135730181709304577, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2135730181709304577, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2135730181709304577, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 440
       objectReference: {fileID: 0}
     - target: {fileID: 2135730181709304577, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -226.56601
       objectReference: {fileID: 0}
     - target: {fileID: 2184279271698208685, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
@@ -21637,22 +21801,22 @@ PrefabInstance:
     - target: {fileID: 3760278310943486113, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3760278310943486113, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3760278310943486113, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 230
       objectReference: {fileID: 0}
     - target: {fileID: 3760278310943486113, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -226.56601
       objectReference: {fileID: 0}
     - target: {fileID: 4288123190525104724, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
@@ -22036,22 +22200,22 @@ PrefabInstance:
     - target: {fileID: 6497652828710283819, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6497652828710283819, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6497652828710283819, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 1280
       objectReference: {fileID: 0}
     - target: {fileID: 6497652828710283819, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -226.56601
       objectReference: {fileID: 0}
     - target: {fileID: 6536190439607336534, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
@@ -22061,12 +22225,12 @@ PrefabInstance:
     - target: {fileID: 6542115310543512022, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.6731485
       objectReference: {fileID: 0}
     - target: {fileID: 6542115310543512022, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6542115310543512022, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
@@ -22162,7 +22326,7 @@ PrefabInstance:
     - target: {fileID: 6957602829593860296, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7333652051965979787, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
@@ -22217,22 +22381,22 @@ PrefabInstance:
     - target: {fileID: 7827048161096296750, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7827048161096296750, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7827048161096296750, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 860
       objectReference: {fileID: 0}
     - target: {fileID: 7827048161096296750, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -226.56601
       objectReference: {fileID: 0}
     - target: {fileID: 7853171360955162937, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
@@ -22429,22 +22593,22 @@ PrefabInstance:
     - target: {fileID: 9086779119665387715, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9086779119665387715, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9086779119665387715, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 9086779119665387715, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -226.56601
       objectReference: {fileID: 0}
     - target: {fileID: 9165470925288346008, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
