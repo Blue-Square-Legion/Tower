@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 588891248015634868}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.389193, z: 0}
+  m_LocalPosition: {x: 0, y: -0.154, z: 0}
   m_LocalScale: {x: 1.5, y: 0.2, z: 0.0015}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -145,7 +145,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.027, y: 0}
+  m_AnchoredPosition: {x: 0.027, y: 0.006}
   m_SizeDelta: {x: 86.0868, y: 62.2991}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1717377878468018667
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ghost 1
+  m_text: Spider 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cd3bdc69e1c7f3743be46492e1277b1e, type: 2}
   m_sharedMaterial: {fileID: 4067470592076721162, guid: cd3bdc69e1c7f3743be46492e1277b1e,
@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f116d4f62f2db374e8fa2359cce6ff0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 3
   maxHealth: 10
   moneyToPlayer: 10
   manaToPlayer: 0

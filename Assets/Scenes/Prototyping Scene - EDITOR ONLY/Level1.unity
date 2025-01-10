@@ -803,6 +803,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FixedTree4 (01)
       objectReference: {fileID: 0}
+    - target: {fileID: 2200396103908425505, guid: 1c839723b6b757a4eba9de31de506f1e,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1059,7 +1064,7 @@ GameObject:
   - component: {fileID: 67660049}
   m_Layer: 0
   m_Name: Lightposts
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2701,7 +2706,7 @@ GameObject:
   - component: {fileID: 409435602}
   m_Layer: 0
   m_Name: TreeStumps
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3036,7 +3041,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6f084c075257dcc4889d555163686fb2,
         type: 3}
       propertyPath: m_TagString
-      value: NotBuildable
+      value: Buildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4136,6 +4141,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FixedTree4 (02)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2200396103908425505, guid: 1c839723b6b757a4eba9de31de506f1e,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5829,6 +5839,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FixedTree4 (03)
       objectReference: {fileID: 0}
+    - target: {fileID: 2200396103908425505, guid: 1c839723b6b757a4eba9de31de506f1e,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6168,7 +6183,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6f084c075257dcc4889d555163686fb2,
         type: 3}
       propertyPath: m_TagString
-      value: NotBuildable
+      value: Buildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7111,6 +7126,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FixedTree4 (07)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2200396103908425505, guid: 1c839723b6b757a4eba9de31de506f1e,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8299,6 +8319,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FixedTree4 (04)
       objectReference: {fileID: 0}
+    - target: {fileID: 2200396103908425505, guid: 1c839723b6b757a4eba9de31de506f1e,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9195,7 +9220,7 @@ GameObject:
   - component: {fileID: 1160972197}
   m_Layer: 0
   m_Name: Fences
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13203,7 +13228,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6f084c075257dcc4889d555163686fb2,
         type: 3}
       propertyPath: m_TagString
-      value: NotBuildable
+      value: Buildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13720,6 +13745,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FixedTree4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2200396103908425505, guid: 1c839723b6b757a4eba9de31de506f1e,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15834,6 +15864,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FixedTree4 (06)
       objectReference: {fileID: 0}
+    - target: {fileID: 2200396103908425505, guid: 1c839723b6b757a4eba9de31de506f1e,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16529,7 +16564,7 @@ GameObject:
   - component: {fileID: 1767898927}
   m_Layer: 0
   m_Name: DownedTree
-  m_TagString: Untagged
+  m_TagString: NotBuildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16793,6 +16828,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FixedTree4 (05)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2200396103908425505, guid: 1c839723b6b757a4eba9de31de506f1e,
+        type: 3}
+      propertyPath: m_TagString
+      value: NotBuildable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21237,7 +21277,7 @@ PrefabInstance:
     - target: {fileID: 258094442363363315, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -430.815
+      value: -430.81512
       objectReference: {fileID: 0}
     - target: {fileID: 258094442363363315, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
@@ -21869,7 +21909,7 @@ PrefabInstance:
     - target: {fileID: 7333652051965979787, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -33
+      value: -33.00006
       objectReference: {fileID: 0}
     - target: {fileID: 7827048161096296750, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
@@ -22641,7 +22681,7 @@ PrefabInstance:
     - target: {fileID: 3088496653915348084, guid: 22d70330496e4474db168f477a4993e2,
         type: 3}
       propertyPath: startingMoney
-      value: 1000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 4222203108005065239, guid: 22d70330496e4474db168f477a4993e2,
         type: 3}

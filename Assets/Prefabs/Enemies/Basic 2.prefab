@@ -79,7 +79,6 @@ MonoBehaviour:
   speed: 3
   damageResistance: 1
   isInvisible: 0
-  navMeshMovement: {fileID: 0}
   audioMovement:
     audioFile: {fileID: 8300000, guid: 55472ab1e104ffd44a5a8428b56780ec, type: 3}
     volume: 1
@@ -330,7 +329,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.027, y: 0}
+  m_AnchoredPosition: {x: 0.027, y: 0.114}
   m_SizeDelta: {x: 86.0868, y: 62.2991}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5365464042808716981
@@ -473,7 +472,7 @@ Transform:
   m_GameObject: {fileID: 6921621052846620458}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.20000005, z: 0.006607962}
+  m_LocalPosition: {x: 0, y: -0.013, z: 0.006607962}
   m_LocalScale: {x: 1, y: 0.2, z: 0.001}
   m_ConstrainProportionsScale: 0
   m_Children: []
