@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -47,14 +48,17 @@ public class UIManager : MonoBehaviour
     [Tooltip("Path 1")]
     [SerializeField] private TextMeshProUGUI path1Upgrade1;
     [SerializeField] private TextMeshProUGUI path1Upgrade2, path1Upgrade3;
+    [SerializeField] private Image restrictPath1;
 
     [Tooltip("Path 2")]
     [SerializeField] private TextMeshProUGUI path2Upgrade1;
     [SerializeField] private TextMeshProUGUI path2Upgrade2, path2Upgrade3;
+    [SerializeField] private Image restrictPath2;
 
     [Tooltip("Path 3")]
     [SerializeField] private TextMeshProUGUI path3Upgrade1;
     [SerializeField] private TextMeshProUGUI path3Upgrade2, path3Upgrade3;
+    [SerializeField] private Image restrictPath3;
 
     [SerializeField] TMP_Text autoStartText;
     [SerializeField] TMP_Text showPathsText;
@@ -79,6 +83,14 @@ public class UIManager : MonoBehaviour
             popUpScreen.SetActive(false);
         if (deselect != null)
             deselect.SetActive(false);
+
+        if (restrictPath1 != null)
+            restrictPath1.enabled = false;
+        if (restrictPath2 != null)
+            restrictPath2.enabled = false;
+        if (restrictPath3 != null)
+            restrictPath3.enabled = false;
+
         popUpDuration = 0;
         showTowers = true;
         toggleTowersClickable = true;
@@ -195,28 +207,71 @@ public class UIManager : MonoBehaviour
     public void UpdateUpgradeScreen(TowerBehavior towerType)
     {
         //Path 1
-        path1Upgrade1.text = "Path 1 - Level 1\n" + towerType.GetUpgradeName(0, 1).Substring(0,
-            towerType.GetUpgradeName(0, 1).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(0, 1);
-        path1Upgrade2.text = "Path 1 - Level 2\n" + towerType.GetUpgradeName(1, 1).Substring(0, 
-            towerType.GetUpgradeName(1, 1).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(1, 1);
-        path1Upgrade3.text = "Path 1 - Level 3\n" + towerType.GetUpgradeName(2, 1).Substring(0,
-            towerType.GetUpgradeName(2, 1).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(2, 1);
+        if (path1Upgrade1 != null)
+            path1Upgrade1.text = "Path 1 - Level 1\n" + towerType.GetUpgradeName(0, 1).Substring(0,
+                towerType.GetUpgradeName(0, 1).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(0, 1);
+
+        if (path1Upgrade2 != null)
+            path1Upgrade2.text = "Path 1 - Level 2\n" + towerType.GetUpgradeName(1, 1).Substring(0, 
+                towerType.GetUpgradeName(1, 1).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(1, 1);
+
+        if (path1Upgrade3 != null)
+            path1Upgrade3.text = "Path 1 - Level 3\n" + towerType.GetUpgradeName(2, 1).Substring(0,
+                towerType.GetUpgradeName(2, 1).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(2, 1);
 
         //Path 2
-        path2Upgrade1.text = "Path 2 - Level 1\n" + towerType.GetUpgradeName(0, 2).Substring(0,
-            towerType.GetUpgradeName(0, 2).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(0, 2);
-        path2Upgrade2.text = "Path 2 - Level 2\n" + towerType.GetUpgradeName(1, 2).Substring(0,
-            towerType.GetUpgradeName(1, 2).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(1, 2);
-        path2Upgrade3.text = "Path 2 - Level 3\n" + towerType.GetUpgradeName(2, 2).Substring(0,
-            towerType.GetUpgradeName(2, 2).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(2, 2);
+        if (path2Upgrade1 != null)
+            path2Upgrade1.text = "Path 2 - Level 1\n" + towerType.GetUpgradeName(0, 2).Substring(0,
+                towerType.GetUpgradeName(0, 2).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(0, 2);
+
+        if (path2Upgrade2 != null)
+            path2Upgrade2.text = "Path 2 - Level 2\n" + towerType.GetUpgradeName(1, 2).Substring(0,
+                towerType.GetUpgradeName(1, 2).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(1, 2);
+
+        if (path2Upgrade3 != null)
+            path2Upgrade3.text = "Path 2 - Level 3\n" + towerType.GetUpgradeName(2, 2).Substring(0,
+                towerType.GetUpgradeName(2, 2).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(2, 2);
 
         //Path 3
-        path3Upgrade1.text = "Path 3 - Level 1\n" + towerType.GetUpgradeName(0, 3).Substring(0,
-            towerType.GetUpgradeName(0, 3).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(0, 3);
-        path3Upgrade2.text = "Path 3 - Level 2\n" + towerType.GetUpgradeName(1, 3).Substring(0,
-            towerType.GetUpgradeName(1, 3).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(1, 3);
-        path3Upgrade3.text = "Path 3 - Level 3\n" + towerType.GetUpgradeName(2, 3).Substring(0,
-            towerType.GetUpgradeName(2, 3).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(2, 3);
+        if (path3Upgrade1 != null)
+            path3Upgrade1.text = "Path 3 - Level 1\n" + towerType.GetUpgradeName(0, 3).Substring(0,
+                towerType.GetUpgradeName(0, 3).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(0, 3);
+
+        if (path3Upgrade2 != null)
+            path3Upgrade2.text = "Path 3 - Level 2\n" + towerType.GetUpgradeName(1, 3).Substring(0,
+                towerType.GetUpgradeName(1, 3).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(1, 3);
+
+        if (path3Upgrade3 != null)
+            path3Upgrade3.text = "Path 3 - Level 3\n" + towerType.GetUpgradeName(2, 3).Substring(0,
+                towerType.GetUpgradeName(2, 3).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(2, 3);
+
+        //Restrict Paths
+        if (towerType.isPath1Restricted)
+        {
+            restrictPath1.enabled = true;
+        }
+        else
+        {
+            restrictPath1.enabled = false;
+        }
+
+        if (towerType.isPath2Restricted)
+        {
+            restrictPath2.enabled = true;
+        }
+        else
+        {
+            restrictPath2.enabled = false;
+        }
+
+        if (towerType.isPath3Restricted)
+        {
+            restrictPath3.enabled = true;
+        }
+        else
+        {
+            restrictPath3.enabled = false;
+        }
     }
 
     public void ShowCompendium()
