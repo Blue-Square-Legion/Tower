@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1883025332966710743}
   - component: {fileID: 5464329376488697393}
   m_Layer: 0
-  m_Name: Sphere (01)
+  m_Name: OuterSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.0038989382, y: 2.632, z: 0}
-  m_LocalScale: {x: 1.8434998, y: 1.8434998, z: 1.8434998}
+  m_LocalScale: {x: 1.4715902, y: 1.4715902, z: 1.4715902}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 350623853041215702}
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: f71a51f0a52a8784daafbe28db505a67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -183,6 +183,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 43388af56cc38f44c868c1530b8e66d6, type: 2}
+    - target: {fileID: -1018664272722485354, guid: 972000c9552d4474ebb79eac46513ae1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 972000c9552d4474ebb79eac46513ae1,
         type: 3}
       propertyPath: m_Name
