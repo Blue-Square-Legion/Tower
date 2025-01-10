@@ -151,7 +151,7 @@ MonoBehaviour:
     m_Bits: 64
   damage: 4
   fireRate: 0.5
-  range: 100
+  range: 3
   cost: 150
   isStunned: 0
   isTaunted: 0
