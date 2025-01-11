@@ -43,9 +43,9 @@ public class TowerBehavior : MonoBehaviour
 
     GameObject lastSelectedTower;
 
-    [NonSerialized] public bool isPath1Restricted;
-    [NonSerialized] public bool isPath2Restricted;
-    [NonSerialized] public bool isPath3Restricted;
+    private bool isPath1Restricted;
+    private bool isPath2Restricted;
+    private bool isPath3Restricted;
     private void Start()
     {
         targetType = TowerTargetting.TargetType.First;
@@ -341,6 +341,17 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
+
+                            if (upgradeLevel2 > 1)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
+                            else if (upgradeLevel3 > 1)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
                             break;
                         case 2:
                             //Do upgrade
@@ -351,6 +362,12 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
+
+                            if (upgradeLevel2 == 4 || upgradeLevel3 == 4)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
                             break;
                         case 3:
                             //Do upgrade
@@ -360,6 +377,17 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
+
+                            if (upgradeLevel2 == 3)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
+                            if (upgradeLevel3 == 3)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
                             break;
                     }
                     break;
@@ -375,6 +403,17 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
+
+                            if (upgradeLevel2 > 1)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
+                            else if (upgradeLevel3 > 1)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
                             break;
                         case 2:
                             //Do upgrade
@@ -385,6 +424,12 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
+
+                            if (upgradeLevel2 == 4 || upgradeLevel3 == 4)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
                             break;
                         case 3:
                             //Do upgrade
@@ -394,6 +439,17 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
+
+                            if (upgradeLevel2 == 3)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
+                            if (upgradeLevel3 == 3)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
                             break;
                     }
                     break;
@@ -409,6 +465,17 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
+
+                            if (upgradeLevel2 > 1)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
+                            else if (upgradeLevel3 > 1)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
                             break;
                         case 2:
                             //Do upgrade
@@ -421,6 +488,11 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
 
+                            if (upgradeLevel2 == 4 || upgradeLevel3 == 4)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
                             break;
                         case 3:
                             //Do upgrade
@@ -430,6 +502,17 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
+
+                            if (upgradeLevel2 == 3)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
+                            if (upgradeLevel3 == 3)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
                             break;
                     }
                     break;
@@ -442,6 +525,17 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
+
+                            if (upgradeLevel2 > 1)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
+                            else if (upgradeLevel3 > 1)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
                             break;
                         case 2:
                             transform.GetComponent<EconomyBehavior>().bonus = 200;
@@ -449,6 +543,12 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
+
+                            if (upgradeLevel2 == 4 || upgradeLevel3 == 4)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
                             break;
                         case 3:
                             transform.GetComponent<EconomyBehavior>().bonus = 400;
@@ -457,6 +557,17 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
+
+                            if (upgradeLevel2 == 3)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
+                            if (upgradeLevel3 == 3)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
                             break;
                     }
                     break;
@@ -473,6 +584,17 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
+
+                            if (upgradeLevel2 > 1)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
+                            else if (upgradeLevel3 > 1)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
                             break;
                         case 2:
                             //Do upgrade
@@ -483,6 +605,12 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
+
+                            if (upgradeLevel2 == 4 || upgradeLevel3 == 4)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
                             break;
                         case 3:
                             //Do upgrade
@@ -491,6 +619,17 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
+
+                            if (upgradeLevel2 == 3)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
+                            if (upgradeLevel3 == 3)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
                             break;
                     }
                     break;
@@ -510,6 +649,17 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
+
+                            if (upgradeLevel2 > 1)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
+                            else if (upgradeLevel3 > 1)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
                             break;
                         case 2:
                             //Hidden
@@ -520,6 +670,12 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
+
+                            if (upgradeLevel2 == 4 || upgradeLevel3 == 4)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
                             break;
                         case 3:
                             //Do upgrade
@@ -529,6 +685,17 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
+
+                            if (upgradeLevel2 == 3)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
+                            if (upgradeLevel3 == 3)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
                             break;
                     }
                     break;
@@ -544,6 +711,17 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
+
+                            if (upgradeLevel2 > 1)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
+                            else if (upgradeLevel3 > 1)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
                             break;
                         case 2:
                             //Do upgrade
@@ -554,6 +732,12 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost1 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel1, 1);
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
+
+                            if (upgradeLevel2 == 4 || upgradeLevel3 == 4)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
                             break;
                         case 3:
                             //Do upgrade
@@ -563,6 +747,17 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost1 / 2;
                             upgradeDescription1 = GetUpgradeName(upgradeLevel1, 1);
+
+                            if (upgradeLevel2 == 3)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
+                            if (upgradeLevel3 == 3)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
                             break;
                     }
                     break;
@@ -594,6 +789,17 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost2 / 2;
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
+
+                            if (upgradeLevel1 > 1)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
+                            else if (upgradeLevel3 > 1)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
                             break;
                         case 2:
                             //Do upgrade
@@ -604,6 +810,12 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost2 / 2;
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
+
+                            if (upgradeLevel1 == 4 || upgradeLevel3 == 4)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
                             break;
                         case 3:
                             //Do upgrade
@@ -613,6 +825,17 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
+
+                            if (upgradeLevel1 == 3)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
+                            if (upgradeLevel3 == 3)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
                             break;
                     }
                     break;
@@ -628,6 +851,17 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost2 / 2;
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
+
+                            if (upgradeLevel1 > 1)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
+                            else if (upgradeLevel3 > 1)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
                             break;
                         case 2:
                             //Do upgrade
@@ -638,6 +872,12 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost2 / 2;
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
+
+                            if (upgradeLevel1 == 4 || upgradeLevel3 == 4)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
                             break;
                         case 3:
                             //Do upgrade
@@ -647,6 +887,17 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
+
+                            if (upgradeLevel1 == 3)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
+                            if (upgradeLevel3 == 3)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
                             break;
                     }
                     break;
@@ -665,6 +916,17 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost2 / 2;
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
+
+                            if (upgradeLevel1 > 1)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
+                            else if (upgradeLevel3 > 1)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
                             break;
                         case 2:
                             //Do upgrade
@@ -676,6 +938,12 @@ public class TowerBehavior : MonoBehaviour
 
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
+
+                            if (upgradeLevel1 == 4 || upgradeLevel3 == 4)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
                             break;
                         case 3:
                             //Do upgrade
@@ -684,6 +952,17 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
+
+                            if (upgradeLevel1 == 3)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
+                            if (upgradeLevel3 == 3)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
                             break;
                     }
                     break;
@@ -698,6 +977,17 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost2 / 2;
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
+
+                            if (upgradeLevel1 > 1)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
+                            else if (upgradeLevel3 > 1)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
                             break;
                         case 2:
                             //Do upgrade
@@ -707,6 +997,12 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost2 / 2;
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
+
+                            if (upgradeLevel1 == 4 || upgradeLevel3 == 4)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
                             break;
                         case 3:
                             //Do upgrade
@@ -715,6 +1011,17 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
+
+                            if (upgradeLevel1 == 3)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
+                            if (upgradeLevel3 == 3)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
                             break;
                     }
                     break;
@@ -730,6 +1037,17 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost2 / 2;
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
+
+                            if (upgradeLevel1 > 1)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
+                            else if (upgradeLevel3 > 1)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
                             break;
                         case 2:
                             //Do upgrade
@@ -739,6 +1057,12 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost2 / 2;
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
+
+                            if (upgradeLevel1 == 4 || upgradeLevel3 == 4)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
                             break;
                         case 3:
                             //Do upgrade
@@ -747,6 +1071,17 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
+
+                            if (upgradeLevel1 == 3)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
+                            if (upgradeLevel3 == 3)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
                             break;
                     }
                     break;
@@ -766,6 +1101,17 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost2 / 2;
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
+
+                            if (upgradeLevel1 > 1)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
+                            else if (upgradeLevel3 > 1)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
                             break;
                         case 2:
                             //Hidden
@@ -776,6 +1122,12 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost2 / 2;
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
+
+                            if (upgradeLevel1 == 4 || upgradeLevel3 == 4)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
                             break;
                         case 3:
                             //Do upgrade
@@ -785,6 +1137,17 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
+
+                            if (upgradeLevel1 == 3)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
+                            if (upgradeLevel3 == 3)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
                             break;
                     }
                     break;
@@ -799,6 +1162,17 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost2 / 2;
                             upgradeCost1 = GetUpgradeCost(upgradeLevel2, 2);
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
+
+                            if (upgradeLevel1 > 1)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
+                            else if (upgradeLevel3 > 1)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
                             break;
                         case 2:
                             //Do upgrade
@@ -808,6 +1182,12 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost2 / 2;
                             upgradeCost2 = GetUpgradeCost(upgradeLevel2, 2);
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
+
+                            if (upgradeLevel1 == 4 || upgradeLevel3 == 4)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
                             break;
                         case 3:
                             //Do upgrade
@@ -816,6 +1196,17 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost2 / 2;
                             upgradeDescription2 = GetUpgradeName(upgradeLevel2, 2);
+
+                            if (upgradeLevel1 == 3)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
+                            if (upgradeLevel3 == 3)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
                             break;
                     }
                     break;
@@ -846,6 +1237,17 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost3 / 2;
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
+
+                            if (upgradeLevel1 > 1)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
+                            else if (upgradeLevel2 > 1)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
                             break;
                         case 2:
                             //Do upgrade
@@ -856,6 +1258,12 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost3 / 2;
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
+
+                            if (upgradeLevel1 == 4 || upgradeLevel2 == 4)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
                             break;
                         case 3:
                             //Do upgrade
@@ -865,6 +1273,17 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
+
+                            if (upgradeLevel1 == 3)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
+                            if (upgradeLevel2 == 3)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
                             break;
                     }
                     break;
@@ -879,6 +1298,17 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost3 / 2;
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
+
+                            if (upgradeLevel1 > 1)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
+                            else if (upgradeLevel2 > 1)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
                             break;
                         case 2:
                             //Do upgrade
@@ -888,6 +1318,12 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost3 / 2;
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
+
+                            if (upgradeLevel1 == 4 || upgradeLevel2 == 4)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
                             break;
                         case 3:
                             //Do upgrade
@@ -896,6 +1332,17 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
+
+                            if (upgradeLevel1 == 3)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
+                            if (upgradeLevel2 == 3)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
                             break;
                     }
                     break;
@@ -910,6 +1357,17 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost3 / 2;
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
+
+                            if (upgradeLevel1 > 1)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
+                            else if (upgradeLevel2 > 1)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
                             break;
                         case 2:
                             //Do upgrade
@@ -921,6 +1379,11 @@ public class TowerBehavior : MonoBehaviour
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
 
+                            if (upgradeLevel1 == 4 || upgradeLevel2 == 4)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
                             break;
                         case 3:
                             //Do upgrade
@@ -929,6 +1392,17 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
+
+                            if (upgradeLevel1 == 3)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
+                            if (upgradeLevel2 == 3)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
                             break;
                     }
                     break;
@@ -944,6 +1418,17 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost3 / 2;
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
+
+                            if (upgradeLevel1 > 1)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
+                            else if (upgradeLevel2 > 1)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
                             break;
                         case 2:
                             //Do upgrade
@@ -954,6 +1439,12 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost3 / 2;
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
+
+                            if (upgradeLevel1 == 4 || upgradeLevel2 == 4)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
                             break;
                         case 3:
                             //Do upgrade
@@ -963,6 +1454,17 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
+
+                            if (upgradeLevel1 == 3)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
+                            if (upgradeLevel2 == 3)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
                             break;
                     }
                     break;
@@ -978,6 +1480,17 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost3 / 2;
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
+
+                            if (upgradeLevel1 > 1)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
+                            else if (upgradeLevel2 > 1)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
                             break;
                         case 2:
                             //Do upgrade
@@ -987,6 +1500,12 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost3 / 2;
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
+
+                            if (upgradeLevel1 == 4 || upgradeLevel2 == 4)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
                             break;
                         case 3:
                             //Do upgrade
@@ -995,6 +1514,17 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
+
+                            if (upgradeLevel1 == 3)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
+                            if (upgradeLevel2 == 3)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
                             break;
                     }
                     break;
@@ -1014,6 +1544,17 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost3 / 2;
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
+
+                            if (upgradeLevel1 > 1)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
+                            else if (upgradeLevel2 > 1)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
                             break;
                         case 2:
                             //Hidden
@@ -1024,6 +1565,12 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost3 / 2;
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
+
+                            if (upgradeLevel1 == 4 || upgradeLevel2 == 4)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
                             break;
                         case 3:
                             //Do upgrade
@@ -1033,6 +1580,17 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
+
+                            if (upgradeLevel1 == 3)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
+                            if (upgradeLevel2 == 3)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
                             break;
                     }
                     break;
@@ -1048,6 +1606,17 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost3 / 2;
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
+
+                            if (upgradeLevel1 > 1)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
+                            else if (upgradeLevel2 > 1)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
                             break;
                         case 2:
                             //Do upgrade
@@ -1058,6 +1627,12 @@ public class TowerBehavior : MonoBehaviour
                             sellCost += upgradeCost3 / 2;
                             upgradeCost3 = GetUpgradeCost(upgradeLevel3, 3);
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
+
+                            if (upgradeLevel1 == 4 || upgradeLevel2 == 4)
+                            {
+                                isPath3Restricted = true;
+                                upgradeDescription3 = "Path Restricted";
+                            }
                             break;
                         case 3:
                             //Do upgrade
@@ -1067,6 +1642,17 @@ public class TowerBehavior : MonoBehaviour
                             //Set up for next upgrade
                             sellCost += upgradeCost3 / 2;
                             upgradeDescription3 = GetUpgradeName(upgradeLevel3, 3);
+
+                            if (upgradeLevel1 == 3)
+                            {
+                                isPath1Restricted = true;
+                                upgradeDescription1 = "Path Restricted";
+                            }
+                            if (upgradeLevel2 == 3)
+                            {
+                                isPath2Restricted = true;
+                                upgradeDescription2 = "Path Restricted";
+                            }
                             break;
                     }
                     break;
@@ -1094,6 +1680,7 @@ public class TowerBehavior : MonoBehaviour
         upgradePanel.ToggleUpgradeButton(upgradeLevel1 != 4, 1);
         upgradePanel.ToggleUpgradeButton(upgradeLevel2 != 4, 2);
         upgradePanel.ToggleUpgradeButton(upgradeLevel3 != 4, 3);
+        upgradePanel.RestrictPaths(isPath1Restricted, isPath2Restricted, isPath3Restricted);
     }
 
     public void UpdateAllUpgradesScreen()
