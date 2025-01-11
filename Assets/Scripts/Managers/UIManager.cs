@@ -44,6 +44,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject towerSelection;
 
     [SerializeField] private GameObject upgradeScreen;
+    [SerializeField] private GameObject RobotPage;
+    [SerializeField] private GameObject TowerPage;
 
     [Tooltip("Path 1")]
     [SerializeField] private TextMeshProUGUI path1Upgrade1;
@@ -239,11 +241,24 @@ public class UIManager : MonoBehaviour
     public void ShowCompendium()
     {
         upgradeScreen.SetActive(true);
+        ShowRobotPage();
     }
 
     public void HideCompendium()
     {
         upgradeScreen.SetActive(false);
+    }
+
+    public void ShowRobotPage()
+    {
+        RobotPage.SetActive(true);
+        TowerPage.SetActive(false);
+    }
+
+    public void ShowTowerPage()
+    {
+        TowerPage.SetActive(true);
+        RobotPage.SetActive(false);
     }
 
     public void UpdateAutoStartText(string text)
