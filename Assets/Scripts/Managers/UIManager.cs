@@ -79,6 +79,7 @@ public class UIManager : MonoBehaviour
     private float popUpDuration;
     private bool showTowers;
     private bool toggleTowersClickable;
+    private Enemy enemyInfo = new Enemy();
 
     private void Start()
     {
@@ -274,7 +275,6 @@ public class UIManager : MonoBehaviour
         RobotPage.SetActive(false);
     }
 
-    private Enemy enemyInfo = new Enemy();
 
     public void ShowRobotInfo(Enemy.EnemyData enemyData)
     {
