@@ -289,7 +289,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowRobotPage()
     {
-        RobotPage.SetActive(true);
+        RobotPage.SetActive(true); 
         TowerPage.SetActive(false);
     }
 
