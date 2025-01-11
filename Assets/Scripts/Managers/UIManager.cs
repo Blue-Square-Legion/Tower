@@ -1,8 +1,10 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class UIManager : MonoBehaviour
 {
@@ -46,6 +48,16 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject upgradeScreen;
     [SerializeField] private GameObject RobotPage;
     [SerializeField] private GameObject TowerPage;
+
+    [SerializeField] private TextMeshProUGUI RobotDescription;
+    [SerializeField] private TextMeshProUGUI RobotAbilities;
+    [SerializeField] private TextMeshProUGUI RobotVariants;
+    [SerializeField] private TextMeshProUGUI RobotWeaknesses;
+    [SerializeField] private TextMeshProUGUI RobotResistance;
+    [SerializeField] private TextMeshProUGUI RobotHP;
+    [SerializeField] private TextMeshProUGUI RobotATK;
+    [SerializeField] private TextMeshProUGUI RobotDEF;
+    [SerializeField] private TextMeshProUGUI RobotSPD;
 
     [Tooltip("Path 1")]
     [SerializeField] private TextMeshProUGUI path1Upgrade1;
@@ -94,7 +106,7 @@ public class UIManager : MonoBehaviour
         {
             towerPanelExpandedPosition = towersPanel.anchoredPosition;
         }
-            
+
     }
 
     public void GameOver()
@@ -144,7 +156,7 @@ public class UIManager : MonoBehaviour
         showPathsButton.SetActive(false);
         upgradeCircle.SetActive(upgradePanel.activeInHierarchy);
         upgradeArrow.SetActive(upgradePanel.activeInHierarchy);
-        
+
     }
 
     public void CloseHelpScreen()
@@ -204,7 +216,7 @@ public class UIManager : MonoBehaviour
                 towerType.GetUpgradeName(0, 1).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(0, 1);
 
         if (path1Upgrade2 != null)
-            path1Upgrade2.text = "Path 1 - Level 2\n" + towerType.GetUpgradeName(1, 1).Substring(0, 
+            path1Upgrade2.text = "Path 1 - Level 2\n" + towerType.GetUpgradeName(1, 1).Substring(0,
                 towerType.GetUpgradeName(1, 1).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(1, 1);
 
         if (path1Upgrade3 != null)
@@ -249,6 +261,7 @@ public class UIManager : MonoBehaviour
         upgradeScreen.SetActive(false);
     }
 
+    #region Robot Stats
     public void ShowRobotPage()
     {
         RobotPage.SetActive(true);
@@ -260,6 +273,88 @@ public class UIManager : MonoBehaviour
         TowerPage.SetActive(true);
         RobotPage.SetActive(false);
     }
+
+    private Enemy enemyInfo = new Enemy();
+
+    public void ShowRobotInfo(Enemy.EnemyData enemyData)
+    {
+
+        if (RobotDescription != null)
+        {
+            RobotDescription.text = $"Description: \n{enemyData.description}";
+        }
+        if (RobotAbilities != null)
+        {
+            RobotAbilities.text = $"Abilities: \n{enemyData.abilities}";
+        }
+        if (RobotVariants != null)
+        {
+            RobotVariants.text = $"Variants: \n{enemyData.variants}";
+        }
+        if (RobotWeaknesses != null)
+        {
+            RobotWeaknesses.text = $"Weaknesses: \n{enemyData.weaknesses}";
+        }
+        if (RobotResistance != null)
+        {
+            RobotResistance.text = $"Resistance: \n{enemyData.resistance}";
+        }
+        if (RobotHP != null)
+        {
+            RobotHP.text = $"HP: {enemyData.hp}";
+        }
+        if (RobotATK != null)
+        {
+            RobotATK.text = $"ATK: {enemyData.atk}";
+        }
+        if (RobotDEF != null)
+        {
+            RobotDEF.text = $"DEF: {enemyData.def}";
+        }
+        if (RobotSPD != null)
+        {
+            RobotSPD.text = $"SPD: {enemyData.spd}";
+        }
+    }
+
+    public void ShowBasicRobot()
+    {
+        var enemyData = enemyInfo.GetEnemyData(Enemy.EnemyType.Basic);
+        ShowRobotInfo(enemyData);
+    }
+
+    public void ShowRollerRobot()
+    {
+        var enemyData = enemyInfo.GetEnemyData(Enemy.EnemyType.Fast);
+        ShowRobotInfo(enemyData);
+    }
+
+    public void ShowStealthRobot()
+    {
+        var enemyData = enemyInfo.GetEnemyData(Enemy.EnemyType.Buffer);
+        ShowRobotInfo(enemyData);
+    }
+
+    public void ShowSpiderRobot()
+    {
+        var enemyData = enemyInfo.GetEnemyData(Enemy.EnemyType.Spider);
+        ShowRobotInfo(enemyData);
+    }
+
+    public void ShowTankRobot()
+    {
+        var enemyData = enemyInfo.GetEnemyData(Enemy.EnemyType.Slow);
+        ShowRobotInfo(enemyData);
+    }
+
+    public void ShowWalkerRobot()
+    {
+        var enemyData = enemyInfo.GetEnemyData(Enemy.EnemyType.Stealth);
+        ShowRobotInfo(enemyData);
+    }
+
+    #endregion
+
 
     public void UpdateAutoStartText(string text)
     {

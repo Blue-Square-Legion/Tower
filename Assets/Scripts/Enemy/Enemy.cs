@@ -3,6 +3,7 @@ using UnityEngine;
 using AudioSystem;
 using System;
 using TMPro;
+using static TowerBehavior;
 
 public class Enemy : MonoBehaviour
 {
@@ -239,7 +240,7 @@ public class Enemy : MonoBehaviour
         enemyText = gameObject.GetComponentInChildren<TextMeshProUGUI>();
         if (isInvisible)
         {
-            
+
             if (enemyText)
             {
                 enemyText.text = $"Invisible";
@@ -252,7 +253,7 @@ public class Enemy : MonoBehaviour
             {
                 switch (type)
                 {
-                    case Enemy.EnemyType.Basic:
+                    case EnemyType.Basic:
                         enemyText.text = $"Basic";
                         break;
                     case EnemyType.Fast:
@@ -283,6 +284,159 @@ public class Enemy : MonoBehaviour
 
 
     }
+
+
+    #region Enemy Data
+    public struct EnemyData
+    {
+        public string name;
+        public string description;
+        public int cost;
+        public string abilities;
+        public string variants;
+        public string weaknesses;
+        public string resistance;
+        public int hp;
+        public int atk;
+        public int def;
+        public int spd;
+
+        public EnemyData(
+            string name,
+            int cost,
+            string description,
+            string abilities,
+            string variants,
+            string weaknesses,
+            string resistance,
+            int hp,
+            int atk,
+            int def,
+            int spd)
+        {
+            this.name = name;
+            this.description = description;
+            this.cost = cost;
+            this.abilities = abilities;
+            this.variants = variants;
+            this.weaknesses = weaknesses;
+            this.resistance = resistance;
+            this.hp = hp;
+            this.atk = atk;
+            this.def = def;
+            this.spd = spd;
+        }
+    }
+
+    private static readonly Dictionary<EnemyType, EnemyData> EnemyInfo = new()
+    {
+        {
+            EnemyType.Basic, new EnemyData(
+                "Basic Robot",
+                50,
+                "A standard robot with balanced attributes.",
+                "Basic Attack, Basic Defense",
+                "None",
+                "Low Speed",
+                "Basic Resistance",
+                100,
+                50,
+                50,
+                30)
+        },
+        {
+            EnemyType.Fast, new EnemyData(
+                "Roller Robot",
+                150,
+                "A fast robot with high speed and moderate attack.",
+                "Speed Boost, Quick Strike",
+                "Turbo Roller",
+                "Low Defense",
+                "High Speed",
+                80,
+                70,
+                40,
+                90)
+        },
+        {
+            EnemyType.Slow, new EnemyData(
+                "Tank Robot",
+                150,
+                "A heavily armored robot with high defense and hit points.",
+                "Strong Defense, Heavy Attack",
+                "Armored Tank",
+                "Low Speed",
+                "High Armor",
+                150,
+                80,
+                100,
+                20)
+        },
+        {
+            EnemyType.Spider, new EnemyData(
+                "Spider Robot",
+                300,
+                "A nimble robot with multiple legs for superior agility.",
+                "Web Trap, Quick Move",
+                "Agile Spider",
+                "Low Attack",
+                "High Agility",
+                70,
+                45,
+                55,
+                85)
+        },
+        {
+            EnemyType.Buffer, new EnemyData(
+                "Stealth Robot",
+                100,
+                "A sneaky robot with high evasion and stealth capabilities.",
+                "Invisibility, Silent Attack",
+                "Shadow Stealth",
+                "Low HP",
+                "High Evasion",
+                60,
+                65,
+                35,
+                80)
+        },
+        {
+            EnemyType.Stealth, new EnemyData(
+                "Walker Robot",
+                0,
+                "A versatile robot with balanced speed and strength.",
+                "Balanced Attack, Balanced Defense",
+                "Versatile Walker",
+                "None",
+                "Balanced",
+                90,
+                60,
+                60,
+                60)
+        },
+        {
+            EnemyType.Boss1, new EnemyData(
+                "Boss Robot",
+                150,
+                "A powerful robot with enhanced abilities.",
+                "Heavy Attack, Strong Defense",
+                "Mighty Boss",
+                "None",
+                "High Strength",
+                200,
+                100,
+                100,
+                40)
+        }
+    };
+
+    public EnemyData GetEnemyData(EnemyType type)
+    {
+        return EnemyInfo[type];
+    }
+
+
+    #endregion
 
     public void ReachedEnd()
     {
