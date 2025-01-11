@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -58,6 +59,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI RobotATK;
     [SerializeField] private TextMeshProUGUI RobotDEF;
     [SerializeField] private TextMeshProUGUI RobotSPD;
+    [SerializeField] private Image RobotName;
+    [SerializeField] private Image RobotImage;
 
     [Tooltip("Path 1")]
     [SerializeField] private TextMeshProUGUI path1Upgrade1;
@@ -255,6 +258,7 @@ public class UIManager : MonoBehaviour
     {
         upgradeScreen.SetActive(true);
         ShowRobotPage();
+        ShowBasicRobot();
     }
 
     public void HideCompendium()
@@ -317,40 +321,65 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    private void ChangeRobotSprite(string path, Image imageComponent)
+    {
+        Sprite sprite = AssetDatabase.LoadAssetAtPath<Sprite>(path);
+        if (sprite != null) { 
+            imageComponent.sprite = sprite; 
+        }
+        else
+        {
+            Debug.LogWarning($"Sprite at {path} not found!");
+        }
+    }
+
     public void ShowBasicRobot()
     {
         var enemyData = enemyInfo.GetEnemyData(Enemy.EnemyType.Basic);
         ShowRobotInfo(enemyData);
+        ChangeRobotSprite("Assets/Art/UI/Enemies/WalkerEnemy3QTR_TransparentBG.png", RobotImage);
+        ChangeRobotSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-BasicBot-Title.png", RobotName);
+
     }
 
     public void ShowRollerRobot()
     {
         var enemyData = enemyInfo.GetEnemyData(Enemy.EnemyType.Fast);
         ShowRobotInfo(enemyData);
+        ChangeRobotSprite("Assets/Art/UI/Enemies/RollerEnemy3QTR_TransparentBG.png", RobotImage);
+        ChangeRobotSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-RollerBot-Title.png", RobotName);
     }
 
     public void ShowStealthRobot()
     {
         var enemyData = enemyInfo.GetEnemyData(Enemy.EnemyType.Buffer);
         ShowRobotInfo(enemyData);
+        ChangeRobotSprite("Assets/Art/UI/Enemies/WalkerEnemy3QTR_TransparentBG.png", RobotImage);
+        ChangeRobotSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-StealthBot-Title.png", RobotName);
     }
 
     public void ShowSpiderRobot()
     {
         var enemyData = enemyInfo.GetEnemyData(Enemy.EnemyType.Spider);
         ShowRobotInfo(enemyData);
+        ChangeRobotSprite("Assets/Art/UI/Enemies/SpiderEnemy3QTR_TransparentBG.png", RobotImage);
+        ChangeRobotSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-SpiderBot-Title.png", RobotName);
     }
 
     public void ShowTankRobot()
     {
         var enemyData = enemyInfo.GetEnemyData(Enemy.EnemyType.Slow);
         ShowRobotInfo(enemyData);
+        ChangeRobotSprite("Assets/Art/UI/Enemies/WalkerEnemy3QTR_TransparentBG.png", RobotImage);
+        ChangeRobotSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-TankBot-Title.png", RobotName);
     }
 
     public void ShowWalkerRobot()
     {
         var enemyData = enemyInfo.GetEnemyData(Enemy.EnemyType.Stealth);
         ShowRobotInfo(enemyData);
+        ChangeRobotSprite("Assets/Art/UI/Enemies/WalkerEnemy3QTR_TransparentBG.png", RobotImage);
+        ChangeRobotSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-WalkerBot-Title.png", RobotName);
     }
 
     #endregion

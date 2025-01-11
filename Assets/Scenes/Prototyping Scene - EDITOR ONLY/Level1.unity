@@ -2183,6 +2183,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6276057131004143166}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &358891338 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1789188026746800525, guid: 03d516b99d08f404889216785393e3b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 6276057131004143166}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &370636630
 GameObject:
   m_ObjectHideFlags: 0
@@ -11912,6 +11924,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1370049967}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1379601107 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3763732202287882192, guid: 03d516b99d08f404889216785393e3b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 6276057131004143166}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1389180771 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3121416817140483802, guid: 03d516b99d08f404889216785393e3b4,
@@ -20729,6 +20753,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6818719110386909350, guid: 90319159318b32846a7006408bcbd4c6,
         type: 3}
+      propertyPath: RobotName
+      value: 
+      objectReference: {fileID: 358891338}
+    - target: {fileID: 6818719110386909350, guid: 90319159318b32846a7006408bcbd4c6,
+        type: 3}
       propertyPath: RobotPage
       value: 
       objectReference: {fileID: 885293681}
@@ -20737,6 +20766,11 @@ PrefabInstance:
       propertyPath: TowerPage
       value: 
       objectReference: {fileID: 2034373858}
+    - target: {fileID: 6818719110386909350, guid: 90319159318b32846a7006408bcbd4c6,
+        type: 3}
+      propertyPath: RobotImage
+      value: 
+      objectReference: {fileID: 1379601107}
     - target: {fileID: 6818719110386909350, guid: 90319159318b32846a7006408bcbd4c6,
         type: 3}
       propertyPath: helpScreen
@@ -22550,6 +22584,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3763732202287882192, guid: 03d516b99d08f404889216785393e3b4,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0aff46168c07dca42b971829d427cd08,
+        type: 3}
     - target: {fileID: 4281305211910767940, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_SizeDelta.y
@@ -22991,7 +23031,7 @@ PrefabInstance:
     - target: {fileID: 5865146701182477196, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.9999999
+      value: 0.99999994
       objectReference: {fileID: 0}
     - target: {fileID: 5865146701182477196, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
@@ -23001,7 +23041,7 @@ PrefabInstance:
     - target: {fileID: 5865146701182477196, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5468353
+      value: 0.58419794
       objectReference: {fileID: 0}
     - target: {fileID: 5865146701182477196, guid: 03d516b99d08f404889216785393e3b4,
         type: 3}
