@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     public int manaToPlayer;
     public float currentHealth;
     public float speed;
+    [NonSerialized] public bool isAlive;
     public float currentSpeed { get; private set; }
     public float damageResistance;
     public bool isInvisible;
@@ -40,6 +41,7 @@ public class Enemy : MonoBehaviour
     public void Init()
     {
         gameManager = GameManager.Instance;
+        isAlive = true;
         currentHealth = maxHealth;
         navMeshMovement = GetComponent<NavMeshMovement>();
         navMeshMovement.SetSpeed(speed);
@@ -253,23 +255,26 @@ public class Enemy : MonoBehaviour
                     case Enemy.EnemyType.Basic:
                         enemyText.text = $"Basic";
                         break;
-                    case Enemy.EnemyType.Fast:
+                    case EnemyType.Fast:
                         enemyText.text = $"Fast";
                         break;
-                    case Enemy.EnemyType.Slow:
+                    case EnemyType.Slow:
                         enemyText.text = $"Slow";
                         break;
-                    case Enemy.EnemyType.Ghost:
-                        enemyText.text = $"Ghost";
+                    case EnemyType.Spider:
+                        enemyText.text = $"Spider";
                         break;
-                    case Enemy.EnemyType.Boss1:
+                    case EnemyType.Boss1:
                         enemyText.text = $"Boss 1";
                         break;
-                    case Enemy.EnemyType.Buffer:
+                    case EnemyType.Buffer:
                         enemyText.text = $"Buffer";
                         break;
-                    case Enemy.EnemyType.Boss2:
+                    case EnemyType.Boss2:
                         enemyText.text = $"Boss 2";
+                        break;
+                    case EnemyType.Stealth:
+                        enemyText.text = $"Stealth";
                         break;
                 }
             }
@@ -289,9 +294,10 @@ public class Enemy : MonoBehaviour
         Basic,
         Fast,
         Slow,
-        Ghost,
+        Spider,
+        Buffer,
+        Stealth,
         Boss1,
-        Boss2,
-        Buffer
+        Boss2
     }
 }

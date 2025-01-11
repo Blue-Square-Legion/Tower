@@ -52,9 +52,13 @@ public class MissileDamage : MonoBehaviour, IDamageMethod
             tempMissile.transform.position = transform.position + new Vector3(0, 0.5f, 0);
             tempMissile.transform.rotation = towerPivot.transform.rotation;
             tempMissile.transform.Rotate(0, 180, 0, Space.Self);
-            tempMissile.GetComponent<Missile>().explosionRadius = explosionRadius;
-            tempMissile.GetComponent<Missile>().parent = gameObject;
-            tempMissile.GetComponent<Missile>().Init();
+
+            Missile missileObject = tempMissile.GetComponent<Missile>();
+            missileObject.explosionRadius = explosionRadius;
+            missileObject.parent = gameObject;
+            missileObject.target = target;
+
+            missileObject.Init();
             delay = 1 / fireRate;
         }
     }
