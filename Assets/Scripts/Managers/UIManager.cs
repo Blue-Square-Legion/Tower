@@ -1,8 +1,11 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class UIManager : MonoBehaviour
 {
@@ -44,21 +47,34 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject towerSelection;
 
     [SerializeField] private GameObject upgradeScreen;
+    [SerializeField] private GameObject RobotPage;
+    [SerializeField] private GameObject TowerPage;
+
+    [SerializeField] private TextMeshProUGUI RobotDescription;
+    [SerializeField] private TextMeshProUGUI RobotAbilities;
+    [SerializeField] private TextMeshProUGUI RobotVariants;
+    [SerializeField] private TextMeshProUGUI RobotWeaknesses;
+    [SerializeField] private TextMeshProUGUI RobotResistance;
+    [SerializeField] private TextMeshProUGUI RobotHP;
+    [SerializeField] private TextMeshProUGUI RobotATK;
+    [SerializeField] private TextMeshProUGUI RobotDEF;
+    [SerializeField] private TextMeshProUGUI RobotSPD;
+    [SerializeField] private Image RobotName;
+    [SerializeField] private Image RobotImage;
+    [SerializeField] private Image TowerName;
+    [SerializeField] private Image TowerImage;
 
     [Tooltip("Path 1")]
     [SerializeField] private TextMeshProUGUI path1Upgrade1;
     [SerializeField] private TextMeshProUGUI path1Upgrade2, path1Upgrade3;
-    [SerializeField] private Image restrictPath1;
 
     [Tooltip("Path 2")]
     [SerializeField] private TextMeshProUGUI path2Upgrade1;
     [SerializeField] private TextMeshProUGUI path2Upgrade2, path2Upgrade3;
-    [SerializeField] private Image restrictPath2;
 
     [Tooltip("Path 3")]
     [SerializeField] private TextMeshProUGUI path3Upgrade1;
     [SerializeField] private TextMeshProUGUI path3Upgrade2, path3Upgrade3;
-    [SerializeField] private Image restrictPath3;
 
     [SerializeField] TMP_Text autoStartText;
     [SerializeField] TMP_Text showPathsText;
@@ -68,6 +84,7 @@ public class UIManager : MonoBehaviour
     private float popUpDuration;
     private bool showTowers;
     private bool toggleTowersClickable;
+    private Enemy enemyInfo = new Enemy();
 
     private void Start()
     {
@@ -84,13 +101,6 @@ public class UIManager : MonoBehaviour
         if (deselect != null)
             deselect.SetActive(false);
 
-        if (restrictPath1 != null)
-            restrictPath1.enabled = false;
-        if (restrictPath2 != null)
-            restrictPath2.enabled = false;
-        if (restrictPath3 != null)
-            restrictPath3.enabled = false;
-
         popUpDuration = 0;
         showTowers = true;
         toggleTowersClickable = true;
@@ -102,7 +112,7 @@ public class UIManager : MonoBehaviour
         {
             towerPanelExpandedPosition = towersPanel.anchoredPosition;
         }
-            
+
     }
 
     public void GameOver()
@@ -152,7 +162,7 @@ public class UIManager : MonoBehaviour
         showPathsButton.SetActive(false);
         upgradeCircle.SetActive(upgradePanel.activeInHierarchy);
         upgradeArrow.SetActive(upgradePanel.activeInHierarchy);
-        
+
     }
 
     public void CloseHelpScreen()
@@ -212,7 +222,7 @@ public class UIManager : MonoBehaviour
                 towerType.GetUpgradeName(0, 1).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(0, 1);
 
         if (path1Upgrade2 != null)
-            path1Upgrade2.text = "Path 1 - Level 2\n" + towerType.GetUpgradeName(1, 1).Substring(0, 
+            path1Upgrade2.text = "Path 1 - Level 2\n" + towerType.GetUpgradeName(1, 1).Substring(0,
                 towerType.GetUpgradeName(1, 1).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(1, 1);
 
         if (path1Upgrade3 != null)
@@ -244,45 +254,197 @@ public class UIManager : MonoBehaviour
         if (path3Upgrade3 != null)
             path3Upgrade3.text = "Path 3 - Level 3\n" + towerType.GetUpgradeName(2, 3).Substring(0,
                 towerType.GetUpgradeName(2, 3).IndexOf("\n")) + "\n" + towerType.GetUpgradeDescription(2, 3);
-
-        //Restrict Paths
-        if (towerType.isPath1Restricted)
-        {
-            restrictPath1.enabled = true;
-        }
-        else
-        {
-            restrictPath1.enabled = false;
-        }
-
-        if (towerType.isPath2Restricted)
-        {
-            restrictPath2.enabled = true;
-        }
-        else
-        {
-            restrictPath2.enabled = false;
-        }
-
-        if (towerType.isPath3Restricted)
-        {
-            restrictPath3.enabled = true;
-        }
-        else
-        {
-            restrictPath3.enabled = false;
-        }
     }
 
     public void ShowCompendium()
     {
         upgradeScreen.SetActive(true);
+        ShowRobotPage();
+        ShowBasicRobot();
     }
 
     public void HideCompendium()
     {
         upgradeScreen.SetActive(false);
     }
+
+
+    public void ShowRobotPage()
+    {
+        RobotPage.SetActive(true);
+        TowerPage.SetActive(false);
+    }
+
+    public void ShowTowerPage()
+    {
+        TowerPage.SetActive(true);
+        RobotPage.SetActive(false);
+    }
+
+    private void ChangeImageSprite(string path, Image imageComponent)
+    {
+        Sprite sprite = AssetDatabase.LoadAssetAtPath<Sprite>(path);
+        if (sprite != null)
+        {
+            imageComponent.sprite = sprite;
+        }
+        else
+        {
+            Debug.LogWarning($"Sprite at {path} not found!");
+        }
+    }
+
+
+
+    #region Robot Stats
+
+    public void ShowRobotInfo(Enemy.EnemyData enemyData)
+    {
+
+        if (RobotDescription != null)
+        {
+            RobotDescription.text = $"Description: \n{enemyData.description}";
+        }
+        if (RobotAbilities != null)
+        {
+            RobotAbilities.text = $"Abilities: \n{enemyData.abilities}";
+        }
+        if (RobotVariants != null)
+        {
+            RobotVariants.text = $"Variants: \n{enemyData.variants}";
+        }
+        if (RobotWeaknesses != null)
+        {
+            RobotWeaknesses.text = $"Weaknesses: \n{enemyData.weaknesses}";
+        }
+        if (RobotResistance != null)
+        {
+            RobotResistance.text = $"Resistance: \n{enemyData.resistance}";
+        }
+        if (RobotHP != null)
+        {
+            RobotHP.text = $"HP: {enemyData.hp}";
+        }
+        if (RobotATK != null)
+        {
+            RobotATK.text = $"ATK: {enemyData.atk}";
+        }
+        if (RobotDEF != null)
+        {
+            RobotDEF.text = $"DEF: {enemyData.def}";
+        }
+        if (RobotSPD != null)
+        {
+            RobotSPD.text = $"SPD: {enemyData.spd}";
+        }
+    }
+
+    public void ShowBasicRobot()
+    {
+        var enemyData = enemyInfo.GetEnemyData(Enemy.EnemyType.Basic);
+        ShowRobotInfo(enemyData);
+        ChangeImageSprite("Assets/Art/UI/Enemies/WalkerEnemy3QTR_TransparentBG.png", RobotImage);
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-BasicBot-Title.png", RobotName);
+
+    }
+
+    public void ShowRollerRobot()
+    {
+        var enemyData = enemyInfo.GetEnemyData(Enemy.EnemyType.Fast);
+        ShowRobotInfo(enemyData);
+        ChangeImageSprite("Assets/Art/UI/Enemies/RollerEnemy3QTR_TransparentBG.png", RobotImage);
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-RollerBot-Title.png", RobotName);
+    }
+
+    public void ShowStealthRobot()
+    {
+        var enemyData = enemyInfo.GetEnemyData(Enemy.EnemyType.Buffer);
+        ShowRobotInfo(enemyData);
+        ChangeImageSprite("Assets/Art/UI/Enemies/WalkerEnemy3QTR_TransparentBG.png", RobotImage);
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-StealthBot-Title.png", RobotName);
+    }
+
+    public void ShowSpiderRobot()
+    {
+        var enemyData = enemyInfo.GetEnemyData(Enemy.EnemyType.Spider);
+        ShowRobotInfo(enemyData);
+        ChangeImageSprite("Assets/Art/UI/Enemies/SpiderEnemy3QTR_TransparentBG.png", RobotImage);
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-SpiderBot-Title.png", RobotName);
+    }
+
+    public void ShowTankRobot()
+    {
+        var enemyData = enemyInfo.GetEnemyData(Enemy.EnemyType.Slow);
+        ShowRobotInfo(enemyData);
+        ChangeImageSprite("Assets/Art/UI/Enemies/WalkerEnemy3QTR_TransparentBG.png", RobotImage);
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-TankBot-Title.png", RobotName);
+    }
+
+    public void ShowWalkerRobot()
+    {
+        var enemyData = enemyInfo.GetEnemyData(Enemy.EnemyType.Stealth);
+        ShowRobotInfo(enemyData);
+        ChangeImageSprite("Assets/Art/UI/Enemies/WalkerEnemy3QTR_TransparentBG.png", RobotImage);
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-WalkerBot-Title.png", RobotName);
+    }
+
+    #endregion
+
+
+    //Show Tower Buttons
+
+    #region Tower States
+
+    public void ShowCrossbow()
+    {
+        
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-Crossbow-Title.png", TowerName);
+        ChangeImageSprite("Assets/Art/UI/Towers/CrossbowTower.png", TowerImage);
+
+    }
+
+    public void ShowCannon()
+    {
+        
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-Cannon-Title.png", TowerName);
+        ChangeImageSprite("Assets/Art/UI/Towers/CannonTower.png", TowerImage);
+    }
+
+    public void ShowFlame()
+    {
+        
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-Flame-Title.png", TowerName);
+        ChangeImageSprite("Assets/Art/UI/Towers/FlameTower.png", TowerImage);
+    }
+
+    public void ShowSnowball()
+    {
+        
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-Snowball-Title.png", TowerName);
+        ChangeImageSprite("Assets/Art/UI/Towers/SnowCatapult.png", TowerImage);
+    }
+
+    public void ShowSupport()
+    {
+        
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-Support-Title.png", TowerName);
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-TankBot-Title.png", TowerImage);
+    }
+
+    public void ShowEconomy()
+    {
+        
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-Economy-Title.png", TowerName);
+        ChangeImageSprite("Assets/Art/UI/Towers/MineTower.png", TowerImage);
+    }
+
+    public void ShowSpikes()
+    {
+        
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-Spikes-Title.png", TowerName);
+        ChangeImageSprite("Assets/Art/UI/Towers/SpikeTower.png", TowerImage);
+    }
+    #endregion
 
     public void UpdateAutoStartText(string text)
     {
