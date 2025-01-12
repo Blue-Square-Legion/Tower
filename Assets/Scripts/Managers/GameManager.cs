@@ -423,7 +423,10 @@ public class GameManager : MonoBehaviour
                     if (targetedEnemy.currentHealth <= 0)
                     {
                         if (targetedEnemy.lastDamagingTower != null)
+                        {
                             player.GiveMoney(targetedEnemy.moneyToPlayer * targetedEnemy.lastDamagingTower.moneyMultiplier); // Gives money to player
+                            targetedEnemy.lastDamagingTower.numOfEnemiesKilled++; //Increases tower kill count
+                        }
                         else
                             player.GiveMoney(targetedEnemy.moneyToPlayer); // If enemy was defeated by a non-tower, gives normal amount of money
                         player.RegenMana(targetedEnemy.manaToPlayer);
