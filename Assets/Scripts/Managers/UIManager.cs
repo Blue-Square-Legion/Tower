@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -58,6 +59,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI RobotATK;
     [SerializeField] private TextMeshProUGUI RobotDEF;
     [SerializeField] private TextMeshProUGUI RobotSPD;
+    [SerializeField] private Image RobotName;
+    [SerializeField] private Image RobotImage;
+    [SerializeField] private Image TowerName;
+    [SerializeField] private Image TowerImage;
 
     [Tooltip("Path 1")]
     [SerializeField] private TextMeshProUGUI path1Upgrade1;
@@ -255,6 +260,7 @@ public class UIManager : MonoBehaviour
     {
         upgradeScreen.SetActive(true);
         ShowRobotPage();
+        ShowBasicRobot();
     }
 
     public void HideCompendium()
@@ -262,7 +268,7 @@ public class UIManager : MonoBehaviour
         upgradeScreen.SetActive(false);
     }
 
-    #region Robot Stats
+
     public void ShowRobotPage()
     {
         RobotPage.SetActive(true);
@@ -275,6 +281,22 @@ public class UIManager : MonoBehaviour
         RobotPage.SetActive(false);
     }
 
+    private void ChangeImageSprite(string path, Image imageComponent)
+    {
+        Sprite sprite = AssetDatabase.LoadAssetAtPath<Sprite>(path);
+        if (sprite != null)
+        {
+            imageComponent.sprite = sprite;
+        }
+        else
+        {
+            Debug.LogWarning($"Sprite at {path} not found!");
+        }
+    }
+
+
+
+    #region Robot Stats
 
     public void ShowRobotInfo(Enemy.EnemyData enemyData)
     {
@@ -321,40 +343,108 @@ public class UIManager : MonoBehaviour
     {
         var enemyData = enemyInfo.GetEnemyData(Enemy.EnemyType.Basic);
         ShowRobotInfo(enemyData);
+        ChangeImageSprite("Assets/Art/UI/Enemies/WalkerEnemy3QTR_TransparentBG.png", RobotImage);
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-BasicBot-Title.png", RobotName);
+
     }
 
     public void ShowRollerRobot()
     {
         var enemyData = enemyInfo.GetEnemyData(Enemy.EnemyType.Fast);
         ShowRobotInfo(enemyData);
+        ChangeImageSprite("Assets/Art/UI/Enemies/RollerEnemy3QTR_TransparentBG.png", RobotImage);
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-RollerBot-Title.png", RobotName);
     }
 
     public void ShowStealthRobot()
     {
         var enemyData = enemyInfo.GetEnemyData(Enemy.EnemyType.Buffer);
         ShowRobotInfo(enemyData);
+        ChangeImageSprite("Assets/Art/UI/Enemies/WalkerEnemy3QTR_TransparentBG.png", RobotImage);
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-StealthBot-Title.png", RobotName);
     }
 
     public void ShowSpiderRobot()
     {
         var enemyData = enemyInfo.GetEnemyData(Enemy.EnemyType.Spider);
         ShowRobotInfo(enemyData);
+        ChangeImageSprite("Assets/Art/UI/Enemies/SpiderEnemy3QTR_TransparentBG.png", RobotImage);
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-SpiderBot-Title.png", RobotName);
     }
 
     public void ShowTankRobot()
     {
         var enemyData = enemyInfo.GetEnemyData(Enemy.EnemyType.Slow);
         ShowRobotInfo(enemyData);
+        ChangeImageSprite("Assets/Art/UI/Enemies/WalkerEnemy3QTR_TransparentBG.png", RobotImage);
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-TankBot-Title.png", RobotName);
     }
 
     public void ShowWalkerRobot()
     {
         var enemyData = enemyInfo.GetEnemyData(Enemy.EnemyType.Stealth);
         ShowRobotInfo(enemyData);
+        ChangeImageSprite("Assets/Art/UI/Enemies/WalkerEnemy3QTR_TransparentBG.png", RobotImage);
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-WalkerBot-Title.png", RobotName);
     }
 
     #endregion
 
+
+    //Show Tower Buttons
+
+    #region Tower States
+
+    public void ShowCrossbow()
+    {
+        
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-Crossbow-Title.png", TowerName);
+        ChangeImageSprite("Assets/Art/UI/Towers/CrossbowTower.png", TowerImage);
+
+    }
+
+    public void ShowCannon()
+    {
+        
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-Cannon-Title.png", TowerName);
+        ChangeImageSprite("Assets/Art/UI/Towers/CannonTower.png", TowerImage);
+    }
+
+    public void ShowFlame()
+    {
+        
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-Flame-Title.png", TowerName);
+        ChangeImageSprite("Assets/Art/UI/Towers/FlameTower.png", TowerImage);
+    }
+
+    public void ShowSnowball()
+    {
+        
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-Snowball-Title.png", TowerName);
+        ChangeImageSprite("Assets/Art/UI/Towers/SnowCatapult.png", TowerImage);
+    }
+
+    public void ShowSupport()
+    {
+        
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-Support-Title.png", TowerName);
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-TankBot-Title.png", TowerImage);
+    }
+
+    public void ShowEconomy()
+    {
+        
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-Economy-Title.png", TowerName);
+        ChangeImageSprite("Assets/Art/UI/Towers/MineTower.png", TowerImage);
+    }
+
+    public void ShowSpikes()
+    {
+        
+        ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-Spikes-Title.png", TowerName);
+        ChangeImageSprite("Assets/Art/UI/Towers/SpikeTower.png", TowerImage);
+    }
+    #endregion
 
     public void UpdateAutoStartText(string text)
     {
