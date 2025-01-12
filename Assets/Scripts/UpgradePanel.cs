@@ -52,6 +52,10 @@ public class UpgradePanel : MonoBehaviour
     [SerializeField] Image progressBar2, progressBar3;
     [SerializeField] Sprite zeroUpgrades, oneUpgrades, twoUpgrades, threeUpgrades, fourUpgrades;
 
+    [Header("Tooltips")]
+    [SerializeField] private GameObject tooltip1;
+    [SerializeField] private GameObject tooltip2, tooltip3;
+
     private int currentTargetIndex = 0;
     private int targetNum = Enum.GetValues(typeof(TargetType)).Length - 1;
     private int maxUpgradeLevel;
@@ -74,6 +78,13 @@ public class UpgradePanel : MonoBehaviour
             progressBar2.sprite = zeroUpgrades;
         if (progressBar3 != null)
             progressBar3.sprite = zeroUpgrades;
+
+        if (tooltip1 != null)
+            tooltip1.SetActive(false);
+        if (tooltip2 != null)
+            tooltip2.SetActive(false);
+        if (tooltip3 != null)
+            tooltip3.SetActive(false);
 
     }
 
@@ -114,7 +125,7 @@ public class UpgradePanel : MonoBehaviour
 
     public void SetSellButton(int price)
     {
-        sellButton.GetComponentInChildren<TextMeshProUGUI>().text = "Sell\n$" + price;
+        sellButton.GetComponentInChildren<TextMeshProUGUI>().text = price.ToString();
     }
 
     public void SetText(string upgradeText, int path)
@@ -345,6 +356,38 @@ public class UpgradePanel : MonoBehaviour
                 break;
             default:
                 print("ERROR: FAILED TO GET PATH");
+                break;
+        }
+    }
+
+    public void OnMouseEnterUpgrade(int path)
+    {
+        switch(path)
+        {
+            case 1:
+                tooltip1.SetActive(true);
+                break;
+            case 2:
+                tooltip2.SetActive(true);
+                break;
+            case 3:
+                tooltip3.SetActive(true);
+                break;
+        }
+    }
+
+    public void OnMouseExitUpgrades(int path)
+    {
+        switch (path)
+        {
+            case 1:
+                tooltip1.SetActive(false);
+                break;
+            case 2:
+                tooltip2.SetActive(false);
+                break;
+            case 3:
+                tooltip3.SetActive(false);
                 break;
         }
     }

@@ -767,6 +767,7 @@ public class TowerBehavior : MonoBehaviour
             }
             upgradeLevel1++;
             UpdateUpgradePanel();
+            upgradePanel.UpdateProgressBar(1, upgradeLevel1);
         }
     }
     #endregion
@@ -1216,6 +1217,7 @@ public class TowerBehavior : MonoBehaviour
             }
             upgradeLevel2++;
             UpdateUpgradePanel();
+            upgradePanel.UpdateProgressBar(2, upgradeLevel2);
         }
     }
     #endregion
@@ -1662,6 +1664,7 @@ public class TowerBehavior : MonoBehaviour
             }
             upgradeLevel3++;
             UpdateUpgradePanel();
+            upgradePanel.UpdateProgressBar(3, upgradeLevel3);
         }
     }
     #endregion
