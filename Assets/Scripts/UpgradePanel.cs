@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using static TowerTargetting;
 
 public class UpgradePanel : MonoBehaviour
@@ -29,12 +30,15 @@ public class UpgradePanel : MonoBehaviour
     [Header("Upgrade")]
     [SerializeField] GameObject upgradeButton1;
     [SerializeField] TextMeshProUGUI upgradeDescriptionText1;
+    [SerializeField] private Image restrictPath1;
 
     [SerializeField] GameObject upgradeButton2;
     [SerializeField] TextMeshProUGUI upgradeDescriptionText2;
+    [SerializeField] private Image restrictPath2;
 
     [SerializeField] GameObject upgradeButton3;
     [SerializeField] TextMeshProUGUI upgradeDescriptionText3;
+    [SerializeField] private Image restrictPath3;
 
     [Header("Targeting")]
     [SerializeField] TextMeshProUGUI upgradeTargetText;
@@ -50,6 +54,13 @@ public class UpgradePanel : MonoBehaviour
     {
         upgradePanel.SetActive(false);
         target = null;
+
+        if (restrictPath1 != null)
+            restrictPath1.enabled = false;
+        if (restrictPath2 != null)
+            restrictPath2.enabled = false;
+        if (restrictPath3 != null)
+            restrictPath3.enabled = false;
     }
 
     public void SetUpgradePanel(bool isActive)
@@ -203,5 +214,44 @@ public class UpgradePanel : MonoBehaviour
         ToggleUpgradeButton(target.upgradeLevel1 < maxUpgradeLevel, 1);
         ToggleUpgradeButton(target.upgradeLevel2 < maxUpgradeLevel, 2);
         ToggleUpgradeButton(target.upgradeLevel3 < maxUpgradeLevel, 3);
+    }
+
+    public void RestrictPaths(bool isPath1Restricted, bool isPath2Restricted, bool isPath3Restricted)
+    {
+        if ( restrictPath1 != null)
+        {
+            if (isPath1Restricted)
+            {
+                restrictPath1.enabled = true;
+            }
+            else
+            {
+                restrictPath1.enabled = false;
+            }
+        }
+
+        if (restrictPath2 != null)
+        {
+            if (isPath2Restricted)
+            {
+                restrictPath2.enabled = true;
+            }
+            else
+            {
+                restrictPath2.enabled = false;
+            }
+        }
+
+        if (restrictPath3 != null)
+        {
+            if (isPath3Restricted)
+            {
+                restrictPath3.enabled = true;
+            }
+            else
+            {
+                restrictPath3.enabled = false;
+            }
+        }
     }
 }
