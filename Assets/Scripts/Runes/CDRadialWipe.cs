@@ -24,6 +24,9 @@ public class CDRadialWipe : MonoBehaviour
             case RunePlacement.SkillType.Confusion:
                 wipeDuration = RunePlacement.Instance.confusionCooldown;
                 break;
+            case RunePlacement.SkillType.Cleanse:
+                wipeDuration = RunePlacement.Instance.cleanseCooldown;
+                break;
         }
     }
 
@@ -33,7 +36,7 @@ public class CDRadialWipe : MonoBehaviour
         {
             timer += Time.deltaTime;
             // Calculate the fill amount based on timer
-            float fillAmount = 1 - timer / wipeDuration;
+            float fillAmount = timer / wipeDuration;
 
             // Set the fill amount to the mask image
             maskImage.fillAmount = Mathf.Clamp01(fillAmount);
@@ -42,6 +45,7 @@ public class CDRadialWipe : MonoBehaviour
             if (timer >= wipeDuration)
             {
                 isWiping = false;
+                timer = 0f;
             }
         }
     }
