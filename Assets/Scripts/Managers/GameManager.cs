@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using AudioSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -61,6 +62,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Sprite showPathOn;
     [SerializeField] private Sprite showPathOff;
 
+    [SerializeField] AudioData audioData;
+
     void Start()
     {
         enemySpawner = EnemySpawner.Instance;
@@ -102,6 +105,11 @@ public class GameManager : MonoBehaviour
         StartCoroutine(GameLoop());
         EnemySpawner.Instance.DeactivateAllSpawnIndicators();
         EnemySpawner.Instance.ActivateSpawnIndicators(nextSpawnPoints);
+
+        AudioManager.Instance.CreateAudio()
+            .WithAudioData(audioData)
+            .WithPosition(gameObject.transform.position)
+            .Play();
     }
 
     public void EnqueueWave()
