@@ -191,7 +191,6 @@ public class TowerBehavior : MonoBehaviour
         {
             upgradePanel.SetUpgradePanel(lastSelectedTower.transform.Find("Range").gameObject.activeInHierarchy);
             UpdateUpgradePanel();
-            UIManager.Instance.UpdateUpgradeScreen(this);
             lastSelectedTower = null;
         }
     }
