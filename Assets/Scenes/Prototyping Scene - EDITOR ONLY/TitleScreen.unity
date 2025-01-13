@@ -437,6 +437,24 @@ MonoBehaviour:
   runeSelection: {fileID: 0}
   towerSelection: {fileID: 0}
   upgradeScreen: {fileID: 0}
+  RobotPage: {fileID: 0}
+  TowerPage: {fileID: 0}
+  RobotTab: {fileID: 0}
+  TowerTab: {fileID: 0}
+  BookPage: {fileID: 0}
+  RobotDescription: {fileID: 0}
+  RobotAbilities: {fileID: 0}
+  RobotVariants: {fileID: 0}
+  RobotWeaknesses: {fileID: 0}
+  RobotResistance: {fileID: 0}
+  RobotHP: {fileID: 0}
+  RobotATK: {fileID: 0}
+  RobotDEF: {fileID: 0}
+  RobotSPD: {fileID: 0}
+  RobotName: {fileID: 0}
+  RobotImage: {fileID: 0}
+  TowerName: {fileID: 0}
+  TowerImage: {fileID: 0}
   path1Upgrade1: {fileID: 0}
   path1Upgrade2: {fileID: 0}
   path1Upgrade3: {fileID: 0}
@@ -446,8 +464,6 @@ MonoBehaviour:
   path3Upgrade1: {fileID: 0}
   path3Upgrade2: {fileID: 0}
   path3Upgrade3: {fileID: 0}
-  autoStartText: {fileID: 0}
-  showPathsText: {fileID: 0}
   autoStartButton: {fileID: 0}
   showPathsButton: {fileID: 0}
 --- !u!4 &148718683
@@ -1237,9 +1253,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "kaptainKirby - Team Lead / Producer / Programmer\r\nOscar Hernandez -
-    Co Lead / Lead Artist\r\nChiferito - Lead Programmer \r\nMUGWANEZA MANZI Audace
-    - Lead Game Designer\r\nilan - Lead Sound Designer \r\nTriplejay - 3D Artist\r\nheiki
-    3D Artist\r\nperi.pekoe - 2D Artist\r\nAceofspade - Programmer"
+    Co Lead / Lead Artist\r\nChiferito - Lead Programmer \r\r\nilan - Lead Sound
+    Designer \r\nTriplejay - 3D Artist\r\nheiki 3D Artist\r\nperi.pekoe - 2D Artist\r\nAceofspade
+    - Programmer"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cd3bdc69e1c7f3743be46492e1277b1e, type: 2}
   m_sharedMaterial: {fileID: 4067470592076721162, guid: cd3bdc69e1c7f3743be46492e1277b1e,
