@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -55,6 +56,11 @@ public class GameManager : MonoBehaviour
 
     [NonSerialized] public float interestPercent;
 
+    [SerializeField] private Sprite autoStartWaveOn;
+    [SerializeField] private Sprite autoStartWaveOff;
+    [SerializeField] private Sprite showPathOn;
+    [SerializeField] private Sprite showPathOff;
+
     void Start()
     {
         enemySpawner = EnemySpawner.Instance;
@@ -76,8 +82,6 @@ public class GameManager : MonoBehaviour
         showPaths = false;
         beginWave = false;
         interestPercent = 1;
-
-        UIManager.Instance.UpdateAutoStartText("Auto-start:\n" + autoStart);
 
         int numOfNodes = nodeParent.childCount;
         nodePositions = new Vector3[numOfNodes];
@@ -425,7 +429,11 @@ public class GameManager : MonoBehaviour
                         if (targetedEnemy.lastDamagingTower != null)
                         {
                             player.GiveMoney(targetedEnemy.moneyToPlayer * targetedEnemy.lastDamagingTower.moneyMultiplier); // Gives money to player
-                            targetedEnemy.lastDamagingTower.numOfEnemiesKilled++; //Increases tower kill count
+                            if (targetedEnemy.lastDamagingTower != null)
+                            {
+                                targetedEnemy.lastDamagingTower.numOfEnemiesKilled++; //Increases tower kill count
+                                UpgradePanel.Instance.UpdateKillCount(targetedEnemy.lastDamagingTower.numOfEnemiesKilled);
+                            }
                         }
                         else
                             player.GiveMoney(targetedEnemy.moneyToPlayer); // If enemy was defeated by a non-tower, gives normal amount of money
@@ -709,16 +717,32 @@ public class GameManager : MonoBehaviour
         Confuse
     }
 
-    public void ToggleAutoStart()
+    public void ToggleAutoStart(Image img)
     {
         autoStart = !autoStart;
         beginWave = autoStart;
-        UIManager.Instance.UpdateAutoStartText("Auto-start:\n"+ autoStart);
+
+        if (autoStart)
+        {
+            img.sprite = autoStartWaveOn;
+        }
+        else
+        {
+            img.sprite = autoStartWaveOff;
+        }    
     }
 
-    public void ToggleShowPaths()
+    public void ToggleShowPaths(Image img)
     {
         showPaths = !showPaths;
-        UIManager.Instance.UpdateShowPathsText("Show paths:\n" + showPaths);
+
+        if (showPaths)
+        {
+            img.sprite = showPathOn;
+        }
+        else
+        {
+            img.sprite = showPathOff;
+        }
     }
 }

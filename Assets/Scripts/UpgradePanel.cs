@@ -27,17 +27,21 @@ public class UpgradePanel : MonoBehaviour
 
     [SerializeField] GameObject sellButton;
     [SerializeField] TextMeshProUGUI towerName;
+    [SerializeField] TextMeshProUGUI killCount;
     [Header("Upgrade")]
     [SerializeField] GameObject upgradeButton1;
     [SerializeField] TextMeshProUGUI upgradeDescriptionText1;
+    [SerializeField] TextMeshProUGUI priceText1;
     [SerializeField] private Image restrictPath1;
 
     [SerializeField] GameObject upgradeButton2;
     [SerializeField] TextMeshProUGUI upgradeDescriptionText2;
+    [SerializeField] TextMeshProUGUI priceText2;
     [SerializeField] private Image restrictPath2;
 
     [SerializeField] GameObject upgradeButton3;
     [SerializeField] TextMeshProUGUI upgradeDescriptionText3;
+    [SerializeField] TextMeshProUGUI priceText3;
     [SerializeField] private Image restrictPath3;
 
     [Header("Targeting")]
@@ -86,6 +90,13 @@ public class UpgradePanel : MonoBehaviour
         if (tooltip3 != null)
             tooltip3.SetActive(false);
 
+        if (priceText1 != null)
+            priceText1.text = "";
+        if (priceText2 != null)
+            priceText2.text = "";
+        if (priceText3 != null)
+            priceText3.text = "";
+
     }
 
     public void SetUpgradePanel(bool isActive)
@@ -99,6 +110,7 @@ public class UpgradePanel : MonoBehaviour
         currentTargetIndex = type;
         maxUpgradeLevel = target.GetMaxUpgradeLevel(1) + 1;
         UpdateTargetInfo();
+        UpdateKillCount(target.numOfEnemiesKilled);
         towerName.text = target.towerType.ToString();
     }
 
@@ -140,6 +152,31 @@ public class UpgradePanel : MonoBehaviour
                 break;
             case 3:
                 upgradeDescriptionText3.text = upgradeText;
+                break;
+        }
+    }
+
+    public void SetCost(string costText, int path, int level)
+    {
+        switch (path)
+        {
+            case 1:
+                if (level != 4) //If level is not at max, display the cost
+                    priceText1.text = costText;
+                else
+                    priceText1.text = "";
+                break;
+            case 2:
+                if (level != 4)
+                    priceText2.text = costText;
+                else
+                    priceText2.text = "";
+                break;
+            case 3:
+                if (level != 4)
+                    priceText3.text = costText;
+                else
+                    priceText3.text = "";
                 break;
         }
     }
@@ -237,9 +274,12 @@ public class UpgradePanel : MonoBehaviour
 
         SetTargetText();
         target.SetTargetType(currentTargetIndex);
+
+        /**
         ToggleUpgradeButton(target.upgradeLevel1 < maxUpgradeLevel, 1);
         ToggleUpgradeButton(target.upgradeLevel2 < maxUpgradeLevel, 2);
         ToggleUpgradeButton(target.upgradeLevel3 < maxUpgradeLevel, 3);
+        */
     }
 
     public void RestrictPaths(bool isPath1Restricted, bool isPath2Restricted, bool isPath3Restricted)
@@ -249,6 +289,7 @@ public class UpgradePanel : MonoBehaviour
             if (isPath1Restricted)
             {
                 restrictPath1.enabled = true;
+                SetCost("", 1, 0);
             }
             else
             {
@@ -261,6 +302,7 @@ public class UpgradePanel : MonoBehaviour
             if (isPath2Restricted)
             {
                 restrictPath2.enabled = true;
+                SetCost("", 2, 0);
             }
             else
             {
@@ -273,12 +315,18 @@ public class UpgradePanel : MonoBehaviour
             if (isPath3Restricted)
             {
                 restrictPath3.enabled = true;
+                SetCost("", 3, 0);
             }
             else
             {
                 restrictPath3.enabled = false;
             }
         }
+    }
+
+    public void UpdateKillCount(int count)
+    {
+        killCount.text = count.ToString();
     }
 
     public void UpdateProgressBar(int path, int level)
@@ -292,16 +340,17 @@ public class UpgradePanel : MonoBehaviour
                         progressBar1.sprite = zeroUpgrades;
                         break;
                     case 1:
-                        progressBar1.sprite = oneUpgrades;
+                        progressBar1.sprite = zeroUpgrades;
                         break;
                     case 2:
-                        progressBar1.sprite = twoUpgrades;
+                        progressBar1.sprite = oneUpgrades;
                         break;
                     case 3:
-                        progressBar1.sprite = threeUpgrades;
+                        progressBar1.sprite = twoUpgrades;
                         break;
                     case 4:
-                        progressBar1.sprite = fourUpgrades;
+                        progressBar1.sprite = threeUpgrades;
+                        priceText1.text = "";
                         break;
                     default:
                         print("ERROR: INVALID LEVEL");
@@ -315,16 +364,17 @@ public class UpgradePanel : MonoBehaviour
                         progressBar2.sprite = zeroUpgrades;
                         break;
                     case 1:
-                        progressBar2.sprite = oneUpgrades;
+                        progressBar2.sprite = zeroUpgrades;
                         break;
                     case 2:
-                        progressBar2.sprite = twoUpgrades;
+                        progressBar2.sprite = oneUpgrades;
                         break;
                     case 3:
-                        progressBar2.sprite = threeUpgrades;
+                        progressBar2.sprite = twoUpgrades;
                         break;
                     case 4:
-                        progressBar2.sprite = fourUpgrades;
+                        progressBar2.sprite = threeUpgrades;
+                        priceText2.text = "";
                         break;
                     default:
                         print("ERROR: INVALID LEVEL");
@@ -338,16 +388,17 @@ public class UpgradePanel : MonoBehaviour
                         progressBar3.sprite = zeroUpgrades;
                         break;
                     case 1:
-                        progressBar3.sprite = oneUpgrades;
+                        progressBar3.sprite = zeroUpgrades;
                         break;
                     case 2:
-                        progressBar3.sprite = twoUpgrades;
+                        progressBar3.sprite = oneUpgrades;
                         break;
                     case 3:
-                        progressBar3.sprite = threeUpgrades;
+                        progressBar3.sprite = twoUpgrades;
                         break;
                     case 4:
-                        progressBar3.sprite = fourUpgrades;
+                        progressBar3.sprite = threeUpgrades;
+                        priceText3.text = "";
                         break;
                     default:
                         print("ERROR: INVALID LEVEL");

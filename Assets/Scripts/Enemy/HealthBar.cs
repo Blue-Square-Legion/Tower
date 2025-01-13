@@ -30,14 +30,6 @@ public class HealthBar : MonoBehaviour
         if (currentHealth > maxHealth)
             currentHealth = maxHealth;
 
-        float healthRatio = (float) 255 / maxHealth;
-
-        //Sets color of the health bar
-        greenValue = currentHealth * healthRatio;
-        redValue = 255 - greenValue;
-
-        mRenderer.material.color = new Color(redValue, greenValue, BLUE_VALUE);
-
         //Sets size of the health bar;
         float sizeRatio = (float) currentHealth / maxHealth * maxSize;
         transform.localScale = new Vector3(sizeRatio, transform.localScale.y, transform.localScale.z);

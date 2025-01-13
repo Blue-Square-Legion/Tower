@@ -79,8 +79,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI path3Upgrade1;
     [SerializeField] private TextMeshProUGUI path3Upgrade2, path3Upgrade3;
 
-    [SerializeField] TMP_Text autoStartText;
-    [SerializeField] TMP_Text showPathsText;
     [SerializeField] GameObject autoStartButton;
     [SerializeField] GameObject showPathsButton;
 
@@ -453,16 +451,6 @@ public class UIManager : MonoBehaviour
         ChangeImageSprite("Assets/Art/UI/Towers/SpikeTower.png", TowerImage);
     }
     #endregion
-
-    public void UpdateAutoStartText(string text)
-    {
-        autoStartText.text = text;
-    }
-
-    public void UpdateShowPathsText(string text)
-    {
-        showPathsText.text = text;
-    }
 
     public void ToggleTowersPressed()
     {

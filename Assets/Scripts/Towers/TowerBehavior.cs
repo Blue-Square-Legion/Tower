@@ -1680,12 +1680,23 @@ public class TowerBehavior : MonoBehaviour
         }
         upgradePanel.SetTarget(this, (int)targetType);
         upgradePanel.SetSellButton(sellCost);
+
         upgradePanel.SetText(upgradeDescription1, 1);
         upgradePanel.SetText(upgradeDescription2, 2);
         upgradePanel.SetText(upgradeDescription3, 3);
+
+        upgradePanel.SetCost(upgradeCost1.ToString(), 1, upgradeLevel1);
+        upgradePanel.SetCost(upgradeCost2.ToString(), 2, upgradeLevel2);
+        upgradePanel.SetCost(upgradeCost3.ToString(), 3, upgradeLevel3);
+
+
+
+        /**
         upgradePanel.ToggleUpgradeButton(upgradeLevel1 != 4, 1);
         upgradePanel.ToggleUpgradeButton(upgradeLevel2 != 4, 2);
         upgradePanel.ToggleUpgradeButton(upgradeLevel3 != 4, 3);
+        */
+
         upgradePanel.RestrictPaths(isPath1Restricted, isPath2Restricted, isPath3Restricted);
     }
 
@@ -1716,62 +1727,63 @@ public class TowerBehavior : MonoBehaviour
         {
             TowerType.Crossbow, new List<UpgradeData>
             {
-                new UpgradeData("Better Scopes\nCost: " + 50, 50, "Increases Range"),
-                new UpgradeData("Scopier Scopes\nCost: " + 150, 150, "Increases Range"),
-                new UpgradeData("Scopiest Scopes\nCost: " + 200, 200, "Increases Range"),
+                new UpgradeData("Better Scopes\nIncreases Range", 50, "Increases Range"),
+                new UpgradeData("Scopier Scopes\nIncreases Range", 150, "Increases Range"),
+                new UpgradeData("Scopiest Scopes\nIncreases Range", 200, "Increases Range"),
                 new UpgradeData("Max Level", 0, "")
             }
         },
         {
             TowerType.Cannon, new List<UpgradeData>
             {
-                new UpgradeData("Heavier Bombs\nCost: " + 150, 150, "Increases Damage"),
-                new UpgradeData("More Powder\nCost: " + 200, 200, "Increases Damage"),
-                new UpgradeData("BOOM.\nCost: " + 400, 400, "Increases Damage"),
+                new UpgradeData("Heavier Bombs\nIncreases Damage", 150, "Increases Damage"),
+                new UpgradeData("More Powder\nIncreases Damage", 200, "Increases Damage"),
+                new UpgradeData("BOOM.\nIncreases Damage", 400, "Increases Damage"),
                 new UpgradeData("Max Level", 0, "")
             }
         },
         {
             TowerType.Flame, new List<UpgradeData>
             {
-                new UpgradeData("Better Fuel\nCost: " + 150, 150, "Increases Burn Rate"),
-                new UpgradeData("Quicker Burns\nCost: " + 400, 400, "Increases Burn Rate"),
-                new UpgradeData("Nonstop Burns\nCost: " + 1000, 1000, "Increases Burn Rate"),
+                new UpgradeData("Better Fuel\nIncreases Burn Rate", 150, "Increases Burn Rate"),
+                new UpgradeData("Quicker Burns\nIncreases Burn Rate", 400, "Increases Burn Rate"),
+                new UpgradeData("Nonstop Burns\nIncreases Burn Rate", 1000, "Increases Burn Rate"),
                 new UpgradeData("Max Level", 0, "")
             }
         },
         {
             TowerType.Mine, new List<UpgradeData>
             {
-                new UpgradeData("More Money\nCost: " + 300, 300, "Increases End of Wave Bonus"),
-                new UpgradeData("Bigger Mine\nCost: " + 500, 500, "Increases End of Wave Bonus"),
-                new UpgradeData("Chain Company\nCost: " + 750, 750, "Increases End of Wave Bonus"),
+                new UpgradeData("More Money\nIncreases End of Wave Bonus", 300, "Increases End of Wave Bonus"),
+                new UpgradeData("Bigger Min\nIncreases End of Wave Bonus", 500, "Increases End of Wave Bonus"),
+                new UpgradeData("Chain Company\nIncreases End of Wave Bonus", 750, "Increases End of Wave Bonus"),
                 new UpgradeData("Max Level", 0, "")
             }
         },
         {
             TowerType.Snowball, new List<UpgradeData>
             {
-                new UpgradeData("Increased Detector\nCost: " + 100, 100, "Increases Range"),
-                new UpgradeData("Faster firing\nCost: " + 150, 150, "Increases Attack Speed"),
-                new UpgradeData("Aerodynamic\nCost: " + 200, 200, "Decreases Snowball Travel Time"),
+                new UpgradeData("Increased Detector\nIncreases Range", 100, "Increases Range"),
+                new UpgradeData("Faster firing\nIncreases Attack Speed", 150, "Increases Attack Speed"),
+                new UpgradeData("Aerodynamic\nDecreases Snowball Travel Time", 200, "Decreases Snowball Travel Time"),
                 new UpgradeData("Max Level", 0, "")
             }
         },
         {
             TowerType.Orb, new List<UpgradeData>
             {
-                new UpgradeData("Proximity Sensor (Not Implemented Yet)\nCost: " + 0, 0, "Increases Range and Range Buff"),
-                new UpgradeData("Inspiration\nCost: " + 300, 300, "Increases Range Buff"),
+                new UpgradeData("Proximity Sensor (Not Implemented Yet)", 0, "Increases Range and Range Buff"),
+                new UpgradeData("Inspiration\nIncreases Range Buff", 300, "Increases Range Buff"),
+                new UpgradeData("Inspiration\nIncreases Range Buff", 900, "Increases Range Buff"),
                 new UpgradeData("Max Level", 0, "")
             }
         },
         {
             TowerType.Spikes, new List<UpgradeData>
             {
-                new UpgradeData("Bigger Spikes\nCost: " + 150, 150, "Increases Rate of Damage"),
-                new UpgradeData("Faster Spikes\nCost: " + 250, 250, "Increases Rate of Damage"),
-                new UpgradeData("Deadly Spikes\nCost: " + 350, 350, "Increases Rate of Damage"),
+                new UpgradeData("Bigger Spikes\nIncreases Rate of Damage", 150, "Increases Rate of Damage"),
+                new UpgradeData("Faster Spikes\nIncreases Rate of Damage", 250, "Increases Rate of Damage"),
+                new UpgradeData("Deadly Spikes\nIncreases Rate of Damage", 350, "Increases Rate of Damage"),
                 new UpgradeData("Max Level", 0, "")
             }
         }
@@ -1784,62 +1796,63 @@ public class TowerBehavior : MonoBehaviour
         {
             TowerType.Crossbow, new List<UpgradeData>
             {
-                new UpgradeData("Sharper Arrows\nCost: " + 100, 100, "Increases Damage"),
-                new UpgradeData("Stronger Arrows\nCost: " + 250, 250, "Increases Damage"),
-                new UpgradeData("Barbed Arrows\nCost: " + 400, 400, "Increases Damage"),
+                new UpgradeData("Sharper Arrows\nIncreases Damage", 100, "Increases Damage"),
+                new UpgradeData("Stronger Arrows\nIncreases Damage", 250, "Increases Damage"),
+                new UpgradeData("Barbed Arrows\nIncreases Damage", 400, "Increases Damage"),
                 new UpgradeData("Max Level", 0, "")
             }
         },
         {
             TowerType.Cannon, new List<UpgradeData>
             {
-                new UpgradeData("Faster Reload\nCost: " + 100, 100, "Increases Attack Speed"),
-                new UpgradeData("Fastest Reload\n" + "Cost: " + 220, 220, "Increases Attack Speed"),
-                new UpgradeData("Automated Reload\n" + "Cost: " + 400, 400, "Increases Attack Speed"),
+                new UpgradeData("Faster Reload\nIncreases Attack Speed", 100, "Increases Attack Speed"),
+                new UpgradeData("Fastest Reload\nIncreases Attack Speed" + "Cost", 220, "Increases Attack Speed"),
+                new UpgradeData("Automated Reload\nIncreases Attack Speed" + "Cost", 400, "Increases Attack Speed"),
                 new UpgradeData("Max Level", 0, "")
             }
         },
         {
             TowerType.Flame, new List<UpgradeData>
             {
-                new UpgradeData("Better Propellent\nCost: " + 100, 100, "Increases Range"),
-                new UpgradeData("Burny Burns\nCost: " + 500, 500, "Increases Damage"),
-                new UpgradeData("Hellfire\nCost: " + 1200, 1200, "Increases Damage"),
+                new UpgradeData("Better Propellent\nIncreases Range", 100, "Increases Range"),
+                new UpgradeData("Burny Burns\nIncreases Range", 500, "Increases Damage"),
+                new UpgradeData("Hellfire\nIncreases Range", 1200, "Increases Damage"),
                 new UpgradeData("Max Level", 0, "")
             }
         },
         {
             TowerType.Mine, new List<UpgradeData>
             {
-                new UpgradeData("Interest\nCost: " + 0, 0, "Extra money based on current money at end of wave (Only highest Value Applied)"),
-                new UpgradeData("Better Deals\nCost: " + 0, 0, "Increases Interest Effect"),
-                new UpgradeData("Compound Interest\nCost: " + 0, 0, "Increases Interest Effect"),
+                new UpgradeData("Interest\nExtra Money based on current money", 0, "Extra money based on current money at end of wave (Only highest Value Applied)"),
+                new UpgradeData("Better Deals\nIncreases Interest Effect", 0, "Increases Interest Effect"),
+                new UpgradeData("Compound Interest\nIncreases Interest Effect", 0, "Increases Interest Effect"),
                 new UpgradeData("Max Level", 0, "")
             }
         },
         {
             TowerType.Snowball, new List<UpgradeData>
             {
-                new UpgradeData("Thicker Snow\nCost: " + 200, 200, "Increases Slow Effect"),
-                new UpgradeData("Freezing Snow\nCost: " + 300, 300, "Increases Slow Effect"),
-                new UpgradeData("Frostbite\nCost: " + 650, 650, "Increases Slow Effect"),
+                new UpgradeData("Thicker Snow\nIncreases Slow Effect", 200, "Increases Slow Effect"),
+                new UpgradeData("Freezing Snow\nIncreases Slow Effect", 300, "Increases Slow Effect"),
+                new UpgradeData("Frostbite\nIncreases Slow Effect", 650, "Increases Slow Effect"),
                 new UpgradeData("Max Level", 0, "")
             }
         },
         {
             TowerType.Orb, new List<UpgradeData>
             {
-                new UpgradeData("Proximity Sensor (Not Implemented Yet)\nCost: " + 0, 0, "Grants Damage Buff to nearby towers"),
-                new UpgradeData("Inspiration\nCost: " + 300, 300, "Increases Damage Buff"),
+                new UpgradeData("Focus\nGrants Damage Buff to nearby Towers", 0, "Grants Damage Buff to nearby towers"),
+                new UpgradeData("Concentration\nIncreases Damage Buff", 300, "Increases Damage Buff"),
+                new UpgradeData("Unification\nIncreases Damage Buff", 1100, "Increases Damage Buff"),
                 new UpgradeData("Max Level", 0, "")
             }
         },
         {
             TowerType.Spikes, new List<UpgradeData>
             {
-                new UpgradeData("More Spikes\nCost: " + 200, 200, "Increases Size"),
-                new UpgradeData("Even More Spikes\nCost: " + 400, 400, "Increases Size"),
-                new UpgradeData("Carpet of Spikes\nCost: " + 650, 650, "Increases Size"),
+                new UpgradeData("More Spikes\nIncreases Size", 200, "Increases Size"),
+                new UpgradeData("Even More Spikes\nIncreases Size", 400, "Increases Size"),
+                new UpgradeData("Carpet of Spikes\nIncreases Size", 650, "Increases Size"),
                 new UpgradeData("Max Level", 0, "")
             }
         }
@@ -1852,62 +1865,63 @@ public class TowerBehavior : MonoBehaviour
         {
             TowerType.Crossbow, new List<UpgradeData>
             {
-                new UpgradeData("Faster Firing\nCost: " + 150, 150, "Increases Attack Speed"),
-                new UpgradeData("Faster Mechanism\n" + "Cost: " + 200, 200, "Increases Attack Speed"),
-                new UpgradeData("Automatic Firing\n" + "Cost: " + 450, 450, "Increases Attack Speed"),
+                new UpgradeData("Faster Firing\nIncreases Attack Speed", 150, "Increases Attack Speed"),
+                new UpgradeData("Faster Mechanism\nIncreases Attack Speed", 200, "Increases Attack Speed"),
+                new UpgradeData("Automatic Firing\nIncreases Attack Speed", 450, "Increases Attack Speed"),
                 new UpgradeData("Max Level", 0, "")
             }
         },
         {
             TowerType.Cannon, new List<UpgradeData>
             {
-                new UpgradeData("Bombier Bomb\nCost: " + 170, 170, "Increases Explosion Radius"),
-                new UpgradeData("Compressed Charge\n" + "Cost: " + 280, 280, "Increases Explosion Radius"),
-                new UpgradeData("Atomic Explosion\n" + "Cost: " + 490, 490, "Increases Explosion Radius"),
+                new UpgradeData("Bombier Bomb\nIncreases Explosion Radius", 170, "Increases Explosion Radius"),
+                new UpgradeData("Compressed Charge\nIncreases Explosion Radius", 280, "Increases Explosion Radius"),
+                new UpgradeData("Atomic Explosion\nIncreases Explosion Radius", 490, "Increases Explosion Radius"),
                 new UpgradeData("Max Level", 0, "")
             }
         },
         {
             TowerType.Flame, new List<UpgradeData>
             {
-                new UpgradeData("Longer Lasting Burns\nCost: " + 250, 250, "Increases Burn Duration"),
-                new UpgradeData("Hell's Itch\nCost: " + 550, 550, "Increases Burn Duration"),
-                new UpgradeData("Third Degree Burns\n" + "Cost: " + 900, 900, "Increases Burn Duration"),
+                new UpgradeData("Longer Lasting Burns\nIncreases Burn Duration", 250, "Increases Burn Duration"),
+                new UpgradeData("Hell's Itch\nIncreases Burn Duration", 550, "Increases Burn Duration"),
+                new UpgradeData("Third Degree Burns\nIncreases Burn Duration", 900, "Increases Burn Duration"),
                 new UpgradeData("Max Level", 0, "")
             }
         },
         {
             TowerType.Mine, new List<UpgradeData>
             {
-                new UpgradeData("Investments\nCost: " + 500, 500, "Grants Money Earned Buff to nearby towers"),
-                new UpgradeData("Stocks\nCost: " + 750, 750, "Increases Money Earned Buff"),
-                new UpgradeData("Majority Owner\nCost: " + 1000, 1000, "Increases Money Earned Buff"),
+                new UpgradeData("Investments\nGrants Money Earned Buff to nearby towers", 500, "Grants Money Earned Buff to nearby towers"),
+                new UpgradeData("Stocks\nGrants Money Earned Buff to nearby towers", 750, "Increases Money Earned Buff"),
+                new UpgradeData("Majority Owner\nGrants Money Earned Buff to nearby towers", 1000, "Increases Money Earned Buff"),
                 new UpgradeData("Max Level", 0, "")
             }
         },
         {
             TowerType.Snowball, new List<UpgradeData>
             {
-                new UpgradeData("Bigger Snowball\nCost: " + 200, 200, "Increases Snow Area"),
-                new UpgradeData("Biggest Snowball\nCost: " + 250, 250, "Increases Snow Area"),
-                new UpgradeData("Carpet Bomb\nCost: " + 500, 500, "Increases Snow Area"),
+                new UpgradeData("Bigger Snowball\nIncreases Snow Area", 200, "Increases Snow Area"),
+                new UpgradeData("Biggest Snowball\nIncreases Snow Area", 250, "Increases Snow Area"),
+                new UpgradeData("Carpet Bomb\nIncreases Snow Area", 500, "Increases Snow Area"),
                 new UpgradeData("Max Level", 0, "")
             }
         },
         {
             TowerType.Orb, new List<UpgradeData>
             {
-                new UpgradeData("Proximity Sensor (Not Implemented Yet)\nCost: " + 0, 0, "Grants Attack Speed Buff to nearby towers"),
-                new UpgradeData("Inspiration\nCost: " + 300, 300, "Grants Detect Invisible to nearby towers"),
-                new UpgradeData("Max Level", 0, "Increases Attack Speed Buff to nearby Towers")
+                new UpgradeData("Morale Boost\nGrants Attack Speed Buff to nearby towers", 0, "Grants Attack Speed Buff to nearby towers"),
+                new UpgradeData("Inspiration\nIncreases Attack Speed Buff", 300, "Increases Attack Speed Buff"),
+                new UpgradeData("Inspiration II\nIncreases Attack Speed Buff", 300, "Increases Attack Speed Buff"),
+                new UpgradeData("Max Level", 0, "")
             }
         },
         {
             TowerType.Spikes, new List<UpgradeData>
             {
-                new UpgradeData("Spikier Spikes\nCost: " + 250, 250, "Increases Damage"),
-                new UpgradeData("Sharper Spikes\nCost: " + 300, 300, "Increases Damage"),
-                new UpgradeData("LEGOS\nCost: " + 400, 400, "Increases Damage"),
+                new UpgradeData("Spikier Spikes\nIncreases Damage", 250, "Increases Damage"),
+                new UpgradeData("Sharper Spikes\nIncreases Damage", 300, "Increases Damage"),
+                new UpgradeData("LEGOS\nIncreases Damage", 400, "Increases Damage"),
                 new UpgradeData("Max Level", 0, "")
             }
         }
