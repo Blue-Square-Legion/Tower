@@ -26,7 +26,7 @@ public class UpgradePanel : MonoBehaviour
     [SerializeField] GameObject upgradePanel;
 
     [SerializeField] GameObject sellButton;
-
+    [SerializeField] TextMeshProUGUI towerName;
     [Header("Upgrade")]
     [SerializeField] GameObject upgradeButton1;
     [SerializeField] TextMeshProUGUI upgradeDescriptionText1;
@@ -46,6 +46,12 @@ public class UpgradePanel : MonoBehaviour
     [SerializeField] GameObject rightArrowButton;
 
     [NonSerialized] public TowerBehavior target;
+
+    [Header("Progress Bar")]
+    [SerializeField] Image progressBar1;
+    [SerializeField] Image progressBar2, progressBar3;
+    [SerializeField] Sprite zeroUpgrades, oneUpgrades, twoUpgrades, threeUpgrades, fourUpgrades;
+
     private int currentTargetIndex = 0;
     private int targetNum = Enum.GetValues(typeof(TargetType)).Length - 1;
     private int maxUpgradeLevel;
@@ -61,6 +67,14 @@ public class UpgradePanel : MonoBehaviour
             restrictPath2.enabled = false;
         if (restrictPath3 != null)
             restrictPath3.enabled = false;
+
+        if (progressBar1 != null)
+            progressBar1.sprite = zeroUpgrades;
+        if (progressBar2 != null)
+            progressBar2.sprite = zeroUpgrades;
+        if (progressBar3 != null)
+            progressBar3.sprite = zeroUpgrades;
+
     }
 
     public void SetUpgradePanel(bool isActive)
@@ -74,6 +88,7 @@ public class UpgradePanel : MonoBehaviour
         currentTargetIndex = type;
         maxUpgradeLevel = target.GetMaxUpgradeLevel(1) + 1;
         UpdateTargetInfo();
+        towerName.text = target.towerType.ToString();
     }
 
     public void ToggleUpgradeButton(bool isActive, int path)
@@ -252,6 +267,85 @@ public class UpgradePanel : MonoBehaviour
             {
                 restrictPath3.enabled = false;
             }
+        }
+    }
+
+    public void UpdateProgressBar(int path, int level)
+    {
+        switch(path)
+        {
+            case 1:
+                switch(level)
+                {
+                    case 0:
+                        progressBar1.sprite = zeroUpgrades;
+                        break;
+                    case 1:
+                        progressBar1.sprite = oneUpgrades;
+                        break;
+                    case 2:
+                        progressBar1.sprite = twoUpgrades;
+                        break;
+                    case 3:
+                        progressBar1.sprite = threeUpgrades;
+                        break;
+                    case 4:
+                        progressBar1.sprite = fourUpgrades;
+                        break;
+                    default:
+                        print("ERROR: INVALID LEVEL");
+                        break;
+                }
+                break;
+            case 2:
+                switch (level)
+                {
+                    case 0:
+                        progressBar2.sprite = zeroUpgrades;
+                        break;
+                    case 1:
+                        progressBar2.sprite = oneUpgrades;
+                        break;
+                    case 2:
+                        progressBar2.sprite = twoUpgrades;
+                        break;
+                    case 3:
+                        progressBar2.sprite = threeUpgrades;
+                        break;
+                    case 4:
+                        progressBar2.sprite = fourUpgrades;
+                        break;
+                    default:
+                        print("ERROR: INVALID LEVEL");
+                        break;
+                }
+                break;
+            case 3:
+                switch (level)
+                {
+                    case 0:
+                        progressBar3.sprite = zeroUpgrades;
+                        break;
+                    case 1:
+                        progressBar3.sprite = oneUpgrades;
+                        break;
+                    case 2:
+                        progressBar3.sprite = twoUpgrades;
+                        break;
+                    case 3:
+                        progressBar3.sprite = threeUpgrades;
+                        break;
+                    case 4:
+                        progressBar3.sprite = fourUpgrades;
+                        break;
+                    default:
+                        print("ERROR: INVALID LEVEL");
+                        break;
+                }
+                break;
+            default:
+                print("ERROR: FAILED TO GET PATH");
+                break;
         }
     }
 }

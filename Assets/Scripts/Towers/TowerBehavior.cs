@@ -46,6 +46,8 @@ public class TowerBehavior : MonoBehaviour
     private bool isPath1Restricted;
     private bool isPath2Restricted;
     private bool isPath3Restricted;
+
+    [NonSerialized] public int numOfEnemiesKilled;
     private void Start()
     {
         targetType = TowerTargetting.TargetType.First;
@@ -99,8 +101,9 @@ public class TowerBehavior : MonoBehaviour
         if (leveltext != null) {
             leveltext.text = $"{upgradeLevel1}-{upgradeLevel2}-{upgradeLevel3}"; 
             Debug.Log("Text updated successfully!"); 
-
         }
+
+        numOfEnemiesKilled = 0;
     }
 
     //Desyncs the towers from regular game loop to prevent errors
@@ -329,7 +332,7 @@ public class TowerBehavior : MonoBehaviour
             player.RemoveMoney(upgradeCost1);
             switch (towerType)
             {
-                case TowerType.Basic:
+                case TowerType.Crossbow:
                     switch (upgradeLevel1)
                     {
                         case 1:
@@ -391,7 +394,7 @@ public class TowerBehavior : MonoBehaviour
                             break;
                     }
                     break;
-                case TowerType.Bomb:
+                case TowerType.Cannon:
                     switch (upgradeLevel1)
                     {
                         case 1:
@@ -516,7 +519,7 @@ public class TowerBehavior : MonoBehaviour
                             break;
                     }
                     break;
-                case TowerType.Economy:
+                case TowerType.Mine:
                     switch (upgradeLevel1)
                     {
                         case 1:
@@ -571,7 +574,7 @@ public class TowerBehavior : MonoBehaviour
                             break;
                     }
                     break;
-                case TowerType.Ice:
+                case TowerType.Snowball:
                     IceDamage tempIce = transform.gameObject.GetComponent<IceDamage>();
                     switch (upgradeLevel1)
                     {
@@ -633,7 +636,7 @@ public class TowerBehavior : MonoBehaviour
                             break;
                     }
                     break;
-                case TowerType.Support:
+                case TowerType.Orb:
                     SupportBehavior support = transform.gameObject.GetComponent<SupportBehavior>();
                     switch (upgradeLevel1)
                     {
@@ -777,7 +780,7 @@ public class TowerBehavior : MonoBehaviour
             player.RemoveMoney(upgradeCost2);
             switch (towerType)
             {
-                case TowerType.Basic:
+                case TowerType.Crossbow:
                     switch (upgradeLevel2)
                     {
                         case 1:
@@ -839,7 +842,7 @@ public class TowerBehavior : MonoBehaviour
                             break;
                     }
                     break;
-                case TowerType.Bomb:
+                case TowerType.Cannon:
                     switch (upgradeLevel2)
                     {
                         case 1:
@@ -966,7 +969,7 @@ public class TowerBehavior : MonoBehaviour
                             break;
                     }
                     break;
-                case TowerType.Economy:
+                case TowerType.Mine:
                     switch (upgradeLevel2)
                     {
                         case 1:
@@ -1025,7 +1028,7 @@ public class TowerBehavior : MonoBehaviour
                             break;
                     }
                     break;
-                case TowerType.Ice:
+                case TowerType.Snowball:
                     IceDamage tempIce = transform.gameObject.GetComponent<IceDamage>();
                     switch (upgradeLevel2)
                     {
@@ -1085,7 +1088,7 @@ public class TowerBehavior : MonoBehaviour
                             break;
                     }
                     break;
-                case TowerType.Support:
+                case TowerType.Orb:
                     SupportBehavior support = transform.gameObject.GetComponent<SupportBehavior>();
                     switch (upgradeLevel2)
                     {
@@ -1225,7 +1228,7 @@ public class TowerBehavior : MonoBehaviour
             player.RemoveMoney(upgradeCost3);
             switch (towerType)
             {
-                case TowerType.Basic:
+                case TowerType.Crossbow:
                     switch (upgradeLevel3)
                     {
                         case 1:
@@ -1287,7 +1290,7 @@ public class TowerBehavior : MonoBehaviour
                             break;
                     }
                     break;
-                case TowerType.Bomb:
+                case TowerType.Cannon:
                     switch (upgradeLevel3)
                     {
                         case 1:
@@ -1406,7 +1409,7 @@ public class TowerBehavior : MonoBehaviour
                             break;
                     }
                     break;
-                case TowerType.Economy:
+                case TowerType.Mine:
                     switch (upgradeLevel3)
                     {
                         case 1:
@@ -1468,7 +1471,7 @@ public class TowerBehavior : MonoBehaviour
                             break;
                     }
                     break;
-                case TowerType.Ice:
+                case TowerType.Snowball:
                     IceDamage tempIce = transform.gameObject.GetComponent<IceDamage>();
                     switch (upgradeLevel3)
                     {
@@ -1528,7 +1531,7 @@ public class TowerBehavior : MonoBehaviour
                             break;
                     }
                     break;
-                case TowerType.Support:
+                case TowerType.Orb:
                     SupportBehavior support = transform.gameObject.GetComponent<SupportBehavior>();
                     switch (upgradeLevel3)
                     {
@@ -1708,7 +1711,7 @@ public class TowerBehavior : MonoBehaviour
     {
         //Description and Cost
         {
-            TowerType.Basic, new List<UpgradeData>
+            TowerType.Crossbow, new List<UpgradeData>
             {
                 new UpgradeData("Better Scopes\nCost: " + 50, 50, "Increases Range"),
                 new UpgradeData("Scopier Scopes\nCost: " + 150, 150, "Increases Range"),
@@ -1717,7 +1720,7 @@ public class TowerBehavior : MonoBehaviour
             }
         },
         {
-            TowerType.Bomb, new List<UpgradeData>
+            TowerType.Cannon, new List<UpgradeData>
             {
                 new UpgradeData("Heavier Bombs\nCost: " + 150, 150, "Increases Damage"),
                 new UpgradeData("More Powder\nCost: " + 200, 200, "Increases Damage"),
@@ -1735,7 +1738,7 @@ public class TowerBehavior : MonoBehaviour
             }
         },
         {
-            TowerType.Economy, new List<UpgradeData>
+            TowerType.Mine, new List<UpgradeData>
             {
                 new UpgradeData("More Money\nCost: " + 300, 300, "Increases End of Wave Bonus"),
                 new UpgradeData("Bigger Mine\nCost: " + 500, 500, "Increases End of Wave Bonus"),
@@ -1744,7 +1747,7 @@ public class TowerBehavior : MonoBehaviour
             }
         },
         {
-            TowerType.Ice, new List<UpgradeData>
+            TowerType.Snowball, new List<UpgradeData>
             {
                 new UpgradeData("Increased Detector\nCost: " + 100, 100, "Increases Range"),
                 new UpgradeData("Faster firing\nCost: " + 150, 150, "Increases Attack Speed"),
@@ -1753,7 +1756,7 @@ public class TowerBehavior : MonoBehaviour
             }
         },
         {
-            TowerType.Support, new List<UpgradeData>
+            TowerType.Orb, new List<UpgradeData>
             {
                 new UpgradeData("Proximity Sensor (Not Implemented Yet)\nCost: " + 0, 0, "Increases Range and Range Buff"),
                 new UpgradeData("Inspiration\nCost: " + 300, 300, "Increases Range Buff"),
@@ -1776,7 +1779,7 @@ public class TowerBehavior : MonoBehaviour
     {
         //Description and Cost
         {
-            TowerType.Basic, new List<UpgradeData>
+            TowerType.Crossbow, new List<UpgradeData>
             {
                 new UpgradeData("Sharper Arrows\nCost: " + 100, 100, "Increases Damage"),
                 new UpgradeData("Stronger Arrows\nCost: " + 250, 250, "Increases Damage"),
@@ -1785,7 +1788,7 @@ public class TowerBehavior : MonoBehaviour
             }
         },
         {
-            TowerType.Bomb, new List<UpgradeData>
+            TowerType.Cannon, new List<UpgradeData>
             {
                 new UpgradeData("Faster Reload\nCost: " + 100, 100, "Increases Attack Speed"),
                 new UpgradeData("Fastest Reload\n" + "Cost: " + 220, 220, "Increases Attack Speed"),
@@ -1803,7 +1806,7 @@ public class TowerBehavior : MonoBehaviour
             }
         },
         {
-            TowerType.Economy, new List<UpgradeData>
+            TowerType.Mine, new List<UpgradeData>
             {
                 new UpgradeData("Interest\nCost: " + 0, 0, "Extra money based on current money at end of wave (Only highest Value Applied)"),
                 new UpgradeData("Better Deals\nCost: " + 0, 0, "Increases Interest Effect"),
@@ -1812,7 +1815,7 @@ public class TowerBehavior : MonoBehaviour
             }
         },
         {
-            TowerType.Ice, new List<UpgradeData>
+            TowerType.Snowball, new List<UpgradeData>
             {
                 new UpgradeData("Thicker Snow\nCost: " + 200, 200, "Increases Slow Effect"),
                 new UpgradeData("Freezing Snow\nCost: " + 300, 300, "Increases Slow Effect"),
@@ -1821,7 +1824,7 @@ public class TowerBehavior : MonoBehaviour
             }
         },
         {
-            TowerType.Support, new List<UpgradeData>
+            TowerType.Orb, new List<UpgradeData>
             {
                 new UpgradeData("Proximity Sensor (Not Implemented Yet)\nCost: " + 0, 0, "Grants Damage Buff to nearby towers"),
                 new UpgradeData("Inspiration\nCost: " + 300, 300, "Increases Damage Buff"),
@@ -1844,7 +1847,7 @@ public class TowerBehavior : MonoBehaviour
     {
         //Description and Cost
         {
-            TowerType.Basic, new List<UpgradeData>
+            TowerType.Crossbow, new List<UpgradeData>
             {
                 new UpgradeData("Faster Firing\nCost: " + 150, 150, "Increases Attack Speed"),
                 new UpgradeData("Faster Mechanism\n" + "Cost: " + 200, 200, "Increases Attack Speed"),
@@ -1853,7 +1856,7 @@ public class TowerBehavior : MonoBehaviour
             }
         },
         {
-            TowerType.Bomb, new List<UpgradeData>
+            TowerType.Cannon, new List<UpgradeData>
             {
                 new UpgradeData("Bombier Bomb\nCost: " + 170, 170, "Increases Explosion Radius"),
                 new UpgradeData("Compressed Charge\n" + "Cost: " + 280, 280, "Increases Explosion Radius"),
@@ -1871,7 +1874,7 @@ public class TowerBehavior : MonoBehaviour
             }
         },
         {
-            TowerType.Economy, new List<UpgradeData>
+            TowerType.Mine, new List<UpgradeData>
             {
                 new UpgradeData("Investments\nCost: " + 500, 500, "Grants Money Earned Buff to nearby towers"),
                 new UpgradeData("Stocks\nCost: " + 750, 750, "Increases Money Earned Buff"),
@@ -1880,7 +1883,7 @@ public class TowerBehavior : MonoBehaviour
             }
         },
         {
-            TowerType.Ice, new List<UpgradeData>
+            TowerType.Snowball, new List<UpgradeData>
             {
                 new UpgradeData("Bigger Snowball\nCost: " + 200, 200, "Increases Snow Area"),
                 new UpgradeData("Biggest Snowball\nCost: " + 250, 250, "Increases Snow Area"),
@@ -1889,7 +1892,7 @@ public class TowerBehavior : MonoBehaviour
             }
         },
         {
-            TowerType.Support, new List<UpgradeData>
+            TowerType.Orb, new List<UpgradeData>
             {
                 new UpgradeData("Proximity Sensor (Not Implemented Yet)\nCost: " + 0, 0, "Grants Attack Speed Buff to nearby towers"),
                 new UpgradeData("Inspiration\nCost: " + 300, 300, "Grants Detect Invisible to nearby towers"),
@@ -1979,12 +1982,12 @@ public class TowerBehavior : MonoBehaviour
 
     public enum TowerType
     {
-        Basic,
+        Crossbow,
         Flame,
-        Bomb,
-        Economy,
-        Ice,
-        Support,
+        Cannon,
+        Mine,
+        Snowball,
+        Orb,
         Spikes
     }
 
