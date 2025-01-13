@@ -30,16 +30,19 @@ public class UpgradePanel : MonoBehaviour
     [SerializeField] TextMeshProUGUI killCount;
     [Header("Upgrade")]
     [SerializeField] GameObject upgradeButton1;
+    [SerializeField] Image upgradeImage1;
     [SerializeField] TextMeshProUGUI upgradeDescriptionText1;
     [SerializeField] TextMeshProUGUI priceText1;
     [SerializeField] private Image restrictPath1;
 
     [SerializeField] GameObject upgradeButton2;
+    [SerializeField] Image upgradeImage2;
     [SerializeField] TextMeshProUGUI upgradeDescriptionText2;
     [SerializeField] TextMeshProUGUI priceText2;
     [SerializeField] private Image restrictPath2;
 
     [SerializeField] GameObject upgradeButton3;
+    [SerializeField] Image upgradeImage3;
     [SerializeField] TextMeshProUGUI upgradeDescriptionText3;
     [SerializeField] TextMeshProUGUI priceText3;
     [SerializeField] private Image restrictPath3;
@@ -110,8 +113,6 @@ public class UpgradePanel : MonoBehaviour
         currentTargetIndex = type;
         maxUpgradeLevel = target.GetMaxUpgradeLevel(1) + 1;
         UpdateTargetInfo();
-        UpdateKillCount(target.numOfEnemiesKilled);
-        towerName.text = target.towerType.ToString();
     }
 
     public void ToggleUpgradeButton(bool isActive, int path)
@@ -119,13 +120,25 @@ public class UpgradePanel : MonoBehaviour
         switch(path)
         {
             case 1:
-                upgradeButton1.SetActive(isActive);
+                upgradeButton1.GetComponent<Button>().interactable = isActive;
+                if (isActive)
+                    upgradeImage1.color = Color.white;
+                else
+                    upgradeImage1.color = new Color(0.78f, 0.78f, 0.78f, .5f);
                 break;
             case 2:
-                upgradeButton2.SetActive(isActive);
+                upgradeButton2.GetComponent<Button>().interactable = isActive;
+                if (isActive)
+                    upgradeImage2.color = Color.white;
+                else
+                    upgradeImage2.color = new Color(0.78f, 0.78f, 0.78f, .5f);
                 break;
             case 3:
-                upgradeButton3.SetActive(isActive);
+                upgradeButton3.GetComponent<Button>().interactable = isActive;
+                if (isActive)
+                    upgradeImage3.color = Color.white;
+                else
+                    upgradeImage3.color = new Color(0.78f, 0.78f, 0.78f, .5f);
                 break;
         }
     }
@@ -161,19 +174,19 @@ public class UpgradePanel : MonoBehaviour
         switch (path)
         {
             case 1:
-                if (level != 4) //If level is not at max, display the cost
+                if (level < 4) //If level is not at max, display the cost
                     priceText1.text = costText;
                 else
                     priceText1.text = "";
                 break;
             case 2:
-                if (level != 4)
+                if (level < 4)
                     priceText2.text = costText;
                 else
                     priceText2.text = "";
                 break;
             case 3:
-                if (level != 4)
+                if (level < 4)
                     priceText3.text = costText;
                 else
                     priceText3.text = "";
@@ -275,11 +288,16 @@ public class UpgradePanel : MonoBehaviour
         SetTargetText();
         target.SetTargetType(currentTargetIndex);
 
-        /**
         ToggleUpgradeButton(target.upgradeLevel1 < maxUpgradeLevel, 1);
         ToggleUpgradeButton(target.upgradeLevel2 < maxUpgradeLevel, 2);
         ToggleUpgradeButton(target.upgradeLevel3 < maxUpgradeLevel, 3);
-        */
+
+        UpdateProgressBar(1, target.upgradeLevel1);
+        UpdateProgressBar(2, target.upgradeLevel2);
+        UpdateProgressBar(3, target.upgradeLevel3);
+
+        UpdateKillCount(target.numOfEnemiesKilled);
+        towerName.text = target.towerType.ToString();
     }
 
     public void RestrictPaths(bool isPath1Restricted, bool isPath2Restricted, bool isPath3Restricted)

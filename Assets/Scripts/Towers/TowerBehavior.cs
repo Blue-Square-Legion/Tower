@@ -1689,13 +1689,9 @@ public class TowerBehavior : MonoBehaviour
         upgradePanel.SetCost(upgradeCost2.ToString(), 2, upgradeLevel2);
         upgradePanel.SetCost(upgradeCost3.ToString(), 3, upgradeLevel3);
 
-
-
-        /**
         upgradePanel.ToggleUpgradeButton(upgradeLevel1 != 4, 1);
         upgradePanel.ToggleUpgradeButton(upgradeLevel2 != 4, 2);
         upgradePanel.ToggleUpgradeButton(upgradeLevel3 != 4, 3);
-        */
 
         upgradePanel.RestrictPaths(isPath1Restricted, isPath2Restricted, isPath3Restricted);
     }
