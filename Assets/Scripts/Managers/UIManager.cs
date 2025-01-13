@@ -283,7 +283,7 @@ public class UIManager : MonoBehaviour
 
     private void ChangeImageSprite(string path, Image imageComponent)
     {
-        Sprite sprite = AssetDatabase.LoadAssetAtPath<Sprite>(path);
+        Sprite sprite = Resources.Load<Sprite>(path);
         if (sprite != null)
         {
             imageComponent.sprite = sprite;
