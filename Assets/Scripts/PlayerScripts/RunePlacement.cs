@@ -52,10 +52,10 @@ public class RunePlacement : MonoBehaviour
     private float cleanseCooldownTimer = 0f;
 
     // UI Text to display the cooldown in seconds
-    public TextMeshProUGUI meteorCooldownText;
-    public TextMeshProUGUI lightningCooldownText;
-    public TextMeshProUGUI confusionCooldownText;
-    public TextMeshProUGUI cleanseCooldownText;
+    //public TextMeshProUGUI meteorCooldownText;
+    //public TextMeshProUGUI lightningCooldownText;
+    //public TextMeshProUGUI confusionCooldownText;
+    //public TextMeshProUGUI cleanseCooldownText;
 
     public GameObject meteorKeyMask;
     public GameObject lightningKeyMask;
@@ -115,7 +115,7 @@ public class RunePlacement : MonoBehaviour
         }
         else
         {
-            meteorCooldownText.color = Color.white;
+            //meteorCooldownText.color = Color.white;
         }
         if (lightningCooldownTimer > 0f)
         {
@@ -123,7 +123,7 @@ public class RunePlacement : MonoBehaviour
         }
         else
         {
-            lightningCooldownText.color = Color.white;
+            //lightningCooldownText.color = Color.white;
         }
         if (confusionCooldownTimer > 0f)
         {
@@ -131,7 +131,7 @@ public class RunePlacement : MonoBehaviour
         }
         else
         {
-            confusionCooldownText.color = Color.white;
+            //confusionCooldownText.color = Color.white;
         }
         if (cleanseCooldownTimer > 0f)
         {
@@ -139,7 +139,7 @@ public class RunePlacement : MonoBehaviour
         }
         else
         {
-            cleanseCooldownText.color = Color.white;
+            //cleanseCooldownText.color = Color.white;
         }
 
         if (isCasting)
@@ -263,7 +263,7 @@ public class RunePlacement : MonoBehaviour
 
         Meteor meteorScript = meteor.GetComponent<Meteor>();
         meteorScript.targetPosition = castPosition;
-        meteorCooldownText.color = Color.red;
+        //meteorCooldownText.color = Color.red;
         return true;
     }
 
@@ -278,7 +278,7 @@ public class RunePlacement : MonoBehaviour
 
         Lightning lightningScript = lightning.GetComponent<Lightning>();
         lightningScript.targetPosition = castPosition;
-        lightningCooldownText.color = Color.red;
+        //lightningCooldownText.color = Color.red;
         return true;
     }
 
@@ -294,7 +294,7 @@ public class RunePlacement : MonoBehaviour
 
         Confusion confusionScript = confusion.GetComponent<Confusion>();
         confusionScript.targetPosition = castPosition;
-        confusionCooldownText.color = Color.red;
+        //confusionCooldownText.color = Color.red;
         return true;
     }
 
@@ -310,7 +310,7 @@ public class RunePlacement : MonoBehaviour
 
         Cleanse cleanseScript = cleanse.GetComponent<Cleanse>();
         cleanseScript.targetPosition = castPosition;
-        cleanseCooldownText.color = Color.red;
+        //cleanseCooldownText.color = Color.red;
         return true;
     }
 

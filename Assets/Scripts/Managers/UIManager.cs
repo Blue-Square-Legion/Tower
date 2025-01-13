@@ -49,6 +49,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject upgradeScreen;
     [SerializeField] private GameObject RobotPage;
     [SerializeField] private GameObject TowerPage;
+    [SerializeField] private GameObject RobotTab;
+    [SerializeField] private GameObject TowerTab;
+    [SerializeField] private GameObject BookPage;
 
     [SerializeField] private TextMeshProUGUI RobotDescription;
     [SerializeField] private TextMeshProUGUI RobotAbilities;
@@ -271,19 +274,23 @@ public class UIManager : MonoBehaviour
 
     public void ShowRobotPage()
     {
+        RobotTab.transform.SetSiblingIndex(BookPage.transform.GetSiblingIndex() + 1);
+        TowerTab.transform.SetSiblingIndex(BookPage.transform.GetSiblingIndex() - 1);
         RobotPage.SetActive(true);
         TowerPage.SetActive(false);
     }
 
     public void ShowTowerPage()
     {
+        TowerTab.transform.SetSiblingIndex(BookPage.transform.GetSiblingIndex() + 1);
+        RobotTab.transform.SetSiblingIndex(BookPage.transform.GetSiblingIndex() - 1);
         TowerPage.SetActive(true);
         RobotPage.SetActive(false);
     }
 
     private void ChangeImageSprite(string path, Image imageComponent)
     {
-        Sprite sprite = AssetDatabase.LoadAssetAtPath<Sprite>(path);
+        Sprite sprite = Resources.Load<Sprite>(path);
         if (sprite != null)
         {
             imageComponent.sprite = sprite;
@@ -395,7 +402,8 @@ public class UIManager : MonoBehaviour
 
     #region Tower States
 
-    public void ShowCrossbow()
+
+        public void ShowCrossbow()
     {
         
         ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-Crossbow-Title.png", TowerName);
