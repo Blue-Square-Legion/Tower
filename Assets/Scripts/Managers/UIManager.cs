@@ -395,7 +395,8 @@ public class UIManager : MonoBehaviour
 
     #region Tower States
 
-    public void ShowCrossbow()
+
+        public void ShowCrossbow()
     {
         
         ChangeImageSprite("Assets/Art/Compendium/Erica-Eagles--P1--Team-Freezer--Compendium-Crossbow-Title.png", TowerName);
