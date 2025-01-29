@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.ProBuilder.MeshOperations;
+using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class CardManager : MonoBehaviour
 {
@@ -13,9 +14,10 @@ public class CardManager : MonoBehaviour
     public List<GameObject> hand = new List<GameObject>();
     public List<GameObject> discard = new List<GameObject>();
 
+    public GameObject Camera;
 
-    float cardSpacing = 50f;
-    float vSpacing = 10f;
+    float cardSpacing = 1f;
+    float vSpacing = 1f;
 
 
     private void Start()
@@ -94,6 +96,10 @@ public class CardManager : MonoBehaviour
         discard.Add(card);
     }
 
+    private void Update()
+    {
+        updateHandVisuals();
+    }
 
     public void updateHandVisuals()
     {
@@ -125,7 +131,11 @@ public class CardManager : MonoBehaviour
                 float vOffset = handPosition.position.y + vSpacing * (1 - normalizedPos * normalizedPos);
 
                 //set Position
-                hand[i].GetComponent<Card>().position.transform.localPosition = new Vector3(hOffset, vOffset, 0f);
+                hand[i].GetComponent<Card>().position.transform.position = new Vector3(hOffset, vOffset, 0f);
+                //Camera.transform.position.x
+                hand[i].GetComponent<Card>().position.transform.position += Camera.transform.position + Camera.transform.forward * 10f;
+                var n = Camera.transform.position - hand[i].GetComponent<Card>().position.transform.position;
+                //hand[i].GetComponent<Card>().position.transform.rotation = Quaternion.LookRotation(n);
 
             }
         }
