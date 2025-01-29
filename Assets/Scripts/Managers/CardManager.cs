@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.ProBuilder.MeshOperations;
 
@@ -23,6 +24,7 @@ public class CardManager : MonoBehaviour
         {
             GameObject tempCard = Instantiate(cardPrefab, handPosition.position,Quaternion.identity);
             tempCard.SetActive(false);
+            tempCard.GetComponent<Card>().cost.text = "" + i;
             deck.Add(tempCard);
         }
     }
@@ -97,17 +99,25 @@ public class CardManager : MonoBehaviour
     {
         int cards = hand.Count;
 
-        if (cards == 0)
+        if (cards == 1)
         {
-            //float hOffset = handPosition.position.x + cardSpacing * (i - (cards - 1) / 2f);
-           // hand[0].transform.localPosition = new Vector3(hOffset, 0f, 0f);
+            float rotationAngle = 0;
+            hand[0].transform.localRotation = Quaternion.Euler(0f, 0f, rotationAngle);
+
+            float hOffset = 1;
+
+            float normalizedPos = 2;
+            float vOffset = handPosition.position.y + vSpacing * (1 - normalizedPos * normalizedPos);
+
+            //set Position
+            hand[0].GetComponent<Card>().position.transform.localPosition = new Vector3(hOffset, vOffset, 0f);
         }
         else
         {
             for (int i = 0; i < cards; i++)
             {
                 float rotationAngle = -5f * (i - (cards - 1) / 2f);
-                hand[i].transform.localRotation = Quaternion.Euler(0f, 0f, rotationAngle);
+                hand[i].GetComponent<Card>().position.transform.localRotation = Quaternion.Euler(0f, 0f, rotationAngle);
 
                 float hOffset = handPosition.position.x + cardSpacing * (i - (cards - 1) / 2f);
 
@@ -115,12 +125,8 @@ public class CardManager : MonoBehaviour
                 float vOffset = handPosition.position.y + vSpacing * (1 - normalizedPos * normalizedPos);
 
                 //set Position
-                hand[i].transform.localPosition = new Vector3(hOffset, vOffset, 0f);
+                hand[i].GetComponent<Card>().position.transform.localPosition = new Vector3(hOffset, vOffset, 0f);
 
-
-                //float handWidth = (hand.Count - 1 - i * 2) * cardWidth * gap;
-                //float position = handCenterPos - (handWidth / 2);
-                //hand[i].transform
             }
         }
     }

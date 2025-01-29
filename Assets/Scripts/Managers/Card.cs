@@ -7,10 +7,11 @@ using TMPro;
 public class Card : MonoBehaviour
 {
     //Need an image/3d model variable
-    [SerializeField] private TMP_Text cost;
+    [SerializeField] public TMP_Text cost;
     [SerializeField] private TMP_Text cardName;
     [SerializeField] private TMP_Text cardType;
     [SerializeField] private TMP_Text effect;
+    public GameObject position;
 
     public Card(int costIn, string cardNameIn, string cardTypeIn, string effectIn)
     {
