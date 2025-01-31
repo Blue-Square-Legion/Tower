@@ -1,39 +1,17 @@
 using UnityEngine;
 using AudioSystem;
 
-public class IceDamage : MonoBehaviour, IDamageMethod
+public class IceDamage : TowerDamage
 {
     public Animator snowballAnimator;
     [SerializeField] private GameObject snowball;
     [SerializeField] private Transform snowballSpawn;
-    [SerializeField] AudioData audioData;
     [SerializeField] private float snowDuration;
     [SerializeField] private float snowSpeed;
     [SerializeField] private float snowSpeedReduction;
     [SerializeField] private float snowSize;
-    GameManager gameManager;
-    private float damage;
-    private float fireRate;
-    private float delay;
-    public void Init(float damage, float fireRate)
-    {
-        gameManager = GameManager.Instance;
-        this.damage = damage;
-        this.fireRate = fireRate;
-        delay = 1f / fireRate;
-    }
 
     #region Getters and Setters
-    public void UpdateDamage(float damage)
-    {
-        this.damage = damage;
-    }
-
-    public void UpdateFireRate(float fireRate)
-    {
-        this.fireRate = fireRate;
-    }
-
     public void UpdateSnowDuration(float time)
     {
         this.snowDuration = time;
@@ -75,7 +53,7 @@ public class IceDamage : MonoBehaviour, IDamageMethod
     }
     #endregion
 
-    public void damageTick(Enemy target)
+    public override void DamageTick(Enemy target)
     {
         if (target)
         {

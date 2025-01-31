@@ -1,15 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SupportBehavior : MonoBehaviour, IDamageMethod
+public class SupportBehavior : TowerDamage
 {
-    GameManager gameManager;
     [SerializeField] TowerBehavior parent;
     public float attackRangeBuff;
     public float fireRateBuff;
     public float damageBuff;
     private List<TowerBehavior> towersInRange;
-    public void Init(float damage, float fireRate)
+    public override void Init(float damage, float fireRate)
     {
         gameManager = GameManager.Instance;
         towersInRange = new();
@@ -82,7 +81,7 @@ public class SupportBehavior : MonoBehaviour, IDamageMethod
         }
     }
 
-    public void damageTick(Enemy target)
+    public override void DamageTick(Enemy target)
     {
 
     }

@@ -29,7 +29,7 @@ public class TowerBehavior : MonoBehaviour
 
     [SerializeField] public TowerType towerType;
     [SerializeField] public TowerTargetting.TargetType targetType;
-    private IDamageMethod currentDamageMethodClass;
+    private TowerDamage currentDamageMethodClass;
     private Player player;
     [NonSerialized] public int upgradeLevel1, upgradeLevel2, upgradeLevel3;
     private UpgradePanel upgradePanel;
@@ -66,7 +66,7 @@ public class TowerBehavior : MonoBehaviour
         buffNamesCount = Enum.GetNames(typeof(GameManager.BuffNames)).Length;
         moneyMultiplier = 1;
 
-        currentDamageMethodClass = GetComponent<IDamageMethod>();
+        currentDamageMethodClass = GetComponent<TowerDamage>();
 
         if (currentDamageMethodClass == null)
         {
@@ -115,7 +115,7 @@ public class TowerBehavior : MonoBehaviour
         } else
         {
             StunPFX.SetActive(false);
-            currentDamageMethodClass.damageTick(target);
+            currentDamageMethodClass.DamageTick(target);
         }
             
 

@@ -2,18 +2,15 @@ using System;
 using UnityEngine;
 using AudioSystem;
 
-public class FireDamage : MonoBehaviour, IDamageMethod
+public class FireDamage : TowerDamage
 {
     [SerializeField] public Collider fireTrigger;
     [SerializeField] private ParticleSystem fireEffect;
-    [SerializeField] AudioData audioData;
-    [NonSerialized] public float damage;
-    [NonSerialized] public float fireRate;
     
-
     AudioBuilder audioBuilder;
     AudioEmitter audioEmitter;
-    public void Init(float damage, float fireRate)
+
+    public override void Init(float damage, float fireRate)
     {
         this.damage = damage;
         this.fireRate = fireRate;
@@ -21,20 +18,9 @@ public class FireDamage : MonoBehaviour, IDamageMethod
         audioBuilder = AudioManager.Instance.CreateAudio().WithAudioData(audioData).WithPosition(transform.position);
         audioEmitter = audioBuilder.Play();
         audioEmitter.Stop();
-        
     }
 
-    public void UpdateDamage(float damage)
-    {
-        this.damage = damage;
-    }
-
-    public void UpdateFireRate(float fireRate)
-    {
-        this.fireRate = fireRate;
-    }
-
-    public void damageTick(Enemy target)
+    public override void DamageTick(Enemy target)
     {
 
          fireTrigger.enabled = target != null;
@@ -51,7 +37,5 @@ public class FireDamage : MonoBehaviour, IDamageMethod
          if (audioEmitter != null && audioEmitter.IsPlaying())
             audioEmitter.Stop();
         fireEffect.Stop();
-        
-
     }
 }
