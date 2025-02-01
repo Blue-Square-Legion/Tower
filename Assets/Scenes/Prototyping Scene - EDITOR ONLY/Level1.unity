@@ -7440,6 +7440,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6f084c075257dcc4889d555163686fb2,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6f084c075257dcc4889d555163686fb2,
+        type: 3}
       propertyPath: m_TagString
       value: Buildable
       objectReference: {fileID: 0}
@@ -10802,6 +10807,18 @@ NavMeshAgent:
     type: 3}
   m_PrefabInstance: {fileID: 6236639101836099471}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1182807464 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 811921593987070256, guid: 3097d7856a193a74badbdd70d564ce4a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6236639101836099471}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6abb7b19d9ccaab44a31326ea377bbef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1184095415
 GameObject:
   m_ObjectHideFlags: 0
@@ -18920,6 +18937,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1812561701}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1813376219 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6799027843650733653, guid: 3097d7856a193a74badbdd70d564ce4a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6236639101836099471}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6abb7b19d9ccaab44a31326ea377bbef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1816862416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21777,6 +21806,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2002316051}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2005376423 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7561895984888113277, guid: 3097d7856a193a74badbdd70d564ce4a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6236639101836099471}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6abb7b19d9ccaab44a31326ea377bbef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2012121959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22874,7 +22915,32 @@ PrefabInstance:
       propertyPath: audioData.playOnAwake
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2881805942263339653, guid: 90319159318b32846a7006408bcbd4c6,
+        type: 3}
+      propertyPath: PathIndicators.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881805942263339653, guid: 90319159318b32846a7006408bcbd4c6,
+        type: 3}
+      propertyPath: PathIndicators.Array.data[0]
+      value: 
+      objectReference: {fileID: 2005376423}
+    - target: {fileID: 2881805942263339653, guid: 90319159318b32846a7006408bcbd4c6,
+        type: 3}
+      propertyPath: PathIndicators.Array.data[1]
+      value: 
+      objectReference: {fileID: 1182807464}
+    - target: {fileID: 2881805942263339653, guid: 90319159318b32846a7006408bcbd4c6,
+        type: 3}
+      propertyPath: PathIndicators.Array.data[2]
+      value: 
+      objectReference: {fileID: 1813376219}
     - target: {fileID: 2968718637882933428, guid: 90319159318b32846a7006408bcbd4c6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333621180190687025, guid: 90319159318b32846a7006408bcbd4c6,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -23650,6 +23716,21 @@ PrefabInstance:
       propertyPath: m_LayerMask.m_Bits
       value: 264
       objectReference: {fileID: 0}
+    - target: {fileID: 811921593987070256, guid: 3097d7856a193a74badbdd70d564ce4a,
+        type: 3}
+      propertyPath: breathingSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2985768339571052320, guid: 3097d7856a193a74badbdd70d564ce4a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f4bc78e2ec87f7e43853587915a59338, type: 2}
+    - target: {fileID: 3258134077782250046, guid: 3097d7856a193a74badbdd70d564ce4a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f4bc78e2ec87f7e43853587915a59338, type: 2}
     - target: {fileID: 3800303233597345700, guid: 3097d7856a193a74badbdd70d564ce4a,
         type: 3}
       propertyPath: m_NavMeshData
@@ -23736,10 +23817,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: NavMesh
       objectReference: {fileID: 0}
+    - target: {fileID: 6799027843650733653, guid: 3097d7856a193a74badbdd70d564ce4a,
+        type: 3}
+      propertyPath: breathingSpeed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7072059156430463226, guid: 3097d7856a193a74badbdd70d564ce4a,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7561895984888113277, guid: 3097d7856a193a74badbdd70d564ce4a,
+        type: 3}
+      propertyPath: breathingSpeed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7666600555569398969, guid: 3097d7856a193a74badbdd70d564ce4a,
         type: 3}
@@ -23757,6 +23848,11 @@ PrefabInstance:
       propertyPath: m_UseGeometry
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7940340859052355619, guid: 3097d7856a193a74badbdd70d564ce4a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f4bc78e2ec87f7e43853587915a59338, type: 2}
     - target: {fileID: 8429226695443686183, guid: 3097d7856a193a74badbdd70d564ce4a,
         type: 3}
       propertyPath: m_IsActive

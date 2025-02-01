@@ -64,6 +64,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] AudioData audioData;
 
+    public DrawPath[] PathIndicators;
+
     void Start()
     {
         enemySpawner = EnemySpawner.Instance;
@@ -105,6 +107,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(GameLoop());
         EnemySpawner.Instance.DeactivateAllSpawnIndicators();
         EnemySpawner.Instance.ActivateSpawnIndicators(nextSpawnPoints);
+        ActivatePathIndicators(nextSpawnPoints);
 
         AudioManager.Instance.CreateAudio()
             .WithAudioData(audioData)
@@ -468,6 +471,7 @@ public class GameManager : MonoBehaviour
                 waveActive = false;
                 EnemySpawner.Instance.DeactivateAllSpawnIndicators();
                 EnemySpawner.Instance.ActivateSpawnIndicators(nextSpawnPoints);
+                ActivatePathIndicators(nextSpawnPoints);
                 print("Wave ended");
                 print(nextSpawnPoints[0]);
                 WaveBonus(currentWave);
@@ -751,6 +755,21 @@ public class GameManager : MonoBehaviour
         else
         {
             img.sprite = showPathOff;
+        }
+    }
+
+    //toggle next path indicator
+    public void ActivatePathIndicators(int[] spawnPoints)
+    {
+        foreach (DrawPath ind in PathIndicators)
+        {
+            ind.currentWave = false;
+        }
+
+        foreach (int id in spawnPoints)
+        {
+            PathIndicators[id].currentWave = true;
+            print("activated path indicator: " + id);
         }
     }
 }

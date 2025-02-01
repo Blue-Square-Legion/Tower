@@ -10,6 +10,7 @@ public class DrawPath : MonoBehaviour
     private Material lineMaterial;
     private Color baseColor;
 
+    public bool currentWave = false;
     public float breathingSpeed = 4f;  // Speed of the breathing effect
     public float intensityRange = 1f;   // Intensity range for breathing
 
@@ -25,6 +26,7 @@ public class DrawPath : MonoBehaviour
         line.startWidth = 0.15f;
         line.endWidth = 0.15f;
         line.positionCount = 0;
+        currentWave = false;
 
         // Enable the emission in the shader if it's not already
         lineMaterial.EnableKeyword("_EMISSION");
@@ -38,7 +40,7 @@ public class DrawPath : MonoBehaviour
             return;
         }
 
-        if (agent.path.status == NavMeshPathStatus.PathComplete)
+        if (currentWave && agent.path.status == NavMeshPathStatus.PathComplete)
         {
             line.enabled = true;
             DrawAgentPath();
