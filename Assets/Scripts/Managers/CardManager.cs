@@ -9,16 +9,17 @@ public class CardManager : MonoBehaviour
 {
     public GameObject cardPrefab;
     public Transform handPosition;
+    public GameObject cardParent;
+    public GameObject Camera;
 
     public List<GameObject> deck = new List<GameObject>();
     public List<GameObject> hand = new List<GameObject>();
     public List<GameObject> discard = new List<GameObject>();
 
-    public GameObject Camera;
 
     float cardSpacing = 1f;
     float vSpacing = 1f;
-
+    public float distance = 10;
 
     private void Start()
     {
@@ -28,6 +29,8 @@ public class CardManager : MonoBehaviour
             tempCard.SetActive(false);
             tempCard.GetComponent<Card>().cost.text = "" + i;
             deck.Add(tempCard);
+            tempCard.transform.parent = cardParent.transform;
+            tempCard.GetComponent<Card>().setCamera(Camera);
         }
     }
 
@@ -110,32 +113,31 @@ public class CardManager : MonoBehaviour
             float rotationAngle = 0;
             hand[0].transform.localRotation = Quaternion.Euler(0f, 0f, rotationAngle);
 
-            float hOffset = 1;
+            float hOffset = handPosition.position.x;
 
             float normalizedPos = 2;
             float vOffset = handPosition.position.y + vSpacing * (1 - normalizedPos * normalizedPos);
 
             //set Position
-            hand[0].GetComponent<Card>().position.transform.localPosition = new Vector3(hOffset, vOffset, 0f);
+            hand[0].GetComponent<Card>().transform.position = new Vector3(hOffset, vOffset - 5, 1f);
         }
         else
         {
             for (int i = 0; i < cards; i++)
             {
+                //Tilt the card to simulate the way you would with real cards
                 float rotationAngle = -5f * (i - (cards - 1) / 2f);
-                hand[i].GetComponent<Card>().position.transform.localRotation = Quaternion.Euler(0f, 0f, rotationAngle);
+                hand[i].GetComponent<Card>().transform.localRotation = Quaternion.Euler(0f, 0f, rotationAngle);
 
+                //set relative Position to other cards
                 float hOffset = handPosition.position.x + cardSpacing * (i - (cards - 1) / 2f);
-
                 float normalizedPos = 2 * (2f * i / (cards - 1) - 1f); //adjust for the arc
-                float vOffset = handPosition.position.y + vSpacing * (1 - normalizedPos * normalizedPos);
+                float vOffset = handPosition.position.y + vSpacing * (1 - normalizedPos * normalizedPos)/10*(cards/2);
 
-                //set Position
-                hand[i].GetComponent<Card>().position.transform.position = new Vector3(hOffset, vOffset, 0f);
-                //Camera.transform.position.x
-                hand[i].GetComponent<Card>().position.transform.position += Camera.transform.position + Camera.transform.forward * 10f;
-                var n = Camera.transform.position - hand[i].GetComponent<Card>().position.transform.position;
-                //hand[i].GetComponent<Card>().position.transform.rotation = Quaternion.LookRotation(n);
+                hand[i].GetComponent<Card>().transform.position = new Vector3(hOffset, vOffset - 7.5f, 1f);
+
+
+
 
             }
         }

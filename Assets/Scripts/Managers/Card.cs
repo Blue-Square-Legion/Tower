@@ -12,13 +12,17 @@ public class Card : MonoBehaviour
     [SerializeField] private TMP_Text cardType;
     [SerializeField] private TMP_Text effect;
     public GameObject position;
+    public GameObject cube;
+    public GameObject Camera;
+    public GameObject canvas;
 
-    public Card(int costIn, string cardNameIn, string cardTypeIn, string effectIn)
+    public Card(int costIn, string cardNameIn, string cardTypeIn, string effectIn, GameObject camera)
     {
         cost.text = "" + costIn;
         cardName.text = cardNameIn;
         cardType.text = cardTypeIn;
         effect.text = effectIn;
+        Camera = camera;
     }
     public void setData(int costIn, string cardNameIn, string cardTypeIn, string effectIn)
     {
@@ -28,7 +32,12 @@ public class Card : MonoBehaviour
         effect.text = effectIn;
     }
 
-
+    public void setCamera(GameObject camera)
+    {
+        
+        Camera = camera;
+        canvas.GetComponent<Canvas>().worldCamera = Camera.GetComponent<Camera>();
+    }
     private void clicked()
     {
 
