@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.ProBuilder.MeshOperations;
+using UnityEngine.UI;
 using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class CardManager : MonoBehaviour
@@ -11,6 +12,8 @@ public class CardManager : MonoBehaviour
     public Transform handPosition;
     public GameObject cardParent;
     public GameObject Camera;
+    public GameObject Player;
+    public GameObject self;
 
     public List<GameObject> deck = new List<GameObject>();
     public List<GameObject> hand = new List<GameObject>();
@@ -20,6 +23,8 @@ public class CardManager : MonoBehaviour
     float cardSpacing = 1f;
     float vSpacing = 1f;
     public float distance = 10;
+
+    int maxHandsize = 10;
 
     private void Start()
     {
@@ -31,29 +36,33 @@ public class CardManager : MonoBehaviour
             deck.Add(tempCard);
             tempCard.transform.parent = cardParent.transform;
             tempCard.GetComponent<Card>().setCamera(Camera);
+            tempCard.GetComponentInChildren<CardButton>().manager = self;
         }
     }
 
     public void drawCard()
     {
-        if (deck.Count > 0)
+        if (hand.Count < maxHandsize)
         {
-            hand.Add(deck[0]);
-            deck.RemoveAt(0);
-            hand[hand.Count-1].SetActive(true);
-        }
-        else
-        {
-            Debug.Log("No cards in deck");
-            addDiscardIntoDeck();
-
             if (deck.Count > 0)
             {
                 hand.Add(deck[0]);
                 deck.RemoveAt(0);
+                hand[hand.Count - 1].SetActive(true);
             }
+            else
+            {
+                Debug.Log("No cards in deck");
+                addDiscardIntoDeck();
+
+                if (deck.Count > 0)
+                {
+                    hand.Add(deck[0]);
+                    deck.RemoveAt(0);
+                }
+            }
+            updateHandVisuals();
         }
-        updateHandVisuals();
     }
 
     public void addDiscardIntoDeck()
@@ -127,19 +136,19 @@ public class CardManager : MonoBehaviour
             {
                 //Tilt the card to simulate the way you would with real cards
                 float rotationAngle = -5f * (i - (cards - 1) / 2f);
-                hand[i].GetComponent<Card>().transform.localRotation = Quaternion.Euler(0f, 0f, rotationAngle);
+                hand[i].GetComponent<Card>().transform.localRotation = Quaternion.Euler(0f, 1f, rotationAngle);
 
                 //set relative Position to other cards
-                float hOffset = handPosition.position.x + cardSpacing * (i - (cards - 1) / 2f);
+                float hOffset = handPosition.position.x + cardSpacing * (i - (cards - 1) / 2f)*2;
                 float normalizedPos = 2 * (2f * i / (cards - 1) - 1f); //adjust for the arc
                 float vOffset = handPosition.position.y + vSpacing * (1 - normalizedPos * normalizedPos)/10*(cards/2);
 
-                hand[i].GetComponent<Card>().transform.position = new Vector3(hOffset, vOffset - 7.5f, 1f);
-
-
-
+                hand[i].GetComponent<Card>().transform.position = new Vector3(hOffset, vOffset - 7.5f, 2f - (i / 10f));
+                hand[i].GetComponentInChildren<CardButton>().normalZ = 1f + (i / 10f);
 
             }
         }
     }
+
+
 }

@@ -4461,7 +4461,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 6321285439559530928}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6321285439559530929}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ebb2db1804029648b678a458f3f14dd, type: 3}
@@ -4473,7 +4473,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 6321285439559530928}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6321285439559530929}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad3b2bb09eb663b43909d394e79a124d, type: 3}
@@ -20778,6 +20778,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1912914656}
   - component: {fileID: 1912914658}
+  - component: {fileID: 1912914659}
   m_Layer: 0
   m_Name: CardManager
   m_TagString: Untagged
@@ -20817,10 +20818,56 @@ MonoBehaviour:
   handPosition: {fileID: 1976965259}
   cardParent: {fileID: 1976965258}
   Camera: {fileID: 2074102713}
+  Player: {fileID: 6321285439559530929}
+  self: {fileID: 1912914655}
   deck: []
   hand: []
   discard: []
   distance: 10
+--- !u!114 &1912914659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912914655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1914615001
 GameObject:
   m_ObjectHideFlags: 0
@@ -23413,6 +23460,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5197261727250538743, guid: 90319159318b32846a7006408bcbd4c6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5830854464423550650, guid: 90319159318b32846a7006408bcbd4c6,
         type: 3}
       propertyPath: m_Name
@@ -25200,6 +25252,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22d70330496e4474db168f477a4993e2, type: 3}
+--- !u!1 &6321285439559530929 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4222203108005065239, guid: 22d70330496e4474db168f477a4993e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 6321285439559530928}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8485631011572199564
 PrefabInstance:
   m_ObjectHideFlags: 0

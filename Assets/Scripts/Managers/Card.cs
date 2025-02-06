@@ -48,4 +48,6 @@ public class Card : MonoBehaviour
     {
         //this is where we get to add the fun stuff later.
     }
+
+
 }
