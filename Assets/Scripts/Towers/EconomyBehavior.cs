@@ -1,16 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EconomyBehavior : MonoBehaviour, IDamageMethod
+public class EconomyBehavior : TowerDamage
 {
     public int bonus;
     public float interestPercent;
     public float investmentsPercent;
     private List<TowerBehavior> towersInRange;
 
-    GameManager gameManager;
-
-    public void Init(float damage, float fireRate)
+    public override void Init(float damage, float fireRate)
     {
         gameManager = GameManager.Instance;
         bonus = 50;
@@ -60,7 +58,7 @@ public class EconomyBehavior : MonoBehaviour, IDamageMethod
         }
     }
 
-    public void damageTick(Enemy target)
+    public override void DamageTick(Enemy target)
     {
 
     }

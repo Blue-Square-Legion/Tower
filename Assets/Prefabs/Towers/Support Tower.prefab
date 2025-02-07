@@ -196,6 +196,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868f5e5428f504a4cab4ecfdcb20fdf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioData:
+    audioFile: {fileID: 0}
+    volume: 1
+    pitch: 1
+    loop: 0
+    panStereo: 0
+    spatialBlend: 0
+    minDistance: 0
+    maxDistance: 0
+    playOnAwake: 0
+    frequentSound: 0
+    mute: 0
+    showHiddenValues: 0
+    audioMixer: {fileID: 0}
+    bypassEffects: 0
+    bypassListenerEffects: 0
+    bypassReverbZones: 0
+    priority: 128
+    reverbZoneMix: 1
+    dopplerLevel: 1
+    spread: 0
+    ignoeListenerVolume: 0
+    ignoreListenerPause: 0
+    audioRollOffMode: 1
+  damage: 0
+  fireRate: 0
   parent: {fileID: 7550553450045991590}
   attackRangeBuff: 1.1
   fireRateBuff: 0
@@ -219,8 +245,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.1981354, y: 0.9127064, z: 1.1159167}
-  m_Center: {x: 0.027722955, y: 0.29763657, z: -0.0019580126}
+  m_Size: {x: 1.1981354, y: 0.6481303, z: 1.1159167}
+  m_Center: {x: 0.027722955, y: 0.4299246, z: -0.0019580126}
 --- !u!1 &6518978890128801001
 GameObject:
   m_ObjectHideFlags: 0

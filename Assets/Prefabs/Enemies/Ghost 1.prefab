@@ -493,7 +493,7 @@ MonoBehaviour:
     ignoreListenerPause: 0
     audioRollOffMode: 1
   audioDead:
-    audioFile: {fileID: 0}
+    audioFile: {fileID: 8300000, guid: 1ff6282b2be79fd409fcb41dcf4c6fb3, type: 3}
     volume: 1
     pitch: 1
     loop: 0
