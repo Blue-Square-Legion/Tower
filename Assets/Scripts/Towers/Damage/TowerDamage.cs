@@ -13,7 +13,7 @@ public abstract class TowerDamage : MonoBehaviour
         gameManager = GameManager.Instance;
         this.damage = damage;
         this.fireRate = fireRate;
-        delay = 1f / fireRate;
+        delay = 0;
     }
 
     public void UpdateDamage(float damage)

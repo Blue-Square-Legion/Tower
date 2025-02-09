@@ -66,7 +66,7 @@ public class Missile : MonoBehaviour
             {
                 Enemy enemyToDamage = enemySpawner.enemyTransformDictionary[enemiesInRadius[j].transform];
                 GameManager.EnemyDamageData damageToApply = new GameManager.EnemyDamageData(enemyToDamage, parentClass.damage, 
-                    enemyToDamage.damageResistance, parent.GetComponent<TowerBehavior>());
+                    GameManager.DamageTypes.Explosion, parent.GetComponent<TowerBehavior>());
                 enemyToDamage.lastDamagingTower = parent.GetComponent<TowerBehavior>();
                 gameManager.EnqueueDamageData(damageToApply);
             }
