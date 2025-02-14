@@ -14,10 +14,15 @@ public class CardManager : MonoBehaviour
     public GameObject Camera;
     public GameObject Player;
     public GameObject self;
+    public GameObject[] towerPrefabs;
 
     public List<GameObject> deck = new List<GameObject>();
     public List<GameObject> hand = new List<GameObject>();
     public List<GameObject> discard = new List<GameObject>();
+
+
+
+    public Cards data;
 
 
     float cardSpacing = 1f;
@@ -32,11 +37,15 @@ public class CardManager : MonoBehaviour
         {
             GameObject tempCard = Instantiate(cardPrefab, handPosition.position,Quaternion.identity);
             tempCard.SetActive(false);
-            tempCard.GetComponent<Card>().cost.text = "" + i;
+            tempCard.GetComponent<Card>().cost = i;
             deck.Add(tempCard);
             tempCard.transform.parent = cardParent.transform;
             tempCard.GetComponent<Card>().setCamera(Camera);
             tempCard.GetComponentInChildren<CardButton>().manager = self;
+            tempCard.GetComponent<Card>().cardData = data;
+            tempCard.GetComponent<Card>().cardManager = self;
+            tempCard.GetComponent<Card>().player = Player;
+            tempCard.GetComponentInChildren<CardButton>().parent = tempCard;
         }
     }
 

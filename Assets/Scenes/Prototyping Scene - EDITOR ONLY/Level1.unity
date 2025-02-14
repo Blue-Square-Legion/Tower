@@ -20820,9 +20820,12 @@ MonoBehaviour:
   Camera: {fileID: 2074102713}
   Player: {fileID: 6321285439559530929}
   self: {fileID: 1912914655}
+  towerPrefabs:
+  - {fileID: 1326528010829393448, guid: e9298365a7fa99f478b1bde349103d31, type: 3}
   deck: []
   hand: []
   discard: []
+  data: {fileID: 11400000, guid: b2a498a19c6442c418a2bf203992af9d, type: 2}
   distance: 10
 --- !u!114 &1912914659
 MonoBehaviour:
@@ -22759,11 +22762,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26bd8884f9e877640823a41d02fb8bdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 2074102717}
   characterController: {fileID: 719659446}
   speed: 0
-  sensitivity: 0
-  maxVerticalRange: 0
 --- !u!1001 &2077870231
 PrefabInstance:
   m_ObjectHideFlags: 0

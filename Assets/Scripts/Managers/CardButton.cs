@@ -8,11 +8,12 @@ public class CardButton : MonoBehaviour
 {
     public GameObject manager;
     public float normalZ;
+    public GameObject parent;
 
 
     public void OnMouseUpAsButton()
     {
-        manager.GetComponent<CardManager>().drawCard();
+        parent.GetComponent<Card>().execute();
     }
 
     void OnMouseOver()

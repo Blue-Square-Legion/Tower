@@ -7,29 +7,32 @@ using TMPro;
 public class Card : MonoBehaviour
 {
     //Need an image/3d model variable
-    [SerializeField] public TMP_Text cost;
-    [SerializeField] private TMP_Text cardName;
-    [SerializeField] private TMP_Text cardType;
-    [SerializeField] private TMP_Text effect;
+    public int cost;
+    public string cardName;
+    public string cardType;
+    public string effect;
+
     public GameObject position;
     public GameObject cube;
     public GameObject Camera;
     public GameObject canvas;
+    public Cards cardData;
 
-    public Card(int costIn, string cardNameIn, string cardTypeIn, string effectIn, GameObject camera)
+    public GameObject cardManager;
+    public GameObject player;
+    public Card(Cards scriptObject, GameObject camera)
     {
-        cost.text = "" + costIn;
-        cardName.text = cardNameIn;
-        cardType.text = cardTypeIn;
-        effect.text = effectIn;
-        Camera = camera;
+        cost = scriptObject.cost;
+        cardName = scriptObject.cardName;
+        cardType = scriptObject.cardType;
+        effect = scriptObject.effect;
     }
     public void setData(int costIn, string cardNameIn, string cardTypeIn, string effectIn)
     {
-        cost.text = "" + costIn;
-        cardName.text = cardNameIn;
-        cardType.text = cardTypeIn;
-        effect.text = effectIn;
+        cost = costIn;
+        cardName = cardNameIn;
+        cardType = cardTypeIn;
+        effect = effectIn;
     }
 
     public void setCamera(GameObject camera)
@@ -44,9 +47,10 @@ public class Card : MonoBehaviour
     }    
 
 
-    private void execute()
+    public void execute()
     {
         //this is where we get to add the fun stuff later.
+        player.GetComponent<TowerPlacement>().SetTowerToPlace(cardManager.GetComponent<CardManager>().towerPrefabs[0]);
     }
 
 
