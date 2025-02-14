@@ -15,8 +15,22 @@ public class Enemy : MonoBehaviour
     public float speed;
     [NonSerialized] public bool isAlive;
     public float currentSpeed { get; private set; }
-    public float damageResistance;
     public bool isInvisible;
+
+    [Header("Damage Resistances")]
+
+    [Tooltip("How much resistance they have against sharp damage")]
+    public float sharpDamageResistance;
+
+    [Tooltip("How much resistance they have against fire damage")]
+    public float fireDamageResistance;
+
+    [Tooltip("How much resistance they have against ice damage")]
+    public float iceDamageResistance;
+
+    [Tooltip("How much resistance they have against explosion damage")]
+    public float explosionDamageResistance;
+
     [NonSerialized] public int ID;
     [NonSerialized] public int nodeIndex;
     [NonSerialized] public List<GameManager.EnemyBuff> activeBuffs;
@@ -51,7 +65,6 @@ public class Enemy : MonoBehaviour
         appliedBuffs = new();
         buffNames = Enum.GetNames(typeof(GameManager.EnemyBuffNames));
         buffNamesCount = Enum.GetNames(typeof(GameManager.EnemyBuffNames)).Length;
-        damageResistance = 1;
         nodeIndex = 0;
         moneyToPlayer = 10;
         manaToPlayer = 10;
@@ -92,7 +105,7 @@ public class Enemy : MonoBehaviour
             else
             {
                 lastDamagingTower = burnSource;
-                gameManager.EnqueueDamageData(new GameManager.EnemyDamageData(this, burnDamage, 1f, burnSource));
+                gameManager.EnqueueDamageData(new GameManager.EnemyDamageData(this, burnDamage, GameManager.DamageTypes.Fire, burnSource));
                 currentBurnDelay = burnDelay;
             }
         }
@@ -134,7 +147,10 @@ public class Enemy : MonoBehaviour
                         switch (appliedBuffs[j].buffName)
                         {
                             case GameManager.EnemyBuffNames.ResistanceEnemyBuffer:
-                                damageResistance -= appliedBuffs[j].modifier;
+                                sharpDamageResistance -= appliedBuffs[j].modifier;
+                                fireDamageResistance -= appliedBuffs[j].modifier;
+                                iceDamageResistance -= appliedBuffs[j].modifier;
+                                explosionDamageResistance -= appliedBuffs[j].modifier;
                                 break;
                             case GameManager.EnemyBuffNames.SpeedEnemyBuffer:
                                 SetSpeed(currentSpeed / appliedBuffs[j].modifier);
@@ -197,7 +213,10 @@ public class Enemy : MonoBehaviour
                 {
                     case "ResistanceEnemyBuffer":
                         appliedBuffs.Add(buff);
-                        damageResistance += strongestBuff.modifier;
+                        sharpDamageResistance += strongestBuff.modifier;
+                        fireDamageResistance += strongestBuff.modifier;
+                        iceDamageResistance += strongestBuff.modifier;
+                        explosionDamageResistance += strongestBuff.modifier;
                         break;
                     case "SpeedEnemyBuffer":
                         appliedBuffs.Add(buff);

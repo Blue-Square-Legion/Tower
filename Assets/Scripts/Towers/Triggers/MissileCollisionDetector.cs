@@ -36,7 +36,7 @@ public class MissileCollisionDetector : MonoBehaviour
             {
                 Enemy enemyToDamage = enemySpawner.enemyTransformDictionary[enemiesInRadius[j].transform];
                 GameManager.EnemyDamageData damageToApply = new GameManager.EnemyDamageData(enemyToDamage, 
-                    parentClass.damage, enemyToDamage.damageResistance, parentClass.GetComponent<TowerBehavior>()); //TODO - Switch to Explosion Resistance
+                    parentClass.damage, GameManager.DamageTypes.Explosion, parentClass.GetComponent<TowerBehavior>()); //TODO - Switch to Explosion Resistance
                 gameManager.EnqueueDamageData(damageToApply);
             }
         }

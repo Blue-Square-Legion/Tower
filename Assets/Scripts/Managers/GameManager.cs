@@ -431,8 +431,81 @@ public class GameManager : MonoBehaviour
                 {
                     EnemyDamageData currentDamageData = damageData.Dequeue();
                     Enemy targetedEnemy = currentDamageData.targetedEnemy;
-                    targetedEnemy.currentHealth = Mathf.Round((targetedEnemy.currentHealth - 
-                            (currentDamageData.totalDamage / currentDamageData.resistance)) * 100f) / 100f; //Removes floating point errors
+                    switch(currentDamageData.damageType)
+                    {
+                        /* Damage Formula:
+                         * Damage Received = Total Damage * (100 / (100 + resistance))
+                         * For every 100 resistance, their effective HP is doubled.
+                         * Additionally, negative resistances are
+                         * For example, if the enemy had a resistance of 100, they would take 0.5 damage
+                         *              if the enemy had a resistance of -100, they would take 2.0 damage
+                         */
+                        
+                        case DamageTypes.Sharp:
+
+                            //Checks if the enemy should take more or less damage
+                            if (targetedEnemy.sharpDamageResistance >= 0)
+                            {
+                                //Enemy Takes reduced damage
+                                targetedEnemy.currentHealth = Mathf.Round((targetedEnemy.currentHealth -
+                                    currentDamageData.totalDamage * (100 / (100 + targetedEnemy.sharpDamageResistance))) * 100f) / 100f; //Rounding removes floating point errors
+                            }
+                            else
+                            {
+                                //Enemy Takes More damage
+                                targetedEnemy.currentHealth = Mathf.Round((targetedEnemy.currentHealth -
+                                    currentDamageData.totalDamage * ((100 - targetedEnemy.sharpDamageResistance) / 100)) * 100f) / 100f; //Rounding removes floating point errors
+                            }
+                            break;
+                        case DamageTypes.Fire:
+                            //Checks if the enemy should take more or less damage
+                            if (targetedEnemy.fireDamageResistance >= 0)
+                            {
+                                //Enemy Takes reduced damage
+                                targetedEnemy.currentHealth = Mathf.Round((targetedEnemy.currentHealth -
+                                    currentDamageData.totalDamage * (100 / (100 + targetedEnemy.fireDamageResistance))) * 100f) / 100f; //Rounding removes floating point errors
+                            }
+                            else
+                            {
+                                //Enemy Takes More damage
+                                targetedEnemy.currentHealth = Mathf.Round((targetedEnemy.currentHealth -
+                                    currentDamageData.totalDamage * ((100 - targetedEnemy.fireDamageResistance) / 100)) * 100f) / 100f; //Rounding removes floating point errors
+                            }
+                            break;
+                        case DamageTypes.Ice:
+                            //Checks if the enemy should take more or less damage
+                            if (targetedEnemy.iceDamageResistance >= 0)
+                            {
+                                //Enemy Takes reduced damage
+                                targetedEnemy.currentHealth = Mathf.Round((targetedEnemy.currentHealth -
+                                    currentDamageData.totalDamage * (100 / (100 + targetedEnemy.iceDamageResistance))) * 100f) / 100f; //Rounding removes floating point errors
+                            }
+                            else
+                            {
+                                //Enemy Takes More damage
+                                targetedEnemy.currentHealth = Mathf.Round((targetedEnemy.currentHealth -
+                                    currentDamageData.totalDamage * ((100 - targetedEnemy.iceDamageResistance) / 100)) * 100f) / 100f; //Rounding removes floating point errors
+                            }
+                            break;
+                        case DamageTypes.Explosion:
+                            //Checks if the enemy should take more or less damage
+                            if (targetedEnemy.explosionDamageResistance >= 0)
+                            {
+                                //Enemy Takes reduced damage
+                                targetedEnemy.currentHealth = Mathf.Round((targetedEnemy.currentHealth -
+                                    currentDamageData.totalDamage * (100 / (100 + targetedEnemy.explosionDamageResistance))) * 100f) / 100f; //Rounding removes floating point errors
+                            }
+                            else
+                            {
+                                //Enemy Takes More damage
+                                targetedEnemy.currentHealth = Mathf.Round((targetedEnemy.currentHealth -
+                                    currentDamageData.totalDamage * ((100 - targetedEnemy.explosionDamageResistance) / 100)) * 100f) / 100f; //Rounding removes floating point errors
+                            }
+                            break;
+                        case DamageTypes.True:
+                            targetedEnemy.currentHealth -= currentDamageData.totalDamage; //True Damage ignores all resistances
+                            break;
+                    }
 
                     targetedEnemy.GetComponentInChildren<HealthBar>().UpdateHealth((int) targetedEnemy.currentHealth);
                     if (targetedEnemy.currentHealth <= 0)
@@ -699,13 +772,13 @@ public class GameManager : MonoBehaviour
     {
         public Enemy targetedEnemy;
         public float totalDamage;
-        public float resistance;
+        public DamageTypes damageType;
         public TowerBehavior damageOrigin;
-        public EnemyDamageData(Enemy targettedEnemy,  float totalDamage, float resistance, TowerBehavior damageOrigin)
+        public EnemyDamageData(Enemy targettedEnemy,  float totalDamage, DamageTypes damageType, TowerBehavior damageOrigin)
         {
             this.targetedEnemy = targettedEnemy;
             this.totalDamage = totalDamage;
-            this.resistance = resistance;
+            this.damageType = damageType;
             this.damageOrigin = damageOrigin;
         }
     }
@@ -771,5 +844,14 @@ public class GameManager : MonoBehaviour
             PathIndicators[id].currentWave = true;
             print("activated path indicator: " + id);
         }
+    }
+
+    public enum DamageTypes
+    {
+        Sharp,
+        Fire,
+        Ice,
+        Explosion,
+        True
     }
 }

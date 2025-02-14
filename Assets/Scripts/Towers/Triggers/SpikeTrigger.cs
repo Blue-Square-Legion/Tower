@@ -48,7 +48,7 @@ public class SpikeTrigger : MonoBehaviour
             Debug.Log(enemiesInside[i]);
             enemiesInside[i].lastDamagingTower = transform.GetComponent<TowerBehavior>();
             gameManager.EnqueueDamageData(new GameManager.EnemyDamageData(enemiesInside[i], damage, 
-                enemiesInside[i].damageResistance, transform.GetComponent<TowerBehavior>()));
+                GameManager.DamageTypes.Sharp, transform.GetComponent<TowerBehavior>()));
         }
     }
 }

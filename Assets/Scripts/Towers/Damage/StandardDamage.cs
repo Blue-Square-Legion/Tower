@@ -19,7 +19,7 @@ public class StandardDamage : TowerDamage
                 .Play();
 
             target.lastDamagingTower = transform.GetComponent<TowerBehavior>();
-            gameManager.EnqueueDamageData(new GameManager.EnemyDamageData(target, damage, target.damageResistance, transform.GetComponent<TowerBehavior>()));
+            gameManager.EnqueueDamageData(new GameManager.EnemyDamageData(target, damage, GameManager.DamageTypes.Sharp, transform.GetComponent<TowerBehavior>()));
 
             delay = 1 / fireRate;
         }
