@@ -20822,10 +20822,21 @@ MonoBehaviour:
   self: {fileID: 1912914655}
   towerPrefabs:
   - {fileID: 1326528010829393448, guid: e9298365a7fa99f478b1bde349103d31, type: 3}
+  - {fileID: 2873057837195373460, guid: ad8fa8f65fdbaed41a5486605a09a674, type: 3}
+  - {fileID: 1326528010829393448, guid: d5ca83c3837789845b123aa127d26302, type: 3}
+  - {fileID: 9118610037110738087, guid: 6842eef7218a3994c9e48c0ee1cfd330, type: 3}
   deck: []
   hand: []
   discard: []
-  data: {fileID: 11400000, guid: b2a498a19c6442c418a2bf203992af9d, type: 2}
+  data:
+  - {fileID: 11400000, guid: e2e88d3e7f643de47a000bba89f0d49b, type: 2}
+  - {fileID: 11400000, guid: 027d4a92e1245854a9c0ce71518abb71, type: 2}
+  - {fileID: 11400000, guid: 66e623a64af780c4fa77e526d60da00c, type: 2}
+  - {fileID: 11400000, guid: 8342fb0ea960cf64a9ce2db751c719e4, type: 2}
+  - {fileID: 11400000, guid: 6f12edf143657054abd4721dcdc67163, type: 2}
+  - {fileID: 11400000, guid: 99f27b93b84976e4f9a2e2f7bf5d47ab, type: 2}
+  - {fileID: 11400000, guid: f6faf72a101b3df49850a400d1b090f1, type: 2}
+  - {fileID: 11400000, guid: 136665776660898418177d01bf302a6c, type: 2}
   distance: 10
 --- !u!114 &1912914659
 MonoBehaviour:
@@ -23424,6 +23435,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 2881805942263339653, guid: 90319159318b32846a7006408bcbd4c6,
         type: 3}
+      propertyPath: cardManager
+      value: 
+      objectReference: {fileID: 1912914655}
+    - target: {fileID: 2881805942263339653, guid: 90319159318b32846a7006408bcbd4c6,
+        type: 3}
       propertyPath: showPathOff
       value: 
       objectReference: {fileID: 21300000, guid: ba7b738eb4b3e1c4fa68678d4c5aca4b,
@@ -25172,6 +25188,11 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 1728860207}
+    - target: {fileID: 3088496653915348084, guid: 22d70330496e4474db168f477a4993e2,
+        type: 3}
+      propertyPath: cardManager
+      value: 
+      objectReference: {fileID: 1912914655}
     - target: {fileID: 3088496653915348084, guid: 22d70330496e4474db168f477a4993e2,
         type: 3}
       propertyPath: startingMoney

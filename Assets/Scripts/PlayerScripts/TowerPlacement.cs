@@ -71,6 +71,7 @@ public class TowerPlacement : MonoBehaviour
             {
                 UIManager.Instance.ToggleDeselect(false);
                 CancelPlacingTower();
+                player.GetComponentInChildren<CardManager>().cancelCard();
                 return;
             }
             Transform rangeObject = currentTowerBeingPlaced.transform.Find("Range");
@@ -114,12 +115,14 @@ public class TowerPlacement : MonoBehaviour
 
                                     currentTowerBeingPlaced = null;
                                     UIManager.Instance.ToggleDeselect(false);
+                                    player.cardManager.GetComponent<CardManager>().cardPlayed();
                                 }
                                 else
                                 {
                                     Destroy(currentTowerBeingPlaced);
                                     UIManager.Instance.SendPopUp("Cannot Place Here!");
                                     UIManager.Instance.ToggleDeselect(false);
+                                    player.GetComponentInChildren<CardManager>().cancelCard();
                                     resetPath = true;
                                 }
                             }

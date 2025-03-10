@@ -66,6 +66,9 @@ public class GameManager : MonoBehaviour
 
     public DrawPath[] PathIndicators;
 
+    public GameObject cardManager;
+    int cardDrawPerWave = 2;
+
     void Start()
     {
         enemySpawner = EnemySpawner.Instance;
@@ -127,6 +130,11 @@ public class GameManager : MonoBehaviour
         currentWave++;
         UpdateWaveText();
         endOfWave = true;
+        //this.GetComponentInChildren<CardManager>().drawCard();
+        for (int i = 0; i < cardDrawPerWave; i++)
+        {
+            cardManager.GetComponent<CardManager>().drawCard();
+        }
     }
 
 

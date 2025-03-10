@@ -11,7 +11,13 @@ public class Cards : ScriptableObject
     public int cost;
     public string cardName;
     public string cardType;
+    public string[] subtype;
     public string effect;
+    public int towerIndex;
+
+    public GameObject cardModel;
+
+    public Texture cardMaterial;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +28,12 @@ public class Cards : ScriptableObject
     void Update()
     {
         
+    }
+    public void playCard(GameObject player, GameObject cardManager)
+    {
+        if (cardType != "Rune")
+            player.GetComponent<TowerPlacement>().SetTowerToPlace(cardManager.GetComponent<CardManager>().towerPrefabs[towerIndex]);
+        else
+            player.GetComponent<RunePlacement>().StartCasting(subtype[0]);
     }
 }

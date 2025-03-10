@@ -22,7 +22,7 @@ public class CardManager : MonoBehaviour
 
 
 
-    public Cards data;
+    public Cards[] data;
 
 
     float cardSpacing = 1f;
@@ -30,6 +30,9 @@ public class CardManager : MonoBehaviour
     public float distance = 10;
 
     int maxHandsize = 10;
+    int lastID;
+
+    int cardBeingPlayedID;
 
     private void Start()
     {
@@ -37,16 +40,24 @@ public class CardManager : MonoBehaviour
         {
             GameObject tempCard = Instantiate(cardPrefab, handPosition.position,Quaternion.identity);
             tempCard.SetActive(false);
-            tempCard.GetComponent<Card>().cost = i;
             deck.Add(tempCard);
             tempCard.transform.parent = cardParent.transform;
             tempCard.GetComponent<Card>().setCamera(Camera);
             tempCard.GetComponentInChildren<CardButton>().manager = self;
-            tempCard.GetComponent<Card>().cardData = data;
+            tempCard.GetComponent<Card>().cardData = data[i%8];
             tempCard.GetComponent<Card>().cardManager = self;
             tempCard.GetComponent<Card>().player = Player;
             tempCard.GetComponentInChildren<CardButton>().parent = tempCard;
+            tempCard.GetComponent<Card>().setModel();
+            tempCard.GetComponent<Card>().id = i;
+            lastID = i;
         }
+        shuffle();
+        for(int i = 0;i< 3; i++)
+        {
+            drawCard();
+        }
+
     }
 
     public void drawCard()
@@ -86,30 +97,59 @@ public class CardManager : MonoBehaviour
 
     public void shuffle()
     {
-        int n = deck.Count;
-        while (n > 1)
+        for (int i = 0; i < 3; i++)
         {
-            n--;
-            int k = Random.Range(0,n + 1);
-            GameObject temp = deck[k];
-            deck[k] = deck[n];
-            deck[n] = temp;
+            int n = deck.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = Random.Range(0, n + 1);
+                GameObject temp = deck[k];
+                deck[k] = deck[n];
+                deck[n] = temp;
+            }
         }
+    }
+
+    public void cardBeingPlayed(int cardID)
+    {
+        cardBeingPlayedID = cardID;
+    }
+    public void cardPlayed()
+    {
+        if (cardBeingPlayedID != -1)
+        {
+            int pos = getCardHandPos(cardBeingPlayedID);
+            hand[pos].SetActive(false);
+            removeFromHand(pos);
+            cardBeingPlayedID = -1; //reset for next card
+        }
+
+    }
+
+    public void cancelCard()
+    {
+        cardBeingPlayedID = -1;
     }
 
     public void removeFromHand(int a)
     {
-        if (hand.Count > a)
+        if (hand.Count > a && a != -1)
         {
-            addToDiscard(getCardInHandID(a));
+            discard.Add(hand[a]);
             hand.RemoveAt(a);
         }
     }
 
-    public GameObject getCardInHandID(int pos)
+    public int getCardHandPos(int cardID)
     {
-        GameObject cardID = hand[pos];
-        return cardID;
+        int cardPos = -1;
+        for(int i = 0;i<hand.Count;i++)
+        {
+            if (hand[i].GetComponent<Card>().id == cardID)
+                cardPos = i;
+        }
+        return cardPos;
     }
 
     public void addToDiscard(GameObject card)

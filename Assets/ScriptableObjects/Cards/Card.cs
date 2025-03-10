@@ -8,6 +8,7 @@ public class Card : MonoBehaviour
 {
     //Need an image/3d model variable
     public int cost;
+    public int id;
     public string cardName;
     public string cardType;
     public string effect;
@@ -20,6 +21,9 @@ public class Card : MonoBehaviour
 
     public GameObject cardManager;
     public GameObject player;
+
+    public GameObject cardModel;
+
     public Card(Cards scriptObject, GameObject camera)
     {
         cost = scriptObject.cost;
@@ -50,8 +54,16 @@ public class Card : MonoBehaviour
     public void execute()
     {
         //this is where we get to add the fun stuff later.
-        player.GetComponent<TowerPlacement>().SetTowerToPlace(cardManager.GetComponent<CardManager>().towerPrefabs[0]);
+        //player.GetComponent<TowerPlacement>().SetTowerToPlace(cardManager.GetComponent<CardManager>().towerPrefabs[cardData.towerIndex]);
+        cardData.playCard(player, cardManager);
+        cardManager.GetComponent<CardManager>().cardBeingPlayed(id);
     }
 
+    public void setModel()
+    {
+        cardModel.GetComponent<MeshRenderer>().materials[0].SetTexture("_BaseMap", cardData.cardMaterial);
+        //GetComponent<Material>().SetTexture("Card Image", cardData.cardMaterial); "_BaseMap"
+
+    }
 
 }

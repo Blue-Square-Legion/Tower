@@ -30,6 +30,7 @@ public class CDRadialWipe : MonoBehaviour
         }
     }
 
+
     void Update()
     {
         if (isWiping)
