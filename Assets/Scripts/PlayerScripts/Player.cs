@@ -31,6 +31,8 @@ public class Player : MonoBehaviour
     private int currentHealth;
     private float money;
 
+    public GameObject cardManager;
+
     // Start is called before the first frame update
     void Start()
     {

@@ -160,6 +160,7 @@ public class RunePlacement : MonoBehaviour
                     Destroy(currentPreview);
                 }
                 UIManager.Instance.ToggleDeselect(false);
+                GetComponentInParent<Player>().GetComponentInChildren<CardManager>().cancelCard();
             }
         }
     }
@@ -190,6 +191,36 @@ public class RunePlacement : MonoBehaviour
 
 
         
+        UpdateSkillPreview();
+    }
+
+    public void StartCasting(string rune)
+    {
+        isCasting = true;
+
+        if (currentPreview != null)
+        {
+            Destroy(currentPreview);
+        }
+
+        switch (rune)
+        {
+            case "Meteor":
+                currentPreview = Instantiate(meteorPreviewPrefab);
+                break;
+            case "Lightning":
+                currentPreview = Instantiate(lightingPreviewPrefab);
+                break;
+            case "Confusion":
+                currentPreview = Instantiate(confusionPreviewPrefab);
+                break;
+            case "Cleanse":
+                currentPreview = Instantiate(cleansePreviewPrefab);
+                break;
+        }
+
+
+
         UpdateSkillPreview();
     }
 
@@ -248,6 +279,7 @@ public class RunePlacement : MonoBehaviour
             isCasting = false;
 
             UIManager.Instance.ToggleDeselect(false);
+
         }
     }
 
@@ -256,6 +288,7 @@ public class RunePlacement : MonoBehaviour
         if (!Player.Instance.CheckAndUseMana(meteorCost))
         {
             UIManager.Instance.SendPopUp("Not enough mana");
+            GetComponentInParent<Player>().GetComponentInChildren<CardManager>().cancelCard();
             return false;
         }
         
@@ -264,6 +297,7 @@ public class RunePlacement : MonoBehaviour
         Meteor meteorScript = meteor.GetComponent<Meteor>();
         meteorScript.targetPosition = castPosition;
         //meteorCooldownText.color = Color.red;
+        GetComponentInParent<Player>().cardManager.GetComponent<CardManager>().cardPlayed();
         return true;
     }
 
@@ -272,6 +306,7 @@ public class RunePlacement : MonoBehaviour
         if (!Player.Instance.CheckAndUseMana(lightningCost))
         {
             UIManager.Instance.SendPopUp("Not enough mana");
+            GetComponentInParent<Player>().GetComponentInChildren<CardManager>().cancelCard();
             return false;
         }
         GameObject lightning = Instantiate(lightningPrefab, currentPreview.transform.position, Quaternion.identity);
@@ -279,6 +314,7 @@ public class RunePlacement : MonoBehaviour
         Lightning lightningScript = lightning.GetComponent<Lightning>();
         lightningScript.targetPosition = castPosition;
         //lightningCooldownText.color = Color.red;
+        GetComponentInParent<Player>().cardManager.GetComponent<CardManager>().cardPlayed();
         return true;
     }
 
@@ -287,6 +323,7 @@ public class RunePlacement : MonoBehaviour
         if (!Player.Instance.CheckAndUseMana(confusionCost))
         {
             UIManager.Instance.SendPopUp("Not enough mana");
+            GetComponentInParent<Player>().GetComponentInChildren<CardManager>().cancelCard();
             return false;
         }
 
@@ -295,6 +332,7 @@ public class RunePlacement : MonoBehaviour
         Confusion confusionScript = confusion.GetComponent<Confusion>();
         confusionScript.targetPosition = castPosition;
         //confusionCooldownText.color = Color.red;
+        GetComponentInParent<Player>().cardManager.GetComponent<CardManager>().cardPlayed();
         return true;
     }
 
@@ -303,6 +341,7 @@ public class RunePlacement : MonoBehaviour
         if (!Player.Instance.CheckAndUseMana(cleanseCost))
         {
             UIManager.Instance.SendPopUp("Not enough mana");
+            GetComponentInParent<Player>().GetComponentInChildren<CardManager>().cancelCard();
             return false;
         }
 
@@ -311,6 +350,7 @@ public class RunePlacement : MonoBehaviour
         Cleanse cleanseScript = cleanse.GetComponent<Cleanse>();
         cleanseScript.targetPosition = castPosition;
         //cleanseCooldownText.color = Color.red;
+        GetComponentInParent<Player>().cardManager.GetComponent<CardManager>().cardPlayed();
         return true;
     }
 

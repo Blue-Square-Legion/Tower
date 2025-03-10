@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37215039414c0d45ac891311a9fa461, type: 3}
+  m_Name: CannonTower
+  m_EditorClassIdentifier: 
+  cost: 0
+  cardName: 
+  cardType: 
+  effect: 
+  towerIndex: 1
+  cardModel: {fileID: 919132149155446097, guid: 31c4f62a1923a0f478949b0ff0867915,
+    type: 3}
+  cardMaterial: {fileID: 2800000, guid: 95d3cf3aa3034a74f87b4e15a8c9b2d0, type: 3}
