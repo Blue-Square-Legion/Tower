@@ -2001,7 +2001,8 @@ public class TowerBehavior : MonoBehaviour
         Mine,
         Snowball,
         Orb,
-        Spikes
+        Spikes,
+        Barracks
     }
 
     public void SetTauntTarget(Enemy enemy)
